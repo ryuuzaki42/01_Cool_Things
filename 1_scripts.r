@@ -260,7 +260,7 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
 
     grep -rn $PWD -e "24" > ../../../a.txt
 
-## (KDE) Minimize/Maximize Keyboard Shortcut
+## KDE - Minimize/Maximize Keyboard Shortcut
     Alt+F2 and type "systemsettings"
     then click on "Shortcuts and Gestures".
     The window management shortcuts are under "Global Keyboard shortcuts", then select "Kwin" from the drop-down menu.
@@ -309,7 +309,7 @@ $ paste arq1.txt arq2.txt
 1       a
 2       b
 
-    #Nos exemplos utilizamos apenas dois arquivos, mas na prática podemos usar mais arquivos
+    # Nos exemplos utilizamos apenas dois arquivos, mas na prática podemos usar mais arquivos
 
  ## Assista Star War em modo ASCII
     telnet towel.blinkenlights.nl
@@ -331,7 +331,7 @@ $ paste arq1.txt arq2.txt
     cat file.txt | grep -E "Cell|Encryption|Quality|Last beacon|ESSID"
     # grep -E é o mesmo que egrep, aceita "A|B" e 'A|B'
 
-## saída de um processo para outro
+## Saída de um processo para outro
      # tee >(proc1) >(proc2) >(proc3) | proc4
     iw dev wlan0 scan | grep "SSID" | nl
     iw dev wlan0 scan | grep -E "SSID:|signal:|beacon interval:|WPA|last seen:" | tee /dev/tty | grep -E "SSID" | wc -l
@@ -351,12 +351,12 @@ $ paste arq1.txt arq2.txt
 ## MEGA-MASTERKEY.txt
     KEfQYPeq5_bODHkqUCrMhQ
 
-## troca \n por nova linha
+## Troca \n por nova linha
     sed 's/\\n/\
 /g'
 
 ## Screenshot de 5 em 5 segundo no terminal
-    count=0; while ((1)); do;  count=$(($count+1)); import -window root -display :0 screen.$count.jpg; sleep 5; done
+    count=0; while ((1)); do count=$(($count+1)); import -window root -display :0 screen.$count.jpg; sleep 5; done
 
 ## shellscript quantidade de parâmentros
     Quantidade de parâmetros -> $# -> echo $#
