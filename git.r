@@ -1,4 +1,4 @@
-## links
+## Links
     http://git-scm.com/book/
     https://leanpub.com/pro-git/read
 
@@ -45,7 +45,7 @@
 ## Status geral do repositório
     git status
 
-## Histório de commints
+## Histórico de commints
     git log
 
 ## Diferença entre o repositório git e stage area
@@ -59,6 +59,8 @@
 ## Renomear arquivos e manter eles rastreados
     # Step1: rename the file from oldfile to newfile
     git mv oldfile newfile
+
     # Step2: git commit and add comments
     git commit -m "rename oldfile to newfile"
+
 #

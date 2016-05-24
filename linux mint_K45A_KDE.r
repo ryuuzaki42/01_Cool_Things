@@ -1,4 +1,4 @@
-# ## Driver intel
+# ## Driver Intel
     # echo "deb https://download.01.org/gfx/ubuntu/13.10/main saucy main #Intel Graphics drivers" | tee /etc/apt/sources.list.d/intellinuxgraphics.list
     # apt-get install intel-linux-graphics-installer
 
@@ -17,7 +17,7 @@
     ## Install OMNet++
         apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
 
-    ##Install OMNet by the zip file
+    ## Install OMNet by the zip file
         TCL_LIBRARY=/usr/lib/tcl8.6
         apt-get install swig
         . setenv
@@ -39,7 +39,7 @@
 ## Dropbox (zip file)
 ## Jdownload (.sh file)
 
-## Install anothers programs
+## Install others programs
     apt-get install p7zip comix rar convmv r-base pv pdftk git skype kwrite kolourpaint4 kamerka
 
 ## Install master-pdf-editor, mendeleydesktop, RedshiftGUI, smartgit, telegram, texstudio, tomighty (deb file)
@@ -89,10 +89,10 @@
     dpkg-deb --build program-version-arch
     dpkg -i program-version-arch
 
-## Remove amarok and dragon
+## Remove Amarok and dragon
     apt-get remove amarok dragonplayer
 
-## remove older vlc and vlc-nox and install new version
+## Remove older vlc and vlc-nox and install new version
     apt-get remove vlc vlc-nox
     ## after
         add-apt-repository ppa:mc3man/trusty-media
@@ -105,7 +105,7 @@
      apt-get install vlc-plugin-libde265
      apt-get install vlc-plugin*
 
-## remove older smplayer and install new version
+## Remove older smplayer and install new version
     apt-get remove smplayer
     ## after
         add-apt-repository ppa:rvm/smplayer
@@ -174,4 +174,4 @@
 ## Somes good infos
     https://sites.google.com/site/easylinuxtipsproject/mint-mate-first
 
-## End
+#

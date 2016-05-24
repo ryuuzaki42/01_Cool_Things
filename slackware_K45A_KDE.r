@@ -1,4 +1,4 @@
-##Editar
+## Editar
     /etc/lilo.conf
     /etc/fstab
     /etc/inittab
@@ -40,7 +40,7 @@ cpufreq-set --cpu 3 --governor performance
     nano /etc/lilo.conf
     lilo
 
-##Mouse:
+## Mouse:
     nano /etc/X11/xorg.conf
 
 Section "InputClass"
@@ -49,7 +49,7 @@ MatchDriver "synaptics"
 Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
 EndSection
 
-##Dolphin disable executable shellscript, perl, ruby, pyton
+## Dolphin disable executable shellscript, perl, ruby, pyton
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
     procure pelas linguagens e comente <!-- <sub-class-of type="application/x-executable"/> -->
@@ -60,7 +60,7 @@ EndSection
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
 
-##Instalar
+## Instalar
     slackpkg install cabextract flash-player-plugin p7zip unrar cdrkit chrome
 
     #http://slackware.org.uk/slacky/slackware-14.1/system/microsoft-fonts-ttf/
@@ -70,13 +70,13 @@ EndSection
 
     ## Instalar cogroo e alterar idioma
 
-##Local
+## Local
     bleachbit dropbox virtualbox comix convmv pdftk pv qpdf R redshift smplayer vlc openjdk
 
-##upgrade
+## Upgrade
   mozilla-firefox
 
-## latex
+## Latex
     slackpkg remove tetex
 
     ## If will instal the txz texlive
@@ -103,20 +103,20 @@ EndSection
                 ## To install one package
                 tlmgr install package
 
-##remover games
+## Remover games
     slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram
 
-##remover servidor x
+## Eemover servidor x
     slackpkg remove twm blackbox fluxbox windowmaker fvwm
     ## xwmconfig
 
 ## Remover kopote
     slackpkg remove kdenetwork
 
-##outros
+## Outros
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf
 
-## Swap
+## Swap em arquivo
     # 8 GiB = 8192
     # 6 GiB = 6144
 
@@ -170,8 +170,8 @@ bleachbit
 #
 
 ## slackpkgplus.config
-    nano /etc/slackpkg/slackpkgplus.conf
-#
+nano /etc/slackpkg/slackpkgplus.conf
+
 # Slackware 14.1 - x86_64
 #MIRRORPLUS['multilib']=http://taper.alienbase.nl/mirrors/people/alien/multilib/14.1/
 #MIRRORPLUS['alienbob']=http://taper.alienbase.nl/mirrors/people/alien/sbrepos/14.1/x86_64/

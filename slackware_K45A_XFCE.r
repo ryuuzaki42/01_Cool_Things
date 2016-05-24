@@ -1,10 +1,10 @@
-## xfce disable session restore
+## XFCE disable session restore
 xfce4-settings-editor, find and uncheck xfce4-session -> general -> SaveOnExit
 
-## keyboard
+## Keyboard
 setxkbmap -model abnt2 -layout br
 
-## brightness 0 (rc.local) 
+## Brightness 0 (rc.local) 
 echo 0 > /sys/class/backlight/acpi_video0/brightness
 
 ## Install whiskey menu and add in the panel the icon-menu from whiskey-menu
@@ -19,7 +19,7 @@ echo 0 > /sys/class/backlight/acpi_video0/brightness
     nano /etc/NetworkManager/system-connections/ICMC-802-1X
         system-ca-certs=true => system-ca-certs=false
 
-Install KDE apps?
+## Install KDE apps?
     ## kwrite
     slackpkg install kate kdelibs kactivities oxygen-gtk2 oxygen-gtk3 oxygen-icons
 
@@ -35,4 +35,4 @@ Install KDE apps?
     ## ksnapshot
     slackpkg install ksnapshot libkipi
 
-## End
+#

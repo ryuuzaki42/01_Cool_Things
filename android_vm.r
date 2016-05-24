@@ -10,7 +10,7 @@
     User Interface = Disable mouse integration
 
 ## Fulll screen # http://stackoverflow.com/questions/6202342/switch-android-x86-screen-resolution
-    # list VM running
+    # List VM running
     VBoxManage list runningvms
 
     # Check your VM name and add a new resolution:
@@ -19,8 +19,13 @@
 
      # Change the android load resolution
      Load VM in (Debub video=LVDS-1:d)
-        # edit the file /mnt/grub/menu.lst
-            vi /mnt/grub/menu.lst
-            # And added in the frist kernel load entrer after android_x86
-            UVESA_MODE=1366x768 DPI=160
+
+     # Mount the partition boot
+     mount /dev/sda1 /mnt
+
+     # Edit the file /mnt/grub/menu.lst
+     vi /mnt/grub/menu.lst
+
+     # And added in the frist kernel load entrer after android_x86
+     UVESA_MODE=1366x768 DPI=160
 #

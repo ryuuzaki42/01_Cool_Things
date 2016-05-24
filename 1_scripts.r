@@ -3,7 +3,7 @@
 ## Processo com mais uso de CPU
     ps -aux --sort=-pcpu | head
 
-## Processo com mais uso de MEM (Memória|memory)
+## Processo com mais uso de MEM (Memória | memory)
     ps -aux --sort -rss | head
 
 ## How to Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera, for not pop-up everytime you open them
@@ -148,17 +148,18 @@ echo "$a" | sed -n -e "$x,$y p" -e "$y q"
     # or
 cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
 
-    # Print from line 10 to line 20
-iline=10; fline=20; sed -n "$iline, $fline p" vehDist.ini
+# Print from line 10 to line 20
+    iline=10; fline=20; sed -n "$iline, $fline p" vehDist.ini
     #or
-iline=10; fline=20; cat -n file.txt | sed -n -e "$iline,$fline p" -e "$iline q"
+    iline=10; fline=20; cat -n file.txt | sed -n -e "$iline,$fline p" -e "$iline q"
     #or
-iline=10; fline=20; cat -n vehDist.ini | head -$fline  | tail -$iline
+    iline=10; fline=20; cat -n vehDist.ini | head -$fline  | tail -$iline
     #or
-iline=10; fline=20; head -$fline file.txt | tail -$iline
+    iline=10; fline=20; head -$fline file.txt | tail -$iline
 
 ## Localize arquivos grandes
     find . -size +1000M
+
     #b - blocos de 512-byte (este é o default, se não for utilizado nenhum sufixo)
     #c - bytes
     #w - palavras de dois bytes
@@ -177,7 +178,7 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
 ## Remove Spotify pop-up notification when a song starts
     Exit Spotify, then edit ~/.config/spotify/Users/[Spotify user name]-user/prefs and set ui.track_notifications_enabled=false
 
-## Gmail list the archived emails (If you want to search for more than one archived email, entering the following into the search bar will list all your previously archived emails):
+## Gmail list the archived emails
     has:nouserlabels -in:Sent -in:Chat -in:Draft -in:Inbox
 
 ## Change size monitor
@@ -187,12 +188,13 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
     xrandr -s 1024x768
     xrandr -s 1366x768
 
-    #add
+    # Add
     xrandr --output LVDS1 --mode 1024x768
     xrandr --output VGA1 --mode 1024x768
     xrandr --output LVDS1 --off
     xrandr --output VGA1 --mode 1440x900
-    #remove
+
+    # Remove
     xrandr --output VGA1 --mode 1024x768
     xrandr --output LVDS1 --mode 1024x768
     xrandr --output VGA1 --off
@@ -221,7 +223,7 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
     185.037.037.185
 
 ## Open DNS
-    #http://www.gigadns.com.br/
+    # http://www.gigadns.com.br/
     189.38.95.95
     189.38.95.96
 
@@ -229,7 +231,7 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
     # Enable? 1 - Yes, 0 - No
     cat /proc/sys/kernel/sysrq
 
-    #To enable
+    # To enable
     echo 1 > /proc/sys/kernel/sysrq
 
     # Keys
@@ -243,7 +245,7 @@ iline=10; fline=20; head -$fline file.txt | tail -$iline
     "Raising Elephants Is So Utterly Boring", "Reboot Even If System Utterly Broken" or simply the word "BUSIER" read backwards
 
 ## Busca em vários arquivos de texto
-    #Finding all files containing a text string on Linux
+    # Finding all files containing a text string on Linux
     # use -w to stands match the whole word
     grep -rn 'directory~$PWD' -e "pattern"
 
@@ -465,7 +467,7 @@ rm -r {1..25}
     # ex java:
     export PATH=$PATH:/usr/lib64/java/bin:/usr/lib64/java/jre/bin:
 
-## swap em arquivo
+## Swap em arquivo
     # Se a máquina tem até 2GB de RAM, coloque o dobro. A partir daí, cada GB adicional de RAM é apenas RAM+2GB na swap.
     Vendo através do sistema de arquivos proc:
     cat /proc/swaps ou swapon -s
@@ -534,8 +536,11 @@ rm -r {1..25}
     iconv -f codificacao_de_origem -t codificacao_de_saida arquivo
     iconv -f utf-8 -t iso-8859-1 arquivo
 
-## Converter ISO-8859-1  para UTF-8
+    ## Converter ISO-8859-1  para UTF-8
     iconv -f iso-8859-1 -t utf-8 arquivo
+
+    ## Necessário redirecionar a saida de arquivo para algum lugar
+    iconv -f utf-8 -t iso-8859-1 arquivo > novo_arquivo
 
 ## Juntar pdf #precisa do pdftk
     pdftk arquivo1.pdf arquivo2.pdf cat output arquivo1e2.pdf
@@ -543,9 +548,6 @@ rm -r {1..25}
 ## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha. Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
     # qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
     qpdf --password= --decrypt pretextual.pdf pretextual2.pdf
-
-## É necessário redirecionar a saida de arquivo para algum lugar
-    iconv -f utf-8 -t iso-8859-1 arquivo > novo_arquivo
 
 ## sed
     echo "TV" | sed 's/TV/tv/g'
@@ -572,7 +574,7 @@ gtk-fallback-icon-theme = gnome
 ## OSD Lyrics sem ícones
     gtk-update-icon-cache /usr/share/icons/hicolor
 
-## pegar pedaço de uma string
+## Pegar pedaço de uma string ou cortar string
     cut  -c1-3   # pimeiro até o 3 caracteres
 
     cut -d ';' -f2 tabela.txt
@@ -671,14 +673,14 @@ gtk-fallback-icon-theme = gnome
     Ex: ’firefox’ inicie a sua navegação Web em ’www.kde.org’
     em vez do firefox, use firefox %u www.kde.org.
 
-## gera iso - (cdrkit)
+## gerar iso - (cdrkit)
     genisoimage -o file_output.iso floder_input/
 
 ## bc casas decimais
     echo "scale=2; 10/3" | bc
     scale=> quantas casas decimais.
 
-#No bash
+# No bash
     # redirecionamento de entrada inline (<<) proxima palavra delimitador (comum EOF)
     c=`bc << EOF 
     scale=2
@@ -786,7 +788,7 @@ gtk-fallback-icon-theme = gnome
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
  
-## Saber quando o Gnu/Linux foi instaldo
+## Saber quando o Gnu/Linux foi instalado
     ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'
 
 ## Redimensionar Imagens # Pacote Imagemagick
@@ -826,7 +828,7 @@ gtk-fallback-icon-theme = gnome
     # Desabilitar F8
     bcdedit /set {default} bootmenupolicy standard
   
-## Remover virus o Recycler bin
+## Remover vírus o Recycler bin
     # http://www.artigonal.com/seguranca-artigos/como-remover-o-virus-recycler-que-transforma-pastas-em-atalho-e-como-recuperar-seus-arquivos-novamente-6387104.html
     attrib -a -h -r -s /s /d *.* # dentro da unidade.
 
@@ -858,7 +860,7 @@ gtk-fallback-icon-theme = gnome
     # Para instalar a base de dados digite:
     mysql_install_db
 
-    # É necessário mudar as permissões do diretório inicial e assim o sock será gerado:
+    # Necessário mudar as permissões do diretório inicial e assim o sock será gerado:
     chown -R mysql.mysql /var/lib/mysql
 
     #Para iniciar o MySQL:
