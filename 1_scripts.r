@@ -50,7 +50,8 @@ kdewallet=Opera
 
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
 #!/bin/bash
-dbus-launch ./dropboxd
+cd /media/sda4/prog/dropbox/0not_change/
+dbus-launch ../dropboxd
 
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
 paste file1.txt file2.txt > fileFinal.txt
