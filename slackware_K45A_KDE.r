@@ -60,6 +60,11 @@ EndSection
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
 
+## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
+    Is assigned meta (windows) + S
+    System Settings > Shortcuts and Gestures > Global keyboard Shortcuts
+    Select "Plasma Desktop Shell" in KDE component, and in Action Remove the shortcut to "Stop Current Activity"
+
 ## Instalar
     slackpkg install cabextract flash-player-plugin p7zip unrar cdrkit chrome
 
@@ -106,7 +111,7 @@ EndSection
 ## Remover games
     slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram
 
-## Eemover servidor x
+## Remover servidor x
     slackpkg remove twm blackbox fluxbox windowmaker fvwm
     ## xwmconfig
 
