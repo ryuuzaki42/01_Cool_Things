@@ -81,32 +81,7 @@ EndSection
 ## Upgrade
   mozilla-firefox
 
-## Latex
-    slackpkg remove tetex
-
-    ## If will instal the txz texlive
-        ## Instal libsigsegv texi2html
-        ## Instal texlive local
-
-    ## Install texlive (latex)
-        ## Delete de older folder
-            cd /usr/local
-            rm -r texlive
-
-        ## Download and install  by the ISO file (texlive 2015)
-            ## Mount the ISO (mount texlive*.iso /media/dvd/)
-                /media/dvd/install-tl
-                    ## Set A4 paper and symlinks on directory
-
-                ## Added in .bashrc
-                    export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
-
-                ## Update packets
-                    tlmgr update --self
-                    tlmgr update --all
-
-                ## To install one package
-                tlmgr install package
+## Install texlive from Slackware latex folder
 
 ## Remover games
     slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram

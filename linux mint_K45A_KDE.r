@@ -138,25 +138,7 @@
         apt-get autoclean
         apt-get autoremove
 
-    ## Delete de older folder
-        cd /usr/local
-        rm -r texlive
-
-    ## Download and install  by the ISO file (texlive 2015)
-        apt-get install perl-tk xzdec
-        ## Mount the ISO (mount texlive*.iso /media/dvd/)
-            /media/dvd/install-tl
-                ## Set A4 paper and links on directory
-
-            ## Added in .bashrc
-            export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
-
-            ## Update packets
-            tlmgr update --self
-            tlmgr update --all
-
-            ## To install one package
-            tlmgr install package
+    ## Install texlive from Slackware latex folder
 
 ## Instal texstudio (deb file)
     Use "xUbuntu 14.04 amd64 2.10.8, QT 4" on texstudio.sourceforge.net
