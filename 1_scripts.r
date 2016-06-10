@@ -53,6 +53,9 @@ kdewallet=Opera
 cd /media/sda4/prog/dropbox/0not_change/
 dbus-launch ../dropboxd
 
+## Video para mp3
+mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
+
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
 paste file1.txt file2.txt > fileFinal.txt
 
