@@ -171,6 +171,12 @@ cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
     #M - Megabytes (unidades de 1048576 bytes)
     #G - Gigabytes (unidades de 1073741824 bytes)
 
+## Expansão de urls encurtadas com curl
+curl -sIL short-url | grep ^Location;
+
+curl -sIL http://goo.gl/CwbmNk | grep ^Location;
+  # Location: http://www.shellhacks.com/en/HowTo-Extract-Archives-targzbz2rarzip7ztbz2tgzZ
+
 ## How to compare the content of two or more directories
     # Compare dois diretórios
     diff -qr dir1/ dir2/
@@ -357,9 +363,13 @@ $ paste arq1.txt arq2.txt
 ## MEGA-MASTERKEY.txt
     KEfQYPeq5_bODHkqUCrMhQ
 
-## Troca \n por nova linha
+## sed troca \n por nova linha
     sed 's/\\n/\
 /g'
+
+## sed inserir uma nova linha
+sed 's/regexp/\'$'\n/g'
+    # regexp:' expressão que irá trocar
 
 ## Screenshot de 5 em 5 segundo no terminal
     count=0; while ((1)); do count=$(($count+1)); import -window root -display :0 screen.$count.jpg; sleep 5; done
