@@ -6,7 +6,8 @@
 ## Processo com mais uso de MEM (Memória | memory)
     ps -aux --sort -rss | head
 
-## How to Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera, for not pop-up everytime you open them
+## How to Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera,
+    # for not pop-up everytime you open them
     # added in the end of file
         nano ~/.kde/share/config/kwalletrc
 
@@ -268,7 +269,8 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
 ## Conversão de fim de linha entre sistemas operacionais (*nix e Windows)
     # Nos sistemas *nix, o fim de linha é assinalado pelo caracter line feed,
     # logo não existe um posicionamento na primeira coluna da próxima linha.
-    # Nos sistemas Windows temos um caractere adicional no fim da linha (carriage return), que precisa ser removido
+    # Nos sistemas Windows temos um caractere adicional no fim da linha (carriage return),
+    # que precisa ser removido
 
     # DOS para Unix
         recode dos/CR-LF..l1 arquivo.txt
@@ -408,7 +410,7 @@ sed 's/regexp/\'$'\n/g'
     # regexp:' expressão que irá trocar
 
 ## Screenshot de 5 em 5 segundo no terminal
-    count=0; while ((1)); do count=$(($count+1)); import -window root -display :0 screen.$count.jpg; sleep 5; done
+    count=0; while true; do ((count++)); import -window root -display :0 screen.$count.jpg; sleep 5; done
 
 ## shellscript quantidade de parâmentros
     Quantidade de parâmetros -> $# -> echo $#
@@ -419,12 +421,12 @@ sed 's/regexp/\'$'\n/g'
 
     ## Restaurar o Grub (MBR)
     dd of=/dev/sdc if=mbr.img
-    # Lembrando que você pode usar um live cd do Linux qualquer e colocar o pendrive e usar o mbr.img que você fez backup.
+    # Use um live cd do Linux e o mbr.img que fez backup
 
-## senha aleatórias
+## Senha aleatórias
     date +%s | md5sum | base64 | head -c 10 ; echo
 
-## pasta de review ou annotations do okular
+## Pasta de review ou annotations do okular
     ~/.kde/share/apps/okular/docdata/
 
 ## Listagem ls normal > 1 2 3 4 5 6 8 9 10 11 12 13 ...
