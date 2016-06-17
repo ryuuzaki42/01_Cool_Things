@@ -15,7 +15,8 @@ kdewallet=Chromium
 kdewallet=Google Chrome
 kdewallet=Opera
 
-    # Save and exit the file. Log out and back in again for the changes to take effect, or simply enter the following into the terminal:
+    # Save and exit the file. Log out and back in again for the changes to take effect,
+    # or simply enter the following into the terminal:
     killall -9 kwalletd
 
 ## Dia que sistema foi instalado
@@ -31,11 +32,14 @@ kdewallet=Opera
 
     Onde novo.pdf é o novo arquivo que será criado e velho.pdf é o antigo, o grande.
     gs :: Ou GhostScript, um interpretador e visualizador de arquivos PS e PDF.
-    -sDEVICE :: Determina o dispositivo de saída do comando. Como estamos gerando um arquivo PDF, usaremos o dispositivo built-in pdfwrite;
-    -dCompatibilityLevel :: Determina o nível de compatibilidade do PDF. Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior. Level 1.4 por exemplo
+    -sDEVICE :: Determina o dispositivo de saída do comando. Como estamos gerando um arquivo PDF,
+        usaremos o dispositivo built-in pdfwrite;
+    -dCompatibilityLevel :: Determina o nível de compatibilidade do PDF.
+        Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior. Level 1.4 por exemplo
     já seria compatível apenas com Acrobat Reader 5 ou superior.
     -dNOPAUSE :: Desabilita o prompt (pausa) ao final de cada página processada.
-    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no interpretador gs e precisará digitar "quit" para sair. 
+    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no
+        interpretador gs e precisará digitar "quit" para sair.
 
 ## Get the users normal users
     cat /etc/passwd | grep -vE "nologin|ftp" | grep home | awk -F':' '{ print $1}'
@@ -71,7 +75,8 @@ dmidecode | more
     #Procure por "Base Board Information"
     digite /Base
 
-##  To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining, and weird sequences to do bolding:
+##  To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining,
+    # and weird sequences to do bolding:
     # man comand_to_get | col -b > comand_to_get.txt
     man ksh | col -b > ksh.txt
 
@@ -186,7 +191,11 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
     # -r, recursively compare any subdirectories found
 
 ## Remove Spotify pop-up notification when a song starts
-    Exit Spotify, then edit ~/.config/spotify/Users/[Spotify user name]-user/prefs and set ui.track_notifications_enabled=false
+    # Exit Spotify
+    # Then edit
+    ~/.config/spotify/Users/[Spotify user name]-user/prefs
+    # And set
+    ui.track_notifications_enabled=false
 
 ## Gmail list the archived emails
     has:nouserlabels -in:Sent -in:Chat -in:Draft -in:Inbox
@@ -252,19 +261,42 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
     "U"nmount  remount all filesystems read-only,
     re"B"oot
 
-    "Raising Elephants Is So Utterly Boring", "Reboot Even If System Utterly Broken" or simply the word "BUSIER" read backwards
+    "Raising Elephants Is So Utterly Boring", "Reboot Even If System Utterly Broken"
+    or simply the word "BUSIER" read backwards
+
+
+## Conversão de fim de linha entre sistemas operacionais (*nix e Windows)
+    # Nos sistemas *nix, o fim de linha é assinalado pelo caracter line feed,
+    # logo não existe um posicionamento na primeira coluna da próxima linha.
+    # Nos sistemas Windows temos um caractere adicional no fim da linha (carriage return), que precisa ser removido
+
+    # DOS para Unix
+        recode dos/CR-LF..l1 arquivo.txt
+    # Unix para Windows
+      recode l1..windows-1250
+    # Unix para DOS
+      recode l1..dos/CR-LF
+
+Para simplificar, aliases:
+  alias dos2unix='recode dos/CR-LF..l1'
+  alias unix2win='recode l1..windows-1250'
+  alias unix2dos='recode l1..dos/CR-LF'
+
+#####
 
 ## Busca em vários arquivos de texto
     # Finding all files containing a text string on Linux
     # use -w to stands match the whole word
     grep -rn 'directory~$PWD' -e "pattern"
 
-    -r or -R is recursive, -n is line number and -w stands match the whole word. -l (letter L) can be added to have just the file name.
+    -r or -R is recursive, -n is line number and -w stands match the whole word.
+    -l (letter L) can be added to have just the file name.
     Along with these, --exclude or --include parameter could be used for efficient searching. Something like below:
     grep --include=\*.{c,h} -rnw 'directory' -e "pattern"
     This will only search through the files which have .c or .h extensions. Similarly a sample use of --exclude:
     grep --exclude=*.o -rnw 'directory' -e "pattern"
-    Above will exclude searching all the files ending with .o extension. Just like exclude file its possible to exclude/include directories
+    Above will exclude searching all the files ending with .o extension.
+    Just like exclude file its possible to exclude/include directories
     through --exclude-dir and --include-dir parameter, the following shows how to integrate --exclude-dir:
     grep --exclude-dir={dir1,dir2,*.dst} -rnw 'directory' -e "pattern"
     This works for me very well, to achieve almost the same purpose like yours.
@@ -282,8 +314,10 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
 
 ## Firefox Special Paste
     Use the shortcut Ctrl + Shift + V.
-    #If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying the "Blockable Items on current page" sidebar.
-    #In this case enter "about:config" in your address bar, then search for the key "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
+    #If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying
+    # the "Blockable Items on current page" sidebar.
+    # In this case enter "about:config" in your address bar, then search for the key
+    # "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
 
 ## How can I suspend/hibernate from command line?
     #To get Hibernation
@@ -314,7 +348,8 @@ a
 2
 b
 
-    # A diretiva '\n' indica o delimitador a ser usado para concatenar o conteúdo dos arquivos. Nesse caso, foi utilizado a quebra de linha ('\n').
+    # A diretiva '\n' indica o delimitador a ser usado para concatenar o conteúdo dos arquivos.
+    # Nesse caso, foi utilizado a quebra de linha ('\n').
 
     # O comportamento padrão do comando paste é colocar as linhas dos arquivos separadas por tabulações:
 $ paste arq1.txt arq2.txt
@@ -337,7 +372,8 @@ $ paste arq1.txt arq2.txt
 
     # iwlist is seriously deprecated. Remove it from your system and never use it again.
     # Do the same with iwconfig, iwspy. Those tools are ancient and were designed in an era where 802.11n didn't exist.
-    # Kernel developers maintain a ugly compatibility layer to still support wireless-tools, and this compatibility layer often lies.
+    # Kernel developers maintain a ugly compatibility layer to still support wireless-tools,
+    # and this compatibility layer often lies.
 
 ## grep com mais de um valor
     cat file.txt | grep -E "Cell|Encryption|Quality|Last beacon|ESSID"
@@ -407,19 +443,18 @@ sed 's/regexp/\'$'\n/g'
     ls -lSrh
     ls -lXrh
 
-    opções:
-        -l :: fornece saída detalhada;
-        -S :: coloca em ordem de tamanho;
-        -r :: inverte a listagem colocando por último os maiores arquivos;
-        -h :: fornece na saída um valor melhor para ser lido por humanos.
-        -X :: ordenar em ordem alfabética
+    -l :: fornece saída detalhada
+    -S :: coloca em ordem de tamanho
+    -r :: inverte a listagem colocando por último os maiores arquivos
+    -h :: fornece na saída um valor melhor para ser lido por humanos
+    -X :: ordenar em ordem alfabética
 
 ## Ver maiores diretórios
     du -h | egrep -v "\./.+/" | sort -h
 
-    Opção do du:    -h :: fornece na saída um valor melhor para ser lido por humanos.
-    Opção do egrep: -v :: inverte o filtro, buscando por ocorrências que não possuam a expressão.
-    Opção do sort:  -h :: compara valor melhores no modo humano.
+    du:    -h :: fornece na saída um valor melhor para ser lido por humanos
+    egrep: -v :: inverte o filtro, buscando por ocorrências que não possuam a expressão
+    sort:  -h :: compara valor melhores no modo humano
 
 ## Ignorar o ping no Gnu/Linux
     sysctl -w net.ipv4.icmp_echo_ignore_all=1
@@ -467,14 +502,12 @@ sed 's/regexp/\'$'\n/g'
     http://apoie.org/JulioNeves/index.html (cadeias)
     
 ## Criar várias pastas
-i=1; while [ $i -lt 25 ]; do echo `mkdir $i` > /dev/null; i=$((i+1)); done
+    mkdir {1..25}
     # or
-mkdir {1..25}
-    # or
-mkdir folder_{1..25}
+    mkdir folder_{1..25}
 
 ## Para remover várias pastas
-rm -r {1..25}
+    rm -r {1..25}
 
 ## Setar PATH
     export PATH=$PATH:/path/to/dir
@@ -482,7 +515,8 @@ rm -r {1..25}
     export PATH=$PATH:/usr/lib64/java/bin:/usr/lib64/java/jre/bin:
 
 ## Swap em arquivo
-    # Se a máquina tem até 2GB de RAM, coloque o dobro. A partir daí, cada GB adicional de RAM é apenas RAM+2GB na swap.
+    # Se a máquina tem até 2GB de RAM, coloque o dobro.
+    # A partir daí, cada GB adicional de RAM é apenas RAM+2GB na swap.
     Vendo através do sistema de arquivos proc:
     cat /proc/swaps ou swapon -s
 
@@ -526,16 +560,18 @@ rm -r {1..25}
     i=1; while [ $i -lt 25 ]; do mv $i.* $i; i=$((i+1)); done
 
 ## Renomear arquivos
-    #i=1; extensao=srt; while [ $i -lt 25 ]; do mv *S01E0$i*.$extensao $i.$extensao; i=$((i+1)); done
-
     ## >> *$igual0$i*.$extensao == *S01E0(i)*.srt
-    i=1; igual=S01E; extensao=srt; while [ $i -lt 25 ]; do if [ $i -lt 10 ]; then mv *$igual"0"$i*.$extensao $i.$extensao; else mv *$igual$i*.$extensao $i.$extensao; fi; i=$((i+1)); done
-
-    i=1; igual=PREACHER; extensao=JPG; while [ $i -lt 30 ]; do if [ $i -lt 10 ]; then mv *$igual*"0"$i*.$extensao $i".jpg"; else mv *$igual*$i*.$extensao $i".jpg"; fi; i=$((i+1)); done
-
-    rm Thumbs.db; i=1; igual=PREACHER; extensao=JPG; while [ $i -lt 30 ]; do if [ $i -lt 10 ]; then mv *$igual*"0"$i*.$extensao $i".jpg"; else mv *$igual*$i*.$extensao $i".jpg"; fi;  i=$((i+1)); done
-
-    i=42; igual=Preacher; while [ $i -lt 51 ]; do mv $igual*$i $i; i=$((i+1)); done
+    i=1
+    igual=S01E
+    extensao=srt
+    while [ $i -lt 25 ]; do
+        if [ $i -lt 10 ]; then
+            mv *$igual"0"$i*.$extensao $i.$extensao
+        else
+            mv *$igual$i*.$extensao $i.$extensao
+        fi
+        i=$((i+1))
+    done
 
 ## Zipar vários arquivos
     i=1; while [ $i -lt 50 ]; do zip -r $i.zip $i; i=$((i+1)); done
@@ -544,7 +580,7 @@ rm -r {1..25}
     file --mime-encoding nome_do_arquivo
 
 ## Selecionar e renomear vários arquivos, copiando para outra pasta
-    i=1;for arq in hone/l/imagem/*/* ; do cp $arq a/$i.jpg; i=$(($i+1));done 
+    i=1;for arq in hone/l/imagem/*/* ; do cp $arq a/$i.jpg; i=$(($i+1));done
 
 ## Converter UTF-8 para ISO-8859-1
     iconv -f codificacao_de_origem -t codificacao_de_saida arquivo
@@ -559,7 +595,8 @@ rm -r {1..25}
 ## Juntar pdf #precisa do pdftk
     pdftk arquivo1.pdf arquivo2.pdf cat output arquivo1e2.pdf
 
-## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha. Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
+## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha
+    # Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
     # qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
     qpdf --password= --decrypt pretextual.pdf pretextual2.pdf
 
@@ -595,42 +632,50 @@ gtk-fallback-icon-theme = gnome
     -d delimitador
     -fX número X referente a coluna que quer
 
-## Trocar nome dos arquivo de iso88591 para utf8 
+## Trocar nome dos arquivo de iso88591 para utf8
     # Apenas testa
-    convmv -f iso88591 -t utf8 -r nome_pasta 
+    convmv -f iso88591 -t utf8 -r nome_pasta
 
     ## Troca realmente
     convmv -f iso88591 -t utf8 -r nome_pasta --notest
         -f : diz qual que é a codificação que o arquivo está no momento (from)
         -t : diz qual é a codificação que o arquivo deverá ficar (to)
-        -r : usada para alterar a codificação dos arquivos de dentro da pasta, recursivamente. Se você for alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
+        -r : usada para alterar a codificação dos arquivos de dentro da pasta, recursivamente.
+            Se você for alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
         nome_pasta : o nome da pasta ou arquivo cuja codificação será alterada.
     O comando anterior apenas simulará o resultado da codificação e exibirá na tela.
-    Caso esteja tudo correto, então aplique os resultados rodando o comando novamente, acrescido da opção --notest (são dois traços). 
+    Caso esteja tudo correto, então aplique os resultados rodando o comando novamente,
+    acrescido da opção --notest (são dois traços)
 
 ## Criando uma imagem ISO
-    O mkisofs permite criar imagens ISO a partir de um diretório no HD. O “mk” vem de make, 
-    ou seja, criar. O “iso” vem de imagem ISO, enquanto o “fs” vem de sistemas de arquivos. Ou seja, o 
-    nome mkisofs descreve bem o uso do programa, que é criar sistemas de arquivo ISO.
+    O mkisofs permite criar imagens ISO a partir de um diretório no HD. O “mk” vem de make,
+    ou seja, criar. O “iso” vem de imagem ISO, enquanto o “fs” vem de sistemas de arquivos
+    Ou seja, o nome mkisofs descreve bem o uso do programa, que é criar sistemas de arquivo ISO
 
     mkisofs -pad -r -J -o nome_do_arquivo.iso /diretorio_de_origem/
 
     * mkisofs : é o comando que chama o programa
-    * -r : permite que qualquer cliente possa ler o conteúdo do arquivo. Evita problemas ao tentar ler o arquivo no Windows
-    * -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet.
+    * -r : permite que qualquer cliente possa ler o conteúdo do arquivo
+        Evita problemas ao tentar ler o arquivo no Windows
+    * -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet
     * -o : Especifica o nome do arquivo ISO que será criado
-    * -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux;
-    * -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
+    * -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux
+    * -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS
+        não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
     * -V especifica uma identificação para o CD (rótulo);
-    * -v caso seja esta opção acionada, serão exibidas em seu vídeo todas informações que saírem do mkisofs;
-    * nome_do_arquivo.iso : O nome do arquivo propriamente dito. Não se esqueça de sempre incluir a extensão .iso. 
-    O arquivo é sempre gravado no diretório corrente.
-    * -pad este parâmetro é necessário em muitos OSs, inclusive no Linux, ele é acionado para evitar erros de entrada e saída;
-    * /diretório_de_origem/ : O diretório onde estão os arquivos que serão incluídos na imagem. É possível especificar vários 
-    diretórios separados por espaços, como em: /home/ecouto/testes/ /home/ecouto/arquivos/ 
+    * -v caso seja esta opção acionada, serão exibidas em seu vídeo todas informações que saírem do mkisofs
+    * nome_do_arquivo.iso : O nome do arquivo propriamente dito. Não se esqueça de sempre incluir a extensão .iso
+    O arquivo é sempre gravado no diretório corrente
+    * -pad este parâmetro é necessário em muitos OSs, inclusive no Linux,
+         ele é acionado para evitar erros de entrada e saída
+    * /diretório_de_origem/ : O diretório onde estão os arquivos que serão incluídos na imagem
+        É possível especificar vários diretórios separados por espaços, como em:
+        /home/ecouto/testes/ /home/ecouto/arquivos/
 
 ## Mplayer e suas loucuras! imagem da webcam com efeito MATRIX
-    mplayer -fps 30 -vo matrixview -cache 128 -framedrop -vo matrixview driver=v412:width=640:height=480:device= /dev/video0 tv:// 
+    # Em uma linha apenas
+    mplayer -fps 30 -vo matrixview -cache 128
+        -framedrop -vo matrixview driver=v412:width=640:height=480:device= /dev/video0 tv://
 
 ## Apagar os arquivos definitivamente e/ou sobrescrever
     shred -n 3 -z file.ext
@@ -640,7 +685,7 @@ gtk-fallback-icon-theme = gnome
         -z - significa que o último padrão a ser gravado será zero
 
 ## Personalizando o terminal bash do Linux
-    opções disponíveis no PS1, cabe depois escolher e aplicar no script em shell no seu local ($HOME/.bashrc e /root.bashrc).
+    # opções disponíveis no PS1, aplicar no script em shell no seu local ($HOME/.bashrc e /root.bashrc)
 
     $PS1 é o prompt de comando
     $PS2 é solicitado quando um comando exige mais de uma linha
@@ -696,7 +741,7 @@ gtk-fallback-icon-theme = gnome
 
 # No bash
     # redirecionamento de entrada inline (<<) proxima palavra delimitador (comum EOF)
-    c=`bc << EOF 
+    c=`bc << EOF
     scale=2
     d=2
     e=(d + 2)
@@ -722,7 +767,7 @@ gtk-fallback-icon-theme = gnome
     # resultado: Olá como vai
 
 ## Remover caracteres de uma string
-    echo "Olá.como.vai" | tr  -d "." 
+    echo "Olá.como.vai" | tr -d "."
     # resultado: Olácomovai
 
 ## Usando select
@@ -731,7 +776,7 @@ gtk-fallback-icon-theme = gnome
     select var in "Linux" "Gnu Hurd" "Free BSD" "Other"; do
     break
     done
-    echo "Você selecionou $var" 
+    echo "Você selecionou $var"
 
 ## Converter imagem em pdf
     convert *.jpg output.pdf
@@ -748,7 +793,7 @@ gtk-fallback-icon-theme = gnome
 
     No Gnu/Linux para montar a pasta
     mount -t vboxsf nome_pasta_compartilhada /media/nome_pasta
-    ex:  mount -t vboxsf sda2 /media/sf_sda2/
+    ex: mount -t vboxsf sda2 /media/sf_sda2/
 
 ## Teste Capture som
     arecord | aplay
@@ -760,7 +805,7 @@ gtk-fallback-icon-theme = gnome
     ntpdate -u -b bonehed.lcs.mit.edu
     ntpdate -u -b ntp.usp.br
 
-## Comentário shell script várias: 
+## Comentário shell script várias
     : '
     Linha1 comentada
     Linha2 comentada
@@ -843,24 +888,25 @@ gtk-fallback-icon-theme = gnome
     bcdedit /set {default} bootmenupolicy standard
   
 ## Remover vírus o Recycler bin
-    # http://www.artigonal.com/seguranca-artigos/como-remover-o-virus-recycler-que-transforma-pastas-em-atalho-e-como-recuperar-seus-arquivos-novamente-6387104.html
-    attrib -a -h -r -s /s /d *.* # dentro da unidade.
+    # Link: (http://www.artigonal.com/seguranca-artigos/como-remover-o-virus-recy
+    # cler-que-transforma-pastas-em-atalho-e-como-recuperar-seus-arquivos-novamente-6387104.html)
+    attrib -a -h -r -s /s /d *.* # dentro da unidade
 
-    -R (limpa o Atributo de arquivo somente leitura.)
-    -A (limpa o Atributo de arquivo morto.)
-    -S (limpa o Atributo de arquivo de sistema.)
-    -H (limpa o Atributo de arquivo oculto.)
+    -R Limpa o Atributo de arquivo somente leitura
+    -A Limpa o Atributo de arquivo morto
+    -S Limpa o Atributo de arquivo de sistema
+    -H Limpa o Atributo de arquivo oculto
     /s Processa os arquivos correspondentes na pasta atual
-    /d Inclui pastas no processamento.
+    /d Inclui pastas no processamento
 
-## hibernação / hibernation
-    #Disable
+## Hibernação / hibernation
+    # Disable
     powercfg.exe /hibernate off
 
-    #Enable
+    # Enable
     powercfg.exe /hibernate on
 
-## How to install fonts in Slackware.
+## How to install fonts in Slackware
     # move your fonts (*.ttf) to “/usr/share/fonts/TTF”
     # run those commands in “/usr/share/fonts” - root
     mkfontscale
@@ -871,32 +917,32 @@ gtk-fallback-icon-theme = gnome
     sudo passwd root
 
 ## Mysql no Slackware
-    # Para instalar a base de dados digite:
+    # Para instalar a base de dados
     mysql_install_db
 
-    # Necessário mudar as permissões do diretório inicial e assim o sock será gerado:
+    # Necessário mudar as permissões do diretório inicial e assim o sock será gerado
     chown -R mysql.mysql /var/lib/mysql
 
-    #Para iniciar o MySQL:
+    #Para iniciar o MySQL
     mysqld_safe &
 
-    #Para definir a senha de root/administrador dos bancos de dados:
+    #Para definir a senha de root/administrador dos bancos de dados
     mysqladmin -u root password <escolha uma senha>
 
     #Logando no MySQL:
     mysql -u root -p
 
-#Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
-#Include /etc/apache/mod_php.conf
+# Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
+# Include /etc/apache/mod_php.conf
 
-    #Inicie o seu Apache com o seguinte comando:
+    # Inicie o seu Apache
     /usr/sbin/apachectl start
 
-    #Teste
+    # Teste
     touch /var/www/htdocs/infophp.php
     echo "<?php phpinfo(); ?>" > /var/www/htdocs/infophp.php
 
-    #URL:
+    # URL:
     http://localhost/infophp.php
 
 #
