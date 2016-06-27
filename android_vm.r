@@ -15,7 +15,7 @@
 
     # Check your VM name and add a new resolution:
     VBoxManage setextradata "[YourVmNameHere]" "CustomVideoMode1" "800x480x16"
-        # VBoxManage setextradata "Android-x86 4.4-r4-disk1" "CustomVideoMode1" "1366x768x16"
+        # VBoxManage setextradata "Android-x86 4.4-r4" "CustomVideoMode1" "1366x768x16"
 
      # Change the android load resolution
      Load VM in (Debub video=LVDS-1:d)
