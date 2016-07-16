@@ -201,6 +201,11 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
 ## Gmail list the archived emails
     has:nouserlabels -in:Sent -in:Chat -in:Draft -in:Inbox
 
+    # Mais que 10m e mais de 1 ano
+    larger:10m older_than:1y
+
+    # https://support.google.com/mail/answer/7190
+
 ## Change size monitor
     xrandr --output LVDS1 --mode 1024x768
     xrandr --output LVDS1 --mode 1366x768
