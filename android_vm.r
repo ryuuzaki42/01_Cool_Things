@@ -24,6 +24,7 @@
      mount /dev/sda1 /mnt
 
      # Edit the file /mnt/grub/menu.lst
+     # ç is ;
      vi /mnt/grub/menu.lst
 
      # And added in the frist kernel load entrer after android_x86
