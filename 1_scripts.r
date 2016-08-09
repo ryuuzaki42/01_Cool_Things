@@ -1,4 +1,4 @@
-##   Script.r   ##
+    ##   Script.r   ##
 
 ## Processo com mais uso de CPU
     ps -aux --sort=-pcpu | head
@@ -6,15 +6,12 @@
 ## Processo com mais uso de MEM (Memória | memory)
     ps -aux --sort -rss | head
 
-## How to Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera,
-    # for not pop-up everytime you open them
-    # added in the end of file
-        nano ~/.kde/share/config/kwalletrc
+## Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera
+    # for not pop-up everytime you open them added in the end of file
+    nano ~/.kde/share/config/kwalletrc
 
 [Auto Deny]
-kdewallet=Chromium
-kdewallet=Google Chrome
-kdewallet=Opera
+kdewallet=Chromium,Opera,Chrome
 
     # Save and exit the file. Log out and back in again for the changes to take effect,
     # or simply enter the following into the terminal:
@@ -67,16 +64,16 @@ paste file1.txt file2.txt > fileFinal.txt
 ## Wget
     wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
 
-# Descobrir a placa-mãe sem programa
+## Descobrir a placa-mãe sem programa
     # No Windows, no CMD
-wmic baseboard get product,manufacturer
+    wmic baseboard get product,manufacturer
 
     # No Gnu/Linux, como root
-dmidecode | more
+    dmidecode | more
     #Procure por "Base Board Information"
     digite /Base
 
-##  To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining,
+## To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining,
     # and weird sequences to do bolding:
     # man comand_to_get | col -b > comand_to_get.txt
     man ksh | col -b > ksh.txt
@@ -163,7 +160,7 @@ cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
     #or
     iline=10; fline=20; cat -n file.txt | sed -n -e "$iline,$fline p" -e "$iline q"
     #or
-    iline=10; fline=20; cat -n vehDist.ini | head -$fline  | tail -$iline
+    iline=10; fline=20; cat -n vehDist.ini | head -$fline | tail -$iline
     #or
     iline=10; fline=20; head -$fline file.txt | tail -$iline
 
@@ -260,11 +257,11 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
     echo 1 > /proc/sys/kernel/sysrq
 
     # Keys
-    un"R"aw      take control of keyboard back from X,
+    un"R"aw take control of keyboard back from X,
     t"E"rminate send SIGTERM to all processes, allowing them to terminate gracefully,
-    k"I"ll      send SIGKILL to all processes, forcing them to terminate immediately,
-    "S"ync     flush data to disk,
-    "U"nmount  remount all filesystems read-only,
+    k"I"ll send SIGKILL to all processes, forcing them to terminate immediately,
+    "S"ync flush data to disk,
+    "U"nmount remount all filesystems read-only,
     re"B"oot
 
     "Raising Elephants Is So Utterly Boring", "Reboot Even If System Utterly Broken"
@@ -278,18 +275,16 @@ curl -sIL http://goo.gl/CwbmNk | grep ^Location;
     # que precisa ser removido
 
     # DOS para Unix
-        recode dos/CR-LF..l1 arquivo.txt
+    recode dos/CR-LF..l1 arquivo.txt
     # Unix para Windows
-      recode l1..windows-1250
+    recode l1..windows-1250
     # Unix para DOS
-      recode l1..dos/CR-LF
+    recode l1..dos/CR-LF
 
-Para simplificar, aliases:
-  alias dos2unix='recode dos/CR-LF..l1'
-  alias unix2win='recode l1..windows-1250'
-  alias unix2dos='recode l1..dos/CR-LF'
-
-#####
+    # Para simplificar, aliases:
+alias dos2unix='recode dos/CR-LF..l1'
+alias unix2win='recode l1..windows-1250'
+alias unix2dos='recode l1..dos/CR-LF'
 
 ## Busca em vários arquivos de texto
     # Finding all files containing a text string on Linux
@@ -459,9 +454,9 @@ sed 's/regexp/\'$'\n/g'
 ## Ver maiores diretórios
     du -h | egrep -v "\./.+/" | sort -h
 
-    du:    -h :: fornece na saída um valor melhor para ser lido por humanos
+    du: -h :: fornece na saída um valor melhor para ser lido por humanos
     egrep: -v :: inverte o filtro, buscando por ocorrências que não possuam a expressão
-    sort:  -h :: compara valor melhores no modo humano
+    sort: -h :: compara valor melhores no modo humano
 
 ## Ignorar o ping no Gnu/Linux
     sysctl -w net.ipv4.icmp_echo_ignore_all=1
@@ -507,7 +502,7 @@ sed 's/regexp/\'$'\n/g'
 
     # Link:
     http://apoie.org/JulioNeves/index.html (cadeias)
-    
+
 ## Criar várias pastas
     mkdir {1..25}
     # or
@@ -559,7 +554,7 @@ sed 's/regexp/\'$'\n/g'
     sysctl –p
 
 ## Kali Linux teclado abnt2 pt-br
-  sudo setxkbmap -model abnt2 -layout br -variant abnt2
+    sudo setxkbmap -model abnt2 -layout br -variant abnt2
 
 ## Mover para pastas
     i=1; while [ $i -lt 25 ]; do mv *S02E$i* $i; i=$((i+1)); done
@@ -593,7 +588,7 @@ sed 's/regexp/\'$'\n/g'
     iconv -f codificacao_de_origem -t codificacao_de_saida arquivo
     iconv -f utf-8 -t iso-8859-1 arquivo
 
-    ## Converter ISO-8859-1  para UTF-8
+    ## Converter ISO-8859-1 para UTF-8
     iconv -f iso-8859-1 -t utf-8 arquivo
 
     ## Necessário redirecionar a saida de arquivo para algum lugar
@@ -633,7 +628,7 @@ gtk-fallback-icon-theme = gnome
     gtk-update-icon-cache /usr/share/icons/hicolor
 
 ## Pegar pedaço de uma string ou cortar string
-    cut  -c1-3   # pimeiro até o 3 caracteres
+    cut -c1-3 # pimeiro até o 3 caracteres
 
     cut -d ';' -f2 tabela.txt
     -d delimitador
@@ -893,7 +888,7 @@ gtk-fallback-icon-theme = gnome
 
     # Desabilitar F8
     bcdedit /set {default} bootmenupolicy standard
-  
+
 ## Remover vírus o Recycler bin
     # Link: (http://www.artigonal.com/seguranca-artigos/como-remover-o-virus-recy
     # cler-que-transforma-pastas-em-atalho-e-como-recuperar-seus-arquivos-novamente-6387104.html)
