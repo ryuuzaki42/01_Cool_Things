@@ -1,4 +1,5 @@
-##
+        ## rsync ##
+
 rsync option source-directory destination-directory
 
 ## Test "See changes"
@@ -44,7 +45,6 @@ rsync -a dir1/ dir2
     Rsync provides a method for doing this by passing the -n or --dry-run options. The -v flag (for verbose) is also necessary to get the appropriate output:
 
 rsync -anv dir1/ dir2
-
 
 ## Full sync
     In order to keep two directories truly in sync, it is necessary to delete files from the destination directory if they are removed from the source.
