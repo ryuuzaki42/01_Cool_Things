@@ -15,6 +15,10 @@ Delete lines that contain pattern:
 Delete all empty lines:
 :g/^$/d
 
+To quit the vi editor without saving any changes you''ve made:
+If you are currently in insert or append mode, press Esc.
+q!
+
 Delete lines in range that contain pattern:
 :20,30/pattern/d
 or with marks a and b:
