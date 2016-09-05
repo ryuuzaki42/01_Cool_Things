@@ -32,7 +32,7 @@ cpufreq-set --cpu 2 --governor performance
 cpufreq-set --cpu 3 --governor performance
 #
 
-##Kernel Generic
+## Kernel Generic
     link: https://www.vivaolinux.com.br/artigo/Guia-pos-instalacao-do-Slackware/?pagina=2
         #/usr/share/mkinitrd/mkinitrd_command_generator.sh
     /usr/share/mkinitrd/mkinitrd_command_generator.sh | grep mkinitrd | grep -v command | /bin/bash
@@ -40,7 +40,7 @@ cpufreq-set --cpu 3 --governor performance
     nano /etc/lilo.conf
     lilo
 
-## Mouse:
+## Touchpad de apenas uma parte/peça
     nano /etc/X11/xorg.conf
 
 Section "InputClass"
@@ -56,7 +56,7 @@ EndSection
 
     update-mime-database /usr/share/mime
 
-    ## if unknown (Unknown media type in type ...)
+    ## If unknown (Unknown media type in type ...)
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
 
@@ -118,7 +118,7 @@ EndSection
 ## Ver valor de swappiness atual
     cat /proc/sys/vm/swappiness
 
-    ##To temporarily set the swappiness value:
+    ## To temporarily set the swappiness value
     sysctl -w vm.swappiness=10
 
     ## To set the swappiness value permanently, edit a sysctl configuration file
