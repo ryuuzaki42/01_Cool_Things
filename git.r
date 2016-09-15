@@ -63,4 +63,7 @@
     # Step2: git commit and add comments
     git commit -m "rename oldfile to newfile"
 
+## Visualizar mudanças em arquivo em função de palavras # diff by word
+    git diff --word-diff
+
 #
