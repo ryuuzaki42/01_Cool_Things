@@ -115,6 +115,30 @@ paste file1.txt file2.txt > fileFinal.txt
     ## To test the display
     xclock &
 
+## Warning packages removed Slackware
+    removepkg *z | grep -E "WARNING|Removing package"
+
+    TMPFILE=`mktemp`; removepkg *z | tee $TMPFILE; echo -e "\n\n\t$TMPFILE\n"; cat $TMPFILE | grep -E "WARNING|Removing package"
+    # remove the file after?
+    rm $TMPFILE
+
+## Count files in the folder
+    countFiles=`ls -la | cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
+
+## Count files of one type in the folder
+    fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
+
+## Convet entire playlist from flac, oog, flac to mp3
+    # 320 k
+    for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" -ab 320k "${f%.m4a}.mp3"; done
+
+    # normal (small files)
+    for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" "${f%.m4a}.mp3"; done
+
+## Remove part of the name of files
+    #To temove extra.test
+    rename "extra.test" "" *
+
 ## Access ssh X11 on Windows
     ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
     X11Forwarding yes
