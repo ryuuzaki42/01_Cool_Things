@@ -66,4 +66,11 @@
 ## Visualizar mudanças em arquivo em função de palavras # diff by word
     git diff --word-diff
 
+## Mostrar branch
+    git show-branch -a
+    # or
+    git branch -a
+
+## Enviar commit
+    git push origin master
 #
