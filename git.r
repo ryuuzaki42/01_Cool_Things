@@ -73,4 +73,24 @@
 
 ## Enviar commit
     git push origin master
+
+## Verificar se o repositório remoto está mais atualizado que o local
+    ## Para atualiza a lista de commits do repositório remoto
+    git remote update
+
+    ## Para verficar os commits
+    git status
+    # git status -uno
+
+    ## Ver mudanças
+    git diff origin/master
+
+    ## Download das modificações e faz o merge
+    # teste
+    git pull --dry-run
+    # run
+    git pull
+
+    ## Download das modificações e NÃO faz o merge
+    git fetch
 #
