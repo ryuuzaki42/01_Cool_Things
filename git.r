@@ -93,4 +93,8 @@
 
     ## Download das modificações e NÃO faz o merge
     git fetch
+
+## Mostra os arquivos que não estão sendo rastreados (uso do .gitignore)
+    git status --ignored --untracked-files=all
+
 #
