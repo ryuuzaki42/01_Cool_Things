@@ -96,3 +96,8 @@
 
 ## Mostra os arquivos que não estão sendo rastreados (uso do .gitignore)
     git status --ignored --untracked-files=all
+
+## cleanup unnecessary files and optimize the local repository
+    git gc
+    #or
+    git gc --aggressive
