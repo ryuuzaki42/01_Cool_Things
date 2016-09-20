@@ -155,5 +155,3 @@
 
 ## Somes good infos
     https://sites.google.com/site/easylinuxtipsproject/mint-mate-first
-
-#

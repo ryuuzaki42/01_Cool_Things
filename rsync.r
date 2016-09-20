@@ -52,5 +52,3 @@ rsync -anv dir1/ dir2
     We can change this behavior with the --delete option. Before using this option, use the --dry-run option and do testing to prevent data loss:
 
 rsync -a --delete source destination
-
-#

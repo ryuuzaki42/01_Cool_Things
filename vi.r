@@ -160,5 +160,3 @@ in 2html.sh put:
 vim -n -c ':so $VIMRUNTIME/syntax/2html.vim' -c ':wqa' $1 > /dev/null 2> /dev/null
 
 Now just run:  shell> 2html.sh foo.py
-
-#

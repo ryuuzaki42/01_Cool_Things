@@ -34,5 +34,3 @@ echo 0 > /sys/class/backlight/acpi_video0/brightness
 
     ## ksnapshot
     slackpkg install ksnapshot libkipi
-
-#

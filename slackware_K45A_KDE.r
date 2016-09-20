@@ -161,5 +161,3 @@ MIRRORPLUS['restricted']=http://slackware.uk/people/alien/restricted_sbrepos/14.
 #MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.1/
 MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.1/x86_64/
 #
-
-#

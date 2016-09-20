@@ -29,4 +29,3 @@
 
      # And added in the frist kernel load entrer after android_x86
      UVESA_MODE=1366x768 DPI=160
-#

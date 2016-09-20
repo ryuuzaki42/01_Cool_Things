@@ -970,5 +970,3 @@ gtk-fallback-icon-theme = gnome
 
     # URL:
     http://localhost/infophp.php
-
-#
