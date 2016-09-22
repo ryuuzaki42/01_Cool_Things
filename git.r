@@ -101,3 +101,8 @@
     git gc
     #or
     git gc --aggressive
+
+## Adicione um repositório remoto
+    # git remote add origin https://github.com/ryuuzaki42/0txt.git
+    # origin is just the commum name for the link config
+    git remote add origin link
