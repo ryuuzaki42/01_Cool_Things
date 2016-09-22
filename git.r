@@ -106,3 +106,9 @@
     # git remote add origin https://github.com/ryuuzaki42/0txt.git
     # origin is just the commum name for the link config
     git remote add origin link
+
+## Clone one repository
+    git clone link-repository
+
+    ## Clone a specific Git branch
+    git clone -b <branch> <remote_repo>
