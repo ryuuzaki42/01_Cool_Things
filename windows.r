@@ -27,4 +27,3 @@ powercfg.exe /hibernate off
 ## Get the motherboard from CMD
     # Descobrir a placa-mãe através do CMD
 wmic baseboard get product,manufacturer
-
