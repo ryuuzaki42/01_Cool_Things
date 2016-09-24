@@ -143,6 +143,13 @@ paste file1.txt file2.txt > fileFinal.txt
     #To temove extra.test
     rename "extra.test" "" *
 
+## pdf to txt
+	# need poppler package
+    pdftotext input.pdf output.txt
+
+    # or with -layout to keep the layout
+    pdftotext -layout input.pdf output.txt
+
 ## Access ssh X11 on Windows
     ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
     X11Forwarding yes
