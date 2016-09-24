@@ -53,6 +53,7 @@ https://addons.mozilla.org/en-US/firefox/addon/gnotifier/
     > Notification expiration
 https://addons.mozilla.org/pt-br/firefox/addon/google-br/
     > Change the search
+https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher-firefox/
 
     ## desabilitado
 https://addons.mozilla.org/en-us/firefox/addon/behind_the_overlay/
