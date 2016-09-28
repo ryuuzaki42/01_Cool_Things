@@ -58,6 +58,13 @@ dbus-launch ../dropboxd
 ## Video para mp3
 mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
 
+## Size of a directory/folder on the command line
+    du -sh
+    # or
+    du -sh folder
+    # -s, --summarize display only a total for each argument
+    # -h, --human-readable print sizes in human readable format (e.g., 1K 234M 2G)
+
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
 paste file1.txt file2.txt > fileFinal.txt
 
