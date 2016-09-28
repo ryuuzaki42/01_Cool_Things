@@ -52,7 +52,10 @@ EndSection
 ## Dolphin disable executable shellscript, perl, ruby, pyton
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
-    procure pelas linguagens e comente <!-- <sub-class-of type="application/x-executable"/> -->
+    Procure pelas linguagens e comente:
+
+    <sub-class-of type="application/x-executable"/> to <!-- <sub-class-of type="application/x-executable"/> --> # "
+    <sub-class-of type='application/x-executable'/> to <!-- <sub-class-of type='application/x-executable'/> --> # '
 
     update-mime-database /usr/share/mime
 
@@ -87,7 +90,12 @@ EndSection
     slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
 
 ## Remover servidor x
+    # Remove all another X (leave KDE and XFCE)
     slackpkg remove twm blackbox fluxbox windowmaker fvwm
+
+    # Leave twm and windowmaker # Safe propose
+    slackpkg remove blackbox fluxbox fvwm
+
     ## xwmconfig
 
 ## Remover kopote
