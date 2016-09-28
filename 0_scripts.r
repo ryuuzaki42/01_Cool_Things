@@ -144,7 +144,7 @@ paste file1.txt file2.txt > fileFinal.txt
     rename "extra.test" "" *
 
 ## pdf to txt
-	# need poppler package
+    # need poppler package
     pdftotext input.pdf output.txt
 
     # or with -layout to keep the layout
@@ -176,11 +176,30 @@ paste file1.txt file2.txt > fileFinal.txt
     ## export the display
     export DISPLAY=192.168.0.13:0.0
 
-    ## To test the display
+    ## Test the display
     xclock &
+
+## sed
+    echo "TV" | sed 's/TV/tv/g'
+
+## sed troca \n por nova linha
+    sed 's/\\n/\
+/g'
+
+## sed inserir uma nova linha
+	sed 's/regexp/\'$'\n/g'
+    # regexp:' expressão que irá trocar
 
 ## RedShift GUI Error
     sed -i 's/|/,/g' ~/.redshiftgrc
+
+## Remove all possible spaces at the end of the line
+	sed 's/ *$//' file
+	# to write in the same file
+	sed -i 's/ *$//' file
+
+## Using the [:blank:] class you are removing spaces and tabs
+	sed 's/[[:blank:]]*$//' file
 
 ## Linux echo only some lines
 a=`screenfetch -E`
@@ -436,14 +455,6 @@ $ paste arq1.txt arq2.txt
 ## MEGA-MASTERKEY.txt
     KEfQYPeq5_bODHkqUCrMhQ
 
-## sed troca \n por nova linha
-    sed 's/\\n/\
-/g'
-
-## sed inserir uma nova linha
-sed 's/regexp/\'$'\n/g'
-    # regexp:' expressão que irá trocar
-
 ## Screenshot de 5 em 5 segundo no terminal
     count=0; while true; do ((count++)); import -window root -display :0 screen.$count.jpg; sleep 5; done
 
@@ -637,9 +648,6 @@ sed 's/regexp/\'$'\n/g'
     # qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
     qpdf --password= --decrypt pretextual.pdf pretextual2.pdf
 
-## sed
-    echo "TV" | sed 's/TV/tv/g'
-
 ## contar caracteres
     wc -m
 
@@ -776,7 +784,7 @@ gtk-fallback-icon-theme = gnome
     echo "scale=2; 10/3" | bc
     scale=> quantas casas decimais.
 
-# No bash
+    ## No bash
     # redirecionamento de entrada inline (<<) proxima palavra delimitador (comum EOF)
     c=`bc << EOF
     scale=2
