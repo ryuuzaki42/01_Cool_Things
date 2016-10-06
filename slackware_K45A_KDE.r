@@ -102,26 +102,32 @@ EndSection
     slackpkg remove kdenetwork
 
 ## Outros
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf baloo baloo-widgets tetex tetex-doc
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc
+
+    # Dolphin need baloo baloo-widgets
 
 ## Swap em arquivo
     # 8 GiB = 8192
-    # 6 GiB = 6144
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=8192
 
+    # 6 GiB = 6144
     dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=6144
+
+    # 2 GiB = 2048
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=2048
+
     mkswap /home/j/swapfile.img
     nano /etc/fstab
 
-#
 /home/j/swapfile.img swap         swap        defaults         0   0
-#
+
 #/media/sda4/prog/swapfile.img swap swap       defaults        0   0
-#
 
     swapon -a
 
-    # Se apresener "erro" de permissões de acesso
-    chmod 600 swapfile.img
+    ## warnings
+    chmod 0600 /home/j/swapfile.img
+    chown root /home/j/swapfile.img
 
 ## Ver valor de swappiness atual
     cat /proc/sys/vm/swappiness
