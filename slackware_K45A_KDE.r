@@ -102,7 +102,7 @@ EndSection
     slackpkg remove kdenetwork
 
 ## Outros
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf baloo baloo-widgets tetex tetex-doc
 
 ## Swap em arquivo
     # 8 GiB = 8192
