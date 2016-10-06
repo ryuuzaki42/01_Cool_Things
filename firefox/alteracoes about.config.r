@@ -54,6 +54,7 @@ https://addons.mozilla.org/en-US/firefox/addon/gnotifier/
 https://addons.mozilla.org/pt-br/firefox/addon/google-br/
     > Change the search
 https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher-firefox/
+https://addons.mozilla.org/en-uS/firefox/addon/video-blocker/
 
     ## desabilitado
 https://addons.mozilla.org/en-us/firefox/addon/behind_the_overlay/
