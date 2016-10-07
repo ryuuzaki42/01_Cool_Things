@@ -93,8 +93,8 @@ EndSection
     # Remove all another X (leave KDE and XFCE)
     slackpkg remove twm blackbox fluxbox windowmaker fvwm
 
-    # Leave twm and windowmaker # Safe propose
-    slackpkg remove blackbox fluxbox fvwm
+    # Leave fluxbox # Safe propose
+    slackpkg remove twm blackbox windowmaker fvwm
 
     ## xwmconfig
 
