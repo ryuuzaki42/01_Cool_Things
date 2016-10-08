@@ -18,19 +18,27 @@
     kdesu kwrite /usr/share/polkit-1/actions/org.freedesktop.upower.policy
     <allow_active>yes</allow_active> yes >> no
 
-## rc.local 
-echo 0 > /sys/class/backlight/acpi_video0/brightness
-#
-echo -e "\n\nOi\nComo vai?\n\n"
-#
+## rc.local
+  #echo 0 > /sys/class/backlight/acpi_video0/brightness
+
+##
+echo 500 > /sys/class/backlight/intel_backlight/brightness
+##
+echo -e "\n\n##############"
+echo "# HAPPY! :-) #"
+echo "##############"
+##
 unicode_start
-#http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
-#ver governor # cpufreq-info
-cpufreq-set --cpu 0 --governor performance
-cpufreq-set --cpu 1 --governor performance
-cpufreq-set --cpu 2 --governor performance
-cpufreq-set --cpu 3 --governor performance
-#
+##
+## http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
+## Ver governor # cpufreq-info
+#cpufreq-set --cpu 0 --governor performance
+#cpufreq-set --cpu 1 --governor performance
+#cpufreq-set --cpu 2 --governor performance
+#cpufreq-set --cpu 3 --governor performance
+##
+/usr/bin/brightness_min_set_JBs.sh &
+##
 
 ## Kernel Generic
     link: https://www.vivaolinux.com.br/artigo/Guia-pos-instalacao-do-Slackware/?pagina=2
@@ -71,7 +79,7 @@ EndSection
 ## Instalar
     slackpkg install cabextract flash-player-plugin p7zip unrar cdrkit chrome
 
-    #http://slackware.org.uk/slacky/slackware-14.1/system/microsoft-fonts-ttf/
+    # http://slackware.org.uk/slacky/slackware-14.1/system/microsoft-fonts-ttf/
     slackpkg install microsoft-fonts
 
     slackpkg install icedtea-web libreoffice-4.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
@@ -137,7 +145,7 @@ EndSection
 
     ## To set the swappiness value permanently, edit a sysctl configuration file
     nano /etc/sysctl.conf
-    ##Adicionar no arquivo -> vm.swappiness=10
+    ## Adicionar no arquivo -> vm.swappiness=10
     carregar o configuração padrão/permanente
     sysctl –p
 
