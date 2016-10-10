@@ -107,10 +107,16 @@ EndSection
     ## xwmconfig
 
 ## Remover kopote
-    slackpkg remove kdenetwork
+    slackpkg remove kdenetwork kdenetwork-filesharing kdenetwork-strigi-analyzers kopete
+
+## Remove nepomuk
+    slackpkg remove nepomuk nepomuk-core nepomuk-widgets
+
+## remover akonadi
+    slackpkg remove akonadi
 
 ## Outros
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
 
     # Dolphin need baloo baloo-widgets
 
