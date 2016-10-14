@@ -27,7 +27,9 @@ mousewheel.system_scroll_override_on_root_content.enabled
 
 ## Habilitar o corretor ortográfico em todos os campos de texto
 layout.spellcheckDefault
-    0 - Desabilita  1 - Algumas caixas de texto - 2 Em todas caixas de texto
+    0 - Desabilita em todas caixas de texto
+    1 - Algumas caixas de texto
+    2 - Em todas caixas de texto
 
 ## Remover mensagem "Tela cheia"
 full-screen-api.warning.delay
