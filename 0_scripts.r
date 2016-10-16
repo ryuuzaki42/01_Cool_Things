@@ -1,4 +1,4 @@
-    ##   Script.r   ##
+    ## Script.r ##
 
 ## Processo com mais uso de CPU
     ps -aux --sort=-pcpu | head
@@ -56,7 +56,7 @@ cd /media/sda4/prog/dropbox/0not_change/
 dbus-launch ../dropboxd
 
 ## Video para mp3
-mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
+    mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
 
 ## Size of a directory/folder on the command line
     du -sh
@@ -66,7 +66,7 @@ mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
     # -h, --human-readable print sizes in human readable format (e.g., 1K 234M 2G)
 
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
-paste file1.txt file2.txt > fileFinal.txt
+    paste file1.txt file2.txt > fileFinal.txt
 
 ## Wget
     wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
@@ -194,19 +194,19 @@ paste file1.txt file2.txt > fileFinal.txt
 /g'
 
 ## sed inserir uma nova linha
-	sed 's/regexp/\'$'\n/g'
+    sed 's/regexp/\'$'\n/g'
     # regexp:' expressão que irá trocar
 
 ## RedShift GUI Error
     sed -i 's/|/,/g' ~/.redshiftgrc
 
 ## Remove all possible spaces at the end of the line
-	sed 's/ *$//' file
-	# to write in the same file
-	sed -i 's/ *$//' file
+    sed 's/ *$//' file
+    # to write in the same file
+    sed -i 's/ *$//' file
 
 ## Using the [:blank:] class you are removing spaces and tabs
-	sed 's/[[:blank:]]*$//' file
+    sed 's/[[:blank:]]*$//' file
 
 ## Linux echo only some lines
 a=`screenfetch -E`
@@ -236,10 +236,10 @@ cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
     #G - Gigabytes (unidades de 1073741824 bytes)
 
 ## Expansão de urls encurtadas com curl
-curl -sIL short-url | grep ^Location;
+    curl -sIL short-url | grep ^Location;
 
-curl -sIL http://goo.gl/CwbmNk | grep ^Location;
-  # Location: http://www.shellhacks.com/en/HowTo-Extract-Archives-targzbz2rarzip7ztbz2tgzZ
+    curl -sIL http://goo.gl/CwbmNk | grep ^Location;
+    # Location: http://www.shellhacks.com/en/HowTo-Extract-Archives-targzbz2rarzip7ztbz2tgzZ
 
 ## How to compare the content of two or more directories
     # Compare dois diretórios
@@ -421,7 +421,7 @@ $ paste arq1.txt arq2.txt
 
     # Nos exemplos utilizamos apenas dois arquivos, mas na prática podemos usar mais arquivos
 
- ## Assista Star War em modo ASCII
+## Assista Star War em modo ASCII
     telnet towel.blinkenlights.nl
 
 ## Ip externo pelo terminal
@@ -443,10 +443,10 @@ $ paste arq1.txt arq2.txt
     # grep -E é o mesmo que egrep, aceita "A|B" e 'A|B'
 
 ## Saída de um processo para outro
-     # tee >(proc1) >(proc2) >(proc3) | proc4
+    # tee >(proc1) >(proc2) >(proc3) | proc4
     iw dev wlan0 scan | grep "SSID" | nl
     iw dev wlan0 scan | grep -E "SSID:|signal:|beacon interval:|WPA|last seen:" | tee /dev/tty | grep -E "SSID" | wc -l
- 
+
 ## Ver tamanho do pacote de rede
     netstat -i <interface>
     ifconfig <interface>
@@ -488,7 +488,7 @@ $ paste arq1.txt arq2.txt
 ## lcd, mover e listar diretório
     alias lcd=changeDirectory
     function changeDirectory {
-         cd $1 ; ls -l -a -v -h --color
+        cd $1 ; ls -l -a -v -h --color
     }
 
     # or
@@ -898,7 +898,7 @@ gtk-fallback-icon-theme = gnome
     ## if unknown (Unknown media type in type ...)
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
- 
+
 ## Saber quando o Gnu/Linux foi instalado
     ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'
 
