@@ -143,8 +143,12 @@ dbus-launch ../dropboxd
     for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" "${f%.m4a}.mp3"; done
 
 ## Rename several file adding some parte
-# file_output.txt => f; ${f:2} => le_output.txt; ${f::-4} => file_output
-    for f in *.sh ; do git mv "$f" "${f::-3}"_JBs.sh; done
+    # file_output.txt => f; ${f:2} => le_output.txt; ${f::-4} => file_output
+
+    # test
+    for f in *"(128kbit_AAC).mp3" ; do echo "${f::-18}".mp3; done
+    # do
+    for f in *"(128kbit_AAC).mp3" ; do mv "$f" "${f::-18}".mp3; done
 
 ## Remove part of the name of files
     #To temove extra.test
