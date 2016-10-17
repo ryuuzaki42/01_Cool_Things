@@ -23,20 +23,20 @@
 
 ##
 echo 500 > /sys/class/backlight/intel_backlight/brightness
-##
-echo -e "\n\n##############"
-echo "# HAPPY! :-) #"
-echo "##############"
-##
+#
+echo -e "\n\t#############"
+echo -e "\t# HAPPY :-) #"
+echo -e "\t#############"
+#
 unicode_start
-##
-## http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
-## Ver governor # cpufreq-info
+#
+# http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
+# Ver governor # cpufreq-info
 #cpufreq-set --cpu 0 --governor performance
 #cpufreq-set --cpu 1 --governor performance
 #cpufreq-set --cpu 2 --governor performance
 #cpufreq-set --cpu 3 --governor performance
-##
+#
 /usr/bin/brightness_min_set_JBs.sh &
 ##
 
@@ -112,8 +112,11 @@ EndSection
 ## Remove nepomuk
     slackpkg remove nepomuk nepomuk-core nepomuk-widgets
 
-## remover akonadi
+## Remove akonadi
     slackpkg remove akonadi
+
+## Remove gnome "packages"
+    slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
 ## Outros
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
