@@ -761,6 +761,10 @@ gtk-fallback-icon-theme = gnome
         PS1="\\[$(tput setaf 8)\\][\\u@\\h:\\w] $"
     fi
 
+## make install in one specific folder
+    folderInstall=/path/folder
+    make DESTDIR=$folderInstall install
+
 ## Adicionar plugins
     ln -s /usr/lib64/mozilla/plugins/ /home/j/.mozilla/
 
