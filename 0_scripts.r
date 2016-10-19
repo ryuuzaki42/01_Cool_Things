@@ -762,7 +762,7 @@ gtk-fallback-icon-theme = gnome
     fi
 
 ## make install in one specific folder
-    folderInstall=/path/folder
+    folderInstall=/full/path/folder
     make DESTDIR=$folderInstall install
 
 ## Adicionar plugins
