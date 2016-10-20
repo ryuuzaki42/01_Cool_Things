@@ -55,6 +55,14 @@ kdewallet=Chromium,Opera,Chrome
 cd /media/sda4/prog/dropbox/0not_change/
 dbus-launch ../dropboxd
 
+## Clean env | limpar variaveis setadas incialmente no ambiente
+unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | \
+  egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
+
+  #or
+unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
+    grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
+
 ## Video para mp3
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
 
