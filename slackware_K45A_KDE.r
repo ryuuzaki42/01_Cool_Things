@@ -19,26 +19,50 @@
     <allow_active>yes</allow_active> yes >> no
 
 ## rc.local
-  #echo 0 > /sys/class/backlight/acpi_video0/brightness
+echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
-##
-echo 500 > /sys/class/backlight/intel_backlight/brightness
-#
-echo -e "\n\t#############"
-echo -e "\t# HAPPY :-) #"
-echo -e "\t#############"
-#
-unicode_start
-#
-# http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
-# Ver governor # cpufreq-info
-#cpufreq-set --cpu 0 --governor performance
-#cpufreq-set --cpu 1 --governor performance
-#cpufreq-set --cpu 2 --governor performance
-#cpufreq-set --cpu 3 --governor performance
-#
-/usr/bin/brightness_min_set_JBs.sh &
-##
+####################### boot_rcLocal_JBs.sh #######################
+## Set brightness in 1%
+    #echo 0 > /sys/class/backlight/acpi_video0/brightness
+    ## or
+    #echo 50 > /sys/class/backlight/intel_backlight/brightness
+    ## or
+    usual_JBs.sh brigh-1
+
+## Set unicode
+    unicode_start
+
+## Set CPU performance. See the actual governor #cpufreq-info
+## http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
+    # See the count of CPU you have #cpufreq-info | grep "analyzing CPU"
+    cpufreq-set --cpu 0 --governor performance
+    cpufreq-set --cpu 1 --governor performance
+    cpufreq-set --cpu 2 --governor performance
+    cpufreq-set --cpu 3 --governor performance
+
+## Set brightness >= %1
+    /usr/bin/brightness_min_set_JBs.sh &
+
+## Print message by time
+    echo -e "\n\n"
+    echo -e "\t------------------"
+    echo -e "\t| Happy Day :-)! |"
+    echo -e "\t------------------"
+
+    hm=`date +%H%M`
+    hm=900
+    if [ $hm -lt 0601 ]; then
+        echo -e "\t| Boa Madrugada! |"
+    elif [ $hm -lt 1201 ]; then
+        echo -e "\t| Bom dia!       |"
+    elif [ $hm -lt 18001 ]; then
+        echo -e "\t| Boa tarde!     |"
+    else
+        echo -e "\t| Boa noite!     |"
+    fi
+    echo -e "\t------------------\n"
+    echo -e "\t `date`\n\n"
+####################### boot_rcLocal_JBs.sh #######################
 
 ## Kernel Generic
     link: https://www.vivaolinux.com.br/artigo/Guia-pos-instalacao-do-Slackware/?pagina=2
