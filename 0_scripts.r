@@ -869,7 +869,6 @@ gtk-fallback-icon-theme = gnome
 ## Acertar data/tempo/hora
     ntpdate -u -b ntp1.ptb.de
     # or
-    ntpq -p ntp1.ptb.de
     ntpdate -u -b bonehed.lcs.mit.edu
     ntpdate -u -b ntp.usp.br
 
