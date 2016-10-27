@@ -95,15 +95,6 @@ EndSection
     rm /usr/share/mime/packages/kde.xml
     update-mime-database /usr/share/mime
 
-## Dolphin freeze wne move file to trash # Test
-    https://forum.kde.org/viewtopic.php?f=153&t=106747
-
-    I believe K3b likely follows the Dolphin/Konqueror preference here.
-    It can only be set through Konqueror however. Open Konqueror > Settings > Configure Konqueror.
-    Select "File Management". Make sure "Show delete menu entries which bypass the trashcan" is checked.
-
-    Close all, open de dolphin, close. Back the Konqueror remove the Delete entrie.
-
 ## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
     Is assigned meta (windows) + S
     System Settings > Shortcuts and Gestures > Global keyboard Shortcuts
