@@ -55,6 +55,9 @@ kdewallet=Chromium,Opera,Chrome
 cd /media/sda4/prog/dropbox/0not_change/
 dbus-launch ../dropboxd
 
+## Libreoffice: Colocar ponto (.) no lugar de virgula (,) para separar casas decimais
+Mude o Local setting: English (UK)
+
 ## Clean env | limpar variaveis setadas incialmente no ambiente
 unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | \
   egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
