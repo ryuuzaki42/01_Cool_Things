@@ -66,6 +66,11 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
 ## Video para mp3
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
 
+## Assinar pdf
+ 1 - Tire uma (boa) foto da assinatura
+ 2 - Remova o funda da imagem (png e adicione canal alpha - gimp)
+ 3 - Insira a imagem no pdf com MasterPdf
+
 ## Size of a directory/folder on the command line
     du -sh
     # or
