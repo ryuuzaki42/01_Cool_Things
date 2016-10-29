@@ -59,6 +59,7 @@ https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher-firefox/
 https://addons.mozilla.org/en-uS/firefox/addon/video-blocker/
 
     ## desabilitado
+http://www.baixou.com.br/baixouagora
 https://addons.mozilla.org/en-us/firefox/addon/behind_the_overlay/
 https://addons.mozilla.org/it/firefox/addon/blank-your-monitor-easy-readin/
 https://desprotetor.com.br/download
@@ -75,9 +76,7 @@ https://addons.mozilla.org/en-US/firefox/addon/flagfox/
 https://addons.mozilla.org/en-US/firefox/addon/download-youtube/
 https://addons.mozilla.org/en-US/firefox/addon/download-flash-and-video/
 
-###
+##
 Na nova aba colocar aba em branco
 browser.newtab.url 
 about:newtab para about:blank
-
-#
