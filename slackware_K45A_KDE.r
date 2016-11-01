@@ -1,10 +1,10 @@
 ## Editar
-    /etc/lilo.conf
-    /etc/fstab
-    /etc/inittab
-    /etc/profile.d/lang.sh
-    /etc/profile.d/lang.csh
-    /etc/acpi/acpi_handler.sh
+    nano /etc/lilo.conf
+    nano /etc/fstab
+    nano /etc/inittab
+    nano /etc/profile.d/lang.sh
+    nano /etc/profile.d/lang.csh
+    nano /etc/acpi/acpi_handler.sh
 
 ## Remove autostart
     /etc/xdg/autostart
@@ -12,7 +12,7 @@
     /usr/share/autostart/
 
     nano /home/j/.config/akonadi/akonadiserverrc
-    StartServer=true >> StartServer=false
+    StartServer=true > StartServer=false
 
 ## Desabilitar hibernação e dormir no kdesu (Hibernation)
     kdesu kwrite /usr/share/polkit-1/actions/org.freedesktop.upower.policy
@@ -21,54 +21,57 @@
 ## rc.local
 echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
-####################### boot_rcLocal_JBs.sh #######################
-## Set brightness in 1%
-    #echo 0 > /sys/class/backlight/acpi_video0/brightness
-    ## or
-    #echo 50 > /sys/class/backlight/intel_backlight/brightness
-    ## or
-    usual_JBs.sh brigh-1
+    ####################### boot_rcLocal_JBs.sh #######################
+    ## Set brightness in 1%
+        #echo 0 > /sys/class/backlight/acpi_video0/brightness
+        ## or
+        #echo 50 > /sys/class/backlight/intel_backlight/brightness
+        ## or
+        usual_JBs.sh brigh-1
 
-## Set unicode
-    unicode_start
+    ## Set unicode
+        unicode_start
 
-## Set CPU performance. See the actual governor #cpufreq-info
-## http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
-    # See the count of CPU you have #cpufreq-info | grep "analyzing CPU"
-    cpufreq-set --cpu 0 --governor performance
-    cpufreq-set --cpu 1 --governor performance
-    cpufreq-set --cpu 2 --governor performance
-    cpufreq-set --cpu 3 --governor performance
+    ## Set CPU performance. See the actual governor #cpufreq-info
+    ## http://docs.slackware.com/howtos:hardware:cpu_frequency_scaling
+        # See the count of CPU you have #cpufreq-info | grep "analyzing CPU"
+        cpufreq-set --cpu 0 --governor performance
+        cpufreq-set --cpu 1 --governor performance
+        cpufreq-set --cpu 2 --governor performance
+        cpufreq-set --cpu 3 --governor performance
 
-## Set brightness >= %1
-    /usr/bin/brightness_min_set_JBs.sh &
+    ## Set brightness >= %1
+        /usr/bin/brightness_min_set_JBs.sh &
 
-## Print message by time
-    echo -e "\n\n"
-    echo -e "\t------------------"
-    echo -e "\t| Happy Day :-)! |"
-    echo -e "\t------------------"
+    ## Print message by time
+        echo -e "\n\n"
+        echo -e "\t------------------"
+        echo -e "\t| Happy Day :-)! |"
+        echo -e "\t------------------"
 
-    hm=`date +%H%M`
-    hm=900
-    if [ $hm -lt 0601 ]; then
-        echo -e "\t| Boa Madrugada! |"
-    elif [ $hm -lt 1201 ]; then
-        echo -e "\t| Bom dia!       |"
-    elif [ $hm -lt 18001 ]; then
-        echo -e "\t| Boa tarde!     |"
-    else
-        echo -e "\t| Boa noite!     |"
-    fi
-    echo -e "\t------------------\n"
-    echo -e "\t `date`\n\n"
-####################### boot_rcLocal_JBs.sh #######################
+        hm=`date +%H%M`
+        hm=900
+        if [ $hm -lt 0601 ]; then
+            echo -e "\t| Boa Madrugada! |"
+        elif [ $hm -lt 1201 ]; then
+            echo -e "\t| Bom dia!       |"
+        elif [ $hm -lt 18001 ]; then
+            echo -e "\t| Boa tarde!     |"
+        else
+            echo -e "\t| Boa noite!     |"
+        fi
+        echo -e "\t------------------\n"
+        echo -e "\t `date`\n\n"
+    ####################### boot_rcLocal_JBs.sh #######################
 
 ## Kernel Generic
     link: https://www.vivaolinux.com.br/artigo/Guia-pos-instalacao-do-Slackware/?pagina=2
         #/usr/share/mkinitrd/mkinitrd_command_generator.sh
+
     /usr/share/mkinitrd/mkinitrd_command_generator.sh | grep mkinitrd | grep -v command | /bin/bash
+
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
+
     nano /etc/lilo.conf
     lilo
 
@@ -97,21 +100,20 @@ EndSection
 
 ## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
     Is assigned meta (windows) + S
-    System Settings > Shortcuts and Gestures > Global keyboard Shortcuts
-    Select "Plasma Desktop Shell" in KDE component, and in Action Remove the shortcut to "Stop Current Activity"
+    System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
+    Select "Plasma Desktop Shell" in KDE component,
+    and in Action Remove the shortcut to "Stop Current Activity"
 
 ## Instalar
-    slackpkg install cabextract flash-player-plugin p7zip unrar cdrkit chrome
+    slackpkg install flash-player-plugin p7zip unrar chrome
 
-    # http://slackware.org.uk/slacky/slackware-14.1/system/microsoft-fonts-ttf/
-    slackpkg install microsoft-fonts
-
-    slackpkg install icedtea-web libreoffice-4.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
+    slackpkg install icedtea-web libreoffice-5.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
 
     ## Instalar cogroo e alterar idioma
 
 ## Local
-    bleachbit dropbox virtualbox comix convmv pdftk pv qpdf R redshift smplayer vlc openjdk
+    bleachbit dropbox virtualbox comix qpdf R redshift smplayer vlc openjdk
+    # convmv pdftk pv
 
 ## Upgrade
   mozilla-firefox
@@ -148,14 +150,13 @@ EndSection
     # Dolphin need baloo baloo-widgets
 
 ## Swap em arquivo
-    # 8 GiB = 8192
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=8192
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=8192 # 8 GiB = 8192
 
-    # 6 GiB = 6144
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=6144
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=6144 # 6 GiB = 6144
 
-    # 2 GiB = 2048
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=2048
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=4096 # 4 GiB = 4096
+
+    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=2048 # 2 GiB = 2048
 
     mkswap /home/j/swapfile.img
     nano /etc/fstab
@@ -181,6 +182,23 @@ EndSection
     ## Adicionar no arquivo -> vm.swappiness=10
     carregar o configuração padrão/permanente
     sysctl –p
+
+## Move windows between Desktop
+    # Add 4 Desktop
+
+    System Settings > Shortcuts and Gestures >  Global Keyboard Shortcuts
+    Selecting "KWin"
+    Search for "one"
+
+    Switch One Desktop Down         ## Ctrl + Alt + Down
+    Switch One Desktop to the Left  ## Ctrl + Alt + Left
+    Switch One Desktop to the Right ## Ctrl + Alt + Right
+    Switch One Desktop Up           ## Ctrl + Alt + Up
+
+    Window One Desktop Down         ## Ctrl + Alt + Shift + Down
+    Window One Desktop to the Left  ## Ctrl + Alt + Shift + Left
+    Window One Desktop to the Right ## Ctrl + Alt + Shift + Right
+    Window One Desktop Up           ## Ctrl + Alt + Shift + Up
 
 ## Blacklist (slackpkg)
     nano /etc/slackpkg/blacklist
