@@ -1,4 +1,6 @@
-## Links
+## Git commands ##
+
+## Good links
     http://git-scm.com/book/
     https://leanpub.com/pro-git/read
 
@@ -13,22 +15,22 @@
     # Adiciona o arquivo.extensão ao gerenciamento do git
     git add arquivo.extensão
 
-## Adiciona todos os arquivos com extensão txt ao gerenciamento do git
-    git add *.txt
+    ## Adiciona todos os arquivos com extensão txt ao gerenciamento do git
+        git add *.txt
 
-## Adiciona todos os arquivos com nome file ao gerenciamento do git
-    git add file.*
-    # Váriadas combinações com com ? e * podem ser usadas
-    # use rm em vez de add para remover arquivo(s)
+    ## Adiciona todos os arquivos com nome file ao gerenciamento do git
+        git add file.*
+        # Váriadas combinações com com ? e * podem ser usadas
+        # use rm em vez de add para remover arquivo(s)
 
-## Adiciona todos os arquivos
-    git add .
+    ## Adiciona todos os arquivos
+        git add .
 
 ## Enviar mudanças (commit)
     git commit -m "commit name"
 
-## Commit com todas mudanças e adiciona novos arquivos ao gerenciamento do git (git add .) 
-    git commit -am "commit name"
+    ## Commit com todas mudanças e adiciona novos arquivos ao gerenciamento do git (git add .) 
+        git commit -am "commit name"
 
 ## Visualizar mudanças em arquivos antes do commit
     git diff
@@ -51,7 +53,7 @@
 ## Diferença entre o repositório git e stage area
     git diff --staged
 
-## Remover arquivos do repositório depois de adicionar no .gitignore
+## Remover arquivos do repositório depois de adicionar no .gitignore | Untracked files
     git rm -r --cached .
     git add .
     git commit -am "Remove ignored files"
@@ -110,5 +112,44 @@
 ## Clone one repository
     git clone link-repository
 
-    ## Clone a specific Git branch
+## Clone a specific Git branch
     git clone -b <branch> <remote_repo>
+
+## Delete files from history
+    # https://help.github.com/articles/remove-sensitive-data/
+    # https://rtyley.github.io/bfg-repo-cleaner/
+
+    ## --delete-files (* glob)
+    java -jar /pahtFolder/bfg-1.12.14.jar --delete-files fileName*fileExt /pahtGitRep/
+
+    ## or -D (* glob)
+    java -jar /pahtFolder/bfg-1.12.14.jar -D fileName*fileExt /pahtGitRep/
+
+    ## bfg installed
+    bfg -D fileName*fileExt /pahtGitRep/
+
+    ## --delete-folders (* glob)
+    bfg --delete-folders folderName* /pahtGitRep/
+
+    ## Commit blocked? => --no-blob-protection
+    bfg -D fileName*fileExt /pahtGitRep/ --no-blob-protection
+
+    ## Remote repository will reject the commit push, so --force --all
+    git push origin --force --all
+
+## Big files on git use lfs
+    # https://git-lfs.github.com/
+
+    # Download and install lfs (https://github.com/github/git-lfs/releases)
+    # git lfs install
+
+    ## Select the file types you'd like Git LFS to manage (or directly edit your .gitattributes)
+    git lfs track fileName.ext
+
+    #or
+    git lfs track "*.psd"
+
+    ## There is no step three. Just commit and push to GitHub as you normally would
+    git add file.psd
+    git commit -m "Add design file"
+    git push origin master
