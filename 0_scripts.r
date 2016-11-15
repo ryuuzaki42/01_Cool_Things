@@ -269,6 +269,36 @@ cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
     # -s, report when two files are the same
     # -r, recursively compare any subdirectories found
 
+## LiLo login/comand boot wiht out passwd
+    linux single
+
+    ## In the Slackware
+    linux single init=/bin/bash rw
+
+    ## Set the new password
+    passwd
+
+## Grub login/comand boot wiht out passwd
+    ## In the Grub menu, select the entry and press "e" to edit
+
+    ## Appending in the linhe "linux ....", after boot it with "Ctrl-x" of "F10"
+    rw init=/bin/bash
+
+    ## Set the new password
+    passwd
+
+## Mostar o Grub menu
+    nano /etc/default/grub
+
+    ## Comment the line
+    #GRUB_HIDDEN_TIMEOUT=0
+
+    ## Set false
+    GRUB_HIDDEN_TIMEOUT_QUIET=false
+
+    ## Update
+    update-grub
+
 ## Remove Spotify pop-up notification when a song starts
     # Exit Spotify
     # Then edit
