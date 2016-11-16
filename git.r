@@ -119,23 +119,33 @@
     # https://help.github.com/articles/remove-sensitive-data/
     # https://rtyley.github.io/bfg-repo-cleaner/
 
-    ## --delete-files (* glob)
-    java -jar /pahtFolder/bfg-1.12.14.jar --delete-files fileName*fileExt /pahtGitRep/
+    ## bfg
+        ## bfg with out install
+            java -jar /pahtFolder/bfg-*.jar
+        ## bfg installed
+            bfg
 
-    ## or -D (* glob)
-    java -jar /pahtFolder/bfg-1.12.14.jar -D fileName*fileExt /pahtGitRep/
+    1) Delete the file or folder
+        ## Delete file: "-D" or "--delete-files" (* glob)
+            bfg -D fileName*fileExt /pahtGitRep/
 
-    ## bfg installed
-    bfg -D fileName*fileExt /pahtGitRep/
-
-    ## --delete-folders (* glob)
-    bfg --delete-folders folderName* /pahtGitRep/
+        ## Delete folder: --delete-folders (* glob)
+            bfg --delete-folders folderName* /pahtGitRep/
 
     ## Commit blocked? => --no-blob-protection
-    bfg -D fileName*fileExt /pahtGitRep/ --no-blob-protection
+        bfg -D fileName*fileExt /pahtGitRep/ --no-blob-protection
 
-    ## Remote repository will reject the commit push, so --force --all
-    git push origin --force --all
+    2) ## The file/folder will be not deleted form the gitRep, so delete them
+        rm fileName*fileExt
+        #or
+        rm -r folderName*
+
+    3) ## Git will keep tracking the files, so remove them from track files
+        git rm -r --cached .
+        git add .
+
+    4) ## Remote repository will reject the commit push, so --force --all
+        git push origin --force --all
 
 ## Big files on git use lfs
     # https://git-lfs.github.com/
@@ -153,3 +163,14 @@
     git add file.psd
     git commit -m "Add design file"
     git push origin master
+
+## Smartgit get userName form ".git/config"
+    ## Change url = site/userName/repo
+    url = https://github.com/ryuuzaki42/0txt.git
+    ## to url = userName@site/userName/repo
+    url = https://ryuuzaki42@github.com/ryuuzaki42/0txt.git
+
+## Git in two repository
+    ## Add a new url
+    url = https://ryuuzaki42@bitbucket.org/ryuuzaki42/0txt.git
+    url = https://github.com/ryuuzaki42/0txt.git
