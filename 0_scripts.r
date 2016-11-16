@@ -23,6 +23,17 @@ kdewallet=Chromium,Opera,Chrome
     # or
     ls -alct / | tail -1 | awk '{print $6, $7, $8}'
 
+## Senha do Kindle esquecida
+    Se você não se lembra da senha do seu Kindle, você precisará redefinir seu dispositivo,
+    o que removerá todas as suas informações pessoais e conteúdo baixado.
+
+    Qualquer conteúdo que você tenha comprado na Amazon é automaticamente salvo na Nuvem e
+    pode ser novamente baixado da aba Tudo ao registrar seu Kindle na sua conta novamente.
+
+    ## Para redefinir seu dispositivo:
+    Toque no campo de senha para exibir o teclado virtual.
+    Digite 111222777 e toque em OK. Seu Kindle será reiniciado.
+
 ## GhostScript - Reduzindo o tamanho de arquivos PDF pelo terminal
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dNOPAUSE -dBATCH -sOutputFile=novo.pdf velho.pdf
     # or
