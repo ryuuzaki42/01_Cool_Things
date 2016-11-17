@@ -542,6 +542,9 @@ $ paste arq1.txt arq2.txt
 ## Senha aleatórias
     date +%s | md5sum | base64 | head -c 10 ; echo
 
+## md5 de arquivos dentro de uma pasta recursivamente
+    find folder/ -type f -print0 | xargs -0 md5sum > result.md5
+
 ## Pasta de review ou annotations do okular
     ~/.kde/share/apps/okular/docdata/
 
