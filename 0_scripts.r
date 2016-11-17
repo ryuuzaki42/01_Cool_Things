@@ -217,12 +217,14 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
     ## Test the display
     xclock &
 
+## Replace/remove multiple empty line with one empty line
+    sed '/^$/N;/^\n$/D' inputfile
+
 ## sed
     echo "TV" | sed 's/TV/tv/g'
 
 ## sed troca \n por nova linha
-    sed 's/\\n/\
-/g'
+    sed 's/\\n/\n/g'
 
 ## sed inserir uma nova linha
     sed 's/regexp/\'$'\n/g'
