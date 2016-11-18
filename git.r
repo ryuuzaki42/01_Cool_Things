@@ -174,3 +174,29 @@
     ## Add a new url
     url = https://ryuuzaki42@bitbucket.org/ryuuzaki42/0txt.git
     url = https://github.com/ryuuzaki42/0txt.git
+
+## Git gc
+    git gc --help
+    --aggressive
+        # Usually git gc runs very quickly while providing good disk space utilization and performance.
+        # This option will cause git gc to more aggressively optimize the repository at the expense of taking much more time.
+        # The effects of this optimization are persistent, so this option only needs to be used occasionally; every few hundred changesets or so.
+
+    --auto
+        # With this option, git gc checks whether any housekeeping is required; if not, it exits without performing any work.
+        # Some git commands run git gc --auto after performing operations that could create many loose objects.
+
+    git gc --aggressive
+    git gc --auto
+    git gc
+
+    ## All folder in one directory run "git gc --aggressive"
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc --aggressive\" inside: $folderGit\n"; cd $folderGit; git gc --aggressive; cd ..; done
+
+    ## All folder in one directory run "git gc --auto"
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc --auto\" inside: $folderGit\n"; cd $folderGit; git gc --auto; cd ..; done
+
+    ## All folder in one directory run "git gc"
+    #comandGitRun="git gc"; for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: $folderGit\n"; cd $folderGit; $comandGitRun; cd ..; done
+
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: $folderGit\n"; cd $folderGit; git gc; cd ..; done
