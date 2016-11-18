@@ -175,16 +175,18 @@
     url = https://ryuuzaki42@bitbucket.org/ryuuzaki42/0txt.git
     url = https://github.com/ryuuzaki42/0txt.git
 
-## Git gc
-    git gc --help
-    --aggressive
-        # Usually git gc runs very quickly while providing good disk space utilization and performance.
-        # This option will cause git gc to more aggressively optimize the repository at the expense of taking much more time.
-        # The effects of this optimization are persistent, so this option only needs to be used occasionally; every few hundred changesets or so.
+## Git gc "cleanup unnecessary files and optimize the local repository"
+    ## Do not use "git clean" => Which will delete untracked files from your tree
 
-    --auto
-        # With this option, git gc checks whether any housekeeping is required; if not, it exits without performing any work.
-        # Some git commands run git gc --auto after performing operations that could create many loose objects.
+    git gc --help
+        --aggressive
+            # Usually git gc runs very quickly while providing good disk space utilization and performance.
+            # This option will cause git gc to more aggressively optimize the repository at the expense of taking much more time.
+            # The effects of this optimization are persistent, so this option only needs to be used occasionally; every few hundred changesets or so.
+
+        --auto
+            # With this option, git gc checks whether any housekeeping is required; if not, it exits without performing any work.
+            # Some git commands run git gc --auto after performing operations that could create many loose objects.
 
     git gc --aggressive
     git gc --auto
