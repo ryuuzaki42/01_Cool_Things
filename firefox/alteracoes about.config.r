@@ -46,37 +46,40 @@ pdfjs.defaultZoomValue
     ## habilitado:
 https://adblockplus.org/
     > Remove (crtl + shift + v) > about:config > extensions.adblockplus.sidebar_key
-https://addons.mozilla.org/en-US/firefox/addon/adblock-plus-pop-up-addon/
+https://addons.mozilla.org/firefox/addon/adblock-plus-pop-up-addon/
+    http://jessehakanen.net/adblockpluspopupaddon/#download
     > Block all pop-ups
-https://addons.mozilla.org/en-US/firefox/addon/copy-as-plain-text/
-https://addons.mozilla.org/en-US/firefox/addon/disable-ctrl-q-shortcut/
-https://addons.mozilla.org/en-US/firefox/addon/flashstopper/
-https://addons.mozilla.org/en-US/firefox/addon/gnotifier/
+https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
+https://addons.mozilla.org/firefox/addon/flashstopper/
+https://addons.mozilla.org/firefox/addon/gnotifier/
     > Notification expiration
-https://addons.mozilla.org/pt-br/firefox/addon/google-br/
+https://addons.mozilla.org/firefox/addon/google-br/
     > Change the search
-https://addons.mozilla.org/en-US/firefox/addon/user-agent-switcher-firefox/
-https://addons.mozilla.org/en-uS/firefox/addon/video-blocker/
+https://addons.mozilla.org/firefox/addon/flashgot/
+https://addons.mozilla.org/firefox/addon/grammarly-1/
 
     ## desabilitado
 http://www.baixou.com.br/baixouagora
-https://addons.mozilla.org/en-us/firefox/addon/behind_the_overlay/
-https://addons.mozilla.org/it/firefox/addon/blank-your-monitor-easy-readin/
 https://desprotetor.com.br/download
-https://addons.mozilla.org/en-US/firefox/addon/inlinedisposition/
-https://addons.mozilla.org/en-US/firefox/addon/private-tab/
-https://addons.mozilla.org/en-US/firefox/addon/video-downloadhelper/
+https://addons.mozilla.org/firefox/addon/video-blocker/
+https://addons.mozilla.org/firefox/addon/kindle-it/
+https://addons.mozilla.org/firefox/addon/behind_the_overlay/
+https://addons.mozilla.org/firefox/addon/user-agent-switcher-firefox/
+https://addons.mozilla.org/firefox/addon/inlinedisposition/
+https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 
-## Outros
+## others
 https://zenmate.com/
 https://www.eff.org/https-everywhere
-https://addons.mozilla.org/en-US/firefox/addon/donottrackplus/
-https://addons.mozilla.org/en-US/firefox/addon/tab-notifier/
-https://addons.mozilla.org/en-US/firefox/addon/flagfox/
-https://addons.mozilla.org/en-US/firefox/addon/download-youtube/
-https://addons.mozilla.org/en-US/firefox/addon/download-flash-and-video/
+https://addons.mozilla.org/firefox/addon/private-tab/
+https://addons.mozilla.org/firefox/addon/copy-as-plain-text/
+https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
+https://addons.mozilla.org/firefox/addon/donottrackplus/
+https://addons.mozilla.org/firefox/addon/tab-notifier/
+https://addons.mozilla.org/firefox/addon/flagfox/
+https://addons.mozilla.org/firefox/addon/download-youtube/
+https://addons.mozilla.org/firefox/addon/download-flash-and-video/
 
-##
-Na nova aba colocar aba em branco
-browser.newtab.url 
-about:newtab para about:blank
+## New tab as blank
+browser.newtab.url
+    about:newtab > about:blank
