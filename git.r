@@ -193,12 +193,12 @@
     git gc
 
     ## All folder in one directory run "git gc --aggressive"
-    for folderGit in `ls`; do echo -e "\nRunning \"git gc --aggressive\" inside: $folderGit\n"; cd $folderGit; git gc --aggressive; cd ..; done
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc --aggressive\" inside: \"$folderGit/\"\n"; cd $folderGit; git gc --aggressive; cd ..; done
 
     ## All folder in one directory run "git gc --auto"
-    for folderGit in `ls`; do echo -e "\nRunning \"git gc --auto\" inside: $folderGit\n"; cd $folderGit; git gc --auto; cd ..; done
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc --auto\" inside: \"$folderGit/\"\n"; cd $folderGit; git gc --auto; cd ..; done
 
     ## All folder in one directory run "git gc"
-    #comandGitRun="git gc"; for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: $folderGit\n"; cd $folderGit; $comandGitRun; cd ..; done
+    #comandGitRun="git gc"; for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: \"$folderGit/\"\n"; cd $folderGit; $comandGitRun; cd ..; done
 
-    for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: $folderGit\n"; cd $folderGit; git gc; cd ..; done
+    for folderGit in `ls`; do echo -e "\nRunning \"git gc\" inside: \"$folderGit/\"\n"; cd $folderGit; git gc; cd ..; done
