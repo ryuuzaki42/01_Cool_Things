@@ -223,6 +223,12 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
 ## sed
     echo "TV" | sed 's/TV/tv/g'
 
+## sed "grep" number
+    echo "awsafd 1.2.4" | sed 's/[^0-9]*//g'
+
+## sed "grep" number and dot
+    echo "awsafd 1.2.4" | sed 's/[^0-9,.]*//g'
+
 ## sed troca \n por nova linha
     sed 's/\\n/\n/g'
 
@@ -749,6 +755,12 @@ gtk-fallback-icon-theme = gnome
     cut -d ';' -f2 tabela.txt
     -d delimitador
     -fX número X referente a coluna que quer
+
+## Cut file after on char
+    echo "te.st 1.23" | cut -d '.' -f2
+
+    # until the end
+    echo "te.st 1.23" | cut -d '.' -f2-
 
 ## Trocar nome dos arquivo de iso88591 para utf8
     # Apenas testa
