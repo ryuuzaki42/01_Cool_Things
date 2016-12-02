@@ -17,15 +17,15 @@
     VBoxManage setextradata "[YourVmNameHere]" "CustomVideoMode1" "800x480x16"
         # VBoxManage setextradata "Android-x86 4.4-r4" "CustomVideoMode1" "1366x768x16"
 
-     # Change the android load resolution
-     Load VM in (Debub video=LVDS-1:d)
+    # Change the android load resolution
+    Load VM in (Debub video=LVDS-1:d)
 
-     # Mount the partition boot
-     mount /dev/sda1 /mnt
+    # Mount the partition boot
+    mount /dev/sda1 /mnt
 
-     # Edit the file /mnt/grub/menu.lst
-     # ç is ;
-     vi /mnt/grub/menu.lst
+    # Edit the file /mnt/grub/menu.lst
+    # ç is ;
+    vi /mnt/grub/menu.lst
 
-     # And added in the frist kernel load entrer after android_x86
-     UVESA_MODE=1366x768 DPI=160
+    # And added in the frist kernel load entrer after android_x86
+    UVESA_MODE=1366x768 DPI=160
