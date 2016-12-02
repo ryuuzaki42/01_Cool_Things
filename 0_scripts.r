@@ -217,7 +217,13 @@ dbus-launch ../dropboxd
 ## Replace/remove multiple empty line with one empty line
     sed '/^$/N;/^\n$/D' inputfile
 
-## sed
+## Remove new line (\n) for one space
+    echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
+
+## Remove new line (\n)
+    echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
+
+## sed change value (TV) to (tv)
     echo "TV" | sed 's/TV/tv/g'
 
 ## sed "grep" number
