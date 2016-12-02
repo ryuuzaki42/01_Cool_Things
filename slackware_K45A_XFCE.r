@@ -1,11 +1,11 @@
 ## XFCE disable session restore
-xfce4-settings-editor, find and uncheck xfce4-session -> general -> SaveOnExit
+    xfce4-settings-editor, find and uncheck xfce4-session -> general -> SaveOnExit
 
 ## Keyboard
-setxkbmap -model abnt2 -layout br
+    setxkbmap -model abnt2 -layout br
 
 ## Brightness 0 (rc.local)
-echo 0 > /sys/class/backlight/acpi_video0/brightness
+    echo 0 > /sys/class/backlight/acpi_video0/brightness
 
 ## Install whiskey menu and add in the panel the icon-menu from whiskey-menu
 
