@@ -25,14 +25,14 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Senha do Kindle esquecida
     Se você não se lembra da senha do seu Kindle, você precisará redefinir seu dispositivo,
-    o que removerá todas as suas informações pessoais e conteúdo baixado.
+    o que removerá todas as suas informações pessoais e conteúdo baixado
 
     Qualquer conteúdo que você tenha comprado na Amazon é automaticamente salvo na Nuvem e
-    pode ser novamente baixado da aba Tudo ao registrar seu Kindle na sua conta novamente.
+    pode ser novamente baixado da aba Tudo ao registrar seu Kindle na sua conta novamente
 
     ## Para redefinir seu dispositivo:
-    Toque no campo de senha para exibir o teclado virtual.
-    Digite 111222777 e toque em OK. Seu Kindle será reiniciado.
+    Toque no campo de senha para exibir o teclado virtual
+    Digite 111222777 e toque em OK. Seu Kindle será reiniciado
 
 ## GhostScript - Reduzindo o tamanho de arquivos PDF pelo terminal
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dNOPAUSE -dBATCH -sOutputFile=novo.pdf velho.pdf
@@ -67,15 +67,12 @@ cd /media/sda4/prog/dropbox/0not_change/
 dbus-launch ../dropboxd
 
 ## Libreoffice: Colocar ponto (.) no lugar de virgula (,) para separar casas decimais
-Mude o Local setting: English (UK)
+    Mude o Local setting: English (UK)
 
 ## Clean env | limpar variaveis setadas incialmente no ambiente
-unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | \
-  egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
-
-  #or
-unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
-    grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
+    unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
+    # or
+    unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
 
 ## Video para mp3
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
@@ -149,6 +146,35 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
     ## To test the display
     xclock &
 
+## Access ssh X11 on Windows
+    ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
+    X11Forwarding yes
+
+    ## Download and Install full Xming-fonts and Xming
+    https://sourceforge.net/projects/xming/files/?source=navbar
+
+    ## Change the shortcut to start Xming. Right click your mouse to go to properties.
+    Add -ac to your XMing shortcut:
+    "C:\Program Files\Xming\Xming.exe" :0 -clipboard -multiwindow -ac
+
+    ## Start XMing
+
+    ## Download putty
+    http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+
+    ## Configure putty
+    In Session: Add the IP and port to remote server
+
+    In Connection >> SSH >> X11: Mark Enable X11 Forwarding, set the display to: localhost:0
+    and protocol to MTI-Magic-Cokie-1
+
+    ## Connect on the putty
+    ## export the display
+    export DISPLAY=192.168.0.13:0.0
+
+    ## Test the display
+    xclock &
+
 ## Warning packages removed Slackware
     removepkg *z | grep -E "WARNING|Removing package"
 
@@ -188,35 +214,6 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
     # or with -layout to keep the layout
     pdftotext -layout input.pdf output.txt
 
-## Access ssh X11 on Windows
-    ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
-    X11Forwarding yes
-
-    ## Download and Install full Xming-fonts and Xming
-    https://sourceforge.net/projects/xming/files/?source=navbar
-
-    ## Change the shortcut to start Xming. Right click your mouse to go to properties.
-    Add -ac to your XMing shortcut:
-    "C:\Program Files\Xming\Xming.exe" :0 -clipboard -multiwindow -ac
-
-    ## Start XMing
-
-    ## Download putty
-    http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-
-    ## Configure putty
-    In Session: Add the IP and port to remote server
-
-    In Connection >> SSH >> X11: Mark Enable X11 Forwarding, set the display to: localhost:0
-    and protocol to MTI-Magic-Cokie-1
-
-    ## Connect on the putty
-    ## export the display
-    export DISPLAY=192.168.0.13:0.0
-
-    ## Test the display
-    xclock &
-
 ## Replace/remove multiple empty line with one empty line
     sed '/^$/N;/^\n$/D' inputfile
 
@@ -248,14 +245,14 @@ unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | \
     sed 's/[[:blank:]]*$//' file
 
 ## Linux echo only some lines
-a=`screenfetch -E`
-x=3
-y=18
-echo "$a" | sed -n -e "$x,$y p" -e "$y q"
+    a=`screenfetch -E`
+    x=3
+    y=18
+    echo "$a" | sed -n -e "$x,$y p" -e "$y q"
     # or
-cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
+    cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
 
-# Print from line 10 to line 20
+## Print from line 10 to line 20
     iline=10; fline=20; sed -n "$iline, $fline p" vehDist.ini
     #or
     iline=10; fline=20; cat -n file.txt | sed -n -e "$iline,$fline p" -e "$iline q"
@@ -412,27 +409,27 @@ cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
     recode l1..dos/CR-LF
 
     # Para simplificar, aliases:
-alias dos2unix='recode dos/CR-LF..l1'
-alias unix2win='recode l1..windows-1250'
-alias unix2dos='recode l1..dos/CR-LF'
+    alias dos2unix='recode dos/CR-LF..l1'
+    alias unix2win='recode l1..windows-1250'
+    alias unix2dos='recode l1..dos/CR-LF'
 
 ## Busca em vários arquivos de texto
     # Finding all files containing a text string on Linux
     # use -w to stands match the whole word
     grep -rn 'directory~$PWD' -e "pattern"
 
-    -r or -R is recursive, -n is line number and -w stands match the whole word.
-    -l (letter L) can be added to have just the file name.
-    Along with these, --exclude or --include parameter could be used for efficient searching. Something like below:
+    # -r or -R is recursive, -n is line number and -w stands match the whole word.
+    # -l (letter L) can be added to have just the file name.
+    # Along with these, --exclude or --include parameter could be used for efficient searching. Something like below:
     grep --include=\*.{c,h} -rnw 'directory' -e "pattern"
-    This will only search through the files which have .c or .h extensions. Similarly a sample use of --exclude:
+    # This will only search through the files which have .c or .h extensions. Similarly a sample use of --exclude:
     grep --exclude=*.o -rnw 'directory' -e "pattern"
-    Above will exclude searching all the files ending with .o extension.
-    Just like exclude file its possible to exclude/include directories
-    through --exclude-dir and --include-dir parameter, the following shows how to integrate --exclude-dir:
+    # Above will exclude searching all the files ending with .o extension.
+    # Just like exclude file its possible to exclude/include directories
+    # through --exclude-dir and --include-dir parameter, the following shows how to integrate --exclude-dir:
     grep --exclude-dir={dir1,dir2,*.dst} -rnw 'directory' -e "pattern"
-    This works for me very well, to achieve almost the same purpose like yours.
-    For more options : man grep
+    # This works for me very well, to achieve almost the same purpose like yours.
+    # For more options : man grep
 
     grep -rn $PWD -e "24" > ../../../a.txt
 
@@ -446,7 +443,8 @@ alias unix2dos='recode l1..dos/CR-LF'
 
 ## Firefox Special Paste
     Use the shortcut Ctrl + Shift + V.
-    #If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying
+
+    # If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying
     # the "Blockable Items on current page" sidebar.
     # In this case enter "about:config" in your address bar, then search for the key
     # "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
@@ -458,7 +456,7 @@ alias unix2dos='recode l1..dos/CR-LF'
     su - root -c 'pm-suspend'
 
 ## Change the size on Google Slides
-     Click the File "menu" and select "Page setup"
+    Click the File "menu" and select "Page setup"
     Select a size from the drop down menu:
     Custom -> pixels: 1024 x 788
 
@@ -528,9 +526,6 @@ $ paste arq1.txt arq2.txt
 ## Informações do Ip externo acesse
     http://ip-lookup.net/
 
-## MEGA-MASTERKEY.txt
-    KEfQYPeq5_bODHkqUCrMhQ
-
 ## Screenshot de 5 em 5 segundo no terminal
     count=0; while true; do ((count++)); import -window root -display :0 screen.$count.jpg; sleep 5; done
 
@@ -558,10 +553,10 @@ $ paste arq1.txt arq2.txt
     ls -v
 
 ## lcd, mover e listar diretório
-    alias lcd=changeDirectory
     function changeDirectory {
         cd $1 ; ls -l -a -v -h --color
     }
+    alias lcd=changeDirectory
 
     # or
     alias lcd="cd $1 ; ls -l -a -v -h --color"
@@ -625,8 +620,7 @@ $ paste arq1.txt arq2.txt
     # Se a partição for ext4, -f força o teste mesmo que os files clean
     fsck.ext4 -f /dev/sda5
 
-    # Link:
-    http://apoie.org/JulioNeves/index.html (cadeias)
+    # Link: http://apoie.org/JulioNeves/index.html (cadeias)
 
 ## Criar várias pastas
     mkdir {1..25}
@@ -635,6 +629,8 @@ $ paste arq1.txt arq2.txt
 
 ## Para remover várias pastas
     rm -r {1..25}
+    # or
+    rm -r folder_{1..25}
 
 ## Setar PATH
     export PATH=$PATH:/path/to/dir
@@ -768,44 +764,44 @@ gtk-fallback-icon-theme = gnome
 
     ## Troca realmente
     convmv -f iso88591 -t utf8 -r nome_pasta --notest
-        -f : diz qual que é a codificação que o arquivo está no momento (from)
-        -t : diz qual é a codificação que o arquivo deverá ficar (to)
-        -r : usada para alterar a codificação dos arquivos de dentro da pasta, recursivamente.
-            Se você for alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
-        nome_pasta : o nome da pasta ou arquivo cuja codificação será alterada.
-    O comando anterior apenas simulará o resultado da codificação e exibirá na tela.
-    Caso esteja tudo correto, então aplique os resultados rodando o comando novamente,
-    acrescido da opção --notest (são dois traços)
+
+    # -f : diz qual que é a codificação que o arquivo está no momento (from)
+    # -t : diz qual é a codificação que o arquivo deverá ficar (to)
+    # -r : usada para alterar a codificação dos arquivos de dentro da pasta, recursivamente.
+    # Se você for alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
+    # nome_pasta : o nome da pasta ou arquivo cuja codificação será alterada.
+    # O comando anterior apenas simulará o resultado da codificação e exibirá na tela.
+    # Caso esteja tudo correto, então aplique os resultados rodando o comando novamente,
+    # acrescido da opção --notest (são dois traços)
 
 ## Criando uma imagem ISO
-    O mkisofs permite criar imagens ISO a partir de um diretório no HD. O “mk” vem de make,
-    ou seja, criar. O “iso” vem de imagem ISO, enquanto o “fs” vem de sistemas de arquivos
-    Ou seja, o nome mkisofs descreve bem o uso do programa, que é criar sistemas de arquivo ISO
+    # O mkisofs permite criar imagens ISO a partir de um diretório no HD. O “mk” vem de make,
+    # ou seja, criar. O “iso” vem de imagem ISO, enquanto o “fs” vem de sistemas de arquivos
+    # Ou seja, o nome mkisofs descreve bem o uso do programa, que é criar sistemas de arquivo ISO
 
     mkisofs -pad -r -J -o nome_do_arquivo.iso /diretorio_de_origem/
 
-    * mkisofs : é o comando que chama o programa
-    * -r : permite que qualquer cliente possa ler o conteúdo do arquivo
-        Evita problemas ao tentar ler o arquivo no Windows
-    * -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet
-    * -o : Especifica o nome do arquivo ISO que será criado
-    * -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux
-    * -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS
-        não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
-    * -V especifica uma identificação para o CD (rótulo);
-    * -v caso seja esta opção acionada, serão exibidas em seu vídeo todas informações que saírem do mkisofs
-    * nome_do_arquivo.iso : O nome do arquivo propriamente dito. Não se esqueça de sempre incluir a extensão .iso
-    O arquivo é sempre gravado no diretório corrente
-    * -pad este parâmetro é necessário em muitos OSs, inclusive no Linux,
-         ele é acionado para evitar erros de entrada e saída
-    * /diretório_de_origem/ : O diretório onde estão os arquivos que serão incluídos na imagem
-        É possível especificar vários diretórios separados por espaços, como em:
-        /home/ecouto/testes/ /home/ecouto/arquivos/
+    # mkisofs : é o comando que chama o programa
+    # -r : permite que qualquer cliente possa ler o conteúdo do arquivo
+    #   Evita problemas ao tentar ler o arquivo no Windows
+    # -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet
+    # -o : Especifica o nome do arquivo ISO que será criado
+    # -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux
+    # -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS
+    #   não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
+    # -V especifica uma identificação para o CD (rótulo);
+    # -v caso seja esta opção acionada, serão exibidas em seu vídeo todas informações que saírem do mkisofs
+    # nome_do_arquivo.iso : O nome do arquivo propriamente dito. Não se esqueça de sempre incluir a extensão .iso
+    # O arquivo é sempre gravado no diretório corrente
+    # -pad este parâmetro é necessário em muitos OSs, inclusive no Linux,
+    #   ele é acionado para evitar erros de entrada e saída
+    # /diretório_de_origem/ : O diretório onde estão os arquivos que serão incluídos na imagem
+    #   É possível especificar vários diretórios separados por espaços, como em:
+    #  /home/ecouto/testes/ /home/ecouto/arquivos/
 
 ## Mplayer e suas loucuras! imagem da webcam com efeito MATRIX
     # Em uma linha apenas
-    mplayer -fps 30 -vo matrixview -cache 128
-        -framedrop -vo matrixview driver=v412:width=640:height=480:device= /dev/video0 tv://
+    mplayer -fps 30 -vo matrixview -cache 128 -framedrop -vo matrixview driver=v412:width=640:height=480:device= /dev/video0 tv://
 
 ## Apagar os arquivos definitivamente e/ou sobrescrever
     shred -n 3 -z file.ext
@@ -817,23 +813,26 @@ gtk-fallback-icon-theme = gnome
 ## Personalizando o terminal bash do Linux
     # opções disponíveis no PS1, aplicar no script em shell no seu local ($HOME/.bashrc e /root.bashrc)
 
-    $PS1 é o prompt de comando
-    $PS2 é solicitado quando um comando exige mais de uma linha
-    Algumas opções do PS1
-    \W: Exibe o nome do diretório (apenas o nome)
-    \w: Exibe o nome do diretório (caminho completo)
-    \d: Exibe a data
-    \s: Exibe o nome do shell
-    \h: Exibe o nome da máquina (hostname)
-    \u: Exibe o nome do usuário
-    \t: Exibe a hora
-    O meu script shell que uso é esse: .bashrc
-    #!/bin/bash
-    if [ $(id -u) -eq 0 ]; then # se for root
-        PS1="\\[$(tput setaf 1)\\][\\u@\\h:\\w] #\\[$(tput sgr0)\\]"
-    else # user normal
-        PS1="\\[$(tput setaf 8)\\][\\u@\\h:\\w] $"
-    fi
+    # $PS1 é o prompt de comando
+    # $PS2 é solicitado quando um comando exige mais de uma linha
+    # Algumas opções do PS1
+    # \W: Exibe o nome do diretório (apenas o nome)
+    # \w: Exibe o nome do diretório (caminho completo)
+    # \d: Exibe a data
+    # \s: Exibe o nome do shell
+    # \h: Exibe o nome da máquina (hostname)
+    # \u: Exibe o nome do usuário
+    # \t: Exibe a hora
+    # O meu script shell que uso é esse: .bashrc
+
+# Tput setaf * colors => 0 black, 1 red, 2 green, 3 yellow, 4 blue, 5 magenta, 6 cyan, 7 white
+if [ $(id -u) -eq 0 ]; then # User root
+    PS1="\\[$(tput setaf 3)\\][\\u@\\h:\\w]# " # With color
+    #PS1="\\[\\][\\u@\\h:\\w]# "               # Without color
+else # "Normal" User
+    PS1="\\[$(tput setaf 2)\\][\\u@\\h:\\w]$ " # With color
+    #PS1="\\[\\][\\u@\\h:\\w]$ "               # Without color
+fi
 
 ## make install in one specific folder
     folderInstall=/full/path/folder
@@ -863,8 +862,9 @@ gtk-fallback-icon-theme = gnome
     %i - o ícone
     %m - o mini-ícone
     %c - o título
-    Ex: ’firefox’ inicie a sua navegação Web em ’www.kde.org’
-    em vez do firefox, use firefox %u www.kde.org.
+
+    ## Ex: ’firefox’ inicie a sua navegação Web em ’www.kde.org’
+    ## em vez do firefox, use firefox %u www.kde.org.
 
 ## gerar iso - (cdrkit)
     genisoimage -o file_output.iso floder_input/
@@ -1046,7 +1046,7 @@ gtk-fallback-icon-theme = gnome
     mkfontdir
     fc-cache -f -v
 
-# Habilitar root
+## Habilitar root (Ubuntu)
     sudo passwd root
 
 ## Mysql no Slackware
@@ -1056,17 +1056,17 @@ gtk-fallback-icon-theme = gnome
     # Necessário mudar as permissões do diretório inicial e assim o sock será gerado
     chown -R mysql.mysql /var/lib/mysql
 
-    #Para iniciar o MySQL
+    # Para iniciar o MySQL
     mysqld_safe &
 
-    #Para definir a senha de root/administrador dos bancos de dados
+    # Para definir a senha de root/administrador dos bancos de dados
     mysqladmin -u root password <escolha uma senha>
 
-    #Logando no MySQL:
+    # Logando no MySQL:
     mysql -u root -p
 
-# Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
-# Include /etc/apache/mod_php.conf
+    # Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
+    # Include /etc/apache/mod_php.conf
 
     # Inicie o seu Apache
     /usr/sbin/apachectl start
