@@ -291,6 +291,11 @@ dbus-launch ../dropboxd
     # -s, report when two files are the same
     # -r, recursively compare any subdirectories found
 
+## Extract the filename from the url
+    url=http://pics.sitename.com/images/191211/mxKL17DdgUhcr.jpg
+    filename=$(basename "$url")
+    echo "file name: $filename"
+
 ## LiLo login/comand boot wiht out passwd
     linux single
 
