@@ -17,6 +17,12 @@ kdewallet=Chromium,Opera,Chrome
     # or simply enter the following into the terminal:
     killall -9 kwalletd
 
+## Chmod recursively only in directories
+    find /path/to/base/dir -type d -exec chmod 744 {} +
+
+## Chmod recursively only in files
+    find /path/to/base/dir -type f -exec chmod 644 {} +
+
 ## Dia que sistema foi instalado
     # How do I find how long ago a Linux system was installed?
     ls -alct / | tail -1
