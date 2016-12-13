@@ -865,9 +865,16 @@ fi
 ## Deslogar do skype ou logout skype
     Abri uma janela de um amigo qualquer e enviar /remotelogout
 
-## Recuperar arquivos
-    ./extundelete /dev/sdb2 --restore-all
-    http://mapburghardt.blogspot.com.br/2012/05/recuperar-arquivos-deletados-em-ext4.html
+## Recuperar arquivos (ext?)
+    extundelete /dev/sdXX --restore-file /pasta/arquivo
+
+    ## Recuperar diretório
+    extundelete /dev/sdbXX --restore-directory /caminho/pasta
+
+    ## Todos
+    extundelete /dev/sdXX --restore-all
+
+    # link: http://mapburghardt.blogspot.com.br/2012/05/recuperar-arquivos-deletados-em-ext4.html
 
 ## KDE tags
     %f - um nome de arquivo único
