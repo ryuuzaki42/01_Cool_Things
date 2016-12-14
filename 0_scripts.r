@@ -564,6 +564,9 @@ $ paste arq1.txt arq2.txt
     find /dev -maxdepth 1 -name 'abc-*'
 
 ## xargs - create a line of arguments to another command
+    ## If no command is passed, will use echo, the default command
+        echo 1 2 3 4 | xargs
+
     ## Create file from a fileListNames.r
         cat fileListNames.r | xargs touch
 
