@@ -17,10 +17,10 @@ kdewallet=Chromium,Opera,Chrome
     # or simply enter the following into the terminal:
     killall -9 kwalletd
 
-## Chmod recursively only in directories
+## Run chmod recursively only in directories
     find /path/to/base/dir -type d -exec chmod 744 {} +
 
-## Chmod recursively only in files
+## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
 
 ## Dia que sistema foi instalado
@@ -98,7 +98,7 @@ dbus-launch ../dropboxd
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
     paste file1.txt file2.txt > fileFinal.txt
 
-## Wget
+## Run wget with download limit rate
     wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
 
 ## Descobrir a placa-mãe sem programa
@@ -115,7 +115,7 @@ dbus-launch ../dropboxd
     # man comand_to_get | col -b > comand_to_get.txt
     man ksh | col -b > ksh.txt
 
-## Enable ssh X11 on slackware
+## Enable ssh X11 on Slackware
     ## The remote server need GUI and that GUI need to be up
 
     ## To connect
@@ -129,7 +129,7 @@ dbus-launch ../dropboxd
 
     ## Exit from this connection
 
-    ## Before connect again, to enable the acess to any user to GUI
+    ## Before connect again, to enable the access to any user to GUI
     xhost +
 
     ## To connect
@@ -139,7 +139,7 @@ dbus-launch ../dropboxd
 
     ssh -Y root@192.168.0.42
 
-    ## To see conections konsole (look to the IP)
+    ## To see connections in the Konsole (look to the IP)
     w
 
     ## To use the display remote
@@ -210,7 +210,7 @@ dbus-launch ../dropboxd
     for f in *"(128kbit_AAC).mp3" ; do mv "$f" "${f::-18}".mp3; done
 
 ## Remove part of the name of files
-    #To temove extra.test
+    #To remove extra.test
     rename "extra.test" "" *
 
 ## pdf to txt
@@ -220,41 +220,38 @@ dbus-launch ../dropboxd
     # or with -layout to keep the layout
     pdftotext -layout input.pdf output.txt
 
-## Replace/remove multiple empty line with one empty line
-    sed '/^$/N;/^\n$/D' inputfile
+## sed - delete/remove and resplace values
+    ## Replace/remove multiple empty line with one empty line
+        sed '/^$/N;/^\n$/D' inputfile
 
-## Remove new line (\n) for one space
-    echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
+    ## Remove new line (\n) for one space
+        echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
 
-## Remove new line (\n)
-    echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
+    ## Remove new line (\n)
+        echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
 
-## sed change value (TV) to (tv)
-    echo "TV" | sed 's/TV/tv/g'
+    ## sed change value (TV) to (tv)
+        echo "TV" | sed 's/TV/tv/g'
 
-## sed "grep" number
-    echo "awsafd 1.2.4" | sed 's/[^0-9]*//g'
+    ## sed "grep" number
+        echo "awsafd 1.2.4" | sed 's/[^0-9]*//g'
 
-## sed "grep" number and dot
-    echo "awsafd 1.2.4" | sed 's/[^0-9,.]*//g'
+    ## sed "grep" number and dot
+        echo "awsafd 1.2.4" | sed 's/[^0-9,.]*//g'
 
-## sed troca \n por nova linha
-    sed 's/\\n/\n/g'
+    ## sed troca \n por nova linha
+        sed 's/\\n/\n/g'
 
-## sed inserir uma nova linha
-    sed 's/regexp/\'$'\n/g'
-    # regexp:' expressão que irá trocar
+    ## RedShift GUI Error
+        sed -i 's/|/,/g' ~/.redshiftgrc
 
-## RedShift GUI Error
-    sed -i 's/|/,/g' ~/.redshiftgrc
+    ## Remove all possible spaces at the end of the line
+        sed 's/ *$//' file
+        # to write in the same file
+        sed -i 's/ *$//' file
 
-## Remove all possible spaces at the end of the line
-    sed 's/ *$//' file
-    # to write in the same file
-    sed -i 's/ *$//' file
-
-## Using the [:blank:] class you are removing spaces and tabs
-    sed 's/[[:blank:]]*$//' file
+    ## Using the [:blank:] class you are removing spaces and tabs
+        sed 's/[[:blank:]]*$//' file
 
 ## Linux echo only some lines
     a=`screenfetch -E`
@@ -295,14 +292,14 @@ dbus-launch ../dropboxd
 
     # -q, report only when files differ
     # -s, report when two files are the same
-    # -r, recursively compare any subdirectories found
+    # -r, recursively compare any sub directories found
 
-## Extract the filename from the url
+## Extract the file name from a URL
     url=http://pics.sitename.com/images/191211/mxKL17DdgUhcr.jpg
     filename=$(basename "$url")
     echo "file name: $filename"
 
-## LiLo login/comand boot wiht out passwd
+## LiLo login/command boot wihtout password
     linux single
 
     ## In the Slackware
@@ -311,7 +308,7 @@ dbus-launch ../dropboxd
     ## Set the new password
     passwd
 
-## Grub login/comand boot wiht out passwd
+## Grub login/command boot without password
     ## In the Grub menu, select the entry and press "e" to edit
 
     ## Appending in the linhe "linux ....", after boot it with "Ctrl-x" of "F10"
@@ -320,7 +317,7 @@ dbus-launch ../dropboxd
     ## Set the new password
     passwd
 
-## Mostar o Grub menu
+## Show the Grub menu
     nano /etc/default/grub
 
     ## Comment the line
@@ -560,11 +557,31 @@ $ paste arq1.txt arq2.txt
 ## Senha aleatórias
     date +%s | md5sum | base64 | head -c 10 ; echo
 
-## md5 de arquivos dentro de uma pasta recursivamente
-    find folder/ -type f -print0 | xargs -0 md5sum > result.md5
-
 ## Pasta de review ou annotations do okular
     ~/.kde/share/apps/okular/docdata/
+
+## Find only local folder
+    find /dev -maxdepth 1 -name 'abc-*'
+
+## xargs - create a line of arguments to another command
+    ## Create file from a fileListNames.r
+        cat fileListNames.r | xargs touch
+
+    ## Delete file with "*.tmp" in the folder /tmp
+        find /tmp -name “*.tmp” | xargs rm -rf
+
+    ## Change the permission of file with start with ar*
+        ls -1 ar* | xargs -n 1 chmod 775
+
+    ## Create md5sum of all files in on folder and sub directories
+        ## find "-print0" and xargs "-0" to work with files with space
+        find folder/ -type f -print0 | xargs -0 md5sum > result.md5
+
+    ## Break the parameters input in 2 by time
+        echo {0..9} | xargs -n 2
+
+    ## Run one command for each line of result
+        find . | grep ".*.ini" | xargs -L 1 git diff
 
 ## Listagem ls normal > 1 2 3 4 5 6 8 9 10 11 12 13 ...
     ls -v
