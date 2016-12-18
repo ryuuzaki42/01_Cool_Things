@@ -12,3 +12,5 @@ ln -s $gitCloneFOlder/4_paper_01_mestrado/ $dropboxFolder/mestrado/dissertacao/
 ln -s $gitCloneFOlder/7_SUMO_OMNeT_Veins_Slackware $dropboxFolder/mestrado/
 
 ln -s $gitCloneFOlder/8_veins_simulation/ $dropboxFolder/mestrado/dissertacao/
+
+ln -s $gitCloneFOlder/9_cluster_icmc_cemeai $dropboxFolder/mestrado/dissertacao/
