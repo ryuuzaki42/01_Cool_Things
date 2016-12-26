@@ -87,12 +87,11 @@ EndSection
 ## Dolphin disable executable shellscript, perl, ruby, pyton
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
-    Procure pelas linguagens e comente:
+    ## Look for the lines and comment
+        <sub-class-of type="application/x-executable"/> to <!-- <sub-class-of type="application/x-executable"/> --> # "
+        <sub-class-of type='application/x-executable'/> to <!-- <sub-class-of type='application/x-executable'/> --> # '
 
-    <sub-class-of type="application/x-executable"/> to <!-- <sub-class-of type="application/x-executable"/> --> # "
-    <sub-class-of type='application/x-executable'/> to <!-- <sub-class-of type='application/x-executable'/> --> # '
-
-    update-mime-database /usr/share/mime
+        update-mime-database /usr/share/mime
 
     ## If unknown (Unknown media type in type ...)
     rm /usr/share/mime/packages/kde.xml
@@ -118,19 +117,55 @@ EndSection
 ## Upgrade
   mozilla-firefox
 
-## Install texlive from Slackware latex folder
+## Latex
+    ## Remove tetex and tetex-doc
+        slackpkg remove tetex
+
+    ## If will install the txz texlive
+        ## Install libsigsegv texi2html
+        ## Install texlive local
+
+    ## Remove the last texlive (latex) version (if has one)
+        tlmgr uninstall
+
+        ## Delete de older folder
+            cd /usr/local
+            rm -r texlive
+
+    ## Download and install by the ISO file
+        https://www.tug.org/texlive/acquire-iso.html
+
+    ## Mount dvd to install
+        mount texlive*.iso /media/dvd/
+        /media/dvd/install-tl
+            ## Set A4 paper and symlinks on directory
+
+    ## If the command latex is "not found"
+        ## Added in .bashrc (look the year/version)
+        export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-linux
+
+    ## Update packets
+        tlmgr update --self
+        tlmgr update --all
+
+    ## Change mirror and correct some errors
+        tlmgr update --self --all
+
+    ## To install one package
+        tlmgr install package
 
 ## Remover games
     slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
 
 ## Remover servidor x
-    # Remove all another X (leave KDE and XFCE)
-    slackpkg remove twm blackbox fluxbox windowmaker fvwm
+    ## Remove all another X (leave KDE and XFCE)
+        slackpkg remove twm blackbox fluxbox windowmaker fvwm
 
-    # Leave fluxbox # Safe propose
-    slackpkg remove twm blackbox windowmaker fvwm
+    ## Leave fluxbox # Safe propose
+        slackpkg remove twm blackbox windowmaker fvwm
 
-    ## xwmconfig
+    ## Set one by be the default
+        xwmconfig
 
 ## Remover kopote
     slackpkg remove kdenetwork kdenetwork-filesharing kdenetwork-strigi-analyzers kopete
@@ -147,7 +182,7 @@ EndSection
 ## Outros
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
 
-    # Dolphin need baloo baloo-widgets
+    ## Dolphin need baloo baloo-widgets
 
 ## Swap em arquivo
     dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=8192 # 8 GiB = 8192
@@ -162,8 +197,6 @@ EndSection
     nano /etc/fstab
 
 /home/j/swapfile.img swap         swap        defaults         0   0
-
-#/media/sda4/prog/swapfile.img swap swap       defaults        0   0
 
     swapon -a
 
