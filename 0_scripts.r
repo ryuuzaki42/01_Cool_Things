@@ -261,6 +261,10 @@ dbus-launch ../dropboxd
     # or
     cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
 
+## Change the default shell in Linux/Unix/MacOS?
+    # chsh -s shell-path user
+    chsh -s /bin/bash j
+
 ## Print from line 10 to line 20
     iline=10; fline=20; sed -n "$iline, $fline p" vehDist.ini
     #or
