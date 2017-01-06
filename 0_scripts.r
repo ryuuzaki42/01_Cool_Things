@@ -45,16 +45,13 @@ kdewallet=Chromium,Opera,Chrome
     # or
     gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -sOutputFile=novo.pdf velho.pdf
 
-    Onde novo.pdf é o novo arquivo que será criado e velho.pdf é o antigo, o grande.
-    gs :: Ou GhostScript, um interpretador e visualizador de arquivos PS e PDF.
-    -sDEVICE :: Determina o dispositivo de saída do comando. Como estamos gerando um arquivo PDF,
-        usaremos o dispositivo built-in pdfwrite;
-    -dCompatibilityLevel :: Determina o nível de compatibilidade do PDF.
-        Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior. Level 1.4 por exemplo
-    já seria compatível apenas com Acrobat Reader 5 ou superior.
+    Onde novo.pdf é o novo arquivo que será criado e velho.pdf é o antigo, o grande
+    gs :: Ou GhostScript, um interpretador e visualizador de arquivos PS e PDF
+    -sDEVICE :: Determina o dispositivo de saída do comando. Como estamos gerando um arquivo PDF, usaremos o dispositivo built-in pdfwrite
+    -dCompatibilityLevel :: Determina o nível de compatibilidade do PDF
+        Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior. Level 1.4 por exemplo já seria compatível apenas com Acrobat Reader 5 ou superior
     -dNOPAUSE :: Desabilita o prompt (pausa) ao final de cada página processada.
-    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no
-        interpretador gs e precisará digitar "quit" para sair.
+    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no interpretador gs e precisará digitar "quit" para sair
 
 ## Get the users normal users
     cat /etc/passwd | grep -vE "nologin|ftp" | grep home | awk -F':' '{ print $1}'
@@ -68,15 +65,14 @@ kdewallet=Chromium,Opera,Chrome
     ls /home/$user_normal
 
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
-#!/bin/bash
-cd /media/sda4/prog/dropbox/0not_change/
-dbus-launch ../dropboxd
+    dbus-launch ../dropboxd
 
 ## Libreoffice: Colocar ponto (.) no lugar de virgula (,) para separar casas decimais
     Mude o Local setting: English (UK)
 
 ## Clean env | limpar variaveis setadas incialmente no ambiente
     unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
+
     # or
     unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
 
@@ -84,9 +80,9 @@ dbus-launch ../dropboxd
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
 
 ## Assinar pdf
- 1 - Tire uma (boa) foto da assinatura
- 2 - Remova o funda da imagem (png e adicione canal alpha - gimp)
- 3 - Insira a imagem no pdf com MasterPdf
+    1 - Tire uma (boa) foto da assinatura
+    2 - Remova o funda da imagem (png e adicione canal alpha - gimp)
+    3 - Insira a imagem no pdf com MasterPdf
 
 ## Size of a directory/folder on the command line
     du -sh
@@ -111,7 +107,7 @@ dbus-launch ../dropboxd
     digite /Base
 
 ## To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining,
-    # and weird sequences to do bolding:
+    # Weird sequences to do bolding:
     # man comand_to_get | col -b > comand_to_get.txt
     man ksh | col -b > ksh.txt
 
@@ -253,26 +249,17 @@ dbus-launch ../dropboxd
     ## Using the [:blank:] class you are removing spaces and tabs
         sed 's/[[:blank:]]*$//' file
 
-## Linux echo only some lines
-    a=`screenfetch -E`
-    x=3
-    y=18
-    echo "$a" | sed -n -e "$x,$y p" -e "$y q"
-    # or
-    cat -n file.txt | sed -n -e "$x,$y p" -e "$y q"
-
 ## Change the default shell in Linux/Unix/MacOS?
     # chsh -s shell-path user
     chsh -s /bin/bash j
 
-## Print from line 10 to line 20
-    iline=10; fline=20; sed -n "$iline, $fline p" vehDist.ini
-    #or
-    iline=10; fline=20; cat -n file.txt | sed -n -e "$iline,$fline p" -e "$iline q"
-    #or
-    iline=10; fline=20; cat -n vehDist.ini | head -$fline | tail -$iline
-    #or
-    iline=10; fline=20; head -$fline file.txt | tail -$iline
+    ## Logout to test
+
+## Print only some lines
+    b=3; f=18; cat -n file.txt | sed -n -e "$b,$f p" -e "$f q"
+
+    # or
+    b=3; f=18; sed -n "$b, $f p" file.txt
 
 ## Localize arquivos grandes
     find . -size +1000M
@@ -670,6 +657,7 @@ $ paste arq1.txt arq2.txt
 
 ## Para remover várias pastas
     rm -r {1..25}
+
     # or
     rm -r folder_{1..25}
 
@@ -721,6 +709,7 @@ $ paste arq1.txt arq2.txt
 ## Mover para pastas
     i=1; while [ $i -lt 25 ]; do mv *S02E$i* $i; i=$((i+1)); done
 
+    # or
     i=1; while [ $i -lt 25 ]; do mv $i.* $i; i=$((i+1)); done
 
 ## Renomear arquivos
@@ -790,8 +779,8 @@ gtk-fallback-icon-theme = gnome
     cut -c1-3 # pimeiro até o 3 caracteres
 
     cut -d ';' -f2 tabela.txt
-    -d delimitador
-    -fX número X referente a coluna que quer
+    # -d delimitador
+    # -fX número X referente a coluna que quer
 
 ## Cut file after on char
     echo "te.st 1.23" | cut -d '.' -f2
