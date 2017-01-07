@@ -1,3 +1,5 @@
+## Slackware_K45A_KDE.r to Slackware 14.2
+
 ## Editar
     nano /etc/lilo.conf
     nano /etc/fstab
@@ -155,9 +157,9 @@ EndSection
         tlmgr install package
 
 ## Remover games
-    slackpkg remove kdetoys palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
+    slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
 
-## Remover servidor x
+## Remover servidor X
     ## Remove all another X (leave KDE and XFCE)
         slackpkg remove twm blackbox fluxbox windowmaker fvwm
 
@@ -180,7 +182,7 @@ EndSection
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
 ## Outros
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware bluez-hcidump phonon-xine xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
 
     ## Dolphin need baloo baloo-widgets
 
