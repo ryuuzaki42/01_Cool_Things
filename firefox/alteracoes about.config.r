@@ -42,6 +42,9 @@ full-screen-api.warning.timeout
 pdfjs.defaultZoomValue
     > page-width
 
+## Install ffmpeg to use video plugins
+# To test: https://www.youtube.com/html5
+
 ## Good add-ons
     ## habilitado:
 https://adblockplus.org/
