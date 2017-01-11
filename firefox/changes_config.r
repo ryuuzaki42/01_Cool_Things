@@ -53,9 +53,6 @@ https://adblockplus.org/
             extensions.adblockplus.sidebar_key
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 https://addons.mozilla.org/firefox/addon/gnotifier/
-    Notification engine - Standard
-    Default click action - Open folder
-    Notification expiration - Unmarked
 https://addons.mozilla.org/firefox/addon/google-br/
     Change the search
 https://addons.mozilla.org/firefox/addon/inlinedisposition/
