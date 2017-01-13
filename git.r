@@ -29,7 +29,7 @@
 ## Enviar mudanças (commit)
     git commit -m "commit name"
 
-    ## Commit com todas mudanças e adiciona novos arquivos ao gerenciamento do git (git add .) 
+    ## Commit com todas mudanças e adiciona novos arquivos ao gerenciamento do git (git add .)
         git commit -am "commit name"
 
 ## Visualizar mudanças em arquivos antes do commit

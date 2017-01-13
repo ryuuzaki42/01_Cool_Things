@@ -354,7 +354,7 @@ kdewallet=Chromium,Opera,Chrome
     xrandr --output VGA1 --off
     xrandr --output LVDS1 --mode 1366x768
 
-## Comprimir zip em várias partes 
+## Comprimir zip em várias partes
     7z a -v512m Large-file-separated-in-multi-parts.zip Large-Gigabytes-File.SQL
 
     # Large-file-separated-in-multi-parts.zip.001, Large-file-separated-in-multi-parts.zip.002,
