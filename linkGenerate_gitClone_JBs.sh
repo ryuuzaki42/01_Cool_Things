@@ -1,7 +1,7 @@
 #!/bin/bash
 
-gitCloneFOlder="/media/sda4/prog/git_clone"
-dropboxFolder="/media/sda4/prog/Dropbox"
+gitCloneFOlder="/media/sda2/prog/git_clone"
+dropboxFolder="/media/sda2/prog/Dropbox"
 
 ln -s $gitCloneFOlder/1_cool_dark_things/ $dropboxFolder/0_pessoal/
 
