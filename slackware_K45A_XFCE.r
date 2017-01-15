@@ -1,17 +1,23 @@
 ## XFCE disable session restore
     xfce4-settings-editor, find and uncheck xfce4-session -> general -> SaveOnExit
 
+## Display network manager icon on xfce panel
+    /etc/xdg/autostart/nm-applet.desktop
+
 ## Keyboard
     setxkbmap -model abnt2 -layout br
 
 ## Brightness 0 (rc.local)
     echo 0 > /sys/class/backlight/acpi_video0/brightness
 
-## Install whiskey menu and add in the panel the icon-menu from whiskey-menu
+## Install whisker menu and add in the panel the icon-menu from whisker-menu
 
 ## Change the keybord for portuguese-Brazil (select the frist - br)
 
 ## Change terminal size (Preferences > Appearance : Opening New Window : Default Geometry columns/ rows) to 100 x 30
+
+## Install if has removed
+    slackpkg install gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
 ## Added display_LVDS1_default_resolution.sh to start in the startup/boot
 
