@@ -46,8 +46,13 @@ fi
 if [ "$fileName" == '' ]; then
     echo "Error - need pass the file name to grep"
 else
-    ...commands...
+    #...commands...
 fi
+
+# ...
+
+# Don't forget of delete the tmp file
+rm $tmpFile # Delete the tmpFile
 
 ## Senha do Kindle esquecida
     Se você não se lembra da senha do seu Kindle, você precisará redefinir seu dispositivo,
