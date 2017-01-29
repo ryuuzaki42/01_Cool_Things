@@ -29,6 +29,26 @@ kdewallet=Chromium,Opera,Chrome
     # or
     ls -alct / | tail -1 | awk '{print $6, $7, $8}'
 
+## Shell script read value from pipe
+tmpFile=`mktemp` # Temp file if was used a pipe (|)
+cat > $tmpFile # Write the pipe content a tmp file
+
+exec </dev/tty >/dev/tty # Set input back to default (keyboard)
+
+sizeTmpFile=`ls -l $tmpFile | cut -d ' ' -f5` # tmpFile size
+
+if [ "$sizeTmpFile" -gt '0' ]; then
+    fileName=$tmpFile
+else
+    fileName=$1
+fi
+
+if [ "$fileName" == '' ]; then
+    echo "Error - need pass the file name to grep"
+else
+    ...commands...
+fi
+
 ## Senha do Kindle esquecida
     Se você não se lembra da senha do seu Kindle, você precisará redefinir seu dispositivo,
     o que removerá todas as suas informações pessoais e conteúdo baixado
