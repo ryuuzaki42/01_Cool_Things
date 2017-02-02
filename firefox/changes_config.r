@@ -8,6 +8,36 @@ browser.sessionhistory.max_total_viewer
 browser.urlbar.trimURLs
     true para false
 
+## Url more easy to read
+browser.urlbar.formatting.enabled
+    true para false
+
+## Disable all animate
+search for animate
+    true para false
+
+## Disable
+# Disables geolocation
+geo.enabled
+
+# Disable Google Safe Browsing malware checks. Security risk, but privacy improvement
+browser.safebrowsing.malware.enabled = false
+
+# Disable that websites can get notifications if you copy, paste, or cut something
+# from a web page, and it lets them know which part of the page had been selected
+dom.event.clipboardevents.enabled = false
+
+# The attribute would be useful for letting websites track visitors’ clicks
+browser.send_pings = false
+
+# Website owners can track the battery status of your device
+dom.battery.enabled = false
+
+## Popups and others events
+dom.popup_allowed_events
+    change click dblclick mouseup notificationclick reset submit touchend
+    > delete text
+
 ## Selecionar toda url
 browser.urlbar.clickSelectsAll
     false para true
@@ -45,6 +75,13 @@ pdfjs.defaultZoomValue
 ## Install ffmpeg to use video plugins
     # To test: https://www.youtube.com/html5
 
+## Disable Pocket
+extensions.pocket.enabled
+    true para false
+
+browser.toolbarbuttons.introduced.pocket-button
+    true para false
+
 ## Bons complementos
     ## Habilitado:
 https://adblockplus.org/
@@ -55,7 +92,7 @@ https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 https://addons.mozilla.org/firefox/addon/gnotifier/
 https://addons.mozilla.org/firefox/addon/google-br/
     Change the search
-https://addons.mozilla.org/firefox/addon/inlinedisposition/
+https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 
     ## Desabilitado
 https://addons.mozilla.org/firefox/addon/grammarly-1/
