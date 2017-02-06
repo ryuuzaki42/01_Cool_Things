@@ -26,6 +26,7 @@ browser.safebrowsing.malware.enabled = false
 # Disable that websites can get notifications if you copy, paste, or cut something
 # from a web page, and it lets them know which part of the page had been selected
 dom.event.clipboardevents.enabled = false
+    ## Facebook stop work with links pasted in chat
 
 # The attribute would be useful for letting websites track visitors’ clicks
 browser.send_pings = false
