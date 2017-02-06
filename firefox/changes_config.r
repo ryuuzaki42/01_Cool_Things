@@ -84,20 +84,16 @@ browser.toolbarbuttons.introduced.pocket-button
     true para false
 
 ## Bons complementos
-    ## Habilitado:
 https://adblockplus.org/
     Remove (crtl + shift + v)
         about:config
             extensions.adblockplus.sidebar_key
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 https://addons.mozilla.org/firefox/addon/gnotifier/
-https://addons.mozilla.org/firefox/addon/google-br/
-    Change the search
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 
-    ## Desabilitado
+https://addons.mozilla.org/firefox/addon/print-edit/
 https://addons.mozilla.org/firefox/addon/grammarly-1/
-https://addons.mozilla.org/firefox/addon/flashgot/
 https://addons.mozilla.org/firefox/addon/flashstopper/
 http://en.savefrom.net/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/adblock-plus-pop-up-addon/
@@ -110,9 +106,10 @@ https://addons.mozilla.org/firefox/addon/kindle-it/
 https://addons.mozilla.org/firefox/addon/behind_the_overlay/
 https://addons.mozilla.org/firefox/addon/user-agent-switcher-firefox/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-
-    ## Outros
 https://zenmate.com/
+https://addons.mozilla.org/firefox/addon/google-br/
+    Change the search
+https://addons.mozilla.org/firefox/addon/flashgot/
 https://www.eff.org/https-everywhere
 https://addons.mozilla.org/firefox/addon/private-tab/
 https://addons.mozilla.org/firefox/addon/copy-as-plain-text/
