@@ -1,27 +1,27 @@
 ### Firefox changes ###
 
-## Destativar cache de 5 abas recem visitadas
+## Disable cache of 5 tabs recently seen
 browser.sessionhistory.max_total_viewer
-    -1 para 0
+    -1 > 0
 
-## Mostrar url completa
+## Show all URL
 browser.urlbar.trimURLs
-    true para false
+    true > false
 
-## Url more easy to read
+## URL more easy to read
 browser.urlbar.formatting.enabled
-    true para false
+    true > false
 
 ## Disable all animate
-search for animate
-    true para false
+search for animate, and set all to false
 
 ## Disable
 # Disables geolocation
 geo.enabled
 
 # Disable Google Safe Browsing malware checks. Security risk, but privacy improvement
-browser.safebrowsing.malware.enabled = false
+browser.safebrowsing.malware.enabled
+services.sync.prefs.sync.browser.safebrowsing.malware.enabled
 
 # Disable that websites can get notifications if you copy, paste, or cut something
 # from a web page, and it lets them know which part of the page had been selected
@@ -29,47 +29,46 @@ dom.event.clipboardevents.enabled = false
     ## Facebook stop work with links pasted in chat
 
 # The attribute would be useful for letting websites track visitors’ clicks
-browser.send_pings = false
+browser.send_pings
 
 # Website owners can track the battery status of your device
-dom.battery.enabled = false
+dom.battery.enabled
 
 ## Popups and others events
 dom.popup_allowed_events
     change click dblclick mouseup notificationclick reset submit touchend
     > delete text
 
-## Selecionar toda url
+## Select all URL
 browser.urlbar.clickSelectsAll
-    false para true
+    false > true
 
 ## Aumentar velocidade do scroll
 mousewheel.system_scroll_override_on_root_content.enabled
-    false para true
+    false > true
 
-## Associar links magnéticos (torrent) no Firefox
-    > about:config
-    nova entrada > nova referência > boolean > nome
+## Program to open magnet links (torrent)
+    new > boolean > name
     network.protocol-handler.expose.magnet
     > false
 
-    Abra um link magnético, escolha o programa deseja abrir o link
+    Open a magnet link and choose a program
     > /usr/bin/ktorrent
 
-## Habilitar o corretor ortográfico em todos os campos de texto
+## Enabled the spell check in all field text
 layout.spellcheckDefault
-    0 - Desabilita em todas caixas de texto
-    1 - Algumas caixas de texto
-    2 - Em todas caixas de texto
+    0 - Disable in all place
+    1 - Some box of text
+    2 - Enable in all box of text
 
-## Remover mensagem "Tela cheia"
+## Remove message "Full screen"
 full-screen-api.warning.delay
-    500 para 0
+    500 > 0
 
 full-screen-api.warning.timeout
-    3000 para 0
+    3000 > 0
 
-## Definir zomm incial para arquivo pdf
+## Define initial zoom to open PDF files
 pdfjs.defaultZoomValue
     page-width
 
@@ -78,12 +77,12 @@ pdfjs.defaultZoomValue
 
 ## Disable Pocket
 extensions.pocket.enabled
-    true para false
+    true > false
 
 browser.toolbarbuttons.introduced.pocket-button
-    true para false
+    true > false
 
-## Bons complementos
+## Good add-ons
 https://adblockplus.org/
     Remove (crtl + shift + v)
         about:config
