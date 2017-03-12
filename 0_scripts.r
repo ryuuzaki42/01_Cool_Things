@@ -89,6 +89,17 @@ rm $tmpFile # Delete the tmpFile
     user_normal=`awk -F ':' '$3 > 499 {print $1}' /etc/passwd`
     ls /home/$user_normal
 
+## Rename UPPERCASE to lowercase
+    ## Only local folder
+IFS=$(echo -en "\n\b"); for i in $( ls | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
+
+    ## Recursive
+IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
+
+## Auto-logout do terminal
+    TMOUT=300
+    # Time in seconds
+
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
     dbus-launch ../dropboxd
 
