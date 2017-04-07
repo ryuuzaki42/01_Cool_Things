@@ -1002,6 +1002,12 @@ fi
     mount -t vboxsf nome_pasta_compartilhada /media/nome_pasta
     ex: mount -t vboxsf sda2 /media/sf_sda2/
 
+## Mount NTFS partition
+    mount -t ntfs-3g /dev/sdb1 /mnt/ntfs/ 
+
+## See partition types
+    fdisk -l
+
 ## Teste Capture som
     arecord | aplay
 
