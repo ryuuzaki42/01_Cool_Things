@@ -504,6 +504,9 @@ IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "
 ## vlc continue playback?
     interface> Main interfaces> QT:"Continue playback?" ask -> never
 
+## vlc unique instance in the KDE menu
+    /usr/bin/vlc --started-from-file %U
+
 ## Mesclando linhas de arquivos
 $ cat arq1.txt
 1
