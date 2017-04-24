@@ -535,8 +535,11 @@ $ paste arq1.txt arq2.txt
 
     # Nos exemplos utilizamos apenas dois arquivos, mas na prática podemos usar mais arquivos
 
-## Assista Star War em modo ASCII
+## Star Wars em bash at the terminal
     telnet towel.blinkenlights.nl
+
+## Gost in the Shell at the terminal
+    ssh ghost@theshell.xyz
 
 ## Ip externo pelo terminal
     wget -qO - icanhazip.com
