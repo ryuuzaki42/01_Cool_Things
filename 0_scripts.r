@@ -879,11 +879,14 @@ gtk-fallback-icon-theme = gnome
     mplayer -fps 30 -vo matrixview -cache 128 -framedrop -vo matrixview driver=v412:width=640:height=480:device= /dev/video0 tv://
 
 ## Apagar os arquivos definitivamente e/ou sobrescrever
-    shred -n 3 -z file.ext
+    shred -n 3 -z file.txt
 
     Onde:
         -n 3 - número de interações ou gravações;
         -z - significa que o último padrão a ser gravado será zero
+
+## shred recursivamente
+    find <dir> -type f -exec shred -n 20 -z {} \;
 
 ## Personalizando o terminal bash do Linux
     # opções disponíveis no PS1, aplicar no script em shell no seu local ($HOME/.bashrc e /root.bashrc)
