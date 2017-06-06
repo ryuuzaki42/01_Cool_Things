@@ -23,8 +23,11 @@ kdewallet=Chromium,Opera,Chrome
 ## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
 
-## Dia que sistema foi instalado
-    # How do I find how long ago a Linux system was installed?
+## Dolphin (re)enable warm message dialog before Empty Trash
+    nano ~/.config/kiorc
+    ConfirmEmptyTrash=false > true
+
+## How long ago a Linux system was installed? - Day that the system was installed
     ls -alct / | tail -1
     # or
     ls -alct / | tail -1 | awk '{print $6, $7, $8}'
