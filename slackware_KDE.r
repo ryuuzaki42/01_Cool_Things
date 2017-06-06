@@ -241,3 +241,6 @@ MIRRORPLUS['alienbob']=http://slackware.uk/people/alien/sbrepos/14.2/x86_64/
 MIRRORPLUS['restricted']=http://slackware.uk/people/alien/restricted_sbrepos/14.2/x86_64/
 MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
 MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
+
+## Personal choice
+    mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
