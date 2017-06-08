@@ -60,6 +60,13 @@ rm $tmpFile # Delete the tmpFile
 ## sboinstall with pkgtype txz instead tgz (Takes up less disk space)
     PKGTYPE=txz sboinstall -i program
 
+## File associations in KDE/Plasma
+    KDE stores its mimetype mappings in:
+        ~/.local/share/applications/mimeapps.list
+
+    You can also change these associations with the kcmshell4 tool (see also):
+        kcmshell4 filetypes
+
 ## Senha do Kindle esquecida
     Se você não se lembra da senha do seu Kindle, você precisará redefinir seu dispositivo,
     o que removerá todas as suas informações pessoais e conteúdo baixado
