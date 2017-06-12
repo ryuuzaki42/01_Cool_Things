@@ -155,6 +155,11 @@ IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "
     #Procure por "Base Board Information"
     digite /Base
 
+## man search
+    Use ctrl + f or /
+        n - next match or
+        shift + n - previous match
+
 ## To get an ASCII man page file, without the annoying backspace/underscore attempts at underlining,
     # Weird sequences to do bolding:
     # man comand_to_get | col -b > comand_to_get.txt
