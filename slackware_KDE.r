@@ -61,7 +61,6 @@ EndSection
 
     ## Update Dolphin config
         rm /usr/share/mime/packages/kde.xml
-
         update-mime-database /usr/share/mime
 
 ## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
@@ -71,9 +70,7 @@ EndSection
 
 ## Install slackpkg
     slackpkg install flash-player-plugin p7zip unrar chrome
-
     slackpkg install icedtea-web libreoffice-5.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
-
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
@@ -230,27 +227,29 @@ glib2
 xf86-video-intel
 glib
 
-## slackpkgplus.config others mirrors
+## slackpkg mirrors
+nano /etc/slackpkg/mirrors
+
+    ## Local mirror stable
+    file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
+
+    ## Local mirror current
+    file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
+
+## slackpkg+ mirrors
 nano /etc/slackpkg/slackpkgplus.conf
 
-    # MIRRORPLUS['multilib']=http://slackware.uk/people/alien/multilib/14.2/
-
+    #MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
     # MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
     # MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
 
     ## Stable
-    MIRRORPLUS['alienbob']=http://slackware.uk/people/alien/sbrepos/14.2/x86_64/
-    MIRRORPLUS['restricted']=http://slackware.uk/people/alien/restricted_sbrepos/14.2/x86_64/
+    MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
+    MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
 
     ## Current
     MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
     MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
-
-    ## Local stable
-    MIRRORPLUS['scl']=file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
-
-    ## Local current
-    MIRRORPLUS['scl']=file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
@@ -261,6 +260,8 @@ nano /etc/slackpkg/slackpkgplus.conf
     ## Change the "SSD_MOUNT" for your partition mount folder 
         # For me weekly is enough
     cp do_fstrim.sh /etc/cron.weekly/
+        # To test:
+        /etc/cron.weekly/do_fstrim.sh
 
     # See all add
     crontab -l
