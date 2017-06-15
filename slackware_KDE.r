@@ -4,8 +4,7 @@
     nano /etc/lilo.conf
     nano /etc/fstab
     nano /etc/inittab
-    nano /etc/profile.d/lang.sh
-    nano /etc/profile.d/lang.csh
+    nano /etc/profile.d/lang.*sh
     nano /etc/acpi/acpi_handler.sh
 
 ## Remove autostart
@@ -56,7 +55,7 @@ EndSection
         <sub-class-of type="application/x-executable"/>
         <!-- <sub-class-of type="application/x-executable"/> -->
 
-        # And
+    ## And
         <sub-class-of type='application/x-executable'/>
         <!-- <sub-class-of type='application/x-executable'/> -->
 
@@ -77,12 +76,8 @@ EndSection
 
     ## libreoffice - install cogroo and change the language configuration
 
-## Install local
-    bleachbit dropbox virtualbox comix qpdf R redshift smplayer vlc openjdk
-    # convmv pdftk pv
-
-## Upgrade
-  mozilla-firefox
+## Install local packages/programs
+    dropbox virtualbox comix qpdf R redshift smplayer vlc openjdk ...
 
 ## Latex
     ## Remove tetex and tetex-doc
@@ -186,13 +181,15 @@ EndSection
     cat /proc/sys/vm/swappiness
 
     ## To temporarily set the swappiness value
-    sysctl -w vm.swappiness=10
+        sysctl -w vm.swappiness=10
 
     ## To set the swappiness value permanently, edit a sysctl configuration file
-    nano /etc/sysctl.conf
-    ## Adicionar no arquivo -> vm.swappiness=10
-    carregar o configuração padrão/permanente
-    sysctl –p
+        nano /etc/sysctl.conf
+            ## Add in the file
+            vm.swappiness=10
+
+    ## Load configuration permanently
+        sysctl –p
 
 ## Move windows between Desktop
     ## Add 4 Desktop
@@ -236,11 +233,44 @@ glib
 ## slackpkgplus.config others mirrors
 nano /etc/slackpkg/slackpkgplus.conf
 
-MIRRORPLUS['multilib']=http://slackware.uk/people/alien/multilib/14.2/
-MIRRORPLUS['alienbob']=http://slackware.uk/people/alien/sbrepos/14.2/x86_64/
-MIRRORPLUS['restricted']=http://slackware.uk/people/alien/restricted_sbrepos/14.2/x86_64/
-MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
-MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
+    # MIRRORPLUS['multilib']=http://slackware.uk/people/alien/multilib/14.2/
+
+    # MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
+    # MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
+
+    ## Stable
+    MIRRORPLUS['alienbob']=http://slackware.uk/people/alien/sbrepos/14.2/x86_64/
+    MIRRORPLUS['restricted']=http://slackware.uk/people/alien/restricted_sbrepos/14.2/x86_64/
+
+    ## Current
+    MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+    MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
+
+    ## Local stable
+    MIRRORPLUS['scl']=file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
+
+    ## Local current
+    MIRRORPLUS['scl']=file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
+
+## If has SSD - fstrim
+    # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
+
+    ## Change the "SSD_MOUNT" for your partition mount folder 
+        # For me weekly is enough
+    cp do_fstrim.sh /etc/cron.weekly/
+
+    # See all add
+    crontab -l
+
+    # Run weekly cron jobs at 4:30 on the first day of the week:
+    30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+
+    # * * * * * command to execute
+    # │ │ │ │ └─ day of week (0 - 6) (Sun(0) /Mon (1)/Tue (2)/Wed (3)/Thu (4)/Fri (5)/Sat (6))
+    # │ │ │ └─ month (1 - 12)
+    # │ │ └─ day of month (1 - 31)
+    # │ └─ hour (0 - 23)
+    # └─ min (0 - 59)
