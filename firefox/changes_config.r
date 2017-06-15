@@ -43,6 +43,10 @@ dom.popup_allowed_events
 browser.urlbar.clickSelectsAll
     false > true
 
+## Open a search from the searchbar in a new tab if you use the return key to trigger the search
+browser.search.openintab
+    false > true
+
 ## Aumentar velocidade do scroll
 mousewheel.system_scroll_override_on_root_content.enabled
     false > true
@@ -82,6 +86,16 @@ extensions.pocket.enabled
 browser.toolbarbuttons.introduced.pocket-button
     true > false
 
+## How to prevent against homograph phishing attacks
+    # http://thehackernews.com/2017/04/unicode-Punycode-phishing-attack.html
+network.IDN_show_punycode
+    false > True
+
+## How to prevent Firefox Resources Reader
+    # https://fingerprint-em-portugues.neocities.org/
+    # https://browserleaks.com/firefox
+https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/
+
 ## Good add-ons
 https://adblockplus.org/
     Remove (crtl + shift + v)
@@ -90,14 +104,14 @@ https://adblockplus.org/
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 https://addons.mozilla.org/firefox/addon/gnotifier/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
+https://addons.mozilla.org/firefox/addon/unloadtab/
 
 https://addons.mozilla.org/firefox/addon/print-edit/
 https://addons.mozilla.org/firefox/addon/grammarly-1/
 https://addons.mozilla.org/firefox/addon/flashstopper/
 http://en.savefrom.net/user.php?vid=387#download
-https://addons.mozilla.org/firefox/addon/adblock-plus-pop-up-addon/
-    http://jessehakanen.net/adblockpluspopupaddon/#download
-        Block all pop-ups
+https://addons.mozilla.org/firefox/addon/popup-blocker-ultimate/
+
 http://www.baixou.com.br/baixouagora
 https://desprotetor.com.br/download
 https://addons.mozilla.org/firefox/addon/video-blocker/
