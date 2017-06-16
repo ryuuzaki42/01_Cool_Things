@@ -168,7 +168,7 @@ EndSection
 
 /home/j/swapfile.img swap         swap        defaults         0   0
 
-#/media/sda2/prog/0configs/swapfile.img swap   swap        defaults         0   0
+#/media/sda2/prog/swapfile.img swap swap       defaults         0   0
 
     swapon -a
 
