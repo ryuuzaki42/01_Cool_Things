@@ -190,6 +190,9 @@ EndSection
     ## Load configuration permanently
         sysctl –p
 
+## Set slackpkg mirror - Take a look in this script
+./mirrors_insert_JBs.sh
+
 ## Move windows between Desktop
     ## Add 4 Desktop
 
