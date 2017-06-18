@@ -53,7 +53,7 @@ mousewheel.system_scroll_override_on_root_content.enabled
 
 ## Program to open magnet links (torrent)
     new > boolean > name
-    network.protocol-handler.expose.magnet
+network.protocol-handler.expose.magnet
     > false
 
     Open a magnet link and choose a program
@@ -98,21 +98,23 @@ https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/
 
 ## Good add-ons
 https://adblockplus.org/
-    Remove (crtl + shift + v)
+    Remove the shortcut (crtl + shift + v)
         about:config
             extensions.adblockplus.sidebar_key
+                Remove: Accel Shift V
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
-https://addons.mozilla.org/firefox/addon/gnotifier/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
-https://addons.mozilla.org/firefox/addon/unloadtab/
-
-https://addons.mozilla.org/firefox/addon/print-edit/
-https://addons.mozilla.org/firefox/addon/grammarly-1/
-https://addons.mozilla.org/firefox/addon/flashstopper/
-http://en.savefrom.net/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/popup-blocker-ultimate/
 
+## Others
+http://en.savefrom.net/user.php?vid=387#download
+https://addons.mozilla.org/firefox/addon/unloadtab/
+https://addons.mozilla.org/firefox/addon/print-edit/
+https://addons.mozilla.org/firefox/addon/grammarly-1/
 http://www.baixou.com.br/baixouagora
+
+https://addons.mozilla.org/firefox/addon/flashstopper/
+https://addons.mozilla.org/firefox/addon/gnotifier/
 https://desprotetor.com.br/download
 https://addons.mozilla.org/firefox/addon/video-blocker/
 https://addons.mozilla.org/firefox/addon/kindle-it/
