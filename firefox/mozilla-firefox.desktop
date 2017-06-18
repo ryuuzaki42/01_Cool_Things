@@ -1,13 +1,9 @@
 [Desktop Entry]
-Comment=
-Exec=/media/sda4/prog/firefox/firefox
-Icon=/media/sda4/prog/firefox/browser/chrome/icons/default/default48.png
+Exec=/media/sda2/prog/1installed/firefox/firefox/firefox
+Icon=/media/sda2/prog/1installed/firefox/firefox/browser/chrome/icons/default/default48.png
 Name=Firefox
 NoDisplay=false
-Path[$e]=
 StartupNotify=false
 Terminal=0
-TerminalOptions=
 Type=Application
 X-KDE-SubstituteUID=false
-X-KDE-Username=
