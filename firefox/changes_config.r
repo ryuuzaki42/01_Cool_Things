@@ -96,15 +96,35 @@ network.IDN_show_punycode
     # https://browserleaks.com/firefox
 https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/
 
+## Enable multiprocess (Firefox 54 and up)
+about:support
+
+    ## Look for ...
+    "1/1 (Enabled by default)" - multiprocess feature is working
+    "0/x (Disabled by add-ons)" - multiprocess is not working
+
+    ## See add-ons that is not compatible with multiprocess
+    https://addons.mozilla.org/en-US/firefox/addon/add-on-compatibility-reporter/
+        ## Remove or disable them
+
+    ## Enable Firefox Multiprocess Feature
+    browser.tabs.remote.autostart
+        false > True
+
+    ## Set the count os process
+    dom.ipc.processCount
+        > Set more than 1
+
 ## Good add-ons
 https://adblockplus.org/
     Remove the shortcut (crtl + shift + v)
         about:config
             extensions.adblockplus.sidebar_key
                 Remove: Accel Shift V
-https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
-https://addons.mozilla.org/firefox/addon/popup-blocker-ultimate/
+
+## Not compatible with multiprocess
+https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 
 ## Others
 http://en.savefrom.net/user.php?vid=387#download
