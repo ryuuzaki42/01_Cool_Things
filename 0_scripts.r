@@ -102,6 +102,9 @@ rm $tmpFile # Delete the tmpFile
     user_normal=`awk -F ':' '$3 > 499 {print $1}' /etc/passwd`
     ls /home/$user_normal
 
+## KDE link open as file:///var/tmp/kdecache...
+    Edit in the "System Settings" the "Default Applications" - "Web Browser" and set the path to the browser as "/usr/bin/firefox"
+
 ## Rename UPPERCASE to lowercase
     ## Only local folder
 IFS=$(echo -en "\n\b"); for i in $( ls | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
