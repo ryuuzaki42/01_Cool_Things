@@ -1,23 +1,17 @@
     ## Slackware_K45A_KDE.r to Slackware 14.2 ##
 
-## Edit
-    nano /etc/lilo.conf
-    nano /etc/fstab
-    nano /etc/inittab
-    nano /etc/profile.d/lang.*sh
-    nano /etc/acpi/acpi_handler.sh
+## Edit files in the /etc/
+    nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
 
-## Remove autostart
+## Remove autostart programs
     /etc/xdg/autostart
-
     /usr/share/autostart/
 
-    nano /home/j/.config/akonadi/akonadiserverrc
-    StartServer=true > StartServer=false
+    nano ~/.config/akonadi/akonadiserverrc
+        StartServer=true > StartServer=false
 
 ## Disable Hibernation
     nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
-
         <action id="org.freedesktop.upower.hibernate">
             <allow_active>yes</allow_active>
                 yes > no
@@ -26,16 +20,14 @@
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
     https://github.com/ryuuzaki42/5_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
 
-    ## Set to run at the startup
+    ## Set to run on the boot
     echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
 ## Kernel Generic
-    # https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
+    #https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
 
-    /usr/share/mkinitrd/mkinitrd_command_generator.sh | grep mkinitrd | grep -v command | /bin/bash
-
+    /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
-
     nano /etc/lilo.conf
     lilo
 
@@ -51,11 +43,10 @@ EndSection
 ## Dolphin disable executable shellscript, perl, ruby, pyton etc
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
-    ## Look for the lines and comment
+    ## Look for the lines and comment # with "" and ''
         <sub-class-of type="application/x-executable"/>
         <!-- <sub-class-of type="application/x-executable"/> -->
 
-    ## And
         <sub-class-of type='application/x-executable'/>
         <!-- <sub-class-of type='application/x-executable'/> -->
 
@@ -68,9 +59,8 @@ EndSection
     System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
-## Install slackpkg
-    slackpkg install flash-player-plugin p7zip unrar chrome
-    slackpkg install icedtea-web libreoffice-5.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
+## Libreoffice to Brazil user on KDE
+    slackpkg install libreoffice-5.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
@@ -113,21 +103,16 @@ EndSection
     ## To install one package
         tlmgr install package
 
-## Remove games
-    ## Part 1
+## Remove games of KDE
     slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling
-
-    ## Part 2
     slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk
-
-    ## Part 3
     slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
 
 ## Remove desktop environments (X)
     ## Remove all another X than KDE (leave fluxbox for safe propose)
         slackpkg remove twm blackbox windowmaker fvwm xfce
 
-    ## Set one by be the default
+    ## Set one to be the default
         xwmconfig
 
 ## Remove kopote
@@ -139,35 +124,21 @@ EndSection
 ## Remove akonadi
     slackpkg remove akonadi
 
-## Remove ktorrent
-    slackpkg remove ktorrent libktorrent
-
 ## Remove gnome "packages"
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
 ## Remove others
-    ## Part 1
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware
-
-    ## Part 1
     slackpkg remove xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
-
     ## Dolphin need baloo baloo-widgets
 
-## Swap in file
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=8192 # 8 GiB = 8192
+## Swap in file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
+    dd if=/dev/zero of=~/swapfile.img bs=1M count=2048 # 2 GiB
 
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=6144 # 6 GiB = 6144
-
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=4096 # 4 GiB = 4096
-
-    dd if=/dev/zero of=/home/j/swapfile.img bs=1M count=2048 # 2 GiB = 2048
-
-    mkswap /home/j/swapfile.img
+    mkswap ~/swapfile.img
     nano /etc/fstab
 
 /home/j/swapfile.img swap         swap        defaults         0   0
-
 #/media/sda2/prog/swapfile.img swap swap       defaults         0   0
 
     swapon -a
@@ -185,7 +156,7 @@ EndSection
     ## To set the swappiness value permanently, edit a sysctl configuration file
         nano /etc/sysctl.conf
             ## Add in the file
-            vm.swappiness=10
+                vm.swappiness=10
 
     ## Load configuration permanently
         sysctl –p
@@ -197,7 +168,7 @@ EndSection
     ## Add 4 Desktop
 
     ## Add shortcuts
-    System Settings > Shortcuts and Gestures >  Global Keyboard Shortcuts
+    System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
     Selecting "KWin"
     Search for "one"
 
@@ -211,58 +182,48 @@ EndSection
     Window One Desktop to the Right ## Ctrl + Alt + Shift + Right
     Window One Desktop Up           ## Ctrl + Alt + Shift + Up
 
-## Blacklist (slackpkg)
+## If use multilib, add package gcc and glibc to not upgrade
+    ## In the blacklist file
+        # Any packages listed here won't be upgraded, removed, or installed by slackpkg
     nano /etc/slackpkg/blacklist
 
-ffmpeg
-kdenlive
-ladspa_sdk
-libquicktime
-libwebp
-mkvtoolnix
-orc
-schroedinger
-smplayer
-swfdec
-wxPython
-x264
-xerces-c
-bleachbit
-glib2
-xf86-video-intel
-glib
+    ## Or in the greylist
+        # All packages in that list will be showned but unchecked by default 
+    nano /etc/slackpkg/greylist
 
-## slackpkg mirrors
+gcc
+glibc
+
+## slackpkg mirrors - local clone (https://github.com/ryuuzaki42/2_clone_Slackware_repo)
 nano /etc/slackpkg/mirrors
 
     ## Local mirror stable
     file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
 
     ## Local mirror current
-    file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
+    #file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
 
 ## slackpkg+ mirrors
 nano /etc/slackpkg/slackpkgplus.conf
 
     #MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
-    # MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
-    # MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
+    #MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
+    #MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
 
     ## Stable
     MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
     MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
 
     ## Current
-    MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
-    MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
+    #MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+    #MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
 
 ## If has SSD - fstrim
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
-
-    ## Change the "SSD_MOUNT" for your partition mount folder 
+    ## Change the "SSD_MOUNT" for your partition mount folder
         # For me weekly is enough
     cp do_fstrim.sh /etc/cron.weekly/
         # To test:
