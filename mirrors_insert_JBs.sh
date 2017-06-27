@@ -1,8 +1,8 @@
-#/bin/bash
+#!/bin/bash
 
 echo -en "\nThis script insert in the begin of /etc/slackpkg/mirrors"
 echo -en " the message below about mirrors.\nWant continue? (y)es or (n)o: "
-read continueOrNot
+read -r continueOrNot
 
 if [ "$continueOrNot" == 'y' ]; then
     tmpFile="/etc/slackpkg/mirrors.tmp1_$(date +%s)"
