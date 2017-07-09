@@ -279,9 +279,13 @@ IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "
 
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
+        # or
+        tr '\r\n' ' '
 
     ## Remove new line (\n)
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
+        # or
+        tr -d '\n'
 
     ## sed change value (TV) to (tv)
         echo "TV" | sed 's/TV/tv/g'
