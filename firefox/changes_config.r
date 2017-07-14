@@ -15,39 +15,33 @@ browser.urlbar.formatting.enabled
 ## Disable all animate
 search for animate, and set all to false
 
-## Disable
-# Disables geolocation
+## Disables geolocation
 geo.enabled
 
-# Disable Google Safe Browsing malware checks. Security risk, but privacy improvement
+## Disable Google Safe Browsing malware checks. Security risk, but privacy improvement
 browser.safebrowsing.malware.enabled
 services.sync.prefs.sync.browser.safebrowsing.malware.enabled
 
-# Disable that websites can get notifications if you copy, paste, or cut something
-# from a web page, and it lets them know which part of the page had been selected
+## Disable that websites can get notifications if you copy, paste, or cut something
+## from a web page, and it lets them know which part of the page had been selected
 dom.event.clipboardevents.enabled = false
     ## Facebook stop work with links pasted in chat
 
-# The attribute would be useful for letting websites track visitors’ clicks
+## The attribute would be useful for letting websites track visitors’ clicks
 browser.send_pings
 
-# Website owners can track the battery status of your device
+## Website owners can track the battery status of your device
 dom.battery.enabled
-
-## Popups and others events
-dom.popup_allowed_events
-    change click dblclick mouseup notificationclick reset submit touchend
-    > delete text
 
 ## Select all URL
 browser.urlbar.clickSelectsAll
     false > true
 
-## Open a search from the searchbar in a new tab if you use the return key to trigger the search
+## Open a search from the search bar in a new tab if you use the return key to trigger the search
 browser.search.openintab
     false > true
 
-## Aumentar velocidade do scroll
+## Increase the speed of the scroll
 mousewheel.system_scroll_override_on_root_content.enabled
     false > true
 
@@ -57,7 +51,7 @@ network.protocol-handler.expose.magnet
     > false
 
     Open a magnet link and choose a program
-    > /usr/bin/ktorrent
+/usr/bin/ktorrent
 
 ## Enabled the spell check in all field text
 layout.spellcheckDefault
@@ -76,7 +70,7 @@ full-screen-api.warning.timeout
 pdfjs.defaultZoomValue
     page-width
 
-## Install ffmpeg to use video plugins
+## Install ffmpeg to full support to  html5
     # To test: https://www.youtube.com/html5
 
 ## Disable Pocket
@@ -94,7 +88,7 @@ network.IDN_show_punycode
 ## How to prevent Firefox Resources Reader
     # https://fingerprint-em-portugues.neocities.org/
     # https://browserleaks.com/firefox
-https://addons.mozilla.org/en-US/firefox/addon/no-resource-uri-leak/
+https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/
 
 ## Enable multiprocess (Firefox 54 and up)
 about:support
@@ -104,8 +98,8 @@ about:support
     "0/x (Disabled by add-ons)" - multiprocess is not working
 
     ## See add-ons that is not compatible with multiprocess
-    https://addons.mozilla.org/en-US/firefox/addon/add-on-compatibility-reporter/
-        ## Remove or disable them
+    https://addons.mozilla.org/firefox/addon/add-on-compatibility-reporter/
+        ## Remove or disable all them
 
     ## Enable Firefox Multiprocess Feature
     browser.tabs.remote.autostart
@@ -115,24 +109,27 @@ about:support
     dom.ipc.processCount
         > Set more than 1
 
+## Dictionaries & Language Packs # https://addons.mozilla.org/en-GB/firefox/language-tools/
+https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
+https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
+
 ## Good add-ons
-https://adblockplus.org/
-    Remove the shortcut (crtl + shift + v)
-        about:config
-            extensions.adblockplus.sidebar_key
-                Remove: Accel Shift V
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
+https://addons.mozilla.org/firefox/addon/strict-pop-up-blocker/
 
 ## Not compatible with multiprocess
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
 
 ## Others
+https://adblockplus.org/
+    Remove the shortcut (crtl + shift + v)
+            extensions.adblockplus.sidebar_key
+                Remove: Accel Shift V
 http://en.savefrom.net/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/unloadtab/
 https://addons.mozilla.org/firefox/addon/print-edit/
 https://addons.mozilla.org/firefox/addon/grammarly-1/
 http://www.baixou.com.br/baixouagora
-
 https://addons.mozilla.org/firefox/addon/flashstopper/
 https://addons.mozilla.org/firefox/addon/gnotifier/
 https://desprotetor.com.br/download
@@ -143,7 +140,7 @@ https://addons.mozilla.org/firefox/addon/user-agent-switcher-firefox/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://zenmate.com/
 https://addons.mozilla.org/firefox/addon/google-br/
-    Change the search
+    Change the default "search"
 https://addons.mozilla.org/firefox/addon/flashgot/
 https://www.eff.org/https-everywhere
 https://addons.mozilla.org/firefox/addon/private-tab/
