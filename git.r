@@ -239,3 +239,23 @@
     ## 4 Clean up the temporary clone:
         cd ..
         rm -rf repo.git
+
+## Search for a deleted file
+    git log --all --full-history -- **/thefile.*
+
+    ## If you know the path:
+        git log --all --full-history -- <path-to-file>
+
+## Find/Identify large files in git history
+git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| awk '/^blob/ {print substr($0,6)}' \
+| sort --numeric-sort --key=2b
+
+    ## Output for Humans
+git rev-list --objects --all \
+| git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' \
+| awk '/^blob/ {print substr($0,6)}' \
+| sort --numeric-sort --key=2b \
+| cut --complement --characters=8-40 \
+| numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
