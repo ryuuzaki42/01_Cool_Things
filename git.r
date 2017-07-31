@@ -259,3 +259,6 @@ git rev-list --objects --all \
 | sort --numeric-sort --key=2b \
 | cut --complement --characters=8-40 \
 | numfmt --field=2 --to=iec-i --suffix=B --padding=7 --round=nearest
+
+## Git show remote URL
+    git config --get remote.origin.url
