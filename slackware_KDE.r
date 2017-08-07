@@ -229,11 +229,14 @@ nano /etc/slackpkg/slackpkgplus.conf
         # To test:
         /etc/cron.weekly/do_fstrim.sh
 
-    # See all add
+    ## See all add
     crontab -l
 
-    # Run weekly cron jobs at 4:30 on the first day of the week:
+    ## Run weekly cron jobs at 4:30 on the first day of the week:
     30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+
+    ## Edit cron and set to run weekly at 19:00 on the first day of the week:
+    0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
     # * * * * * command to execute
     # │ │ │ │ └─ day of week (0 - 6) (Sun(0) /Mon (1)/Tue (2)/Wed (3)/Thu (4)/Fri (5)/Sat (6))
