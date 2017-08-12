@@ -115,7 +115,7 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
 ## Good add-ons
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
-https://addons.mozilla.org/firefox/addon/strict-pop-up-blocker/
+https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
 
 ## Not compatible with multiprocess
 https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
