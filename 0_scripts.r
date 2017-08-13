@@ -67,6 +67,11 @@ rm $tmpFile # Delete the tmpFile
 ## sboinstall with pkgtype txz instead tgz (Takes up less disk space)
     PKGTYPE=txz sboinstall -i program
 
+## Audio output in the HDMI
+    pavucontrol
+        > in the tab "Configuration"
+            > in "Profile" Select "HDMI Output"
+
 ## File associations in KDE/Plasma
     KDE stores its mimetype mappings in:
         ~/.local/share/applications/mimeapps.list
