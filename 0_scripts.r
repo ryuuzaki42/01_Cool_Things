@@ -119,10 +119,10 @@ rm $tmpFile # Delete the tmpFile
 
 ## Rename UPPERCASE to lowercase
     ## Only local folder
-IFS=$(echo -en "\n\b"); for i in $( ls | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
+        IFS=$(echo -en "\n\b"); for i in $( ls | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
 
     ## Recursive
-IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
+        IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "$i" | tr 'A-Z' 'a-z'`; done
 
 ## Auto-logout do terminal
     TMOUT=300
@@ -142,6 +142,9 @@ IFS=$(echo -en "\n\b"); for i in $( find . | grep [A-Z] ); do mv -i "$i" `echo "
 
 ## Video para mp3
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
+
+## Run "usual_JBs.sh pdf-r file.pdf" for all file in a directory
+    IFS=$(echo -en "\n\b"); for file in $(ls -1); do echo "1 $file"; usual_JBs.sh pdf-r "$file" 4; done
 
 ## Assinar pdf
     1 - Tire uma (boa) foto da assinatura
