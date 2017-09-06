@@ -24,19 +24,19 @@
 # Script: Script to do the changes I do every installation
 # of the Slackware (with KDE)
 #
-# Last update: 06/08/2017
+# Last update: 06/09/2017
 #
 echo "## Change in the Slackware - Script ##"
 
-userNormal=$1 # User to work with
-if [ "" -lt '1' ]; then
+userToWork=$1 # User to work with
+if [ "$userToWork" == '' ]; then
     echo -e "\nYou need pass the a user to work with\nJust exiting\n"
     exit 1
 fi
 
 #--------------------------- Adding a user ----------------------------------------------
 # Adding a user passed by parameter
-/usr/sbin/adduser "$userNormal"
+/usr/sbin/adduser "$userToWork"
 
 #--------------------------- Changes in /etc/fstab --------------------------------------
 # Comment the line with floppy disk
@@ -78,14 +78,14 @@ dd if=/dev/zero of=~/swapfile.img bs=1M count=2048 # 2 GiB
 mkswap ~/swapfile.img
 
 # Write the configurations in the fstab
-echo "/home/j/swapfile.img swap         swap        defaults         0   0" >> /etc/fstab
+echo "/home/$userToWork/swapfile.img swap         swap        defaults         0   0" >> /etc/fstab
 
 # Active the SWAP
 swapon -a
 
 # Remove swap warnings
-chmod 0600 "/home/$userNormal/swapfile.img"
-chown root "/home/$userNormal/swapfile.img"
+chmod 0600 "/home/$userToWork/swapfile.img"
+chown root "/home/$userToWork/swapfile.img"
 
 #--------------------------- end --------------------------------------------------------
-echo "End the script
+echo "End the script"
