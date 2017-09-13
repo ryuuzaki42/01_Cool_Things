@@ -30,6 +30,9 @@ kdewallet=Chromium,Opera,Chrome
         ## upgrade
             pip install [package] --upgrade
 
+## LibreOffice without icons
+    Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
+
 ## Dolphin (re)enable warm message dialog before Empty Trash
     nano ~/.config/kiorc
     ConfirmEmptyTrash=false > true
