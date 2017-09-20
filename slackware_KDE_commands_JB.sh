@@ -25,7 +25,7 @@
 #
 # Last update: 20/09/2017
 #
-echo "## Change in the Slackware - Script ##"
+echo "## Changes in the Slackware - Script ##"
 
 userToWork=$1 # User to work with
 if [ "$userToWork" == '' ]; then
@@ -79,14 +79,13 @@ mkswap ~/swapfile.img
 # Write the configurations in the fstab
 echo "/home/$userToWork/swapfile.img swap         swap        defaults         0   0" >> /etc/fstab
 
-# Active the SWAP
-swapon -a
+swapon -a # Active the swap
 
 # Remove swap warnings
 chmod 0600 "/home/$userToWork/swapfile.img"
 chown root "/home/$userToWork/swapfile.img"
 
-# Kernel generic
+#--------------------------- Create a kernel generic ------------------------------------
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
 
@@ -94,7 +93,7 @@ echo "Edit \"/etc/lilo.conf\"... enter to continue"
 read -r
 
 vi /etc/lilo.conf
-lilo
+lilo # Update lilo
 
 #--------------------------- end --------------------------------------------------------
 echo "End the script"
