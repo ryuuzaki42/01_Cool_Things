@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
@@ -24,7 +23,7 @@
 # Script: Script to do the changes I do every installation
 # of the Slackware (with KDE)
 #
-# Last update: 06/09/2017
+# Last update: 20/09/2017
 #
 echo "## Change in the Slackware - Script ##"
 
@@ -86,6 +85,16 @@ swapon -a
 # Remove swap warnings
 chmod 0600 "/home/$userToWork/swapfile.img"
 chown root "/home/$userToWork/swapfile.img"
+
+# Kernel generic
+/usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
+/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
+
+echo "Edit \"/etc/lilo.conf\"... enter to continue"
+read -r
+
+vi /etc/lilo.conf
+lilo
 
 #--------------------------- end --------------------------------------------------------
 echo "End the script"
