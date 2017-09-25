@@ -265,12 +265,15 @@ rm $tmpFile # Delete the tmpFile
 ## Count files of one type in the folder
     fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
 
-## Convet entire playlist from flac, oog, flac to mp3
+## Convert entire playlist from flac, oog, flac to mp3
     # 320 k
     for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" -ab 320k "${f%.m4a}.mp3"; done
 
     # normal (small files)
     for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" "${f%.m4a}.mp3"; done
+
+## Convert ogg to mp3 with ffmpeg
+    for file in $(ls *.ogg); do echo $file; ffmpeg -i ${file} -acodec libmp3lame ${file::-4}.mp3; done
 
 ## Rename several file adding some parte
     # file_output.txt => f; ${f:2} => le_output.txt; ${f::-4} => file_output
