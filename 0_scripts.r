@@ -164,6 +164,15 @@ rm $tmpFile # Delete the tmpFile
 ## Combinar dois arquivos de texto em duas colunas "arq1 arq2"
     paste file1.txt file2.txt > fileFinal.txt
 
+## Format USB to FAT 32
+    ## Create the partition with the type FAT 32
+        cfdisk /dev/sdX
+        #or
+        fdisk /dev/sdX
+
+    ## Format the new partition to FAT 32
+        mkfs.fat -F 32 -I /dev/sdX1
+
 ## Run wget with download limit rate
     wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
 
