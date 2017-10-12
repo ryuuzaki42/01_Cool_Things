@@ -37,10 +37,22 @@ kdewallet=Chromium,Opera,Chrome
     nano ~/.config/kiorc
     ConfirmEmptyTrash=false > true
 
+## Dolphin freezing when delete file and/or clean the trash (If you use VLC)
+    ## 32 bits or distro with work only with /usr/lib/
+        /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+
+    ## 64 bits
+        /usr/lib64/vlc/vlc-cache-gen -f /usr/lib64/vlc/plugins
+
 ## How long ago a Linux system was installed? - Day that the system was installed
     ls -alct / | tail -1
     # or
     ls -alct / | tail -1 | awk '{print $6, $7, $8}'
+
+## Count occurrences of a char in a string
+    needle=","
+    var="text,text,text,text"
+    numberOccurrences=$(grep -o "$needle" <<< "$var" | wc -l)
 
 ## Shell script read value from pipe
 tmpFile=`mktemp` # Temp file if was used a pipe (|)
