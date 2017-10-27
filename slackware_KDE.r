@@ -1,4 +1,12 @@
     ## Slackware_K45A_KDE.r to Slackware 14.2 ##
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# Mande me um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 27/10/2017
+#
 
 ## Edit files in the /etc/
     nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
@@ -183,6 +191,13 @@ EndSection
     Window One Desktop Up           ## Ctrl + Alt + Shift + Up
 
 ## If use multilib, add package gcc and glibc to not upgrade
+    ## If you use slackpkgplus is not needed add to greylist or blacklist
+        If two or more repositories contains some same packages, you can specify
+        from which repository you prefer to search it.
+
+        ## Just add a PKGS_PRIORITY to the mirror multilib
+            PKGS_PRIORITY=( multilib )
+
     ## In the blacklist file
         # Any packages listed here won't be upgraded, removed, or installed by slackpkg
     nano /etc/slackpkg/blacklist
@@ -206,17 +221,19 @@ nano /etc/slackpkg/mirrors
 ## slackpkg+ mirrors
 nano /etc/slackpkg/slackpkgplus.conf
 
-    #MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
-    #MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
-    #MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
-
-    ## Stable
-    MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
-    MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
+    ## 14.2 stable
+        MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
+        MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
+        MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
 
     ## Current
-    #MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
-    #MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
+        MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
+        MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+        MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
+
+    ## Others 14.2 stable
+        MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
+        MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
@@ -225,9 +242,9 @@ nano /etc/slackpkg/slackpkgplus.conf
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
     ## Change the "SSD_MOUNT" for your partition mount folder
         # For me weekly is enough
-    cp do_fstrim.sh /etc/cron.weekly/
+    cp doFstrim.sh /etc/cron.weekly/
         # To test:
-        /etc/cron.weekly/do_fstrim.sh
+        /etc/cron.weekly/doFstrim.sh
 
     ## See all add
     crontab -l
