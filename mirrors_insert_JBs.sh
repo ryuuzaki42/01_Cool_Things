@@ -22,7 +22,7 @@
 #
 # Script: Insert text of mirror in the begin of /etc/slackpkg/mirrors
 #
-# Last update: 26/10/2017
+# Last update: 27/10/2017
 #
 echo -en "\nThis script insert in the begin of /etc/slackpkg/mirrors"
 echo -en " the message below about mirrors.\nWant continue? (y)es or (n)o: "

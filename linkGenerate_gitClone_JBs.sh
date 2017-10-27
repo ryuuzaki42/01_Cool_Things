@@ -7,7 +7,7 @@
 #
 # Script: Create a symbolic link to some folders
 #
-# Last update: 26/10/2017
+# Last update: 27/10/2017
 #
 gitCloneFolder="/media/sda2/prog/git_clone"
 dropboxFolder="/media/sda2/prog/Dropbox"
