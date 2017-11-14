@@ -161,10 +161,10 @@ rm $tmpFile # Delete the tmpFile
 ## Run "usual_JBs.sh pdf-r file.pdf" for all file in a directory
     IFS=$(echo -en "\n\b"); for file in $(ls -1); do echo "1 $file"; usual_JBs.sh pdf-r "$file" 4; done
 
-## Assinar pdf
-    1 - Tire uma (boa) foto da assinatura
-    2 - Remova o funda da imagem (png e adicione canal alpha - gimp)
-    3 - Insira a imagem no pdf com MasterPdf
+## Assine o PDF
+    1 Tire uma boa foto da assinatura (assine em um papel branco de caneta)
+    2 Remova o fundo branco da imagem (png e adicione canal alpha no Gimp)
+    3 Assine o PDF usando o Foxit Reader
 
 ## Size of a directory/folder on the command line
     du -sh
@@ -351,6 +351,12 @@ rm $tmpFile # Delete the tmpFile
 
     ## Using the [:blank:] class you are removing spaces and tabs
         sed 's/[[:blank:]]*$//' file
+
+## Remove '\r' (return)
+    tr -d '\r'
+
+## Print first 5 characters from string
+    cut -c1-5
 
 ## Change the default shell in Linux/Unix/MacOS?
     # chsh -s shell-path user
