@@ -22,10 +22,10 @@
 #
 # Script: Insert text of mirror in the begin of /etc/slackpkg/mirrors
 #
-# Last update: 27/10/2017
+# Last update: 14/11/2017
 #
-echo -en "\nThis script insert in the begin of /etc/slackpkg/mirrors"
-echo -en " the message below about mirrors.\nWant continue? (y)es or (n)o: "
+echo -en "\\nThis script insert in the begin of /etc/slackpkg/mirrors"
+echo -en " the message below about mirrors.\\nWant continue? (y)es or (n)o: "
 read -r continueOrNot
 
 if [ "$continueOrNot" == 'y' ]; then
@@ -54,4 +54,4 @@ ftp://ftp.osuosl.org/.2/slackware/slackware64-14.2/
 
     mv "$tmpFile2" /etc/slackpkg/mirrors
 fi
-echo -e "\nEnd the script"
+echo -e "\\nEnd the script\\n"

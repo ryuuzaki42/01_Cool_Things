@@ -22,7 +22,7 @@
 #
 # Script: fstrim yours partitions in a SSD
 #
-# Last update: 27/10/2017
+# Last update: 14/11/2017
 #
 logFile="/var/log/ssdFtrim.log"
 
@@ -37,7 +37,7 @@ echo "------------------------------- " | tee -a "$logFile"
 echo "Date: $(date)" | tee -a "$logFile"
 
 for mntPartition in $ssdMountPartitions; do
-    echo -e "\nfstrim -v $mntPartition" | tee -a "$logFile"
+    echo -e "\\nfstrim -v $mntPartition" | tee -a "$logFile"
     fstrim -v "$mntPartition" | tee -a "$logFile"
 done
 

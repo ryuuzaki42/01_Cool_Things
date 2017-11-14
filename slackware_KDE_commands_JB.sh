@@ -23,13 +23,13 @@
 # Script: Script to do the changes I do every installation
 # of the Slackware (with KDE)
 #
-# Last update: 20/09/2017
+# Last update: 14/11/2017
 #
 echo "## Changes in the Slackware - Script ##"
 
 userToWork=$1 # User to work with
 if [ "$userToWork" == '' ]; then
-    echo -e "\nYou need pass the a user to work with\nJust exiting\n"
+    echo -e "\\nYou need pass the a user to work with\\nJust exiting\\n"
     exit 1
 fi
 
