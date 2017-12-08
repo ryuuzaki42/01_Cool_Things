@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/10/2017
+# Last update: 08/12/2017
 #
 
 ## Edit files in the /etc/
@@ -139,6 +139,9 @@ EndSection
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware
     slackpkg remove xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
     ## Dolphin need baloo baloo-widgets
+
+    ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
+        slackpkg install bluez-qt
 
 ## Swap in file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
     dd if=/dev/zero of=~/swapfile.img bs=1M count=2048 # 2 GiB
