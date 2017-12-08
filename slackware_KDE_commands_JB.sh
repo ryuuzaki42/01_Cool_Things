@@ -23,9 +23,9 @@
 # Script: Script to do the changes I do every installation
 # of the Slackware (with KDE)
 #
-# Last update: 14/11/2017
+# Last update: 08/12/2017
 #
-echo "## Changes in the Slackware - Script ##"
+echo "# Changes in the Slackware - Script #"
 
 userToWork=$1 # User to work with
 if [ "$userToWork" == '' ]; then
@@ -33,59 +33,128 @@ if [ "$userToWork" == '' ]; then
     exit 1
 fi
 
+#--------------------------- A partition to mount ----------------------------------------------
+echo "Adding local to mount other partitions"
+read -r
+partitionToMount="/dev/sda2"
+localToMount="/media/sda2"
+typeToMount="ext4"
+
+mkdir -p "$localToMount"
+echo "Partition $partitionToMount to mount $localToMount"
+if ! grep -q "$partitionToMount" /etc/fstab; then
+    echo "$partitionToMount        $localToMount      $typeToMount        defaults         1   2" >> /etc/fstab
+    echo "Partition to mount set"
+else
+    echo "Partition mount already set"
+fi
+
 #--------------------------- Adding a user ----------------------------------------------
-# Adding a user passed by parameter
-/usr/sbin/adduser "$userToWork"
+echo "Adding a user passed by parameter"
+read -r
+
+tmpFile=$(mktemp)
+finger "$userToWork" 2> "$tmpFile"
+
+if grep -q "no such user" "$tmpFile"; then
+    /usr/sbin/adduser "$userToWork"
+    echo "The user $userToWork created"
+else
+    echo "The user $userToWork already exist"
+fi
+rm "$tmpFile"
 
 #--------------------------- Changes in /etc/fstab --------------------------------------
-# Comment the line with floppy disk
+echo "Comment the line with floppy disk"
+read -r
 sed -i '/floppy/ s/^\/dev/#\/dev/g' /etc/fstab
 
 #--------------------------- Changes in /etc/profile.d/lang.sh --------------------------
-# Comment the line "export LANG=en_US"
-sed '/^export LANG=en_US$/ s/export/#export/' lang.sh
+echo "Comment the line \"export LANG=en_US\""
+read -r
+sed -i '/^export LANG=en_US$/ s/export/#export/' /etc/profile.d/lang.sh
 
-# Uncomment the line "#export LANG=en_US.UTF-8"
-sed '/^#export LANG=en_US.UTF-8$/ s/#export/export/' lang.sh
+echo "Uncomment the line \"#export LANG=en_US.UTF-8\""
+read -r
+sed -i '/^#export LANG=en_US.UTF-8$/ s/#export/export/' /etc/profile.d/lang.sh
 
 #--------------------------- Changes in /etc/profile.d/lang.csh -------------------------
-# Comment the line "setenv LANG en_US"
-sed '/^setenv LANG en_US$/ s/setenv/#setenv/' lang.csh
+echo "Comment the line \"setenv LANG en_US\""
+read -r
+sed -i '/^setenv LANG en_US$/ s/setenv/#setenv/' /etc/profile.d/lang.csh
 
-# Uncomment the line "#setenv LANG en_US.UTF-8"
-sed '/^#setenv LANG en_US.UTF-8$/ s/#setenv/setenv/' lang.csh
+echo "Uncomment the line \"#setenv LANG en_US.UTF-8\""
+read -r
+sed -i '/^#setenv LANG en_US.UTF-8$/ s/#setenv/setenv/' /etc/profile.d/lang.csh
 
 #--------------------------- Changes in /etc/acpi/acpi_handler.sh -----------------------
-# Comment the "power) /sbin/init 0" to now halt when the power button is pressed
-sed '/power) \/sbin\/init 0/ s/^#*/#/' /etc/acpi/acpi_handler.sh
+echo "Comment the \"power) /sbin/init 0\" to now halt when the power button is pressed"
+read -r
+sed -i '/power) \/sbin\/init 0/ s/^#*/#/' /etc/acpi/acpi_handler.sh
 
 #--------------------------- Changes in /etc/inittab ------------------------------------
-# Disable the standard console (ctrl + alt + f[1-6]) from 6 to 3
-sed -i '/c[4-6]:12345/ s/^c/#c/g' /etc/inittab
+echo "Disable the standard console (ctrl + alt + f[1-6]) from 6 to 3"
+read -r
+sed -i '/^c[4-6]:12345/ s/^c/#c/g' /etc/inittab
 
-# Duplicate the line with the runlevel "id:3:initdefault:" changing "id:3" for "id:4"
-sed -i '/^id:3:initdefault:/ p; s/id:3/id:4/' /etc/inittab
+echo "Duplicate the line with the runlevel \"id:3:initdefault:\" changing \"id:3\" for \"id:4\""
+read -r
+sed -i '/^id:3:initdefault:/ p; s/^id:3/id:4/' /etc/inittab
 
-# Comment the "id:3"
+echo "Comment the \"id:3\""
+read -r
 sed -i '/^id:3:initdefault:/ s/^id:3/#id:3/' /etc/inittab
 
 #--------------------------- Create a swap file -----------------------------------------
-# Create swap with 2 GiB
-dd if=/dev/zero of=~/swapfile.img bs=1M count=2048 # 2 GiB
+echo "Grep $userToWork home folder"
+read -r
+su - "$userToWork" -c 'homeFolder=$(echo ~); echo $homeFolder; export homeFolder'
+echo "Home folder of $userToWork: $homeFolder"
 
-# Make the file a swap file
-mkswap ~/swapfile.img
+#Folder to create the swap file
+#localToCreateSwapFile=$homeFolder
 
-# Write the configurations in the fstab
-echo "/home/$userToWork/swapfile.img swap         swap        defaults         0   0" >> /etc/fstab
+# or one that you like
+localToCreateSwapFile="/media/sda2/prog"
 
-swapon -a # Active the swap
+swapFileName="swapfile.img"
 
-# Remove swap warnings
-chmod 0600 "/home/$userToWork/swapfile.img"
-chown root "/home/$userToWork/swapfile.img"
+echo "Create swap with 2 GiB: $localToCreateSwapFile/$swapFileName"
+read -r
+if [ -e "$localToCreateSwapFile" ]; then
+    if [ ! -e "$localToCreateSwapFile/$swapFileName" ]; then
+        dd if=/dev/zero of="$localToCreateSwapFile/$swapFileName" bs=1M count=2048 # 2 GiB
+
+        echo "Make the file a swap file"
+        read -r
+        mkswap "$localToCreateSwapFile/$swapFileName"
+    else
+        echo "Swap file already exist"
+    fi
+else
+    echo "Error: Location to create Swap file do not exist"
+fi
+
+echo "Write the configurations in the fstab"
+read -r
+if ! grep -q "$swapFileName" /etc/fstab; then
+    echo "$localToCreateSwapFile/$swapFileName swap swap       defaults         0   0" >> /etc/fstab
+
+    echo "Active the swap"
+    swapon -a
+
+    echo "Remove swap warnings"
+    read -r
+    chmod 0600 "$localToCreateSwapFile/$swapFileName"
+    chown root "$localToCreateSwapFile/$swapFileName"
+    echo "Swap set"
+else
+    echo "Swap already set"
+fi
 
 #--------------------------- Create a kernel generic ------------------------------------
+echo "Create the kernel generic"
+read -r
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
 
@@ -93,7 +162,9 @@ echo "Edit \"/etc/lilo.conf\"... enter to continue"
 read -r
 
 vi /etc/lilo.conf
-lilo # Update lilo
+echo "Update the lilo config"
+read -r
+lilo
 
 #--------------------------- end --------------------------------------------------------
 echo "End the script"
