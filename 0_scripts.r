@@ -87,6 +87,18 @@ rm $tmpFile # Delete the tmpFile
         > in the tab "Configuration"
             > in "Profile" Select "HDMI Output"
 
+## Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)
+    #!/bin/bash
+    set -euo pipefail
+    IFS=$'\n\t'
+
+# set -e: option instructs bash to immediately exit if any command [1] has a non-zero exit status.
+# set -u: When set, a reference to any variable you haven't previously defined is an error, and causes the program to immediately exit.
+# set -o pipefail: If any command in a pipeline fails, that return code will be used as the return code of the whole pipeline.
+                    # By default, the pipeline's return code is that of the last command - even if it succeeds
+
+# link: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+
 ## File associations in KDE/Plasma
     KDE stores its mimetype mappings in:
         ~/.local/share/applications/mimeapps.list
