@@ -262,3 +262,56 @@ git rev-list --objects --all \
 
 ## Git show remote URL
     git config --get remote.origin.url
+
+
+## Add gpg sign key in commits by the IDE Smartgit
+    # https://help.github.com/articles/signing-commits-with-gpg/
+
+    ## List keys
+        gpg --list-secret-keys --keyid-format LONG
+
+    ## Generate a new key
+        gpg --gen-key
+        # insert the data: name, e-mail and comment.
+
+    ## See public part of the key
+        gpg --armor --export KEYID
+        # -----BEGIN PGP PUBLIC KEY BLOCK-----
+        # ...
+        # -----END PGP PUBLIC KEY BLOCK-----
+
+     ## Add key in github
+     # https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/
+     # https://gist.github.com/ryuuzaki42/da8e953d4a7664d6dea445a3d5a5aa6d
+        get public part and add in settings
+
+    ## Set git to use gpg key
+        ## Set up Git to auto-sign all commits
+            git config --global commit.gpgsign true
+
+            git config --global user.signingkey KEYID
+
+        ## Set up Git to use gpg2 (smartgit needed)
+            git config --global gpg.program "/usr/bin/gpg2"
+
+        ## Disable TTY if you have problems with making auto-signed commits from your IDE or other software
+            echo 'no-tty' >> ~/.gnupg/gpg.conf
+
+        ## Git configuration file result (/home/$USER/.gitconfig)
+            [user]
+                ..
+                signingkey = KEYID
+                ...
+            [commit]
+                gpgsign = true
+            [gpg]
+                program = /usr/bin/gpg2
+
+        ## Smartgit
+            Select a repository -> settings
+                See if GPG Program and Signing Key are set
+
+         ## Final result
+            A commit in GitHub:
+                [ Verified ]
+                    This commit was signed with a verified signature
