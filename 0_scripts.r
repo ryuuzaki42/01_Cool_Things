@@ -17,6 +17,13 @@ kdewallet=Chromium,Opera,Chrome
     # or simply enter the following into the terminal:
     killall -9 kwalletd
 
+## echo shell commands as they are executed
+    set -x : expands variables and prints a little + sign before the line
+    set -v : does not expand the variables before printing
+
+	To turn off use + instead -
+    set +x - set +v
+
 ## Run chmod recursively only in directories
     find /path/to/base/dir -type d -exec chmod 744 {} +
 
