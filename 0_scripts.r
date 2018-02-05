@@ -21,8 +21,8 @@ kdewallet=Chromium,Opera,Chrome
     set -x : expands variables and prints a little + sign before the line
     set -v : does not expand the variables before printing
 
-	To turn off use + instead -
-    set +x - set +v
+    ## To turn off use + instead -
+        set +x - set +v
 
 ## Run chmod recursively only in directories
     find /path/to/base/dir -type d -exec chmod 744 {} +
@@ -43,6 +43,31 @@ kdewallet=Chromium,Opera,Chrome
 ## Dolphin (re)enable warm message dialog before Empty Trash
     nano ~/.config/kiorc
     ConfirmEmptyTrash=false > true
+
+## Asus keyboard retro light
+    # https://forum.kde.org/viewtopic.php?f=63&t=121045
+    ## Load the module (asus-nb-wmi) if not load
+        # lsmod | grep "asus"
+        echo "modprobe asus-nb-wmi" >> /etc/rc.d/rc.local
+
+    ## With root - VALUE - 0 to 3
+        echo VALUE > /sys/class/leds/asus::kbd_backlight/brightness
+
+    ## wihtout root - VALUE - 0 to 3
+        dbus-send --type=method_call --print-reply=literal --system --dest='org.freedesktop.UPower' \
+        '/org/freedesktop/UPower/KbdBacklight' 'org.freedesktop.UPower.KbdBacklight.SetBrightness' "int32:VALUE"
+
+    ## If KDE not "found" the keyboard retro light, "start" UPower
+        echo "qdbus --system org.freedesktop.UPower" >> /etc/rc.d/rc.local
+
+        ## And reload the shortcut keys
+            System Setting > Shortcuts and Gestures > Global Keyboard Shortcuts
+            KDE component: KDE Daemon
+            Reset the "Decrease Keyboard Brightness" and "Increase Keyboard Brightness"
+
+## NTFS error
+    ## mount exited with exit code 13: $MFTMirr does not match $MFT (record ..
+        ntfsfix /dev/sdXX
 
 ## Dolphin freezing when delete file and/or clean the trash (If you use VLC)
     ## 32 bits or distro with work only with /usr/lib/
