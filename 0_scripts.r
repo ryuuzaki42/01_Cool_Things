@@ -50,12 +50,19 @@ kdewallet=Chromium,Opera,Chrome
         # lsmod | grep "asus"
         echo "modprobe asus-nb-wmi" >> /etc/rc.d/rc.local
 
-    ## With root - VALUE - 0 to 3
-        echo VALUE > /sys/class/leds/asus::kbd_backlight/brightness
+    ## With root - VALUE - 0 to 3 (0 off, 3 max)
+        echo VALUE > /sys/class/leds/asus\:\:kbd_backlight/brightness
 
-    ## wihtout root - VALUE - 0 to 3
+    ## wihtout root - VALUE - 0 to 3 (0 off, 3 max)
         dbus-send --type=method_call --print-reply=literal --system --dest='org.freedesktop.UPower' \
         '/org/freedesktop/UPower/KbdBacklight' 'org.freedesktop.UPower.KbdBacklight.SetBrightness' "int32:VALUE"
+
+        ## Get current brightness
+            dbus-send --type=method_call --print-reply=literal --system --dest='org.freedesktop.UPower' \
+            '/org/freedesktop/UPower/KbdBacklight' 'org.freedesktop.UPower.KbdBacklight.GetBrightness'
+
+            ## Or
+            cat /sys/class/leds/asus\:\:kbd_backlight/brightness
 
     ## If KDE not "found" the keyboard retro light, "start" UPower
         echo "qdbus --system org.freedesktop.UPower" >> /etc/rc.d/rc.local
