@@ -1,9 +1,9 @@
     ## Script.r ##
 
-## Processo com mais uso de CPU
+## Process with more CPU use
     ps -aux --sort=-pcpu | head
 
-## Processo com mais uso de MEM (Memória | memory)
+## Processo with more memory (RAM) use
     ps -aux --sort -rss | head
 
 ## Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera
@@ -39,7 +39,7 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
-    2 Select the disk, commom "(C:)"
+    2 Select the disk, common "(C:)"
     3 Select "Clean System Files"
     4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
     5 Check the box next to the entry. Click OK to start the cleanup
@@ -51,7 +51,7 @@ kdewallet=Chromium,Opera,Chrome
     nano ~/.config/kiorc
     ConfirmEmptyTrash=false > true
 
-## Asus keyboard retro light
+## ASUS keyboard retro light
     # https://forum.kde.org/viewtopic.php?f=63&t=121045
     ## Load the module (asus-nb-wmi) if not load
         # lsmod | grep "asus"
@@ -133,7 +133,7 @@ rm $tmpFile # Delete the tmpFile
         > in the tab "Configuration"
             > in "Profile" Select "HDMI Output"
 
-## Use the Unofficial Bash Strict Mode (Unless You Looove Debugging)
+## Use the Unofficial Bash Strict Mode (Unless You Love Debugging)
     #!/bin/bash
     set -euo pipefail
     IFS=$'\n\t'
