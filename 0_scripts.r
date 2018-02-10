@@ -37,6 +37,13 @@ kdewallet=Chromium,Opera,Chrome
         ## upgrade
             pip install [package] --upgrade
 
+## Proper way to delete the Windows.old folder
+    1 Windows search field, type Cleanup, then click "Disk Cleanup"
+    2 Select the disk, commom "(C:)"
+    3 Select "Clean System Files"
+    4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
+    5 Check the box next to the entry. Click OK to start the cleanup
+
 ## LibreOffice without icons
     Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
 
