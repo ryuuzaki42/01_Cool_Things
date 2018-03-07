@@ -37,6 +37,17 @@ kdewallet=Chromium,Opera,Chrome
         ## upgrade
             pip install [package] --upgrade
 
+## Rename a Linux network interface without Udev/Reboot
+    ## eth1 to eth0
+        ifconfig eth1 down
+        ip link set eth1 name eth0
+        ifconfig eth0 up
+
+    ## wlan0 to wlan1
+        ifconfig wlan1 down
+        ip link set wlan1 name wlan0
+        ifconfig wlan0 up
+
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
     2 Select the disk, common "(C:)"
