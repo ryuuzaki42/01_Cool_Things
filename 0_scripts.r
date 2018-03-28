@@ -144,6 +144,19 @@ rm $tmpFile # Delete the tmpFile
         > in the tab "Configuration"
             > in "Profile" Select "HDMI Output"
 
+## Clean-up movie.mkv file (remove name in the tracks and chapters)
+    ## Remove the Name of movie, track audio a1 and video a1
+    mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= -e track:v1 -s name=
+
+    ## Remove chapters
+    mkvpropedit movie.mkv --chapters ''
+
+    ## Set language English to track audio, video and subtitle a1
+    mkvpropedit movie.mkv -e track:v1 -s language=en -e track:a1 -s language=en -e track:s1 -s language=en
+
+    # Manual
+    https://mkvtoolnix.download/doc/mkvpropedit.html
+
 ## Use the Unofficial Bash Strict Mode (Unless You Love Debugging)
     #!/bin/bash
     set -euo pipefail
@@ -1154,7 +1167,7 @@ fi
     ex: mount -t vboxsf sda2 /media/sf_sda2/
 
 ## Mount NTFS partition
-    mount -t ntfs-3g /dev/sdb1 /mnt/ntfs/ 
+    mount -t ntfs-3g /dev/sdb1 /mnt/ntfs/
 
 ## See partition types
     fdisk -l
