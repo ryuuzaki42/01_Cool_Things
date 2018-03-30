@@ -30,6 +30,9 @@ kdewallet=Chromium,Opera,Chrome
 ## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
 
+## Best way to unplug a USB external hard-drive after proper unmounting
+    udisks --detach /dev/sdX
+
 ## pip upgrade packages
     ## List outdated
         pip list --outdated
