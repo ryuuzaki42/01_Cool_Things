@@ -51,6 +51,9 @@ kdewallet=Chromium,Opera,Chrome
         ip link set wlan1 name wlan0
         ifconfig wlan0 up
 
+## Default 64 bits configure
+    ./configure --prefix=/usr --libdir=/usr/lib64 --sysconfdir=/etc
+
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
     2 Select the disk, common "(C:)"
