@@ -33,6 +33,14 @@ kdewallet=Chromium,Opera,Chrome
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
 
+## Windows setup could not configure to run on this computer hardware - error during Windows installation
+    # Windows setup could not install on this computer hardware
+    Manually run msoobe.exe program to allow the install to complete
+
+    At the error screen, press Shift+F10 to open a command prompt
+    cd c:\windows\system32\oobe and press Enter
+    msoobe and press Enter
+
 ## pip upgrade packages
     ## List outdated
         pip list --outdated
