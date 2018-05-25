@@ -158,6 +158,15 @@ rm $tmpFile # Delete the tmpFile
         > in the tab "Configuration"
             > in "Profile" Select "HDMI Output"
 
+## How to Switch Off the Thumbs.db Image Cache File in Windows
+    1 Ensure you’re logged in using an administrator account
+    2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
+    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components > 
+        then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
+    4 In the right-hand pane, double-click “Turn off the caching of thumbnails in hidden thumbs.db files”
+    5 Select Enabled (don’t make my mistake of choosing “Disabled”
+        — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
+
 ## Clean-up movie.mkv file (remove name in the tracks and chapters)
     ## Remove the Name of movie, track audio a1 and video a1
     mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= -e track:v1 -s name=
