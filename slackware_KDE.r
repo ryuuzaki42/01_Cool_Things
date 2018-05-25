@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/12/2017
+# Last update: 25/05/2018
 #
 
 ## Edit files in the /etc/
@@ -26,10 +26,33 @@
 
 ## rc.local
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
-    https://github.com/ryuuzaki42/5_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
+        git clone https://github.com/ryuuzaki42/5_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
 
-    ## Set to run on the boot
-    echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
+        ## Set to run on the boot
+            echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
+
+    ## My final rc.local
+#!/bin/sh
+#
+# /etc/rc.d/rc.local: Local system initialization script.
+#
+# Put any local startup commands in here. Also, if you have
+# anything that needs to be run at shutdown time you can
+# make an /etc/rc.d/rc.local_shutdown script and put those
+# commands in there.
+#
+echo -e "\\nStarting ntlp\\n"
+/etc/rc.d/rc.tlp start
+#
+echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
+/usr/bin/boot_rcLocal_JBs.sh
+#
+echo -e "\\nStarting UPower\\n"
+qdbus --system org.freedesktop.UPower
+#
+echo -e "\\nStarting bumblebeed\\n"
+/etc/rc.d/rc.bumblebeed start
+#
 
 ## Kernel Generic
     #https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
