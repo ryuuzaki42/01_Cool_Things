@@ -1,0 +1,38 @@
+# All packages in that list will be showned but
+# unchecked by default
+#
+# You can greylist using regular expressions.
+#
+# Don't use *full* regex here, because all of the following
+# will be checked for the regex: series, name, version, arch,
+# build, fullname and repository name.
+#
+# Also you may want to greylist ALL slackpkgplus repository;
+# useful if you want to run slackpkg install alienbob and select
+# only the wanted package (instead de-select all unwanted):
+#SLACKPKGPLUS_.*
+#
+# You may want to greylist kde and/or kdei
+#kde
+#kdei
+#
+#do not upgrade packages installed with sbopkg; use it instead
+#[0-9]+_SBo
+#
+mkvtoolnix
+mozilla-firefox
+xf86-video-nouveau
+#
+amor
+calligra-l10n-en_GB
+calligra-l10n-ja
+calligra-l10n-tr
+hexchat
+kajongg
+kde-l10n-id
+kdenetwork-filesharing
+kdenetwork-strigi-analyzers
+kget
+kopete
+xfce4-pulseaudio-plugin
+#
