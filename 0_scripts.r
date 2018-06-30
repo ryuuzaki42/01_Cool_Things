@@ -72,6 +72,16 @@ kdewallet=Chromium,Opera,Chrome
 ## LibreOffice without icons
     Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
 
+## memory info - RAM info
+    # Speed
+    dmidecode -t 17
+
+    # Maximum Capacity
+    dmidecode -t 16
+
+    # All
+    dmidecode -t memory
+
 ## Dolphin (re)enable warm message dialog before Empty Trash
     nano ~/.config/kiorc
     ConfirmEmptyTrash=false > true
