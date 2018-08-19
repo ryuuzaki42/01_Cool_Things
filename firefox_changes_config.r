@@ -70,7 +70,7 @@ full-screen-api.warning.timeout
 pdfjs.defaultZoomValue
     page-width
 
-## Install ffmpeg to full support to  html5
+## Install ffmpeg to full support to html5
     # To test: https://www.youtube.com/html5
 
 ## Disable Pocket
@@ -84,6 +84,11 @@ browser.toolbarbuttons.introduced.pocket-button
     # http://thehackernews.com/2017/04/unicode-Punycode-phishing-attack.html
 network.IDN_show_punycode
     false > True
+
+## Change your block list
+    Preferences > Privacy & Security > Tracking Protection section
+        Change Block List to "Disconnect.me strict protection. Block known trackers"
+        > CAPTCHA (Google) and Steam store, do not load correctly
 
 ## How to prevent Firefox Resources Reader
     # https://fingerprint-em-portugues.neocities.org/
@@ -103,11 +108,20 @@ about:support
 
     ## Enable Firefox Multiprocess Feature
     browser.tabs.remote.autostart
-        false > True
+        false > true
 
     ## Set the count os process
     dom.ipc.processCount
         > Set more than 1
+
+## Disable WebRTC
+    WebRTC is enabled by default, to disable RTCPeerConnection and protect IP addresses leakage,
+
+    media.peerconnection.enabled
+        true > false
+
+    media.navigator.enabled
+        true > false
 
 ## Dictionaries & Language Packs # https://addons.mozilla.org/en-GB/firefox/language-tools/
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
