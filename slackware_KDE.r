@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/05/2018
+# Last update: 23/08/2018
 #
 
 ## Edit files in the /etc/
@@ -41,7 +41,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 #
-echo -e "\\nStarting ntlp\\n"
+echo -e "\\nStarting tlp\\n"
 /etc/rc.d/rc.tlp start
 #
 echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
