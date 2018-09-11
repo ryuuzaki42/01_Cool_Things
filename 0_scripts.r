@@ -125,6 +125,13 @@ kdewallet=Chromium,Opera,Chrome
     ## 64 bits
         /usr/lib64/vlc/vlc-cache-gen -f /usr/lib64/vlc/plugins
 
+## Select URL from a text (or html file)
+    sed -n 's/.*href="\([^"]*\).*/\1/p')
+
+    grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*")
+
+    grep -o 'http[^"]*'
+
 ## How long ago a Linux system was installed? - Day that the system was installed
     ls -alct / | tail -1
     # or
