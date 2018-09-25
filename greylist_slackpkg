@@ -23,6 +23,7 @@ mkvtoolnix
 mozilla-firefox
 unrar
 xf86-video-nouveau
+OpenAL
 #
 amor
 calligra-l10n-en_GB
@@ -36,4 +37,7 @@ kdenetwork-strigi-analyzers
 kget
 kopete
 xfce4-pulseaudio-plugin
+#
+veracrypt
+vlc
 #
