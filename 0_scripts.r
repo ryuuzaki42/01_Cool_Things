@@ -30,6 +30,9 @@ kdewallet=Chromium,Opera,Chrome
 ## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
 
+## Display assembly code form one executable C
+    objdump -S prog.out
+
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
 
