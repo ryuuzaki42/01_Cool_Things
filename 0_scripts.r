@@ -62,6 +62,13 @@ kdewallet=Chromium,Opera,Chrome
         ip link set wlan1 name wlan0
         ifconfig wlan0 up
 
+##  Utilizando caracteres e acentuação da língua portuguesa
+#include <locale.h> // Necessário para usar setlocale
+
+int main(){
+    setlocale(LC_ALL,"") // Alterando para o padrão do sistema operacional
+...
+
 ## Default 64 bits configure
     ./configure --prefix=/usr --libdir=/usr/lib64 --sysconfdir=/etc
 
