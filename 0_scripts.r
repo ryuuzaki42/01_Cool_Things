@@ -51,6 +51,30 @@ kdewallet=Chromium,Opera,Chrome
         ## upgrade
             pip install [package] --upgrade
 
+## Install howdoi # Install pip before
+    pip install howdoi
+
+## Upgrade howdoi
+    # pip install [package] --upgrade
+    pip install howdoi --upgrade
+
+## Upgrade all pip packages
+    pip freeze > requirements.txt
+
+    pip install -r requirements.txt --upgrade
+
+## sed add ' in the begin
+    echo "abc" | sed 's/^/'/'
+'abc
+
+## sed add .mp3 in the end
+    echo "abc" | sed 's/$/.mp3/'
+abc.mp3
+
+## sed duplicate text in a line
+    echo "abc d efg" | sed 's/.*/& &/'
+abc d efg abc d efg
+
 ## Rename a Linux network interface without Udev/Reboot
     ## eth1 to eth0
         ifconfig eth1 down
