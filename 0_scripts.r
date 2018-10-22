@@ -17,10 +17,12 @@ kdewallet=Chromium,Opera,Chrome
     # or simply enter the following into the terminal:
     killall -9 kwalletd
 
-## Compactar/Descompactar arquivos zip, rar, tar, tar.gz, tar.bz2 e bz2 pelo terminal
+## Compactar/Descompactar arquivos/pastas para zip, rar, tar, tar.gz, tar.bz2 e bz2 pelo terminal
 
     ## zip
         ## Compactar
+            zip arquivo.zip arquivo
+
             zip -r pasta.zip pasta/
 
         ## Descompactar
@@ -28,6 +30,8 @@ kdewallet=Chromium,Opera,Chrome
 
     ## rar
         ## Compactar
+            rar a arquivo.rar arquivo
+
             rar a pasta.rar pasta/
 
         ## Descompactar
@@ -35,6 +39,9 @@ kdewallet=Chromium,Opera,Chrome
 
     ## tar
         ## Compactar # c
+            tar -cf arquivo.tar arquivo
+
+            ## f pasta/folder
             tar -cvf pasta.tar pasta/
 
         ## Descompactar # x
@@ -42,6 +49,8 @@ kdewallet=Chromium,Opera,Chrome
 
     ## tar.gz # -z, --gzip
         ## Compactar
+            tar -zcf arquivo.tar.gz arquivo
+
             tar -zcvf pasta.tar.gz pasta/
 
         ## Descompactar
@@ -49,6 +58,8 @@ kdewallet=Chromium,Opera,Chrome
 
     ## tar.bz2 e bz2 # -j, --bzip2
         ## Compactar
+            tar -jcv arquivo.tar.bz2 arquivo
+
             tar -jcvf pasta.tar.bz2 pasta/
 
         ## Descompactar
