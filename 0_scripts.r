@@ -17,6 +17,43 @@ kdewallet=Chromium,Opera,Chrome
     # or simply enter the following into the terminal:
     killall -9 kwalletd
 
+## Compactar/Descompactar arquivos zip, rar, tar, tar.gz, tar.bz2 e bz2 pelo terminal
+
+    ## zip
+        ## Compactar
+            zip -r pasta.zip pasta/
+
+        ## Descompactar
+            unzip arquivo.zip
+
+    ## rar
+        ## Compactar
+            rar a pasta.rar pasta/
+
+        ## Descompactar
+            unrar x arquivo.rar
+
+    ## tar
+        ## Compactar # c
+            tar -cvf pasta.tar pasta/
+
+        ## Descompactar # x
+            tar -xvf arquivo.tar
+
+    ## tar.gz # -z, --gzip
+        ## Compactar
+            tar -zcvf pasta.tar.gz pasta/
+
+        ## Descompactar
+            tar -zxvf arquivo.tar.gz
+
+    ## tar.bz2 e bz2 # -j, --bzip2
+        ## Compactar
+            tar -jcvf pasta.tar.bz2 pasta/
+
+        ## Descompactar
+            tar -jxvf arquivo.tar.bz2
+
 ## echo shell commands as they are executed
     set -x : expands variables and prints a little + sign before the line
     set -v : does not expand the variables before printing
@@ -86,15 +123,37 @@ abc d efg abc d efg
         ip link set wlan1 name wlan0
         ifconfig wlan0 up
 
-##  Utilizando caracteres e acentuação da língua portuguesa
+## Utilizando caracteres e acentuação da língua portuguesa
 #include <locale.h> // Necessário para usar setlocale
 
 int main(){
     setlocale(LC_ALL,"") // Alterando para o padrão do sistema operacional
 ...
+}
 
 ## Default 64 bits configure
     ./configure --prefix=/usr --libdir=/usr/lib64 --sysconfdir=/etc
+
+## Redireciona os erros para erros.txt
+    comando 2> erros.txt
+
+## Redireciona a saída padrão para saida.txt
+    comando > saida.txt
+
+    comando 1> saida.txt
+
+## Redireciona a saída padrão e os erros para o mesmo arquivo (saida_e_erros.log)
+    comando &> saida_e_erros.log
+
+## Suprime a exibição de mensagens de erro. Útil quando as mensagens de erro não nos interessam
+    comando 2>&- saida.log
+
+## Envia todas as mensagens de erro para a tela e a saída do comando para o arquivo saida.log.
+## Útil em shell scripts quando precisamos enviar os erros para a tela
+    comando 2>&1 saida.log
+
+## Enviar a saída e erros para arquivos arquivos diferentes
+    comando 1> saida.log 2> erros.log
 
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
