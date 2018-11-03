@@ -578,6 +578,12 @@ rm $tmpFile # Delete the tmpFile
     ## Using the [:blank:] class you are removing spaces and tabs
         sed 's/[[:blank:]]*$//' file
 
+    ## Removing all spaces
+        sed 's/ //g' file > file2.txt
+
+    ## Remove spaces in the end of line
+        sed 's/\s*$//' file > file2.txt
+
 ## Remove '\r' (return)
     tr -d '\r'
 
