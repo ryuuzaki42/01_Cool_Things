@@ -81,6 +81,22 @@ kdewallet=Chromium,Opera,Chrome
 ## Display assembly code form one executable C
     objdump -S prog.out
 
+## Manipulação de nomes e caminhos de arquivos
+
+    ## Retorna o último nome após o último /
+        basename /usr/local/bin/gzip
+            gzip
+
+        basename ver/pdf/file.pdf
+            file.pdf
+
+    ## Retorna como resultado o caminho inteiro fornecido
+        dirname /usr/local/bin/gzip
+            /usr/local/bin
+
+        dirname ver/pdf/file.pdf
+            ver/pdf
+
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
 
