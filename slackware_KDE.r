@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 23/08/2018
+# Last update: 14/12/2018
 #
 
 ## Edit files in the /etc/
@@ -26,7 +26,7 @@
 
 ## rc.local
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
-        git clone https://github.com/ryuuzaki42/5_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
+        git clone https://github.com/ryuuzaki42/2_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
 
         ## Set to run on the boot
             echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
