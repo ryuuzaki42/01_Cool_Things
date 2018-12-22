@@ -522,6 +522,9 @@ rm $tmpFile # Delete the tmpFile
     # remove the file after?
     rm $TMPFILE
 
+## Searh for a file /var/log/packages/*
+    grep "/vlc$" /var/log/packages/*
+
 ## Count files in the folder
     countFiles=`ls -la | cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
 
