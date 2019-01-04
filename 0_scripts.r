@@ -72,6 +72,15 @@ kdewallet=Chromium,Opera,Chrome
     ## To turn off use + instead -
         set +x - set +v
 
+## Argumentos em Shell Scripts
+    $0 - Identifica o comando emitido
+    $@ - O conjunto dos argumentos
+    $* - Relação dos argumentos fornecidos
+    $# - Número de argumentos fornecidos
+    $? - Código de retorno do último comando executado
+    $$ - Número (pid) de identificação do processo
+    $! - Identificação (pid) do último processo executado em background
+
 ## Run chmod recursively only in directories
     find /path/to/base/dir -type d -exec chmod 744 {} +
 
@@ -530,6 +539,11 @@ rm $tmpFile # Delete the tmpFile
 
 ## Count files of one type in the folder
     fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
+
+## Convert video
+    ffmpeg -i inVideo.avi OutVideo.mp4
+    ffmpeg -i inVideo.mp4 OutVideo.mkv
+
 
 ## Convert entire playlist from flac, oog, flac to mp3
     # 320 k
