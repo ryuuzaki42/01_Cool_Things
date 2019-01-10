@@ -123,6 +123,9 @@ about:support
     media.navigator.enabled
         true > false
 
+## Change search engine to searx
+    https://searx.me/about#
+
 ## Dictionaries & Language Packs # https://addons.mozilla.org/en-GB/firefox/language-tools/
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
