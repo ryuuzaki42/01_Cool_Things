@@ -117,6 +117,11 @@ kdewallet=Chromium,Opera,Chrome
     cd c:\windows\system32\oobe and press Enter
     msoobe and press Enter
 
+## Linux BIOS information
+    dmidecode
+
+    dmidecode --type bios
+
 ## pip upgrade packages
     ## List outdated
         pip list --outdated
