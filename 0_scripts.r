@@ -90,6 +90,14 @@ kdewallet=Chromium,Opera,Chrome
 ## Display assembly code form one executable C
     objdump -S prog.out
 
+## Reduce all PDF files in the folder, using usual_JBs.sh script
+    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
+
+    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
+
+    ## Rename the files - remove "_r2ly", "_r3ln" etc
+        for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
+
 ## Manipulação de nomes e caminhos de arquivos
 
     ## Retorna o último nome após o último /
