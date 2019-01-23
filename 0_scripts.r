@@ -72,6 +72,9 @@ kdewallet=Chromium,Opera,Chrome
     ## To turn off use + instead -
         set +x - set +v
 
+## Simples online multicore CPU benchmarking service
+    https://silver.urih.com/
+
 ## Argumentos em Shell Scripts
     $0 - Identifica o comando emitido
     $@ - O conjunto dos argumentos
