@@ -25,6 +25,16 @@ kdewallet=Chromium,Opera,Chrome
 
             zip -r pasta.zip pasta/
 
+        ## zip files with a size limit
+            zip -s 10m archive.zip archive
+
+            zip -r -s 10m archive.zip directory/
+
+        ## Convert a split archive to a single-file archive, first "unsplit"
+            zip -s 0 archive.zip --out unsplit.zip
+                ## Then you unzip the unsplit file:
+                    unzip unsplit.zip
+
         ## Descompactar
             unzip arquivo.zip
 
@@ -330,14 +340,14 @@ rm $tmpFile # Delete the tmpFile
         — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
 
 ## Clean-up movie.mkv file (remove name in the tracks and chapters)
-    ## Remove the Name of movie, track audio a1 and video a1
-    mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= -e track:v1 -s name=
+    ## Remove the Name of movie, track audio a1, track video a1 and track subtitle s1
+        mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name=
 
     ## Remove chapters
-    mkvpropedit movie.mkv --chapters ''
+        mkvpropedit movie.mkv --chapters ''
 
-    ## Set language English to track audio, video and subtitle a1
-    mkvpropedit movie.mkv -e track:v1 -s language=en -e track:a1 -s language=en -e track:s1 -s language=en
+    ## Set language English to track audio a1, video v1, and subtitle s1
+        mkvpropedit movie.mkv -e track:a1 -s language=en -e track:v1 -s language=en -e track:s1 -s language=en
 
     # Manual
     https://mkvtoolnix.download/doc/mkvpropedit.html
