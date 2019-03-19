@@ -104,9 +104,14 @@ kdewallet=Chromium,Opera,Chrome
     objdump -S prog.out
 
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
+    # All reduce types (1, 2 and 3) with links
     for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
 
+    # All reduce types (1, 2 and 3) without links
     for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
+
+    # Reduce type 1 with links
+    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 1 y; done
 
     ## Rename the files - remove "_r2ly", "_r3ln" etc
         for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
