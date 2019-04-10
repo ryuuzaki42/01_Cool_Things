@@ -53,6 +53,14 @@ network.protocol-handler.expose.magnet
     Open a magnet link and choose a program
 /usr/bin/ktorrent
 
+## Steam to open magnet links (torrent)
+    new > boolean > name
+network.protocol-handler.expose.steam
+    > false
+
+    Open a link (steam://run/....) and choose Steam
+/usr/bin/steam
+
 ## Enabled the spell check in all field text
 layout.spellcheckDefault
     0 - Disable in all place
