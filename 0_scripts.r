@@ -143,11 +143,6 @@ kdewallet=Chromium,Opera,Chrome
     cd c:\windows\system32\oobe and press Enter
     msoobe and press Enter
 
-## Linux BIOS information
-    dmidecode
-
-    dmidecode --type bios
-
 ## pip upgrade packages
     ## List outdated
         pip list --outdated
@@ -231,6 +226,11 @@ int main(){
 
 ## LibreOffice without icons
     Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
+
+## Linux BIOS information
+    dmidecode
+
+    dmidecode --type bios
 
 ## memory info - RAM info
     # Speed
@@ -476,8 +476,9 @@ rm $tmpFile # Delete the tmpFile
 
     # No Gnu/Linux, como root
     dmidecode | more
-    #Procure por "Base Board Information"
-    digite /Base
+
+        # Procure por "Base Board Information"
+        digite /Base
 
 ## man search
     Use ctrl + f or /
