@@ -131,6 +131,12 @@ about:support
     media.navigator.enabled
         true > false
 
+## In Preferences / privacy
+    about:preferences#privacy
+        Browser Privacy -> Content Blocking
+            Choose -> Custom 
+                blook all
+
 ## Change search engine to searx
     https://searx.me/about#
 
