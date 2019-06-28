@@ -6,6 +6,13 @@
 ## Processo with more memory (RAM) use
     ps -aux --sort -rss | head
 
+## Compile C with warning and extras
+    gcc -Wall -Wextra -Wpedantic -O3 -ansi -std=c99 prog.c -o prog.out
+
+    # O std pode ser c99 ou c11, para c17 e c18 vai precisar do GCC atual. Leia mais sobre:
+    # https://fig.if.usp.br/~esdobay/c/gcc.html
+    # https://linux.ime.usp.br/~lucasmmg/livecd/documentacao/documentos/terminal/Compilando_um_arquivo_em_C.html
+
 ## Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera
     # for not pop-up everytime you open them added in the end of file
     nano ~/.kde/share/config/kwalletrc
