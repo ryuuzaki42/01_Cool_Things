@@ -143,6 +143,9 @@ about:support
 ## Youtube older version, Polymer Off
     link + ?disable_polymer=true
 
+    # playlist:
+        link + &disable_polymer=true
+
     ## For all link use one script
         https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
 
