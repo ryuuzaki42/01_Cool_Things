@@ -153,18 +153,21 @@ about:support
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
+## Remove Tracking Params
+https://addons.mozilla.org/en-GB/firefox/addon/remove-tracking-params/
+
+## Clean copy URL
+https://addons.mozilla.org/en-GB/firefox/addon/cleancopyurl/
+
 ## Good add-ons
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
 
-## Not compatible with multiprocess
-https://addons.mozilla.org/firefox/addon/disable-ctrl-q-shortcut/
-
 ## Others
 https://adblockplus.org/
     Remove the shortcut (crtl + shift + v)
-            extensions.adblockplus.sidebar_key
-                Remove: Accel Shift V
+        extensions.adblockplus.sidebar_key
+            Remove: Accel Shift V
 http://en.savefrom.net/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/unloadtab/
 https://addons.mozilla.org/firefox/addon/print-edit/
