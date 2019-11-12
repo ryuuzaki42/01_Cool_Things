@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/12/2018
+# Last update: 12/11/2019
 #
 
 ## Edit files in the /etc/
@@ -158,28 +158,36 @@ EndSection
 ## Remove gnome "packages"
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
+## Remove bluetooth - not recommended if you have bluetooth 
+    slackpkg remove bluedevil blueman bluez bluez-firmware
+
 ## Remove others
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra bluedevil blueman bluez bluez-firmware
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra
     slackpkg remove xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
-    ## Dolphin need baloo baloo-widgets
+
+        ## Dolphin need baloo baloo-widgets
 
     ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
         slackpkg install bluez-qt
 
-## Swap in file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-    dd if=/dev/zero of=~/swapfile.img bs=1M count=2048 # 2 GiB
+## Swap in file 
+    swapfilePace="/media/sda2/home/ryuuzaki42"
 
-    mkswap ~/swapfile.img
-    nano /etc/fstab
+    ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
+    dd if=/dev/zero of=$swapfilePaceswapfile.img bs=1M count=2048 # 2 GiB
 
-/home/j/swapfile.img swap         swap        defaults         0   0
-#/media/sda2/prog/swapfile.img swap swap       defaults         0   0
+    ## Turn into swapfile
+    mkswap $swapfilePaceswapfile.img
 
+    ## Add config in the fstab
+echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
+
+    ## test the swap
     swapon -a
 
-    ## warnings
-    chmod 0600 /home/j/swapfile.img
-    chown root /home/j/swapfile.img
+    ## resolve the warnings
+        chmod 0600 $swapfilePace/swapfile.img
+        chown root $swapfilePace/swapfile.img
 
 ## See the actual value of swappiness
     cat /proc/sys/vm/swappiness
