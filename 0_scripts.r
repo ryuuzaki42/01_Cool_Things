@@ -361,6 +361,9 @@ rm $tmpFile # Delete the tmpFile
     ## Set language English to track audio a1, video v1, and subtitle s1
         mkvpropedit movie.mkv -e track:a1 -s language=en -e track:v1 -s language=en -e track:s1 -s language=en
 
+    ## auto with one file mkv in the folder
+        i=$(ls *mkv); mkvpropedit $i -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name=
+
     # Manual
     https://mkvtoolnix.download/doc/mkvpropedit.html
 
