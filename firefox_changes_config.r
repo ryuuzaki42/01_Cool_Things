@@ -96,7 +96,7 @@ network.IDN_show_punycode
 ## Change your block list
     Preferences > Privacy & Security > Tracking Protection section
         Change Block List to "Disconnect.me strict protection. Block known trackers"
-        > CAPTCHA (Google) and Steam store, do not load correctly
+            > CAPTCHA (Google) and Steam store, do not load correctly
 
 ## How to prevent Firefox Resources Reader
     # https://fingerprint-em-portugues.neocities.org/
@@ -134,7 +134,7 @@ about:support
 ## In Preferences / privacy
     about:preferences#privacy
         Browser Privacy -> Content Blocking
-            Choose -> Custom 
+            Choose -> Custom
                 blook all
 
 ## Change search engine to searx
