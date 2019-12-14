@@ -687,6 +687,10 @@ rm $tmpFile # Delete the tmpFile
     #M - Megabytes (unidades de 1048576 bytes)
     #G - Gigabytes (unidades de 1073741824 bytes)
 
+## Reset directories and files permission
+    find . -type d -exec chmod 0755 {} \;
+    find . -type f -exec chmod 0644 {} \;
+
 ## Expansão de urls encurtadas com curl
     curl -sIL short-url | grep ^Location;
 
