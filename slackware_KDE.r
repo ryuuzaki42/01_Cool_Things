@@ -42,16 +42,26 @@
 # commands in there.
 #
 echo -e "\\nStarting tlp\\n"
+# https://github.com/linrunner/TLP
 /etc/rc.d/rc.tlp start
 #
 echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
 /usr/bin/boot_rcLocal_JBs.sh
 #
+# If your backlight keyboard doesn't work
 echo -e "\\nStarting UPower\\n"
 qdbus --system org.freedesktop.UPower
 #
+# If you have installed Nvidia video driver with bumblebeed
 echo -e "\\nStarting bumblebeed\\n"
 /etc/rc.d/rc.bumblebeed start
+#
+# Disable bluetooth
+rfkill block bluetooth
+#
+echo -e "\\nStarting thinkfan\\n"
+# https://github.com/vmatare/thinkfan
+/etc/rc.d/rc.thinkfan start
 #
 
 ## Kernel Generic
