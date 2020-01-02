@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/12/2019
+# Last update: 02/01/2020
 #
 
 ## Edit files in the /etc/
@@ -81,10 +81,19 @@ MatchDriver "synaptics"
 Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
 EndSection
 
+## Thinkpad - TrackPoint enable scrolling with middle button
+    ## To enable vertical scrolling
+        xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
+        xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
+        xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Timeout" 200
+
+    ## To enable horizontal scrolling in addition to vertical scrolling
+        xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+
 ## Dolphin disable executable shellscript, perl, ruby, pyton etc
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
-    ## Look for the lines and comment # with "" and ''
+    ## Look for the lines and comment # with " " and ' '
         <sub-class-of type="application/x-executable"/>
         <!-- <sub-class-of type="application/x-executable"/> -->
 
@@ -184,16 +193,16 @@ EndSection
     swapfilePace="/media/sda2/home/ryuuzaki42"
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-    dd if=/dev/zero of=$swapfilePaceswapfile.img bs=1M count=2048 # 2 GiB
+        dd if=/dev/zero of=$swapfilePaceswapfile.img bs=1M count=2048 # 2 GiB
 
     ## Turn into swapfile
-    mkswap $swapfilePaceswapfile.img
+        mkswap $swapfilePaceswapfile.img
 
     ## Add config in the fstab
-echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
+        echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
 
     ## test the swap
-    swapon -a
+        swapon -a
 
     ## resolve the warnings
         chmod 0600 $swapfilePace/swapfile.img
@@ -214,25 +223,25 @@ echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
         sysctl –p
 
 ## Set slackpkg mirror - Take a look in this script
-./mirrors_insert_JBs.sh
+    ./mirrors_insert_JBs.sh
 
 ## Move windows between Desktop
     ## Add 4 Desktop
 
     ## Add shortcuts
-    System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
-    Selecting "KWin"
-    Search for "one"
+        System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
+        Selecting "KWin"
+        Search for "one"
 
-    Switch One Desktop Down         ## Ctrl + Alt + Down
-    Switch One Desktop to the Left  ## Ctrl + Alt + Left
-    Switch One Desktop to the Right ## Ctrl + Alt + Right
-    Switch One Desktop Up           ## Ctrl + Alt + Up
+        Switch One Desktop Down         ## Ctrl + Alt + Down
+        Switch One Desktop to the Left  ## Ctrl + Alt + Left
+        Switch One Desktop to the Right ## Ctrl + Alt + Right
+        Switch One Desktop Up           ## Ctrl + Alt + Up
 
-    Window One Desktop Down         ## Ctrl + Alt + Shift + Down
-    Window One Desktop to the Left  ## Ctrl + Alt + Shift + Left
-    Window One Desktop to the Right ## Ctrl + Alt + Shift + Right
-    Window One Desktop Up           ## Ctrl + Alt + Shift + Up
+        Window One Desktop Down         ## Ctrl + Alt + Shift + Down
+        Window One Desktop to the Left  ## Ctrl + Alt + Shift + Left
+        Window One Desktop to the Right ## Ctrl + Alt + Shift + Right
+        Window One Desktop Up           ## Ctrl + Alt + Shift + Up
 
 ## If use multilib, add package gcc and glibc to not upgrade
     ## If you use slackpkgplus is not needed add to greylist or blacklist
@@ -244,26 +253,26 @@ echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
 
     ## In the blacklist file
         # Any packages listed here won't be upgraded, removed, or installed by slackpkg
-    nano /etc/slackpkg/blacklist
+        nano /etc/slackpkg/blacklist
 
     ## Or in the greylist
         # All packages in that list will be showned but unchecked by default 
-    nano /etc/slackpkg/greylist
+        nano /etc/slackpkg/greylist
 
 gcc
 glibc
 
 ## slackpkg mirrors - local clone (https://github.com/ryuuzaki42/2_clone_Slackware_repo)
-nano /etc/slackpkg/mirrors
+    nano /etc/slackpkg/mirrors
 
     ## Local mirror stable
-    file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
+        file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
 
     ## Local mirror current
-    #file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
+        # file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
 
 ## slackpkg+ mirrors
-nano /etc/slackpkg/slackpkgplus.conf
+    nano /etc/slackpkg/slackpkgplus.conf
 
     ## 14.2 stable
         MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
@@ -285,19 +294,19 @@ nano /etc/slackpkg/slackpkgplus.conf
 ## If has SSD - fstrim
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
     ## Change the "SSD_MOUNT" for your partition mount folder
-        # For me weekly is enough
-    cp doFstrim.sh /etc/cron.weekly/
-        # To test:
-        /etc/cron.weekly/doFstrim.sh
+        ## For me weekly is enough
+        cp doFstrim.sh /etc/cron.weekly/
+            ## To test:
+            /etc/cron.weekly/doFstrim.sh
 
     ## See all add
-    crontab -l
+        crontab -l
 
     ## Run weekly cron jobs at 4:30 on the first day of the week:
-    30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+        30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
     ## Edit cron and set to run weekly at 19:00 on the first day of the week:
-    0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+        0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
     # * * * * * command to execute
     # │ │ │ │ └─ day of week (0 - 6) (Sun(0) /Mon (1)/Tue (2)/Wed (3)/Thu (4)/Fri (5)/Sat (6))
