@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/01/2020
+# Last update: 05/01/2020
 #
 
 ## Edit files in the /etc/
@@ -82,6 +82,7 @@ Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
 EndSection
 
 ## Thinkpad - TrackPoint enable scrolling with middle button
+    # https://wiki.debian.org/InstallingDebianOn/Thinkpad/Trackpoint
     ## To enable vertical scrolling
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
