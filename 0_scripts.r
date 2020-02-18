@@ -92,6 +92,32 @@ kdewallet=Chromium,Opera,Chrome
 ## Simples online multicore CPU benchmarking service
     https://silver.urih.com/
 
+## man
+    man man - format and display the on-line manual pages
+
+    man -f ip - search in the manual pages for "ip"
+
+    man units - decimal and binary prefixes
+    man ascii - ASCII character set encoded in octal, decimal, and hexadecimal
+    man url - uniform resource identifier (URI)
+    man UTF-8 - an ASCII compatible multibyte Unicode encoding
+    man arp - manipulate the system ARP cache
+    man boot - System bootup process based on UNIX System V Release 4
+    man 7 ip - Linux IPv4 protocol implementation
+    man charsets - character set standards and internationalization
+    man gittutorial - A tutorial introduction to Git
+    man gittutorial-2 - A tutorial introduction to Git: part two
+    man gitglossary - A Git Glossary
+    man git-commit - Record changes to the repository
+    man git-status - Show the working tree status
+    man git-add - Add file contents to the index
+    man 7 glob - globbing pathnames
+    man hier - description of the filesystem hierarchy
+    man inode - file inode information
+    man 7 time - overview of time and timers
+    man tcp - TCP protocol
+    man udp - User Datagram Protocol for IPv4
+
 ## Argumentos em Shell Scripts
     $0 - Identifica o comando emitido
     $@ - O conjunto dos argumentos
