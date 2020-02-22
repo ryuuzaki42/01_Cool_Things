@@ -5,14 +5,14 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/01/2020
+# Last update: 20/02/2020
 #
 
 ## Edit files in the /etc/
     nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
 
 ## Remove autostart programs
-    /etc/xdg/autostart
+    /etc/xdg/autostart/
     /usr/share/autostart/
 
     nano ~/.config/akonadi/akonadiserverrc
@@ -56,7 +56,7 @@ qdbus --system org.freedesktop.UPower
 echo -e "\\nStarting bumblebeed\\n"
 /etc/rc.d/rc.bumblebeed start
 #
-# Disable bluetooth
+echo -e "\\nDisabling Bluetooth\\n"
 rfkill block bluetooth
 #
 echo -e "\\nStarting thinkfan\\n"
@@ -111,7 +111,7 @@ EndSection
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
 ## Libreoffice to Brazil user on KDE
-    slackpkg install libreoffice-5.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
+    slackpkg install libreoffice-6.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
@@ -191,23 +191,23 @@ EndSection
         slackpkg install bluez-qt
 
 ## Swap in file 
-    swapfilePace="/media/sda2/home/ryuuzaki42"
+    swapFilePace="/media/sda2/home/ryuuzaki42"
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-        dd if=/dev/zero of=$swapfilePaceswapfile.img bs=1M count=2048 # 2 GiB
+        dd if=/dev/zero of=$swapFilePaceswapFile.img bs=1M count=2048 # 2 GiB
 
     ## Turn into swapfile
-        mkswap $swapfilePaceswapfile.img
+        mkswap $swapFilePace/swapFile.img
 
     ## Add config in the fstab
-        echo "$swapfilePace/swapfile.img swap swap defaults    0   0" >> /etc/fstab
+        echo "$swapFilePace/swapFile.img swap swap defaults    0   0" >> /etc/fstab
 
     ## test the swap
         swapon -a
 
     ## resolve the warnings
-        chmod 0600 $swapfilePace/swapfile.img
-        chown root $swapfilePace/swapfile.img
+        chmod 0600 $swapFilePace/swapFile.img
+        chown root $swapFilePace/swapFile.img
 
 ## See the actual value of swappiness
     cat /proc/sys/vm/swappiness
