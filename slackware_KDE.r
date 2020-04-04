@@ -1,11 +1,11 @@
-    ## Slackware_K45A_KDE.r to Slackware 14.2 ##
+    ## Slackware_KDE.r to Slackware 14.2 ##
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 20/02/2020
+# Last update: 03/04/2020
 #
 
 ## Edit files in the /etc/
@@ -315,3 +315,6 @@ glibc
     # │ │ └─ day of month (1 - 31)
     # │ └─ hour (0 - 23)
     # └─ min (0 - 59)
+
+## To disable the fortune in /etc/profile.d/ use:
+    chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
