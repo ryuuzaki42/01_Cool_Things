@@ -99,6 +99,7 @@ network.IDN_show_punycode
             > CAPTCHA (Google) and Steam store, do not load correctly
 
 ## How to prevent Firefox Resources Reader
+    ## Older bug, not work in newer version
     # https://fingerprint-em-portugues.neocities.org/
     # https://browserleaks.com/firefox
 https://addons.mozilla.org/firefox/addon/no-resource-uri-leak/
@@ -123,6 +124,7 @@ about:support
         > Set more than 1
 
 ## Disable WebRTC
+    ## Google meet stop work
     WebRTC is enabled by default, to disable RTCPeerConnection and protect IP addresses leakage,
 
     media.peerconnection.enabled
@@ -130,12 +132,6 @@ about:support
 
     media.navigator.enabled
         true > false
-
-## In Preferences / privacy
-    about:preferences#privacy
-        Browser Privacy -> Content Blocking
-            Choose -> Custom
-                blook all
 
 ## Change search engine to searx
     https://searx.me/about#
