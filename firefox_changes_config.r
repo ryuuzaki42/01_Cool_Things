@@ -150,10 +150,13 @@ https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
 ## Remove Tracking Params
-https://addons.mozilla.org/en-GB/firefox/addon/remove-tracking-params/
+https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 
 ## Clean copy URL
-https://addons.mozilla.org/en-GB/firefox/addon/cleancopyurl/
+https://addons.mozilla.org/firefox/addon/cleancopyurl/
+
+## Video DownloadHelper
+https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 
 ## Good add-ons
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
@@ -176,7 +179,6 @@ https://addons.mozilla.org/firefox/addon/video-blocker/
 https://addons.mozilla.org/firefox/addon/kindle-it/
 https://addons.mozilla.org/firefox/addon/behind_the_overlay/
 https://addons.mozilla.org/firefox/addon/user-agent-switcher-firefox/
-https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://zenmate.com/
 https://addons.mozilla.org/firefox/addon/google-br/
     Change the default "search"
