@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/04/2020
+# Last update: 01/06/2020
 #
 
 ## Edit files in the /etc/
@@ -194,7 +194,7 @@ EndSection
     swapFilePace="/media/sda2/home/ryuuzaki42"
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-        dd if=/dev/zero of=$swapFilePaceswapFile.img bs=1M count=2048 # 2 GiB
+        dd if=/dev/zero of=$swapFilePace/swapFile.img bs=1M count=2048 # 2 GiB
 
     ## Turn into swapfile
         mkswap $swapFilePace/swapFile.img
