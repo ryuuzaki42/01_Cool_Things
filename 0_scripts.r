@@ -1,4 +1,4 @@
-    ## Script.r ##
+    ## Script.r - Greats commands for day life  ##
 
 ## Process with more CPU use
     ps -aux --sort=-pcpu | head
@@ -91,6 +91,9 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Simples online multicore CPU benchmarking service
     https://silver.urih.com/
+
+## Wi-Fi connect on terminal with NetworkManager
+    nmtui
 
 ## man
     man man - format and display the on-line manual pages
