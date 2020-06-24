@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/06/2020
+# Last update: 24/06/2020
 #
 
 ## Edit files in the /etc/
@@ -183,9 +183,13 @@ EndSection
 
 ## Remove others
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra
-    slackpkg remove xine-lib xine-ui vim-gvim vim sendmail sendmail-cf xpdf tetex tetex-doc kget
+    slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc kget
 
         ## Dolphin need baloo baloo-widgets
+            slackpkg remove baloo-widgets
+
+        ## xxd (to see file as binary - xxd -b file - is in vim
+            slackpkg remove vim vim-gvim
 
     ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
         slackpkg install bluez-qt
