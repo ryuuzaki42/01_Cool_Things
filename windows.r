@@ -18,6 +18,9 @@
 ## Desabilitar hibernate
     powercfg.exe /hibernate off
 
+    # Voltar ao padrão
+        powercfg.exe /hibernate on
+
 ## Desabilitar efeitos de aparência
 
 ## Desabilitar backup
@@ -27,3 +30,9 @@
 ## Get the motherboard from CMD
     # Descobrir a placa-mãe através do CMD
     wmic baseboard get product,manufacturer
+
+## Habilitar F8 (boot legacy com opções uteis) no Windows 10
+    bcdedit /set bootmenupolicy legacy
+
+    # Voltar ao padrão
+        bcdedit /set bootmenupolicy standard
