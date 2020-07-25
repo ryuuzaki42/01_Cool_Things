@@ -485,7 +485,7 @@ rm $tmpFile # Delete the tmpFile
 ## Assine o PDF
     1 Tire uma boa foto da assinatura (assine em um papel branco de caneta)
     2 Remova o fundo branco da imagem (png e adicione canal alpha no Gimp)
-    3 Assine o PDF usando o Foxit Reader
+    3 "Assine o PDF" inserindo uma imagem onde deveria assinar utilizando Master PDF Editor (ou outro editor de PDF)
 
 ## Size of a directory/folder on the command line
     du -sh
