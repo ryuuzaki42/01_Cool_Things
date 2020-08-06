@@ -1,4 +1,4 @@
-    ## Script.r - Greats commands for day life  ##
+    ## Script.r - Greats commands for day life ##
 
 ## Process with more CPU use
     ps -aux --sort=-pcpu | head
@@ -225,7 +225,7 @@ abc d efg abc d efg
 #include <locale.h> // Necessário para usar setlocale
 
 int main(){
-    setlocale(LC_ALL,"") // Alterando para o padrão do sistema operacional
+    setlocale(LC_ALL,""); // Alterando para o padrão do sistema operacional
 ...
 }
 
@@ -374,7 +374,7 @@ rm $tmpFile # Delete the tmpFile
 ## How to Switch Off the Thumbs.db Image Cache File in Windows
     1 Ensure you’re logged in using an administrator account
     2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
-    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components > 
+    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
         then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
     4 In the right-hand pane, double-click “Turn off the caching of thumbnails in hidden thumbs.db files”
     5 Select Enabled (don’t make my mistake of choosing “Disabled”
@@ -382,18 +382,21 @@ rm $tmpFile # Delete the tmpFile
 
 ## Clean-up movie.mkv file (remove name in the tracks and chapters)
     ## Remove the Name of movie, track audio a1, track video a1 and track subtitle s1
-        mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name=
+        mkvpropedit -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name= movie.mkv
 
     ## Remove chapters
-        mkvpropedit movie.mkv --chapters ''
+        mkvpropedit --chapters '' movie.mkv
 
     ## Set language English to track audio a1, video v1, and subtitle s1
-        mkvpropedit movie.mkv -e info -s title= -e track:a1 -s name= language=en -e track:v1 -s name= language=en -e track:s1 -s language=en
+        mkvpropedit -e info -s title= -e track:a1 -s name= language=en -e track:v1 -s name= language=en -e track:s1 -s language=en movie.mkv
+
+    ## Set audio (a2) as default (a1 flag-default=0), video (v1) with language jpn, subtitle (s1) with language pt and as default
+    mkvpropedit -e track:a1 -s flag-default=0 -e track:a2 -s flag-default=1 -e track:v1 -s language=jpn -e track:s1 -s language=pt -s flag-default=1 movie.mkv
 
     ## auto with one file mkv in the folder
-        i=$(ls *mkv); mkvpropedit $i -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name=
+        i=$(ls *.mkv); mkvpropedit -e info -s title= -e track:a1 -s name= -e track:v1 -s name= -e track:s1 -s language=en -s name= $i
 
-    # Manual
+    ## Manual
     https://mkvtoolnix.download/doc/mkvpropedit.html
 
 ## Use the Unofficial Bash Strict Mode (Unless You Love Debugging)
@@ -401,12 +404,17 @@ rm $tmpFile # Delete the tmpFile
     set -euo pipefail
     IFS=$'\n\t'
 
-# set -e: option instructs bash to immediately exit if any command [1] has a non-zero exit status.
-# set -u: When set, a reference to any variable you haven't previously defined is an error, and causes the program to immediately exit.
-# set -o pipefail: If any command in a pipeline fails, that return code will be used as the return code of the whole pipeline.
-                    # By default, the pipeline's return code is that of the last command - even if it succeeds
+    ## Option instructs bash to immediately exit if any command has a non-zero exit status
+        set -e
 
-# link: http://redsymbol.net/articles/unofficial-bash-strict-mode/
+    ## When set, a reference to any variable you haven't previously defined is an error, and causes the program to immediately exit
+        set -u
+
+    ## If any command in a pipeline fails, that return code will be used as the return code of the whole pipeline
+        # By default, the pipeline's return code is that of the last command - even if it succeeds
+        set -o pipefail
+
+    ## link: http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 ## File associations in KDE/Plasma
     KDE stores its mimetype mappings in:
@@ -1268,20 +1276,20 @@ gtk-fallback-icon-theme = gnome
 
     # mkisofs : é o comando que chama o programa
     # -r : permite que qualquer cliente possa ler o conteúdo do arquivo
-    #   Evita problemas ao tentar ler o arquivo no Windows
+    #    Evita problemas ao tentar ler o arquivo no Windows
     # -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet
     # -o : Especifica o nome do arquivo ISO que será criado
     # -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux
     # -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS
-    #   não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
+    #    não consiga enxergar estes caracteres, já que ele trabalha com um protocolo 8.3;
     # -V especifica uma identificação para o CD (rótulo);
     # -v caso seja esta opção acionada, serão exibidas em seu vídeo todas informações que saírem do mkisofs
     # nome_do_arquivo.iso : O nome do arquivo propriamente dito. Não se esqueça de sempre incluir a extensão .iso
     # O arquivo é sempre gravado no diretório corrente
     # -pad este parâmetro é necessário em muitos OSs, inclusive no Linux,
-    #   ele é acionado para evitar erros de entrada e saída
+    #    ele é acionado para evitar erros de entrada e saída
     # /diretório_de_origem/ : O diretório onde estão os arquivos que serão incluídos na imagem
-    #   É possível especificar vários diretórios separados por espaços, como em:
+    #    É possível especificar vários diretórios separados por espaços, como em:
     #  /home/ecouto/testes/ /home/ecouto/arquivos/
 
 ## Mplayer e suas loucuras! imagem da webcam com efeito MATRIX
