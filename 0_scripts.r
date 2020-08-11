@@ -120,6 +120,14 @@ kdewallet=Chromium,Opera,Chrome
     man 7 time - overview of time and timers
     man tcp - TCP protocol
     man udp - User Datagram Protocol for IPv4
+    man stdio - standard input/output library functions
+    man string - string operations
+    man 1 printf -  format and print data
+    man 3 printf -  format and print data
+    man system - execute a shell command
+    man for - 'For' loop
+    man while - Execute script repeatedly as long as a condition is met
+    man if - "use" a Perl module if a condition holds (also can "no" a module)
 
 ## Argumentos em Shell Scripts
     $0 - Identifica o comando emitido
@@ -620,9 +628,13 @@ rm $tmpFile # Delete the tmpFile
     fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
 
 ## Convert video
-    ffmpeg -i inVideo.avi OutVideo.mp4
-    ffmpeg -i inVideo.mp4 OutVideo.mkv
+    ffmpeg -i inVideo.avi outVideo.mp4
 
+    ## Convert inVideo.mkv to outVideo.mp4 - with copy of codec
+        ffmpeg -i inVideo.mkv -codec copy outVideo.mp4
+
+    ## Convert all file .mp4 to .mkv - with copy of codec
+        for file in *.mp4; do ffmpeg -i "$file" -codec copy "${file::-2}kv"; done
 
 ## Convert entire playlist from flac, oog, flac to mp3
     # 320 k
@@ -656,6 +668,9 @@ rm $tmpFile # Delete the tmpFile
 ## sed - delete/remove and resplace values
     ## Replace/remove multiple empty line with one empty line
         sed '/^$/N;/^\n$/D' inputfile
+
+    ## Remove all empty lines
+        sed -r '/^\s*$/d' inputfile
 
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
