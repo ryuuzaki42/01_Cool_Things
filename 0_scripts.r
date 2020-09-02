@@ -129,6 +129,18 @@ kdewallet=Chromium,Opera,Chrome
     man while - Execute script repeatedly as long as a condition is met
     man if - "use" a Perl module if a condition holds (also can "no" a module)
 
+## Slackware update
+    Select a mirror in /etc/slackpkg/mirrors removing the "#" in the line
+
+    slackpkg update gpg # only once or when change mirror
+
+    slackpkg update
+    slackpkg install-new
+    slackpkg upgrade-all
+
+## Convert rpm to txz with tags
+    rpm2txz -d -c -r program.rpm
+
 ## Argumentos em Shell Scripts
     $0 - Identifica o comando emitido
     $@ - O conjunto dos argumentos
