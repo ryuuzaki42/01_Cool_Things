@@ -112,10 +112,9 @@ TAG_PRIORITY=off
 #           for that repositories you may need to run slackpkg with 'slackpkg -checkgpg=off ...'
 
 # Slackware 14.2 - x86_64
-MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
-MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
-MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
-#MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
+#MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
+#MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
+#MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
 
 # use this to keep the slackpkg+ package updated to the latest stable release
 MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+/
@@ -123,16 +122,16 @@ MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+/
 # use the development branch to use the mainline version and help develop by reporting bugs.
 #MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+dev/
 
-
 # Slackware current - x86_64
-#MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
+MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
+MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
 
 # Local repository:
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/14.2/x86/
 #
 # Local packages (you do not need metadata nor 'slackpkg update' command):
 #MIRRORPLUS['myrepo']=dir://repositories/mypackages/
-
 
 #
 # Supported Repositories (see /usr/doc/slackpkg+-* for details and notes):
