@@ -724,7 +724,12 @@ rm $tmpFile # Delete the tmpFile
         sed 's/\s*$//' file > file2.txt
 
 ## Remove '\r' (return)
+    # useful in subtitles or text files to use with grep
     tr -d '\r'
+
+    sed 's/\r$//' file
+
+    # grep ^1$ sub.srt
 
 ## Print first 5 characters from string
     cut -c1-5
