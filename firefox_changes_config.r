@@ -46,20 +46,38 @@ mousewheel.system_scroll_override_on_root_content.enabled
     false > true
 
 ## Program to open magnet links (torrent)
-    new > boolean > name
+    about:config > new > boolean > name
 network.protocol-handler.expose.magnet
     > false
 
-    Open a magnet link and choose a program
-/usr/bin/ktorrent
+    Open the magnet link:
+magnet:?xt=
 
-## Steam to open magnet links (torrent)
-    new > boolean > name
+    And choose a program
+/usr/bin/ktorrent
+    or
+/usr/bin/qbittorrent
+
+## Steam to open links
+    about:config > new > boolean > name
 network.protocol-handler.expose.steam
     > false
 
-    Open a link (steam://run/....) and choose Steam
+    Open the link:
+steam://run/
+
+    And choose Steam
 /usr/bin/steam
+
+## Telegram to open links
+    about:config > new > boolean > name
+network.protocol-handler.expose.tg
+    > false
+
+    Create a link by opening the following URL
+data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
+
+    And choose Telegram (or look for the executable file)
 
 ## Enabled the spell check in all field text
 layout.spellcheckDefault
