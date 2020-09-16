@@ -130,6 +130,10 @@ MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricte
 # Local repository:
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/14.2/x86/
 #
+# Local Mirror - Slackware current - x86_64
+#MIRRORPLUS['multilib']=file://media/sda2/git_clone/13_clone_multilib_Slackware_repo/current/
+#MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+
 # Local packages (you do not need metadata nor 'slackpkg update' command):
 #MIRRORPLUS['myrepo']=dir://repositories/mypackages/
 
