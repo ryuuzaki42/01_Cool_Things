@@ -24,6 +24,7 @@ mozilla-firefox
 unrar
 xf86-video-nouveau
 OpenAL
+python3
 #
 amor
 calligra-l10n-en_GB
@@ -41,3 +42,7 @@ xfce4-pulseaudio-plugin
 veracrypt
 vlc
 #
+libtorrent-rasterbar
+ffmpeg
+unrar
+kernel
