@@ -137,7 +137,7 @@ about:support
     browser.tabs.remote.autostart
         false > true
 
-    ## Set the count os process
+    ## Set the count of process
     dom.ipc.processCount
         > Set more than 1
 
@@ -179,6 +179,16 @@ https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 ## Good add-ons
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
+
+## Reset the programs to open file
+    ## Go to
+~/.mozilla/firefox/
+
+    ## Enter in the $profile$/ folder in use
+        about:profiles
+
+    ## Rename the file handlers.json
+        mv handlers.json handlers2.json
 
 ## Others
 https://adblockplus.org/
