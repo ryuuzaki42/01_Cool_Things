@@ -1019,6 +1019,8 @@ $ paste arq1.txt arq2.txt
     ifconfig <interface>
 
 ## Clonar pasta de um site ou baixar o conteúdo de pasta em um site
+    lftp -c 'open link ; mirror -c -e folder'
+
     lftp -c 'open http://slackware.com/~alien/multilib/ ; mirror -c -e 14.1'
 
     lftp -c 'open http://sumo.dlr.de/trac.wsgi/browser/trunk/sumo/tests/complex/tutorial/ ; mirror -c -e hello'
