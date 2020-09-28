@@ -1593,33 +1593,79 @@ fi
     sudo passwd root
 
 ## Mysql no Slackware
-    # Para instalar a base de dados
-    mysql_install_db
+    https://docs.slackware.com/pt-br:howtos:databases:install_mysql_on_slackware
 
-    # Necessário mudar as permissões do diretório inicial e assim o sock será gerado
-    chown -R mysql.mysql /var/lib/mysql
+    ## Para instalar a base de dados
+        mysql_install_db
 
-    # Para iniciar o MySQL
-    mysqld_safe &
+        # or
+        mysql_install_db --user=mysql
 
-    # Para definir a senha de root/administrador dos bancos de dados
-    mysqladmin -u root password <escolha uma senha>
+    ## Necessário mudar as permissões do diretório inicial e assim o sock será gerado
+        chown -R mysql.mysql /var/lib/mysql
 
-    # Logando no MySQL:
-    mysql -u root -p
+    ## Para iniciar o MySQL
+        mysqld_safe &
 
-    # Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
-    # Include /etc/apache/mod_php.conf
+    ## Para definir a senha de root/administrador dos bancos de dados
+        mysqladmin -u root password <escolha uma senha>
 
-    # Inicie o seu Apache
-    /usr/sbin/apachectl start
+    ## Logando no MySQL com senha
+        mysql -u root -p
 
-    # Teste
-    touch /var/www/htdocs/infophp.php
-    echo "<?php phpinfo(); ?>" > /var/www/htdocs/infophp.php
+    ## Logando se não definir senha para root (por padrão é em branco)
+        mysql -u root -p
 
-    # URL:
-    http://localhost/infophp.php
+    ## Apache + PHP = em /etc/httpd/httpd.conf descomente a linha
+        # Include /etc/apache/mod_php.conf
+
+    ## Inicie o seu Apache
+        /usr/sbin/apachectl start
+
+    ## Teste
+        touch /var/www/htdocs/infophp.php
+        echo "<?php phpinfo(); ?>" > /var/www/htdocs/infophp.php
+
+    ## URL:
+        http://localhost/infophp.php
+
+    ## Mysql change port
+        ## Inicie o mysql e seus bancos, se ainda não tiver feito
+            mysql_install_db --user=mysql
+
+        ## Comente a linha do script /etc/rc.d/rc.mysqld
+            SKIP="--skip-networking"
+
+        ## Edite o arquivo /etc/my.cnf e adicione
+            port=3306
+
+        # =>  7777 no meu teste, ou a porta que quiser.
+
+        ## Inicie o mysql
+            bash /etc/rc.d/rc.mysqld start
+
+        ## => Verificando
+            ## Conecte com o banco
+                mysql -u root
+
+            ## Verificar se skip-networking está off
+                MariaDB [(none)]> SHOW VARIABLES LIKE 'skip_networking';
+
+                +-----------------+-------+
+                | Variable_name   | Value |
+                +-----------------+-------+
+                | skip_networking | OFF   |
+                +-----------------+-------+
+
+
+            ## Verifique se a porta foi definida corretamente
+                MariaDB [(none)]> SHOW GLOBAL VARIABLES LIKE 'PORT';
+
+                +---------------+-------+
+                | Variable_name | Value |
+                +---------------+-------+
+                | port          | 7777  |
+                +---------------+-------+
 
 ## Print network connections
     netstat -atunp
