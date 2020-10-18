@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/06/2020
+# Last update: 18/10/2020
 #
 
 ## Edit files in the /etc/
@@ -194,8 +194,11 @@ EndSection
     ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
         slackpkg install bluez-qt
 
-## Swap in file 
-    swapFilePace="/media/sda2/home/ryuuzaki42"
+## Swap in file
+    ## My full path file
+    /media/sda2/home/j/swapFile.img
+
+    swapFilePace="/media/sda2/home/j"
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
         dd if=/dev/zero of=$swapFilePace/swapFile.img bs=1M count=2048 # 2 GiB
