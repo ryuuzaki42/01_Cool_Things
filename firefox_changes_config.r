@@ -220,3 +220,7 @@ https://addons.mozilla.org/firefox/addon/tab-notifier/
 https://addons.mozilla.org/firefox/addon/flagfox/
 https://addons.mozilla.org/firefox/addon/download-youtube/
 https://addons.mozilla.org/firefox/addon/download-flash-and-video/
+
+## Error
+    ## The site at <site> has experienced a network protocol violation that cannot be repaired
+        try reload the page (Crtl + F5) and/or delete the cache in: about:preferences#privacy -> Clear Data
