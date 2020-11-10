@@ -1725,3 +1725,20 @@ echo "1.0.0
 1.0.0.1019
 1.0.0.1019
 1.0.0.7" | sort --version-sort --field-separator=. --key=4
+
+## Andriod .thumbnails with large .thumbdata4-xxxxxx thumbs data
+    ## Delete the folder .thumbnails
+
+    ## Added a file with name .thumbnails
+
+## GNU/Linux clone HD/SSD
+    ## Hole disck
+        dd if=/dev/sdX of=/dev/sdY bs=64K conv=noerror,sync status=progress
+
+    # sdX is the source disk, while sdY is the destination.
+    # The numerical value 64K, corresponds to the block size command, bs.
+    # The default value is 512 bytes, which is very small, so it's best to include 64K or the larger 128K as a condition.
+    # However: while a larger block size makes transfer quicker, a smaller block size makes the transfer more reliable.
+
+    ## If you only want to clone a partition of your drive, use
+        dd if=/dev/sdX1 of=/dev/sdY1 bs=64K conv=noerror,sync status=progress
