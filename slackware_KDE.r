@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 18/10/2020
+# Last update: 10/11/2020
 #
 
 ## Edit files in the /etc/
@@ -228,7 +228,7 @@ EndSection
                 vm.swappiness=10
 
     ## Load configuration permanently
-        sysctl –p
+        sysctl -p
 
 ## Set slackpkg mirror - Take a look in this script
     ./mirrors_insert_JBs.sh
