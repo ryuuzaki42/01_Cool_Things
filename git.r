@@ -188,6 +188,12 @@
     git commit -m "Add design file"
     git push origin master
 
+    ## To clone mirror with lfs
+        ## Setup Git LFS on your system. You only have to do this once per repository per machine:
+            git lfs install
+
+            git clone <repo-with-lfs>
+
 ## Smartgit get userName form ".git/config"
     ## Change url = site/userName/repo
     url = https://github.com/ryuuzaki42/0txt.git
