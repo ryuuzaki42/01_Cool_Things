@@ -167,7 +167,7 @@ about:support
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
-## Remove Tracking Params
+## Remove Tracking Parameters
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 
 ## Clean copy URL
@@ -189,6 +189,16 @@ https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
 
     ## Rename the file handlers.json
         mv handlers.json handlers2.json
+
+## New version of Firefox using new profile
+    ## Open the management of profiles
+        about:profiles
+
+    ## Launch the Firefox with the "old" profile
+
+    ## Close the Windows using the "new" profile
+
+    ## In the other window, open management profile and delete the "new" profile deleting files
 
 ## Others
 https://adblockplus.org/
