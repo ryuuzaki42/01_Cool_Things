@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 10/11/2020
+# Last update: 10/12/2020
 #
 
 ## Edit files in the /etc/
@@ -19,10 +19,40 @@
         StartServer=true > StartServer=false
 
 ## Disable Hibernation
-    nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
-        <action id="org.freedesktop.upower.hibernate">
-            <allow_active>yes</allow_active>
-                yes > no
+    ## KDE4
+        nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
+            <action id="org.freedesktop.upower.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+    ## KDE 5 
+        nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
+            # line 288
+            <action id="org.freedesktop.login1.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+            # line 298
+            <action id="org.freedesktop.login1.hibernate-multiple-sessions">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+## KDE 5 resize the "start menu"/Kickoff
+    nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
+
+    # line 34
+    Layout.minimumWidth: units.gridUnit * 29
+    Layout.maximumWidth: Layout.minimumWidth
+
+    Layout.minimumHeight: units.gridUnit * 34
+    Layout.maximumHeight: Layout.minimumHeight
+
+    ## To
+    Layout.minimumWidth: units.gridUnit * 22
+    Layout.maximumWidth: Layout.minimumWidth
+
+    Layout.minimumHeight: units.gridUnit * 28
+    Layout.maximumHeight: Layout.minimumHeight
 
 ## rc.local
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
@@ -71,6 +101,12 @@ echo -e "\\nStarting thinkfan\\n"
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
     nano /etc/lilo.conf
     lilo
+    
+    ## Slackware Current
+        pkgtool
+            >  Setup - Choose Slackware installation scripts to run again 
+                > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
+        lilo
 
 ## Touchpad of just one part
     nano /etc/X11/xorg.conf
@@ -173,7 +209,11 @@ EndSection
     slackpkg remove nepomuk nepomuk-core nepomuk-widgets
 
 ## Remove akonadi
-    slackpkg remove akonadi
+    slackpkg remove akonadi akonadi-calendar akonadi-calendar-tools akonadi-contacts akonadi-notes
+    slackpkg remove akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole
+
+## Remove some added to XFCE
+    slackpkg remove elementary-xfce gnome-themes-extra xfce4-panel-profiles xfce4-screensaver xfce4-whiskermenu-plugin thunar
 
 ## Remove gnome "packages"
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
@@ -183,7 +223,7 @@ EndSection
 
 ## Remove others
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra
-    slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc kget
+    slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc texlive kget
 
         ## Dolphin need baloo baloo-widgets
             slackpkg remove baloo-widgets
