@@ -1742,3 +1742,26 @@ echo "1.0.0
 
     ## If you only want to clone a partition of your drive, use
         dd if=/dev/sdX1 of=/dev/sdY1 bs=64K conv=noerror,sync status=progress
+
+## KDE5 - Telegram not show icon in notification area
+    Delete the file:
+        ~/.config/kded5rc
+
+## KDE 5 - noise when starting session
+        pavucontrol
+            > Configuration > in second Built-in Audio
+                    Change Mono Output > Off
+
+## Create patch file
+    ## Create a backup of the file with the name "file.orig" and make the changes in the "file"
+        diff -Naur path-to-file/file.orig path-to-file/file > file.patch
+
+        ## Apply patch
+            patch -p1 < patch-to-file/file.patch
+
+    ## Example
+        diff -Naur uget-2.2.3/ui-gtk/UgtkBanner.h.orig uget-2.2.3/ui-gtk/UgtkBanner.h > uget.patch 
+  
+        ## After - apply the patch
+            # Added patch to build in GCC 10 - Slackware Current
+            patch -p1 < $CWD/uget.patch
