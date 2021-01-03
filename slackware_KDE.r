@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 10/12/2020
+# Last update: 03/01/2021
 #
 
 ## Edit files in the /etc/
@@ -25,7 +25,7 @@
                 <allow_active>yes</allow_active>
                     yes > no
 
-    ## KDE 5 
+    ## KDE 5
         nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
             # line 288
             <action id="org.freedesktop.login1.hibernate">
@@ -101,10 +101,10 @@ echo -e "\\nStarting thinkfan\\n"
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
     nano /etc/lilo.conf
     lilo
-    
+
     ## Slackware Current
         pkgtool
-            >  Setup - Choose Slackware installation scripts to run again 
+            >  Setup - Choose Slackware installation scripts to run again
                 > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
         lilo
 
@@ -191,9 +191,10 @@ EndSection
         tlmgr install package
 
 ## Remove games of KDE
-    slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision kpat lskat blinken khangman pairs ktuberling
-    slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen gnuchess katomic kjumpingcube kmines knetwalk
-    slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg
+    slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision
+    slackpkg remove kpat lskat blinken khangman pairs ktuberling  gnuchess katomic kjumpingcube kmines knetwalk
+    slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen
+    slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg xsnow libgtop
 
 ## Remove desktop environments (X)
     ## Remove all another X than KDE (leave fluxbox for safe propose)
@@ -213,12 +214,12 @@ EndSection
     slackpkg remove akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole
 
 ## Remove some added to XFCE
-    slackpkg remove elementary-xfce gnome-themes-extra xfce4-panel-profiles xfce4-screensaver xfce4-whiskermenu-plugin thunar
+    slackpkg remove elementary-xfce gnome-themes-extra xfce4-panel-profiles xfce4-screensaver xfce4-whiskermenu-plugin thunar mousepad Greybird
 
 ## Remove gnome "packages"
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
-## Remove bluetooth - not recommended if you have bluetooth 
+## Remove bluetooth - not recommended if you have bluetooth
     slackpkg remove bluedevil blueman bluez bluez-firmware
 
 ## Remove others
@@ -304,7 +305,7 @@ EndSection
         nano /etc/slackpkg/blacklist
 
     ## Or in the greylist
-        # All packages in that list will be showned but unchecked by default 
+        # All packages in that list will be showned but unchecked by default
         nano /etc/slackpkg/greylist
 
 gcc
