@@ -1760,8 +1760,29 @@ echo "1.0.0
             patch -p1 < patch-to-file/file.patch
 
     ## Example
-        diff -Naur uget-2.2.3/ui-gtk/UgtkBanner.h.orig uget-2.2.3/ui-gtk/UgtkBanner.h > uget.patch 
-  
+        diff -Naur uget-2.2.3/ui-gtk/UgtkBanner.h.orig uget-2.2.3/ui-gtk/UgtkBanner.h > uget.patch
+
         ## After - apply the patch
             # Added patch to build in GCC 10 - Slackware Current
             patch -p1 < $CWD/uget.patch
+
+## Reinstall Lilo - Chroot method
+    # Insert and boot your installation media
+    ## Somethimes you can boot your system from here with a command like:
+        boot: huge.s root=/dev/sda1 rdinit= ro
+
+        ## Once booted run liloconfig
+
+    ## Other thimes you need chrooting method
+        # Boot and login as root when prompted but do not run setup
+        ## Mounting
+            mount /dev/sdX1 /mnt   # (where /dev/sdx1 is your / partition)
+            mount -o bind /dev /mnt/dev
+            mount -o bind /proc /mnt/proc
+            mount -o bind /sys /mnt/sys
+
+        ## Chrooting
+            chroot /mnt /bin/bash
+
+        ## Now run liloconfig and follow the prompts
+            liloconfig
