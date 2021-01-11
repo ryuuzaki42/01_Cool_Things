@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/01/2021
+# Last update: 11/01/2021
 #
 
 ## Edit files in the /etc/
@@ -41,7 +41,7 @@
     nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
 
     # line 34
-    Layout.minimumWidth: units.gridUnit * 29
+    Layout.minimumWidth: units.gridUnit * 26
     Layout.maximumWidth: Layout.minimumWidth
 
     Layout.minimumHeight: units.gridUnit * 34
