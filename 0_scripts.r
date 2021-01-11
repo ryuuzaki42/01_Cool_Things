@@ -1126,20 +1126,52 @@ $ paste arq1.txt arq2.txt
     ./CopyAgent
 
 ## Virtualbox start kernel service
-    # Slackware KDE
-    kdesu sh /etc/init.d/vboxdrv start; VirtualBox %U
+    ## Edit the menu-start-shortcut
+        # Slackware KDE
+            kdesu sh /etc/init.d/vboxdrv start; VirtualBox %U
 
-    # Slackware XFCE
-    gksu sh /etc/init.d/vboxdrv start; VirtualBox %U
+        # Slackware XFCE
+            gksu sh /etc/init.d/vboxdrv start; VirtualBox %U
 
-    # Linux mint
-    kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
+        # Linux mint
+            kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
+
+## Kernel upgrade (kernel driver not installed)
+    # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv.
+    # Please reinstall the kernel module by executing
+        /sbin/vboxconfig
+
+## Virtualbox, after install add user in /etc/group to acess USB
+    nano /etc/group
+    vboxuser: $user$
+
+        #or
+
+    usermod -a -G vboxusers $user$
+
+    usermod -a -G vboxusers j
+
+    ## Chance update settings por all releases
+        File > preference > update > set : All New Realease
+
+    ## Remove disable the start script
+        chmod -x /etc/init.d/vbox*
+
+## Virtualbox - shrink VM size
+    # https://vinyanalista.github.io/blog/2014/01/20/reduzindo-o-tamanho-de-discos-rigidos-virtuais-do-virtualbox/
+    ## Write 0 in the vmDisk
+        https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
+
+        sdelete -z c:
+
+    ## Compact with VirtualBox
+        VBoxManage modifyhd vmDisk.vdi --compact
+
+## VirtualBox define screen size
+    vboxmanage setextradata 'VM Name' CustomVideoMode1 1366x768x32
 
 ## Vmware start kernel service
     kdesu /usr/bin/svmware_auto.sh; /usr/bin/vmware %F
-
-## VirtualBox definir tamanho da tela
-    vboxmanage setextradata 'Nome de sua máquina Virtual' CustomVideoMode1 1366x768x32
 
 ## Verificar disco rígido
     # Se a partição for ext4, -f força o teste mesmo que os files clean
