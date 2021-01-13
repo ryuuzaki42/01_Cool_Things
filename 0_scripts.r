@@ -1818,3 +1818,13 @@ echo "1.0.0
 
         ## Now run liloconfig and follow the prompts
             liloconfig
+
+## ssr - simplescreenrecorder not recording correctly
+    ## The recording occasionally flickers, showing parts of the desktop background instead of windows
+
+    # https://www.maartenbaert.be/simplescreenrecorder/troubleshooting/
+
+    # "For Intel GPUs, the flickering can sometimes be eliminated by uninstalling the driver for 
+    # 2D acceleration (xserver-xorg-video-intel, xf86-video-intel or similar)."
+
+    slackpkg remove xf86-video-intel
