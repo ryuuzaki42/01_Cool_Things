@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 11/01/2021
+# Last update: 26/01/2021
 #
 
 ## Edit files in the /etc/
@@ -147,15 +147,26 @@ EndSection
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
 ## Libreoffice to Brazil user on KDE
-    slackpkg install libreoffice-6.* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
+    slackpkg install libreoffice-[0-9].* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
     dropbox virtualbox comix qpdf R redshift smplayer vlc openjdk ...
 
 ## Latex
-    ## Remove tetex and tetex-doc
-        slackpkg remove tetex
+    ## Alternative, you can use latex online
+        # https://www.overleaf.com/
+
+    ## Slackware Current has texlive package, but without tlmgr
+        # In texlive-*.txz/usr/doc/texlive-*/README.tlpkg
+            "The TeXLive Package Manager, i.e. tlmgr(1), is not shipped with this
+            TeXLive package, as it's not expected to work properly (if at all)."
+
+        slackpkg remove texlive
+
+    ## To Slackware 14.2
+        ## Remove tetex and tetex-doc
+            slackpkg remove tetex
 
     ## If will install the txz texlive
         ## Install libsigsegv texi2html
@@ -196,6 +207,9 @@ EndSection
     slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen
     slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg xsnow libgtop
 
+## Remove plasma-vault
+    slackpkg remove plasma-vault
+
 ## Remove desktop environments (X)
     ## Remove all another X than KDE (leave fluxbox for safe propose)
         slackpkg remove twm blackbox windowmaker fvwm xfce
@@ -227,13 +241,13 @@ EndSection
     slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc texlive kget
 
         ## Dolphin need baloo baloo-widgets
-            slackpkg remove baloo-widgets
+            slackpkg install baloo-widgets
 
         ## xxd (to see file as binary - xxd -b file - is in vim
-            slackpkg remove vim vim-gvim
+            slackpkg install vim vim-gvim
 
-    ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
-        slackpkg install bluez-qt
+        ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
+            slackpkg install bluez-qt
 
 ## Swap in file
     ## My full path file
