@@ -127,6 +127,25 @@ EndSection
     ## To enable horizontal scrolling in addition to vertical scrolling
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 
+## If you use/have a Intel graphics card, can select with driver load/use
+    ## Put in the config in:
+        /etc/X11/xorg.conf
+
+    ## To the use Intel - xbacklight works
+Section "Device"
+    Identifier      "Intel Graphics"
+    Driver          "intel"
+EndSection
+
+    # Can add Option Backlight after driver
+        Option          "Backlight"      "intel_backlight"
+
+    ## To use modesetting - xbacklight not works
+Section "Device"
+    Identifier      "Intel Graphics"
+    Driver          "modesetting"
+EndSection
+
 ## Dolphin disable executable shellscript, perl, ruby, pyton etc
     kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
