@@ -3,7 +3,7 @@
 ## Process with more CPU use
     ps -aux --sort=-pcpu | head
 
-## Processo with more memory (RAM) use
+## Process with more memory (RAM) use
     ps -aux --sort -rss | head
 
 ## Compile C with warning and extras
@@ -14,7 +14,7 @@
     # https://linux.ime.usp.br/~lucasmmg/livecd/documentacao/documentos/terminal/Compilando_um_arquivo_em_C.html
 
 ## Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera
-    # for not pop-up everytime you open them added in the end of file
+    # for not pop-up every time you open them added in the end of file
     nano ~/.kde/share/config/kwalletrc
 
 [Auto Deny]
@@ -35,7 +35,15 @@ kdewallet=Chromium,Opera,Chrome
         ## zip files with a size limit
             zip -s 10m archive.zip archive
 
-            zip -r -s 10m archive.zip directory/
+            zip -r -s 400m archive.zip directory/
+
+            ## Compress Speed
+                (-0, -1, -2, -3, -4, -5, -6, -7, -8, -9)
+                Regulate the speed of compression using the specified digit #, where -0 indicates no compression (store all files),
+                -1 indicates the fastest compression speed (less compression) and -9 indicates the slowest compression
+                speed (optimal compression, ignores the suffix list). The default compression level is -6.
+
+            zip -1 -r -s 400m archive.zip directory/
 
         ## Convert a split archive to a single-file archive, first "unsplit"
             zip -s 0 archive.zip --out unsplit.zip
@@ -95,6 +103,9 @@ kdewallet=Chromium,Opera,Chrome
 ## Wi-Fi connect on terminal with NetworkManager
     nmtui
 
+    ## NetworkManager - files with config and passwords
+        /etc/NetworkManager/system-connections/
+
 ## man
     man man - format and display the on-line manual pages
 
@@ -122,8 +133,8 @@ kdewallet=Chromium,Opera,Chrome
     man udp - User Datagram Protocol for IPv4
     man stdio - standard input/output library functions
     man string - string operations
-    man 1 printf -  format and print data
-    man 3 printf -  format and print data
+    man 1 printf - format and print data
+    man 3 printf - format and print data
     man system - execute a shell command
     man for - 'For' loop
     man while - Execute script repeatedly as long as a condition is met
@@ -759,6 +770,15 @@ rm $tmpFile # Delete the tmpFile
 ## Reset directories and files permission
     find . -type d -exec chmod 0755 {} \;
     find . -type f -exec chmod 0644 {} \;
+
+    ## Remove permission from other users
+        find . -type f -exec chmod 0600 {} \;
+
+        ## Change owner user to root
+            chown root -R *
+
+            ## Change files group to root
+                chgrp root -R *
 
 ## Expansão de urls encurtadas com curl
     curl -sIL short-url | grep ^Location;
@@ -1481,21 +1501,33 @@ fi
     done
     echo "Você selecionou $var"
 
-## Converter imagem em pdf
+## Convert image in PDF
     convert *.jpg output.pdf
 
-## Converter pdf em imagem
+    ## Parameters
+        -verbose
+        -quality 100
+        -density 300
+        -sharpen 0x1.0
+
+    ## Best in my test
+        convert *.jpg -sharpen 0x1 output.pdf
+
+    ## Convert all image *.jpg to pdf
+        IFS=$(echo -en "\n\b"); for f in *.jpg; do echo "$f"; convert $f -sharpen 0x1 ${f::-4}.pdf; done
+
+## Convert PDF in image
     convert input.pdf output.jpg
 
-## Baixando sites
+## Download sites
     wget -c -r -erobots=off -A ".jpg .png" #link_do_site#
 
-## Compartilhamento de pasta no virtualbox
+## Share a folder in Virtualbox
     ->Instal guest additions
     reboot
 
-    No Gnu/Linux para montar a pasta
-    mount -t vboxsf nome_pasta_compartilhada /media/nome_pasta
+    On Gnu/Linux need to mount the folder
+    mount -t vboxsf folder_share /media/folder
     ex: mount -t vboxsf sda2 /media/sf_sda2/
 
 ## Mount NTFS partition
@@ -1671,7 +1703,7 @@ fi
         ## Edite o arquivo /etc/my.cnf e adicione
             port=3306
 
-        # =>  7777 no meu teste, ou a porta que quiser.
+        # => 7777 no meu teste, ou a porta que quiser.
 
         ## Inicie o mysql
             bash /etc/rc.d/rc.mysqld start
@@ -1808,7 +1840,7 @@ echo "1.0.0
     ## Other thimes you need chrooting method
         # Boot and login as root when prompted but do not run setup
         ## Mounting
-            mount /dev/sdX1 /mnt   # (where /dev/sdx1 is your / partition)
+            mount /dev/sdX1 /mnt # (where /dev/sdx1 is your / partition)
             mount -o bind /dev /mnt/dev
             mount -o bind /proc /mnt/proc
             mount -o bind /sys /mnt/sys
@@ -1828,3 +1860,9 @@ echo "1.0.0
     # 2D acceleration (xserver-xorg-video-intel, xf86-video-intel or similar)."
 
     slackpkg remove xf86-video-intel
+
+## Telegram with time in 24 horas
+    LC_TIME=pt_BR.UTF-8 ./Telegram
+
+    #Or
+    LC_TIME=en_IE.UTF-8 ./Telegram
