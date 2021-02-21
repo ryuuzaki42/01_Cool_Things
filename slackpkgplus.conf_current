@@ -1,4 +1,4 @@
-# Configuration for slackpkg+. See /usr/doc/slackpkg+-*/README for more details
+# Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
 
 # Enable (on) / Disable (off) slackpkg+
@@ -10,18 +10,25 @@ SLACKPKGPLUS=on
 # set to '3' for a debug mode
 VERBOSE=1
 
+# Enable TERSE to use a smaller output in installpkg/upgradepkg
+USETERSE=on
+
+# Use proxy. Leave commented to use system settings.
+#PROXY=off
+#PROXY=<host>:<port>
+
 # By default slackpkg+ deny to install 32bit packages.
 #
-# Set this flag to 'on' allow slackpkg+ to install 32bit packages on a 64bit slackware
-# installation (possibly unsafe). Please, do not install both 32 and 64bit of the same
+# Set this flag to 'on' allow slackpkg+ to install 32bit packages on a 64bit slackware 
+# installation (possibly unsafe). Please, do not install both 32 and 64bit of the same 
 # package to avoid problems, and NEVER upgrade existant 64bit packages with relative 32bit package.
 # Do not forget to install the multilibs.
 ALLOW32BIT=off
 
-# Enable (1) / Disable (0) the official slackpkg blacklist. May be useful to temporarily skip
+# Enable (on) / Disable (off) the official slackpkg blacklist. May be useful to temporarily skip
 # the slackware blacklist. You can also override it from command line:
-# 'USEBL=0 slackpkg upgrade-all'
-USEBL=1
+# 'USEBL=off slackpkg upgrade-all'
+USEBL=on
 
 # Add custom option to 'wget'.
 # You can solve the repository indisponibility issue by set a timeout here
@@ -50,17 +57,17 @@ CACHEUPDATE=off
 GREYLIST=on
 
 # Defines if commands 'search' and 'file-search' are case-sensitive (on) or not (off). Default to "on"
-SENSITIVE_SEARCH=on
+SENSITIVE_SEARCH=off
 
 # Defines if command 'file-search' does search Wole Word (on) of accept partial words (off). Note that
 # you may obtains many many results searching a short partial word
-WW_FILE_SEARCH=on
+WW_FILE_SEARCH=off
 
 # Select the show order in dialogbox. Available "package" "repository" "tag" "path" "arch"
 SHOWORDER=package
 
 # Allow to show more details of the package in slackpkg info <package>. Accept "none", "basic", "filelist"
-DETAILED_INFO=none
+DETAILED_INFO=basic
 
 # Enable (on) / Disable (off) a Strict GPG Check. A repository should contains packages signed
 # with the only original GPG-KEY. In some custom repository may be wanted to mix heterogeneous
@@ -77,21 +84,15 @@ STRICTGPG=on
 #PKGS_PRIORITY=( restricted:vlc )
 # OR
 #PKGS_PRIORITY=( myrepo )
-#
+# 
 # if you have two reporitories to give priority you must set both in the same line
 #PKGS_PRIORITY=( myrepo restricted:vlc )
 #
-# if you want to install 'ktown' repository you must set it here
-#PKGS_PRIORITY=( ktown )
-# and DO NOT MISS to read special instruction on /usr/doc/slackpkg+-*/repositories.txt
 #
 # If you want a multilib system, uncomment the multilib repository and set:
 PKGS_PRIORITY=( multilib restricted )
 #
 # (Use /usr/doc/slackpkg+-*/setupmultilib.sh to setup a multilib configuration)
-#
-# For both multilib and ktown set
-#PKGS_PRIORITY=( multilib ktown )
 
 # Otherwise you can try to upgrade a package from a repository that contains a package with the
 # same tag of the already installed package. Tipically that means to upgrade a package from the
@@ -104,7 +105,8 @@ TAG_PRIORITY=off
 # List repositories you want to use (defined below)
 # remember to launch 'slackpkg update' if you modify that row.
 #REPOPLUS=( slackpkgplus restricted alienbob slacky )
-#REPOPLUS=( slackpkgplus )
+REPOPLUS=( slackpkgplus )
+
 
 # Define mirrors (uncomment one or more mirror; remember to add it to REPOPLUS)
 # GPG Note: after adding/renaming a repository, you must to run 'slackpkg update gpg'
@@ -115,15 +117,17 @@ TAG_PRIORITY=off
 #MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
 #MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
 #MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
+#MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
 
 # use this to keep the slackpkg+ package updated to the latest stable release
-MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+/
+MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+15/
 
 # use the development branch to use the mainline version and help develop by reporting bugs.
 #MIRRORPLUS['slackpkgplus']=http://slakfinder.org/slackpkg+dev/
 
+
 # Slackware current - x86_64
-MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
+#MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
 MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
 MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
 
@@ -131,34 +135,39 @@ MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricte
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/14.2/x86/
 #
 # Local Mirror - Slackware current - x86_64
-#MIRRORPLUS['multilib']=file://media/sda2/git_clone/13_clone_multilib_Slackware_repo/current/
-#MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
+MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/current/13_clone_multilib_Slackware_repo_rsync/current/
 
 # Local packages (you do not need metadata nor 'slackpkg update' command):
 #MIRRORPLUS['myrepo']=dir://repositories/mypackages/
+#
+# Remote packages (you do not need metadata)
+#MIRRORPLUS['slackpkgbeta']=httpsdir://slackpkg.org/beta/
+
+# SBo SlackBuilds. Uncomment it to allow slackpkg to search SlackBuilds on SlackBuilds.org
+# This does not repleace sbopkg; slackpkg just report the package, version and url; you must
+# download and build it yourself or via sbopkg.
+#SBOURL=https://www.slackbuilds.org/slackbuilds/14.2/
 
 #
 # Supported Repositories (see /usr/doc/slackpkg+-* for details and notes):
 #
 
-#slackpkgplus:  http://slakfinder.org/slackpkg+{,dev,1.6,1.7}/
-#multilib:      http://bear.alienbase.nl/mirrors/people/alien/multilib/{14.0,14.1,14.2,current}/
-#alienbob:      http://bear.alienbase.nl/mirrors/people/alien/sbrepos/{14.0,14.1,14.2,current}/{x86,x86_64}/
-#ktown:         http://bear.alienbase.nl/mirrors/alien-kde/{14.2,current}/5/{x86,x86_64}/
-#restricted:    http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/{14.0,14.1,14.2,current}/{x86,x86_64}/
-#slacky:        http://repository.slacky.eu/slackware{,64}-{14.0,14.1,14.2}/
-#mleddesktop:   http://slackware.uk/microlinux/desktop-{14.1,14.2}-{32,64}bit/
-#mledextras:    http://slackware.uk/microlinux/extras-{14.1,14.2}-{32,64}bit/
-#mles:          http://slackware.uk/microlinux/server-{14.0,14.1,14.2}-{32,64}bit/
-#msb:           http://slackware.uk/msb/{14.0,14.1,14.2,current}/{1.6,1.8,1.10,1.12,1.14,1.16,1.18,1.19,latest}/{x86,x86_64}/
-#csb:           http://slackware.uk/csb/{14.1,14.2,current}/{x86,x86_64}/
-#slackers:      http://slack.conraid.net/repository/slackware64-current/
-#slacke18:      http://ngc891.blogdns.net/pub/slacke18/slackware{,64}-{14.1}/
-#studioware:    http://slackware.uk/studioware/14.2
-#slackonly:     http://packages.slackonly.com/pub/packages/{14.1,14.2,current}-{x86,x86_64}/
-#rlworkman:     http://rlworkman.net/pkgs/{14.0,14.1,14.2,current}/
+#slackpkgplus:  http://slakfinder.org/slackpkg+{,dev,1.7}/
+#multilib:      https://bear.alienbase.nl/mirrors/people/alien/multilib/{14.2,current}/
+#alienbob:      https://bear.alienbase.nl/mirrors/people/alien/sbrepos/{14.2,current}/{x86,x86_64}/
+#ktown:         https://bear.alienbase.nl/mirrors/alien-kde/{14.2,current}/5/{x86,x86_64}/
+#restricted:    https://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/{14.2,current}/{x86,x86_64}/
+#slacky:        https://slacky.eu/repository/slackware{,64}-{14.2}/
+#mleddesktop:   https://slackware.uk/microlinux/desktop-{14.2}-{32,64}bit/
+#mledextras:    https://slackware.uk/microlinux/extras-{14.2}-{32,64}bit/
+#mles:          https://slackware.uk/microlinux/server-{14.2}-{32,64}bit/
+#msb:           https://slackware.uk/msb/{14.2,current}/{1.18,1.24,latest}/{x86,x86_64}/
+#csb:           https://slackware.uk/csb/{14.2,current}/{x86,x86_64}/
+#slackers:      http://slack.conraid.net/repository/slackware64-current{-testing,-extra}/
+#studioware:    https://slackware.uk/studioware/{14.2}
+#slackonly:     https://packages.slackonly.com/pub/packages/{14.2,current}-{x86,x86_64}/
+#rlworkman:     https://rlworkman.net/pkgs/{14.2,current}/
 #slackel:       http://www.slackel.gr/repo/{i486,x86_64}/current/
-#connochaetos:  http://connochaetos.org/slack-n-free/slack-n-free{,64}-{14.2}/
-#slint:         http://slackware.uk/slint/{i586,x86_64}/slint-{14.2,testing}/
-#salixos:       http://download.salixos.org/{i486,x86_64}/{14.0,14.1,14.2}/
-#salixextra:    http://download.salixos.org/{i486,x86_64}/extra-{14.2}/
+#slint:         https://slackware.uk/slint/{i586,x86_64}/slint-{14.2,14.2.1,testing,wip}/
+#salixos:       https://download.salixos.org/{i486,x86_64}/{14.2,15.0}/
+#salixextra:    https://download.salixos.org/{i486,x86_64}/extra-{14.2,15.0}/
