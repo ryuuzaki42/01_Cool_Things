@@ -206,7 +206,7 @@ kdewallet=Chromium,Opera,Chrome
     # Windows setup could not install on this computer hardware
     Manually run msoobe.exe program to allow the install to complete
 
-    At the error screen, press Shift+F10 to open a command prompt
+    At the error screen, press Shift + F10 to open a command prompt
     cd c:\windows\system32\oobe and press Enter
     msoobe and press Enter
 
@@ -638,6 +638,7 @@ rm $tmpFile # Delete the tmpFile
     removepkg *z | grep -E "WARNING|Removing package"
 
     TMPFILE=`mktemp`; removepkg *z | tee $TMPFILE; echo -e "\n\n\t$TMPFILE\n"; cat $TMPFILE | grep -E "WARNING|Removing package"
+
     # remove the file after?
     rm $TMPFILE
 
@@ -649,6 +650,16 @@ rm $tmpFile # Delete the tmpFile
 
 ## Count files of one type in the folder
     fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
+
+## Extract audio from video file and convert to MP3
+    # audio 0
+    ffmpeg -i file.mkv -map 0:a:0 audio0.mp3
+
+    # audio 1
+    ffmpeg -i file.mkv -map 0:a:1 audio1.mp3
+
+    ## Check file (convert), set correctly duration
+        lame audio0.mp3 audio01.mp3
 
 ## Convert video
     ffmpeg -i inVideo.avi outVideo.mp4
@@ -1613,6 +1624,10 @@ fi
 
 ## Trocar de unidade cmd
     X: (onde X: é a unidade onde seu pendrive está conectado.)
+
+    ## Windows check files installation
+        # cmd
+        sfc /scannow
 
 ## CMD
     del # apaga arquivo
