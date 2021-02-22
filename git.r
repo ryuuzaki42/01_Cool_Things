@@ -345,3 +345,17 @@ git rev-list --objects --all \
             A commit in GitHub:
                 [ Verified ]
                     This commit was signed with a verified signature
+
+    ## Basic authentication using a password to Git is deprecated and will soon no longer work
+        https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+
+        https://docs.github.com/en/github/authenticating-to-github/accessing-github-using-two-factor-authentication
+        https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+
+        https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+        https://github.com/settings/security
+
+        ## Attention: This method saves the credentials in plaintext on your PC disk, ~/.git-credentials
+        ## Everyone on your computer can access it, e.g. malicious NPM modules
+
+            git config --global credential.helper store
