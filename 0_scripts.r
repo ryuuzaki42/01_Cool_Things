@@ -1879,5 +1879,5 @@ echo "1.0.0
 ## Telegram with time in 24 horas
     LC_TIME=pt_BR.UTF-8 ./Telegram
 
-    #Or
+    # or
     LC_TIME=en_IE.UTF-8 ./Telegram
