@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/01/2021
+# Last update: 27/02/2021
 #
 
 ## Edit files in the /etc/
@@ -64,9 +64,9 @@
     ## My final rc.local
 #!/bin/sh
 #
-# /etc/rc.d/rc.local: Local system initialization script.
+# /etc/rc.d/rc.local:  Local system initialization script.
 #
-# Put any local startup commands in here. Also, if you have
+# Put any local startup commands in here.  Also, if you have
 # anything that needs to be run at shutdown time you can
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
@@ -104,7 +104,7 @@ echo -e "\\nStarting thinkfan\\n"
 
     ## Slackware Current
         pkgtool
-            >  Setup - Choose Slackware installation scripts to run again
+            > Setup - Choose Slackware installation scripts to run again
                 > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
         lilo
 
