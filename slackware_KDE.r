@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/02/2021
+# Last update: 28/02/2021
 #
 
 ## Edit files in the /etc/
@@ -38,21 +38,29 @@
                     yes > no
 
 ## KDE 5 resize the "start menu"/Kickoff
-    nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
+    ## Kickoff was redesign/update in KDE 5.21, need to install the legacy kickoff
+        https://store.kde.org/p/1468103
+
+    ## KDE widget default widgets located at:
+        /usr/share/plasma/plasmoids/
+
+        ## Local user
+        ~/.local/share/plasma/plasmoids/
+
+    ## KDE 5 resize the "start menu"/Kickoff
+        ## Before KDE 5.21
+            nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
+
+        ## After (need to install)
+            ## As your user
+            nano ~/.local/share/plasma/plasmoids/org.kde.plasma.kickofflegacy/contents/ui/FullRepresentation.qml
 
     # line 34
     Layout.minimumWidth: units.gridUnit * 26
-    Layout.maximumWidth: Layout.minimumWidth
+    > 26 to 22
 
     Layout.minimumHeight: units.gridUnit * 34
-    Layout.maximumHeight: Layout.minimumHeight
-
-    ## To
-    Layout.minimumWidth: units.gridUnit * 22
-    Layout.maximumWidth: Layout.minimumWidth
-
-    Layout.minimumHeight: units.gridUnit * 28
-    Layout.maximumHeight: Layout.minimumHeight
+    > 34 to 28
 
 ## rc.local
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
