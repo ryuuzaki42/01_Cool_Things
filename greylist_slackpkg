@@ -53,7 +53,6 @@ mousepad
 plasma-vault
 texlive
 thunar
-thunar
 xfce4-panel-profiles
 xfce4-screensaver
 xfce4-whiskermenu-plugin
@@ -68,7 +67,6 @@ R
 TLP
 astyle
 bfg
-c-ares
 diffpdf
 discord
 ffmpeg
@@ -102,3 +100,13 @@ webcore-fonts
 wxGTK3
 xf86-video-nouveau
 zenity
+#
+#####################
+# Bumblebee
+#
+bbswitch
+bumblebee
+libbsd
+nvidia-bumblebee
+primus
+primus_vk
