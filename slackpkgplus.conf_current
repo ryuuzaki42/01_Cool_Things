@@ -143,15 +143,38 @@ MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/current/13_clone_mult
 # Remote packages (you do not need metadata)
 #MIRRORPLUS['slackpkgbeta']=httpsdir://slackpkg.org/beta/
 
+
 # SBo SlackBuilds. Uncomment it to allow slackpkg to search SlackBuilds on SlackBuilds.org
 # This does not repleace sbopkg; slackpkg just report the package, version and url; you must
 # download and build it yourself or via sbopkg.
 #SBOURL=https://www.slackbuilds.org/slackbuilds/14.2/
 
+
+# Plugin section:
+# Here you can enable some optional feature. Please read documentation before enable it.
+#
+# ZLookKernel can help you to rebuild initrd and reistall lilo/elilo. This feature was
+# removed in slackpkg-15.0. 'enable' this setting to enable it.
+# read /usr/libexec/slackpkg/functions.d/zlookkernel.sh for more information
+# It will ask confirmations at every step, unless you will set 'PLUGIN_ZLOOKKERNEL_PROMPT=off'
+# It will manage /boot/vmlinuz by default; if you use kernel generic, please set
+# the PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz-generic to manage it
+#PLUGIN_ZLOOKKERNEL=disable
+#PLUGIN_ZLOOKKERNEL_PROMPT=on
+#PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz
+#
+# ZChangeLog track all repository changes everytime you run 'slackpkg update'
+# It write the changelog at /var/lib/slackpkg/RepoChangeLog.txt
+# 'enable' this setting to enable it. Also set 'PLUGIN_ZCHANGELOGS_SHOW=on' to print
+# the changes in standard output at the end of 'update' process.
+# read /usr/libexec/slackpkg/functions.d/zchangelog.sh for more information
+#PLUGIN_ZCHANGELOG=disable
+#PLUGIN_ZCHANGELOG_SHOW=off
+#
+
 #
 # Supported Repositories (see /usr/doc/slackpkg+-* for details and notes):
 #
-
 #slackpkgplus:  http://slakfinder.org/slackpkg+{,dev,1.7,15}/
 #multilib:      https://bear.alienbase.nl/mirrors/people/alien/multilib/{14.2,current}/
 #alienbob:      https://bear.alienbase.nl/mirrors/people/alien/sbrepos/{14.2,current}/{x86,x86_64}/
