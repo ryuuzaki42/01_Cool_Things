@@ -163,7 +163,8 @@ about:support
     ## For all link use one script
         https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
 
-## Dictionaries & Language Packs # https://addons.mozilla.org/en-GB/firefox/language-tools/
+## Dictionaries & Language Packs 
+    # https://addons.mozilla.org/en-GB/firefox/language-tools/
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
@@ -179,6 +180,19 @@ https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 ## Good add-ons
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
+
+## Downthemall
+https://addons.mozilla.org/pt-BR/firefox/addon/downthemall/
+    ## Create a new folder, in the Mask add a folder name and the \ or /:
+    folderName\*name*.*ext*
+
+## Others in use
+https://addons.mozilla.org/firefox/addon/adblock-plus/
+
+https://addons.mozilla.org/firefox/addon/touch-vpn/
+https://addons.mozilla.org/pt-BR/firefox/addon/discard/
+https://addons.mozilla.org/firefox/addon/web-developer/
+https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 
 ## Reset the programs to open file
     ## Go to
@@ -201,12 +215,8 @@ https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
     ## In the other window, open management profile and delete the "new" profile deleting files
 
 ## Others
-https://adblockplus.org/
-    Remove the shortcut (crtl + shift + v)
-        extensions.adblockplus.sidebar_key
-            Remove: Accel Shift V
 http://en.savefrom.net/user.php?vid=387#download
-https://addons.mozilla.org/firefox/addon/unloadtab/
+https://addons.mozilla.org/firefox/addon/unload-tabs/
 https://addons.mozilla.org/firefox/addon/print-edit/
 https://addons.mozilla.org/firefox/addon/grammarly-1/
 http://www.baixou.com.br/baixouagora
