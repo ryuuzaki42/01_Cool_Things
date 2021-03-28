@@ -1881,3 +1881,22 @@ echo "1.0.0
 
     # or
     LC_TIME=en_IE.UTF-8 ./Telegram
+
+## Record audio from a computer while wearing headphones
+    # https://superuser.com/questions/769249/how-to-record-both-input-and-output-audio-simultaneously
+
+    # enable "the stereo mixer" using pactl to load module-loopback
+    # mix the source stream from your microphone to the speakers.
+    # With a correct set for volume and reciprocal position of microphone and
+    # speakers you should be able to avoid the Larson effect. :-)
+
+    ## Load the module-loopback
+        pactl load-module module-loopback
+
+        ## To unload
+            pactl unload-module module-loopback
+
+    https://www.youtube.com/watch?v=RSeINGM68A8
+
+    ## After change the recording device from the built-in to the monitor one
+    ## in the program like ssr
