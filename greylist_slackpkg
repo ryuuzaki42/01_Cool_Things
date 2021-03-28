@@ -19,10 +19,9 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-#
-#####################
+# ------------------------------------------------------------
 # Removed packages
-#
+# ------------------------------------------------------------
 amor
 calligra-l10n-en_GB
 calligra-l10n-ja
@@ -35,7 +34,7 @@ kdenetwork-strigi-analyzers
 kget
 kopete
 xfce4-pulseaudio-plugin
-#
+# ------------------------------------------------------------
 Greybird
 akonadi-calendar
 akonadi-calendar-tools
@@ -57,10 +56,9 @@ xfce4-panel-profiles
 xfce4-screensaver
 xfce4-whiskermenu-plugin
 xsnow
-#
-#####################
+# ------------------------------------------------------------
 # Packages installed
-#
+# ------------------------------------------------------------
 MasterPDFEditor
 OpenAL
 R
@@ -100,13 +98,27 @@ webcore-fonts
 wxGTK3
 xf86-video-nouveau
 zenity
-#
-#####################
+# ------------------------------------------------------------
 # Bumblebee
-#
+# ------------------------------------------------------------
 bbswitch
 bumblebee
 libbsd
 nvidia-bumblebee
 primus
 primus_vk
+# ------------------------------------------------------------
+# xournalpp
+# ------------------------------------------------------------
+xournalpp
+portaudio
+# ------------------------------------------------------------
+# octave
+# ------------------------------------------------------------
+octave
+blas
+lapack
+gl2ps
+GraphicsMagick
+# ------------------------------------------------------------
+#
