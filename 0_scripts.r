@@ -1900,3 +1900,7 @@ echo "1.0.0
 
     ## After change the recording device from the built-in to the monitor one
     ## in the program like ssr
+
+## Android access internal memory by browser
+    # Has name sdcard, but is the internal memory
+    file:///mnt/sdcard/
