@@ -172,16 +172,22 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
     # All reduce types (1, 2 and 3) with links
-    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
+    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
 
     # All reduce types (1, 2 and 3) without links
-    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
+    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
 
     # Reduce type 1 with links
-    for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 1 y; done
+    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 1 y; done
 
     ## Rename the files - remove "_r2ly", "_r3ln" etc
-        for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
+        IFS=$(echo -en "\\n\\b"); for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
+
+    ## Delete all the "reduce files" generated
+        # To see
+            ls *_r?l?.pdf
+        ## To delete
+            rm *_r?l?.pdf
 
 ## Manipulação de nomes e caminhos de arquivos
 
@@ -1904,3 +1910,10 @@ echo "1.0.0
 ## Android access internal memory by browser
     # Has name sdcard, but is the internal memory
     file:///mnt/sdcard/
+
+## How to copy YouTube playlist from one account to another
+    Copy the other person's playlist to the new playlist by taking
+    the url of the other person's playlist, swapping out the www for music
+        (www.youtube.com to music.youtube.com)
+    which will give you the youtube music version of the playlist.
+    from there you can click on the three dots and there will be an option to add all to playlist.
