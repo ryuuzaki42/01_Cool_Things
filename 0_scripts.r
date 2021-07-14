@@ -1917,3 +1917,48 @@ echo "1.0.0
         (www.youtube.com to music.youtube.com)
     which will give you the youtube music version of the playlist.
     from there you can click on the three dots and there will be an option to add all to playlist.
+
+## Bell / beep - ASCII BEL (\007)
+
+    ## Test if the module loaded
+        lsmod | grep pcspkr
+
+    ## Load the module
+        modprobe pcspkr
+
+    ## Test
+        $ echo -e "\a" > /dev/tty2
+        bash: /dev/tty2: Permission denied
+
+    ## Go to the tty2 (crtl + alt + f2) and login with the current user
+    ## After that you can send the beep or run as root
+        echo -en "\a" > /dev/tty1
+        echo -en "\a" > /dev/tty5
+        echo -ne "\007" > /dev/tty1
+        echo -ne "\007" > /dev/tty4
+
+    ## Make beep in bash
+        echo -e \\a
+        echo -e "\a"
+        echo -e \\007
+        echo -e "\007"
+        printf "\a"
+
+    ## In C
+        printf("%c", 7);
+        printf("\a");
+
+    ## Say beep
+        spd-say "beep"
+        espeak "Hello World"
+
+    ## Beep GUI - comment and add line
+        nano /etc/inputrc
+
+        #set bell-style none
+        set bell-style audible
+        # or
+        set bell-style visible
+
+    ## Disable beep - disable loading of the pcspkr module
+        echo "blacklist pcspkr" >>/etc/modprobe.d/blacklist.conf
