@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/02/2021
+# Last update: 14/07/2021
 #
 
 ## Edit files in the /etc/
@@ -101,6 +101,34 @@ echo -e "\\nStarting thinkfan\\n"
 # https://github.com/vmatare/thinkfan
 /etc/rc.d/rc.thinkfan start
 #
+
+## Reduce/Remove electric noise when running Slackware
+# https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
+    ## Edit /etc/default/cpufreq to set the desired CPU governor at boot time (make sure /etc/rc.d/rc.cpufreq is executable).
+
+# To select a particular CPU governor option for /etc/rc.d/rc.cpufreq,
+# uncomment the line below and edit it to select your choice:
+#SCALING_GOVERNOR=ondemand
+SCALING_GOVERNOR=powersave
+
+    ## Or add to /etc/rc.d/rc.local
+countCPU=$(cpufreq-info | grep -c "analyzing CPU")
+
+i=0
+while [ "$i" -lt "$countCPU" ]; do
+    cpufreq-set --cpu $i --governor powersave;
+    echo "cpufreq-set --cpu $i --governor powersave"
+    ((i++))
+done
+
+    ## Good commands
+    cpufreq-info
+
+    cpufreq-info | grep driver
+
+    cpufreq-info | grep "governor"
+
+    lsmod | grep asus
 
 ## Kernel Generic
     #https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
