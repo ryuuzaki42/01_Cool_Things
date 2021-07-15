@@ -46,7 +46,6 @@ akonadi-search
 akonadiconsole
 elementary-xfce
 gnome-themes-extra
-gnome-themes-extra
 libgtop
 mousepad
 plasma-vault
@@ -67,14 +66,12 @@ astyle
 bfg
 diffpdf
 discord
-ffmpeg
 git-lfs
 kdiff3
 kernel
 libreoffice
 libtorrent-rasterbar
 libtxc_dxtn
-logkeys
 makeself
 mcomix3
 mkvtoolnix
@@ -93,7 +90,6 @@ teamviewer
 thinkfan
 unrar
 veracrypt
-vlc
 webcore-fonts
 wxGTK3
 xf86-video-nouveau
@@ -113,16 +109,26 @@ primus_vk
 xournalpp
 portaudio
 # ------------------------------------------------------------
-# octave
-# ------------------------------------------------------------
-octave
-blas
-lapack
-gl2ps
-GraphicsMagick
-# ------------------------------------------------------------
 # slackpkg+
 # ------------------------------------------------------------
 slackpkg+
 # ------------------------------------------------------------
+# audacity
+# ------------------------------------------------------------
+jack2
+ladspa_sdk
+lilv
+soxr
+suil
+vamp-plugin-sdk
+audacity
+# ------------------------------------------------------------
+# obs-studio
+# ------------------------------------------------------------
+fdk-aac # jack2 - audacity
+mbedtls
+vlc
+x264
+obs-studio
+ffmpeg # alien
 #
