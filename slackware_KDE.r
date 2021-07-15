@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/07/2021
+# Last update: 15/07/2021
 #
 
 ## Edit files in the /etc/
@@ -17,6 +17,11 @@
 
     nano ~/.config/akonadi/akonadiserverrc
         StartServer=true > StartServer=false
+
+## Clipboard KDE - change to ignore text selection
+    Panel > Icon "Status and Notifications" > Clipboard 
+        > In the up "Configure Clipboard" icon > General
+            > Change to "Ignore selection"
 
 ## Disable Hibernation
     ## KDE4
