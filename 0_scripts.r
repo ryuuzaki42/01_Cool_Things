@@ -1833,9 +1833,9 @@ echo "1.0.0
         ~/.config/kded5rc
 
 ## KDE 5 - noise when starting session
-        pavucontrol
-            > Configuration > in second Built-in Audio
-                    Change Mono Output > Off
+    pavucontrol
+        > Configuration > in second Built-in Audio
+            Change Mono Output > Off
 
 ## Create patch file
     ## Create a backup of the file with the name "file.orig" and make the changes in the "file"
