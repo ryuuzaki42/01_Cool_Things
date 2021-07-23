@@ -1,4 +1,161 @@
 
+------------------------------------------ Kubuntu ------------------------------------------
+
+## add user with home in another partition
+    adduser j --home /media/sda2/home/j/
+
+## kwrite
+    apt install kwrite
+
+## git
+    apt install git
+
+## nvida driver
+    apt install nvidia-driver-470
+
+    ## change card
+        prime-select intel
+        prime-select nvidia
+
+        ## Then you will have Nvidia X Server Settings in Dash.
+        ## And there you can find PRIME profiles.
+
+    ## test
+    apt install mesa-utils
+
+    glxinfo | grep "OpenGL render"
+
+    ## Show FPS
+        KDE -> Settings -> Desktop Efects -> Show FPS
+
+## steam
+    ## download deb pkg
+        wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+
+        ## install
+            sudo dpkg -i steam.deb
+
+            ## run
+                $steam
+
+                ## will open a terminal - root password to install curl, xterm, zenity...
+                ## Get some erros
+                    apt --fix-broken install
+
+## grub Kubunt instead Ubuntu
+
+    ## grub TIMEOUT
+        nano /etc/default/grub
+
+        TIMEOUT=3 # 10 to 3
+
+    ## Change Ubuntu to Kubuntu
+        sed -i 's/Ubuntu/Kubuntu/g' /boot/grub/grub.cfg
+
+    update-grub
+
+## disable services
+    # https://linuxhint.com/disable_unnecessary_services_debian_linux/
+
+    ## list services enable
+        service --status-all
+
+        service --status-all | grep +
+
+        # see all
+            ls /etc/init.d
+
+        ## disable a service
+            systemctl disable <service>
+
+        ## Also has status, stop, reload, restart
+            systemctl status cups cups-browsed
+
+    ## Stop and disable cups and cups-browsed
+        systemctl stop cups cups-browsed
+        systemctl disable cups cups-browsed
+
+    ## Stop and disable apport and whoopsie (bugs report)
+        systemctl stop apport whoopsie
+        systemctl disable apport whoopsie
+
+    ## Stop and disable unattended-upgrades and anacron
+        systemctl stop unattended-upgrades anacron
+        systemctl disable unattended-upgrades anacron
+
+## veracrypt install deb
+    https://www.veracrypt.fr/en/Downloads.html
+
+    dpkg -i veracrypt-1.24-Update7-Ubuntu-21.04-amd64.deb
+
+    apt --fix-broken install
+
+## remove not needed packages
+    apt autoremove
+
+## dolphin root
+    pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin
+
+## mkvtoolnix
+    apt install mkvtoolnix mkvtoolnix-gui
+
+## smplayer
+    apt install smplayer
+
+## opera
+    https://get.opera.com/pub/opera/desktop/
+        > version /linux/ > .deb
+
+    dpkg -i opera-stable_77.0.4054.90_amd64.deb
+
+## obs-studio
+    apt install obs-studio
+
+    ## NVENC error
+        Change in Scence > Settings > Output > Encoder
+        Hardware (NVENC) to Software (x264)
+
+## qbittorrent
+    apt install qbittorrent
+
+## qpdfview
+    apt install qpdfview
+
+## kolourpaint
+    apt install kolourpaint
+
+## java
+    apt install openjdk-8-jre
+
+## smartsynchronize
+    # Version 4.2.1
+    https://www.syntevo.com/smartsynchronize/download/
+
+## MasterPDFEditor
+    # Version 5.6.80
+    MasterPDFEditor-5.6.80-x86_64-1_SBo.txz
+
+## gimp
+    apt install gimp
+
+## geeqie
+    apt install geeqie
+
+## audacity
+    apt install audacity
+
+## kdiff3
+    apt install kdiff3
+
+## unrar
+    apt install unrar
+
+## diffpdf
+    apt install diffpdf
+
+## git-lfs
+    apt install git-lfs
+
 ------------------------------------------ OldLinuxMint_KDE ------------------------------------------
 
 # ## Driver Intel
