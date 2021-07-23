@@ -1,3 +1,6 @@
+
+------------------------------------------ OldLinuxMint_KDE ------------------------------------------
+
 # ## Driver Intel
     # echo "deb https://download.01.org/gfx/ubuntu/13.10/main saucy main #Intel Graphics drivers" | tee /etc/apt/sources.list.d/intellinuxgraphics.list
     # apt-get install intel-linux-graphics-installer
