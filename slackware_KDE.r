@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/07/2021
+# Last update: 25/07/2021
 #
 
 ## Edit files in the /etc/
@@ -75,7 +75,7 @@
             echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
     ## My final rc.local
-#!/bin/sh
+#!/bin/bash
 #
 # /etc/rc.d/rc.local:  Local system initialization script.
 #
@@ -84,27 +84,33 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 #
-echo -e "\\nStarting tlp\\n"
-# https://github.com/linrunner/TLP
-/etc/rc.d/rc.tlp start
+if [ -x /etc/rc.d/rc.tlp ]; then
+    echo -e "\\nStarting tlp\\n"
+    # https://github.com/linrunner/TLP
+    /etc/rc.d/rc.tlp start
+fi
 #
-echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
-/usr/bin/boot_rcLocal_JBs.sh
+#echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
+#/usr/bin/boot_rcLocal_JBs.sh
 #
 # If your backlight keyboard doesn't work
-echo -e "\\nStarting UPower\\n"
-qdbus --system org.freedesktop.UPower
+#echo -e "\\nStarting UPower\\n"
+#qdbus --system org.freedesktop.UPower
 #
 # If you have installed Nvidia video driver with bumblebeed
-echo -e "\\nStarting bumblebeed\\n"
-/etc/rc.d/rc.bumblebeed start
+if [ -x /etc/rc.d/rc.bumblebeed ]; then
+    echo -e "\\nStarting bumblebeed\\n"
+    /etc/rc.d/rc.bumblebeed start
+fi
 #
 echo -e "\\nDisabling Bluetooth\\n"
 rfkill block bluetooth
 #
-echo -e "\\nStarting thinkfan\\n"
-# https://github.com/vmatare/thinkfan
-/etc/rc.d/rc.thinkfan start
+#if [ -x /etc/rc.d/rc.thinkfan ]; then
+#    echo -e "\\nStarting thinkfan\\n"
+#    # https://github.com/vmatare/thinkfan
+#    /etc/rc.d/rc.thinkfan start
+#fi
 #
 
 ## Reduce/Remove electric noise when running Slackware
@@ -308,6 +314,14 @@ EndSection
 
         ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
             slackpkg install bluez-qt
+
+## Make home folder - mount /media/sda2
+    mkdir /media/sda2
+    chmod 777 /media/sda2
+
+    nano /etc/fstab
+
+    /dev/sda2        /media/sda2      ext4        defaults         1   2
 
 ## Swap in file
     ## My full path file
