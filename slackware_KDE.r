@@ -1,4 +1,4 @@
-    ## Slackware_KDE.r to Slackware 14.2 ##
+    ## Slackware_KDE.r to Slackware 14.2 and Current ##
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
