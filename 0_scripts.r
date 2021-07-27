@@ -1817,7 +1817,13 @@ echo "1.0.0
     ## Added a file with name .thumbnails
 
 ## GNU/Linux clone HD/SSD
-    ## Hole disck
+    ## Clone only the MBR
+        dd if=/dev/sdX of=mbrsdX.bak bs=512 count=1
+
+        ## Restore
+            dd if=mbrsdX.bak of=/dev/sdY
+
+    ## Hole disk
         dd if=/dev/sdX of=/dev/sdY bs=64K conv=noerror,sync status=progress
 
     # sdX is the source disk, while sdY is the destination.
@@ -1825,8 +1831,14 @@ echo "1.0.0
     # The default value is 512 bytes, which is very small, so it's best to include 64K or the larger 128K as a condition.
     # However: while a larger block size makes transfer quicker, a smaller block size makes the transfer more reliable.
 
-    ## If you only want to clone a partition of your drive, use
+    ## If want to clone only a partition of the drive
         dd if=/dev/sdX1 of=/dev/sdY1 bs=64K conv=noerror,sync status=progress
+
+        ## Can also save the partition as file image
+            dd if=/dev/sdX1 of=sdX1 bs=64K conv=noerror,sync status=progress
+
+            ## Restore
+                dd if=sdX1 of=/dev/sdY1 bs=64K conv=noerror,sync status=progress
 
 ## KDE5 - Telegram not show icon in notification area
     Delete the file:
