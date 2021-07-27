@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/07/2021
+# Last update: 27/07/2021
 #
 
 ## Edit files in the /etc/
@@ -269,9 +269,12 @@ EndSection
 
 ## Remove games of KDE
     slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision
-    slackpkg remove kpat lskat blinken khangman pairs ktuberling  gnuchess katomic kjumpingcube kmines knetwalk
+    slackpkg remove kpat lskat blinken khangman pairs ktuberling katomic kjumpingcube kmines knetwalk
     slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen
     slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg xsnow libgtop
+
+    ## knights need gnuchess
+        slackpkg remove knights gnuchess
 
 ## Remove plasma-vault
     slackpkg remove plasma-vault
@@ -453,4 +456,5 @@ glibc
     # └─ min (0 - 59)
 
 ## To disable the fortune in /etc/profile.d/ use:
+    # When change from "nornmal" user to root
     chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
