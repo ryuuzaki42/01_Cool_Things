@@ -1931,7 +1931,6 @@ echo "1.0.0
     from there you can click on the three dots and there will be an option to add all to playlist.
 
 ## Bell / beep - ASCII BEL (\007)
-
     ## Test if the module loaded
         lsmod | grep pcspkr
 
@@ -1974,3 +1973,14 @@ echo "1.0.0
 
     ## Disable beep - disable loading of the pcspkr module
         echo "blacklist pcspkr" >>/etc/modprobe.d/blacklist.conf
+
+## Export a PDF "clean" file from Web page
+    ## Open the page with Opera (Browser)
+
+    ## Click in snapshot (picture - camera icon) in the address bar
+        > Save page as PDF
+            > Save the PDF
+
+    ## Open the file in Master PDF Editor (masterpdfeditor)
+        File > Save Optimized As ...
+            > With "Remove unused elements" and "Flatten form fields" marked
