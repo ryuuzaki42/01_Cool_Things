@@ -1,7 +1,7 @@
 ## Windows do ##
 
-## Windows não reconhece partição (NTFS) conectada.
-    # open a command prompt (cmd) as adminstrator:
+## Windows don't recognize partition (NTFS) connected
+    # open a command prompt (cmd) as administrator:
     1) diskpart
     2) list volume
 
@@ -13,26 +13,32 @@
     5) assign letter=R
     #Now you set a letter for mount, change R for the one letter available
 
-## Desabilitar windows update
+## Disable windows update
+    ## Or maybe not in Windows 10
 
-## Desabilitar hibernate
+## Disable hibernate
     powercfg.exe /hibernate off
 
-    # Voltar ao padrão
+    # Back to default - enable hibernate
         powercfg.exe /hibernate on
 
-## Desabilitar efeitos de aparência
+## disable visual effects
+    Windows Key + x
 
-## Desabilitar backup
+## Disable backup
 
-## Instalar Microsoft office, CCleaner
+## Install Microsoft office, CCleaner, VLC, Smplayer, Steam, Firefox
 
 ## Get the motherboard from CMD
-    # Descobrir a placa-mãe através do CMD
     wmic baseboard get product,manufacturer
 
-## Habilitar F8 (boot legacy com opções uteis) no Windows 10
+## Enable F8 (boot legacy with good options) no Windows 10
     bcdedit /set bootmenupolicy legacy
 
-    # Voltar ao padrão
+    # Back to default - Disable F8
         bcdedit /set bootmenupolicy standard
+
+## Windows HDMI wrong size image
+    # Fix Desktop Overscaling if use a TV - Monitor
+    Open Intel Video Manager
+        > Go to size/scaling and change
