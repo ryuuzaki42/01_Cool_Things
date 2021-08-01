@@ -1,5 +1,16 @@
 
------------------------------------------- Kubuntu ------------------------------------------
+    ## Kubuntu ##
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# Mande me um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 01/08/2021
+#
+
+## Version Test
+    kubuntu-20.04.2.0-desktop-amd64
 
 ## add user with home in another partition
     adduser j --home /media/sda2/home/j/
@@ -21,38 +32,51 @@
         ## And there you can find PRIME profiles.
 
     ## test
-    apt install mesa-utils
+        apt install mesa-utils
 
-    glxinfo | grep "OpenGL render"
+        glxinfo | grep "OpenGL render"
 
-    ## Show FPS
+    ## KDE show FPS
         KDE -> Settings -> Desktop Efects -> Show FPS
 
 ## steam
     ## download deb pkg
         wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
 
-        ## install
-            sudo dpkg -i steam.deb
+    ## install
+        sudo dpkg -i steam.deb
 
-            ## run
-                $steam
+    ## run
+        $ steam
 
-                ## will open a terminal - root password to install curl, xterm, zenity...
-                ## Get some erros
-                    apt --fix-broken install
+        ## will open a terminal - root password to install curl, xterm, zenity...
+        ## Get some erros
+            apt --fix-broken install
 
-## grub Kubunt instead Ubuntu
-
-    ## grub TIMEOUT
-        nano /etc/default/grub
-
-        TIMEOUT=3 # 10 to 3
+## Edite the grup
+    nano /etc/default/grub
+        1 - GRUB_TIMEOUT=10 to 3
+        2 - Comment the line: GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
+        3 - Change GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX=”text”
+        4 - Uncomment this line #GRUB_TERMINAL=console
+        5 - update-grub
 
     ## Change Ubuntu to Kubuntu
         sed -i 's/Ubuntu/Kubuntu/g' /boot/grub/grub.cfg
 
-    update-grub
+## Remove games
+    ## Search
+        apt search <package_name>
+
+        apt search kmines
+
+    ## Remove
+        apt remove kmines
+        apt remove ksudoku
+        apt remove kmahjongg
+
+    ## Remove not needed  
+        apt autoremove
 
 ## disable services
     # https://linuxhint.com/disable_unnecessary_services_debian_linux/
@@ -100,7 +124,9 @@
     apt install mkvtoolnix mkvtoolnix-gui
 
 ## smplayer
-    apt install smplayer
+    https://www.smplayer.info/en/downloads
+
+    dpkg -i smplayer_21.1.0-1+2.4_amd64.deb 
 
 ## opera
     https://get.opera.com/pub/opera/desktop/
