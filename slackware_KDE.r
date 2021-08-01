@@ -5,8 +5,16 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/07/2021
+# Last update: 01/08/2021
 #
+
+## Make home folder - mount /media/sda2
+    mkdir /media/sda2
+    chmod 777 /media/sda2
+
+    nano /etc/fstab
+
+    /dev/sda2        /media/sda2      ext4        defaults         1   2
 
 ## Edit files in the /etc/
     nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
@@ -213,7 +221,8 @@ EndSection
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
 ## Libreoffice to Brazil user on KDE
-    slackpkg install libreoffice-[0-9].* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR libreoffice-kde-integration
+    slackpkg install libreoffice-[0-9].* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR
+    	# libreoffice-kde-integration - no more
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
@@ -268,8 +277,8 @@ EndSection
         tlmgr install package
 
 ## Remove games of KDE
-    slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf kollision
-    slackpkg remove kpat lskat blinken khangman pairs ktuberling katomic kjumpingcube kmines knetwalk
+    slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf
+    slackpkg remove kollision kpat lskat blinken khangman pairs ktuberling katomic kjumpingcube kmines knetwalk
     slackpkg remove kdiamond ksudoku kubrick picmi bovo kblackbox kfourinline kmahjongg kreversi ksquares kigo kiriki kshisen
     slackpkg remove killbots klickety klines konquest ksirk knavalbattle kanagram amor kajongg xsnow libgtop
 
@@ -318,35 +327,27 @@ EndSection
         ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
             slackpkg install bluez-qt
 
-## Make home folder - mount /media/sda2
-    mkdir /media/sda2
-    chmod 777 /media/sda2
-
-    nano /etc/fstab
-
-    /dev/sda2        /media/sda2      ext4        defaults         1   2
-
 ## Swap in file
     ## My full path file
-    /media/sda2/home/j/swapFile.img
+    /swapFile.img
 
-    swapFilePace="/media/sda2/home/j"
+    swapFilePace="/" # Add the /path/to/folder/ - with the and /
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-        dd if=/dev/zero of=$swapFilePace/swapFile.img bs=1M count=2048 # 2 GiB
+        dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
 
     ## Turn into swapfile
-        mkswap $swapFilePace/swapFile.img
+        mkswap ${swapFilePace}swapFile.img
 
     ## Add config in the fstab
-        echo "$swapFilePace/swapFile.img swap swap defaults    0   0" >> /etc/fstab
+        echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
 
     ## test the swap
         swapon -a
 
     ## resolve the warnings
-        chmod 0600 $swapFilePace/swapFile.img
-        chown root $swapFilePace/swapFile.img
+        chmod 0600 ${swapFilePace}swapFile.img
+        chown root ${swapFilePace}swapFile.img
 
 ## See the actual value of swappiness
     cat /proc/sys/vm/swappiness
