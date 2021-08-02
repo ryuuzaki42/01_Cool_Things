@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/08/2021
+# Last update: 02/08/2021
 #
 
 ## Make home folder - mount /media/sda2
@@ -459,3 +459,13 @@ glibc
 ## To disable the fortune in /etc/profile.d/ use:
     # When change from "nornmal" user to root
     chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
+
+## Copy <install> configs
+    ## mirrors
+        cat mirrors_slackpkg_current > /etc/slackpkg/mirrors
+
+    ## greylist
+        cat greylist_slackpkg > /etc/slackpkg/greylist
+
+    ## slackpkgplus.conf
+        cat slackpkgplus.conf_current > /etc/slackpkg/slackpkgplus.conf
