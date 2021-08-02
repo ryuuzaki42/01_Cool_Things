@@ -315,9 +315,14 @@ int main(){
     # All
     dmidecode -t memory
 
-## Dolphin (re)enable warm message dialog before Empty Trash
+## Dolphin (re)enable warning message dialog before Empty Trash
     nano ~/.config/kiorc
-    ConfirmEmptyTrash=false > true
+
+    ConfirmEmptyTrash=false
+        > true
+
+    # Old location
+    nano ~/.kde/share/config/kiorc
 
 ## ASUS keyboard retro light
     # https://forum.kde.org/viewtopic.php?f=63&t=121045
