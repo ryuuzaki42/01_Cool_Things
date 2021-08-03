@@ -1989,3 +1989,87 @@ echo "1.0.0
     ## Open the file in Master PDF Editor (masterpdfeditor)
         File > Save Optimized As ...
             > With "Remove unused elements" and "Flatten form fields" marked
+
+## Slackware create Python package
+    ## Create a opt folder to save the files and to be used in the package
+        mkdir programName-version-arch-tag/
+
+        ## In my case
+            mkdir autosubsync-1.0.0-noarch-1_JB/
+
+        mkdir opt/
+        cd opt/
+
+    ## Create a virtual environment - in this case autosubsync_venv
+        python3 -m venv autosubsync_venv
+
+    ## Load the venv
+        source autosubsync_venv/bin/activate
+
+    ## Install the program and dependencies
+        pip install autosubsync
+
+        ## Save the version info
+            autosubsync-1.0.0-py2.py3-none-any.whl
+
+        ## Test the program if everything is OK
+
+    ## Create usr/bin/ to save the script to start the program
+        cd ../
+        mkdir -p usr/bin/
+        cd usr/bin/
+
+    ## Create the script with the code to load the venv and run the script
+        nano autosubsync.sh
+
+    ## Code autosubsync-1.0.0-noarch-1_JB/usr/bin/autosubsync.sh
+#!/bin/bash
+oldPwd=$PWD # Get the folder/path running the script
+
+cd /opt/ || exit
+
+source autosubsync_venv/bin/activate
+
+IFS=$(echo -en "\\n\\b") # Change the Internal Field Separator (IFS) to "\\n\\b"
+
+#echo "# $#" # Count of parameters
+#echo "0 $0" # Script path + name
+#echo "@ $@" # All the parameters
+
+cd "$oldPwd" || exit # Go to the folder <files to work folder>
+
+echo -e "\\nRunning: autosubsync $@"
+autosubsync "$@"
+
+deactivate
+
+    ## Test the code before create the package in local folder
+        ## Change cd /opt/ to local path
+
+    ## Add install/slack-desc
+        Copy from other package and change the information
+
+    ## Create the package
+        cd ../../
+
+        ## Backup the program folder
+            To not need to rebuilt everything if has some error
+
+        ## Change the group and ownerships to root
+            chgrp root . -R
+            chmod root . -R
+
+        ## Create the package
+            makepkg ../autosubsync-1.0.0-noarch-1_JB.txz
+
+            ## respond n and y
+                Would you like to make this stuff the install script for this package
+                and remove the symbolic links ([y]es, [n]o)? n
+
+                Would you like to reset all directory permissions to 755 (drwxr-xr-x) and
+                directory ownerships to root.root ([y]es, [n]o)? y
+
+    ## Install and Test
+        installpkg ../autosubsync-1.0.0-noarch-1_JB.txz
+
+        autosubsync.sh movie.mkv movie.srt a.srt
