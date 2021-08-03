@@ -182,6 +182,17 @@ EndSection
     ## To enable horizontal scrolling in addition to vertical scrolling
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 
+## xbacklight - error - "No outputs have backlight property"
+    # https://wiki.archlinux.org/title/backlight#xbacklight
+    ## Added the file 20-intel.conf
+        nano /etc/X11/xorg.conf.d/20-intel.conf
+
+Section "Device"
+    Identifier  "Intel Graphics" 
+    Driver      "intel"
+    Option      "Backlight"  "intel_backlight"
+EndSection
+
 ## If you use/have a Intel graphics card, can select with driver load/use
     ## Put in the config in:
         /etc/X11/xorg.conf
