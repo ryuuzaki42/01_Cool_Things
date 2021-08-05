@@ -1991,14 +1991,9 @@ echo "1.0.0
             > With "Remove unused elements" and "Flatten form fields" marked
 
 ## Slackware create Python package
-    ## Create a opt folder to save the files and to be used in the package
-        mkdir programName-version-arch-tag/
-
-        ## In my case
-            mkdir autosubsync-1.0.0-noarch-1_JB/
-
-        mkdir opt/
-        cd opt/
+    ## Use /opt/ to VIRTUAL_ENV be correct
+    ## Will need root user
+        cd /opt/
 
     ## Create a virtual environment - in this case autosubsync_venv
         python3 -m venv autosubsync_venv
@@ -2013,6 +2008,23 @@ echo "1.0.0
             autosubsync-1.0.0-py2.py3-none-any.whl
 
         ## Test the program if everything is OK
+
+        ## deactivate
+        deactivate
+
+    ## Create a folder save the files
+        mkdir programName-version-arch-tag/
+
+        ## In my case
+            mkdir autosubsync-1.0.0-noarch-1_JB/
+            cd autosubsync-1.0.0-noarch-1_JB/
+
+        ## opt to be used in package
+            mkdir opt/
+            cd opt/
+
+        ## move the code
+            mv ../../autosubsync_venv/ .
 
     ## Create usr/bin/ to save the script to start the program
         cd ../
@@ -2043,13 +2055,17 @@ autosubsync "$@"
 
 deactivate
 
+    ## Add permissions to the script to runn
+        chmod +x autosubsync.sh
+
     ## Test the code before create the package in local folder
         ## Change cd /opt/ to local path
 
     ## Add install/slack-desc
-        Copy from other package and change the information
+    ## Copy from other package and change the information
+        cp -r install/ /opt/autosubsync-1.0.0-noarch-1_JB/
 
-    ## Create the package
+    ## Change the folder to create the package
         cd ../../
 
         ## Backup the program folder
@@ -2057,7 +2073,7 @@ deactivate
 
         ## Change the group and ownerships to root
             chgrp root . -R
-            chmod root . -R
+            chown root . -R
 
         ## Create the package
             makepkg ../autosubsync-1.0.0-noarch-1_JB.txz
@@ -2073,3 +2089,12 @@ deactivate
         installpkg ../autosubsync-1.0.0-noarch-1_JB.txz
 
         autosubsync.sh movie.mkv movie.srt a.srt
+
+    ## Delete older folder
+        cd ../
+        rm -r autosubsync-1.0.0-noarch-1_JB/
+
+    ## Backup the package and delete the /opt/*.txz
+        cp /opt/autosubsync-1.0.0-noarch-1_JB.txz ~/
+
+        rm /opt/autosubsync-1.0.0-noarch-1_JB.txz
