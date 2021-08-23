@@ -1067,6 +1067,8 @@ $ paste arq1.txt arq2.txt
 
     lftp -c 'open http://sumo.dlr.de/trac.wsgi/browser/trunk/sumo/tests/complex/tutorial/ ; mirror -c -e hello'
 
+    lftp -c 'open http://slackware.uk/people/alien/slackbuilds/vlc/ ; mirror -c -e build/'
+
 ## Informações do Ip externo acesse
     http://ip-lookup.net/
 
