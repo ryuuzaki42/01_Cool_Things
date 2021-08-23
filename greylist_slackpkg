@@ -19,6 +19,8 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
+# Last update: 23/08/2021
+#
 # ------------------------------------------------------------
 # Removed packages
 # ------------------------------------------------------------
@@ -74,7 +76,6 @@ libtorrent-rasterbar
 libtxc_dxtn
 makeself
 mcomix3
-mkvtoolnix
 mozilla-firefox
 openjdk
 opera-ffmpeg-codecs
@@ -131,4 +132,9 @@ vlc
 x264
 obs-studio
 ffmpeg # alien
+# ------------------------------------------------------------
+# mkvtoolnix
+# ------------------------------------------------------------
+mkvtoolnix
+cmark
 #
