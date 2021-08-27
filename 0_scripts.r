@@ -2102,3 +2102,17 @@ deactivate
         cp /opt/autosubsync-1.0.0-noarch-1_JB.txz ~/
 
         rm /opt/autosubsync-1.0.0-noarch-1_JB.txz
+
+## bash set -e exit in diff
+    # https://stackoverflow.com/questions/19622198/what-does-set-e-mean-in-a-bash-script
+    # https://stackoverflow.com/a/53612582
+
+    diff (returns an error when there is a difference)
+    grep (returns an error when there is no match)
+
+    Can avoid the errors with explicit handling
+
+    diff this that || echo "$0: there was a difference" >&2
+    grep cat food || echo "$0: no cat in the food" >&2
+
+    diff this that || true
