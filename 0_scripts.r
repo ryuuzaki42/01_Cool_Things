@@ -1413,8 +1413,10 @@ gtk-fallback-icon-theme = gnome
         -n 3 - número de interações ou gravações;
         -z - significa que o último padrão a ser gravado será zero
 
-## shred recursivamente
-    find <dir> -type f -exec shred -n 20 -z {} \;
+    ## shred recursivamente
+        find <dir> -type f -exec shred -n 20 -z {} \;
+
+        find <dir> -type f -exec shred -z {} \;
 
 ## Personalizando o terminal bash do Linux
     # opções disponíveis no PS1, aplicar no script em shell no seu local ($HOME/.bashrc e /root.bashrc)
