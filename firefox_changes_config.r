@@ -1,5 +1,11 @@
 ### Firefox changes ###
 
+about:config
+
+## Disable quit shortcut (ctrl + q)
+    browser.quitShortcut.disabled
+        false > true
+
 ## Disable cache of 5 tabs recently seen
 browser.sessionhistory.max_total_viewer
     -1 > 0
