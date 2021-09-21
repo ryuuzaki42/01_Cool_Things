@@ -1,9 +1,17 @@
     ## Python3 ##
 
 ## python3 simple HTTP server
+    # https://docs.python.org/2/library/simplehttpserver.html
+    # https://docs.python.org/3/library/http.server.html
+
     cd path/to/share/
 
     python3 -m http.server
+
+    # Or
+        python3 -m http.server --help
+
+        python3 -m http.server [port]
 
     ## Start in the folder that run the command
 
@@ -22,7 +30,7 @@
     ## Create a virtual environment in local path with name my-env
         python3 -m venv my-env
 
-    ## Now activate it.
+    ## Now activate it, use environment name
         ## On Windows
             my-env\Scripts\activate.bat
 
@@ -34,3 +42,7 @@
 
         ## On conda
             conda deactivate
+
+    ## To install lib
+        ## Install pillow
+            pip install pillow
