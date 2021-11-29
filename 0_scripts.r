@@ -1827,10 +1827,13 @@ echo "1.0.0
 
 ## GNU/Linux clone HD/SSD
     ## Clone only the MBR
-        dd if=/dev/sdX of=mbrsdX.bak bs=512 count=1
+        dd if=/dev/sdX of=/dev/sdY bs=512 count=1
 
-        ## Restore
-            dd if=mbrsdX.bak of=/dev/sdY
+        ## To a file
+            dd if=/dev/sdX of=mbrsdX.bak bs=512 count=1
+
+            ## Restore
+                dd if=mbrsdX.bak of=/dev/sdY
 
     ## Hole disk
         dd if=/dev/sdX of=/dev/sdY bs=64K conv=noerror,sync status=progress
