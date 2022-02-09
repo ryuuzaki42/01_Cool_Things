@@ -45,9 +45,9 @@
 #----------------------------------------------------------------
 # file://path/to/some/directory/
 ## file1
-#file://media/sda2/git_clone/current/12_clone_Slackware_repo_rsync/slackware64-current/
+#file://media/sda2/git_clone/stable/12_clone_Slackware_repo_rsync/slackware64-15.0/
 ## file 2
-file://run/media/j/mirror/git_clone/current/12_clone_Slackware_repo_rsync/slackware64-current/
+file://run/media/j/mirror/git_clone/stable/12_clone_Slackware_repo_rsync/slackware64-15.0/
 #
 #----------------------------------------------------------------
 # Slackware64-15.0
