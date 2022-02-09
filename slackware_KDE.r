@@ -1,11 +1,11 @@
-    ## Slackware_KDE.r to Slackware 14.2 and Current ##
+    ## Slackware_KDE.r to Slackware 14.2, 15.0 and current ##
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/08/2021
+# Last update: 08/02/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -157,7 +157,7 @@ done
     nano /etc/lilo.conf
     lilo
 
-    ## Slackware Current
+    ## Slackware 15.0 and current
         pkgtool
             > Setup - Choose Slackware installation scripts to run again
                 > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
@@ -243,7 +243,7 @@ EndSection
     ## Alternative, you can use latex online
         # https://www.overleaf.com/
 
-    ## Slackware Current has texlive package, but without tlmgr
+    ## Slackware 15.0 and current has texlive package, but without tlmgr
         # In texlive-*.txz/usr/doc/texlive-*/README.tlpkg
             "The TeXLive Package Manager, i.e. tlmgr(1), is not shipped with this
             TeXLive package, as it's not expected to work properly (if at all)."
@@ -423,7 +423,7 @@ glibc
     ## Local mirror current
         # file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
 
-## slackpkg+ mirrors
+## slackpkg+ mirrors (old - to update list see the file slackpkgplus.conf_*)
     nano /etc/slackpkg/slackpkgplus.conf
 
     ## 14.2 stable
