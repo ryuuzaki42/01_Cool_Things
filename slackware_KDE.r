@@ -237,7 +237,7 @@ EndSection
     ## libreoffice - install cogroo and change the language configuration
 
 ## Install local packages/programs
-    dropbox virtualbox comix qpdf R redshift smplayer vlc openjdk ...
+    dropbox virtualbox comix qpdf smplayer vlc openjdk ...
 
 ## Latex
     ## Alternative, you can use latex online
@@ -375,7 +375,7 @@ EndSection
         sysctl -p
 
 ## Set slackpkg mirror - Take a look in this script
-    ./mirrors_insert_JBs.sh
+    mirrors_insert_JBs.sh
 
 ## Move windows between Desktop
     ## Add 4 Desktop
@@ -414,11 +414,11 @@ EndSection
 gcc
 glibc
 
-## slackpkg mirrors - local clone (https://github.com/ryuuzaki42/2_clone_Slackware_repo)
+## slackpkg mirrors - local clone (https://github.com/ryuuzaki42/12_clone_Slackware_repo_rsync)
     nano /etc/slackpkg/mirrors
 
     ## Local mirror stable
-        file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-14.2/
+        file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-15.0/
 
     ## Local mirror current
         # file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-current/
@@ -426,7 +426,7 @@ glibc
 ## slackpkg+ mirrors (old - to update list see the file slackpkgplus.conf_*)
     nano /etc/slackpkg/slackpkgplus.conf
 
-    ## 14.2 stable
+    ## 14.2
         MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
         MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
         MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
@@ -471,12 +471,15 @@ glibc
     # When change from "nornmal" user to root
     chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
-## Copy <install> configs
+## Copy <install> configs ## Configuration files to update in the system
+    ## lilo.conf
+        cat lilo.conf > /etc/lilo.conf
+
     ## mirrors
-        cat mirrors_slackpkg_current > /etc/slackpkg/mirrors
+        cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
 
     ## greylist
         cat greylist_slackpkg > /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-        cat slackpkgplus.conf_current > /etc/slackpkg/slackpkgplus.conf
+        cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
