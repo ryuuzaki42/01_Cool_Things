@@ -88,7 +88,6 @@ smartsynchronize
 smplayer
 steam
 teamviewer
-thinkfan
 unrar
 veracrypt
 webcore-fonts
@@ -137,4 +136,9 @@ ffmpeg # alien
 # ------------------------------------------------------------
 mkvtoolnix
 cmark
+# ------------------------------------------------------------
+# thinkfan
+# ------------------------------------------------------------
+thinkfan
+yaml-cpp
 #
