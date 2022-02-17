@@ -325,6 +325,9 @@ EndSection
 ## Remove bluetooth - not recommended if you have bluetooth
     slackpkg remove bluedevil blueman bluez bluez-firmware
 
+## Remove kleopatra
+    slackpkg remove kleopatra
+
 ## Remove others
     slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra
     slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc texlive kget
@@ -458,6 +461,9 @@ glibc
         30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
     ## Edit cron and set to run weekly at 19:00 on the first day of the week:
+        ## To edit crontab
+            crontab -e
+
         0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
     # * * * * * command to execute
