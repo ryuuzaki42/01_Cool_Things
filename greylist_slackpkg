@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 23/08/2021
+# Last update: 25/02/2022
 #
 # ------------------------------------------------------------
 # Removed packages
@@ -46,8 +46,12 @@ akonadi-mime
 akonadi-notes
 akonadi-search
 akonadiconsole
+calligraplan
 elementary-xfce
+emacspeak
 gnome-themes-extra
+kleopatra
+knights
 libgtop
 mousepad
 plasma-vault
