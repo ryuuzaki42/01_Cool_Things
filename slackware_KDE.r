@@ -388,6 +388,7 @@ glibc
         git clone https://github.com/ryuuzaki42/2_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
 
         ## Set to run on the boot
+            cp 2_scripts_slackware/others/boot_rcLocal_JBs.sh /usr/bin/
             echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
     ## My final rc.local
