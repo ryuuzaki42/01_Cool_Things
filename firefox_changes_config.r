@@ -1,4 +1,4 @@
-### Firefox changes ###
+## Firefox changes ##
 
 about:config
 
@@ -83,7 +83,45 @@ network.protocol-handler.expose.tg
     Create a link by opening the following URL
 data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
 
-    And choose Telegram (or look for the executable file)
+    > telegram_run.sh
+        # se more below
+
+    ~/.config/mimeapps.list
+        x-scheme-handler/tg=telegram_opera.desktop;
+
+Obs: My install telegram folder is: /media/sda2/home/j/.1installed/Telegram/
+
+        firefox
+            > telegram_run.sh
+#!/bin/bash
+
+cd /media/sda2/home/j/.1installed/Telegram/
+#Exec=~/.1installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
+link=$* # To firefox
+if [ "$link" != "" ]; then
+    echo "link: $link"
+    #LC_TIME=pt_BR.UTF-8 ./Telegram
+    LC_TIME=en_IE.UTF-8 ./Telegram -workdir ~/.local/share/TelegramDesktop/ -- $link
+else
+    LC_TIME=en_IE.UTF-8 ./Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
+fi
+
+        Opera and others
+            > telegram_opera.desktop
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=Telegram
+Comment=Official desktop version of Telegram messaging app
+Exec=~/.1installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
+Icon=/media/sda2/home/j/.1installed/Telegram/0not_change/telegram.png
+Terminal=false
+StartupWMClass=Telegram
+Type=Application
+Categories=Chat;Network;InstantMessaging;Qt;
+MimeType=x-scheme-handler/tg;
+Keywords=tg;chat;im;messaging;messenger;sms;tdesktop;
+X-GNOME-UsesNotifications=true
 
 ## Enabled the spell check in all field text
 layout.spellcheckDefault
@@ -169,36 +207,55 @@ about:support
     ## For all link use one script
         https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
 
-## Dictionaries & Language Packs 
+## Dictionaries & Language Packs
     # https://addons.mozilla.org/en-GB/firefox/language-tools/
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
-## Remove Tracking Parameters
+## Good add-ons
+    ## enabled
+https://addons.mozilla.org/firefox/addon/adblock-plus/
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 
-## Clean copy URL
+    ## disabled
+https://addons.mozilla.org/firefox/addon/hls-stream-detector/
+https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
+https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
+https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
 
-## Video DownloadHelper
-https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-
-## Good add-ons
+    ## others
+https://addons.mozilla.org/firefox/addon/unload-tabs/
+https://addons.mozilla.org/firefox/addon/bookmarks-clean-up/
+https://addons.mozilla.org/firefox/addon/behind_the_overlay/
+https://addons.mozilla.org/firefox/addon/copy-as-plain-text-webext/
+https://addons.mozilla.org/firefox/addon/web-developer/
+https://addons.mozilla.org/firefox/addon/touch-vpn/
+https://addons.mozilla.org/pt-BR/firefox/addon/discard/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
 
-## Downthemall
 https://addons.mozilla.org/pt-BR/firefox/addon/downthemall/
     ## Create a new folder, in the Mask add a folder name and the \ or /:
     folderName\*name*.*ext*
 
-## Others in use
-https://addons.mozilla.org/firefox/addon/adblock-plus/
+    ## Others 2
+https://addons.mozilla.org/firefox/addon/grammarly-1/
+https://en.savefrom.net/9/user.php?vid=387#download
+https://addons.mozilla.org/firefox/addon/print-edit/
+https://addons.mozilla.org/firefox/addon/baixou-agora/
+https://www.desprotetor.com/
+https://addons.mozilla.org/firefox/addon/video-blocker/
+https://addons.mozilla.org/firefox/addon/kindle-it/
+https://addons.mozilla.org/firefox/addon/user-agent-string-switcher/
+https://zenmate.com/
+https://www.eff.org/https-everywhere
+https://addons.mozilla.org/firefox/addon/donottrackplus/
+https://addons.mozilla.org/firefox/addon/tab-notifier/
+https://addons.mozilla.org/firefox/addon/flagfox/
+https://addons.mozilla.org/firefox/addon/easy-youtube-video-download/
 
-https://addons.mozilla.org/firefox/addon/touch-vpn/
-https://addons.mozilla.org/pt-BR/firefox/addon/discard/
-https://addons.mozilla.org/firefox/addon/web-developer/
-https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
+https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
 ## Reset the programs to open file
     ## Go to
@@ -215,37 +272,8 @@ https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
         about:profiles
 
     ## Launch the Firefox with the "old" profile
-
     ## Close the Windows using the "new" profile
-
     ## In the other window, open management profile and delete the "new" profile deleting files
-
-## Others
-http://en.savefrom.net/user.php?vid=387#download
-https://addons.mozilla.org/firefox/addon/unload-tabs/
-https://addons.mozilla.org/firefox/addon/print-edit/
-https://addons.mozilla.org/firefox/addon/grammarly-1/
-http://www.baixou.com.br/baixouagora
-https://addons.mozilla.org/firefox/addon/flashstopper/
-https://addons.mozilla.org/firefox/addon/gnotifier/
-https://desprotetor.com.br/download
-https://addons.mozilla.org/firefox/addon/video-blocker/
-https://addons.mozilla.org/firefox/addon/kindle-it/
-https://addons.mozilla.org/firefox/addon/behind_the_overlay/
-https://addons.mozilla.org/firefox/addon/user-agent-switcher-firefox/
-https://zenmate.com/
-https://addons.mozilla.org/firefox/addon/google-br/
-    Change the default "search"
-https://addons.mozilla.org/firefox/addon/flashgot/
-https://www.eff.org/https-everywhere
-https://addons.mozilla.org/firefox/addon/private-tab/
-https://addons.mozilla.org/firefox/addon/copy-as-plain-text/
-https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
-https://addons.mozilla.org/firefox/addon/donottrackplus/
-https://addons.mozilla.org/firefox/addon/tab-notifier/
-https://addons.mozilla.org/firefox/addon/flagfox/
-https://addons.mozilla.org/firefox/addon/download-youtube/
-https://addons.mozilla.org/firefox/addon/download-flash-and-video/
 
 ## Error
     ## The site at <site> has experienced a network protocol violation that cannot be repaired
