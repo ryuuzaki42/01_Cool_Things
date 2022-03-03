@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/02/2022
+# Last update: 03/03/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -26,100 +26,21 @@
     nano ~/.config/akonadi/akonadiserverrc
         StartServer=true > StartServer=false
 
-## Clipboard KDE - change to ignore text selection
-    Panel > Icon "Status and Notifications" > Clipboard 
-        > In the up "Configure Clipboard" icon > General
-            > Change to "Ignore selection"
+## Copy <install> configs ## Configuration files to update in the system
+    ## lilo.conf
+        cat lilo.conf > /etc/lilo.conf
 
-## Disable Hibernation
-    ## KDE4
-        nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
-            <action id="org.freedesktop.upower.hibernate">
-                <allow_active>yes</allow_active>
-                    yes > no
+    ## mirrors
+        cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
 
-    ## KDE 5
-        nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
-            # line 288
-            <action id="org.freedesktop.login1.hibernate">
-                <allow_active>yes</allow_active>
-                    yes > no
+    ## greylist
+        cat greylist_slackpkg > /etc/slackpkg/greylist
 
-            # line 298
-            <action id="org.freedesktop.login1.hibernate-multiple-sessions">
-                <allow_active>yes</allow_active>
-                    yes > no
+    ## slackpkgplus.conf
+        cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
 
-## KDE 5 resize the "start menu"/Kickoff
-    ## Kickoff was redesign/update in KDE 5.21, need to install the legacy kickoff
-        https://store.kde.org/p/1468103
-
-    ## KDE widget default widgets located at:
-        /usr/share/plasma/plasmoids/
-
-        ## Local user
-        ~/.local/share/plasma/plasmoids/
-
-    ## KDE 5 resize the "start menu"/Kickoff
-        ## Before KDE 5.21
-            nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
-
-        ## After (need to install)
-            ## As your user
-            nano ~/.local/share/plasma/plasmoids/org.kde.plasma.kickofflegacy/contents/ui/FullRepresentation.qml
-
-    # line 34
-    Layout.minimumWidth: units.gridUnit * 26
-    > 26 to 22
-
-    Layout.minimumHeight: units.gridUnit * 34
-    > 34 to 28
-
-## rc.local
-    ## Download boot_rcLocal_JBs and copy to /usr/bin/
-        git clone https://github.com/ryuuzaki42/2_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
-
-        ## Set to run on the boot
-            echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
-
-    ## My final rc.local
-#!/bin/bash
-#
-# /etc/rc.d/rc.local:  Local system initialization script.
-#
-# Put any local startup commands in here.  Also, if you have
-# anything that needs to be run at shutdown time you can
-# make an /etc/rc.d/rc.local_shutdown script and put those
-# commands in there.
-#
-if [ -x /etc/rc.d/rc.tlp ]; then
-    echo -e "\\nStarting tlp\\n"
-    # https://github.com/linrunner/TLP
-    /etc/rc.d/rc.tlp start
-fi
-#
-#echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
-#/usr/bin/boot_rcLocal_JBs.sh
-#
-# If your backlight keyboard doesn't work
-#echo -e "\\nStarting UPower\\n"
-#qdbus --system org.freedesktop.UPower
-#
-# If you have installed Nvidia video driver with bumblebeed
-if [ -x /etc/rc.d/rc.bumblebeed ]; then
-    echo -e "\\nStarting bumblebeed\\n"
-    /etc/rc.d/rc.bumblebeed start
-fi
-#
-echo -e "\\nDisabling Bluetooth\\n"
-rfkill block bluetooth
-#
-#if [ -x /etc/rc.d/rc.thinkfan ]; then
-#    echo -e "\\nStarting thinkfan\\n"
-#    # https://github.com/vmatare/thinkfan
-#    /etc/rc.d/rc.thinkfan start
-#fi
-#
+    ## rc.local
+        cat rc.local > /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
 # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
@@ -129,16 +50,6 @@ rfkill block bluetooth
 # uncomment the line below and edit it to select your choice:
 #SCALING_GOVERNOR=ondemand
 SCALING_GOVERNOR=powersave
-
-    ## Or add to /etc/rc.d/rc.local
-countCPU=$(cpufreq-info | grep -c "analyzing CPU")
-
-i=0
-while [ "$i" -lt "$countCPU" ]; do
-    cpufreq-set --cpu $i --governor powersave;
-    echo "cpufreq-set --cpu $i --governor powersave"
-    ((i++))
-done
 
     ## Good commands
     cpufreq-info
@@ -231,61 +142,74 @@ EndSection
     System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
-## Libreoffice to Brazil user on KDE
-    slackpkg install libreoffice-[0-9].* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR
-    	# libreoffice-kde-integration - no more
-    ## libreoffice - install cogroo and change the language configuration
+## Swap in file
+    ## My full path file
+    /swapFile.img
 
-## Install local packages/programs
-    dropbox virtualbox comix qpdf smplayer vlc openjdk ...
+    swapFilePace="/" # Add the /path/to/folder/ - with the and /
 
-## Latex
-    ## Alternative, you can use latex online
-        # https://www.overleaf.com/
+    ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
+        dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
 
-    ## Slackware 15.0 and current has texlive package, but without tlmgr
-        # In texlive-*.txz/usr/doc/texlive-*/README.tlpkg
-            "The TeXLive Package Manager, i.e. tlmgr(1), is not shipped with this
-            TeXLive package, as it's not expected to work properly (if at all)."
+    ## Turn into swapfile
+        mkswap ${swapFilePace}swapFile.img
 
-        slackpkg remove texlive
+    ## Add config in the fstab
+        echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
 
-    ## To Slackware 14.2
-        ## Remove tetex and tetex-doc
-            slackpkg remove tetex
+    ## test the swap
+        swapon -a
 
-    ## If will install the txz texlive
-        ## Install libsigsegv texi2html
-        ## Install texlive local
+    ## resolve the warnings
+        chmod 0600 ${swapFilePace}swapFile.img
+        chown root ${swapFilePace}swapFile.img
 
-    ## Remove the last texlive (latex) version (if has one)
-        tlmgr uninstall
+    ## See the actual value of swappiness
+        cat /proc/sys/vm/swappiness
 
-        ## Delete de older folder
-            cd /usr/local
-            rm -r texlive
+        ## To temporarily set the swappiness value
+            sysctl -w vm.swappiness=10
 
-    ## Download and install by the ISO file
-        https://www.tug.org/texlive/acquire-iso.html
+        ## To set the swappiness value permanently, edit a sysctl configuration file
+            nano /etc/sysctl.conf
+                ## Add in the file
+                    vm.swappiness=10
 
-    ## Mount dvd to install
-        mount texlive*.iso /media/dvd/
-        /media/dvd/install-tl
-            ## Set A4 paper and symlinks on directory
+        ## Load configuration permanently
+            sysctl -p
 
-    ## If the command latex is "not found"
-        ## Added in .bashrc (look the year/version)
-        export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-linux
+## If has SSD - fstrim
+    # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
+    ## Change the "SSD_MOUNT" for your partition mount folder
+        ## For me weekly is enough
+        cp doFstrim.sh /etc/cron.weekly/
+            ## To test:
+            /etc/cron.weekly/doFstrim.sh
 
-    ## Update packets
-        tlmgr update --self
-        tlmgr update --all
+    ## See all add
+        crontab -l
 
-    ## Change mirror and correct some errors
-        tlmgr update --self --all
+    ## Run weekly cron jobs at 4:30 on the first day of the week:
+        30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
-    ## To install one package
-        tlmgr install package
+    ## Edit cron and set to run weekly at 19:00 on the first day of the week:
+        ## To edit crontab
+            crontab -e
+
+        0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+
+    # * * * * * command to execute
+    # │ │ │ │ └─ day of week (0 - 6) (Sun(0) /Mon (1)/Tue (2)/Wed (3)/Thu (4)/Fri (5)/Sat (6))
+    # │ │ │ └─ month (1 - 12)
+    # │ │ └─ day of month (1 - 31)
+    # │ └─ hour (0 - 23)
+    # └─ min (0 - 59)
+
+## To disable the fortune in /etc/profile.d/ use:
+    # When change from "nornmal" user to root
+    chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
+
+## Others -------------------------------------------------------------------------------------------------------------------------------------------------- ##
 
 ## Remove games of KDE
     slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf
@@ -340,42 +264,6 @@ EndSection
 
         ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
             slackpkg install bluez-qt
-
-## Swap in file
-    ## My full path file
-    /swapFile.img
-
-    swapFilePace="/" # Add the /path/to/folder/ - with the and /
-
-    ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-        dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
-
-    ## Turn into swapfile
-        mkswap ${swapFilePace}swapFile.img
-
-    ## Add config in the fstab
-        echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
-
-    ## test the swap
-        swapon -a
-
-    ## resolve the warnings
-        chmod 0600 ${swapFilePace}swapFile.img
-        chown root ${swapFilePace}swapFile.img
-
-## See the actual value of swappiness
-    cat /proc/sys/vm/swappiness
-
-    ## To temporarily set the swappiness value
-        sysctl -w vm.swappiness=10
-
-    ## To set the swappiness value permanently, edit a sysctl configuration file
-        nano /etc/sysctl.conf
-            ## Add in the file
-                vm.swappiness=10
-
-    ## Load configuration permanently
-        sysctl -p
 
 ## Set slackpkg mirror - Take a look in this script
     mirrors_insert_JBs.sh
@@ -446,46 +334,127 @@ glibc
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
 
-## If has SSD - fstrim
-    # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
-    ## Change the "SSD_MOUNT" for your partition mount folder
-        ## For me weekly is enough
-        cp doFstrim.sh /etc/cron.weekly/
-            ## To test:
-            /etc/cron.weekly/doFstrim.sh
+## Clipboard KDE - change to ignore text selection
+    Panel > Icon "Status and Notifications" > Clipboard
+        > In the up "Configure Clipboard" icon > General
+            > Change to "Ignore selection"
 
-    ## See all add
-        crontab -l
+## Disable Hibernation
+    ## KDE4
+        nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
+            <action id="org.freedesktop.upower.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
 
-    ## Run weekly cron jobs at 4:30 on the first day of the week:
-        30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+    ## KDE 5
+        nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
+            # line 288
+            <action id="org.freedesktop.login1.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
 
-    ## Edit cron and set to run weekly at 19:00 on the first day of the week:
-        ## To edit crontab
-            crontab -e
+            # line 298
+            <action id="org.freedesktop.login1.hibernate-multiple-sessions">
+                <allow_active>yes</allow_active>
+                    yes > no
 
-        0 19 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
+## KDE 5 resize the "start menu"/Kickoff
+    ## Kickoff was redesign/update in KDE 5.21, need to install the legacy kickoff
+        https://store.kde.org/p/1468103
 
-    # * * * * * command to execute
-    # │ │ │ │ └─ day of week (0 - 6) (Sun(0) /Mon (1)/Tue (2)/Wed (3)/Thu (4)/Fri (5)/Sat (6))
-    # │ │ │ └─ month (1 - 12)
-    # │ │ └─ day of month (1 - 31)
-    # │ └─ hour (0 - 23)
-    # └─ min (0 - 59)
+    ## KDE widget default widgets located at:
+        /usr/share/plasma/plasmoids/
 
-## To disable the fortune in /etc/profile.d/ use:
-    # When change from "nornmal" user to root
-    chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
+        ## Local user
+        ~/.local/share/plasma/plasmoids/
 
-## Copy <install> configs ## Configuration files to update in the system
-    ## lilo.conf
-        cat lilo.conf > /etc/lilo.conf
+    ## KDE 5 resize the "start menu"/Kickoff
+        ## Before KDE 5.21
+            nano /usr/share/plasma/plasmoids/org.kde.plasma.kickoff/contents/ui/FullRepresentation.qml
 
-    ## mirrors
-        cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
+        ## After (need to install)
+            ## As your user
+            nano ~/.local/share/plasma/plasmoids/org.kde.plasma.kickofflegacy/contents/ui/FullRepresentation.qml
 
-    ## greylist
-        cat greylist_slackpkg > /etc/slackpkg/greylist
+    # line 34
+    Layout.minimumWidth: units.gridUnit * 26
+    > 26 to 22
 
-    ## slackpkgplus.conf
-        cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
+    Layout.minimumHeight: units.gridUnit * 34
+    > 34 to 28
+
+## rc.local
+    ## Download boot_rcLocal_JBs and copy to /usr/bin/
+        git clone https://github.com/ryuuzaki42/2_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
+
+        ## Set to run on the boot
+            echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
+
+    ## My final rc.local
+        See the file ./rc.local
+
+## Change cpufreq with script
+countCPU=$(cpufreq-info | grep -c "analyzing CPU")
+
+i=0
+while [ "$i" -lt "$countCPU" ]; do
+    cpufreq-set --cpu $i --governor powersave;
+    echo "cpufreq-set --cpu $i --governor powersave"
+    ((i++))
+done
+
+## Libreoffice to Brazil user on KDE
+    slackpkg install libreoffice-[0-9].* libreoffice-dict-en libreoffice-dict-pt-BR libreoffice-l10n-pt_BR
+    	# libreoffice-kde-integration - no more
+    ## libreoffice - install cogroo and change the language configuration
+
+## Install local packages/programs
+    dropbox virtualbox comix qpdf smplayer vlc openjdk ...
+
+## Latex
+    ## Alternative, you can use latex online
+        # https://www.overleaf.com/
+
+    ## Slackware 15.0 and current has texlive package, but without tlmgr
+        # In texlive-*.txz/usr/doc/texlive-*/README.tlpkg
+            "The TeXLive Package Manager, i.e. tlmgr(1), is not shipped with this
+            TeXLive package, as it's not expected to work properly (if at all)."
+
+        slackpkg remove texlive
+
+    ## To Slackware 14.2
+        ## Remove tetex and tetex-doc
+            slackpkg remove tetex
+
+    ## If will install the txz texlive
+        ## Install libsigsegv texi2html
+        ## Install texlive local
+
+    ## Remove the last texlive (latex) version (if has one)
+        tlmgr uninstall
+
+        ## Delete de older folder
+            cd /usr/local
+            rm -r texlive
+
+    ## Download and install by the ISO file
+        https://www.tug.org/texlive/acquire-iso.html
+
+    ## Mount dvd to install
+        mount texlive*.iso /media/dvd/
+        /media/dvd/install-tl
+            ## Set A4 paper and symlinks on directory
+
+    ## If the command latex is "not found"
+        ## Added in .bashrc (look the year/version)
+        export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-linux
+
+    ## Update packets
+        tlmgr update --self
+        tlmgr update --all
+
+    ## Change mirror and correct some errors
+        tlmgr update --self --all
+
+    ## To install one package
+        tlmgr install package
