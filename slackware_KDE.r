@@ -5,42 +5,41 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/03/2022
+# Last update: 04/03/2022
 #
 
 ## Make home folder - mount /media/sda2
-    mkdir /media/sda2
-    chmod 777 /media/sda2
+mkdir /media/sda2
+chmod 777 /media/sda2
 
-    nano /etc/fstab
-
-    /dev/sda2        /media/sda2      ext4        defaults         1   2
+nano /etc/fstab
+/dev/sda2        /media/sda2      ext4        defaults         1   2
 
 ## Edit files in the /etc/
-    nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
+nano /etc/lilo.conf /etc/fstab /etc/inittab /etc/profile.d/lang.*sh /etc/acpi/acpi_handler.sh
 
 ## Remove autostart programs
-    /etc/xdg/autostart/
-    /usr/share/autostart/
+cd /etc/xdg/autostart/
+cd /usr/share/autostart/
 
-    nano ~/.config/akonadi/akonadiserverrc
-        StartServer=true > StartServer=false
+nano ~/.config/akonadi/akonadiserverrc
+StartServer=true > StartServer=false
 
 ## Copy <install> configs ## Configuration files to update in the system
     ## lilo.conf
-        cat lilo.conf > /etc/lilo.conf
+cat lilo.conf > /etc/lilo.conf
 
     ## mirrors
-        cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
+cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
 
     ## greylist
-        cat greylist_slackpkg > /etc/slackpkg/greylist
+cat greylist_slackpkg > /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-        cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
+cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
-        cat rc.local > /etc/rc.d/rc.local
+cat rc.local > /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
 # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
@@ -58,7 +57,7 @@ SCALING_GOVERNOR=powersave
 
     cpufreq-info | grep "governor"
 
-    lsmod | grep asus
+    lsmod
 
 ## Kernel Generic
     #https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
@@ -72,7 +71,9 @@ SCALING_GOVERNOR=powersave
         pkgtool
             > Setup - Choose Slackware installation scripts to run again
                 > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
-        lilo
+
+        ## Edit link in lilo.conf "vmlinuz-generic-..." to "vmlinuz-generic"
+            lilo
 
 ## Touchpad of just one part
     nano /etc/X11/xorg.conf
@@ -96,7 +97,7 @@ EndSection
 ## xbacklight - error - "No outputs have backlight property"
     # https://wiki.archlinux.org/title/backlight#xbacklight
     ## Added the file 20-intel.conf
-        nano /etc/X11/xorg.conf.d/20-intel.conf
+nano /etc/X11/xorg.conf.d/20-intel.conf
 
 Section "Device"
     Identifier  "Intel Graphics" 
@@ -104,27 +105,26 @@ Section "Device"
     Option      "Backlight"  "intel_backlight"
 EndSection
 
-## If you use/have a Intel graphics card, can select with driver load/use
-    ## Put in the config in:
-        /etc/X11/xorg.conf
+    ## If you use/have a Intel graphics card, can select which driver load/use
+        nano /etc/X11/xorg.conf
 
-    ## To the use Intel - xbacklight works
+        ## To the use Intel - xbacklight works
 Section "Device"
     Identifier      "Intel Graphics"
     Driver          "intel"
 EndSection
 
-    # Can add Option Backlight after driver
-        Option          "Backlight"      "intel_backlight"
+        # Can add Option Backlight after driver
+Option          "Backlight"      "intel_backlight"
 
-    ## To use modesetting - xbacklight not works
+        ## To use modesetting - xbacklight not works
 Section "Device"
     Identifier      "Intel Graphics"
     Driver          "modesetting"
 EndSection
 
 ## Dolphin disable executable shellscript, perl, ruby, pyton etc
-    kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
+kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
     ## Look for the lines and comment # with " " and ' '
         <sub-class-of type="application/x-executable"/>
@@ -134,8 +134,8 @@ EndSection
         <!-- <sub-class-of type='application/x-executable'/> -->
 
     ## Update Dolphin config
-        rm /usr/share/mime/packages/kde.xml
-        update-mime-database /usr/share/mime
+rm /usr/share/mime/packages/kde.xml
+update-mime-database /usr/share/mime
 
 ## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
     Is assigned meta (windows) + S
@@ -143,26 +143,25 @@ EndSection
     Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
 
 ## Swap in file
-    ## My full path file
-    /swapFile.img
-
-    swapFilePace="/" # Add the /path/to/folder/ - with the and /
+    ## Add the /path/to/folder/ - with the and /
+        # My full path file: /swapFile.img
+swapFilePace="/"
 
     ## Create the file # 8 GiB = 8192 # 6 GiB = 6144 # 4 GiB = 4096 # 2 GiB = 2048
-        dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
+dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
 
     ## Turn into swapfile
-        mkswap ${swapFilePace}swapFile.img
+mkswap ${swapFilePace}swapFile.img
 
     ## Add config in the fstab
-        echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
+echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
 
     ## test the swap
-        swapon -a
+swapon -a
 
     ## resolve the warnings
-        chmod 0600 ${swapFilePace}swapFile.img
-        chown root ${swapFilePace}swapFile.img
+chmod 0600 ${swapFilePace}swapFile.img
+chown root ${swapFilePace}swapFile.img
 
     ## See the actual value of swappiness
         cat /proc/sys/vm/swappiness
@@ -178,12 +177,13 @@ EndSection
         ## Load configuration permanently
             sysctl -p
 
-## If has SSD - fstrim
+## If has SSD - fstrim - add to crontab
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
-    ## Change the "SSD_MOUNT" for your partition mount folder
-        ## For me weekly is enough
+    ## Change the "SSD_MOUNT" in the scrpit for your partition mount folder
+        # For me, weekly is enough
         cp doFstrim.sh /etc/cron.weekly/
-            ## To test:
+
+        ## To test:
             /etc/cron.weekly/doFstrim.sh
 
     ## See all add
@@ -192,7 +192,7 @@ EndSection
     ## Run weekly cron jobs at 4:30 on the first day of the week:
         30 4 * * 0 /usr/bin/run-parts /etc/cron.weekly 1> /dev/null
 
-    ## Edit cron and set to run weekly at 19:00 on the first day of the week:
+    ## Edit cron and set to run weekly at 19:00 on the first day of the week
         ## To edit crontab
             crontab -e
 
@@ -207,7 +207,7 @@ EndSection
 
 ## To disable the fortune in /etc/profile.d/ use:
     # When change from "nornmal" user to root
-    chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
+chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
 ## Others -------------------------------------------------------------------------------------------------------------------------------------------------- ##
 
