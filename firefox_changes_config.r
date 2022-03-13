@@ -89,14 +89,14 @@ data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
     ~/.config/mimeapps.list
         x-scheme-handler/tg=telegram_opera.desktop;
 
-Obs: My install telegram folder is: /media/sda2/home/j/.1installed/Telegram/
+Obs: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
 
         firefox
             > telegram_run.sh
 #!/bin/bash
 
-cd /media/sda2/home/j/.1installed/Telegram/
-#Exec=~/.1installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
+cd /media/sda2/home/j/.0installed/Telegram/
+#Exec=~/.0installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
 link=$* # To firefox
 if [ "$link" != "" ]; then
     echo "link: $link"
@@ -113,8 +113,8 @@ fi
 Version=1.0
 Name=Telegram
 Comment=Official desktop version of Telegram messaging app
-Exec=~/.1installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
-Icon=/media/sda2/home/j/.1installed/Telegram/0not_change/telegram.png
+Exec=~/.0installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
+Icon=/media/sda2/home/j/.0installed/Telegram/0not_change/telegram.png
 Terminal=false
 StartupWMClass=Telegram
 Type=Application
@@ -216,15 +216,17 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
     ## enabled
 https://addons.mozilla.org/firefox/addon/adblock-plus/
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
+https://www.zotero.org/download/
+https://addons.mozilla.org/firefox/addon/blackbox/
 
     ## disabled
-https://addons.mozilla.org/firefox/addon/hls-stream-detector/
-https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
+https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
+https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-https://addons.mozilla.org/firefox/addon/cleancopyurl/
 
     ## others
+https://addons.mozilla.org/firefox/addon/cleancopyurl/
 https://addons.mozilla.org/firefox/addon/unload-tabs/
 https://addons.mozilla.org/firefox/addon/bookmarks-clean-up/
 https://addons.mozilla.org/firefox/addon/behind_the_overlay/
