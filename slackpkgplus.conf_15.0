@@ -108,7 +108,7 @@ STRICTGPG=on
 #
 #
 # If you want a multilib system, uncomment the 'multilib' repository and set:
-PKGS_PRIORITY=( multilib restricted )
+PKGS_PRIORITY=( multilib restricted JB JB:mozilla-firefox )
 #
 # (Use /usr/doc/slackpkg+-*/setupmultilib.sh to setup a multilib configuration)
 
@@ -132,7 +132,7 @@ REPOPLUS=( slackpkgplus )
 #           for that repositories you may need to run slackpkg with 'slackpkg -checkgpg=off ...'
 
 # Slackware 15.0 - x86_64
-#MIRRORPLUS['multilib']=https://slackware.nl/people/alien/multilib/15.0/
+MIRRORPLUS['multilib']=https://slackware.nl/people/alien/multilib/15.0/
 MIRRORPLUS['alienbob']=https://slackware.nl/people/alien/sbrepos/15.0/x86_64
 MIRRORPLUS['restricted']=https://slackware.nl/people/alien/restricted_sbrepos/15.0/x86_64
 
@@ -147,7 +147,7 @@ MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86/
 #
 # Local Mirror - Slackware current - x86_64
-MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/stable/13_clone_multilib_Slackware_repo_rsync/15.0/
+#MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/stable/13_clone_multilib_Slackware_repo_rsync/15.0/
 
 # Local packages (you do not need metadata nor 'slackpkg update' command):
 #MIRRORPLUS['myrepo']=dir://repositories/mypackages/
@@ -155,6 +155,8 @@ MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/stable/13_clone_multi
 # Remote packages (you do not need metadata)
 #MIRRORPLUS['slackpkgbeta']=httpsdir://slackpkg.org/beta/
 
+MIRRORPLUS['JB']=dir://media/sda2/os/gnu_linux/slackware15.0/
+#MIRRORPLUS['JB']=dir://run/media/j/Files_ex/os/gnu_linux/slackware15.0/
 
 # SBo SlackBuilds. Uncomment it to allow slackpkg to search SlackBuilds on SlackBuilds.org
 # This does not replace sbopkg; slackpkg just report the package, version and url; you may
