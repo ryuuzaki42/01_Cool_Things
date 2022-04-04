@@ -215,6 +215,7 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 ## Good add-ons
     ## enabled
 https://addons.mozilla.org/firefox/addon/adblock-plus/
+https://addons.mozilla.org/firefox/addon/sponsorblock/
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 https://www.zotero.org/download/
 https://addons.mozilla.org/firefox/addon/blackbox/
