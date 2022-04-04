@@ -155,8 +155,8 @@ MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 # Remote packages (you do not need metadata)
 #MIRRORPLUS['slackpkgbeta']=httpsdir://slackpkg.org/beta/
 
-MIRRORPLUS['JB_1l']=dir://media/sda2/os/gnu_linux/slackware15.0/
-#MIRRORPLUS['JB_2e']=dir://run/media/j/Files_ex/os/gnu_linux/slackware15.0/
+MIRRORPLUS['JB']=dir://media/sda2/os/gnu_linux/slackware15.0/
+#MIRRORPLUS['JB']=dir://run/media/j/Files_ex/os/gnu_linux/slackware15.0/
 
 # SBo SlackBuilds. Uncomment it to allow slackpkg to search SlackBuilds on SlackBuilds.org
 # This does not replace sbopkg; slackpkg just report the package, version and url; you may
