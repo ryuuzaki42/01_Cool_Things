@@ -47,7 +47,7 @@
 ## file1
 #file://media/sda2/git_clone/stable/12_clone_Slackware_repo_rsync/slackware64-15.0/
 ## file 2
-file://run/media/j/mirror/git_clone/stable/12_clone_Slackware_repo_rsync/slackware64-15.0/
+#file://run/media/j/mirror/git_clone/stable/12_clone_Slackware_repo_rsync/slackware64-15.0/
 #
 #----------------------------------------------------------------
 # Slackware64-15.0
@@ -175,6 +175,7 @@ file://run/media/j/mirror/git_clone/stable/12_clone_Slackware_repo_rsync/slackwa
 # http://mirrors.mithril.org.ua/linux/slackware/slackware64-15.0/
 # UNITED KINGDOM (UK)
 # http://slackware.uk/slackware/slackware64-15.0/
+https://slackware.uk/slackware/slackware64-15.0/
 # ftp://slackware.uk/slackware/slackware64-15.0/
 # ftp://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/
 # http://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/
