@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 13/03/2022
+# Last update: 12/05/2022
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -46,6 +46,7 @@ akonadi-mime
 akonadi-notes
 akonadi-search
 akonadiconsole
+calligra
 calligraplan
 elementary-xfce
 emacspeak
