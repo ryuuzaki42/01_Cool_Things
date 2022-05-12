@@ -151,7 +151,7 @@ MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86/
 #
 # Local Mirror - Slackware current - x86_64
-#MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/stable/13_clone_multilib_Slackware_repo_rsync/15.0/
+#MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/slackware15.0/13_clone_multilib_Slackware_repo_rsync/15.0/
 
 # Local packages (you do not need metadata nor 'slackpkg update' command):
 #MIRRORPLUS['myrepo']=dir://repositories/mypackages/
