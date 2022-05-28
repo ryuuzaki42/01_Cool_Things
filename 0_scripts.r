@@ -364,9 +364,9 @@ int main(){
         /usr/lib64/vlc/vlc-cache-gen -f /usr/lib64/vlc/plugins
 
 ## Select URL from a text (or html file)
-    sed -n 's/.*href="\([^"]*\).*/\1/p')
+    sed -n 's/.*href="\([^"]*\).*/\1/p'
 
-    grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*")
+    grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*"
 
     grep -o 'http[^"]*'
 
