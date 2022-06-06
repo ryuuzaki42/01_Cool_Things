@@ -717,6 +717,9 @@ rm $tmpFile # Delete the tmpFile
     ## Remove all empty lines
         sed -r '/^\s*$/d' inputfile
 
+    ## Delete empty lines
+        sed '/^$/d' file
+
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
         # or
