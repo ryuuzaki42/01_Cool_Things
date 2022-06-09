@@ -217,16 +217,19 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 https://addons.mozilla.org/firefox/addon/adblock-plus/
 https://addons.mozilla.org/firefox/addon/sponsorblock/
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
+    # Give error in some website that use parameters
 https://www.zotero.org/download/
-https://addons.mozilla.org/firefox/addon/blackbox/
 
     ## disabled
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
+https://addons.mozilla.org/firefox/addon/blackbox/
+https://addons.mozilla.org/firefox/addon/languagetool/
 
     ## others
+https://addons.mozilla.org/firefox/addon/fireshot/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
 https://addons.mozilla.org/firefox/addon/unload-tabs/
 https://addons.mozilla.org/firefox/addon/bookmarks-clean-up/
@@ -234,11 +237,10 @@ https://addons.mozilla.org/firefox/addon/behind_the_overlay/
 https://addons.mozilla.org/firefox/addon/copy-as-plain-text-webext/
 https://addons.mozilla.org/firefox/addon/web-developer/
 https://addons.mozilla.org/firefox/addon/touch-vpn/
-https://addons.mozilla.org/pt-BR/firefox/addon/discard/
+https://addons.mozilla.org/firefox/addon/discard/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
-
-https://addons.mozilla.org/pt-BR/firefox/addon/downthemall/
+https://addons.mozilla.org/firefox/addon/downthemall/
     ## Create a new folder, in the Mask add a folder name and the \ or /:
     folderName\*name*.*ext*
 
@@ -257,7 +259,6 @@ https://addons.mozilla.org/firefox/addon/donottrackplus/
 https://addons.mozilla.org/firefox/addon/tab-notifier/
 https://addons.mozilla.org/firefox/addon/flagfox/
 https://addons.mozilla.org/firefox/addon/easy-youtube-video-download/
-
 https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
 ## Reset the programs to open file
