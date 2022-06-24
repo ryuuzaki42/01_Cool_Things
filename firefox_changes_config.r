@@ -221,14 +221,15 @@ https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 https://www.zotero.org/download/
 
     ## disabled
+https://addons.mozilla.org/firefox/addon/browsec/ # vpn
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-https://addons.mozilla.org/firefox/addon/blackbox/
 https://addons.mozilla.org/firefox/addon/languagetool/
 
     ## others
+https://addons.mozilla.org/firefox/addon/blackbox/
 https://addons.mozilla.org/firefox/addon/fireshot/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
 https://addons.mozilla.org/firefox/addon/unload-tabs/
