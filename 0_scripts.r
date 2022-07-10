@@ -2122,3 +2122,10 @@ deactivate
     grep cat food || echo "$0: no cat in the food" >&2
 
     diff this that || true
+
+## JDownloader - Error FFmpeg is missing
+    ## Install manually, and set paths to the install directory in
+        settings > advanced > filter "ffmpeg path"
+
+    ## Set both ffmpeg and ffmprobe to
+        /usr/bin/ffmpeg
