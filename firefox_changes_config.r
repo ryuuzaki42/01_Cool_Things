@@ -91,13 +91,13 @@ data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
 
 Obs: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
 
-        firefox
+        Firefox
             > telegram_run.sh
 #!/bin/bash
 
 cd /media/sda2/home/j/.0installed/Telegram/
 #Exec=~/.0installed/Telegram/Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
-link=$* # To firefox
+link=$* # To Firefox
 if [ "$link" != "" ]; then
     echo "link: $link"
     #LC_TIME=pt_BR.UTF-8 ./Telegram
@@ -226,7 +226,11 @@ https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
+
 https://addons.mozilla.org/firefox/addon/languagetool/
+    Add to Firefox and login
+        https://languagetool.org/
+            E-mail and password on Keep
 
     ## others
 https://addons.mozilla.org/firefox/addon/blackbox/
