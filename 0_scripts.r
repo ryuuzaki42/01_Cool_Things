@@ -2129,3 +2129,20 @@ deactivate
 
     ## Set both ffmpeg and ffmprobe to
         /usr/bin/ffmpeg
+
+## TERM variable
+    # The $TERM is an environmental variable in Linux and Unix shell environments.
+    # This variable defines the terminal type. In other words, it sets the terminal type for which output is to be prepared.
+
+    echo "$TERM"
+
+    ## Default
+        xterm-256color
+
+        ## On slackpg commands with TERM=xterm-256color you can't copy the text result, change to TERM=linux
+
+    ## Other options
+        linux
+        screen
+        xterm
+        xterm-color
