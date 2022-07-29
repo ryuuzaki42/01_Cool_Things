@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 12/05/2022
+# Last update: 29/07/2022
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -56,6 +56,7 @@ knights
 libgtop
 mousepad
 plasma-vault
+tetex
 texlive
 thunar
 xfce4-panel-profiles
@@ -66,39 +67,37 @@ xsnow
 # Packages installed
 # -------------------------------------------------------------------------------------------------------
 MasterPDFEditor
-OpenAL
 R
 TLP
 astyle
+authy
+autosubsync
 bfg
 diffpdf
 discord
+extundelete
+florence
 git-lfs
+jubler
 kdiff3
 kernel
-libreoffice
-libtorrent-rasterbar
-libtxc_dxtn
+maestral
 makeself
-mcomix3
+mcomix
 mozilla-firefox
 openjdk
-opera-ffmpeg-codecs
-opera-stable
-qbittorrent
 qpdfview-qt5
 sbotools
 shellcheck
 smartsynchronize
 smplayer
-steam
-teamviewer
+teams
+tomighty
 unrar
 veracrypt
 webcore-fonts
 wxGTK3
-xf86-video-nouveau
-zenity
+zotero
 # -------------------------------------------------------------------------------------------------------
 # Bumblebee
 # -------------------------------------------------------------------------------------------------------
@@ -108,6 +107,7 @@ libbsd
 nvidia-bumblebee
 primus
 primus_vk
+xf86-video-nouveau
 # -------------------------------------------------------------------------------------------------------
 # xournalpp
 # -------------------------------------------------------------------------------------------------------
@@ -131,12 +131,12 @@ vamp-plugin-sdk
 # obs-studio
 # -------------------------------------------------------------------------------------------------------
 obs-studio
-fdk-aac # alien restricted_slackbuilds libfdk-aac
 # jack2 - audacity
+fdk-aac # alien restricted_slackbuilds libfdk-aac
+ffmpeg # alien restricted_slackbuilds
 mbedtls
 vlc # alien restricted_slackbuilds
 x264
-ffmpeg # alien restricted_slackbuilds
 # -------------------------------------------------------------------------------------------------------
 # mkvtoolnix
 # -------------------------------------------------------------------------------------------------------
@@ -156,4 +156,39 @@ libass
 libplacebo
 luajit
 rubberband
-#
+# -------------------------------------------------------------------------------------------------------
+# mangohud
+# -------------------------------------------------------------------------------------------------------
+mangohud
+glfw3
+# -------------------------------------------------------------------------------------------------------
+# teamviewer
+# -------------------------------------------------------------------------------------------------------
+teamviewer
+libminizip
+# -------------------------------------------------------------------------------------------------------
+# steam
+# -------------------------------------------------------------------------------------------------------
+steam
+OpenAL
+libtxc_dxtn
+zenity
+# -------------------------------------------------------------------------------------------------------
+# qbittorrent
+# -------------------------------------------------------------------------------------------------------
+qbittorrent
+libtorrent-rasterbar
+# -------------------------------------------------------------------------------------------------------
+# opera
+# -------------------------------------------------------------------------------------------------------
+opera
+opera-stable
+opera-ffmpeg-codecs
+# -------------------------------------------------------------------------------------------------------
+# libreoffice
+# -------------------------------------------------------------------------------------------------------
+libreoffice
+libreoffice-dict-en
+libreoffice-dict-pt-BR
+libreoffice-l10n-pt_BR
+# -------------------------------------------------------------------------------------------------------
