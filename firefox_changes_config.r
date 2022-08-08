@@ -245,6 +245,7 @@ https://addons.mozilla.org/firefox/addon/touch-vpn/
 https://addons.mozilla.org/firefox/addon/discard/
 https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
+https://addons.mozilla.org/firefox/addon/darkreader/
 https://addons.mozilla.org/firefox/addon/downthemall/
     ## Create a new folder, in the Mask add a folder name and the \ or /:
     folderName\*name*.*ext*
