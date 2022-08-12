@@ -27,23 +27,25 @@ StartServer=true > StartServer=false
 
 ## Copy <install> configs ## Configuration files to update in the system
     ## lilo.conf
-cat lilo.conf > /etc/lilo.conf
+cp lilo.conf /etc/lilo.conf
 
     ## mirrors
-cat mirrors_slackpkg_15.0 > /etc/slackpkg/mirrors
+cp mirrors_slackpkg_15.0 /etc/slackpkg/mirrors
 
     ## greylist
-cat greylist_slackpkg > /etc/slackpkg/greylist
+cp greylist_slackpkg /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-cat slackpkgplus.conf_15.0 > /etc/slackpkg/slackpkgplus.conf
+cp slackpkgplus.conf_15.0 /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
-cat rc.local > /etc/rc.d/rc.local
+cp rc.local /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
 # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
     ## Edit /etc/default/cpufreq to set the desired CPU governor at boot time (make sure /etc/rc.d/rc.cpufreq is executable).
+
+    chmod +x /etc/rc.d/rc.cpufreq
 
 # To select a particular CPU governor option for /etc/rc.d/rc.cpufreq,
 # uncomment the line below and edit it to select your choice:
@@ -209,8 +211,6 @@ chown root ${swapFilePace}swapFile.img
     # When change from "nornmal" user to root
 chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
-## Others -------------------------------------------------------------------------------------------------------------------------------------------------- ##
-
 ## Remove games of KDE
     slackpkg remove palapeli bomber granatier kblocks ksnakeduel kbounce kbreakout kgoldrunner kspaceduel kapman kolf
     slackpkg remove kollision kpat lskat blinken khangman pairs ktuberling katomic kjumpingcube kmines knetwalk
@@ -225,7 +225,7 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
 ## Remove desktop environments (X)
     ## Remove all another X than KDE (leave fluxbox for safe propose)
-        slackpkg remove twm blackbox windowmaker fvwm xfce
+        slackpkg remove twm blackbox windowmaker fvwm xfce motif
 
     ## Set one to be the default
         xwmconfig
@@ -264,6 +264,32 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
         ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
             slackpkg install bluez-qt
+
+## Clipboard KDE - change to ignore text selection
+    Panel > Icon "Status and Notifications" > Clipboard
+        > In the up "Configure Clipboard" icon > General
+            > Change to "Ignore selection"
+
+## Disable Hibernation
+    ## KDE4
+        nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
+            <action id="org.freedesktop.upower.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+    ## KDE 5
+        nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
+            # line 288
+            <action id="org.freedesktop.login1.hibernate">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+            # line 298
+            <action id="org.freedesktop.login1.hibernate-multiple-sessions">
+                <allow_active>yes</allow_active>
+                    yes > no
+
+## Others - old ------------------------------------------------------------------------------------------------------------------------------------------------ ##
 
 ## Set slackpkg mirror - Take a look in this script
     mirrors_insert_JBs.sh
@@ -333,30 +359,6 @@ glibc
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
-
-## Clipboard KDE - change to ignore text selection
-    Panel > Icon "Status and Notifications" > Clipboard
-        > In the up "Configure Clipboard" icon > General
-            > Change to "Ignore selection"
-
-## Disable Hibernation
-    ## KDE4
-        nano /usr/share/polkit-1/actions/org.freedesktop.upower.policy
-            <action id="org.freedesktop.upower.hibernate">
-                <allow_active>yes</allow_active>
-                    yes > no
-
-    ## KDE 5
-        nano /usr/share/polkit-1/actions/org.freedesktop.login1.policy
-            # line 288
-            <action id="org.freedesktop.login1.hibernate">
-                <allow_active>yes</allow_active>
-                    yes > no
-
-            # line 298
-            <action id="org.freedesktop.login1.hibernate-multiple-sessions">
-                <allow_active>yes</allow_active>
-                    yes > no
 
 ## KDE 5 resize the "start menu"/Kickoff
     ## Kickoff was redesign/update in KDE 5.21, need to install the legacy kickoff
