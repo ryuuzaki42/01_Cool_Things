@@ -183,10 +183,10 @@ chown root ${swapFilePace}swapFile.img
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
     ## Change the "SSD_MOUNT" in the scrpit for your partition mount folder
         # For me, weekly is enough
-        cp doFstrim.sh /etc/cron.weekly/
+        cp doFstrim_JBs.sh /etc/cron.weekly/
 
         ## To test:
-            /etc/cron.weekly/doFstrim.sh
+            /etc/cron.weekly/doFstrim_JBs.sh
 
     ## See all add
         crontab -l
