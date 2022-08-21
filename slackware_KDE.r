@@ -27,19 +27,19 @@ StartServer=true > StartServer=false
 
 ## Copy <install> configs ## Configuration files to update in the system
     ## lilo.conf
-cp lilo.conf /etc/lilo.conf
+cp lilo.conf_JBc.sh /etc/lilo.conf
 
     ## mirrors
-cp mirrors_slackpkg_15.0 /etc/slackpkg/mirrors
+cp mirrors_slackpkg_15.0_JBc.sh /etc/slackpkg/mirrors
 
     ## greylist
-cp greylist_slackpkg /etc/slackpkg/greylist
+cp greylist_slackpkg_JBc.sh /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-cp slackpkgplus.conf_15.0 /etc/slackpkg/slackpkgplus.conf
+cp slackpkgplus.conf_15.0_JBc.sh /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
-cp rc.local /etc/rc.d/rc.local
+cp rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
 # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
