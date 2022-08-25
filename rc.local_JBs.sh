@@ -16,19 +16,6 @@ if [ -x /etc/rc.d/rc.tlp ]; then
     /etc/rc.d/rc.tlp start
 fi
 
-#echo -e "\\n # Starting boot_rcLocal_JBs.sh\\n"
-#/usr/bin/boot_rcLocal_JBs.sh
-
-## If your backlight keyboard doesn't work
-#echo -e "\\n # Starting UPower\\n"
-#qdbus --system org.freedesktop.UPower
-
-## If you have installed NVIDIA video driver with bumblebeed
-#if [ -x /etc/rc.d/rc.bumblebeed ]; then
-#    echo -e "\\n #Starting bumblebeed #\\n"
-#    /etc/rc.d/rc.bumblebeed start
-#fi
-
 echo -e "\\n # Disabling Bluetooth #\\n"
 rfkill block bluetooth
 
@@ -43,3 +30,17 @@ fi
 echo -e "\\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\\n"
 loadkeys br-abnt2
 
+# Others --------------------------------------------------------------------------
+
+#echo -e "\\n # Starting boot_rcLocal_JBs.sh\\n"
+#/usr/bin/boot_rcLocal_JBs.sh
+
+## If your backlight keyboard doesn't work
+#echo -e "\\n # Starting UPower\\n"
+#qdbus --system org.freedesktop.UPower
+
+## If you have installed NVIDIA video driver with bumblebeed
+#if [ -x /etc/rc.d/rc.bumblebeed ]; then
+#    echo -e "\\n #Starting bumblebeed #\\n"
+#    /etc/rc.d/rc.bumblebeed start
+#fi
