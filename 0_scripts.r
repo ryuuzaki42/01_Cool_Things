@@ -1279,8 +1279,27 @@ $ paste arq1.txt arq2.txt
     carregar o configuração padrão/permanente
     sysctl –p
 
-## Kali Linux teclado abnt2 pt-br
-    sudo setxkbmap -model abnt2 -layout br -variant abnt2
+## GNU/Linux change keyboard layout
+    https://docs.slackware.com/howtos:window_managers:keyboard_layout
+
+    ## Load the keyboard map. More maps are in /usr/share/kbd/keymaps/
+    ## /usr/share/kbd/keymaps/i386/qwerty/br-abnt2.map.gz
+
+    ## Console
+        loadkeys br-abnt2
+
+        ## or
+            loadkeys us-acentos
+
+            loadkeys br-abnt
+
+    ## X
+        setxkbmap -model abnt2 -layout br -variant abnt2
+
+        ## or
+            setxkbmap -model abnt2 -layout br
+
+            setxkbmap -model thinkpad60 -layout br
 
 ## Mover para pastas
     i=1; while [ $i -lt 25 ]; do mv *S02E$i* $i; i=$((i+1)); done
