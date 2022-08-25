@@ -7,33 +7,39 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 #
-# Last update: 12/08/2022
+# Last update: 25/08/2022
 #
 
 if [ -x /etc/rc.d/rc.tlp ]; then
-    echo -e "\\nStarting tlp\\n"
+    echo -e "\\n # Starting tlp\\n"
     # https://github.com/linrunner/TLP
     /etc/rc.d/rc.tlp start
 fi
 
-#echo -e "\\nStarting boot_rcLocal_JBs.sh\\n"
+#echo -e "\\n # Starting boot_rcLocal_JBs.sh\\n"
 #/usr/bin/boot_rcLocal_JBs.sh
 
 ## If your backlight keyboard doesn't work
-#echo -e "\\nStarting UPower\\n"
+#echo -e "\\n # Starting UPower\\n"
 #qdbus --system org.freedesktop.UPower
 
-## If you have installed Nvidia video driver with bumblebeed
+## If you have installed NVIDIA video driver with bumblebeed
 #if [ -x /etc/rc.d/rc.bumblebeed ]; then
-#    echo -e "\\nStarting bumblebeed\\n"
+#    echo -e "\\n #Starting bumblebeed #\\n"
 #    /etc/rc.d/rc.bumblebeed start
 #fi
 
-echo -e "\\nDisabling Bluetooth\\n"
+echo -e "\\n # Disabling Bluetooth #\\n"
 rfkill block bluetooth
 
 if [ -x /etc/rc.d/rc.thinkfan ]; then
-    echo -e "\\nStarting thinkfan\\n"
+    echo -e "\\n # Starting thinkfan #\\n"
     # https://github.com/vmatare/thinkfan
     /etc/rc.d/rc.thinkfan start
 fi
+
+# Load the keyboard map. More maps are in /usr/share/kbd/keymaps/
+# /usr/share/kbd/keymaps/i386/qwerty/br-abnt2.map.gz
+echo -e "\\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\\n"
+loadkeys br-abnt2
+
