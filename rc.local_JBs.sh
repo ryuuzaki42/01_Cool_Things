@@ -30,7 +30,7 @@ fi
 echo -e "\\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\\n"
 loadkeys br-abnt2
 
-# Others --------------------------------------------------------------------------
+# Others ----------------------------------------------------------------------
 
 #echo -e "\\n # Starting boot_rcLocal_JBs.sh\\n"
 #/usr/bin/boot_rcLocal_JBs.sh
@@ -44,3 +44,5 @@ loadkeys br-abnt2
 #    echo -e "\\n #Starting bumblebeed #\\n"
 #    /etc/rc.d/rc.bumblebeed start
 #fi
+
+#------------------------------------------------------------------------------
