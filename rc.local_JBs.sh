@@ -6,10 +6,10 @@
 # anything that needs to be run at shutdown time you can
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
-#
+
+# - JB cs -
 # Last update: 26/08/2022
 #
-
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\\n # Starting tlp #\\n"
     # https://github.com/linrunner/TLP
@@ -30,7 +30,10 @@ fi
 echo -e "\\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\\n"
 loadkeys br-abnt2
 
-# Others ----------------------------------------------------------------------
+#echo -e "\\n # Update time - Notebook without battery #\\n"
+#echo "sleep 10s; usual_JBs.sh date-up"
+#sleep 10s
+#usual_JBs.sh date-up
 
 #echo -e "\\n # Starting boot_rcLocal_JBs.sh #\\n"
 #/usr/bin/boot_rcLocal_JBs.sh
@@ -45,4 +48,4 @@ loadkeys br-abnt2
 #    /etc/rc.d/rc.bumblebeed start
 #fi
 
-#------------------------------------------------------------------------------
+# - JB ce -
