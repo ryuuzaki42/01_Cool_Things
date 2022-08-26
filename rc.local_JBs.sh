@@ -7,11 +7,11 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 #
-# Last update: 25/08/2022
+# Last update: 26/08/2022
 #
 
 if [ -x /etc/rc.d/rc.tlp ]; then
-    echo -e "\\n # Starting tlp\\n"
+    echo -e "\\n # Starting tlp #\\n"
     # https://github.com/linrunner/TLP
     /etc/rc.d/rc.tlp start
 fi
@@ -32,16 +32,16 @@ loadkeys br-abnt2
 
 # Others ----------------------------------------------------------------------
 
-#echo -e "\\n # Starting boot_rcLocal_JBs.sh\\n"
+#echo -e "\\n # Starting boot_rcLocal_JBs.sh #\\n"
 #/usr/bin/boot_rcLocal_JBs.sh
 
 ## If your backlight keyboard doesn't work
-#echo -e "\\n # Starting UPower\\n"
+#echo -e "\\n # Starting UPower #\\n"
 #qdbus --system org.freedesktop.UPower
 
 ## If you have installed NVIDIA video driver with bumblebeed
 #if [ -x /etc/rc.d/rc.bumblebeed ]; then
-#    echo -e "\\n #Starting bumblebeed #\\n"
+#    echo -e "\\n # Starting bumblebeed #\\n"
 #    /etc/rc.d/rc.bumblebeed start
 #fi
 
