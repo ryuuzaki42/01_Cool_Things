@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 21/08/2022
+# Last update: 26/08/2022
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -31,8 +31,8 @@ set -e
 
 countOutput=$(xrandr | grep " connected" | wc -l)
 if [ "$countOutput" -gt 1 ]; then
-    echo -e "\\n# Set the two video output mirror the maximum equal resolution"
-    /usr/bin/monitor_change_resolution_JBs.sh 4 1 1
+    echo -e "\\n # Set the two video output to mirror 1024x768 resolution #\\n"
+    /usr/bin/monitor_change_resolution_JBs.sh 4 0 y
 fi
 
 echo -e "\\n# Locking screen #"
