@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/03/2022
+# Last update: 29/08/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -42,27 +42,27 @@ cp slackpkgplus.conf_15.0_JBc.sh /etc/slackpkg/slackpkgplus.conf
 cp rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
-# https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
-    ## Edit /etc/default/cpufreq to set the desired CPU governor at boot time (make sure /etc/rc.d/rc.cpufreq is executable).
+    # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
 
-    chmod +x /etc/rc.d/rc.cpufreq
+    ## Make sure /etc/rc.d/rc.cpufreq is executable
+        chmod +x /etc/rc.d/rc.cpufreq
 
-# To select a particular CPU governor option for /etc/rc.d/rc.cpufreq,
-# uncomment the line below and edit it to select your choice:
-#SCALING_GOVERNOR=ondemand
-SCALING_GOVERNOR=powersave
+    ## Edit /etc/default/cpufreq and set the desired CPU governor at boot time
+        nano /etc/default/cpufreq
+
+        SCALING_GOVERNOR=powersave
 
     ## Good commands
-    cpufreq-info
+        cpufreq-info
 
-    cpufreq-info | grep driver
+        cpufreq-info | grep driver
 
-    cpufreq-info | grep "governor"
+        cpufreq-info | grep "governor"
 
-    lsmod
+        lsmod
 
 ## Kernel Generic
-    #https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
+    # https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
 
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
@@ -88,6 +88,8 @@ EndSection
 
 ## Thinkpad - TrackPoint enable scrolling with middle button
     # https://wiki.debian.org/InstallingDebianOn/Thinkpad/Trackpoint
+    # Add in file kde_start_JBs.sh
+
     ## To enable vertical scrolling
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
         xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
@@ -116,7 +118,7 @@ Section "Device"
     Driver          "intel"
 EndSection
 
-        # Can add Option Backlight after driver
+        ## Can add Option Backlight after driver
 Option          "Backlight"      "intel_backlight"
 
         ## To use modesetting - xbacklight not works
@@ -139,10 +141,12 @@ kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 rm /usr/share/mime/packages/kde.xml
 update-mime-database /usr/share/mime
 
-## Remove keyboard shortcut "Plasma Desktop Shell: Stop Current Activity"
-    Is assigned meta (windows) + S
-    System Settings > Shortcuts and Gestures > Global Keyboard Shortcuts
-    Select "Plasma Desktop Shell" in KDE component,and in Action Remove the shortcut to "Stop Current Activity"
+## Remove keyboard shortcut Plasma: "Stop Current Activity"
+    ## Path KDE 5
+        System Settings > Shortcuts > Shortcuts >
+        Search for "Plasma"
+        On the list of shortcut select "Stop Current Activity"
+        Unmark Meta (windows) + S
 
 ## Swap in file
     ## Add the /path/to/folder/ - with the and /
