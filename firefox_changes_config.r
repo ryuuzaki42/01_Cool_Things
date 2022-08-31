@@ -215,22 +215,24 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 ## Good add-ons
     ## enabled
 https://addons.mozilla.org/firefox/addon/adblock-plus/
-https://addons.mozilla.org/firefox/addon/sponsorblock/
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
-    # Give error in some website that use parameters
-https://www.zotero.org/download/
+    Give error in some website that use parameters
+
+https://addons.mozilla.org/firefox/addon/sponsorblock/
 
     ## disabled
 https://addons.mozilla.org/firefox/addon/browsec/ # vpn
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
-https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
-https://addons.mozilla.org/firefox/addon/hls-stream-detector/
-https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-
 https://addons.mozilla.org/firefox/addon/languagetool/
     Add to Firefox and login
         https://languagetool.org/
             E-mail and password on Keep
+
+https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
+https://addons.mozilla.org/firefox/addon/print-friendly-pdf/
+https://addons.mozilla.org/firefox/addon/hls-stream-detector/
+https://addons.mozilla.org/firefox/addon/video-downloadhelper/
+https://www.zotero.org/download/
 
     ## others
 https://addons.mozilla.org/firefox/addon/blackbox/
