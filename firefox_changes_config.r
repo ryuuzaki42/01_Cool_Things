@@ -1,5 +1,7 @@
 ## Firefox changes ##
 
+# Last update: 08/09/2022
+
 about:config
 
 ## Disable quit shortcut (ctrl + q)
