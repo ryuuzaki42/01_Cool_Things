@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 29/08/2022
+# Last update: 08/09/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -27,19 +27,19 @@ StartServer=true > StartServer=false
 
 ## Copy <install> configs ## Configuration files to update in the system
     ## lilo.conf
-cp lilo.conf_JBc.sh /etc/lilo.conf
+cp config_JB/lilo.conf_JBc /etc/lilo.conf
 
     ## mirrors
-cp mirrors_slackpkg_15.0_JBc.sh /etc/slackpkg/mirrors
+cp config_JB/mirrors_slackpkg_15.0_JBc /etc/slackpkg/mirrors
 
     ## greylist
-cp greylist_slackpkg_JBc.sh /etc/slackpkg/greylist
+cp config_JB/greylist_slackpkg_JBc /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-cp slackpkgplus.conf_15.0_JBc.sh /etc/slackpkg/slackpkgplus.conf
+cp config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
-cp rc.local_JBs.sh /etc/rc.d/rc.local
+cp config_JB/rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Reduce/Remove electric noise when running Slackware
     # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
@@ -85,6 +85,14 @@ Identifier "Clickpad buttons"
 MatchDriver "synaptics"
 Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
 EndSection
+
+## KDE autostart and lock
+    ## Copy the script to ~/.config/
+    cp config_JB/kde_start_JBs.sh ~/.config/
+
+    ## Added to Autostart script on KDE
+        System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
+            > select the file in the path ~/.config/
 
 ## Thinkpad - TrackPoint enable scrolling with middle button
     # https://wiki.debian.org/InstallingDebianOn/Thinkpad/Trackpoint
@@ -187,7 +195,8 @@ chown root ${swapFilePace}swapFile.img
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
     ## Change the "SSD_MOUNT" in the scrpit for your partition mount folder
         # For me, weekly is enough
-        cp doFstrim_JBs.sh /etc/cron.weekly/
+        cp config_JB/doFstrim_JBs.sh /etc/cron.weekly/
+
 
         ## To test:
             /etc/cron.weekly/doFstrim_JBs.sh
