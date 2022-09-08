@@ -1,3 +1,6 @@
+# slackpkgplus.conf_15.0_JBc
+# Last update: 08/09/2022
+
 # Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
 
@@ -108,6 +111,7 @@ STRICTGPG=on
 #
 #
 # If you want a multilib system, uncomment the 'multilib' repository and set:
+#PKGS_PRIORITY=( multilib )
 PKGS_PRIORITY=( multilib restricted JB JB:mozilla-firefox )
 #
 # (Use /usr/doc/slackpkg+-*/setupmultilib.sh to setup a multilib configuration)
@@ -150,7 +154,7 @@ MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 # Local repository:
 #MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86/
 #
-# Local Mirror - Slackware current - x86_64
+# Local Mirror - Slackware 15.0 - x86_64
 #MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/slackware15.0/13_clone_multilib_Slackware_repo_rsync/15.0/
 
 # Local packages (you do not need metadata nor 'slackpkg update' command):
@@ -178,6 +182,9 @@ MIRRORPLUS['JB']=dir://media/sda2/os/gnu_linux/slackware15.0/
 # It will ask confirmations at every step, unless you will set 'PLUGIN_ZLOOKKERNEL_PROMPT=off'
 # It will manage /boot/vmlinuz by default; if you use kernel generic, please set
 # the PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz-generic to manage it
+#PLUGIN_ZLOOKKERNEL=disable
+#PLUGIN_ZLOOKKERNEL_PROMPT=on
+#PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz
 PLUGIN_ZLOOKKERNEL=enable
 PLUGIN_ZLOOKKERNEL_PROMPT=on
 PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz-generic
@@ -187,6 +194,8 @@ PLUGIN_ZLOOKKERNEL_IMAGE=/boot/vmlinuz-generic
 # 'enable' this setting to enable it. Also set 'PLUGIN_ZCHANGELOGS_SHOW=on' to print
 # the changes in standard output at the end of 'update' process.
 # read /usr/libexec/slackpkg/functions.d/zchangelog.sh for more information
+#PLUGIN_ZCHANGELOG=disable
+#PLUGIN_ZCHANGELOG_SHOW=off
 PLUGIN_ZCHANGELOG=enable
 PLUGIN_ZCHANGELOG_SHOW=on
 #
