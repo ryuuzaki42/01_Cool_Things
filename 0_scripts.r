@@ -2165,3 +2165,17 @@ deactivate
         screen
         xterm
         xterm-color
+
+## Mount partition/device like KDE Dolphin under: /run/media/<User>/<Device Name>/
+    ## Mount
+        #udisksctl mount -b /dev/sdXY
+
+        udisksctl mount -b /dev/sdb1
+
+        udisksctl mount -b /dev/sda5
+
+    ## Unmount
+        udisksctl unmount -b /dev/sdb1
+
+    ## Status
+        udisksctl status
