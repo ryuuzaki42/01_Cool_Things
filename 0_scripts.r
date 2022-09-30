@@ -1,4 +1,14 @@
+
     ## Script.r - Greats commands for day life ##
+
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# Mande me um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 30/09/2022
+#
 
 ## Process with more CPU use
     ps -aux --sort=-pcpu | head
@@ -1183,6 +1193,13 @@ $ paste arq1.txt arq2.txt
         # Linux mint
             kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
 
+## Add to mound "data partition"
+    udisksctl mount -b /dev/sdXY
+
+    udisksctl mount -b /dev/sda4
+
+    udisksctl mount -b /dev/sda4; kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
+
 ## Kernel upgrade (kernel driver not installed)
     # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv.
     # Please reinstall the kernel module by executing
@@ -1192,8 +1209,7 @@ $ paste arq1.txt arq2.txt
     nano /etc/group
     vboxuser: $user$
 
-        #or
-
+    #or
     usermod -a -G vboxusers $user$
 
     usermod -a -G vboxusers j
@@ -1213,6 +1229,8 @@ $ paste arq1.txt arq2.txt
 
     ## Compact with VirtualBox
         VBoxManage modifyhd vmDisk.vdi --compact
+
+        VBoxManage modifyhd Windows\ 7\ 64.vdi --compact
 
 ## VirtualBox define screen size
     vboxmanage setextradata 'VM Name' CustomVideoMode1 1366x768x32
