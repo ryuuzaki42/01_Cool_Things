@@ -8,7 +8,7 @@
 # commands in there.
 
 # - JB cs -
-# Last update: 26/08/2022
+# Last update: 07/10/2022
 #
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\\n # Starting tlp #\\n"
@@ -29,6 +29,11 @@ fi
 # /usr/share/kbd/keymaps/i386/qwerty/br-abnt2.map.gz
 echo -e "\\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\\n"
 loadkeys br-abnt2
+
+echo -e "\\n # Starting Teamviewer #\\n"
+if [ -x /etc/rc.d/rc.teamviewerd ]; then
+    /etc/rc.d/rc.teamviewerd start
+fi
 
 #echo -e "\\n # Update time - Notebook without battery #\\n"
 #echo "sleep 10s; usual_JBs.sh date-up"
