@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/09/2022
+# Last update: 07/10/2022
 #
 
 ## Process with more CPU use
@@ -1893,8 +1893,20 @@ echo "1.0.0
                 dd if=sdX1 of=/dev/sdY1 bs=64K conv=noerror,sync status=progress
 
 ## KDE5 - Telegram not show icon in notification area
-    Delete the file:
-        ~/.config/kded5rc
+    ## Edit the file
+        nano ~/.config/kded5rc
+
+        ## And enable statusnotifierwatcher:
+            [Module-statusnotifierwatcher]
+            autoload=false
+
+            ## > to
+                autoload=true
+
+    ## Or delete the file
+        rm ~/.config/kded5rc
+
+    ## Need logout and relogin to work
 
 ## KDE 5 - noise when starting session
     pavucontrol
@@ -2186,7 +2198,7 @@ deactivate
 
 ## Mount partition/device like KDE Dolphin under: /run/media/<User>/<Device Name>/
     ## Mount
-        #udisksctl mount -b /dev/sdXY
+        # udisksctl mount -b /dev/sdXY
 
         udisksctl mount -b /dev/sdb1
 
@@ -2197,3 +2209,82 @@ deactivate
 
     ## Status
         udisksctl status
+
+## Teamviewer not starting GUI
+    ## Requires libminizip
+
+    ## Edit the file
+        nano ~/.config/kded5rc
+
+        ## And enable statusnotifierwatcher:
+            [Module-statusnotifierwatcher]
+            autoload=false
+
+            ## > to
+                autoload=true
+
+    ## Or delete the file
+        rm ~/.config/kded5rc
+
+    ## Need logout and relogin to work
+
+## KDE config of themes
+     ~/.config/kdeglobals
+
+## Steam
+    ## Mount "Windows/NTFS" partition like KDE under /run/media/<User>/<Device>
+        udisksctl mount -b /dev/sda5
+
+        udisksctl mount -b /dev/sda5; export TERM=xterm; /usr/bin/steam %U
+
+    ## Limit FPS
+        +fps_max 60
+
+        ## like:
+            primusrun %command% +fps_max 60
+
+    ## Run games with mangohud, add to launch option:
+        mangohud %command%
+
+        mangohud primusrun %command%
+
+        __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia mangohud %command%
+
+    ## Errors
+        ## (steam:10587): LIBDBUSMENU-GLIB-WARNING **: 16:00:24.789: About to Show called on an item wihtout submenus.  We're ignoring it.
+            ## Change the shortcut to:
+                export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0; /usr/bin/steam %U
+
+            ## Better reset/rebuild install
+                steam --reset
+                steam
+
+        ## sh: lspci: command not found
+            ln -s /sbin/lspci /usr/bin/
+
+    ## Games errors
+        ## Portal 2 and Portal Stories: Mel:
+            ## Error: "libtcmalloc-minimal4: not found " - i386
+                Solution: Install gperftools-$version-i586
+                https://steamcommunity.com/sharedfiles/filedetails/?id=469285436
+
+        ## BattleBlock Theater won't start on Linux
+            https://steamcommunity.com/app/238460/discussions/1/451848855012217196/?ctp=3
+
+        ## Songs for a Hero (A Lenda do Herói)
+            Unhandled Exception:
+                System.TypeInitializationException: The type initializer for 'System.Console' threw an exception.
+                ---> System.TypeInitializationException: The type initializer for 'System.ConsoleDriver' threw an exception.
+                ---> System.Exception: Magic number is wrong: 542
+
+            ## Edit steam shortcut
+                export TERM=xterm; /usr/bin/steam %U
+
+            ## or run
+                export TERM=xterm;
+                steam
+
+        ## Failed to create GL context; could not create GL context: BadValue {integer parameter out of range for operation}
+            Left 4 Dead 2 error after Nvidia Update
+
+            ## Rebooting loaded the new driver and associated files
