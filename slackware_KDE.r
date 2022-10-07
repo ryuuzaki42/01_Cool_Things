@@ -42,13 +42,28 @@ cp config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
 cp config_JB/rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Compare JB config
-    diff -s config_JB/doFstrim_JBs.sh /etc/cron.weekly/doFstrim_JBs.sh; \
-    diff -s config_JB/greylist_slackpkg_JBc /etc/slackpkg/greylist; \
-    diff -s config_JB/kde_start_JBs.sh ~/.config/kde_start_JBs.sh; \
-    diff -s config_JB/lilo.conf_JBc /etc/lilo.conf; \
-    diff -s config_JB/mirrors_slackpkg_15.0_JBc /etc/slackpkg/mirrors; \
-    diff -s config_JB/rc.local_JBs.sh /etc/rc.d/rc.local; \
-    diff -s config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
+check_file(){
+    file1=$1
+    file2=$2
+
+    echo -e "\\n    # diff -s $file1 $file2 #\\n"
+    diff -s $file1 $file2
+}
+
+files_check=("config_JB/doFstrim_JBs.sh" "/etc/cron.weekly/doFstrim_JBs.sh"
+"config_JB/greylist_slackpkg_JBc" "/etc/slackpkg/greylist"
+"config_JB/kde_start_JBs.sh" "~/.config/kde_start_JBs.sh"
+"config_JB/lilo.conf_JBc" "/etc/lilo.conf"
+"config_JB/mirrors_slackpkg_15.0_JBc" "/etc/slackpkg/mirrors"
+"config_JB/rc.local_JBs.sh" "/etc/rc.d/rc.local"
+"config_JB/slackpkgplus.conf_15.0_JBc" "/etc/slackpkg/slackpkgplus.conf")
+
+count_files=${#files_check[*]}
+i=0
+while [ "$i" -lt "$count_files" ]; do
+    check_file "${files_check[i]}" "${files_check[$i+1]}"
+    i=$((i + 2))
+done
 
 ## Reduce/Remove electric noise when running Slackware
     # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
