@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/09/2022
+# Last update: 07/10/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -40,6 +40,15 @@ cp config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
 cp config_JB/rc.local_JBs.sh /etc/rc.d/rc.local
+
+## Compare JB config
+    diff -s config_JB/doFstrim_JBs.sh /etc/cron.weekly/doFstrim_JBs.sh; \
+    diff -s config_JB/greylist_slackpkg_JBc /etc/slackpkg/greylist; \
+    diff -s config_JB/kde_start_JBs.sh ~/.config/kde_start_JBs.sh; \
+    diff -s config_JB/lilo.conf_JBc /etc/lilo.conf; \
+    diff -s config_JB/mirrors_slackpkg_15.0_JBc /etc/slackpkg/mirrors; \
+    diff -s config_JB/rc.local_JBs.sh /etc/rc.d/rc.local; \
+    diff -s config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
 
 ## Reduce/Remove electric noise when running Slackware
     # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
