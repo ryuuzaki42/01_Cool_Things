@@ -22,12 +22,13 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 26/08/2022
+# Last update: 08/10/2022
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
 #
-set -e
+set -eE
+trap 'echo -e "\\n\\n${RED}Error at line $LINENO$NC - Command:\\n$RED$BASH_COMMAND\\n"' ERR
 
 countOutput=$(xrandr | grep " connected" | wc -l)
 if [ "$countOutput" -gt 1 ]; then

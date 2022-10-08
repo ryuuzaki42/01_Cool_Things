@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/10/2022
+# Last update: 08/10/2022
 #
 
 ## Process with more CPU use
@@ -2288,3 +2288,7 @@ deactivate
             Left 4 Dead 2 error after Nvidia Update
 
             ## Rebooting loaded the new driver and associated files
+
+## Bash exist with command get an error and print line and command
+    set -eE
+    trap 'echo -e "\\n\\n${RED}Error at line $LINENO$NC - Command:\\n$RED$BASH_COMMAND\\n"' ERR
