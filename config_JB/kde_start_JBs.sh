@@ -28,7 +28,7 @@
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
 #
 set -eEuo pipefail
-trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\e[1;31m\\n"' ERR
+trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\033[0m\\n"' ERR
 
 countOutput=$(xrandr | grep " connected" | wc -l)
 if [ "$countOutput" -gt 1 ]; then
