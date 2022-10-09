@@ -2290,5 +2290,20 @@ deactivate
             ## Rebooting loaded the new driver and associated files
 
 ## Bash exist with command get an error and print line and command
-    set -eE
-    trap 'echo -e "\\n\\n${RED}Error at line $LINENO$NC - Command:\\n$RED$BASH_COMMAND\\n"' ERR
+    https://kvz.io/bash-best-practices.html
+    http://redsymbol.net/articles/unofficial-bash-strict-mode/
+
+    set -o errexit (a.k.a. set -e) to make your script exit when a command fails.
+        Then add || true to commands that you allow to fail.
+    Use set -o nounset (a.k.a. set -u) to exit when your script tries to use undeclared variables.
+    Use set -o xtrace (a.k.a set -x) to trace what gets executed. Useful for debugging.
+    Use set -o pipefail in scripts to catch mysqldump fails in e.g. mysqldump |gzip.
+        The exit status of the last command that threw a non-zero exit code is returned.
+    #!/usr/bin/env bash is more portable than #!/bin/bash.
+
+    set -eE # Same as: set -o errexit -o errtrace
+    trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
+
+    ## Use
+        set -eEuo pipefail
+        trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
