@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/10/2022
+# Last update: 11/10/2022
 #
 
 ## Process with more CPU use
@@ -343,7 +343,7 @@ int main(){
     ## With root - VALUE - 0 to 3 (0 off, 3 max)
         echo VALUE > /sys/class/leds/asus\:\:kbd_backlight/brightness
 
-    ## wihtout root - VALUE - 0 to 3 (0 off, 3 max)
+    ## without root - VALUE - 0 to 3 (0 off, 3 max)
         dbus-send --type=method_call --print-reply=literal --system --dest='org.freedesktop.UPower' \
         '/org/freedesktop/UPower/KbdBacklight' 'org.freedesktop.UPower.KbdBacklight.SetBrightness' "int32:VALUE"
 
@@ -834,14 +834,33 @@ rm $tmpFile # Delete the tmpFile
     filename=$(basename "$url")
     echo "file name: $filename"
 
-## LiLo login/command boot wihtout password
-    linux single
+## LiLo login/command boot without password
+    <label> single init=/bin/<shell>
 
-    ## In the Slackware
-    linux single init=/bin/bash rw
+    <label> init=/bin/<shell>
+        ## remount rw, update passwd and remount ro
 
     ## Set the new password
-    passwd
+        passwd
+
+    ## Examples
+        linux single init=/bin/sh
+
+        linux init=/bin/sh
+
+        ## Slackware
+            Slackware single init=/bin/bash rw
+
+        ## or
+            Slackware init=/bin/bash
+                # System with minimal services and it is mounted read only
+
+            mount -o remount,rw /
+
+            passwd
+
+            ## Be sure to finally remount your / as ro or something might screw up
+            mount -o remount,ro /
 
 ## Grub login/command boot without password
     ## In the Grub menu, select the entry and press "e" to edit
@@ -2251,7 +2270,7 @@ deactivate
         __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia mangohud %command%
 
     ## Errors
-        ## (steam:10587): LIBDBUSMENU-GLIB-WARNING **: 16:00:24.789: About to Show called on an item wihtout submenus.  We're ignoring it.
+        ## (steam:10587): LIBDBUSMENU-GLIB-WARNING **: 16:00:24.789: About to Show called on an item without submenus.  We're ignoring it.
             ## Change the shortcut to:
                 export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0; /usr/bin/steam %U
 
