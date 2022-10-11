@@ -359,3 +359,10 @@ git rev-list --objects --all \
         ## Everyone on your computer can access it, e.g. malicious NPM modules
 
             git config --global credential.helper store
+
+## Delete last commit
+    ## Leave working directory and not change commit tree
+        git reset --hard HEAD~1
+
+    ## Clean working directory and commint tree
+        git reset --soft HEAD~1
