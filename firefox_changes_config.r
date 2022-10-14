@@ -1,6 +1,6 @@
 ## Firefox changes ##
 
-# Last update: 08/09/2022
+# Last update: 14/10/2022
 
 about:config
 
@@ -217,6 +217,18 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 ## Good add-ons
     ## enabled
 https://addons.mozilla.org/firefox/addon/adblock-plus/
+    + Block additional tracking
+    + Block cookie warnings
+    + Block push notifications
+    + Block social media icons tracking
+
+    + Show acceptable ads
+        + Only allow ads without third-party tracking
+
+    > Language filter lists
+        - English (EasyList)
+        + português + English (EasyList Portuguese+EasyList)
+
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
     Give error in some website that use parameters
 
