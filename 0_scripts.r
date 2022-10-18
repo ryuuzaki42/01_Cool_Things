@@ -2326,3 +2326,18 @@ deactivate
     ## Use
         set -eEuo pipefail
         trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
+
+## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
+    > Boot USB ISO
+        Select language > next
+        Repair your computer > Advanced options > Command Prompt
+
+    ## bootrec BCD (Boot Configuration Data) run all options
+        bootrec /FixMbr
+        bootrec /FixBoot
+        bootrec /ScanOs
+        bootrec /RebuildBcd
+
+## Windows - Partition not recognized as NTFS after clone
+    ## MiniTool Partition Wizard
+        Select the partition > Change Partition Type ID > Set 0x07 NTFS
