@@ -2245,6 +2245,22 @@ deactivate
 
     ## Need logout and relogin to work
 
+## TeamViewer easy remote access
+    > Login
+
+    > Contatc > Add Remote Computer
+        ID, Password, Alias
+
+    > Extras > Options
+        > General
+            > Account to assignment > Assign
+
+        > Security
+            > Grant $USER Easy Access > accept
+
+        > Advanced
+            > Personal password > Add one
+
 ## KDE config of themes
      ~/.config/kdeglobals
 
