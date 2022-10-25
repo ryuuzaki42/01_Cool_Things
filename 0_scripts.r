@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 11/10/2022
+# Last update: 25/10/2022
 #
 
 ## Process with more CPU use
@@ -720,7 +720,7 @@ rm $tmpFile # Delete the tmpFile
     # or with -layout to keep the layout
     pdftotext -layout input.pdf output.txt
 
-## sed - delete/remove and resplace values
+## sed - delete/remove and replace values
     ## Replace/remove multiple empty line with one empty line
         sed '/^$/N;/^\n$/D' inputfile
 
@@ -1101,7 +1101,7 @@ $ paste arq1.txt arq2.txt
 
     lftp -c 'open http://slackware.uk/people/alien/slackbuilds/vlc/ ; mirror -c -e build/'
 
-## Informações do Ip externo acesse
+## Informações do IP externo
     http://ip-lookup.net/
 
 ## Screenshot de 5 em 5 segundo no terminal
@@ -1717,8 +1717,6 @@ fi
     bcdedit /set {default} bootmenupolicy standard
 
 ## Remover vírus o Recycler bin
-    # Link: (http://www.artigonal.com/seguranca-artigos/como-remover-o-virus-recy
-    # cler-que-transforma-pastas-em-atalho-e-como-recuperar-seus-arquivos-novamente-6387104.html)
     attrib -a -h -r -s /s /d *.* # dentro da unidade
 
     -R Limpa o Atributo de arquivo somente leitura
@@ -1879,7 +1877,7 @@ echo "1.0.0
 1.0.0.1019
 1.0.0.7" | sort --version-sort --field-separator=. --key=4
 
-## Andriod .thumbnails with large .thumbdata4-xxxxxx thumbs data
+## Android .thumbnails with large .thumbdata4-xxxxxx thumbs data
     ## Delete the folder .thumbnails
 
     ## Added a file with name .thumbnails
@@ -1948,12 +1946,12 @@ echo "1.0.0
 
 ## Reinstall Lilo - Chroot method
     # Insert and boot your installation media
-    ## Somethimes you can boot your system from here with a command like:
+    ## Sometimes you can boot your system from here with a command like:
         boot: huge.s root=/dev/sda1 rdinit= ro
 
         ## Once booted run liloconfig
 
-    ## Other thimes you need chrooting method
+    ## Other times you need chrooting method
         # Boot and login as root when prompted but do not run setup
         ## Mounting
             mount /dev/sdX1 /mnt # (where /dev/sdx1 is your / partition)
@@ -2133,7 +2131,7 @@ autosubsync "$@"
 
 deactivate
 
-    ## Add permissions to the script to runn
+    ## Add permissions to the script to run
         chmod +x autosubsync.sh
 
     ## Test the code before create the package in local folder
@@ -2341,3 +2339,47 @@ deactivate
 ## Windows - Partition not recognized as NTFS after clone
     ## MiniTool Partition Wizard
         Select the partition > Change Partition Type ID > Set 0x07 NTFS
+
+## Windows detects HDD as SSD - Re-enable defragmentation
+    ## cmd as admin
+        winsat formal
+
+## snap
+    ## Extract snap
+        ## Example with authy
+            # https://aur.archlinux.org/packages/authy
+            # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=authy
+            wget https://api.snapcraft.io/api/v1/snaps/download/H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
+
+        unsquashfs H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
+
+    ## Run
+        cd squashfs-root/
+        ./authy
+
+## Extract .exe program
+    1 Check if has one portable version
+
+    2 Rename the .exe to .rar or .zip and try extrart with ark or 7-Zip
+
+    3 Install the program in the Windows and copy the install folder
+
+## AppImage
+    ## Extract AppImage
+        ./Prog.AppImage --appimage-extract
+
+        ./WinRar_5.01.AppImage --appimage-extract
+
+    ## File name is defined in:
+        squashfs-root/Prog.desktop
+
+        squashfs-root/WinRAR.desktop
+            Name=winrar-6.11
+
+    ## Create AppImage with ARCH=x86_64
+        # https://github.com/AppImage/AppImageKit/releases/latest
+
+        ./appimagetool-x86_64.AppImage --version
+        appimagetool, continuous build (commit 8bbf694), build <local dev build> built on 2020-12-31 11:48:33 UTC
+
+        ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
