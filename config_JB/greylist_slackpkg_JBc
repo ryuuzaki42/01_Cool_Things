@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 19/08/2022
+# Last update: 25/10/2022
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -52,6 +52,7 @@ elementary-xfce
 emacspeak
 gnome-themes-extra
 kleopatra
+kalarm
 knights
 libgtop
 mousepad

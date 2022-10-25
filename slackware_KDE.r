@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/10/2022
+# Last update: 25/10/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -275,7 +275,7 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
 ## Remove akonadi
     slackpkg remove akonadi akonadi-calendar akonadi-calendar-tools akonadi-contacts akonadi-notes
-    slackpkg remove akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole
+    slackpkg remove akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole kalarm
 
 ## Remove some added to XFCE
     slackpkg remove elementary-xfce gnome-themes-extra xfce4-panel-profiles xfce4-screensaver xfce4-whiskermenu-plugin thunar mousepad Greybird
