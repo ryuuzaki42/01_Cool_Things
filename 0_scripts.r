@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/10/2022
+# Last update: 26/10/2022
 #
 
 ## Process with more CPU use
@@ -2399,3 +2399,7 @@ deactivate
         appimagetool, continuous build (commit 8bbf694), build <local dev build> built on 2020-12-31 11:48:33 UTC
 
         ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
+
+## Windows God Mode
+    > new folder, set name as:
+        GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
