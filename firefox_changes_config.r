@@ -1,6 +1,6 @@
 ## Firefox changes ##
 
-# Last update: 14/10/2022
+# Last update: 28/10/2022
 
 about:config
 
@@ -78,22 +78,23 @@ steam://run/
 /usr/bin/steam
 
 ## Telegram to open links
-    about:config > new > boolean > name
+    about:config
+        > new > boolean > name
 network.protocol-handler.expose.tg
     > false
 
-    Create a link by opening the following URL
+    ## Create a link by opening the following URL
 data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
-
-    > telegram_run.sh
-        # se more below
 
     ~/.config/mimeapps.list
         x-scheme-handler/tg=telegram_opera.desktop;
 
-Obs: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
+    ## Firefox
+        > about:preferences#general > about:preferences#general
+            tg >
+                Use telegram_run.sh
 
-        Firefox
+            # Obs: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
             > telegram_run.sh
 #!/bin/bash
 
@@ -108,7 +109,7 @@ else
     LC_TIME=en_IE.UTF-8 ./Telegram -workdir ~/.local/share/TelegramDesktop/ -- %u
 fi
 
-        Opera and others
+        ## Opera and others
             > telegram_opera.desktop
 #!/usr/bin/env xdg-open
 [Desktop Entry]
