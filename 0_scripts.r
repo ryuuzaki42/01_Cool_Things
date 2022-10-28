@@ -2360,13 +2360,32 @@ deactivate
     ## cmd as admin
         winsat formal
 
-## snap
-    ## Extract snap
-        ## Example with authy
-            # https://aur.archlinux.org/packages/authy
-            # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=authy
-            wget https://api.snapcraft.io/api/v1/snaps/download/H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
+## Snap
+    ## download package
+    # https://unix.stackexchange.com/questions/560065/how-can-i-manually-download-a-snap-package-for-example-with-wget
+    curl -H 'Snap-Device-Series: 16' http://api.snapcraft.io/v2/snaps/info/chromium > chromium.info
 
+prog_name="authy"
+curl -H 'Snap-Device-Series: 16' http://api.snapcraft.io/v2/snaps/info/$prog_name > $prog_name.info
+kwrite $prog_name.info
+
+        ## Look for url in last version
+            "version":"2.2.1"
+
+            wget https://api.snapcraft.io/api/v1/snaps/download/H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
+            rm $prog_name.info
+
+        ## Or try by aur packages, combine url
+            # https://aur.archlinux.org/packages/authy
+            https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=authy
+
+            _snapid="H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn"
+            _snaprev="11"
+            source=("https://api.snapcraft.io/api/v1/snaps/download/${_snapid}_${_snaprev}.snap")
+
+                wget https://api.snapcraft.io/api/v1/snaps/download/H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
+
+    ## Extract snap
         unsquashfs H8ZpNgIoPyvmkgxOWw5MSzsXK1wRZiHn_11.snap
 
     ## Run
