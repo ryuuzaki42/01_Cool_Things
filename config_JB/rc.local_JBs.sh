@@ -6,9 +6,8 @@
 # anything that needs to be run at shutdown time you can
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
-
 # - JB cs -
-# Last update: 25/10/2022
+# Last update: 09/11/2022
 #
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\\n # Starting tlp #\\n"
@@ -36,9 +35,18 @@ loadkeys br-abnt2
 #fi
 
 #echo -e "\\n # Update time - Notebook without battery #\\n"
-#echo "sleep 10s; usual_JBs.sh date-up"
-#sleep 10s
-#usual_JBs.sh date-up
+#count=0
+#while [ "$count" -lt '10' ]; do
+#    result_date_up=$(usual_JBs.sh date-up)
+#    if echo "$result_date_up" | grep -q "Time updated"; then
+#        count=10
+#    else
+#        ((count++))
+#        echo -n "$count "
+#        sleep 1s
+#    fi
+#done
+#echo "$result_date_up"
 
 #echo -e "\\n # Starting boot_rcLocal_JBs.sh #\\n"
 #/usr/bin/boot_rcLocal_JBs.sh
