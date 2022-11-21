@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/10/2022
+# Last update: 21/11/2022
 #
 
 ## Process with more CPU use
