@@ -22,22 +22,30 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 09/10/2022
+# Last update: 21/11/2022
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
 #
-countOutput=$(xrandr | grep " connected" | wc -l)
-if [ "$countOutput" -gt 1 ]; then
-    echo -e "\\n # Set the two video output to mirror 1024x768 resolution #\\n"
-    /usr/bin/monitor_change_resolution_JBs.sh 4 0 y
+change_resolution=1
+lock_screen=1
+thinkpad_notebook=0
+
+if [ "$change_resolution" == '1' ]; then
+    countOutput=$(xrandr | grep " connected" | wc -l)
+    if [ "$countOutput" -gt 1 ]; then
+        sleep 1s # A little time to Startup
+        echo -e "\\n # Set the two video output to mirror 1024x768 resolution #\\n"
+        /usr/bin/monitor_change_resolution_JBs.sh 4 0 y
+    fi
 fi
 
-echo -e "\\n# Locking screen #"
-qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
+if [ "$lock_screen" == '1' ]; then
+    echo -e "\\n# Locking screen #"
+    qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
+fi
 
-thinkpadNotebook=1
-if [ "$thinkpadNotebook" == "1" ]; then
+if [ "$thinkpad_notebook" == '1' ]; then
     # To enable vertical scrolling:
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
