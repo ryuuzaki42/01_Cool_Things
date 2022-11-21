@@ -2422,3 +2422,14 @@ kwrite $prog_name.info
 ## Windows God Mode
     > new folder, set name as:
         GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+
+## Send message to all terminals / tty
+    wall "The system will be restarted in 10 minutes"
+
+    echo "Hello" | wall
+
+    ## To see all the logged-in users
+        w
+
+        #or
+        who
