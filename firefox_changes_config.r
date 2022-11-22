@@ -1,12 +1,16 @@
 ## Firefox changes ##
 
-# Last update: 28/10/2022
+# Last update: 22/11/2022
 
 about:config
 
 ## Disable quit shortcut (ctrl + q)
-    browser.quitShortcut.disabled
-        false > true
+browser.quitShortcut.disabled
+    false > true
+
+## Use tmp folder to download the files open by the browser
+browser.download.start_downloads_in_tmp_dir
+    false > true
 
 ## Disable cache of 5 tabs recently seen
 browser.sessionhistory.max_total_viewer
@@ -16,12 +20,12 @@ browser.sessionhistory.max_total_viewer
 browser.urlbar.trimURLs
     true > false
 
-## URL more easy to read
+## URL more easy to read - Removed in new versions
 browser.urlbar.formatting.enabled
     true > false
 
 ## Disable all animate
-search for animate, and set all to false
+    search for animate, and set all to false
 
 ## Disables geolocation
 geo.enabled
@@ -41,7 +45,7 @@ browser.send_pings
 ## Website owners can track the battery status of your device
 dom.battery.enabled
 
-## Select all URL
+## Select all URL - Removed in new versions
 browser.urlbar.clickSelectsAll
     false > true
 
@@ -49,7 +53,7 @@ browser.urlbar.clickSelectsAll
 browser.search.openintab
     false > true
 
-## Increase the speed of the scroll
+## Increase the speed of the scroll - Removed in new versions
 mousewheel.system_scroll_override_on_root_content.enabled
     false > true
 
@@ -250,6 +254,11 @@ https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://www.zotero.org/download/
 
     ## others
+
+    ## Change the Content headers to force images and pdf to open in the browser
+https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
+https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
+
 https://addons.mozilla.org/firefox/addon/blackbox/
 https://addons.mozilla.org/firefox/addon/fireshot/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
@@ -260,7 +269,6 @@ https://addons.mozilla.org/firefox/addon/copy-as-plain-text-webext/
 https://addons.mozilla.org/firefox/addon/web-developer/
 https://addons.mozilla.org/firefox/addon/touch-vpn/
 https://addons.mozilla.org/firefox/addon/discard/
-https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
 https://addons.mozilla.org/firefox/addon/popup-blocker-lite/
 https://addons.mozilla.org/firefox/addon/darkreader/
 https://addons.mozilla.org/firefox/addon/downthemall/
