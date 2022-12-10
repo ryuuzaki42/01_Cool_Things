@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/11/2022
+# Last update: 10/12/2022
 #
 
 ## Process with more CPU use
@@ -2433,3 +2433,10 @@ kwrite $prog_name.info
 
         #or
         who
+
+## zenity examples
+    zenity --question --width 450 --title "Title" --text "Question_?" && (echo "Yes 1" && echo "Yes 2") || (echo "No 1" && echo "No 2")
+
+    zenity --question --width 450 --title "Close Steam/Steam Input?" --text "Exit Steam to launch Steam Rom Manager?
+    Desktop controls will temporarily revert to touch/trackpad/L2/R2" && (kill -15 $(pidof steam) & Emulation/tools/srm/Steam-ROM-Manager.AppImage) ||
+    echo "No"
