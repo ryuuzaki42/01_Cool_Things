@@ -1,10 +1,10 @@
 ## Firefox changes ##
 
-# Last update: 22/11/2022
+# Last update: 12/12/2022
 
 about:config
 
-## Disable quit shortcut (ctrl + q)
+## Disable quit shortcut (Ctrl + Q)
 browser.quitShortcut.disabled
     false > true
 
@@ -234,13 +234,23 @@ https://addons.mozilla.org/firefox/addon/adblock-plus/
         - English (EasyList)
         + português + English (EasyList Portuguese+EasyList)
 
+    ## Give error in some website - Add to "Allowlisted websites"
+        pelando.com.br
+
+https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
+    ## Change the Content headers to force images and PDF to open in the browser
+        ## Works with overleaf.com
+
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
-    Give error in some website that use parameters
+    ## Give error in some website theses parameters
+        pelando.com.br
+        aliexpress.com
 
 https://addons.mozilla.org/firefox/addon/sponsorblock/
 
     ## disabled
-https://addons.mozilla.org/firefox/addon/browsec/ # vpn
+https://addons.mozilla.org/firefox/addon/browsec/
+        ## VPN
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/languagetool/
     Add to Firefox and login
@@ -254,11 +264,6 @@ https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://www.zotero.org/download/
 
     ## others
-
-    ## Change the Content headers to force images and pdf to open in the browser
-https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
-https://addons.mozilla.org/firefox/addon/inlinedisposition-webexts/
-
 https://addons.mozilla.org/firefox/addon/blackbox/
 https://addons.mozilla.org/firefox/addon/fireshot/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
