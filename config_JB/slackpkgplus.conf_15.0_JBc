@@ -1,5 +1,5 @@
 # slackpkgplus.conf_15.0_JBc
-# Last update: 08/09/2022
+# Last update: 10/12/2022
 
 # Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
@@ -140,7 +140,9 @@ REPOPLUS=( slackpkgplus )
 #MIRRORPLUS['alienbob']=https://slackware.nl/people/alien/sbrepos/15.0/x86_64
 #MIRRORPLUS['restricted']=https://slackware.nl/people/alien/restricted_sbrepos/15.0/x86_64
 
-MIRRORPLUS['multilib']=https://slackware.uk/people/alien/multilib/15.0
+#MIRRORPLUS['multilib']=https://slackware.uk/people/alien/multilib/15.0
+MIRRORPLUS['multilib']=http://www.slackware.com/~alien/multilib/15.0
+
 MIRRORPLUS['alienbob']=https://slackware.uk/people/alien/sbrepos/15.0/x86_64
 MIRRORPLUS['restricted']=https://slackware.uk/people/alien/restricted_sbrepos/15.0/x86_64
 
