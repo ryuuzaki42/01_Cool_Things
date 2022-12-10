@@ -1,6 +1,6 @@
 ## Firefox changes ##
 
-# Last update: 12/12/2022
+# Last update: 10/12/2022
 
 about:config
 
@@ -147,7 +147,7 @@ full-screen-api.warning.timeout
 pdfjs.defaultZoomValue
     page-width
 
-## Install ffmpeg to full support to html5
+## Install ffmpeg to full support to HTML5
     # To test: https://www.youtube.com/html5
 
 ## Disable Pocket
@@ -248,7 +248,7 @@ https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 
 https://addons.mozilla.org/firefox/addon/sponsorblock/
 
-    ## disabled
+    ## Disabled
 https://addons.mozilla.org/firefox/addon/browsec/
         ## VPN
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
@@ -263,7 +263,7 @@ https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://www.zotero.org/download/
 
-    ## others
+    ## Others
 https://addons.mozilla.org/firefox/addon/blackbox/
 https://addons.mozilla.org/firefox/addon/fireshot/
 https://addons.mozilla.org/firefox/addon/cleancopyurl/
