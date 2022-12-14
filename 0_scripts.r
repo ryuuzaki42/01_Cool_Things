@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 10/12/2022
+# Last update: 14/12/2022
 #
 
 ## Process with more CPU use
@@ -2432,11 +2432,65 @@ kwrite $prog_name.info
         w
 
         #or
-        who
+            who
 
-## zenity examples
-    zenity --question --width 450 --title "Title" --text "Question_?" && (echo "Yes 1" && echo "Yes 2") || (echo "No 1" && echo "No 2")
+## zenity
+    # https://ostechnix.com/zenity-create-gui-dialog-boxes-in-bash-scripts/
 
-    zenity --question --width 450 --title "Close Steam/Steam Input?" --text "Exit Steam to launch Steam Rom Manager?
-    Desktop controls will temporarily revert to touch/trackpad/L2/R2" && (kill -15 $(pidof steam) & Emulation/tools/srm/Steam-ROM-Manager.AppImage) ||
-    echo "No"
+    ## general
+        zenity --help-general
+
+    ## error
+        zenity --help-error
+
+        zenity --error --title "Error Message" --width 500 --height 100 --text "Permission denied. Run with sudo or as root user."
+
+    ## warning
+        zenity --help-warning
+
+        zenity --warning --title "Warning Message" --width 500 --height 100 \
+        --text "Disk space exceeded the threshold limit. Check ASAP."
+
+    ## info
+        zenity --help-info
+
+        zenity --info --title "Info Message" --width 500 --height 100 --text "Installation completed successfully."
+
+    ## question
+        zenity --help-question
+
+        zenity --question --width 450 --title "Title" --text "Question_?" && (echo "Yes 1" && echo "Yes 2") || (echo "No 1" && echo "No 2")
+
+        zenity --question --width 450 --title "Close Steam/Steam Input?" --text "Exit Steam to launch Steam Rom Manager?
+        Desktop controls will temporarily revert to touch/trackpad/L2/R2" && (kill -15 $(pidof steam) & Emulation/tools/srm/Steam-ROM-Manager.AppImage) ||
+        echo "No"
+
+    ## entry
+        zenity --help-entry
+
+        USR=$(zenity --entry --width 500 --title "check user" \
+        --text "Enter the user name"); echo $USR
+
+        USR=$(zenity --entry --width 500 --title "check user" \
+        --text "Enter the user name" --hide-text); echo $USR
+
+        USR=$(zenity --entry --width 500 --title "check user" \
+        --text "Enter the user name" --entry-text "Enter user name here"); echo $USR
+
+    ## text-info
+        zenity --help-text-info
+
+        zenity --text-info --title "Hostname Information" --filename "/etc/hosts"
+
+    ## color
+        zenity --help-color-selection
+
+        zenity --color-selection
+
+        zenity --color-selection --show-palette
+
+    ## file-selection
+        zenity --help-file-selection
+
+        zenity --file-selection --title "Select Files" \
+       --filename "/home/${USER}/" --multiple
