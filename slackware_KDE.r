@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/10/2022
+# Last update: 14/12/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -273,9 +273,15 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 ## Remove nepomuk
     slackpkg remove nepomuk nepomuk-core nepomuk-widgets
 
-## Remove akonadi
+## Remove akonadi* akonadiconsole kalarm
     slackpkg remove akonadi akonadi-calendar akonadi-calendar-tools akonadi-contacts akonadi-notes
     slackpkg remove akonadi-import-wizard akonadi-mime akonadi-search akonadiconsole kalarm
+
+    ## digikam need akonadi-contacts
+        slackpkg remove digikam
+
+## Remove kde-l10n- - others languages for the KDE
+    slackpkg remove kde-l10n-
 
 ## Remove some added to XFCE
     slackpkg remove elementary-xfce gnome-themes-extra xfce4-panel-profiles xfce4-screensaver xfce4-whiskermenu-plugin thunar mousepad Greybird
@@ -283,24 +289,28 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 ## Remove gnome "packages"
     slackpkg remove gcr polkit-gnome gnome-themes gnome-keyring libgnome-keyring
 
-## Remove bluetooth - not recommended if you have bluetooth
-    slackpkg remove bluedevil blueman bluez bluez-firmware
+## Remove Bluetooth
+    ## Not recommended if you have Bluetooth
+        slackpkg remove bluedevil blueman bluez-firmware bluez
 
 ## Remove kleopatra
     slackpkg remove kleopatra
 
 ## Remove others
-    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra
-    slackpkg remove xine-lib xine-ui sendmail sendmail-cf xpdf tetex tetex-doc texlive kget
+    slackpkg remove seamonkey pidgin xchat dragon thunderbird kplayer calligra xine-lib xine-ui
+    slackpkg remove emacs amarok audacious vim-gvim vim sendmail-cf sendmail xpdf kget
 
         ## Dolphin need baloo baloo-widgets
             slackpkg install baloo-widgets
 
         ## xxd (to see file as binary - xxd -b file - is in vim
-            slackpkg install vim vim-gvim
+            slackpkg install vim-gvim vim
 
         ## KDE5 (ktown AlienBob) - AC Power need the bluez-qt
             slackpkg install bluez-qt
+
+## Remove tetex (Slackware 14.2) / texlive (Slackware 15.0 and Current)
+    slackpkg remove tetex-doc tetex texlive
 
 ## Clipboard KDE - change to ignore text selection
     Panel > Icon "Status and Notifications" > Clipboard
