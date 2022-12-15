@@ -5,12 +5,13 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/12/2022
+# Last update: 15/12/2022
 #
 
 ## Make home folder - mount /media/sda2
 mkdir /media/sda2
-chmod 777 /media/sda2
+chmod 755 /media/sda2
+chown j /media/sda2 -R
 
 nano /etc/fstab
 /dev/sda2        /media/sda2      ext4        defaults         1   2
@@ -27,39 +28,37 @@ StartServer=true > StartServer=false
 
 ## Copy <install> configs ## Configuration files to update in the system
     ## lilo.conf
-cp config_JB/lilo.conf_JBc /etc/lilo.conf
+cp lilo.conf_JBc /etc/lilo.conf
 
     ## mirrors
-cp config_JB/mirrors_slackpkg_15.0_JBc /etc/slackpkg/mirrors
+cp mirrors_slackpkg_15.0_JBc /etc/slackpkg/mirrors
 
     ## greylist
-cp config_JB/greylist_slackpkg_JBc /etc/slackpkg/greylist
+cp greylist_slackpkg_JBc /etc/slackpkg/greylist
 
     ## slackpkgplus.conf
-cp config_JB/slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
+cp slackpkgplus.conf_15.0_JBc /etc/slackpkg/slackpkgplus.conf
 
     ## rc.local
-cp config_JB/rc.local_JBs.sh /etc/rc.d/rc.local
+cp rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Compare JB config
-check_file(){
-    file1=$1
-    file2=$2
-
-    echo -e "\\n    # diff -s $file1 $file2 #\\n"
-    diff -s $file1 $file2
+check_file() {
+    command_run="sdiff -s $1 $2"
+    echo -e "\\n # $command_run #"
+    eval "$command_run"
 }
 
-files_check=("config_JB/doFstrim_JBs.sh" "/etc/cron.weekly/doFstrim_JBs.sh"
-"config_JB/greylist_slackpkg_JBc" "/etc/slackpkg/greylist"
-"config_JB/kde_start_JBs.sh" "~/.config/kde_start_JBs.sh"
-"config_JB/lilo.conf_JBc" "/etc/lilo.conf"
-"config_JB/mirrors_slackpkg_15.0_JBc" "/etc/slackpkg/mirrors"
-"config_JB/rc.local_JBs.sh" "/etc/rc.d/rc.local"
-"config_JB/slackpkgplus.conf_15.0_JBc" "/etc/slackpkg/slackpkgplus.conf")
+files_check=("fstrim_JBs.sh" "/etc/cron.weekly/fstrim_JBs.sh"
+"greylist_slackpkg_JBc" "/etc/slackpkg/greylist"
+"kde_start_JBs.sh" "~/.config/kde_start_JBs.sh"
+"lilo.conf_JBc" "/etc/lilo.conf"
+"mirrors_slackpkg_15.0_JBc" "/etc/slackpkg/mirrors"
+"rc.local_JBs.sh" "/etc/rc.d/rc.local"
+"slackpkgplus.conf_15.0_JBc" "/etc/slackpkg/slackpkgplus.conf")
 
-count_files=${#files_check[*]}
 i=0
+count_files=${#files_check[*]}
 while [ "$i" -lt "$count_files" ]; do
     check_file "${files_check[i]}" "${files_check[$i+1]}"
     i=$((i + 2))
@@ -219,11 +218,10 @@ chown root ${swapFilePace}swapFile.img
     # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
     ## Change the "SSD_MOUNT" in the scrpit for your partition mount folder
         # For me, weekly is enough
-        cp config_JB/doFstrim_JBs.sh /etc/cron.weekly/
-
+        cp fstrim_JBs.sh /etc/cron.weekly/
 
         ## To test:
-            /etc/cron.weekly/doFstrim_JBs.sh
+            /etc/cron.weekly/fstrim_JBs.sh
 
     ## See all add
         crontab -l
