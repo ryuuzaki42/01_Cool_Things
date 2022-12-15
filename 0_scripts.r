@@ -315,15 +315,21 @@ int main(){
 
     dmidecode --type bios
 
-## memory info - RAM info
-    # Speed
-    dmidecode -t 17
+    ## Summary
+        for i in baseboard-manufacturer system-version system-product-name chassis-type \
+        system-serial-number bios-release-date bios-version; do
+            echo "$i : $(dmidecode -s $i)"
+        done
 
-    # Maximum Capacity
-    dmidecode -t 16
+    ## memory info - RAM info
+        # Speed
+        dmidecode -t 17
 
-    # All
-    dmidecode -t memory
+        # Maximum Capacity
+        dmidecode -t 16
+
+        # All
+        dmidecode -t memory
 
 ## Dolphin (re)enable warning message dialog before Empty Trash
     nano ~/.config/kiorc
