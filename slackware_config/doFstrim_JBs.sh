@@ -22,23 +22,14 @@
 #
 # Script: fstrim yours partitions in a SSD
 #
-# Last update: 14/11/2017
+# Last update: 15/12/2022
 #
-logFile="/var/log/ssdFtrim.log"
+log_file="/var/log/ssd_fstrim.log"
 
-# Chane for your(s) folder(s) where you mount the SSD partition(s)
-ssdMountPartitions='/ /media/sda2/'
+echo "------------------------------- " | tee -a "$log_file"
+echo "Date: $(date)" | tee -a "$log_file"
 
-if [ ! -e "$logFile" ]; then
-    touch "$logFile"
-fi
+# trim all mounted file systems which support it
+fstrim -v --all | tee -a "$log_file"
 
-echo "------------------------------- " | tee -a "$logFile"
-echo "Date: $(date)" | tee -a "$logFile"
-
-for mntPartition in $ssdMountPartitions; do
-    echo -e "\\nfstrim -v $mntPartition" | tee -a "$logFile"
-    fstrim -v "$mntPartition" | tee -a "$logFile"
-done
-
-echo "------------------------------- " | tee -a "$logFile"
+echo "------------------------------- " | tee -a "$log_file"
