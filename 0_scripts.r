@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/12/2022
+# Last update: 15/12/2022
 #
 
 ## Process with more CPU use
@@ -2500,3 +2500,11 @@ kwrite $prog_name.info
 
         zenity --file-selection --title "Select Files" \
        --filename "/home/${USER}/" --multiple
+
+## fstrim
+    ## trim all mounted file systems which support it
+        fstrim -v --all
+
+    ## To specific partition
+        # fstrim -v $mntPartition
+        fstrim -v /media/sda2
