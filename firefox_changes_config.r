@@ -1,7 +1,7 @@
 ## Firefox changes ##
-
-# Last update: 10/12/2022
-
+#
+# Last update: 16/12/2022
+#
 about:config
 
 ## Disable quit shortcut (Ctrl + Q)
@@ -208,8 +208,11 @@ about:support
 ## Youtube older version, Polymer Off
     link + ?disable_polymer=true
 
-    # playlist:
+    ## playlist:
         link + &disable_polymer=true
+
+    ## Muilt select for Youtube
+        https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
 
     ## For all link use one script
         https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
