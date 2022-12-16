@@ -84,6 +84,22 @@ done
 
         lsmod
 
+## Laptop battery charging threshold limit
+    ## Folder of configuration and informations
+        #cd /sys/class/power_supply/BATTERY_NAME/
+        cd /sys/class/power_supply/BAT0/
+
+        cat capacity
+        cat status
+
+        cat charge_control_start_threshold
+        cat charge_control_end_threshold
+
+    ## KDE configuration
+        System Settings > Power Management > Advanced Power Settings
+            Stop charging at: 95%
+            Start charging only once below: 50%
+
 ## Kernel Generic
     # https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
 
