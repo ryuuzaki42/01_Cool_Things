@@ -293,7 +293,6 @@ git rev-list --objects --all \
 ## Git show remote URL
     git config --get remote.origin.url
 
-
 ## Add gpg sign key in commits by the IDE Smartgit
     # https://help.github.com/articles/signing-commits-with-gpg/
 

@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/12/2022
+# Last update: 17/12/2022
 #
 
 ## Process with more CPU use
@@ -968,7 +968,6 @@ rm $tmpFile # Delete the tmpFile
     "Raising Elephants Is So Utterly Boring", "Reboot Even If System Utterly Broken"
     or simply the word "BUSIER" read backwards
 
-
 ## Conversão de fim de linha entre sistemas operacionais (*nix e Windows)
     # Nos sistemas *nix, o fim de linha é assinalado pelo caracter line feed,
     # logo não existe um posicionamento na primeira coluna da próxima linha.
@@ -1814,7 +1813,6 @@ fi
                 | skip_networking | OFF   |
                 +-----------------+-------+
 
-
             ## Verifique se a porta foi definida corretamente
                 MariaDB [(none)]> SHOW GLOBAL VARIABLES LIKE 'PORT';
 
@@ -2508,3 +2506,18 @@ kwrite $prog_name.info
     ## To specific partition
         # fstrim -v $mntPartition
         fstrim -v /media/sda2
+
+## Replace multiple empty lines with a single empty line
+    # Remove two empty lines
+
+    cat -s file.txt
+    #-s --squeeze-blank: suppress repeated empty output lines
+
+    sed 'N;/^\n$/D;P;D;' file.txt
+
+    ## All files in folder - ignoring .git/ folder
+        for file in $(find . -type f -maxdepth 1 | grep -v ".git/"); do echo $file; sed -i 'N;/^\n$/D;P;D;' $file; done
+
+    ## All files recursively - ignoring .git/ folder
+        for file in $(find . -type f | grep -v ".git/"); do echo $file; sed -i 'N;/^\n$/D;P;D;' $file; done
+
