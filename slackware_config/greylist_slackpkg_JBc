@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 25/10/2022
+# Last update: 20/12/2022
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -64,6 +64,7 @@ xfce4-panel-profiles
 xfce4-screensaver
 xfce4-whiskermenu-plugin
 xsnow
+digikam
 # -------------------------------------------------------------------------------------------------------
 # Packages installed
 # -------------------------------------------------------------------------------------------------------
