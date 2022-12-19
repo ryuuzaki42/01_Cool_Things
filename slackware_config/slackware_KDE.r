@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/12/2022
+# Last update: 20/12/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -44,7 +44,8 @@ cp rc.local_JBs.sh /etc/rc.d/rc.local
 
 ## Compare JB config
 check_file() {
-    command_run="sdiff -s $1 $2"
+    #command_run="sdiff -s $1 $2"
+    command_run="ss $1 $2"
     echo -e "\\n # $command_run #"
     eval "$command_run"
 }
