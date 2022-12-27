@@ -1,5 +1,5 @@
 # slackpkgplus.conf_15.0_JBc
-# Last update: 10/12/2022
+# Last update: 26/12/2022
 
 # Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
@@ -147,7 +147,8 @@ MIRRORPLUS['alienbob']=https://slackware.uk/people/alien/sbrepos/15.0/x86_64
 MIRRORPLUS['restricted']=https://slackware.uk/people/alien/restricted_sbrepos/15.0/x86_64
 
 # use this to keep the slackpkg+ package updated to the latest stable release
-MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
+#MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
+MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplus/
 
 # use the development branch to use the mainline version and help develop by reporting bugs.
 #MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+dev/
