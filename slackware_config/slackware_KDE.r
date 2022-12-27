@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 20/12/2022
+# Last update: 27/12/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -148,31 +148,30 @@ EndSection
 
 ## xbacklight - error - "No outputs have backlight property"
     # https://wiki.archlinux.org/title/backlight#xbacklight
-    ## Added the file 20-intel.conf
-nano /etc/X11/xorg.conf.d/20-intel.conf
+
+    https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware_Laptop
+    ## If use Nvidia driver - Change
+        nano /etc/X11/xorg.conf.d/21-LAR-nvidia-screens.conf
+
+            Driver "modesetting"
+                ## To
+            Driver "intel"
+            Option "Backlight" "intel_backlight"
+
+    ## If not use Nvidia driver
+        ## Added the file 20-intel.conf
+            nano /etc/X11/xorg.conf.d/20-intel.conf
 
 Section "Device"
-    Identifier  "Intel Graphics" 
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
+    Identifier "Intel Graphics"
+    Driver     "intel"
+    Option     "Backlight" "intel_backlight"
 EndSection
-
-    ## If you use/have a Intel graphics card, can select which driver load/use
-        nano /etc/X11/xorg.conf
-
-        ## To the use Intel - xbacklight works
-Section "Device"
-    Identifier      "Intel Graphics"
-    Driver          "intel"
-EndSection
-
-        ## Can add Option Backlight after driver
-Option          "Backlight"      "intel_backlight"
 
         ## To use modesetting - xbacklight not works
 Section "Device"
-    Identifier      "Intel Graphics"
-    Driver          "modesetting"
+    Identifier "Intel Graphics"
+    Driver     "modesetting"
 EndSection
 
 ## Dolphin disable executable shellscript, perl, ruby, pyton etc
