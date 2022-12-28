@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/12/2022
+# Last update: 28/12/2022
 #
 
 ## Make home folder - mount /media/sda2
@@ -149,8 +149,18 @@ EndSection
 ## xbacklight - error - "No outputs have backlight property"
     # https://wiki.archlinux.org/title/backlight#xbacklight
 
-    https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware_Laptop
+    ## Check which driver is in use
+        xrandr
+
+        ## If outputs names have one - is modesetting
+            eDP-1, HDMI-1 > modesetting
+
+        ## If outputs names don't have one - is intel
+            eDP1, HDMI1 > intel
+
+
     ## If use Nvidia driver - Change
+        # https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware_Laptop
         nano /etc/X11/xorg.conf.d/21-LAR-nvidia-screens.conf
 
             Driver "modesetting"
