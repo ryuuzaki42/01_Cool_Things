@@ -1,33 +1,69 @@
 ## Windows do ##
 
 ## Windows don't recognize partition (NTFS) connected
-    # open a command prompt (cmd) as administrator:
-    1) diskpart
-    2) list volume
+    ## cmd as administrator
+        diskpart
 
-    # You saw that all volumes
-    3) select volume x (where x is the number of the offline volume)
-    4) online volume
+    ## With volume
+        list volume
 
-    # So you this volumes again online
-    5) assign letter=R
-    #Now you set a letter for mount, change R for the one letter available
+        # X is the number of the offline volume
+        select volume X
 
-## Disable windows update
-    ## Or maybe not in Windows 10
+        online volume
+
+        # Assign a letter to make online
+        # change R for the one letter available
+        assign letter=R
+
+    ## With disk
+        list disk
+
+        # X is the desired disk number
+        select disk X
+
+        list partition
+
+        # X is the desired partition number
+        select partition X
+
+        active
+
+    ## Minitool Partition Wizard
+        > Set Active
+
+        > Change Letter
+
+        > Check Partition Type ID
+            > 0x07 NTFS
+
+        > Explore
+
+## Disable Windows update with winaero-tweaker
+    https://winaero.com/winaero-tweaker/#download
 
 ## Disable hibernate
     powercfg.exe /hibernate off
 
-    # Back to default - enable hibernate
+    ## Back to default - Enable hibernate
         powercfg.exe /hibernate on
+
+## Reduce size of pagefile.sys - default size o RAM
+    > This Computer > properties > Advanced system settings > Advanced
+        Performance - Settings... > Advanced > Change
+            x - Automatically manage
+            > Custom size
+                Initial: 1024
+                Maximum: 2048
 
 ## disable visual effects
     Windows Key + x
 
 ## Disable backup
 
-## Install Microsoft office, CCleaner, VLC, Smplayer, Steam, Firefox
+## Create one System Protection - Restore point
+
+## Install Microsoft office, SumatraPDF, VLC, Smplayer, Firefox
 
 ## Get the motherboard from CMD
     wmic baseboard get product,manufacturer
