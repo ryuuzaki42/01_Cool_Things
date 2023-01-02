@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 17/12/2022
+# Last update: 02/01/2023
 #
 
 ## Process with more CPU use
@@ -1705,8 +1705,11 @@ fi
     X: (onde X: é a unidade onde seu pendrive está conectado.)
 
     ## Windows check files installation
-        # cmd
+        > cmd as administrator
+
         sfc /scannow
+
+        DISM /Online /Cleanup-Image /RestoreHealth
 
 ## CMD
     del # apaga arquivo
@@ -2521,3 +2524,10 @@ kwrite $prog_name.info
     ## All files recursively - ignoring .git/ folder
         for file in $(find . -type f | grep -v ".git/"); do echo $file; sed -i 'N;/^\n$/D;P;D;' $file; done
 
+## smartmontools SSD
+    ## All informations
+        smartctl -a /dev/sda
+
+    ## % of life
+        smartctl -A /dev/sda
+            > SSD_Life_Left
