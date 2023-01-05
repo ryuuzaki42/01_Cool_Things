@@ -1,6 +1,6 @@
 ## Firefox changes ##
 #
-# Last update: 16/12/2022
+# Last update: 05/01/2023
 #
 about:config
 
@@ -242,7 +242,11 @@ https://addons.mozilla.org/firefox/addon/adblock-plus/
 
 https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
     ## Change the Content headers to force images and PDF to open in the browser
-        ## Works with overleaf.com
+        ## Works with
+            overleaf.com
+
+    ## Give error when use the download option in some website
+        https://www.tablesgenerator.com/
 
 https://addons.mozilla.org/firefox/addon/remove-tracking-params/
     ## Give error in some website theses parameters
@@ -250,6 +254,7 @@ https://addons.mozilla.org/firefox/addon/remove-tracking-params/
         aliexpress.com
 
 https://addons.mozilla.org/firefox/addon/sponsorblock/
+    https://sponsor.ajay.app/
 
     ## Disabled
 https://addons.mozilla.org/firefox/addon/browsec/
