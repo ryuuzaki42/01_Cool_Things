@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/12/2022
+# Last update: 05/01/2023
 #
 
 ## Make home folder - mount /media/sda2
@@ -241,7 +241,12 @@ chown root ${swapFilePace}swapFile.img
             sysctl -p
 
 ## If has SSD - fstrim - add to crontab
-    # http://rra.etc.br/MyWorks/2017/03/18/fstrim-ou-discard-em-ssd-no-gnulinux/
+    ## See info
+        man fstrim
+
+            # Running fstrim frequently, or even using mount -o discard, might negatively affect the lifetime of poor-quality SSD devices.
+            # For most desktop and server systems a sufficient trimming frequency is once a week.
+
     ## Change the "SSD_MOUNT" in the scrpit for your partition mount folder
         # For me, weekly is enough
         cp fstrim_JBs.sh /etc/cron.weekly/
@@ -402,8 +407,13 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 gcc
 glibc
 
-## slackpkg mirrors - local clone (https://github.com/ryuuzaki42/12_clone_Slackware_repo_rsync)
-    nano /etc/slackpkg/mirrors
+## slackpkg - Mirrror local
+
+    ## Clone and run script
+        https://github.com/ryuuzaki42/12_clone_Slackware_repo_rsync
+
+    ## Edit config file
+        nano /etc/slackpkg/mirrors
 
     ## Local mirror stable
         file://media/sda2/prog/git_clone/2_clone_Slackware_repo/slackware64-15.0/
