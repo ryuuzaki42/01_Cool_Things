@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 21/11/2022
+# Last update: 02/02/2023
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -32,11 +32,15 @@ lock_screen=1
 thinkpad_notebook=0
 
 if [ "$change_resolution" == '1' ]; then
+    #sleep 1s # A little time to startup
+
     countOutput=$(xrandr | grep " connected" | wc -l)
     if [ "$countOutput" -gt 1 ]; then
-        sleep 1s # A little time to Startup
         echo -e "\\n # Set the two video output to mirror 1024x768 resolution #\\n"
         /usr/bin/monitor_change_resolution_JBs.sh 4 0 y
+    else
+        echo -e "\\n # Set the video output 1 to maximum resolution #\\n"
+        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y
     fi
 fi
 
