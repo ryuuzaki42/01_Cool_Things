@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 02/02/2023
+# Last update: 06/02/2023
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -32,7 +32,7 @@ lock_screen=1
 thinkpad_notebook=0
 
 if [ "$change_resolution" == '1' ]; then
-    #sleep 1s # A little time to startup
+    sleep 1s # A little time to startup
 
     countOutput=$(xrandr | grep " connected" | wc -l)
     if [ "$countOutput" -gt 1 ]; then
