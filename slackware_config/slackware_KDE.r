@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/01/2023
+# Last update: 08/02/2023
 #
 
 ## Make home folder - mount /media/sda2
@@ -184,7 +184,7 @@ Section "Device"
     Driver     "modesetting"
 EndSection
 
-## Dolphin disable executable shellscript, perl, ruby, pyton etc
+## Dolphin disable executable shell script, perl, ruby, pyton etc
 kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
 
     ## Look for the lines and comment # with " " and ' '
@@ -194,9 +194,14 @@ kdesu kwrite /usr/share/mime/packages/freedesktop.org.xml
         <sub-class-of type='application/x-executable'/>
         <!-- <sub-class-of type='application/x-executable'/> -->
 
-    ## Update Dolphin config
+    ## Update Dolphin configuration
 rm /usr/share/mime/packages/kde.xml
 update-mime-database /usr/share/mime
+
+## KDE Set position to notifications
+    System Settings > Notifications
+        > Popup > Choose Custom Position...
+            > lower right corner
 
 ## Remove keyboard shortcut Plasma: "Stop Current Activity"
     ## Path KDE 5
@@ -216,7 +221,7 @@ dd if=/dev/zero of=${swapFilePace}swapFile.img bs=1M count=4096 # 4 GiB
     ## Turn into swapfile
 mkswap ${swapFilePace}swapFile.img
 
-    ## Add config in the fstab
+    ## Add configuration in the fstab
 echo "${swapFilePace}swapFile.img swap swap defaults 0 0" >> /etc/fstab
 
     ## test the swap
@@ -401,13 +406,13 @@ chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
         nano /etc/slackpkg/blacklist
 
     ## Or in the greylist
-        # All packages in that list will be showned but unchecked by default
+        # All packages in that list will be shown but unchecked by default
         nano /etc/slackpkg/greylist
 
 gcc
 glibc
 
-## slackpkg - Mirrror local
+## slackpkg - Mirror local
 
     ## Clone and run script
         https://github.com/ryuuzaki42/12_clone_Slackware_repo_rsync
@@ -424,19 +429,15 @@ glibc
 ## slackpkg+ mirrors (old - to update list see the file slackpkgplus.conf_*)
     nano /etc/slackpkg/slackpkgplus.conf
 
-    ## 14.2
-        MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/14.2/
-        MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/14.2/x86_64/
-        MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/14.2/x86_64/
+    ## 15.0
+        MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/15.0/
+        MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/15.0/x86_64/
+        MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/15.0/x86_64/
 
     ## Current
         MIRRORPLUS['multilib']=http://bear.alienbase.nl/mirrors/people/alien/multilib/current/
         MIRRORPLUS['alienbob']=http://bear.alienbase.nl/mirrors/people/alien/sbrepos/current/x86_64/
         MIRRORPLUS['restricted']=http://bear.alienbase.nl/mirrors/people/alien/restricted_sbrepos/current/x86_64/
-
-    ## Others 14.2 stable
-        MIRRORPLUS['slacky']=http://repository.slacky.eu/slackware64-14.2/
-        MIRRORPLUS['rlworkman']=http://rlworkman.net/pkgs/14.2/x86_64/
 
 ## Personal choice
     mv /usr/bin/vi /usr/bin/vi2 # Rename elvis link to vi2
