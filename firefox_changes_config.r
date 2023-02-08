@@ -1,6 +1,6 @@
 ## Firefox changes ##
 #
-# Last update: 05/01/2023
+# Last update: 08/02/2023
 #
 about:config
 
@@ -56,6 +56,11 @@ browser.search.openintab
 ## Increase the speed of the scroll - Removed in new versions
 mousewheel.system_scroll_override_on_root_content.enabled
     false > true
+
+## Disable autoplay video
+    about:preferences#privacy
+    > Autoplay > Settings
+        > Block Audio and Video
 
 ## Program to open magnet links (torrent)
     about:config > new > boolean > name
