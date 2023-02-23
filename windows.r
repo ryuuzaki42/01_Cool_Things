@@ -10,6 +10,21 @@
 # Last update: 23/02/2023
 #
 
+## Check Windows license and activation status
+    slmgr /xpr
+
+## Turn off Internet Explorer support to Windows 10
+    Control Panel\All Control Panel Items\Programs and Features
+        > Turn off Internet Explorer
+
+## Update windows apps -> Windows store
+    Install "Intel® Graphics Command Center"
+
+## Deleting "Activate Windows" option from Right Click Menu
+    regedit >
+        Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
+    Delete "Activate Windows" folder
+
 ## Windows don't recognize partition (NTFS) connected
     ## cmd as administrator
         diskpart
@@ -171,7 +186,3 @@
 ## Windows God Mode
     > new folder, set name as:
         GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
-
-## Descobrir a placa-mãe sem programa
-    # No Windows, no CMD
-    wmic baseboard get product,manufacturer
