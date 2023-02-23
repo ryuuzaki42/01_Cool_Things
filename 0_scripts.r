@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/01/2023
+# Last update: 23/02/2023
 #
 
 ## Process with more CPU use
@@ -218,14 +218,6 @@ kdewallet=Chromium,Opera,Chrome
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
 
-## Windows setup could not configure to run on this computer hardware - error during Windows installation
-    # Windows setup could not install on this computer hardware
-    Manually run msoobe.exe program to allow the install to complete
-
-    At the error screen, press Shift + F10 to open a command prompt
-    cd c:\windows\system32\oobe and press Enter
-    msoobe and press Enter
-
 ## pip upgrade packages
     ## List outdated
         pip list --outdated
@@ -299,13 +291,6 @@ int main(){
 
 ## Enviar a saída e erros para arquivos arquivos diferentes
     comando 1> saida.log 2> erros.log
-
-## Proper way to delete the Windows.old folder
-    1 Windows search field, type Cleanup, then click "Disk Cleanup"
-    2 Select the disk, common "(C:)"
-    3 Select "Clean System Files"
-    4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
-    5 Check the box next to the entry. Click OK to start the cleanup
 
 ## LibreOffice without icons
     Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
@@ -428,15 +413,6 @@ rm $tmpFile # Delete the tmpFile
     pavucontrol
         > in the tab "Configuration"
             > in "Profile" Select "HDMI Output"
-
-## How to Switch Off the Thumbs.db Image Cache File in Windows
-    1 Ensure you’re logged in using an administrator account
-    2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
-    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
-        then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
-    4 In the right-hand pane, double-click “Turn off the caching of thumbnails in hidden thumbs.db files”
-    5 Select Enabled (don’t make my mistake of choosing “Disabled”
-        — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
 
 ## Clean-up movie.mkv file (remove name in the tracks and chapters)
     ## Remove the Name of movie, track audio a1, track video a1 and track subtitle s1
@@ -1699,48 +1675,6 @@ fi
 ## Netbeans em Português
     ./netbeans --locale pt:BR
 
-## Windows ##
-
-## Trocar de unidade cmd
-    X: (onde X: é a unidade onde seu pendrive está conectado.)
-
-    ## Windows check files installation
-        > cmd as administrator
-
-        sfc /scannow
-
-        DISM /Online /Cleanup-Image /RestoreHealth
-
-## CMD
-    del # apaga arquivo
-    dir # mostra arquivos
-    dir /A:H #mostra arquivos ocultos
-    del /A:H x # apaga arquivo x oculto
-
-## Windows 8 (8.1) boot modo seguro
-    # Habilitar F8
-    bcdedit /set {default} bootmenupolicy legacy
-
-    # Desabilitar F8
-    bcdedit /set {default} bootmenupolicy standard
-
-## Remover vírus o Recycler bin
-    attrib -a -h -r -s /s /d *.* # dentro da unidade
-
-    -R Limpa o Atributo de arquivo somente leitura
-    -A Limpa o Atributo de arquivo morto
-    -S Limpa o Atributo de arquivo de sistema
-    -H Limpa o Atributo de arquivo oculto
-    /s Processa os arquivos correspondentes na pasta atual
-    /d Inclui pastas no processamento
-
-## Hibernação / hibernation
-    # Disable
-    powercfg.exe /hibernate off
-
-    # Enable
-    powercfg.exe /hibernate on
-
 ## How to install fonts in Slackware
     # move your fonts (*.ttf) to “/usr/share/fonts/TTF”
     # run those commands in “/usr/share/fonts” - root
@@ -1977,7 +1911,7 @@ echo "1.0.0
 
     # https://www.maartenbaert.be/simplescreenrecorder/troubleshooting/
 
-    # "For Intel GPUs, the flickering can sometimes be eliminated by uninstalling the driver for 
+    # "For Intel GPUs, the flickering can sometimes be eliminated by uninstalling the driver for
     # 2D acceleration (xserver-xorg-video-intel, xf86-video-intel or similar)."
 
     slackpkg remove xf86-video-intel
@@ -2348,25 +2282,6 @@ deactivate
         set -eEuo pipefail
         trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
 
-## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
-    > Boot USB ISO
-        Select language > next
-        Repair your computer > Advanced options > Command Prompt
-
-    ## bootrec BCD (Boot Configuration Data) run all options
-        bootrec /FixMbr
-        bootrec /FixBoot
-        bootrec /ScanOs
-        bootrec /RebuildBcd
-
-## Windows - Partition not recognized as NTFS after clone
-    ## MiniTool Partition Wizard
-        Select the partition > Change Partition Type ID > Set 0x07 NTFS
-
-## Windows detects HDD as SSD - Re-enable defragmentation
-    ## cmd as admin
-        winsat formal
-
 ## Snap
     ## download package
     # https://unix.stackexchange.com/questions/560065/how-can-i-manually-download-a-snap-package-for-example-with-wget
@@ -2425,10 +2340,6 @@ kwrite $prog_name.info
         appimagetool, continuous build (commit 8bbf694), build <local dev build> built on 2020-12-31 11:48:33 UTC
 
         ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
-
-## Windows God Mode
-    > new folder, set name as:
-        GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
 ## Send message to all terminals / tty
     wall "The system will be restarted in 10 minutes"
