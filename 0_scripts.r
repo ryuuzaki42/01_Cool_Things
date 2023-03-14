@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 23/02/2023
+# Last update: 14/03/2023
 #
 
 ## Process with more CPU use
@@ -355,6 +355,7 @@ int main(){
 
 ## NTFS error
     ## mount exited with exit code 13: $MFTMirr does not match $MFT (record ..
+    ## or mount NTFS as only read mode
         ntfsfix /dev/sdXX
 
 ## Dolphin freezing when delete file and/or clean the trash (If you use VLC)
