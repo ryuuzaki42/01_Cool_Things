@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 23/02/2023
+# Last update: 14/03/2023
 #
 
 ## Check Windows license and activation status
@@ -15,7 +15,8 @@
 
 ## Turn off Internet Explorer support to Windows 10
     Control Panel\All Control Panel Items\Programs and Features
-        > Turn off Internet Explorer
+        > Turn Windows features on or off
+            > Uncheck "Internet Explorer 11"
 
 ## Update windows apps -> Windows store
     Install "Intel® Graphics Command Center"
@@ -24,6 +25,11 @@
     regedit >
         Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
     Delete "Activate Windows" folder
+
+## Disable Fast Startup on Windows 10
+    Control Panel\All Control Panel Items\Power Options\System Settings
+        > Change Settings That Are Currently Unavailable
+            > Uncheck "Turn On Fast Startup"
 
 ## Windows don't recognize partition (NTFS) connected
     ## cmd as administrator
@@ -74,19 +80,21 @@
         powercfg.exe /hibernate on
 
 ## Reduce size of pagefile.sys - default size o RAM
-    > This Computer > properties > Advanced system settings > Advanced
-        Performance - Settings... > Advanced > Change
+    File Explorer > This PC > Properties > Advanced system settings > Advanced
+        Performance > Settings... > Advanced > Change
             x - Automatically manage
             > Custom size
                 Initial: 1024
                 Maximum: 2048
 
-## disable visual effects
-    Windows Key + x
-
-## Disable backup
+## Disable visual effects
+    File Explorer > This PC > Properties > Advanced system settings > Advanced
+        Performance > Settings... > Visual Effects
+            > Leave only checked "Show thumbnails instead of icons" and "Smooth edges of screen fonts"
 
 ## Create one System Protection - Restore point
+    File Explorer > This PC > Properties > Advanced system settings > System Protection
+        > Create... > Name "a1" > Create
 
 ## Install Microsoft office, SumatraPDF, VLC, Smplayer, Firefox
 
@@ -94,10 +102,10 @@
     wmic baseboard get product,manufacturer
 
 ## Enable F8 (boot legacy with good options) no Windows 10
-    bcdedit /set bootmenupolicy legacy
+    bcdedit /set {default} bootmenupolicy legacy
 
     # Back to default - Disable F8
-        bcdedit /set bootmenupolicy standard
+        bcdedit /set {default} bootmenupolicy standard
 
 ## Windows HDMI wrong size image
     # Fix Desktop Overscaling if use a TV - Monitor
@@ -127,8 +135,8 @@
     2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
     3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
         then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
-    4 In the right-hand pane, double-click “Turn off the caching of thumbnails in hidden thumbs.db files”
-    5 Select Enabled (don’t make my mistake of choosing “Disabled”
+    4 In the right-hand pane, double-click "Turn off the caching of thumbnails in hidden thumbs.db files"
+    5 Select Enabled (don’t make my mistake of choosing "Disabled"
         — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
 
 ## Trocar de unidade cmd
@@ -146,13 +154,6 @@
     dir # mostra arquivos
     dir /A:H #mostra arquivos ocultos
     del /A:H x # apaga arquivo x oculto
-
-## Windows 8 (8.1) boot modo seguro
-    # Habilitar F8
-    bcdedit /set {default} bootmenupolicy legacy
-
-    # Desabilitar F8
-    bcdedit /set {default} bootmenupolicy standard
 
 ## Remover vírus o Recycler bin
     attrib -a -h -r -s /s /d *.* # dentro da unidade
@@ -184,5 +185,5 @@
         winsat formal
 
 ## Windows God Mode
-    > new folder, set name as:
+    > New folder, set name as:
         GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
