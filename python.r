@@ -46,3 +46,9 @@
     ## To install lib
         ## Install pillow
             pip install pillow
+
+    ## pip cache info
+        pip cache info
+
+    ## pip clean cache
+        pip cache purge
