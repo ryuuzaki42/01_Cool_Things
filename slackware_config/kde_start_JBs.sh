@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 06/02/2023
+# Last update: 23/03/2023
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -38,6 +38,12 @@ if [ "$change_resolution" == '1' ]; then
     if [ "$countOutput" -gt 1 ]; then
         echo -e "\\n # Set the two video output to mirror 1024x768 resolution #\\n"
         /usr/bin/monitor_change_resolution_JBs.sh 4 0 y
+
+        audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
+        if echo "$audio_config" | grep -qv "hdmi"; then
+            echo -e "\\n # Set audio output to HDMI output #\\n"
+            /usr/bin/audio_profile_change_JBs.sh
+        fi
     else
         echo -e "\\n # Set the video output 1 to maximum resolution #\\n"
         /usr/bin/monitor_change_resolution_JBs.sh 1 0 y
