@@ -262,23 +262,26 @@ https://addons.mozilla.org/firefox/addon/sponsorblock/
     https://sponsor.ajay.app/
 
     ## Disabled
-https://addons.mozilla.org/firefox/addon/browsec/
-        ## VPN
 ## Free VPN - Mega download
+https://addons.mozilla.org/firefox/addon/urban-vpn/
     https://www.urban-vpn.com/
-    https://addons.mozilla.org/firefox/addon/urban-vpn/
 
-https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/languagetool/
     Add to Firefox and login
         https://languagetool.org/
             E-mail and password on Keep
 
+https://www.zotero.org/download/
+
+    ## Disabled 2
+## VPN
+https://addons.mozilla.org/firefox/addon/browsec/
+https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/print-friendly-pdf/
 https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
-https://www.zotero.org/download/
+https://addons.mozilla.org/firefox/addon/youtube-recommended-videos/
 
     ## Others
 https://addons.mozilla.org/firefox/addon/blackbox/
