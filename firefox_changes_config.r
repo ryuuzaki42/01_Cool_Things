@@ -1,6 +1,6 @@
 ## Firefox changes ##
 #
-# Last update: 08/02/2023
+# Last update: 30/03/2023
 #
 about:config
 
@@ -264,6 +264,10 @@ https://addons.mozilla.org/firefox/addon/sponsorblock/
     ## Disabled
 https://addons.mozilla.org/firefox/addon/browsec/
         ## VPN
+## Free VPN - Mega download
+    https://www.urban-vpn.com/
+    https://addons.mozilla.org/firefox/addon/urban-vpn/
+
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/languagetool/
     Add to Firefox and login
