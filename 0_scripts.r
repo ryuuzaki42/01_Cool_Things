@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/03/2023
+# Last update: 30/03/2023
 #
 
 ## Process with more CPU use
@@ -525,10 +525,11 @@ rm $tmpFile # Delete the tmpFile
 ## Run "usual_JBs.sh pdf-r file.pdf" for all file in a directory
     IFS=$(echo -en "\n\b"); for file in $(ls -1); do echo "1 $file"; usual_JBs.sh pdf-r "$file" 4; done
 
-## Assine o PDF
-    1 Tire uma boa foto da assinatura (assine em um papel branco de caneta)
-    2 Remova o fundo branco da imagem (png e adicione canal alpha no Gimp)
-    3 "Assine o PDF" inserindo uma imagem onde deveria assinar utilizando Master PDF Editor (ou outro editor de PDF)
+## Assinar o PDF - Sign the PDF
+    1 Tire uma boa foto da sua assinatura (assine em um papel branco com uma caneta azul ou preta)
+    2 Remova o fundo branco da imagem (png e adicione o canal alpha no Gimp)
+    3 "Assine o PDF" inserindo a imagem onde deveria assinar utilizando Master PDF Editor (ou outro editor de PDF)
+    4 Abra o PDF com a assinatura no Opera (ou outro navegador com suporte) e imprima o arquivo como imagem
 
 ## Size of a directory/folder on the command line
     du -sh
