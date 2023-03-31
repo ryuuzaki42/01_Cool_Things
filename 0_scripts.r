@@ -2444,3 +2444,15 @@ kwrite $prog_name.info
     ## % of life
         smartctl -A /dev/sda
             > SSD_Life_Left
+
+## Compose key shortcuts - insert pipe |
+    ## Enable compose key
+        https://fsymbols.com/keyboard/linux/compose/
+        https://userbase.kde.org/Tutorials/ComposeKey/pt-br
+
+        Like Left Win or Left Ctrl
+
+        Pipe | - <compose key> + v + l
+
+    ## or use xdotool
+        xdotool type '|'
