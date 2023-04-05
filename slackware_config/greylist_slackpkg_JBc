@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 14/03/2023
+# Last update: 05/04/2023
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -48,11 +48,12 @@ akonadi-search
 akonadiconsole
 calligra
 calligraplan
+digikam
 elementary-xfce
 emacspeak
 gnome-themes-extra
-kleopatra
 kalarm
+kleopatra
 knights
 libgtop
 mousepad
@@ -64,7 +65,6 @@ xfce4-panel-profiles
 xfce4-screensaver
 xfce4-whiskermenu-plugin
 xsnow
-digikam
 # -------------------------------------------------------------------------------------------------------
 # Packages installed
 # -------------------------------------------------------------------------------------------------------
@@ -88,8 +88,8 @@ mcomix
 mozilla-firefox
 openjdk
 qpdfview
-sbotools
 sbopkg
+# sbotools
 shellcheck
 smartsynchronize
 smplayer
@@ -99,6 +99,7 @@ unrar
 veracrypt
 webcore-fonts
 wxGTK3
+xlaserpointer
 zotero
 # -------------------------------------------------------------------------------------------------------
 # Bumblebee
@@ -128,7 +129,7 @@ slackpkg+
 # audacity
 # -------------------------------------------------------------------------------------------------------
 audacity
-jack2
+jack2 # audacity, obs-studio and mpv
 ladspa_sdk
 lilv
 soxr
@@ -143,7 +144,7 @@ libdatrie
 # obs-studio
 # -------------------------------------------------------------------------------------------------------
 obs-studio
-# jack2 - audacity
+# jack2 - audacity, obs-studio and mpv
 fdk-aac # alien restricted_slackbuilds libfdk-aac
 ffmpeg # alien restricted_slackbuilds
 mbedtls
@@ -164,6 +165,7 @@ yaml-cpp
 # mpv
 # -------------------------------------------------------------------------------------------------------
 mpv
+# jack2 - audacity, obs-studio and mpv
 libass
 libplacebo
 python3-glad
@@ -195,7 +197,7 @@ libtorrent-rasterbar
 # opera
 # -------------------------------------------------------------------------------------------------------
 opera
-opera-stable
+# opera-stable
 opera-ffmpeg-codecs
 # -------------------------------------------------------------------------------------------------------
 # libreoffice
