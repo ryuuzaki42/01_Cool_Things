@@ -1,7 +1,10 @@
-## Firefox changes ##
+
+    ## Firefox changes ##
+
 #
-# Last update: 30/03/2023
+# Last update: 12/05/2023
 #
+
 about:config
 
 ## Disable quit shortcut (Ctrl + Q)
@@ -210,18 +213,6 @@ about:support
 ## Change search engine to searx
     https://searx.me/about#
 
-## Youtube older version, Polymer Off
-    link + ?disable_polymer=true
-
-    ## playlist:
-        link + &disable_polymer=true
-
-    ## Muilt select for Youtube
-        https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
-
-    ## For all link use one script
-        https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
-
 ## Dictionaries & Language Packs
     # https://addons.mozilla.org/en-GB/firefox/language-tools/
 https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
@@ -245,6 +236,10 @@ https://addons.mozilla.org/firefox/addon/adblock-plus/
     ## Give error in some website - Add to "Allowlisted websites"
         pelando.com.br
 
+https://addons.mozilla.org/firefox/addon/sponsorblock/
+    https://sponsor.ajay.app/
+
+    ## Disabled
 https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
     ## Change the Content headers to force images and PDF to open in the browser
         ## Works with
@@ -258,24 +253,33 @@ https://addons.mozilla.org/firefox/addon/remove-tracking-params/
         pelando.com.br
         aliexpress.com
 
-https://addons.mozilla.org/firefox/addon/sponsorblock/
-    https://sponsor.ajay.app/
-
-    ## Disabled
 ## Free VPN - Mega download
 https://addons.mozilla.org/firefox/addon/urban-vpn/
     https://www.urban-vpn.com/
 
 https://addons.mozilla.org/firefox/addon/languagetool/
-    Add to Firefox and login
+    ## Add to Firefox and login
         https://languagetool.org/
-            E-mail and password on Keep
+            ## E-mail and password on Keep
 
 https://www.zotero.org/download/
 
     ## Disabled 2
-## VPN
+## VPN2
 https://addons.mozilla.org/firefox/addon/browsec/
+
+## Muilt select for Youtube
+https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
+
+    ## For all link use one script
+        https://greasyfork.org/en/scripts/39405-youtube-classic-for-2018-polymer-disable/code
+
+    ## ## Youtube older version, Polymer Off
+        ## link
+            link + ?disable_polymer=true
+        ## playlist:
+            link + &disable_polymer=true
+
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/print-friendly-pdf/
