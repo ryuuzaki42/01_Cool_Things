@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/03/2023
+# Last update: 16/05/2023
 #
 
 ## Check Windows license and activation status
@@ -23,8 +23,10 @@
 
 ## Deleting "Activate Windows" option from Right Click Menu
     regedit >
+
         Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
-    Delete "Activate Windows" folder
+
+            Delete "Activate Windows" folder
 
 ## Disable Fast Startup on Windows 10
     Control Panel\All Control Panel Items\Power Options\System Settings
@@ -32,7 +34,7 @@
             > Uncheck "Turn On Fast Startup"
 
 ## Windows don't recognize partition (NTFS) connected
-    ## cmd as administrator
+    ## CMD as administrator
         diskpart
 
     ## With volume
@@ -70,7 +72,7 @@
 
         > Explore
 
-## Disable Windows update with winaero-tweaker
+## Disable Windows Update and others with winaero-tweaker
     https://winaero.com/winaero-tweaker/#download
 
 ## Disable hibernate
@@ -82,6 +84,7 @@
 ## Reduce size of pagefile.sys - default size o RAM
     File Explorer > This PC > Properties > Advanced system settings > Advanced
         Performance > Settings... > Advanced > Change
+
             x - Automatically manage
             > Custom size
                 Initial: 1024
@@ -118,10 +121,9 @@
     # Windows setup could not install on this computer hardware
     Manually run msoobe.exe program to allow the install to complete
 
-    At the error screen, press Shift + F10 to open a command prompt
+    At the error screen, press Shift + F10 to open a command prompt-tweaker
     cd c:\windows\system32\oobe and press Enter
     msoobe and press Enter
-
 
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
@@ -139,31 +141,31 @@
     5 Select Enabled (don’t make my mistake of choosing "Disabled"
         — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
 
-## Trocar de unidade cmd
-    X: (onde X: é a unidade onde seu pendrive está conectado.)
+## Windows check files installation
+    > cmd as administrator
 
-    ## Windows check files installation
-        > cmd as administrator
+    ## Switch unit partition
+        X: (where X: is the drive your USB stick is connected to)
 
         sfc /scannow
 
         DISM /Online /Cleanup-Image /RestoreHealth
 
 ## CMD
-    del # apaga arquivo
-    dir # mostra arquivos
-    dir /A:H #mostra arquivos ocultos
-    del /A:H x # apaga arquivo x oculto
+     del # delete file
+     dir # show files
+     dir /A:H # show hidden files
+     del /A:H x # delete hidden x file
 
-## Remover vírus o Recycler bin
-    attrib -a -h -r -s /s /d *.* # dentro da unidade
+## Remove virus f Recycler bin
+     attrib -a -h -r -s /s /d *.* # inside the partition
 
-    -R Limpa o Atributo de arquivo somente leitura
-    -A Limpa o Atributo de arquivo morto
-    -S Limpa o Atributo de arquivo de sistema
-    -H Limpa o Atributo de arquivo oculto
-    /s Processa os arquivos correspondentes na pasta atual
-    /d Inclui pastas no processamento
+     -R Clears read-only file attribute
+     -A Clears the dead file attribute
+     -S Clears system file Attribute
+     -H Clear hidden file attribute
+     /s Processes matching files in the current folder
+     /d Include folders in processing
 
 ## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
     > Boot USB ISO
@@ -181,9 +183,35 @@
         Select the partition > Change Partition Type ID > Set 0x07 NTFS
 
 ## Windows detects HDD as SSD - Re-enable defragmentation
-    ## cmd as admin
+    ## CMD as admin
         winsat formal
 
 ## Windows God Mode
     > New folder, set name as:
         GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+
+## Reliability
+    Start > Search for Reliability > Open "Reliability Monitor"
+
+    ## Confiabilidade
+        Iniciar > Pesquise por Confiabilidade > Open "Monitor de Confiabilidade"
+
+## Install Windows 11 without TPM, Secure Boot etc
+    ## Install until "Select OS version"
+        Shift + F10 # CMD shortcut
+
+        regedit
+
+        [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+
+            “BypassTPMCheck”        =dword :1
+            “BypassSecureBootCheck” =dword :1
+
+            “BypassRAMCheck”     = dword :1
+            “BypassStorageCheck” = dword :1
+            “BypassCPUCheck”     = dword :1
+
+    ## Bypass Internet connection to continue
+        Shift + F10
+
+        oobe\bypassnro
