@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/03/2023
+# Last update: 21/05/2023
 #
 
 ## Process with more CPU use
@@ -1487,6 +1487,9 @@ fi
 ## make install in one specific folder
     folderInstall=/full/path/folder
     make DESTDIR=$folderInstall install
+
+    ## Or
+    make DESTDIR=b/ install
 
 ## Adicionar plugins
     ln -s /usr/lib64/mozilla/plugins/ /home/j/.mozilla/
