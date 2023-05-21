@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/05/2023
+# Last update: 21/05/2023
 #
 
 ## Check Windows license and activation status
@@ -215,3 +215,12 @@
         Shift + F10
 
         oobe\bypassnro
+
+## Windows 7 WiFi / Network icon not working
+    > Task manager > Close the "Explorer.exe"
+
+    > New task
+        > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
+
+    > Mew task
+        > Explorer.exe
