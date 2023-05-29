@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/05/2023
+# Last update: 22/05/2023
 #
 
 ## Process with more CPU use
@@ -2459,3 +2459,10 @@ kwrite $prog_name.info
 
     ## or use xdotool
         xdotool type '|'
+
+## Open file/url from terminal with the default application
+    xdg-open <url or file>
+
+    xdg-open https://github.com/ryuuzaki42
+
+    xdg-open file.txt
