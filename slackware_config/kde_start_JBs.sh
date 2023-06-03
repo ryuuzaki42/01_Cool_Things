@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 23/03/2023
+# Last update: 02/06/2023
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -31,7 +31,7 @@ change_resolution=1
 lock_screen=1
 thinkpad_notebook=0
 
-if [ "$change_resolution" == '1' ]; then
+if [ "$change_resolution" == 1 ]; then
     sleep 1s # A little time to startup
 
     countOutput=$(xrandr | grep " connected" | wc -l)
@@ -50,12 +50,12 @@ if [ "$change_resolution" == '1' ]; then
     fi
 fi
 
-if [ "$lock_screen" == '1' ]; then
+if [ "$lock_screen" == 1 ]; then
     echo -e "\\n# Locking screen #"
     qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
 fi
 
-if [ "$thinkpad_notebook" == '1' ]; then
+if [ "$thinkpad_notebook" == 1 ]; then
     # To enable vertical scrolling:
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation" 1
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Button" 2
