@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 09/11/2022
+# Last update: 02/06/2023
 #
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\\n # Starting tlp #\\n"
@@ -36,7 +36,7 @@ loadkeys br-abnt2
 
 #echo -e "\\n # Update time - Notebook without battery #\\n"
 #count=0
-#while [ "$count" -lt '10' ]; do
+#while [ "$count" -lt 10 ]; do
 #    result_date_up=$(usual_JBs.sh date-up)
 #    if echo "$result_date_up" | grep -q "Time updated"; then
 #        count=10
