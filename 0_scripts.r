@@ -2469,3 +2469,10 @@ kwrite $prog_name.info
 
 ## dry-run terminal command with parallel
     ls *.png | parallel --dry-run convert {} {.}.jpg
+
+## LibreOffice Writer - Typing cursor (caret, not the mouse pointer) appearance
+## LibreOffice Writer - Make typing cursor more visible in Writer
+    ~/.config/gtk-3.0/gtk.css
+
+    ## Add
+        * { -GtkWidget-cursor-aspect-ratio: 0.2; }
