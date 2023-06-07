@@ -2476,3 +2476,23 @@ kwrite $prog_name.info
 
     ## Add
         * { -GtkWidget-cursor-aspect-ratio: 0.2; }
+
+## Print 55 empty lines
+    lineNumber=55
+    countEcho=0
+    while [ "$countEcho" -lt "$lineNumber" ]; do
+        echo
+        ((countEcho++))
+    done
+
+    ## Or
+    for _ in $(seq 1 55); do echo; done
+
+    ## Or
+    printf '\n%.0s' $(seq 55)
+
+    ## Or
+    printf '%.0s\n' {1..55}
+
+    ## Or
+    yes '' | head -n 55
