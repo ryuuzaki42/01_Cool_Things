@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/05/2023
+# Last update: 16/06/2023
 #
 
 ## Check Windows license and activation status
@@ -151,13 +151,84 @@
 
         DISM /Online /Cleanup-Image /RestoreHealth
 
-## CMD
-     del # delete file
-     dir # show files
-     dir /A:H # show hidden files
-     del /A:H x # delete hidden x file
+## CMD commands
+    https://learn.microsoft.com/pt-br/windows-server/administration/windows-commands/windows-commands
 
-## Remove virus f Recycler bin
+    ## delete
+        ## Delete a file
+            del file.txt
+
+        ## Delete hidden x file
+        del /A:H x
+
+        ## Delete all files in a path
+            del /q "C:\Users\Aluno\Downloads\*"
+
+        ## Delete all directory in a path
+            FOR /D %%p IN ("C:\Users\Aluno\Downloads\*.*") DO rmdir "%%p" /s /q
+
+    ## Comment
+        :: comment
+
+    ## Change directory
+        C:
+
+        cd C:\Users\Aluno\Documents\
+
+        E:
+
+    ## Pint message
+        echo mesage
+
+        ## Disable echo
+            @echo off
+
+        ## Example with if
+            @echo off
+            if not exist *.txt (
+                echo This directory contains no text files.
+            ) else (
+                echo This directory contains the following text files:
+                echo.
+                dir /b *.txt
+            )
+
+     ## show files
+        dir
+
+        ## Show hidden files
+            dir /A:H
+
+        ## Clean C: recycle.bin
+            rd /s /q C:\$recycle.bin
+
+            ## Or
+            del /s /q C:\$Recycle.bin
+
+            ## E:
+            rd /s /q E:\$recycle.bin
+
+    ## function
+        cd C:\Users\Aluno\
+        call:delete_all C:\Users\Aluno\
+
+       :delete_all
+            echo. delete all files *.ods *.odt *.odp in %~1
+            del /S *.ods *.odt *.odp
+            del *.zip *.pdf
+        goto:eof
+
+    ## pause
+        pause
+
+    ## Run program as administrator
+        runas /savecred /user:Administrator "C:\Windows\system32\cmd.exe"
+
+        runas /savecred /user:administrador "c:\wamp64\wampmanager.exe"
+
+        runas /savecred /user:administrador "cmd"
+
+## Remove virus Recycle bin
      attrib -a -h -r -s /s /d *.* # inside the partition
 
      -R Clears read-only file attribute
