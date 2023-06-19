@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 06/06/2023
+# Last update: 19/06/2023
 #
 
 ## Process with more CPU use
@@ -182,16 +182,16 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
     # All reduce types (1, 2 and 3) with links
-    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
+    IFS=$(echo -en "\n\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
 
     # All reduce types (1, 2 and 3) without links
-    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
+    IFS=$(echo -en "\n\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 n; done
 
     # Reduce type 1 with links
-    IFS=$(echo -en "\\n\\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 1 y; done
+    IFS=$(echo -en "\n\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 1 y; done
 
     ## Rename the files - remove "_r2ly", "_r3ln" etc
-        IFS=$(echo -en "\\n\\b"); for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
+        IFS=$(echo -en "\n\b"); for file in $(ls *pdf); do echo $file; mv "$file" "${file::-9}.pdf"; done
 
     ## Delete all the "reduce files" generated
         # To see
@@ -2064,7 +2064,7 @@ cd /opt/ || exit
 
 source autosubsync_venv/bin/activate
 
-IFS=$(echo -en "\\n\\b") # Change the Internal Field Separator (IFS) to "\\n\\b"
+IFS=$(echo -en "\n\b") # Change the Internal Field Separator (IFS) to "\n\b"
 
 #echo "# $#" # Count of parameters
 #echo "0 $0" # Script path + name
@@ -2072,7 +2072,7 @@ IFS=$(echo -en "\\n\\b") # Change the Internal Field Separator (IFS) to "\\n\\b"
 
 cd "$oldPwd" || exit # Go to the folder <files to work folder>
 
-echo -e "\\nRunning: autosubsync $@"
+echo -e "\nRunning: autosubsync $@"
 autosubsync "$@"
 
 deactivate
@@ -2281,11 +2281,11 @@ deactivate
     #!/usr/bin/env bash is more portable than #!/bin/bash.
 
     set -eE # Same as: set -o errexit -o errtrace
-    trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
+    trap 'echo -e "\n\n\e[1;31mError at line $LINENO\033[0m - Command:\n\e[1;31m$BASH_COMMAND\n"' ERR
 
     ## Use
         set -eEuo pipefail
-        trap 'echo -e "\\n\\n\e[1;31mError at line $LINENO\033[0m - Command:\\n\e[1;31m$BASH_COMMAND\\n"' ERR
+        trap 'echo -e "\n\n\e[1;31mError at line $LINENO\033[0m - Command:\n\e[1;31m$BASH_COMMAND\n"' ERR
 
 ## Snap
     ## download package
