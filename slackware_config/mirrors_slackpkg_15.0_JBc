@@ -175,7 +175,7 @@
 # http://mirrors.mithril.org.ua/linux/slackware/slackware64-15.0/
 # UNITED KINGDOM (UK)
 # http://slackware.uk/slackware/slackware64-15.0/
-https://slackware.uk/slackware/slackware64-15.0/
+# https://slackware.uk/slackware/slackware64-15.0/
 # ftp://slackware.uk/slackware/slackware64-15.0/
 # ftp://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/
 # http://ftp.mirrorservice.org/sites/ftp.slackware.com/pub/slackware/slackware64-15.0/
@@ -183,7 +183,7 @@ https://slackware.uk/slackware/slackware64-15.0/
 # http://mirror.bytemark.co.uk/slackware/slackware64-15.0/
 # UNITED STATES (US)
 # ftp://mirror.cs.princeton.edu/pub/mirrors/slackware/slackware64-15.0/
-# http://mirrors.us.kernel.org/slackware/slackware64-15.0/
+http://mirrors.us.kernel.org/slackware/slackware64-15.0/
 # ftp://mirrors.xmission.com/slackware/slackware64-15.0/
 # http://mirrors.xmission.com/slackware/slackware64-15.0/
 # https://mirror.slackbuilds.org/slackware/slackware64-15.0/
