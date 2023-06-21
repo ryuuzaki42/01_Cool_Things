@@ -43,8 +43,6 @@ if [ "$change_resolution" == 1 ]; then
     if [ "$countOutput" -gt 1 ]; then
         echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
         /usr/bin/monitor_change_resolution_JBs.sh 4 0 y 1
-        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y 1
-        /usr/bin/monitor_change_resolution_JBs.sh 4 0 y 1 # Set output two times to "reset" notification place in KDE
 
         audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
         if echo "$audio_config" | grep -qv "hdmi"; then
