@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 19/06/2023
+# Last update: 23/06/2023
 #
 
 ## Process with more CPU use
@@ -2288,7 +2288,7 @@ deactivate
         trap 'echo -e "\n\n\e[1;31mError at line $LINENO\033[0m - Command:\n\e[1;31m$BASH_COMMAND\n"' ERR
 
 ## Snap
-    ## download package
+    ## Download package
     # https://unix.stackexchange.com/questions/560065/how-can-i-manually-download-a-snap-package-for-example-with-wget
     curl -H 'Snap-Device-Series: 16' http://api.snapcraft.io/v2/snaps/info/chromium > chromium.info
 
@@ -2496,3 +2496,33 @@ kwrite $prog_name.info
 
     ## Or
     yes '' | head -n 55
+
+## KDE notification wrong place
+    mv ~/cache/ ~/cache2/
+    Restart and move the "needed" files, like mozilla/ and opera/
+
+## Examples of sound/notifications in terminal - need sox
+    play -n synth 0.3 pluck A3 repeat 6
+
+    play -n synth -j 3 sin %3 sin %-2 sin %-5 sin %-9 \
+    sin %-14 sin %-21 fade h .01 2 1.5 delay \
+    1.3 1 .76 .54 .27 remix - fade h 0 2.7 2.5 norm -1
+
+    for n in E2 A2 D3 G3 B3 E4; do
+        play -n synth 4 pluck $n repeat 2
+    done
+
+    for n in E1 E2 E3 E4 E5 E6 E7 E10; do
+        play -n synth 0.3 pluck $n
+    done
+
+    ## Many sounds A1 to G7
+    for letter in {A..G}; do # Loop de A até G
+        for number in {1..7}; do # Loop de 1 até 7
+            echo "$letter$number"
+            play -n synth 0.3 pluck $letter$number 2> /dev/null
+        done
+    done
+
+    ## Beep
+        play -q -n synth 0.1 sin 880
