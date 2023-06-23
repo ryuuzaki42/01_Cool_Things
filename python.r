@@ -4,21 +4,24 @@
     # https://docs.python.org/2/library/simplehttpserver.html
     # https://docs.python.org/3/library/http.server.html
 
-    cd path/to/share/
+    ## Start in the folder want to share
+        cd path/to/share/
 
-    python3 -m http.server
+    ## Print local IP
+        /sbin/ifconfig | grep broadcast | awk '{print $2}'
 
-    # Or
-        python3 -m http.server --help
+    ## Create server
+        python3 -m http.server
 
-        python3 -m http.server [port]
+        ## Or
+            python3 -m http.server --help
 
-    ## Start in the folder that run the command
+            python3 -m http.server [port]
 
     ## Localhost:
         http://localhost:8000
 
-    ## Other machine in same network:
+    ## On other machine in same network:
         http://<IP>:8000
 
         # ex:
