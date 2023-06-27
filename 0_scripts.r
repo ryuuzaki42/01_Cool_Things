@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 23/06/2023
+# Last update: 27/06/2023
 #
 
 ## Process with more CPU use
@@ -2526,3 +2526,22 @@ kwrite $prog_name.info
 
     ## Beep
         play -q -n synth 0.1 sin 880
+
+## Restart KDE - stop and restart
+    ## KDE 4
+        killall plasma-desktop
+        kstart plasma-desktop
+
+    ## KDE 5
+        killall plasmashell
+        kstart plasmashell
+
+    ## KDE > 5.10
+        kquitapp5 plasmashell
+        kstart5 plasmashell
+
+## KDE panel/taskbar missing
+    ## Close/Stop KDE
+        init 3
+    ## Move plasma-org.kde.plasma.desktop-appletsrc file and restart KDE
+        mv ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc.old
