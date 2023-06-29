@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/06/2023
+# Last update: 29/06/2023
 #
 
 ## Process with more CPU use
@@ -2545,3 +2545,21 @@ kwrite $prog_name.info
         init 3
     ## Move plasma-org.kde.plasma.desktop-appletsrc file and restart KDE
         mv ~/.config/plasma-org.kde.plasma.desktop-appletsrc ~/.config/plasma-org.kde.plasma.desktop-appletsrc.old
+
+## Simulating the enter key press to a bash script
+    echo | ./script.sh
+
+    ## Alternative versions
+        yes '' | ./script.sh
+        echo -ne '\n' | ./script.sh
+
+    ## To send y
+        yes | ./script.sh
+        echo 'y' | ./script.sh
+
+        ## To send yes/no
+            echo 'yes' | ./script.sh
+            echo 'yes' | ./script.sh
+
+            yes 'no' | ./script.sh
+            yes 'no' | ./script.sh
