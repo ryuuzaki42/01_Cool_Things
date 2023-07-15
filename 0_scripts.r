@@ -553,6 +553,9 @@ rm $tmpFile # Delete the tmpFile
 ## Run wget with download limit rate
     wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
 
+## wget show website in terminal
+    wget -O - slackware.com
+
 ## Descobrir a placa-mãe sem programa
     # No Windows, no CMD
     wmic baseboard get product,manufacturer
@@ -1177,6 +1180,17 @@ $ paste arq1.txt arq2.txt
 
     # Equivalante em Windows:
     ping -l 1500 -f google.com
+
+## Display route - root
+    route
+
+## Traceroute
+    traceroute google.com
+
+## DNS lookup
+    nslookup google.com
+
+    nslookup facebook.com 8.8.8.8
 
 ## Copy
     #! / bin/bash # juntar / bin
