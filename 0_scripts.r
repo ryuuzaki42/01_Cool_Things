@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 29/06/2023
+# Last update: 18/07/2023
 #
 
 ## Process with more CPU use
@@ -2577,3 +2577,30 @@ kwrite $prog_name.info
 
             yes 'no' | ./script.sh
             yes 'no' | ./script.sh
+
+## bash variable default value
+    ${parameter:-word}
+       Use Default Values.  If parameter is unset or null, the
+       expansion of word is substituted.  Otherwise, the value of
+       parameter is substituted.
+
+    sdf
+
+## Get the last n characters of a string in a shell
+    str='abcd/'
+
+    # ${string: 0-n}
+
+    ## Last character
+        echo "${str:0-1}"
+
+    ## Last 3 characters
+        echo "${str:0-1}"
+
+    ## Or
+        # ${string: -n}
+        echo "${str: -1}"
+
+        ## Note: The extra space in ${str: -1} is necessary,
+        ## otherwise ${str:-1} would result in 1 being taken as the default value if str is null or empty
+
