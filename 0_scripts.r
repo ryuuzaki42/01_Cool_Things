@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 18/07/2023
+# Last update: 06/08/2023
 #
 
 ## Process with more CPU use
@@ -35,7 +35,6 @@ kdewallet=Chromium,Opera,Chrome
     killall -9 kwalletd
 
 ## Compactar/Descompactar arquivos/pastas para zip, rar, tar, tar.gz, tar.bz2 e bz2 pelo terminal
-
     ## zip
         ## Compactar
             zip arquivo.zip arquivo
@@ -200,7 +199,6 @@ kdewallet=Chromium,Opera,Chrome
             rm *_r?l?.pdf
 
 ## Manipulação de nomes e caminhos de arquivos
-
     ## Retorna o último nome após o último /
         basename /usr/local/bin/gzip
             gzip
@@ -217,25 +215,6 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
-
-## pip upgrade packages
-    ## List outdated
-        pip list --outdated
-
-        ## upgrade
-            pip install [package] --upgrade
-
-## Install howdoi # Install pip before
-    pip install howdoi
-
-## Upgrade howdoi
-    # pip install [package] --upgrade
-    pip install howdoi --upgrade
-
-## Upgrade all pip packages
-    pip freeze > requirements.txt
-
-    pip install -r requirements.txt --upgrade
 
 ## sed add ' in the begin
     echo "abc" | sed 's/^/'/'
@@ -466,8 +445,8 @@ rm $tmpFile # Delete the tmpFile
     pode ser novamente baixado da aba Tudo ao registrar seu Kindle na sua conta novamente
 
     ## Para redefinir seu dispositivo:
-    Toque no campo de senha para exibir o teclado virtual
-    Digite 111222777 e toque em OK. Seu Kindle será reiniciado
+        Toque no campo de senha para exibir o teclado virtual
+        Digite 111222777 e toque em OK. Seu Kindle será reiniciado
 
 ## GhostScript - Reduzindo o tamanho de arquivos PDF pelo terminal
     gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 -dNOPAUSE -dBATCH -sOutputFile=novo.pdf velho.pdf
@@ -516,8 +495,8 @@ rm $tmpFile # Delete the tmpFile
 ## Clean env | limpar variaveis setadas incialmente no ambiente
     unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
 
-    # or
-    unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
+    ## or
+        unset $(env | grep -o '^[_[:alpha:]][_[:alnum:]]*' | grep -v -E '^PWD$|^USER$|^TERM$|^SSH_.*|^LC_.*')
 
 ## Video para mp3
     mplayer -dumpaudio arquivo_video.mp4 -dumpfile arquivo_audio.mp3
@@ -533,8 +512,10 @@ rm $tmpFile # Delete the tmpFile
 
 ## Size of a directory/folder on the command line
     du -sh
-    # or
-    du -sh folder
+
+    ## Or
+        du -sh folder
+
     # -s, --summarize display only a total for each argument
     # -h, --human-readable print sizes in human readable format (e.g., 1K 234M 2G)
 
@@ -543,28 +524,30 @@ rm $tmpFile # Delete the tmpFile
 
 ## Format USB to FAT 32
     ## Create the partition with the type FAT 32
+        # Change sdX to correct drive
         cfdisk /dev/sdX
-        #or
-        fdisk /dev/sdX
+
+        ## Or
+            fdisk /dev/sdX
 
     ## Format the new partition to FAT 32
         mkfs.fat -F 32 -I /dev/sdX1
 
 ## Run wget with download limit rate
-    wget -c link -O filename_save.extensao --limit-rate=200000 # (195KB/s)
+    wget -c link -O filename_save.extension --limit-rate=200000 # (195KB/s)
 
 ## wget show website in terminal
     wget -O - slackware.com
 
 ## Descobrir a placa-mãe sem programa
-    # No Windows, no CMD
-    wmic baseboard get product,manufacturer
+    ## Windows - CMD
+        wmic baseboard get product,manufacturer
 
-    # No Gnu/Linux, como root
-    dmidecode | more
+    ## Gnu/Linux - terminal as root
+        dmidecode | more
 
-        # Procure por "Base Board Information"
-        digite /Base
+        ## Procure por "Base Board Information"
+            digite /Base
 
 ## man search
     Use ctrl + f or /
@@ -580,75 +563,75 @@ rm $tmpFile # Delete the tmpFile
     ## The remote server need GUI and that GUI need to be up
 
     ## To connect
-    ssh -X user@ip
+        ssh -X user@ip
 
-    Added in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
-    X11Forwarding yes
+    ## Added in /etc/ssh/sshd_config
+        X11Forwarding yes
 
     ## Restart the ssh service
-    /etc/rc.d/rc.sshd restart
+        /etc/rc.d/rc.sshd restart
 
     ## Exit from this connection
 
     ## Before connect again, to enable the access to any user to GUI
-    xhost +
+        xhost +
 
     ## To connect
-    ssh -X user@ip
-        ## or
-    ssh -Y user@ip
+        ssh -X user@ip
 
-    ssh -Y root@192.168.0.42
+        ## or
+            ssh -Y user@ip
+
+            ssh -Y root@192.168.0.42
 
     ## To see connections in the Konsole (look to the IP)
-    w
+        w
 
     ## To use the display remote
-    export DISPLAY=:0.0
+        export DISPLAY=:0.0
 
     ## To use the display local
-    export DISPLAY=ip_local_host:0.0
-    export DISPLAY=192.168.0.13:0.0
+        export DISPLAY=ip_local_host:0.0
+        export DISPLAY=192.168.0.13:0.0
 
     ## To test the display
-    xclock &
+        xclock &
 
 ## Access ssh X11 on Windows
     ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
-    X11Forwarding yes
+        X11Forwarding yes
 
     ## Download and Install full Xming-fonts and Xming
-    https://sourceforge.net/projects/xming/files/?source=navbar
+        https://sourceforge.net/projects/xming/files/?source=navbar
 
     ## Change the shortcut to start Xming. Right click your mouse to go to properties.
-    Add -ac to your XMing shortcut:
-    "C:\Program Files\Xming\Xming.exe" :0 -clipboard -multiwindow -ac
+        Add -ac to your XMing shortcut:
+        "C:\Program Files\Xming\Xming.exe" :0 -clipboard -multiwindow -ac
 
     ## Start XMing
 
     ## Download putty
-    http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+        http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
     ## Configure putty
-    In Session: Add the IP and port to remote server
+        In Session: Add the IP and port to remote server
 
-    In Connection >> SSH >> X11: Mark Enable X11 Forwarding, set the display to: localhost:0
-    and protocol to MTI-Magic-Cokie-1
+        In Connection >> SSH >> X11: Mark Enable X11 Forwarding, set the display to: localhost:0
+        and protocol to MTI-Magic-Cokie-1
 
-    ## Connect on the putty
-    ## export the display
-    export DISPLAY=192.168.0.13:0.0
+    ## Connect on the putty - export the display
+        export DISPLAY=192.168.0.13:0.0
 
     ## Test the display
-    xclock &
+        xclock &
 
 ## Warning packages removed Slackware
     removepkg *z | grep -E "WARNING|Removing package"
 
     TMPFILE=`mktemp`; removepkg *z | tee $TMPFILE; echo -e "\n\n\t$TMPFILE\n"; cat $TMPFILE | grep -E "WARNING|Removing package"
 
-    # remove the file after?
-    rm $TMPFILE
+    ## Remove the file after?
+        rm $TMPFILE
 
 ## Searh for a file /var/log/packages/*
     grep "/vlc$" /var/log/packages/*
@@ -660,11 +643,11 @@ rm $tmpFile # Delete the tmpFile
     fileType=mp3; countFiles=`ls -la *$fileType| cat -n | tail -n 1 | awk '{print $1}'`; echo "Count files in this folder: $countFiles"
 
 ## Extract audio from video file and convert to MP3
-    # audio 0
-    ffmpeg -i file.mkv -map 0:a:0 audio0.mp3
+    ## audio 0
+        ffmpeg -i file.mkv -map 0:a:0 audio0.mp3
 
-    # audio 1
-    ffmpeg -i file.mkv -map 0:a:1 audio1.mp3
+    ## audio 1
+        ffmpeg -i file.mkv -map 0:a:1 audio1.mp3
 
     ## Check file (convert), set correctly duration
         lame audio0.mp3 audio01.mp3
@@ -679,11 +662,11 @@ rm $tmpFile # Delete the tmpFile
         for file in *.mp4; do ffmpeg -i "$file" -codec copy "${file::-2}kv"; done
 
 ## Convert entire playlist from flac, oog, flac to mp3
-    # 320 k
-    for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" -ab 320k "${f%.m4a}.mp3"; done
+    ## 320 k
+        for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" -ab 320k "${f%.m4a}.mp3"; done
 
-    # normal (small files)
-    for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" "${f%.m4a}.mp3"; done
+    ## normal (small files)
+        for f in *.flac , *.m4a , *.ogg ; do ffmpeg -i "$f" "${f%.m4a}.mp3"; done
 
 ## Convert ogg to mp3 with ffmpeg
     for file in $(ls *.ogg); do echo $file; ffmpeg -i ${file} -acodec libmp3lame ${file::-4}.mp3; done
@@ -691,21 +674,21 @@ rm $tmpFile # Delete the tmpFile
 ## Rename several file adding some parte
     # file_output.txt => f; ${f:2} => le_output.txt; ${f::-4} => file_output
 
-    # test
-    for f in *"(128kbit_AAC).mp3" ; do echo "${f::-18}".mp3; done
-    # do
-    for f in *"(128kbit_AAC).mp3" ; do mv "$f" "${f::-18}".mp3; done
+    ## Test
+        for f in *"(128kbit_AAC).mp3" ; do echo "${f::-18}".mp3; done
+
+    ## Run
+        for f in *"(128kbit_AAC).mp3" ; do mv "$f" "${f::-18}".mp3; done
 
 ## Remove part of the name of files
-    #To remove extra.test
-    rename "extra.test" "" *
+    ## To remove extra.test
+        rename "extra.test" "" *
 
-## pdf to txt
-    # need poppler package
+## pdf to txt - need poppler package
     pdftotext input.pdf output.txt
 
-    # or with -layout to keep the layout
-    pdftotext -layout input.pdf output.txt
+    ## Or with -layout to keep the layout
+        pdftotext -layout input.pdf output.txt
 
 ## sed - delete/remove and replace values
     ## Replace/remove multiple empty line with one empty line
@@ -724,8 +707,9 @@ rm $tmpFile # Delete the tmpFile
 
     ## Remove new line (\n)
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
-        # or
-        tr -d '\n'
+
+        ## Or
+            tr -d '\n'
 
     ## sed change value (TV) to (tv)
         echo "TV" | sed 's/TV/tv/g'
@@ -744,8 +728,9 @@ rm $tmpFile # Delete the tmpFile
 
     ## Remove all possible spaces at the end of the line
         sed 's/ *$//' file
-        # to write in the same file
-        sed -i 's/ *$//' file
+
+        ## To write in the same file
+            sed -i 's/ *$//' file
 
     ## Using the [:blank:] class you are removing spaces and tabs
         sed 's/[[:blank:]]*$//' file
@@ -757,7 +742,7 @@ rm $tmpFile # Delete the tmpFile
         sed 's/\s*$//' file > file2.txt
 
 ## Remove '\r' (return)
-    # useful in subtitles or text files to use with grep
+    ## Useful in subtitles or text files to use with grep
     tr -d '\r'
 
     sed 's/\r$//' file
@@ -768,7 +753,7 @@ rm $tmpFile # Delete the tmpFile
     cut -c1-5
 
 ## Change the default shell in Linux/Unix/MacOS?
-    # chsh -s shell-path user
+    ## chsh -s shell-path user
     chsh -s /bin/bash j
 
     ## Logout to test
@@ -776,18 +761,18 @@ rm $tmpFile # Delete the tmpFile
 ## Print only some lines
     b=3; f=18; cat -n file.txt | sed -n -e "$b,$f p" -e "$f q"
 
-    # or
-    b=3; f=18; sed -n "$b, $f p" file.txt
+    ## Or
+        b=3; f=18; sed -n "$b, $f p" file.txt
 
 ## Localize arquivos grandes
     find . -size +1000M
 
-    #b - blocos de 512-byte (este é o default, se não for utilizado nenhum sufixo)
-    #c - bytes
-    #w - palavras de dois bytes
-    #k - Kilobytes (unidades de 1024 bytes)
-    #M - Megabytes (unidades de 1048576 bytes)
-    #G - Gigabytes (unidades de 1073741824 bytes)
+    # b - blocos de 512-byte (este é o default, se não for utilizado nenhum sufixo)
+    # c - bytes
+    # w - palavras de dois bytes
+    # k - Kilobytes (unidades de 1024 bytes)
+    # M - Megabytes (unidades de 1048576 bytes)
+    # G - Gigabytes (unidades de 1073741824 bytes)
 
 ## Reset directories and files permission
     find . -type d -exec chmod 0755 {} \;
@@ -809,7 +794,6 @@ rm $tmpFile # Delete the tmpFile
     # Location: http://www.shellhacks.com/en/HowTo-Extract-Archives-targzbz2rarzip7ztbz2tgzZ
 
 ## How to compare the content of two or more directories
-    # Compare dois diretórios
     diff -qr dir1/ dir2/
 
     # -q, report only when files differ
@@ -852,7 +836,7 @@ rm $tmpFile # Delete the tmpFile
 ## Grub login/command boot without password
     ## In the Grub menu, select the entry and press "e" to edit
 
-    ## Appending in the linhe "linux ....", after boot it with "Ctrl-x" of "F10"
+    ## Appending in the line "linux ....", after boot it with "Ctrl-x" of "F10"
     rw init=/bin/bash
 
     ## Set the new password
@@ -871,19 +855,20 @@ rm $tmpFile # Delete the tmpFile
     update-grub
 
 ## Remove Spotify pop-up notification when a song starts
-    # Exit Spotify
-    # Then edit
-    ~/.config/spotify/Users/[Spotify user name]-user/prefs
-    # And set
+    ## Exit Spotify
+
+    ## Then edit
+        ~/.config/spotify/Users/[Spotify user name]-user/prefs
+
+    ## And set
     ui.track_notifications_enabled=false
 
 ## Gmail list the archived emails
+    # https://support.google.com/mail/answer/7190
     has:nouserlabels -in:Sent -in:Chat -in:Draft -in:Inbox
 
     # Mais que 10m e mais de 1 ano
     larger:10m older_than:1y
-
-    # https://support.google.com/mail/answer/7190
 
 ## Change size monitor
     xrandr --output LVDS1 --mode 1024x768
@@ -892,17 +877,17 @@ rm $tmpFile # Delete the tmpFile
     xrandr -s 1024x768
     xrandr -s 1366x768
 
-    # Add
-    xrandr --output LVDS1 --mode 1024x768
-    xrandr --output VGA1 --mode 1024x768
-    xrandr --output LVDS1 --off
-    xrandr --output VGA1 --mode 1440x900
+    ## Add
+        xrandr --output LVDS1 --mode 1024x768
+        xrandr --output VGA1 --mode 1024x768
+        xrandr --output LVDS1 --off
+        xrandr --output VGA1 --mode 1440x900
 
-    # Remove
-    xrandr --output VGA1 --mode 1024x768
-    xrandr --output LVDS1 --mode 1024x768
-    xrandr --output VGA1 --off
-    xrandr --output LVDS1 --mode 1366x768
+    ## Remove
+        xrandr --output VGA1 --mode 1024x768
+        xrandr --output LVDS1 --mode 1024x768
+        xrandr --output VGA1 --off
+        xrandr --output LVDS1 --mode 1366x768
 
 ## Comprimir zip em várias partes
     7z a -v512m Large-file-separated-in-multi-parts.zip Large-Gigabytes-File.SQL
@@ -926,10 +911,19 @@ rm $tmpFile # Delete the tmpFile
     185.037.037.037
     185.037.037.185
 
+## DNS Cloudflare
+    # https://1.1.1.1/
+    1.1.1.1
+
 ## Open DNS
-    # http://www.gigadns.com.br/
-    189.38.95.95
-    189.38.95.96
+    # https://www.gigadns.com.br/
+    ## IPv4:
+        189.38.95.95
+        189.38.95.96
+
+    ## IPv6:
+        2804:10:10::10
+        2804:10:10::20
 
 ## Magic SysRq key
     # Enable? 1 - Yes, 0 - No
@@ -1004,10 +998,11 @@ rm $tmpFile # Delete the tmpFile
     # "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
 
 ## How can I suspend/hibernate from command line?
-    #To get Hibernation
-    su - root -c 'pm-hibernate'
-    #To get Suspend
-    su - root -c 'pm-suspend'
+    ## To get Hibernation
+        su - root -c 'pm-hibernate'
+
+    ## To get Suspend
+        su - root -c 'pm-suspend'
 
 ## Change the size on Google Slides
     Click the File "menu" and select "Page setup"
@@ -1145,8 +1140,8 @@ $ paste arq1.txt arq2.txt
     }
     alias lcd=changeDirectory
 
-    # or
-    alias lcd="cd $1 ; ls -l -a -v -h --color"
+    ## Or
+        alias lcd="cd $1 ; ls -l -a -v -h --color"
 
 ## Opções úteis do ls
     ls -lSrh
@@ -1168,11 +1163,11 @@ $ paste arq1.txt arq2.txt
 ## Ignorar o ping no Gnu/Linux
     sysctl -w net.ipv4.icmp_echo_ignore_all=1
 
-    # Religar
-    sysctl -w net.ipv4.icmp_echo_ignore_all=0
+    ## Religar
+        sysctl -w net.ipv4.icmp_echo_ignore_all=0
 
-    # Limitar respostas
-    sysctl -w net.ipv4.icmp_echoreply_rate=10
+    ## Limitar respostas
+        sysctl -w net.ipv4.icmp_echoreply_rate=10
 
 ## Teste MTU size and MTU Path. Executa ping com pacote de 1500 bytes e não aceita fragmentação (- M do)
     # Apenas root consegue definar o tamanho do ping (-s)
@@ -1200,13 +1195,13 @@ $ paste arq1.txt arq2.txt
 
 ## Virtualbox start kernel service
     ## Edit the menu-start-shortcut
-        # Slackware KDE
+        ## Slackware KDE
             kdesu sh /etc/init.d/vboxdrv start; VirtualBox %U
 
-        # Slackware XFCE
+        ## Slackware XFCE
             gksu sh /etc/init.d/vboxdrv start; VirtualBox %U
 
-        # Linux mint
+        ## Linux mint
             kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
 
 ## Add to mound "data partition"
@@ -1225,7 +1220,7 @@ $ paste arq1.txt arq2.txt
     nano /etc/group
     vboxuser: $user$
 
-    #or
+    ## Or
     usermod -a -G vboxusers $user$
 
     usermod -a -G vboxusers j
@@ -1262,18 +1257,20 @@ $ paste arq1.txt arq2.txt
 
 ## Criar várias pastas
     mkdir {1..25}
-    # or
+
+    ## Or
     mkdir folder_{1..25}
 
 ## Para remover várias pastas
     rm -r {1..25}
 
-    # or
+    ## Or
     rm -r folder_{1..25}
 
 ## Setar PATH
     export PATH=$PATH:/path/to/dir
-    # ex java:
+
+    ## Ex Java:
     export PATH=$PATH:/usr/lib64/java/bin:/usr/lib64/java/jre/bin:
 
 ## Swap em arquivo
@@ -1382,7 +1379,7 @@ $ paste arq1.txt arq2.txt
     # qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
     qpdf --password= --decrypt pretextual.pdf pretextual2.pdf
 
-## contar caracteres
+## Contar caracteres
     wc -m
 
 ## Evince with not icons
@@ -1503,7 +1500,7 @@ fi
     make DESTDIR=$folderInstall install
 
     ## Or
-    make DESTDIR=b/ install
+        make DESTDIR=b/ install
 
 ## Adicionar plugins
     ln -s /usr/lib64/mozilla/plugins/ /home/j/.mozilla/
@@ -1626,51 +1623,50 @@ fi
 
 ## Acertar data/tempo/hora
     ntpdate -u -b ntp1.ptb.de
-    # or
-    ntpdate -u -b bonehed.lcs.mit.edu
-    ntpdate -u -b ntp.usp.br
 
-## Comentário shell script várias
+    ## or
+        ntpdate -u -b bonehed.lcs.mit.edu
+        ntpdate -u -b ntp.usp.br
+
+## Comentário shell script várias linhas
     : '
     Linha1 comentada
     Linha2 comentada
     Linha3 comentada
     '
 
-    # or
-
-    # com um delimitador
-    :<< 'asd'
-    Linha1 comentada
-    Linha2 comentada
-    Linha3 comentada
-    asd
+    ## or
+        # com um delimitador
+        :<< 'asd'
+        Linha1 comentada
+        Linha2 comentada
+        Linha3 comentada
+        asd
 
 ## Boot ValkyrieOS -> baseado no Slackware 14.1
     huge.s intel_pstate=disable
-
-## Kernel Generic
-    /usr/share/mkinitrd/mkinitrd_command_generator.sh
-    # /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-3.2.29 >> /etc/lilo.conf
 
 ## Open terminal nautilus
     apt-get install nautilus-open-terminal
     nautilus -q
 
 ## How to force Dolphin to not execute executable files
-    edit /usr/share/mime/packages/freedesktop.org.xml
-    and find the line that starts the shellscript section:
-    <mime-type type="application/x-shellscript">
-    then scroll down to find this line within that section:
-        <sub-class-of type="application/x-executable"/>
-    then comment it out like so:
-        <!-- <sub-class-of type="application/x-executable"/> -->
-    save that, then compile it with this command:
+    ## Edit /usr/share/mime/packages/freedesktop.org.xml
+    ## and find the line that starts the shellscript section:
+        <mime-type type="application/x-shellscript">
 
-    update-mime-database /usr/share/mime
-    ## if unknown (Unknown media type in type ...)
-    rm /usr/share/mime/packages/kde.xml
-    update-mime-database /usr/share/mime
+        ## Then scroll down to find this line within that section:
+            <sub-class-of type="application/x-executable"/>
+
+        ## Then comment it out like so:
+            <!-- <sub-class-of type="application/x-executable"/> -->
+
+    ## Save that, then compile it with this command:
+        update-mime-database /usr/share/mime
+
+        ## If unknown (Unknown media type in type ...)
+            rm /usr/share/mime/packages/kde.xml
+            update-mime-database /usr/share/mime
 
 ## Saber quando o Gnu/Linux foi instalado
     ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'
@@ -1701,7 +1697,7 @@ fi
     mkfontdir
     fc-cache -f -v
 
-## Habilitar root (Ubuntu)
+## Enable root Ubuntu
     sudo passwd root
 
 ## Mysql no Slackware
@@ -1782,7 +1778,6 @@ fi
     netstat -atunp
 
 ## ps commands
-
     ## To see every process on the system using standard syntax:
         ps -e
         ps -ef
@@ -1824,7 +1819,6 @@ fi
     du -sh *
 
 ## Sort numbers values - separated by a dot or any other separator character
-
 echo "1.0.0
 1.0.0.1018
 1.0.0.1019
@@ -1927,9 +1921,7 @@ echo "1.0.0
 
 ## ssr - simplescreenrecorder not recording correctly
     ## The recording occasionally flickers, showing parts of the desktop background instead of windows
-
     # https://www.maartenbaert.be/simplescreenrecorder/troubleshooting/
-
     # "For Intel GPUs, the flickering can sometimes be eliminated by uninstalling the driver for
     # 2D acceleration (xserver-xorg-video-intel, xf86-video-intel or similar)."
 
@@ -1938,7 +1930,7 @@ echo "1.0.0
 ## Telegram with time in 24 horas
     LC_TIME=pt_BR.UTF-8 ./Telegram
 
-    # or
+    ## Or
     LC_TIME=en_IE.UTF-8 ./Telegram
 
 ## Record audio from a computer while wearing headphones
@@ -2159,7 +2151,6 @@ deactivate
 ## TERM variable
     # The $TERM is an environmental variable in Linux and Unix shell environments.
     # This variable defines the terminal type. In other words, it sets the terminal type for which output is to be prepared.
-
     echo "$TERM"
 
     ## Default
@@ -2176,7 +2167,6 @@ deactivate
 ## Mount partition/device like KDE Dolphin under: /run/media/<User>/<Device Name>/
     ## Mount
         # udisksctl mount -b /dev/sdXY
-
         udisksctl mount -b /dev/sdb1
 
         udisksctl mount -b /dev/sda5
@@ -2189,7 +2179,6 @@ deactivate
 
 ## Teamviewer not starting GUI
     ## Requires libminizip
-
     ## Edit the file
         nano ~/.config/kded5rc
 
@@ -2368,7 +2357,7 @@ kwrite $prog_name.info
     ## To see all the logged-in users
         w
 
-        #or
+        ## Or
             who
 
 ## zenity
@@ -2455,12 +2444,26 @@ kwrite $prog_name.info
         for file in $(find . -type f | grep -v ".git/"); do echo $file; sed -i 'N;/^\n$/D;P;D;' $file; done
 
 ## smartmontools SSD
-    ## All informations
+    ## /dev/sdx -> /dev/sda, /dev/sdb
+    ## All information
         smartctl -a /dev/sda
 
-    ## % of life
+    ## % of life -A > SSD_Life_Left
         smartctl -A /dev/sda
-            > SSD_Life_Left
+
+        smartctl -A /dev/sda | grep SSD
+
+        smartctl -A /dev/sda | grep "SSD_Life_Left" | awk '{print $2" "$4" %"}'
+
+    ## Hours
+        smartctl -A /dev/sda | grep "Power_On_Hours"
+
+        smartctl -A /dev/sda | grep "Power_On_Hours" | awk '{print $2" "$10}'
+
+    ## Others
+        smartctl --info /dev/sda
+
+        smartctl -A /dev/sdb | grep "Temperature_Celsius" | awk '{print $2" "$10}'
 
 ## Compose key shortcuts - insert pipe |
     ## Enable compose key
@@ -2578,19 +2581,16 @@ kwrite $prog_name.info
             yes 'no' | ./script.sh
             yes 'no' | ./script.sh
 
-## bash variable default value
-    ${parameter:-word}
-       Use Default Values.  If parameter is unset or null, the
-       expansion of word is substituted.  Otherwise, the value of
-       parameter is substituted.
-
-    sdf
+## Bash variable default value
+    ## If parameter is unset or null, the expansion of word is substituted.
+    ## Otherwise, the value of parameter is substituted.
+    # ${parameter:-word}
+    BUILD=${BUILD:-1}
 
 ## Get the last n characters of a string in a shell
     str='abcd/'
 
     # ${string: 0-n}
-
     ## Last character
         echo "${str:0-1}"
 
@@ -2604,3 +2604,38 @@ kwrite $prog_name.info
         ## Note: The extra space in ${str: -1} is necessary,
         ## otherwise ${str:-1} would result in 1 being taken as the default value if str is null or empty
 
+## Grep value inside some pattern
+    # grep -o -P '(?<=begin).*(?=end)'
+    echo "beginpatternend" | grep -o -P '(?<=begin).*(?=end)'
+
+## KDE launch feedback
+    System Setting > appearance > Global Theme > Launcg Feedback
+    ## Or just search for "launch feedback”
+        > Bouncing
+        > Enable animation
+
+## Unload and load kernel module
+    lsmod    - Show the status of modules in the Linux Kernel
+    modprobe - Add and remove modules from the Linux Kernel
+    modinfo  - Show information about a Linux Kernel module
+    dmesg    - print or control the kernel ring buffer
+
+    ## List modules in use and dependencies (Used by)
+        lsmod
+
+    ## Grep for ath (Wi-Fi) module
+        lsmod | grep ath
+
+    ## Info about module
+        modinfo ath
+
+    ## Unload modules
+        modprobe -r ath10k_pci ath10k_core ath mac80211 cfg80211
+
+    ## Load modules
+        modprobe ath10k_pci ath10k_core ath mac80211 cfg80211
+
+    ## Show kernel messages
+        dmesg
+
+        dmesg | grep ath
