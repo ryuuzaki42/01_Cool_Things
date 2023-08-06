@@ -55,3 +55,22 @@
 
     ## pip clean cache
         pip cache purge
+
+## pip upgrade packages
+    ## List outdated
+        pip list --outdated
+
+        ## upgrade
+            pip install [package] --upgrade
+
+## Install howdoi # Install pip before
+    pip install howdoi
+
+    ## Upgrade howdoi
+        # pip install [package] --upgrade
+        pip install howdoi --upgrade
+
+## Upgrade all pip packages
+    pip freeze > requirements.txt
+
+    pip install -r requirements.txt --upgrade
