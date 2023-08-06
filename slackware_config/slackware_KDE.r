@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 19/06/2023
+# Last update: 06/08/2023
 #
 
 ## Make home folder - mount /media/sda2
@@ -101,21 +101,39 @@ done
             Stop charging at: 95%
             Start charging only once below: 50%
 
-## Kernel Generic
+## Make initrd - kernel generic
     # https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
 
+    ## Show the command - mkinitrd - list of modules
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh
+
+    ## Run
     /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
-    /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
-    nano /etc/lilo.conf
-    lilo
+
+    ## To other kernel version installed
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -k 5.15.117
+
+     ## Adding other kernel modules
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -m "ath10k_pci:ath10k_core:ath:mac80211:cfg80211"
+
+    ## Add lilo configuration to end of config file
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-5.15.117 >> /etc/lilo.conf
+
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
+
+        cat /etc/lilo.conf
+
+        ## Update lilo
+            lilo
 
     ## Slackware 15.0 and current
         pkgtool
             > Setup - Choose Slackware installation scripts to run again
                 > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
 
-        ## Edit link in lilo.conf "vmlinuz-generic-..." to "vmlinuz-generic"
             lilo
+
+    ## Tip: Edit lilo.conf "vmlinuz-generic-..." to "vmlinuz-generic"
 
 ## Touchpad of just one part
     nano /etc/X11/xorg.conf
