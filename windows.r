@@ -7,11 +7,21 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/07/2023
+# Last update: 08/08/2023
 #
 
 ## Check Windows license and activation status
-    slmgr /xpr
+    # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
+    # slmgr or slmgr.vbs
+
+    ## Display license information - /dli
+        slmgr /dli
+
+        ## Display detailed license information - /dlv
+            slmgr /dlv
+
+    ## Display the activation expiration date for the product
+        slmgr /xpr
 
 ## Turn off Internet Explorer support to Windows 10
     Control Panel\All Control Panel Items\Programs and Features
@@ -75,11 +85,14 @@
 ## Disable Windows Update and others with winaero-tweaker
     https://winaero.com/winaero-tweaker/#download
 
-## Disable hibernate
-    powercfg.exe /hibernate off
+## Disable hibernate - powercfg or powercfg.exe
+    powercfg /hibernate off
 
     ## Back to default - Enable hibernate
-        powercfg.exe /hibernate on
+        powercfg /hibernate on
+
+    ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
+        powercfg /a
 
 ## Reduce size of pagefile.sys - default size o RAM
     File Explorer > This PC > Properties > Advanced system settings > Advanced
