@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 06/08/2023
+# Last update: 08/08/2023
 #
 
 ## Process with more CPU use
@@ -2587,22 +2587,41 @@ kwrite $prog_name.info
     # ${parameter:-word}
     BUILD=${BUILD:-1}
 
-## Get the last n characters of a string in a shell
-    str='abcd/'
+## Get last n characters of a string
+    str='abcdefg/'
 
-    # ${string: 0-n}
-    ## Last character
+    ## Last character - ${string:0-n}
         echo "${str:0-1}"
 
     ## Last 3 characters
-        echo "${str:0-1}"
+        echo "${str:3-1}"
 
-    ## Or
-        # ${string: -n}
+    ## Or - ${string: -n}
         echo "${str: -1}"
+
+        echo "${str: -3}"
 
         ## Note: The extra space in ${str: -1} is necessary,
         ## otherwise ${str:-1} would result in 1 being taken as the default value if str is null or empty
+
+## Get first n characters of a string
+    str='abcdefg/'
+
+    ## First character - ${string:0:n}
+        echo "${str:0:1}"
+
+    ## First 3 characters
+        echo "${str:0:3}"
+
+    ## Or - ${string::n}
+        echo "${str::1}"
+
+        echo "${str::3}"
+
+    ## From position X, get Y characters - ${string:X:Y}
+        echo "${str:3:2}"
+
+        echo "${str:4:1}"
 
 ## Grep value inside some pattern
     # grep -o -P '(?<=begin).*(?=end)'
