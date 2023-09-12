@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 06/08/2023
+# Last update: 12/09/2023
 #
 
 ## Make home folder - mount /media/sda2
@@ -103,35 +103,35 @@ done
 
 ## Make initrd - kernel generic
     # https://docs.slackware.com/slackware:beginners_guide#switch_to_a_generic_kernel
-
     ## Show the command - mkinitrd - list of modules
         /usr/share/mkinitrd/mkinitrd_command_generator.sh
 
-    ## Run
-    /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
+    ## Make initrd
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -r | /bin/bash
 
-    ## To other kernel version installed
-        /usr/share/mkinitrd/mkinitrd_command_generator.sh -k 5.15.117
+    ## Slackware 15.0 and current
+        geninitrd
 
-     ## Adding other kernel modules
-        /usr/share/mkinitrd/mkinitrd_command_generator.sh -m "ath10k_pci:ath10k_core:ath:mac80211:cfg80211"
+        ## Or
+            pkgtool
+                > Setup - Choose Slackware installation scripts to run again
+                    > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
 
-    ## Add lilo configuration to end of config file
-        /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-5.15.117 >> /etc/lilo.conf
+        ## To other kernel version installed
+            /usr/share/mkinitrd/mkinitrd_command_generator.sh -k 5.15.117
+
+        ## Adding other kernel modules
+            /usr/share/mkinitrd/mkinitrd_command_generator.sh -m "ath10k_pci:ath10k_core:ath:mac80211:cfg80211"
+
+    ## Add lilo configuration to end of configuration file
+        #/usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-5.15.117 >> /etc/lilo.conf
 
         /usr/share/mkinitrd/mkinitrd_command_generator.sh -l /boot/vmlinuz-generic-* >> /etc/lilo.conf
 
         cat /etc/lilo.conf
 
-        ## Update lilo
-            lilo
-
-    ## Slackware 15.0 and current
-        pkgtool
-            > Setup - Choose Slackware installation scripts to run again
-                > 01.mkinitrd - Generate /boot/initrd.gz for the generic Kernel
-
-            lilo
+    ## Update lilo
+        lilo
 
     ## Tip: Edit lilo.conf "vmlinuz-generic-..." to "vmlinuz-generic"
 
