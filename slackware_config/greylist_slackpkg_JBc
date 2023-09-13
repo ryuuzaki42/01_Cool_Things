@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 12/08/2023
+# Last update: 13/08/2023
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -68,6 +68,7 @@ xsnow
 # -------------------------------------------------------------------------------------------------------
 # Packages installed
 # -------------------------------------------------------------------------------------------------------
+Bypass-psarip
 MasterPDFEditor
 # R
 astyle
@@ -90,9 +91,9 @@ mozilla-firefox
 jdk
 qpdfview
 sbopkg
-slackpkg+
 # sbotools
 shellcheck
+slackpkg+
 smartsynchronize
 smplayer
 # teams - AppImage
@@ -209,7 +210,7 @@ libreoffice-l10n-pt_BR
 # linux-wifi-hotspot
 # -------------------------------------------------------------------------------------------------------
 linux-wifi-hotspot
-# create_ap
+create_ap
 hostapd
 # -------------------------------------------------------------------------------------------------------
 # TLP
