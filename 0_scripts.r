@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/08/2023
+# Last update: 24/09/2023
 #
 
 ## Process with more CPU use
@@ -2658,3 +2658,20 @@ kwrite $prog_name.info
         dmesg
 
         dmesg | grep ath
+
+## Generate random number in terminal
+    # $RANDOM is an internal Bash function (not a constant) that
+    # returns a pseudorandom integer in the range 0 - 32767
+    echo $RANDOM
+
+    ## 1 to 50
+        echo $(( $RANDOM % 50 + 1 ))
+
+    ## 1 to 50 sequence without repeat
+        shuf -i 1-50 -n10
+
+    ## 10 first numbers of 1 to 50
+        shuf -i 1-50 -n10
+
+    ## 1 to 50 with 100 numbers, need repeat
+        shuf -i 1-50 -n100 -r
