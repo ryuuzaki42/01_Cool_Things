@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/09/2023
+# Last update: 02/10/2023
 #
 
 ## Process with more CPU use
@@ -2675,3 +2675,20 @@ kwrite $prog_name.info
 
     ## 1 to 50 with 100 numbers, need repeat
         shuf -i 1-50 -n100 -r
+
+## USB sound card - low volume - snd_usb_audio
+    ## Start alsamixer - as normal user
+        alsamixer
+
+        ## Select the sound card
+            F6
+                > USB PnP Sound Device
+
+        ## Show all (Playback and Capture)
+            F5
+
+            ## Increase the volume with up arrow key
+            ## ESC to exit
+
+        ## Salve the changes - as root
+            alsactl store
