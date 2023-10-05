@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/10/2023
+# Last update: 05/10/2023
 #
 
 ## Process with more CPU use
@@ -22,6 +22,15 @@
     # O std pode ser c99 ou c11, para c17 e c18 vai precisar do GCC atual. Leia mais sobre:
     # https://fig.if.usp.br/~esdobay/c/gcc.html
     # https://linux.ime.usp.br/~lucasmmg/livecd/documentacao/documentos/terminal/Compilando_um_arquivo_em_C.html
+
+    ## Generate assembly code from C/C++ code, helloworld.s
+        gcc -S helloworld.c
+
+        ## See online
+            https://godbolt.org/
+
+    ## Display assembly code form one executable C
+        objdump -S prog.out
 
 ## Disable KDE Wallet (KWALLET) Pop-ups in Chromium, Google Chrome and Opera
     # for not pop-up every time you open them added in the end of file
@@ -175,9 +184,6 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
-
-## Display assembly code form one executable C
-    objdump -S prog.out
 
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
     # All reduce types (1, 2 and 3) with links
