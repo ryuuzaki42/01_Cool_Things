@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/10/2023
+# Last update: 12/10/2023
 #
 
 ## Process with more CPU use
@@ -2698,3 +2698,15 @@ kwrite $prog_name.info
 
         ## Salve the changes - as root
             alsactl store
+
+## Linux - Mouse clicks suddenly stopped working
+    ## Left click may dies after wakeup from sleep
+    ## Some things to try:
+
+        ## Switch to and from a virtual terminal:
+            Ctrl + Alt + F1
+            Ctrl + Alt + F7
+
+        ## Activate the screen-lock - hopefully reset the X11 window manager.
+            Ctrl + Alt + L
+
