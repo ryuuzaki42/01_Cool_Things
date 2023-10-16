@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/10/2023
+# Last update: 16/10/2023
 #
 
 ## Process with more CPU use
@@ -1015,11 +1015,25 @@ rm $tmpFile # Delete the tmpFile
     Select a size from the drop down menu:
     Custom -> pixels: 1024 x 788
 
-## vlc continue playback?
+## VLC continue playback?
     interface> Main interfaces> QT:"Continue playback?" ask -> never
 
-## vlc unique instance in the KDE menu
+## VLC unique instance in the KDE menu
     /usr/bin/vlc --started-from-file %U
+
+## VLC with sound only in of the effects
+    Audio > Stereo mode
+        > Original # (Surround)
+            > Stereo
+
+    ## Change default Audio - Stereo Mode setting to Stereo
+        Tools > Preferences
+            > Show settings > All
+
+            > Audio
+                Stereo audio output mode
+                    > Unset
+                        > Stereo
 
 ## Mesclando linhas de arquivos
 $ cat arq1.txt
@@ -2710,3 +2724,10 @@ kwrite $prog_name.info
         ## Activate the screen-lock - hopefully reset the X11 window manager.
             Ctrl + Alt + L
 
+## KWrite / Kate multi-Line text editing
+    Edit > Input Modes
+        > Normal
+
+    Edit
+        > Block selection Mode (Crtl + Shift + B)
+            Select the lines (block) to edit
