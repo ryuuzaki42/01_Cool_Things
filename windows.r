@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/08/2023
+# Last update: 17/10/2023
 #
 
 ## Check Windows license and activation status
@@ -28,20 +28,101 @@
         > Turn Windows features on or off
             > Uncheck "Internet Explorer 11"
 
-## Update windows apps -> Windows store
-    Install "Intel® Graphics Command Center"
-
-## Deleting "Activate Windows" option from Right Click Menu
-    regedit >
-
-        Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
-
-            Delete "Activate Windows" folder
-
 ## Disable Fast Startup on Windows 10
     Control Panel\All Control Panel Items\Power Options\System Settings
         > Change Settings That Are Currently Unavailable
             > Uncheck "Turn On Fast Startup"
+
+## Disable Windows Update and others with winaero-tweaker
+    https://winaero.com/winaero-tweaker/#download
+        > Use a old config "Winaero Tweaker_*.ini"
+
+## Disable hibernate - powercfg or powercfg.exe
+    powercfg /hibernate off
+
+    ## Back to default - Enable hibernate
+        powercfg /hibernate on
+
+    ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
+        powercfg /a
+
+## Changes in Advanced system settings
+    File Explorer > This PC > Properties > Advanced system settings
+
+        ## Disable some visual effects
+            Advanced
+                Performance > Settings... > Visual Effects
+                    > Adjust for best performanace
+                        > Enable
+
+                        > Show thumbnails instead of icons
+                        > Smooth edges of screen fonts
+
+        ## Reduce size of pagefile.sys - default size o RAM
+            Advanced
+                Performance > Settings... > Advanced
+                    Virtual Memory > Change...
+                        If RAM > 4 GiB
+                            x - Automatically manage
+                            > Custom size
+                                Initial: 1024
+                                Maximum: 2048
+                        D: None
+
+        ## Disable Remote Assistance
+            Remote Assistance
+                Disable "Allow Remote Assistance..."
+
+        ## Create one System Protection - Restore point
+            Systen Protetion
+                ## Enable in C:
+                    Configure > Max Usage > 5%
+
+                ## Create one manual
+                    > Create... > Name "a1" > Create
+
+                ## Off in the others partitions
+                    D: > Configure > Disable system protection
+
+                ## Check if was created correctly
+                    System Restore... > Next
+
+## Update Windows apps > Windows store
+    If Intel
+        Install Intel® Graphics Command Center
+            https://apps.microsoft.com/detail/9PLFNLNT3G5G
+
+    If Thinkpad
+        Install Lenovo Vantage
+            https://apps.microsoft.com/detail/9WZDNCRFJ4MV
+
+    If Nvidia card
+        Instal Nvidia driver
+            https://apps.microsoft.com/detail/9NF8H0H7WMLT
+
+## Error checking
+    C: (and others partitions)
+        Properties > Tools > Error checking
+            > Check
+
+    Optimize or/and defragment driver
+        # SSD (optimize) - HD (defragment driver)
+        C: (and others partitions)
+            Properties > Tools >Optimize and defragment driver
+                > Optimize
+
+## Disk cleanup
+    C: (and others partitions)
+        Properties > General > Disk Cleanup
+            > Clean up system files
+
+
+## Install
+    Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox,
+    Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++, PathMyPc,
+    Telegram, WinRAR, HWmonitor
+
+-------------------------------------------------------------------------------
 
 ## Windows don't recognize partition (NTFS) connected
     ## cmd as administrator
@@ -51,26 +132,26 @@
         list volume
 
         # X is the number of the offline volume
-        select volume X
+            select volume X
 
-        online volume
+            online volume
 
         # Assign a letter to make online
-        # change R for the one letter available
-        assign letter=R
+            # change R for the one letter available
+            assign letter=R
 
     ## With disk
         list disk
 
         # X is the desired disk number
-        select disk X
+            select disk X
 
-        list partition
+            list partition
 
-        # X is the desired partition number
-        select partition X
+        # X is the desired partition number
+            select partition X
 
-        active
+            active
 
     ## Minitool Partition Wizard
         > Set Active
@@ -82,37 +163,10 @@
 
         > Explore
 
-## Disable Windows Update and others with winaero-tweaker
-    https://winaero.com/winaero-tweaker/#download
-
-## Disable hibernate - powercfg or powercfg.exe
-    powercfg /hibernate off
-
-    ## Back to default - Enable hibernate
-        powercfg /hibernate on
-
-    ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
-        powercfg /a
-
-## Reduce size of pagefile.sys - default size o RAM
-    File Explorer > This PC > Properties > Advanced system settings > Advanced
-        Performance > Settings... > Advanced > Change
-
-            x - Automatically manage
-            > Custom size
-                Initial: 1024
-                Maximum: 2048
-
-## Disable visual effects
-    File Explorer > This PC > Properties > Advanced system settings > Advanced
-        Performance > Settings... > Visual Effects
-            > Leave only checked "Show thumbnails instead of icons" and "Smooth edges of screen fonts"
-
-## Create one System Protection - Restore point
-    File Explorer > This PC > Properties > Advanced system settings > System Protection
-        > Create... > Name "a1" > Create
-
-## Install Microsoft office, SumatraPDF, VLC, Smplayer, Firefox
+## Deleting "Activate Windows" option from Right Click Menu
+    regedit >
+        Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
+            Delete "Activate Windows" folder
 
 ## Get the motherboard from cmd
     wmic baseboard get product,manufacturer
@@ -127,8 +181,6 @@
     # Fix Desktop Overscaling if use a TV - Monitor
     Open Intel Video Manager
         > Go to size/scaling and change
-
-    ## Script.r - Greats commands for day life ##
 
 ## Windows setup could not configure to run on this computer hardware - error during Windows installation
     # Windows setup could not install on this computer hardware
@@ -448,7 +500,7 @@
         tracert google.com
 
 ## Remove virus Recycle bin
-    ## inside the partition
+    ## Inside the partition
         attrib -a -h -r -s /s /d *.*
 
      -r Clears read-only file attribute
@@ -481,11 +533,11 @@
     > New folder, set name as:
         GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
-## Reliability
+## Check events - Reliability
     Start > Search for Reliability > Open "Reliability Monitor"
 
     ## Confiabilidade
-        Iniciar > Pesquise por Confiabilidade > Open "Monitor de Confiabilidade"
+        Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
 
 ## Install Windows 11 without TPM, Secure Boot etc
     ## Install until "Select OS version"
