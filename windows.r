@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 17/10/2023
+# Last update: 18/10/2023
 #
 
 ## Check Windows license and activation status
@@ -24,20 +24,23 @@
         slmgr /xpr
 
 ## Turn off Internet Explorer support to Windows 10
+    %windir%\system32\control.exe
+
     Control Panel\All Control Panel Items\Programs and Features
         > Turn Windows features on or off
             > Uncheck "Internet Explorer 11"
 
-## Disable Fast Startup on Windows 10
-    Control Panel\All Control Panel Items\Power Options\System Settings
-        > Change Settings That Are Currently Unavailable
-            > Uncheck "Turn On Fast Startup"
+    ## Disable Fast Startup on Windows 10
+        Control Panel\All Control Panel Items\Power Options\System Settings
+            > Change Settings That Are Currently Unavailable
+                > Uncheck "Turn On Fast Startup"
 
 ## Disable Windows Update and others with winaero-tweaker
     https://winaero.com/winaero-tweaker/#download
         > Use a old config "Winaero Tweaker_*.ini"
 
 ## Disable hibernate - powercfg or powercfg.exe
+    cmd > Run as administrador
     powercfg /hibernate off
 
     ## Back to default - Enable hibernate
@@ -49,8 +52,12 @@
 ## Changes in Advanced system settings
     File Explorer > This PC > Properties > Advanced system settings
 
-        ## Disable some visual effects
-            Advanced
+    %windir%\system32\SystemPropertiesAdvanced.exe
+
+        ## Advanced
+            %windir%\system32\SystemPropertiesPerformance.exe
+
+            ## Disable some visual effects
                 Performance > Settings... > Visual Effects
                     > Adjust for best performanace
                         > Enable
@@ -58,8 +65,7 @@
                         > Show thumbnails instead of icons
                         > Smooth edges of screen fonts
 
-        ## Reduce size of pagefile.sys - default size o RAM
-            Advanced
+            ## Reduce size of pagefile.sys - default size o RAM
                 Performance > Settings... > Advanced
                     Virtual Memory > Change...
                         If RAM > 4 GiB
@@ -69,12 +75,17 @@
                                 Maximum: 2048
                         D: None
 
-        ## Disable Remote Assistance
-            Remote Assistance
-                Disable "Allow Remote Assistance..."
+        ## Remote
+            %windir%\system32\SystemPropertiesRemote.exe
 
-        ## Create one System Protection - Restore point
-            Systen Protetion
+            ## Disable Remote Assistance
+                Remote Assistance
+                    Disable "Allow Remote Assistance..."
+
+        ## System Protetion
+            %windir%\system32\SystemPropertiesProtection.exe
+
+            ## Create one System Protection - Restore point
                 ## Enable in C:
                     Configure > Max Usage > 5%
 
@@ -118,15 +129,15 @@
 
 
 ## Install
-    Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox,
-    Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++, PathMyPc,
-    Telegram, WinRAR, HWmonitor
+    Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox, Revo Uninstaller,
+    CristalDiskInfo, Master PDF Editor, Notepad++, PathMyPc, Telegram, WinRAR, HWmonitor
 
 -------------------------------------------------------------------------------
 
 ## Windows don't recognize partition (NTFS) connected
-    ## cmd as administrator
-        diskpart
+    cmd > Run as administrador
+
+    diskpart
 
     ## With volume
         list volume
