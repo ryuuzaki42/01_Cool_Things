@@ -1,6 +1,6 @@
 
 # slackpkgplus.conf_15.0_JBc
-# Last update: 15/04/2023
+# Last update: 28/10/2023
 
 # Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
@@ -170,6 +170,7 @@ MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplus/
 
 MIRRORPLUS['JB']=dir://media/sda2/os/gnu_linux/slackware15.0/
 #MIRRORPLUS['JB']=dir://run/media/j/Files_ex/os/gnu_linux/slackware15.0/
+#MIRRORPLUS['JB']=dir://run/media/j/tmp_ntfs/os/gnu_linux/slackware15.0/
 
 # SBo SlackBuilds. Uncomment it to allow slackpkg to search SlackBuilds on SlackBuilds.org
 # This does not replace sbopkg; slackpkg just report the package, version and url; you may
