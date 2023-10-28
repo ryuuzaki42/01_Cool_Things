@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/10/2023
+# Last update: 28/10/2023
 #
 
 ## Process with more CPU use
@@ -1983,12 +1983,15 @@ echo "1.0.0
     which will give you the youtube music version of the playlist.
     from there you can click on the three dots and there will be an option to add all to playlist.
 
-## Bell / beep - ASCII BEL (\007)
+## Bell / Beep - ASCII BEL (\007)
     ## Test if the module loaded
         lsmod | grep pcspkr
 
     ## Load the module
         modprobe pcspkr
+
+    ## Add to autoload
+        echo "modprobe pcspkr" >> /etc/rc.d/rc.local
 
     ## Test
         $ echo -e "\a" > /dev/tty2
@@ -2007,6 +2010,20 @@ echo "1.0.0
         echo -e \\007
         echo -e "\007"
         printf "\a"
+        while true; do echo -e "\a"; sleep 1s; done
+        while true; do echo -e "\a"; sleep 0.5s; done
+
+    ## KDE
+        System Settings > Accessibility > bell
+            Audible bell > Check
+
+    ## Konsole
+        Setting > Configure Konsole... (Ctrl + Shift + ,)
+            > Profiles
+                ## Create a new one if has besides default [Read-only]
+                > Profile 1 > Edit
+                    > General > Terminal bell Mode
+                        > System Bell
 
     ## In C
         printf("%c", 7);
@@ -2731,3 +2748,13 @@ kwrite $prog_name.info
     Edit
         > Block selection Mode (Crtl + Shift + B)
             Select the lines (block) to edit
+
+## Upload file from bash / terminal to temp server
+    curl bashupload.com -T file.txt
+
+    ## Text file or ouput to temp server
+        echo "just testing!" | nc termbin.com 9999
+
+        cat file.txt | nc termbin.com 9999
+
+        ls -la | nc termbin.com 9999
