@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/10/2023
+# Last update: 14/11/2023
 #
 
 ## Process with more CPU use
@@ -127,10 +127,28 @@ kdewallet=Chromium,Opera,Chrome
 ## man
     man man - format and display the on-line manual pages
 
-    man -f ip - search in the manual pages for "ip"
+        -f, --whatis
+            Equivalent to whatis - display one-line manual page descriptions
+
+            man -f ip
+            whatis ip
+
+            man -f gets - search in the manual pages gets
+                gets (3)    - get a string from standard input (DEPRECATED)
+                gets (n)    - Read a line from a channel
+
+        -k, --apropos
+              Equivalent to apropos - search the manual page names and descriptions
+
+              apropos ip
+              man -k ip
+
+        -K, --global-apropos
+              Search for text in all manual pages
+
+              man -K ip
 
     man units - decimal and binary prefixes
-    man ascii - ASCII character set encoded in octal, decimal, and hexadecimal
     man url - uniform resource identifier (URI)
     man UTF-8 - an ASCII compatible multibyte Unicode encoding
     man arp - manipulate the system ARP cache
@@ -149,14 +167,21 @@ kdewallet=Chromium,Opera,Chrome
     man 7 time - overview of time and timers
     man tcp - TCP protocol
     man udp - User Datagram Protocol for IPv4
-    man stdio - standard input/output library functions
-    man string - string operations
     man 1 printf - format and print data
-    man 3 printf - format and print data
     man system - execute a shell command
     man for - 'For' loop
     man while - Execute script repeatedly as long as a condition is met
     man if - "use" a Perl module if a condition holds (also can "no" a module)
+    man syscalls
+
+    ## C Language
+        man ascii - ASCII character set encoded in octal, decimal, and hexadecimal
+        man 3 stdio - standard input/output library functions
+        man 3 string - stpcpy, strcat, strcmp, strcpy, strlen ... - string operations
+        man 3 printf - printf, fprintf ... - formatted output conversion
+        man 3 gets -  get a string from standard input (DEPRECATED)
+            ## Never use this function.
+        man 7 standards
 
 ## Slackware update
     Select a mirror in /etc/slackpkg/mirrors removing the "#" in the line
@@ -178,6 +203,12 @@ kdewallet=Chromium,Opera,Chrome
     $? - Código de retorno do último comando executado
     $$ - Número (pid) de identificação do processo
     $! - Identificação (pid) do último processo executado em background
+
+    ## Start app and after kill the process
+        app &
+        PID_APP=$!
+
+        kill -9 $PID_APP
 
 ## Run chmod recursively only in directories
     find /path/to/base/dir -type d -exec chmod 744 {} +
@@ -2758,3 +2789,87 @@ kwrite $prog_name.info
         cat file.txt | nc termbin.com 9999
 
         ls -la | nc termbin.com 9999
+
+## ip command examples
+    l link - Network device.
+    a addr address - Protocol (IP or IPv6) address on a device.
+    n neighbour neigh - ARP or NDISC cache entry.
+    r route r - Routing table entry.
+
+    -c -c[olor]
+    -d -d[etails]
+    -h -h[uman-readable]
+    -s -s[tatistics]
+    -4 IPv4
+    -6 IPv6
+
+    ## Command no found - check  /usr/sbin/ip
+        /usr/sbin/ip
+
+    ## ip help
+        ip h
+
+        ip help
+
+        ## for a specific command
+            ip a h
+
+            ip r h
+
+    ## Show all ip address
+        ip a
+
+        ip addr
+
+        ## -br option simplifies the display
+            ip -br a
+
+        ## Select between IPv4 and IPv6
+            ip -4 a
+            ip -6 a
+
+        ## Specify a particular interface
+            ip a show eth0
+            ip a list eth0
+            ip a show dev eth0
+
+        ## Display interface statistics
+            ip -s link
+
+            ip -s -h link
+
+        ### Only show running interfaces
+            ip link show up
+
+    ## State down and up
+        ip link set dev eth1 down
+
+        ip link set dev eth1 up
+
+    ## arp cache
+        ip n show
+
+        ip neigh show
+
+    ## Routing tables:
+        ip r
+        ip route
+        ip r list
+        ip route list
+
+    ## Make ip command output pretty by passing the -c option:
+        ip -c a
+        ip -c r
+        ip -c link
+
+    ## Displaying all Linux IP address
+        ip -br -c addr show
+
+        ## With operations modes
+            ip -br -c link show
+
+## Change the Internal Field Separator (IFS) to "\n\b"
+    IFS=$(echo -en "\n\b")
+
+    ## See current IFS
+        hexdump -Cc <<< "$IFS"
