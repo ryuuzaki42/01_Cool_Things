@@ -30,15 +30,15 @@
 ## Create virtual environment
     # https://docs.python.org/3/tutorial/venv.html
 
-    ## Create a virtual environment in local path with name my-env
-        python3 -m venv my-env
+    ## Create a virtual environment in local path with name my_env
+        python3 -m venv my_env
 
     ## Now activate it, use environment name
         ## On Windows
-            my-env\Scripts\activate.bat
+            my_env\Scripts\activate.bat
 
         ## On Unix or MacOS
-            source my-env/bin/activate
+            source my_env/bin/activate
 
     ## To deactivate
         deactivate
