@@ -2,7 +2,7 @@
     ## Firefox changes ##
 
 #
-# Last update: 12/05/2023
+# Last update: 27/11/2023
 #
 
 about:config
@@ -219,7 +219,11 @@ https://addons.mozilla.org/firefox/addon/verificador-ortogr%C3%A1fico-para-p/
 https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 
 ## Good add-ons
-    ## enabled
+    ## Enabled
+https://addons.mozilla.org/firefox/addon/ublock-origin/
+    ## Ads block to Youtube
+
+    ## Disable adblock-plus?
 https://addons.mozilla.org/firefox/addon/adblock-plus/
     + Block additional tracking
     + Block cookie warnings
@@ -235,6 +239,8 @@ https://addons.mozilla.org/firefox/addon/adblock-plus/
 
     ## Give error in some website - Add to "Allowlisted websites"
         pelando.com.br
+        facebook.com
+        youtube.com
 
 https://addons.mozilla.org/firefox/addon/sponsorblock/
     https://sponsor.ajay.app/
@@ -257,10 +263,16 @@ https://addons.mozilla.org/firefox/addon/remove-tracking-params/
 https://addons.mozilla.org/firefox/addon/urban-vpn/
     https://www.urban-vpn.com/
 
+## Check text
 https://addons.mozilla.org/firefox/addon/languagetool/
     ## Add to Firefox and login
         https://languagetool.org/
             ## E-mail and password on Keep
+
+https://addons.mozilla.org/firefox/addon/grammarly-1/
+    ## Add to Firefox and login
+        https://www.grammarly.com/
+            @gmail.com
 
 https://www.zotero.org/download/
 
@@ -286,6 +298,7 @@ https://addons.mozilla.org/firefox/addon/print-friendly-pdf/
 https://addons.mozilla.org/firefox/addon/hls-stream-detector/
 https://addons.mozilla.org/firefox/addon/video-downloadhelper/
 https://addons.mozilla.org/firefox/addon/youtube-recommended-videos/
+https://addons.mozilla.org/firefox/addon/languagetool/
 
     ## Others
 https://addons.mozilla.org/firefox/addon/blackbox/
@@ -305,7 +318,7 @@ https://addons.mozilla.org/firefox/addon/downthemall/
     folderName\*name*.*ext*
 
     ## Others 2
-https://addons.mozilla.org/firefox/addon/grammarly-1/
+https://addons.mozilla.org/firefox/addon/imdl/ # Instagram Media Downloader
 https://en.savefrom.net/9/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/print-edit/
 https://addons.mozilla.org/firefox/addon/baixou-agora/
