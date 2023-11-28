@@ -141,19 +141,19 @@ kdewallet=Chromium,Opera,Chrome
             whatis ip
 
             man -f gets - search in the manual pages gets
-                gets (3)    - get a string from standard input (DEPRECATED)
-                gets (n)    - Read a line from a channel
+                gets (3) - get a string from standard input (DEPRECATED)
+                gets (n) - Read a line from a channel
 
         -k, --apropos
-              Equivalent to apropos - search the manual page names and descriptions
+            Equivalent to apropos - search the manual page names and descriptions
 
-              apropos ip
-              man -k ip
+            apropos ip
+            man -k ip
 
         -K, --global-apropos
-              Search for text in all manual pages
+            Search for text in all manual pages
 
-              man -K ip
+            man -K ip
 
     man units - decimal and binary prefixes
     man url - uniform resource identifier (URI)
@@ -182,11 +182,11 @@ kdewallet=Chromium,Opera,Chrome
     man syscalls
 
     ## C Language
-        man ascii - ASCII character set encoded in octal, decimal, and hexadecimal
-        man 3 stdio - standard input/output library functions
+        man ascii    - ASCII character set encoded in octal, decimal, and hexadecimal
+        man 3 stdio  - standard input/output library functions
         man 3 string - stpcpy, strcat, strcmp, strcpy, strlen ... - string operations
         man 3 printf - printf, fprintf ... - formatted output conversion
-        man 3 gets -  get a string from standard input (DEPRECATED)
+        man 3 gets   - get a string from standard input (DEPRECATED)
             ## Never use this function.
         man 7 standards
 
@@ -2829,7 +2829,7 @@ kwrite $prog_name.info
     -4 IPv4
     -6 IPv6
 
-    ## Command no found - check  /usr/sbin/ip
+    ## Command no found - check /usr/sbin/ip
         /usr/sbin/ip
 
     ## ip help
@@ -2899,3 +2899,41 @@ kwrite $prog_name.info
 
     ## See current IFS
         hexdump -Cc <<< "$IFS"
+
+## Folder into RAM using tmpfs
+    ## Create a new folder
+        mkdir /path/to/folder/mount_point/
+
+        mkdir /media/sda2/home/j/Downloads/mount_point/
+
+    ## Mount the folder with a specific size - as root
+        mount -t tmpfs -o size=[desiredSize] tmpfs [folderPath]
+
+        ##  size=bytes
+            Specify an upper limit on the size of the filesystem.
+            The size is given in bytes, and rounded up to entire pages.
+
+            The size may have a suffix: k, m, or g
+
+            The size may also have a % suffix to limit this instance
+            to a percentage of physical RAM.
+
+            The default, when neither size nor nr_blocks is specified, is size=50%.
+
+        ## 512 MiB
+            mount -t tmpfs -o size=512m tmpfs /media/sda2/home/j/Downloads/mount_point/
+
+        ## 2 GiB
+            mount -t tmpfs -o size=2g tmpfs /media/sda2/home/j/Downloads/mount_point/
+
+        ## 10% of RAM size
+            mount -t tmpfs -o size=10% tmpfs /media/sda2/home/j/Downloads/mount_point/
+
+    ## Check folder - normal user
+        df -lh
+
+    ## Can mount a folder to RAM during boot - root
+        nano /etc/fstab
+
+        ## 2 GiB
+            tmpfs /media/sda2/home/j/Downloads/mount_point/ tmpfs rw,nosuid,nodev,size=2g 0 0
