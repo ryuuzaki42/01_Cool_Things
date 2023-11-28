@@ -744,6 +744,13 @@ rm $tmpFile # Delete the tmpFile
     ## Delete empty lines
         sed '/^$/d' file
 
+    ## Change value for new line
+        sed 's/value/\n---\n/g'
+
+    ## Remove the last n lines of a file - Print with the last 4 lines
+        #Need the - in > head -n -
+        head -n -4 file.txt
+
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
         # or
@@ -2750,6 +2757,18 @@ kwrite $prog_name.info
 
     ## 1 to 50 with 100 numbers, need repeat
         shuf -i 1-50 -n100 -r
+
+    ## Sequence of numbers, 10 to 30, one per line
+        seq 10 30
+
+    ## Sequence of numbers in the same line
+        echo {10..30}
+
+    ## Sequence in reverse order in same line
+        echo {10..1}
+
+    ## Sequence in reverse order one per line
+        echo -e {10..1}\\n
 
 ## USB sound card - low volume - snd_usb_audio
     ## Start alsamixer - as normal user
