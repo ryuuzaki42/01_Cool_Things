@@ -7,14 +7,21 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/11/2023
+# Last update: 28/11/2023
 #
 
 ## Process with more CPU use
-    ps -aux --sort=-pcpu | head
+    ps aux --sort=-pcpu | head -n 11
+
+    watch -n1 -e 'ps aux --sort=-pcpu | head -n 11'
 
 ## Process with more memory (RAM) use
-    ps -aux --sort -rss | head
+    ps aux --sort -rss | head -n 11
+
+    watch -n1 -e 'ps aux --sort -rss | head -n 11'
+
+## Print a process tree
+    pstree
 
 ## Compile C with warning and extras
     gcc -Wall -Wextra -Wpedantic -O3 -ansi -std=c99 prog.c -o prog.out
