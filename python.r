@@ -74,3 +74,45 @@
     pip freeze > requirements.txt
 
     pip install -r requirements.txt --upgrade
+
+## Python3
+    https://github.com/arbackes/Livro_Python
+    https://www.w3schools.com/python/default.asp
+    https://python.swaroopch.com/
+
+    ## x^y - 4^9 - elevado / power
+        4**9
+            = 262144
+
+    ## int limit
+        5**262144
+            ## ValueError: Exceeds the limit (4300) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
+
+        import sys
+        sys.set_int_max_str_digits(0)
+        5**262144
+            = 620606987866087...
+
+    ## int to string
+        a = 5**262144
+        b = str(a)
+
+        len(b)
+            = 183231
+
+        ## Or
+            len(str(a))
+
+    ## end and sep
+        print("Hello World", end="\n")
+        print("Hello World", end=" ")
+        print("Hello World", end="")
+        print('30','11','2023', sep='/', end='\n')
+
+        name = "Alice"
+        age = 30
+        print("My name is", name, "and I am", age, "years old.", end=" ")
+
+    ## print format
+        print("My name is {} and I am {} years old.".format(name, age))
+        print("My name is {} and I am {} years old.".format("John", age), end="\n\n")
