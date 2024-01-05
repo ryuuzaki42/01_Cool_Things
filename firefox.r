@@ -2,6 +2,11 @@
     ## Firefox changes ##
 
 #
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# Mande me um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
 # Last update: 27/11/2023
 #
 
