@@ -2924,3 +2924,40 @@ kwrite $prog_name.info
 
         ## 2 GiB
             tmpfs /media/sda2/home/j/Downloads/mount_point/ tmpfs rw,nosuid,nodev,size=2g 0 0
+
+## Enable WDS in router - WDS (Wireless Distribution System)
+    # Default IP 192.168.0.1 and 10.0.0.1
+
+    > Change the IP of 2º route to a valid in the network
+        > Interface LAN / WAN > LAN
+            > IP in range of first route
+            > 192.168.0.1 e.g. to 192.168.3.1
+
+    > Restart
+        > Connect in the new IP without https
+
+    > Wireless
+        > Choose a new name for the new Wi-Fi connection
+
+        > Enable WDS
+            > Search SSID and MAC of Remote AP
+                > Connect
+
+            > Channel
+                > The same of Remote AP
+
+            > Password of Wi-Fi in Remote AP
+
+            > Security
+                > WPA-PSK / WPA2-PSK
+                    > A new password or the same for the new connection
+
+    > Restart
+        > Status or Information
+            Check if WDS is on / running
+
+    > DHCP
+        > Disable
+
+    > Restart
+        > Check if has Internet in the new Wi-Fi connection
