@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/11/2023
+# Last update: 05/01/2024
 #
 
 ## Process with more CPU use
@@ -315,9 +315,6 @@ int main(){
 ## Enviar a saída e erros para arquivos arquivos diferentes
     comando 1> saida.log 2> erros.log
 
-## LibreOffice without icons
-    Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
-
 ## Linux BIOS information
     dmidecode
 
@@ -532,9 +529,6 @@ rm $tmpFile # Delete the tmpFile
 
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
     dbus-launch ../dropboxd
-
-## Libreoffice: Colocar ponto (.) no lugar de virgula (,) para separar casas decimais
-    Mude o Local setting: English (UK)
 
 ## Clean env | limpar variaveis setadas incialmente no ambiente
     unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
@@ -2568,13 +2562,6 @@ kwrite $prog_name.info
 
 ## dry-run terminal command with parallel
     ls *.png | parallel --dry-run convert {} {.}.jpg
-
-## LibreOffice Writer - Typing cursor (caret, not the mouse pointer) appearance
-## LibreOffice Writer - Make typing cursor more visible in Writer
-    ~/.config/gtk-3.0/gtk.css
-
-    ## Add
-        * { -GtkWidget-cursor-aspect-ratio: 0.2; }
 
 ## Print 55 empty lines
     lineNumber=55
