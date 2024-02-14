@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 13/08/2023
+# Last update: 14/02/2024
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -85,7 +85,7 @@ kdiff3
 kernel
 maestral
 makeself
-mcomix
+# mcomix - AppImage
 mozilla-firefox
 # openjdk11
 jdk
