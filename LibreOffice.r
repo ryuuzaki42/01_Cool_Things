@@ -1,4 +1,15 @@
 
+    ## LibreOffice
+
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# Mande me um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 29/02/2024
+#
+
 ## LibreOffice Writer - Make typing cursor more visible in Writer
     # LibreOffice Writer - Typing cursor (caret, not the mouse pointer) appearance
     ~/.config/gtk-3.0/gtk.css
@@ -45,3 +56,12 @@
 
         ## Export
             File > Export as PDF...
+
+## Column/Row Highlighting for Active Cell - Version LibreOffice 24.2.0 and up
+    #https://wiki.documentfoundation.org/ReleaseNotes/24.2
+
+    Highlight the row and column for the active cell.
+        Tools ▸ Options ▸ LibreOffice Calc ▸ View
+
+        Or through the menu entry
+        View ▸ Column/Row Highlighting
