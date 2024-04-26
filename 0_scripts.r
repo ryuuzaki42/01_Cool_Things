@@ -2991,3 +2991,46 @@ kwrite $prog_name.info
 
     ## Geeqie
         View > Pixel Info
+
+## ls useful command
+    ## Sorts files by size, from largest to smallest
+        # useful when you need to identify the files that are taking up the most space in a directory
+        ls -l -S
+
+    ## Sorts files by modification date, from newest to oldest
+        # useful when you want to see files that have been recently modified
+        ls -l -t
+
+    ## Sort files by extension
+        # groups files with the same extension, making it easier to find specific files based on their type
+        ls -l -X
+
+    ## Lists files and directories recursively
+        # displays the contents of the current directory and all of its subdirectories, providing a complete view of the directory structure
+        # -r will list in reverse order while sorting
+        ls -l -R
+
+    ## Lists only directories, omitting files
+        # useful when you want to see only the subdirectories in a directory, without listing the files.
+        ls -l -d */
+
+    ## Displays the size of files in a human-readable format
+        # shows file sizes in units such as KB, MB or GB, instead of bytes, making it easier to read and understand
+        ls -l -h
+
+    ## Displays the file listing with different colors to distinguish file types
+        # assigns different colors to directories, executable files, symbolic links, and other file types, improving the readability of the output
+        ls --color=auto
+
+    ## Lists files in comma-separated list format
+        # displays files on a single line, separated by commas, saving vertical space in the output
+        ls -m
+
+    ## Adds file type indicators to the listing
+        # appends a special character to the end of each file name to indicate its type
+        # For example, a "/" for directories, a "*" for executables, and an "@" for symbolic links
+        ls -F
+
+    ## Displays the inode number of each file
+        # shows the inode number associated with each file, which is a unique identifier used by the file system to track files and directories
+        ls -l -i
