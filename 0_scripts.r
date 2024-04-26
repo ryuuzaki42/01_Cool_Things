@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/01/2024
+# Last update: 26/04/2024
 #
 
 ## Process with more CPU use
@@ -186,6 +186,7 @@ kdewallet=Chromium,Opera,Chrome
         man 3 stdio  - standard input/output library functions
         man 3 string - stpcpy, strcat, strcmp, strcpy, strlen ... - string operations
         man 3 printf - printf, fprintf ... - formatted output conversion
+        man 3 scanf  - scanf, fscanf ... - input format conversion
         man 3 gets   - get a string from standard input (DEPRECATED)
             ## Never use this function.
         man 7 standards
@@ -690,6 +691,9 @@ rm $tmpFile # Delete the tmpFile
     ## Check file (convert), set correctly duration
         lame audio0.mp3 audio01.mp3
 
+## Reduce video size
+    ffmpeg -i inVideo.mp4 outVideo.mp4
+
 ## Convert video
     ffmpeg -i inVideo.avi outVideo.mp4
 
@@ -737,6 +741,9 @@ rm $tmpFile # Delete the tmpFile
 
     ## Delete empty lines
         sed '/^$/d' file
+
+    ## Delete lines by line number
+        echo -e "a\nb\nc\nd\ne" | sed -e{1,3}d
 
     ## Change value for new line
         sed 's/value/\n---\n/g'
@@ -794,8 +801,17 @@ rm $tmpFile # Delete the tmpFile
 
     # grep ^1$ sub.srt
 
-## Print first 5 characters from string
-    cut -c1-5
+## Print first 5 characters
+    echo -e "Hello_World" | cut -c1-5
+
+## Print the first 3 characters
+    echo -e "Hello_World" | cut -c-3
+
+## Print the 3 characters to end
+    echo -e "Hello_World" | cut -c3-
+
+## Print the 1 field and the 7 based on the delimiter
+    echo " root:x:0:0:root:/root:/bin/bash" | cut -d: -f1,7
 
 ## Change the default shell in Linux/Unix/MacOS?
     ## chsh -s shell-path user
@@ -2961,3 +2977,17 @@ kwrite $prog_name.info
 
     > Restart
         > Check if has Internet in the new Wi-Fi connection
+
+## See pixel values
+    Step 1: Load the image
+
+    ## IrfanView
+        Click on any part of the image and hold
+            Pixel value will show in the windows title
+
+    ## Gimp
+        In the top right conner, in the arrow to left
+            Click and go to Add Tab > Pointer
+
+    ## Geeqie
+        View > Pixel Info
