@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/10/2023
+# Last update: 01/05/2023
 #
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
@@ -126,3 +126,31 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         which will create this directory for you. As long as the directory exists
         and is neither moved nor renamed, the application contained inside this
         AppImage to store its data in this directory rather than in your home directory
+
+## Create AppImage with squashfs
+    ## Make squashfs
+        ## Normal mode -  AppImageTool
+            mksquashfs "/path/to/Prog" "/path/to/Prog.squashfs" -root-owned -noappend
+
+        ## No compression
+            mksquashfs "/path/to/Prog" "/path/to/Prog.squashfs" -root-owned -noappend -comp gzip -Xcompression-level 1 -Xstrategy huffman_only -noI -noId -noD -noF -noX -no-recovery
+
+        ## Max compression
+            mksquashfs "/path/to/Prog" "/path/to/Prog.squashfs" -root-owned -noappend -comp xz
+
+    ## Create AppImage - Combine runtime and squashfs
+        ## Download runtime from continuous
+            https://github.com/AppImage/AppImageKit/releases
+
+            ## Or
+            https://github.com/AppImage/type2-runtime
+
+        cat "runtime-x86_64" "Prog.squashfs" > "Prog.AppImage"
+
+## Append a new runtime
+    ## Download runtime
+        ## Link above
+
+    ARCH=x86_64 ./appimagetool-x86_64.AppImage --runtime-file "/path/to/runtime/runtime-x86_64" -n squashfs-root/
+
+    #rm -rf squashfs-root/
