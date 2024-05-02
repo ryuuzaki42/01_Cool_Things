@@ -363,5 +363,24 @@ git rev-list --objects --all \
     ## Leave working directory and not change commit tree
         git reset --hard HEAD~1
 
-    ## Clean working directory and commint tree
+    ## Clean working directory and commit tree
         git reset --soft HEAD~1
+
+## Find / Identify large commits in git history
+git rev-list --objects --all \
+  | grep "$(git verify-pack -v .git/objects/pack/*.idx \
+           | sort -k 3 -n \
+           | tail -10 \
+           | awk '{print$1}')"
+
+## Github HTTP buffer issue
+    ## github error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+
+    ## Check
+        git config --global http.postBuffer
+
+    ## Increase
+        git config --global http.postBuffer 157286400
+
+    ## Reset
+        git config --global --unset http.postBuffer
