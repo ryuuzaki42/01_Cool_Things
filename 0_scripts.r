@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/04/2024
+# Last update: 02/05/2024
 #
 
 ## Process with more CPU use
@@ -1577,7 +1577,10 @@ fi
     ## Or
         make DESTDIR=b/ install
 
-## Adicionar plugins
+    mkdir aaaa/
+    make DESTDIR=$PWD/aaaa/ install
+
+## Add plugins
     ln -s /usr/lib64/mozilla/plugins/ /home/j/.mozilla/
 
 ## Alterar brilho terminal
