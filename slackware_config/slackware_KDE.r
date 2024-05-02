@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/09/2023
+# Last update: 02/05/2024
 #
 
 ## Make home folder - mount /media/sda2
@@ -64,6 +64,15 @@ while [ "$i" -lt "$count_files" ]; do
     check_file "${files_check[i]}" "${files_check[$i+1]}"
     i=$((i + 2))
 done
+
+## Change SlackBuilds script to use only local folder
+    # Good to folder mounted in RAM
+#TMP=${TMP:-/tmp/SBo}
+TMP=${TMP:-$PWD/SBo}
+
+PKG=$TMP/package-$PRGNAM
+#OUTPUT=${OUTPUT:-/tmp}
+OUTPUT=${OUTPUT:-/$PWD}
 
 ## Reduce/Remove electric noise when running Slackware
     # https://www.linuxquestions.org/questions/slackware-14/strange-electric-noise-when-running-slackware-4175682884/
