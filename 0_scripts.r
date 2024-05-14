@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/05/2024
+# Last update: 14/05/2024
 #
 
 ## Process with more CPU use
@@ -801,17 +801,33 @@ rm $tmpFile # Delete the tmpFile
 
     # grep ^1$ sub.srt
 
-## Print first 5 characters
-    echo -e "Hello_World" | cut -c1-5
+## String cut
+    ## Print first 5 characters
+        echo -e "Hello_World" | cut -c1-5
 
-## Print the first 3 characters
-    echo -e "Hello_World" | cut -c-3
+    ## Print the first 3 characters
+        echo -e "Hello_World" | cut -c-3
 
-## Print the 3 characters to end
-    echo -e "Hello_World" | cut -c3-
+    ## Print the 3 characters to end
+        echo -e "Hello_World" | cut -c3-
 
-## Print the 1 field and the 7 based on the delimiter
-    echo " root:x:0:0:root:/root:/bin/bash" | cut -d: -f1,7
+    ## Print the 1 field and the 7 based on the delimiter
+        echo " root:x:0:0:root:/root:/bin/bash" | cut -d: -f1,7
+
+        cut -d ';' -f2 tabela.txt
+        # -d delimiter
+        # -fX number X of the desired column
+
+    ## Cut file after on char
+        echo "te.st 1.23" | cut -d '.' -f2
+
+    ## until the end
+        echo "te.st 1.23" | cut -d '.' -f2-
+
+    ## cut file name by extension
+        echo "file_name.txt" | cut -d '.' -f1
+
+        echo "file.name.2.txt" | rev | cut -d '.' -f2- | rev
 
 ## Change the default shell in Linux/Unix/MacOS?
     ## chsh -s shell-path user
@@ -1287,7 +1303,7 @@ $ paste arq1.txt arq2.txt
     udisksctl mount -b /dev/sda4; kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
 
 ## Kernel upgrade (kernel driver not installed)
-    # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv.
+    # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv
     # Please reinstall the kernel module by executing
         /sbin/vboxconfig
 
@@ -1434,7 +1450,7 @@ $ paste arq1.txt arq2.txt
     file --mime-encoding nome_do_arquivo
 
 ## Selecionar e renomear vários arquivos, copiando para outra pasta
-    i=1;for arq in hone/l/imagem/*/* ; do cp $arq a/$i.jpg; i=$(($i+1));done
+    i=1;for arq in hone/l/imagem/*/* ; do cp $arq a/$i.jpg; i=$(($i+1)); done
 
 ## Converter UTF-8 para ISO-8859-1
     iconv -f codificacao_de_origem -t codificacao_de_saida arquivo
@@ -1475,19 +1491,6 @@ gtk-fallback-icon-theme = gnome
 
 ## OSD Lyrics sem ícones
     gtk-update-icon-cache /usr/share/icons/hicolor
-
-## Pegar pedaço de uma string ou cortar string
-    cut -c1-3 # pimeiro até o 3 caracteres
-
-    cut -d ';' -f2 tabela.txt
-    # -d delimitador
-    # -fX número X referente a coluna que quer
-
-## Cut file after on char
-    echo "te.st 1.23" | cut -d '.' -f2
-
-    # until the end
-    echo "te.st 1.23" | cut -d '.' -f2-
 
 ## Trocar nome dos arquivo de iso88591 para utf8
     # Apenas testa
@@ -3037,3 +3040,19 @@ kwrite $prog_name.info
     ## Displays the inode number of each file
         # shows the inode number associated with each file, which is a unique identifier used by the file system to track files and directories
         ls -l -i
+
+## Terminal colors
+    ## Define colors
+BLACK='\e[1;30m'
+RED='\e[1;31m'
+GREEN='\e[1;32m'
+YELLOW='\e[1;33m'
+BLUE='\e[1;34m'
+PINK='\e[1;35m'
+CYAN='\e[1;36m'
+WHITE='\e[1;37m'
+
+NC='\033[0m' # reset/no color
+
+    ## Test
+        echo -e "\n    Test colors: $BLACK BLACK $RED RED $GREEN GREEN $YELLOW YELLOW $NC NC $BLUE BLUE $PINK PINK $CYAN CYAN $WHITE WHITE\n"
