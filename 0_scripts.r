@@ -64,9 +64,11 @@ kdewallet=Chromium,Opera,Chrome
 
             ## Compress Speed
                 (-0, -1, -2, -3, -4, -5, -6, -7, -8, -9)
-                Regulate the speed of compression using the specified digit #, where -0 indicates no compression (store all files),
-                -1 indicates the fastest compression speed (less compression) and -9 indicates the slowest compression
-                speed (optimal compression, ignores the suffix list). The default compression level is -6.
+                Regulate the speed of compression using the specified digit #,
+                where -0 indicates no compression (store all files),
+                -1 indicates the fastest compression speed (less compression)
+                and -9 indicates the slowest compression
+                speed (optimal compression, ignores the suffix list). The default compression level is -6
 
             zip -1 -r -s 400m archive.zip directory/
 
@@ -309,8 +311,8 @@ int main(){
 ## Suprime a exibição de mensagens de erro. Útil quando as mensagens de erro não nos interessam
     comando 2>&- saida.log
 
-## Envia todas as mensagens de erro para a tela e a saída do comando para o arquivo saida.log.
-## Útil em shell scripts quando precisamos enviar os erros para a tela
+## Envia todas as mensagens de erro para a tela e a saída do comando para o arquivo saida.log
+	# Útil em shell scripts quando precisamos enviar os erros para a tela
     comando 2>&1 saida.log
 
 ## Enviar a saída e erros para arquivos arquivos diferentes
@@ -497,11 +499,14 @@ rm $tmpFile # Delete the tmpFile
 
     Onde novo.pdf é o novo arquivo que será criado e velho.pdf é o antigo, o grande
     gs :: Ou GhostScript, um interpretador e visualizador de arquivos PS e PDF
-    -sDEVICE :: Determina o dispositivo de saída do comando. Como estamos gerando um arquivo PDF, usaremos o dispositivo built-in pdfwrite
+    -sDEVICE :: Determina o dispositivo de saída do comando
+                Como estamos gerando um arquivo PDF, usaremos o dispositivo built-in pdfwrite
     -dCompatibilityLevel :: Determina o nível de compatibilidade do PDF
-        Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior. Level 1.4 por exemplo já seria compatível apenas com Acrobat Reader 5 ou superior
-    -dNOPAUSE :: Desabilita o prompt (pausa) ao final de cada página processada.
-    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no interpretador gs e precisará digitar "quit" para sair
+                            Neste caso o level 1.3 é compatível com o Acrobat Reader 3 ou superior
+                            Level 1.4 por exemplo já seria compatível apenas com Acrobat Reader 5 ou superior
+    -dNOPAUSE :: Desabilita o prompt (pausa) ao final de cada página processada
+    -dBATCH :: Processamento em batch. Caso omita esta opção, após o processamento você cairá no interpretador gs
+               e precisará digitar "quit" para sair
 
 ## Get the users normal users
     cat /etc/passwd | grep -vE "nologin|ftp" | grep home | awk -F':' '{ print $1}'
@@ -3042,20 +3047,72 @@ kwrite $prog_name.info
         ls -l -i
 
 ## Terminal colors
-    ## Define colors
-BLACK='\e[1;30m'
-RED='\e[1;31m'
-GREEN='\e[1;32m'
-YELLOW='\e[1;33m'
-BLUE='\e[1;34m'
-PINK='\e[1;35m'
-CYAN='\e[1;36m'
-WHITE='\e[1;37m'
+    ## Text Colors / Foreground
+        Black        0;30     Dark Gray     1;30
+        Red          0;31     Light Red     1;31
+        Green        0;32     Light Green   1;32
+        Brown/Orange 0;33     Yellow        1;33
+        Blue         0;34     Light Blue    1;34
+        Purple       0;35     Light Purple  1;35
+        Cyan         0;36     Light Cyan    1;36
+        Light Gray   0;37     White         1;37
 
-NC='\033[0m' # reset/no color
+    ## Background Colors
+        Black 40
+        Red 41
+        Green 42
+        Yellow 43
+        Blue 44
+        Magenta 45
+        Cyan 46
+        White 47
+
+    ## ANSI Modes
+        Normal        0
+        Bold          1
+        Low Intensity 2
+        Italics       3
+        Underline     4
+        Flashing      5
+        Fast Flash    6
+        Inverse       7
+        Invisible     8
+        Strikethrough 9
+
+    ## Modes
+        \e
+        \033 (octal)
+        \x1B (hexadecimal)
+
+    ## Example
+        RED='\033[0;31m'
+
+        ## Or
+            RED='\e[0;31m'
+            RED='\e[1;31m'
+
+        ## Define colors
+            DARK_GRAY='\e[1;30m'
+            RED='\e[0;31m'
+            GREEN='\e[1;32m'
+            YELLOW='\e[1;33m'
+            BLUE='\e[1;34m'
+            PINK='\e[1;35m'
+            CYAN='\e[1;36m'
+            WHITE='\e[1;37m'
+
+            NC='\033[0m' # reset/no color
 
     ## Test
-        echo -e "\n    Test colors: $BLACK BLACK $RED RED $GREEN GREEN $YELLOW YELLOW $NC NC $BLUE BLUE $PINK PINK $CYAN CYAN $WHITE WHITE\n"
+        echo -en "\nTest colors: $DARK_GRAY DARK_GRAY $RED RED $GREEN GREEN"
+        echo -e "$YELLOW YELLOW $NC NC $BLUE BLUE $PINK PINK $CYAN CYAN $WHITE WHITE\n"
+
+    ## Set both, foreground and background colours at once
+        echo -e "\e[S;FG;BGm"
+        S Set/Reset; FG Foreground, BG Background
+
+        ## bold white foreground on red background
+        echo -e "\e[1;37;41m Text \033[0m"
 
 ## Krunner useful commands
     https://userbase.kde.org/Plasma/Krunner
