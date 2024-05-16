@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/05/2023
+# Last update: 16/05/2023
 #
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
@@ -51,15 +51,56 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     3 Install the program in the Windows and copy the install folder
 
 ## WinRAR
-    ## Rename .exe to .rar
-        mv winrar-x64-623.exe winrar-x64-623.rar
+    ## Download the last version
 
-    ## Extract WinRAR*.rar
+    # ## Rename .exe to .rar
+    #    mv winrar-x64-701.exe winrar-x64-701.rar
+
+    # ## Extract WinRAR*.rar
+
+    ## Extract WinRAR*.exe with an old version of WinRAR_AppImage
 
     ## Clone mirror
         git clone https://github.com/ryuuzaki42/WinRAR_AppImage
 
     ## Upgrade WinRAR install in WinRAR_AppImage/drive_c/WinRAR/
+
+    ## Teste local version
+        ./AppRun
+
+            Help > Version
+
+    ## Clean system.reg
+        Values with user name, Intel, NVIDIA, CPU
+
+        "ProfileImagePath"="C:\\users\\"
+
+        "DriverDesc"=""
+        "HardwareInformation.*"
+
+        "ComputerName"=""
+
+        "PROCESSOR_ARCHITECTURE"=""
+        "PROCESSOR_IDENTIFIER"=""
+
+        "DeviceDesc"=""
+
+        "Domain"=""
+        "Hostname"=""
+
+    ## Clean user.reg - Delete entries
+
+        "APPDATA"
+        "CLIENTNAME"
+
+        "HOMEPATH"
+
+        "LOCALAPPDATA"
+        "LOGONSERVER"
+
+        "USERDOMAIN"
+        "USERNAME"
+        "USERPROFILE"
 
     ## Make commit of update / version
 
