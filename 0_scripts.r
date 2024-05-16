@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/05/2024
+# Last update: 16/05/2024
 #
 
 ## Process with more CPU use
@@ -3056,3 +3056,26 @@ NC='\033[0m' # reset/no color
 
     ## Test
         echo -e "\n    Test colors: $BLACK BLACK $RED RED $GREEN GREEN $YELLOW YELLOW $NC NC $BLUE BLUE $PINK PINK $CYAN CYAN $WHITE WHITE\n"
+
+## Krunner useful commands
+    https://userbase.kde.org/Plasma/Krunner
+
+## Linux manual pages GUI - man pages
+    ## KDE
+        khelpcenter
+        khelpcenter man:ls
+        khelpcenter 'man:printf(3)'
+
+        ## Krunner (Alt+F2) - Start khelpcenter with the man pages of the command
+            #command
+            #ls
+            man:ls
+            #printf(3)
+
+    ## General - yelp for GNOME, khelpcenter for KDE, ...
+        xdg-open man:ls
+        xdg-open 'man:printf(3)'
+
+    ## Gnome
+        yelp man:printf
+        yelp 'man:printf(3)'
