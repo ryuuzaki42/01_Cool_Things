@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/05/2023
+# Last update: 24/05/2023
 #
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
@@ -195,3 +195,47 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     ARCH=x86_64 ./appimagetool-x86_64.AppImage --runtime-file "/path/to/runtime/runtime-x86_64" -n squashfs-root/
 
     #rm -rf squashfs-root/
+
+## Error version `GLIBC_2.34' not found
+    ## 1. Recompile the program with "old" version of gcc, glib, qt5 and other needs
+
+    ## 2. Use conty to pass the needed libs
+        ## Download conty
+            https://github.com/Kron4ek/Conty
+
+        ## Run steam or a game
+        ./conty_lite.sh steam
+
+        ## Nvidia user will download driver
+        ## Can disable the Nvidia with NVIDIA_HANDLER=0:
+            NVIDIA_HANDLER=0 ./conty.sh
+
+        ## Can run AppImage with need new glibc
+        ## Extract Appimage and pass the path
+            ./conty.sh /tmp/.mount_*/AppRun
+
+            NVIDIA_HANDLER=0 ./conty.sh /tmp/.mount_*/AppRun
+
+    ## 3. Create the AppImage using ArchImage
+        Example: https://github.com/ryuuzaki42/AppImage_Full_ArchImage
+
+        ## Package will be larger, but with more support
+            https://github.com/ivan-hc/ArchImage
+
+        ## Use Arch packages
+            https://archlinux.org/packages/
+
+        ## Generate prog-junest.sh
+            ./archimage-cli -b prog
+
+                all blank
+            or
+                blank, blank, Y, Y
+
+            ## Maybe save the prog-junest.sh in  ~
+
+        ## Create AppImage
+            mkdir tmp/; cd tmp/
+            mv ~/prog-junest.sh tmp/
+
+            ./prog-junest.sh
