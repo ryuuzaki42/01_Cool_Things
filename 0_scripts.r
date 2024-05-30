@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/05/2024
+# Last update: 30/05/2024
 #
 
 ## Process with more CPU use
@@ -3136,3 +3136,43 @@ kwrite $prog_name.info
     ## Gnome
         yelp man:printf
         yelp 'man:printf(3)'
+
+## Configure webcam on Linux using guvcview
+    # https://unix.stackexchange.com/questions/743965/how-can-i-persist-the-modified-v4l2-guvcview-profile-of-a-webcam
+    # https://askubuntu.com/questions/1265853/are-guvcview-settings-only-picked-up-by-that-app
+
+    ## Install the program by the distribution packages
+
+        ## Or download an AppImage
+            https://github.com/ryuuzaki42/AppImage_Full_ArchImage/releases?q=guvcview
+            https://github.com/ryuuzaki42/AppImage_Full_ArchImage/releases/download/guvcview_2.1.0_2/guvcview_2.1.0-1-archimage3.4-x86_64-2_JB.AppImage
+
+    ## Configure the webcam
+        guvcview
+
+        ## Or by AppImage
+            ./guvcview_*_JB.AppImage
+
+        ## Change the configuration in "Image controls" tab and exit the program
+
+        ## Load other application that use webcam, like Kamoso or Google Meet
+            ## The new configuration will used in the program
+
+    ## Configuration in "real time"
+        ## Run the application with only control panel, leave image/video to be used to other applications
+        guvcview -z
+
+        ./guvcview_*_JB.AppImage -z
+
+    ## Load profile
+        guvcview -p <profile_name>.gpfl
+
+        ./guvcview_*_JB.AppImage -p <profile_name>.gpfl
+
+        ## Only the control panel
+        guvcview -p <profile_name>.gpfl -z
+
+        ./guvcview_*_JB.AppImage -p <profile_name>.gpfl -z
+
+## Print collumn process PID
+    ps aux | grep firefox | awk '{print $2}'
