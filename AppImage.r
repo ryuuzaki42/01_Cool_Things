@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/05/2023
+# Last update: 30/05/2023
 #
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
@@ -227,15 +227,32 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
         ## Generate prog-junest.sh
             ./archimage-cli -b prog
+                > all blank
 
-                all blank
-            or
-                blank, blank, Y, Y
+                ## Or
+                    blank, blank, y, y
+                    blank, blank, n, y # No dependencies
 
-            ## Maybe save the prog-junest.sh in  ~
+            ## Maybe save the prog-junest.sh in ~
 
         ## Create AppImage
             mkdir tmp/; cd tmp/
             mv ~/prog-junest.sh tmp/
 
             ./prog-junest.sh
+
+##  Run AppImage locally
+    https://github.com/ryuuzaki42/02_Scripts_Slackware/blob/main/run_AppImage_JBs.sh
+
+    wget https://raw.githubusercontent.com/ryuuzaki42/02_Scripts_Slackware/main/run_AppImage_JBs.sh
+
+    chmod +x run_AppImage_local_JBs.sh
+
+    ## For help
+        ./run_AppImage_local_JBs.sh -h
+
+    ./run_AppImage_local_JBs.sh Prog*.AppImage -p
+
+    ./run_AppImage_local_JBs.sh Prog*.AppImage -p --help
+
+    ./run_AppImage_local_JBs.sh Prog*.AppImage -p Par1 Par2
