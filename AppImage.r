@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/05/2023
+# Last update: 01/06/2024
 #
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
@@ -242,9 +242,9 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
             ./prog-junest.sh
 
 ##  Run AppImage locally
-    https://github.com/ryuuzaki42/02_Scripts_Slackware/blob/main/run_AppImage_JBs.sh
+    https://github.com/ryuuzaki42/02_Scripts_Linux/blob/main/run_AppImage_JBs.sh
 
-    wget https://raw.githubusercontent.com/ryuuzaki42/02_Scripts_Slackware/main/run_AppImage_JBs.sh
+    wget https://raw.githubusercontent.com/ryuuzaki42/02_Scripts_Linux/main/run_AppImage_JBs.sh
 
     chmod +x run_AppImage_local_JBs.sh
 

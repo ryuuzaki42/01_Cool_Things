@@ -5,7 +5,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/05/2024
+# Last update: 01/06/2024
 #
 
 ## Make home folder - mount /media/sda2
@@ -187,7 +187,7 @@ EndSection
 
 
     ## If use Nvidia driver - Change
-        # https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware_Laptop
+        # https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware
         nano /etc/X11/xorg.conf.d/21-LAR-nvidia-screens.conf
 
             Driver "modesetting"
@@ -496,10 +496,10 @@ glibc
 
 ## rc.local
     ## Download boot_rcLocal_JBs and copy to /usr/bin/
-        git clone https://github.com/ryuuzaki42/2_scripts_slackware/blob/master/boot_rcLocal_JBs.sh
+        git clone https://github.com/ryuuzaki42/02_Scripts_Linux/blob/master/boot_rcLocal_JBs.sh
 
         ## Set to run on the boot
-            cp 2_scripts_slackware/others/boot_rcLocal_JBs.sh /usr/bin/
+            cp 02_Scripts_Linux/others/boot_rcLocal_JBs.sh /usr/bin/
             echo "/usr/bin/boot_rcLocal_JBs.sh" >> /etc/rc.d/rc.local
 
     ## My final rc.local
