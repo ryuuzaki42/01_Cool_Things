@@ -1,11 +1,13 @@
+
     ## Slackware_KDE.r to Slackware 14.2, 15.0 and current ##
+
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/06/2024
+# Last update: 03/06/2024
 #
 
 ## Make home folder - mount /media/sda2
@@ -64,6 +66,13 @@ while [ "$i" -lt "$count_files" ]; do
     check_file "${files_check[i]}" "${files_check[$i+1]}"
     i=$((i + 2))
 done
+
+## Instal slackpkgplus
+https://slakfinder.org/slackpkg+.html
+
+## Instal multilib - need slackpkgplus
+    ## Reinstall multilib or check if new packages was added
+slackpkg install multilib
 
 ## Change SlackBuilds script to use only local folder
     # Good to folder mounted in RAM
