@@ -7,7 +7,7 @@
 # Mande me um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 18/10/2023
+# Last update: 03/06/2024
 #
 
 ## Check Windows license and activation status
@@ -82,7 +82,7 @@
                 Remote Assistance
                     Disable "Allow Remote Assistance..."
 
-        ## System Protetion
+        ## System Protection
             %windir%\system32\SystemPropertiesProtection.exe
 
             ## Create one System Protection - Restore point
