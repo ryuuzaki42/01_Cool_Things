@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/05/2024
+# Last update: 05/06/2024
 #
 
 ## Process with more CPU use
@@ -262,6 +262,11 @@ kdewallet=Chromium,Opera,Chrome
 
 ## Best way to unplug a USB external hard-drive after proper unmounting
     udisks --detach /dev/sdX
+
+## sed add text in begin of file
+sed -i '1s/^/task goes here\n/' todo.txt
+    ## Or
+sed -i '1itask goes here' todo.txt
 
 ## sed add ' in the begin
     echo "abc" | sed 's/^/'/'
@@ -2916,9 +2921,10 @@ kwrite $prog_name.info
 
 ## Folder into RAM using tmpfs
     ## Create a new folder
-        mkdir /path/to/folder/mount_point/
+        mkdir /path/to/folder
 
-        mkdir /media/sda2/home/j/Downloads/mount_point/
+        ## My use
+            mkdir /media/sda2/home/j/Downloads/0_tmp_RAM_disk/
 
     ## Mount the folder with a specific size - as root
         mount -t tmpfs -o size=[desiredSize] tmpfs [folderPath]
@@ -2935,13 +2941,16 @@ kwrite $prog_name.info
             The default, when neither size nor nr_blocks is specified, is size=50%.
 
         ## 512 MiB
-            mount -t tmpfs -o size=512m tmpfs /media/sda2/home/j/Downloads/mount_point/
+            mount -t tmpfs -o size=512m tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/
 
         ## 2 GiB
-            mount -t tmpfs -o size=2g tmpfs /media/sda2/home/j/Downloads/mount_point/
+            mount -t tmpfs -o size=2g tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/
+
+        ## 11 GiB - my use
+            mount -t tmpfs -o size=11g tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/; df -h | grep point
 
         ## 10% of RAM size
-            mount -t tmpfs -o size=10% tmpfs /media/sda2/home/j/Downloads/mount_point/
+            mount -t tmpfs -o size=10% tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/
 
     ## Check folder - normal user
         df -lh
@@ -2950,7 +2959,10 @@ kwrite $prog_name.info
         nano /etc/fstab
 
         ## 2 GiB
-            tmpfs /media/sda2/home/j/Downloads/mount_point/ tmpfs rw,nosuid,nodev,size=2g 0 0
+            tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/ tmpfs rw,nosuid,nodev,size=2g 0 0
+
+        ## 11 GiB
+            tmpfs /media/sda2/home/j/Downloads/0_tmp_RAM_disk/ tmpfs rw,nosuid,nodev,size11g 0 0
 
 ## Enable WDS in router - WDS (Wireless Distribution System)
     # Default IP 192.168.0.1 and 10.0.0.1
