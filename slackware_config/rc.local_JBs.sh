@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 19/06/2023
+# Last update: 05/06/2024
 #
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\n # Starting tlp #\n"
@@ -60,5 +60,33 @@ loadkeys br-abnt2
 #    echo -e "\n # Starting bumblebeed #\n"
 #    /etc/rc.d/rc.bumblebeed start
 #fi
+
+# Mount a temporary folder to RAM
+tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/"
+mkdir "$tmp_RAM_disk" 2> /dev/null
+
+count_RAM_GiB=$(free --giga | grep 'Mem:' | awk '{print $2}')
+if [ $count_RAM_GiB -gt 23 ]; then # RAM > 23 GiB
+    folder_Max_Size='12g' # Temporary folder of 12 GiB
+elif [ $count_RAM_GiB -gt 15 ]; then # RAM > 15 GiB
+    folder_Max_Size='6g'
+elif [ $count_RAM_GiB -gt 7 ]; then # RAM > 7 GiB
+    folder_Max_Size='3g'
+else # $count_RAM_GiB < 8
+    folder_Max_Size=0
+    echo "Less then 8 GiB of RAM - Not mounting folder in RAM"
+fi
+
+if [ "$folder_Max_Size" != 0 ]; then
+    # Mount temporary folder into RAM
+    echo -e "\nMounting temporary folder: \"$tmp_RAM_disk\" with max size of: \"$folder_Max_Size\""
+    mount -t tmpfs -o size="$folder_Max_Size" tmpfs "$tmp_RAM_disk"
+
+    # Remove last / to grep result
+    tmp_RAM_disk=$(echo "$tmp_RAM_disk" | rev | cut -d '/' -f2- | rev)
+
+    # Print information about the mount
+    df -h | grep "$tmp_RAM_disk"
+fi
 
 # - JB ce -
