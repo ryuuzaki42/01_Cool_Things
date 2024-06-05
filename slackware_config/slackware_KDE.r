@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/06/2024
+# Last update: 05/06/2024
 #
 
 ## Make home folder - mount /media/sda2
@@ -104,7 +104,7 @@ OUTPUT=${OUTPUT:-/$PWD}
         lsmod
 
 ## Laptop battery charging threshold limit
-    ## Folder of configuration and informations
+    ## Folder of configuration and information
         #cd /sys/class/power_supply/BATTERY_NAME/
         cd /sys/class/power_supply/BAT0/
 
