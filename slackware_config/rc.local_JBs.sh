@@ -88,5 +88,6 @@ if [ "$folder_Max_Size" != 0 ]; then
     # Print information about the mount
     df -h | grep "$tmp_RAM_disk"
 fi
+echo
 
 # - JB ce -
