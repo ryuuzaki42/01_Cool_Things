@@ -55,10 +55,11 @@ fi
 
 if [ "$update_date" == 1 ]; then
     echo -e "\n # Update time - Notebook without battery #"
+    # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
 
     count=0
     while [ "$count" -lt 10 ]; do
-        result_date_up=$(usual_JBs.sh date-up)
+        result_date_up=$(usual_JBs.sh noColor notPrintHeader date-up)
         if echo "$result_date_up" | grep -q "Time updated"; then
             count=10
         else
