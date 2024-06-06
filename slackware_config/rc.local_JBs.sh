@@ -9,14 +9,14 @@
 # - JB cs -
 # Last update: 06/06/2024
 #
-start_tlp=1
-disable_bluetooth=1
-start_thinkfan=1
-set_keyboard=1
-start_teamviewer=0
-update_date=0
-start_boot_rcLocal_JBs=0
-tmp_folder_RAM=1
+# 1 is true or will run and 0 to false
+start_tlp=1 #1
+disable_bluetooth=1 #1
+start_thinkfan=1 #1
+set_keyboard=1 #1
+start_teamviewer=0 #0
+update_date=0 #0
+tmp_folder_RAM=1 #1
 
 if [ "$start_tlp" == 1 ]; then
     if [ -x /etc/rc.d/rc.tlp ]; then
@@ -75,11 +75,11 @@ if [ "$tmp_folder_RAM" == 1 ]; then
     mkdir "$tmp_RAM_disk" 2> /dev/null
 
     count_RAM_GiB=$(free --giga | grep 'Mem:' | awk '{print $2}')
-    if [ $count_RAM_GiB -gt 23 ]; then # RAM > 23 GiB
+    if [ "$count_RAM_GiB" -gt 23 ]; then # RAM > 23 GiB
         folder_Max_Size='12g' # Temporary folder of 12 GiB
-    elif [ $count_RAM_GiB -gt 15 ]; then # RAM > 15 GiB
+    elif [ "$count_RAM_GiB" -gt 15 ]; then # RAM > 15 GiB
         folder_Max_Size='6g'
-    elif [ $count_RAM_GiB -gt 7 ]; then # RAM > 7 GiB
+    elif [ "$count_RAM_GiB" -gt 7 ]; then # RAM > 7 GiB
         folder_Max_Size='3g'
     else # $count_RAM_GiB < 8
         folder_Max_Size=0
