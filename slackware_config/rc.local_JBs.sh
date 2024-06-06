@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 05/06/2024
+# Last update: 06/06/2024
 #
 if [ -x /etc/rc.d/rc.tlp ]; then
     echo -e "\n # Starting tlp #\n"
@@ -50,10 +50,6 @@ loadkeys br-abnt2
 
 #echo -e "\n # Starting boot_rcLocal_JBs.sh #\n"
 #/usr/bin/boot_rcLocal_JBs.sh
-
-## If your backlight keyboard doesn't work
-#echo -e "\n # Starting UPower #\n"
-#qdbus --system org.freedesktop.UPower
 
 # Mount a temporary folder to RAM
 tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/"
