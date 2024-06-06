@@ -20,20 +20,20 @@ tmp_folder_RAM=1 #1
 
 if [ "$start_tlp" == 1 ]; then
     if [ -x /etc/rc.d/rc.tlp ]; then
-        echo -e "\n # Starting tlp #\n"
+        echo -e "\n # Starting tlp #"
         # https://github.com/linrunner/TLP
         /etc/rc.d/rc.tlp start
     fi
 fi
 
 if [ "$disable_bluetooth" == 1 ]; then
-    echo -e "\n # Disabling Bluetooth #\n"
+    echo -e "\n # Disabling Bluetooth #"
     rfkill block bluetooth
 fi
 
 if [ "$start_thinkfan" == 1 ]; then
     if [ -x /etc/rc.d/rc.thinkfan ]; then
-        echo -e "\n # Starting thinkfan #\n"
+        echo -e "\n # Starting thinkfan #"
         # https://github.com/vmatare/thinkfan
         /etc/rc.d/rc.thinkfan start
     fi
@@ -42,19 +42,20 @@ fi
 if [ "$set_keyboard" == 1 ]; then
     # Load the keyboard map. More maps are in /usr/share/kbd/keymaps/
     # /usr/share/kbd/keymaps/i386/qwerty/br-abnt2.map.gz
-    echo -e "\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #\n"
+    echo -e "\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #"
     loadkeys br-abnt2
 fi
 
 if [ "$start_teamviewer" == 1 ]; then
-    echo -e "\n # Starting Teamviewer #\n"
+    echo -e "\n # Starting Teamviewer #"
     if [ -x /etc/rc.d/rc.teamviewerd ]; then
         /etc/rc.d/rc.teamviewerd start
     fi
 fi
 
 if [ "$update_date" == 1 ]; then
-    echo -e "\n # Update time - Notebook without battery #\n"
+    echo -e "\n # Update time - Notebook without battery #"
+
     count=0
     while [ "$count" -lt 10 ]; do
         result_date_up=$(usual_JBs.sh date-up)
@@ -70,8 +71,8 @@ if [ "$update_date" == 1 ]; then
 fi
 
 if [ "$tmp_folder_RAM" == 1 ]; then
-    # Mount a temporary folder to RAM
-    tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/"
+    echo -e "\n # Mount a temporary folder to RAM #"
+    tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
     mkdir "$tmp_RAM_disk" 2> /dev/null
 
     count_RAM_GiB=$(free --giga | grep 'Mem:' | awk '{print $2}')
@@ -88,7 +89,7 @@ if [ "$tmp_folder_RAM" == 1 ]; then
 
     if [ "$folder_Max_Size" != 0 ]; then
         # Mount temporary folder into RAM
-        echo -e "\nMounting temporary folder: \"$tmp_RAM_disk\" with max size of: \"$folder_Max_Size\""
+        echo -e "Mounting temporary folder: \"$tmp_RAM_disk\" with max size of: \"$folder_Max_Size\""
         mount -t tmpfs -o size="$folder_Max_Size" tmpfs "$tmp_RAM_disk"
 
         # Remove last / to grep result
