@@ -55,12 +55,6 @@ loadkeys br-abnt2
 #echo -e "\n # Starting UPower #\n"
 #qdbus --system org.freedesktop.UPower
 
-## If you have installed NVIDIA video driver with bumblebeed
-#if [ -x /etc/rc.d/rc.bumblebeed ]; then
-#    echo -e "\n # Starting bumblebeed #\n"
-#    /etc/rc.d/rc.bumblebeed start
-#fi
-
 # Mount a temporary folder to RAM
 tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/"
 mkdir "$tmp_RAM_disk" 2> /dev/null
