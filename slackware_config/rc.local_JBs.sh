@@ -48,9 +48,6 @@ loadkeys br-abnt2
 #done
 #echo "$result_date_up"
 
-#echo -e "\n # Starting boot_rcLocal_JBs.sh #\n"
-#/usr/bin/boot_rcLocal_JBs.sh
-
 # Mount a temporary folder to RAM
 tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/"
 mkdir "$tmp_RAM_disk" 2> /dev/null
