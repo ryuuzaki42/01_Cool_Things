@@ -76,14 +76,15 @@ if [ "$tmp_folder_RAM" == 1 ]; then
     tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
     mkdir "$tmp_RAM_disk" 2> /dev/null
 
-    count_RAM_GiB=$(free --giga | grep 'Mem:' | awk '{print $2}')
-    if [ "$count_RAM_GiB" -gt 23 ]; then # RAM > 23 GiB
+    # Grep count of RAM in MiB - some computers use part of RAM to GPU
+    count_RAM_GiB=$(free --mega | grep 'Mem:' | awk '{print $2}')
+    if [ "$count_RAM_GiB" -gt 23000 ]; then # RAM > 23 GiB
         folder_Max_Size='12g' # Temporary folder of 12 GiB
-    elif [ "$count_RAM_GiB" -gt 15 ]; then # RAM > 15 GiB
+    elif [ "$count_RAM_GiB" -gt 15000 ]; then # RAM > 15 GiB
         folder_Max_Size='6g'
-    elif [ "$count_RAM_GiB" -gt 7 ]; then # RAM > 7 GiB
+    elif [ "$count_RAM_GiB" -gt 7000 ]; then # RAM > 7 GiB
         folder_Max_Size='3g'
-    else # $count_RAM_GiB < 8
+    else # $count_RAM_GiB < 8 GiB
         folder_Max_Size=0
         echo "Less then 8 GiB of RAM - Not mounting folder in RAM"
     fi
