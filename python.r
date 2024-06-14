@@ -1,4 +1,14 @@
+
     ## Python3 ##
+
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# me envie um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 16/06/2024
+#
 
 ## python3 simple HTTP server
     # https://docs.python.org/2/library/simplehttpserver.html
@@ -10,7 +20,7 @@
     ## Print local IP
         /sbin/ifconfig | grep broadcast | awk '{print $2}'
 
-    ## Create server
+    ## Create server - python3
         python3 -m http.server
 
         ## Or
@@ -18,14 +28,28 @@
 
             python3 -m http.server [port]
 
-    ## Localhost:
-        http://localhost:8000
+            ## Old - python2
+            python -m SimpleHTTPServer
 
-    ## On other machine in same network:
-        http://<IP>:8000
+            python -m SimpleHTTPServer [port]
 
-        # ex:
-        http://192.168.0.105:8000/
+    ## Access
+        ## Localhost:
+            http://localhost:8000
+
+            http://0.0.0.0:8000/
+
+            http://127.0.0.1:8000
+
+            http://<IP_Address>:8000
+
+        ## On other machine in same network:
+            http://<IP>:8000
+
+            ## ex:
+                http://192.168.0.105:8000/
+        ## Print link with default port
+            echo "http://$(/sbin/ifconfig | grep broadcast | awk '{print $2}'):8000/"
 
 ## Create virtual environment
     # https://docs.python.org/3/tutorial/venv.html
@@ -69,6 +93,9 @@
     ## Upgrade howdoi
         # pip install [package] --upgrade
         pip install howdoi --upgrade
+
+## Install packages requirements
+    pip install -r requirements.txt
 
 ## Upgrade all pip packages
     pip freeze > requirements.txt
