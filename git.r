@@ -1,4 +1,14 @@
-## Git commands ##
+
+    ## Git ##
+
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# me envie um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 16/06/2024
+#
 
 ## Describe how you plan to use GitHub
     # https://www.quora.com/How-do-you-plan-to-use-GitHub
