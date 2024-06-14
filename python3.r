@@ -17,9 +17,6 @@
     ## Start in the folder want to share
         cd path/to/share/
 
-    ## Print local IP
-        /sbin/ifconfig | grep broadcast | awk '{print $2}'
-
     ## Create server - python3
         python3 -m http.server
 
@@ -29,11 +26,17 @@
             python3 -m http.server [port]
 
             ## Old - python2
-            python -m SimpleHTTPServer
+                python -m SimpleHTTPServer
 
-            python -m SimpleHTTPServer [port]
+                python -m SimpleHTTPServer [port]
 
     ## Access
+        ## Get local IP
+            /sbin/ifconfig | grep broadcast | awk '{print $2}'
+
+            ## Print link with default port
+                echo "http://$(/sbin/ifconfig | grep broadcast | awk '{print $2}'):8000/"
+
         ## Localhost:
             http://localhost:8000
 
@@ -48,8 +51,6 @@
 
             ## ex:
                 http://192.168.0.105:8000/
-        ## Print link with default port
-            echo "http://$(/sbin/ifconfig | grep broadcast | awk '{print $2}'):8000/"
 
 ## Create virtual environment
     # https://docs.python.org/3/tutorial/venv.html
