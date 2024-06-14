@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/06/2024
+# Last update: 14/06/2024
 #
 
 ## Process with more CPU use
@@ -862,8 +862,14 @@ rm $tmpFile # Delete the tmpFile
     # G - Gigabytes (unidades de 1073741824 bytes)
 
 ## Reset directories and files permission
-    find . -type d -exec chmod 0755 {} \;
-    find . -type f -exec chmod 0644 {} \;
+    ## Set all folder to permission 755
+        find . -type d -exec chmod 0755 {} \;
+
+    ## Remove execute permission form from files without touching folders?
+        find . -type f -exec chmod 0644 {} \;
+
+        ## Or
+        find . -type f -exec chmod 0644 {} +
 
     ## Remove permission from other users
         find . -type f -exec chmod 0600 {} \;
@@ -3014,6 +3020,9 @@ kwrite $prog_name.info
 
     ## Geeqie
         View > Pixel Info
+
+    ## XnView MP
+        View > Show Colur Information
 
 ## ls useful command
     ## Sorts files by size, from largest to smallest
