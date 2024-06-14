@@ -865,7 +865,7 @@ rm $tmpFile # Delete the tmpFile
     ## Set all folder to permission 755
         find . -type d -exec chmod 0755 {} \;
 
-    ## Remove execute permission form from files without touching folders?
+    ## Remove execute permission form from files without touching folders
         find . -type f -exec chmod 0644 {} \;
 
         ## Or
@@ -874,11 +874,11 @@ rm $tmpFile # Delete the tmpFile
     ## Remove permission from other users
         find . -type f -exec chmod 0600 {} \;
 
-        ## Change owner user to root
-            chown root -R *
+    ## Change owner user to root
+        chown root -R *
 
-            ## Change files group to root
-                chgrp root -R *
+    ## Change files group to root
+        chgrp root -R *
 
 ## Expansão de urls encurtadas com curl
     curl -sIL short-url | grep ^Location;
@@ -3197,3 +3197,40 @@ kwrite $prog_name.info
 
 ## Print collumn process PID
     ps aux | grep firefox | awk '{print $2}'
+
+## Mouse freeze - Mouse stop responding
+    ## Terminal text mode and back to GUI
+        Ctrl + Alt + F2
+        Ctrl + Alt + F7
+
+    ## Left click usually dies after wakeup from sleep.
+        udevadm trigger
+
+    ## Reload modules
+        modprobe -r psmouse
+        modprobe psmouse proto=imps
+
+        ## Unload and load
+            modprobe -r psmouse; modprobe psmouse proto=imps
+
+    ## Check if the mouse buttons is actually sending correct events
+        libinput debug-events
+
+    ## Try remove the external mouse
+
+    ## Try disable the touchpad
+        modprobe -r psmouse
+
+    ## Check error log
+        cat /var/log/Xorg.0.log
+            SynPS/2 Synaptics TouchPad: Read error 19
+
+    ## Try enable configuration to disable internal mouse when a external mouse is connected
+
+## Check inputs mouse or keyboard - See inputs Linux
+    ##  Normal user
+        # Inside the Event Tester windows
+        xev
+
+    ## Root
+        libinput debug-events
