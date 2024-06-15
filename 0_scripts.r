@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/06/2024
+# Last update: 15/06/2024
 #
 
 ## Process with more CPU use
@@ -865,13 +865,13 @@ rm $tmpFile # Delete the tmpFile
     ## Set all folder to permission 755
         find . -type d -exec chmod 0755 {} \;
 
-    ## Remove execute permission form from files without touching folders
+    ## Remove execute permission from files without touching folders
         find . -type f -exec chmod 0644 {} \;
 
         ## Or
         find . -type f -exec chmod 0644 {} +
 
-    ## Remove permission from other users
+    ## Remove permission from other users, also permission to execute from current user
         find . -type f -exec chmod 0600 {} \;
 
     ## Change owner user to root
@@ -3234,3 +3234,25 @@ kwrite $prog_name.info
 
     ## Root
         libinput debug-events
+
+## Scanear documento
+    1 Scanear
+        ## LibeOffice Writer > Inserir > Multimídia > Digitalizar > Selecionar origem...
+
+    ## Editar no KolourPaint
+        2 Girar para posição correta e cortar alguma parte preta ou que não precisa
+
+        3 Reduzir o tamanho da imagem para uns 2 mil na largura, como 2472
+
+        4 Salvar novo arquivo com PNG
+
+        5 Versão maior
+            1 Exportar com JPG com qualidade de 75%
+            2 Converter para PDF
+                convert doc_l1_2k.jpg doc_l2_2k.jpg doc.pdf
+
+        6 Versão menor
+            1 Reduzir o tamanho da imagem para uns 1 mil na largura, como 1472
+            2 Exportar com JPG com qualidade de 75%
+            3 Converter para PDF
+                convert doc_l1_1k.jpg doc_l2_1k.jpg doc_small.pdf
