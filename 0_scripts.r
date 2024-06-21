@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/06/2024
+# Last update: 21/06/2024
 #
 
 ## Process with more CPU use
@@ -1300,59 +1300,6 @@ $ paste arq1.txt arq2.txt
     cd /media/sda4/prog/copy/x86_64/
     ./CopyAgent
 
-## Virtualbox start kernel service
-    ## Edit the menu-start-shortcut
-        ## Slackware KDE
-            kdesu sh /etc/init.d/vboxdrv start; VirtualBox %U
-
-        ## Slackware XFCE
-            gksu sh /etc/init.d/vboxdrv start; VirtualBox %U
-
-        ## Linux mint
-            kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
-
-## Add to mound "data partition"
-    udisksctl mount -b /dev/sdXY
-
-    udisksctl mount -b /dev/sda4
-
-    udisksctl mount -b /dev/sda4; kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
-
-## Kernel upgrade (kernel driver not installed)
-    # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv
-    # Please reinstall the kernel module by executing
-        /sbin/vboxconfig
-
-## Virtualbox, after install add user in /etc/group to acess USB
-    nano /etc/group
-    vboxuser: $user$
-
-    ## Or
-    usermod -a -G vboxusers $user$
-
-    usermod -a -G vboxusers j
-
-    ## Chance update settings por all releases
-        File > preference > update > set : All New Realease
-
-    ## Remove disable the start script
-        chmod -x /etc/init.d/vbox*
-
-## Virtualbox - shrink VM size
-    # https://vinyanalista.github.io/blog/2014/01/20/reduzindo-o-tamanho-de-discos-rigidos-virtuais-do-virtualbox/
-    ## Write 0 in the vmDisk
-        https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
-
-        sdelete -z c:
-
-    ## Compact with VirtualBox
-        VBoxManage modifyhd vmDisk.vdi --compact
-
-        VBoxManage modifyhd Windows\ 7\ 64.vdi --compact
-
-## VirtualBox define screen size
-    vboxmanage setextradata 'VM Name' CustomVideoMode1 1366x768x32
-
 ## Vmware start kernel service
     kdesu /usr/bin/svmware_auto.sh; /usr/bin/vmware %F
 
@@ -1700,14 +1647,6 @@ fi
 
 ## Download sites
     wget -c -r -erobots=off -A ".jpg .png" #link_do_site#
-
-## Share a folder in Virtualbox
-    ->Instal guest additions
-    reboot
-
-    On Gnu/Linux need to mount the folder
-    mount -t vboxsf folder_share /media/folder
-    ex: mount -t vboxsf sda2 /media/sf_sda2/
 
 ## Mount NTFS partition
     mount -t ntfs-3g /dev/sdb1 /mnt/ntfs/
