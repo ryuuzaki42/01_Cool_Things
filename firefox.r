@@ -1,5 +1,5 @@
 
-    ## Firefox changes ##
+    ## Firefox ##
 
 #
 # Autor= João Batista Ribeiro
