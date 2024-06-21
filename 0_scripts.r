@@ -2752,7 +2752,7 @@ kwrite $prog_name.info
             alsactl store
 
 ## Linux - Mouse clicks suddenly stopped working
-    ## Left click may dies after wakeup from sleep
+    ## Left click may dies after wake up from sleep
     ## Some things to try:
 
         ## Switch to and from a virtual terminal:
@@ -3102,7 +3102,6 @@ kwrite $prog_name.info
     # https://askubuntu.com/questions/1265853/are-guvcview-settings-only-picked-up-by-that-app
 
     ## Install the program by the distribution packages
-
         ## Or download an AppImage
             https://github.com/ryuuzaki42/AppImage_Full_ArchImage/releases?q=guvcview
             https://github.com/ryuuzaki42/AppImage_Full_ArchImage/releases/download/guvcview_2.1.0_2/guvcview_2.1.0-1-archimage3.4-x86_64-2_JB.AppImage
@@ -3130,11 +3129,17 @@ kwrite $prog_name.info
         ./guvcview_*_JB.AppImage -p <profile_name>.gpfl
 
         ## Only the control panel
-        guvcview -p <profile_name>.gpfl -z
+            guvcview -p <profile_name>.gpfl -z
 
-        ./guvcview_*_JB.AppImage -p <profile_name>.gpfl -z
+            ./guvcview_*_JB.AppImage -p <profile_name>.gpfl -z
 
-## Print collumn process PID
+    ## Select which webcam use
+        # -d,--device=DEVICE :Set device name (def: /dev/video0)
+        guvcview -d /dev/video0
+
+        ./guvcview_*_JB.AppImage -d /dev/video2
+
+## Print column process PID
     ps aux | grep firefox | awk '{print $2}'
 
 ## Mouse freeze - Mouse stop responding
@@ -3142,7 +3147,7 @@ kwrite $prog_name.info
         Ctrl + Alt + F2
         Ctrl + Alt + F7
 
-    ## Left click usually dies after wakeup from sleep.
+    ## Left click usually dies after wake up from sleep.
         udevadm trigger
 
     ## Reload modules
