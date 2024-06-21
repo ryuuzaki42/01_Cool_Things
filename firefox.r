@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/11/2023
+# Last update: 21/06/2024
 #
 
 about:config
@@ -360,3 +360,33 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 ## Error
     ## The site at <site> has experienced a network protocol violation that cannot be repaired
         try reload the page (Crtl + F5) and/or delete the cache in: about:preferences#privacy -> Clear Data
+
+## Delete bookmarks that are automatically backed up
+    # The existing backups are in thebookmarkbackups subfolder of your Firefox profil
+
+    about:support
+        > Profile Directory
+
+            C:\Users\*\AppData\Roaming\Mozilla\Firefox\Profiles\*.default-release\
+            ~/.mozilla/firefox/*.default-default/
+
+        bookmarkbackups/
+
+    ## To limit the number of backups
+        about:config
+
+            browser.bookmarks.max_backups
+                15 > 5
+
+## Search shortcut
+    about:preferences#search
+
+        Need to be enable
+
+    Google     @google
+    Bing       @bing
+    DuckDuckGo @duckduckgo, @ddg
+
+    Bookmarks  *
+    Tabs       %
+    History    ^
