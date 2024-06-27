@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/06/2024
+# Last update: 27/06/2024
 #
 
 ## Process with more CPU use
@@ -3200,3 +3200,21 @@ kwrite $prog_name.info
             2 Exportar com JPG com qualidade de 75%
             3 Converter para PDF
                 convert doc_l1_1k.jpg doc_l2_1k.jpg doc_small.pdf
+
+## Lock and unlock GUI session
+    ## Lock
+        loginctl lock-session
+
+        ## Or
+            qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
+
+    ## Unlock
+        ## Grep the session number
+            loginctl list-sessions
+
+            ## Or
+                loginctl
+
+        ## Unlock
+            # loginctl unlock-session <session_id>
+            loginctl unlock-session 1
