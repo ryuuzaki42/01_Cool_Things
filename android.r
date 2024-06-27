@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/04/2024
+# Last update: 27/06/2024
 #
 
 ## Android APK
@@ -70,6 +70,74 @@
             ## Dislike button
                 Photo > Settings > General
                     Return Youtube Dislike > Disable
+
+## Mirror Android screen on PC over USB or TCP/IP
+    # Allows to control the device with the keyboard and the mouse of the computer
+    # It does not require any root access. It works on Linux, Windows and macOS
+    ## https://github.com/Genymobile/scrcpy
+
+    ## Install scrcpy and adb
+
+        ## Or use an AppImage
+            https://github.com/ardevd/scrcpy-appimage
+
+    ## On Android device - Enable Developer Options
+        # https://alien.slackbook.org/blog/using-your-slackware-to-control-your-android/
+        > "Settings" > "About phone" or "About Tablet"
+            > "Build number"
+
+        Repeatedly, tap the "Build number" line. After a couple of taps, a popup message
+        tells you that you are an "X amount" of clicks away from becoming a Developer.
+        As you keep tapping the number "X" will decrease to zero which completes the process.
+
+        In the new Developer Options menu you will find "ADB debugging" which you have to enable.
+
+    ## Connect the Android device over USB cable
+        ## List devices
+            adb devices
+
+        ## Run scrcpy
+            scrcpy
+
+    ## Connect to android device over Wi-FI
+        # https://www.genymotion.com/blog/open-source-project-scrcpy-now-works-wirelessly/
+
+        Connect the device to the same Wi-Fi as your computer
+        Get your device IP address (in Settings → About phone → Status)
+        Enable adb over TCP/IP on your device:
+            adb tcpip 5555
+
+        Connect to your device:
+            adb connect DEVICE_IP:5555 (replace DEVICE_IP)
+
+            adb connect 192.168.0.103:5555
+
+        Run scrcpy as usual and unplug the device
+
+        ## To switch back to USB mode
+            adb usb
+
+    ## Connect by AppImage
+        Extract AppImage
+        cd folder usr/bin
+
+        ## As root
+        ./adb tcpip 5555
+
+        ./adb connect 192.168.0.103:5555
+            ## Allow USB debugging
+                RSA key fingerprint
+
+        ## Normal user
+        ../../AppRun
+
+            ## Or
+                scrcpy*.AppImage
+
+    ## Stop server
+        # ./adb start-server
+        ./adb kill-server
+        ./adb disconnect 192.168.0.103:5555
 
 ----------------------------------------------------------------------------------------------------
 ## Android code
