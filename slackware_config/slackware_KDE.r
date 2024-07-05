@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/06/2024
+# Last update: 05/07/2024
 #
 
 ## Make home folder - mount /media/sda2
@@ -28,7 +28,7 @@ cd /usr/share/autostart/
 nano ~/.config/akonadi/akonadiserverrc
 StartServer=true > StartServer=false
 
-## Copy <install> configs ## Configuration files to update in the system
+## Copy <install> configurations ## Configuration files to update in the system
     ## lilo.conf
 cp lilo.conf_JBc /etc/lilo.conf
 
@@ -69,6 +69,24 @@ done
 
 ## Instal slackpkgplus
 https://slakfinder.org/slackpkg+.html
+
+    ## Install packages from specify repository
+        #slackpkg install repo:pkg
+        slackpkg install restricted:vlc
+
+    ## Update packages from a repository or a package from a repository
+        #slackpkg upgrade repo
+        #slackpkg upgrade repo:pkg
+
+        slackpkg upgrade patches
+        slackpkg upgrade patches:mozilla
+
+        slackpkg upgrade alienbob
+
+        slackpkg upgrade multilib
+
+        slackpkg upgrade restricted
+        slackpkg upgrade restricted:vlc
 
 ## Instal multilib - need slackpkgplus
     ## Reinstall multilib or check if new packages was added
@@ -315,7 +333,7 @@ chown root ${swapFilePace}swapFile.img
     # └─ min (0 - 59)
 
 ## To disable the fortune in /etc/profile.d/ use:
-    # When change from "nornmal" user to root
+    # When change from "normal" user to root
 chmod -x /etc/profile.d/bsd-games-login-fortune.*sh
 
 ## Remove games of KDE
