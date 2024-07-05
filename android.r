@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/06/2024
+# Last update: 05/07/2024
 #
 
 ## Android APK
@@ -49,9 +49,38 @@
                     > Remind bedtime > 23:00 - 06:00
                     > Apearence > dark theme
                     > Playback in feeds > Off
+                    > Location > Brazil
 
-            ## ReVanced Extended
-                Photo > Settings > ReVanced Extended
+            ## ReVanced
+                Photo > Settings > ReVanced
+
+                ## Shorts
+                    Shorts > Disable resuming shorts player
+
+                ## Dislike button
+                    Return YouTube Dislike button > Disable
+
+                ## Start page and Disable Notification button
+                    General layout >
+                        Set star page > Library
+
+                        Navigation button >
+                            Switch Create with Notification > Disable
+
+                ## End cards and Download button
+                    Player
+                        > Hide end screen cards > Disable
+                        > Action buttons > Hide Download > Enable
+                        > Video description
+                            > Hide chapters > Disable
+                            > Hide Info card section > Disable
+
+                ## Video
+                    Video > Default playback speed > 1.25x
+
+                    # Disable playback speed in live stream > Disable
+
+                ## --- #
 
                 ## Bottom player
                     Hide download button > Enable
@@ -62,14 +91,6 @@
 
                 ## How to hide notification button
                     > Navigation > Switching the create and notification button > Disable
-
-                ## Video
-                    > Video > Default playback speed > 1.25x
-                    > Disable playback speed in live stream > Disable
-
-            ## Dislike button
-                Photo > Settings > General
-                    Return Youtube Dislike > Disable
 
 ## Mirror Android screen on PC over USB or TCP/IP
     # Allows to control the device with the keyboard and the mouse of the computer
