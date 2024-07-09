@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/06/2024
+# Last update: 09/07/2024
 #
 
 ## Process with more CPU use
@@ -930,22 +930,27 @@ rm $tmpFile # Delete the tmpFile
     ## In the Grub menu, select the entry and press "e" to edit
 
     ## Appending in the line "linux ....", after boot it with "Ctrl-x" of "F10"
-    rw init=/bin/bash
+        rw init=/bin/bash
 
     ## Set the new password
-    passwd
+        passwd
 
 ## Show the Grub menu
     nano /etc/default/grub
 
     ## Comment the line
-    #GRUB_HIDDEN_TIMEOUT=0
+        #GRUB_HIDDEN_TIMEOUT=0
 
-    ## Set false
-    GRUB_HIDDEN_TIMEOUT_QUIET=false
+        ## OR
+        #GRUB_TIMEOUT_STYLE=hidden
+
+        GRUB_TIMEOUT_STYLE=menu
+
+    ## Set to false
+        GRUB_HIDDEN_TIMEOUT_QUIET=false
 
     ## Update
-    update-grub
+        update-grub
 
 ## Remove Spotify pop-up notification when a song starts
     ## Exit Spotify
