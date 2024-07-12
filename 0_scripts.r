@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/07/2024
+# Last update: 12/07/2024
 #
 
 ## Process with more CPU use
@@ -3223,3 +3223,11 @@ kwrite $prog_name.info
         ## Unlock
             # loginctl unlock-session <session_id>
             loginctl unlock-session 1
+
+## Gmail - Send mail as / Alias
+    ## Error: Authentication failed. Please check your username/password
+        When the username and passwd are correct
+
+        Check if "Less secure app access" is enable in the account to be added
+        Enable and try again
+            https://myaccount.google.com/lesssecureapps
