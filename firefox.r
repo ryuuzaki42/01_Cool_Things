@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/06/2024
+# Last update: 25/07/2024
 #
 
 about:config
@@ -228,27 +228,10 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 https://addons.mozilla.org/firefox/addon/ublock-origin/
     ## Ads block to Youtube
 
-    ## Disable adblock-plus?
-https://addons.mozilla.org/firefox/addon/adblock-plus/
-    + Block additional tracking
-    + Block cookie warnings
-    + Block push notifications
-    + Block social media icons tracking
-
-    + Show acceptable ads
-        + Only allow ads without third-party tracking
-
-    > Language filter lists
-        - English (EasyList)
-        + português + English (EasyList Portuguese+EasyList)
-
-    ## Give error in some website - Add to "Allowlisted websites"
-        pelando.com.br
-        facebook.com
-        youtube.com
-
 https://addons.mozilla.org/firefox/addon/sponsorblock/
     https://sponsor.ajay.app/
+
+https://addons.mozilla.org/firefox/addon/youtube-video-player-speed/
 
     ## Disabled
 https://addons.mozilla.org/pt-BR/firefox/addon/display-inline/
@@ -362,7 +345,7 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
         try reload the page (Crtl + F5) and/or delete the cache in: about:preferences#privacy -> Clear Data
 
 ## Delete bookmarks that are automatically backed up
-    # The existing backups are in thebookmarkbackups subfolder of your Firefox profil
+    # The existing backups are in the bookmarkbackups/ subfolder of your Firefox profile
 
     about:support
         > Profile Directory
