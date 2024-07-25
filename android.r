@@ -140,7 +140,7 @@
 
     ## Connect by AppImage
         Extract AppImage
-        cd folder usr/bin
+        cd usr/bin
 
         ## As root
         ./adb tcpip 5555
