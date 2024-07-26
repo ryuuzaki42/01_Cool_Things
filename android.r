@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/07/2024
+# Last update: 26/07/2024
 #
 
 ## Android APK
@@ -160,6 +160,11 @@
         ./adb kill-server
         ./adb disconnect 192.168.0.103:5555
 
+## Deleted files still show in Google Files, also in other apps
+    Stop the app
+    Clear cache
+    Play Store > Google Files > unistall updates
+
 ----------------------------------------------------------------------------------------------------
 ## Android code
     ## Testing and some information (like apps use and device information)
@@ -201,5 +206,5 @@
             ## ç is ;
             vi /mnt/grub/menu.lst
 
-        ## And added in the frist kernel load entrer after android_x86
+        ## And added in the first kernel load enter after android_x86
             UVESA_MODE=1366x768 DPI=160
