@@ -24,23 +24,40 @@
     Command Palette: Ctrl + Shif + P
     Run code by default file: Ctrl + F5
 
+    ## Indent code
+        Linux   Ctrl + Shift + I
+        Windows Shift + Alt + F
+        Mac     Shift + Option + F
+
 ## General
+    ## Configuration folder
+        ~/.config/VSCodium/User/
+            workspaceStorage/"project"/
+            settings.json
+
     ## Word Wrap
         Settings > Word Wrap
             Off > On
 
-    ## Mouse Wheel Zoom
+    ## Minimap
+        Settings > View: Toggle Minimap
+
+    ## Mouse Wheel Zoom holding Ctrl
         Settings > Mouse Wheel Zoom
             Zoom the font of the editor when using the mouse wheel and holding Ctrl
                 > On
 
-## Indent code
-    Linux   Ctrl + Shift + I
-    Windows Shift + Alt + F
-    Mac     Shift + Option + F
+    ## Terminal count lines scroll back
+        Settings > Terminal:Configure Terminal Settings
+            Integrated: Scrollback >
+                1000 > 5000
+
+    ## Code Spell Checker
+        ## Install extension:
+            Code Spell Checker
 
 ## Python
-    Install extension:
+    ## Install extension:
         Python (Python and Python Debugger)
         Pylint - To see code error and suggestions
 
@@ -48,13 +65,25 @@
         Install extension:
             Jupyter (Jupyter, Jupyter Cell Tags, Jupyter Keymap, Jupyter Notebook Renderers, Jupyter Slideshow)
 
-    ## Selecione ambiente virtual para execução
+    ## Select virtual environment to run
         Ctrl + Shift + P
             > Python: Select Interpreter
-                Selecione o caminho para my_env/bin/Python3
+                Select the path to "my_env/bin/Python3"
 
-        Depois altere o Kernel em Select Kernel
-            Selecione o Interpreter adicionado no passo anterior
+        Then, if needed, change the Kernel in Select Kernel (bottom right corner)
+            Select the Interpreter added in the previous step
+
 ## C
-    Install extension:
+    ## Install extension:
         clangd (C/C++ completion, navigation, and insights)
+
+## Default file to start run
+    ## Create a launch.json
+        Run and Debug (Ctrl + Shif + D)
+            > create a launch.json file.
+
+    ## In launch.json file edit the "program" to the correct file
+        "program": "${file}",
+
+        ## For example:
+            "program": "${workspaceFolder}/main.py",
