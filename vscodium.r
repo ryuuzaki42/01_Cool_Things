@@ -1,5 +1,5 @@
 
-## VS code - VS codium #
+## VSCode - VSCodium #
 
 #
 # Autor= João Batista Ribeiro
@@ -7,19 +7,37 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/07/2024
+# Last update: 30/07/2024
 #
 
-# Download
+## VSCode - with Microsoft telemetry/tracking
     https://code.visualstudio.com/Download
 
-    ## VS codium - AppImage
-    https://github.com/VSCodium/vscodium/releases
+## VSCodium - without Microsoft telemetry/tracking
+    https://vscodium.com/
 
-## Shotcuts
-    Command Palette (Ctrl + Shif + P)
-    Extensions (Ctrl + Shif + X)
-    Settings  (Ctrl + ,)
+    ## Also with AppImage
+        https://github.com/VSCodium/vscodium/releases
+
+## Shortcuts
+    Settings: Ctrl + ,
+    Command Palette: Ctrl + Shif + P
+    Run code by default file: Ctrl + F5
+
+## General
+    ## Word Wrap
+        Settings > Word Wrap
+            Off > On
+
+    ## Mouse Wheel Zoom
+        Settings > Mouse Wheel Zoom
+            Zoom the font of the editor when using the mouse wheel and holding Ctrl
+                > On
+
+## Indent code
+    Linux   Ctrl + Shift + I
+    Windows Shift + Alt + F
+    Mac     Shift + Option + F
 
 ## Python
     Install extension:
@@ -30,7 +48,7 @@
         Install extension:
             Jupyter (Jupyter, Jupyter Cell Tags, Jupyter Keymap, Jupyter Notebook Renderers, Jupyter Slideshow)
 
-    # Selecione ambiente virutal para execução
+    ## Selecione ambiente virtual para execução
         Ctrl + Shift + P
             > Python: Select Interpreter
                 Selecione o caminho para my_env/bin/Python3
@@ -40,8 +58,3 @@
 ## C
     Install extension:
         clangd (C/C++ completion, navigation, and insights)
-
-## Indent code
-    Windows Shift + Alt + F
-    Mac     Shift + Option + F
-    Linux   Ctrl + Shift + I
