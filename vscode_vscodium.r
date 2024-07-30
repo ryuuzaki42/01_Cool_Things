@@ -43,8 +43,12 @@
         Settings > View: Toggle Minimap
 
     ## Mouse Wheel Zoom holding Ctrl
+        ## Zoom the font of the editor when using the mouse wheel and holding Ctrl
         Settings > Mouse Wheel Zoom
-            Zoom the font of the editor when using the mouse wheel and holding Ctrl
+            Editor: Mouse Wheel Zoom
+                > On
+
+            Terminal: Mouse Wheel Zoom
                 > On
 
     ## Terminal count lines scroll back
@@ -52,9 +56,24 @@
             Integrated: Scrollback >
                 1000 > 5000
 
+    ## Show white space
+        Settings > renderWhitespace
+            > trailing
+
+    ## Trim trailing white space on save
+        Settings > trimTrailingWhitespace
+            > On
+
     ## Code Spell Checker
         ## Install extension:
             Code Spell Checker
+            Brazilian Portuguese - Code Spell Checker
+                F1 > Show Spell Checker Configuration Info
+                    Select the User tab.
+                        Enable the language.
+
+                Or, Settings > cSpell.language
+                    > en,pt-BR
 
 ## Python
     ## Install extension:
@@ -76,6 +95,14 @@
 ## C
     ## Install extension:
         clangd (C/C++ completion, navigation, and insights)
+
+## HTML
+    ## Create default document
+        ! + enter
+
+    ## Create tags
+        h1 + enter
+        img + enter
 
 ## Default file to start run
     ## Create a launch.json
