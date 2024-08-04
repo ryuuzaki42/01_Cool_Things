@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 06/06/2024
+# Last update: 01/08/2024
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
@@ -17,6 +17,7 @@ set_keyboard=1 #1
 start_teamviewer=0 #0
 update_date=0 #0
 tmp_folder_RAM=1 #1
+disable_touchpad=0 #0
 
 if [ "$start_tlp" == 1 ]; then
     if [ -x /etc/rc.d/rc.tlp ]; then
@@ -101,6 +102,11 @@ if [ "$tmp_folder_RAM" == 1 ]; then
         df -h | grep "$tmp_RAM_disk"
     fi
     echo
+fi
+
+if [ "$disable_touchpad" == 1 ]; then
+	echo -e "\n # Disabling touchpad (module psmouse) #" # Touchpad with hardware defect
+	modprobe -r psmouse
 fi
 
 # - JB ce -
