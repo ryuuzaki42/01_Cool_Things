@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/07/2024
+# Last update: 05/08/2024
 #
 
 ## VSCode - with Microsoft telemetry/tracking
@@ -64,6 +64,17 @@
         Settings > trimTrailingWhitespace
             > On
 
+    ## Add more indentation in explorer file tree structure
+        Settings > workbench.tree.indent
+            8 > 30
+
+        ## Tree indent guides with colorCustomizations
+            Add in settings.json
+
+            "workbench.colorCustomizations": {
+                "tree.indentGuidesStroke": "#e97101"
+            },
+
     ## Code Spell Checker
         ## Install extension:
             Code Spell Checker
@@ -74,6 +85,21 @@
 
                 Or, Settings > cSpell.language
                     > en,pt-BR
+
+    ## Example of settings.json
+{
+    "terminal.integrated.scrollback": 5000,
+    "editor.minimap.enabled": false,
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.mouseWheelZoom": true,
+    "editor.renderWhitespace": "trailing",
+    "cSpell.language": "en,pt-BR",
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#e97101"
+    },
+    "workbench.tree.indent": 30
+}
 
 ## Python
     ## Install extension:
