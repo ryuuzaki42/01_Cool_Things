@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/07/2024
+# Last update: 13/08/2024
 #
 
 ## Process with more CPU use
@@ -1427,11 +1427,23 @@ $ paste arq1.txt arq2.txt
     ## Converter ISO-8859-1 para UTF-8
     iconv -f iso-8859-1 -t utf-8 arquivo
 
-    ## Necessário redirecionar a saida de arquivo para algum lugar
+    ## Necessário redirecionar a saída de arquivo para algum lugar
     iconv -f utf-8 -t iso-8859-1 arquivo > novo_arquivo
 
-## Juntar pdf #precisa do pdftk
-    pdftk arquivo1.pdf arquivo2.pdf cat output arquivo1e2.pdf
+## Combine PDF / Merge PDF
+    https://gitlab.com/pdftk-java/pdftk
+
+    pdftk arq1.pdf arq2.pdf cat output arq1_2.pdf
+
+    java -jar pdftk-all-v3.3.3.jar arq1.pdf arq2.pdf cat output arq1_2.pdf
+
+    ## Split PDF
+        pdftk foo-bar.pdf cat 1-12 output foo.pdf
+
+        pdftk foo-bar.pdf cat 13-end output bar.pdf
+
+    ## To remove page 13
+        pdftk in.pdf cat 1-12 14-end output out.pdf
 
 ## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha
     # Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
