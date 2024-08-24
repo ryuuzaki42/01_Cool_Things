@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/08/2024
+# Last update: 24/08/2024
 #
 
 ## VSCode - with Microsoft telemetry/tracking
@@ -28,6 +28,26 @@
         Linux   Ctrl + Shift + I
         Windows Shift + Alt + F
         Mac     Shift + Option + F
+
+    Alt + Arrow UP - Move line(s) up
+    Alt + Arrow Down - Move line(s) down
+    Ctrl + D: Select the next ocurrenc of word selected. Then can edit all them that are selected
+    Ctrl + X: Delete line
+    Ctrl + Shift + O: Go to symbol
+    Ctrl + g: Go to line
+    Tab: Add space/indentation to line(s)
+    Shif + Tab: Remove space/indentation to line(s)
+
+    ## Duplicate line
+        Windows: Shift + Alt + Down and Shift + Alt + Up
+        Linux: Ctrl + Shift + Alt + Down and Ctrl + Shift + Alt + Up
+
+    ## Tag wrapping
+        Select text (optional)
+        Open command palette (usually Ctrl+Shift+P)
+        Execute Emmet: Wrap with Abbreviation (search for abb)
+        Enter a tag like div (or an abbreviation .wrapper>p)
+        Hit Enter
 
 ## General
     ## Configuration folder
