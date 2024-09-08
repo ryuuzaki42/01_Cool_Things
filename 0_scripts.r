@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 13/08/2024
+# Last update: 08/09/2024
 #
 
 ## Process with more CPU use
@@ -1298,6 +1298,22 @@ $ paste arq1.txt arq2.txt
     nslookup google.com
 
     nslookup facebook.com 8.8.8.8
+
+## DNS Server IP address in use
+    cat /etc/resolv.conf
+
+    grep "nameserver" /etc/resolv.conf
+
+    nmcli dev show | grep 'DNS'
+
+## Translate domain name to IP
+    dig stackoverflow.com
+
+    dig +short stackoverflow.com
+
+    host stackoverflow.com
+
+    nslookup stackoverflow.com
 
 ## Copy
     #! / bin/bash # juntar / bin
