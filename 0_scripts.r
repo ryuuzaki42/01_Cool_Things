@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/09/2024
+# Last update: 01/10/2024
 #
 
 ## Process with more CPU use
@@ -2319,7 +2319,7 @@ deactivate
         __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia mangohud %command%
 
     ## Errors
-        ## (steam:10587): LIBDBUSMENU-GLIB-WARNING **: 16:00:24.789: About to Show called on an item without submenus.  We're ignoring it.
+        ## (steam:10587): LIBDBUSMENU-GLIB-WARNING **: 16:00:24.789: About to Show called on an item without submenus. We're ignoring it.
             ## Change the shortcut to:
                 export STEAM_RUNTIME_PREFER_HOST_LIBRARIES=0; /usr/bin/steam %U
 
@@ -3252,10 +3252,42 @@ kwrite $prog_name.info
             # loginctl unlock-session <session_id>
             loginctl unlock-session 1
 
-## Gmail - Send mail as / Alias
+## Gmail - Send e-mail as an Alias (from a different address)
     ## Error: Authentication failed. Please check your username/password
         When the username and passwd are correct
 
         Check if "Less secure app access" is enable in the account to be added
         Enable and try again
             https://myaccount.google.com/lesssecureapps
+
+## Github grep last release version
+    ##  Latest release
+        # Example TLP
+        ## Default latest release link
+            link="https://github.com/linrunner/TLP/releases/latest" # Default lat
+            wget -q -O - "$link" | grep '<title>Release ' | sed 's/.*Release //; s/ .*//'
+
+    ## Continuous release
+        # Example go-appimage
+            ## Link using api + .github.com/ + repos/ + releases link
+            link="https://api.github.com/repos/probonopd/go-appimage/releases"
+            wget -q -O - "$link" | grep "\"name.*appimagetool-.*-x86_64.AppImage\"" | head -n 1 | cut -d '-' -f2
+
+## Github download file
+    ## In release page
+        link > https://github.com/ "User" / "program" /
+            link + releases/
+            link + releases/latest
+
+    ## Archive
+        # https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives
+
+        ## 1 Remove "refs/tags/" if already have "archive/"
+            https://github.com/linrunner/TLP/archive/refs/tags/1.7.0.tar.gz
+            https://github.com/linrunner/TLP/archive/1.7.0.tar.gz
+
+        ## 2 Change "releases/download/" to "archive/"
+            https://github.com/flightlessmango/MangoHud/releases/download/v0.7.1/MangoHud-0.7.1.tar.gz
+            https://github.com/flightlessmango/MangoHud/archive/v0.7.1/MangoHud-0.7.1.tar.gz
+
+        ## 3 Files outside source code (zip and tar.gz) looks like to don't have the option "archive/"
