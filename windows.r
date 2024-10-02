@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/06/2024
+# Last update: 02/10/2024
 #
 
 ## Check Windows license and activation status
@@ -36,8 +36,13 @@
                 > Uncheck "Turn On Fast Startup"
 
 ## Disable Windows Update and others with winaero-tweaker
-    https://winaero.com/winaero-tweaker/#download
-        > Use a old config "Winaero Tweaker_*.ini"
+    # https://winaero.com/winaero-tweaker/#download
+    > Use a old config "Winaero Tweaker_*.ini"
+
+    > Disable updates
+        Windows Update
+        Edge Updates
+        Store Apps Auto-update
 
 ## Disable hibernate - powercfg or powercfg.exe
     cmd > Run as administrador
@@ -127,7 +132,6 @@
         Properties > General > Disk Cleanup
             > Clean up system files
 
-
 ## Install
     Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox, Revo Uninstaller,
     CristalDiskInfo, Master PDF Editor, Notepad++, PathMyPc, Telegram, WinRAR, HWmonitor
@@ -185,7 +189,7 @@
 ## Enable F8 (boot legacy with good options) no Windows 10
     bcdedit /set {default} bootmenupolicy legacy
 
-    # Back to default - Disable F8
+    ## Back to default - Disable F8
         bcdedit /set {default} bootmenupolicy standard
 
 ## Windows HDMI wrong size image
@@ -308,7 +312,7 @@
             color       Sets the default console foreground and background colors.
             comp        Compares the contents of two files or sets of files.
             compact     Displays or alters the compression of files on ntfs partitions.
-            convert     Converts fat volumes to ntfs.  you cannot convert the current drive.
+            convert     Converts fat volumes to ntfs. you cannot convert the current drive.
             copy        Copies one or more files to another location.
             date        Displays or sets the date.
             del         Deletes one or more files.
@@ -532,6 +536,9 @@
         bootrec /ScanOs
         bootrec /RebuildBcd
 
+## Windows Update error 0x80070001
+    Clean disck C: up to 8 GiB or more of free space and try update
+
 ## Windows - Partition not recognized as NTFS after clone
     ## MiniTool Partition Wizard
         Select the partition > Change Partition Type ID > Set 0x07 NTFS
@@ -579,7 +586,7 @@
     > Mew task
         > Explorer.exe
 
-## Delete old "name"/SSID Wi-Fi network
+## Delete old "name" / SSID Wi-Fi network
     ## Open regedit
         Win + R
         regedit
