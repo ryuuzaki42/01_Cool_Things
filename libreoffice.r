@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 06/05/2024
+# Last update: 14/10/2024
 #
 
 ## Error message “Unspecified Application Error” after running it
@@ -143,14 +143,17 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
         ## Export
             File > Export as PDF...
 
-## Column/Row Highlighting for Active Cell - Version LibreOffice 24.2.0 and up
-    #https://wiki.documentfoundation.org/ReleaseNotes/24.2
-
-    Highlight the row and column for the active cell.
-        Tools ▸ Options ▸ LibreOffice Calc ▸ View
+    ## Column/Row Highlighting for Active Cell - Version LibreOffice 24.2.0 and up
+        # https://wiki.documentfoundation.org/ReleaseNotes/24.2
+        Tools > Options > LibreOffice Calc > View
 
         Or through the menu entry
-        View ▸ Column/Row Highlighting
+            View > Column/Row Highlighting
+
+    ## Copying column width
+        The column width will be copied, by Ctrl-C / Ctrl-V, when select and copy a whole column
+        Copy and plast the whole column and move the data
+        The individual cells have not "Column width" property
 
 ## Impress URL não aparecendo em azul e sublinhada
     Crie um nova apresentação com as URL, tipo refs.odp, com as referências
