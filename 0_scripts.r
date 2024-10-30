@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/10/2024
+# Last update: 30/10/2024
 #
 
 ## Process with more CPU use
@@ -1102,10 +1102,15 @@ rm $tmpFile # Delete the tmpFile
     ## To get Suspend
         su - root -c 'pm-suspend'
 
-## Change the size on Google Slides
-    Click the File "menu" and select "Page setup"
-    Select a size from the drop down menu:
-    Custom -> pixels: 1024 x 788
+## Google Slides
+    ## Change the size off slide
+        Click the File "menu" and select "Page setup"
+        Select a size from the drop down menu:
+        Custom -> pixels: 1024 x 788
+
+    ## Reapply master slide theme to all slides
+        Set layout to slides
+        If some not applay, select the text box in te slide and go to Format > Clear Formatting
 
 ## VLC continue playback?
     interface> Main interfaces> QT:"Continue playback?" ask -> never
