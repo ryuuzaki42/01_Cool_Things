@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/10/2024
+# Last update: 27/11/2024
 #
 
 ## Check Windows license and activation status
@@ -230,6 +230,11 @@
         sfc /scannow
 
         DISM /Online /Cleanup-Image /RestoreHealth
+
+## Restore the content of CHK files - CHK BAK
+    FOUND/FILE.CHK
+        > Chk-Back
+            https://download.cnet.com/chk-back/3000-2094_4-75695425.html
 
 ## cmd commands
     https://learn.microsoft.com/pt-br/windows-server/administration/windows-commands/windows-commands
