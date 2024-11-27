@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/08/2024
+# Last update: 27/11/2024
 #
 
 ## VSCode - with Microsoft telemetry/tracking
@@ -62,6 +62,10 @@
     ## Minimap
         Settings > View: Toggle Minimap
 
+    ## Zoom all (interface and files)
+        Ctrl + +
+        Ctrl + -
+
     ## Mouse Wheel Zoom holding Ctrl
         ## Zoom the font of the editor when using the mouse wheel and holding Ctrl
         Settings > Mouse Wheel Zoom
@@ -70,6 +74,10 @@
 
             Terminal: Mouse Wheel Zoom
                 > On
+
+    ## Auto save file
+        Settings > Auto save
+            Off > afterDelay
 
     ## Terminal count lines scroll back
         Settings > Terminal:Configure Terminal Settings
@@ -135,8 +143,8 @@
             > Python: Select Interpreter
                 Select the path to "my_env/bin/Python3"
 
-        Then, if needed, change the Kernel in Select Kernel (bottom right corner)
-            Select the Interpreter added in the previous step
+        ## To see or change the current environment in use
+            Bottom right corner or Select Interpreter as above
 
 ## C
     ## Install extension:
