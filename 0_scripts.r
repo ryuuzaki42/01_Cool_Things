@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 30/10/2024
+# Last update: 01/01/2025
 #
 
 ## Process with more CPU use
@@ -700,6 +700,9 @@ rm $tmpFile # Delete the tmpFile
 
     ## Check file (convert), set correctly duration
         lame audio0.mp3 audio01.mp3
+
+    ## Combine two audio
+        ffmpeg -i audio1.mp3 -i audio2.mp3 -i audio3.mp3 -filter_complex "[0:a][1:a][2:a]concat=n=3:v=0:a=1" output.mp3
 
 ## Reduce video size
     ffmpeg -i inVideo.mp4 outVideo.mp4
