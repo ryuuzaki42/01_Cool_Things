@@ -7,8 +7,10 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/06/2024
+# Last update: 01/01/2025
 #
+
+https://github.com/AppImage/appimagetool/releases/tag/continuous
 
 https://github.com/AppImage/AppImageKit/blob/master/README.md
 
