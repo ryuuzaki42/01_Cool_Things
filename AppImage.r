@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/01/2025
+# Last update: 18/02/2025
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -29,6 +29,12 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
     squashfs-root/WinRAR.desktop
         Name=winrar-6.24
+
+    ## Go version use version tag
+        https://github.com/probonopd/go-appimage/releases
+
+        version="7.10"
+        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage WinRAR_AppImage/
 
 ## Create AppImage
     https://github.com/AppImage/AppImageKit/releases
@@ -59,7 +65,6 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     #    mv winrar-x64-701.exe winrar-x64-701.rar
 
     # ## Extract WinRAR*.rar
-
     ## Extract WinRAR*.exe with an old version of WinRAR_AppImage
 
     ## Clone mirror
@@ -67,7 +72,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
     ## Upgrade WinRAR install in WinRAR_AppImage/drive_c/WinRAR/
 
-    ## Teste local version
+    ## Test local version
         ./AppRun
 
             Help > Version
