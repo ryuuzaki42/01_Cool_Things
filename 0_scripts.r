@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/01/2025
+# Last update: 21/03/2025
 #
 
 ## Process with more CPU use
@@ -1083,15 +1083,14 @@ rm $tmpFile # Delete the tmpFile
     grep -rn $PWD -e "24" > ../../../a.txt
 
 ## KDE - Minimize/Maximize Keyboard Shortcut
-    Alt+F2 and type "systemsettings"
-    then click on "Shortcuts and Gestures".
-    The window management shortcuts are under "Global Keyboard shortcuts", then select "Kwin" from the drop-down menu.
-    By default maximise is Alt+F11 and minimise is Alt+F10.
+    Alt + F2 and type "systemsettings", then click on "Shortcuts and Gestures"
+    The window management shortcuts are under "Global Keyboard shortcuts", then select "Kwin" from the drop-down menu
+    By default maximise is Alt + F11 and minimise is Alt + F10
 
     You could set the keyboard shortcuts to the "Quick title" to move left/right etc
 
 ## Firefox Special Paste
-    Use the shortcut Ctrl + Shift + V.
+    Use the shortcut Ctrl + Shift + V
 
     # If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying
     # the "Blockable Items on current page" sidebar.
@@ -3124,7 +3123,7 @@ kwrite $prog_name.info
         khelpcenter man:ls
         khelpcenter 'man:printf(3)'
 
-        ## Krunner (Alt+F2) - Start khelpcenter with the man pages of the command
+        ## Krunner (Alt + F2) - Start khelpcenter with the man pages of the command
             #command
             #ls
             man:ls
@@ -3220,6 +3219,13 @@ kwrite $prog_name.info
     ## Root
         libinput debug-events
 
+## Disable the touchpad
+    modprobe -r psmouse
+
+    xinput --disable 'SynPS/2 Synaptics TouchPad'
+
+    xinput --enable 'SynPS/2 Synaptics TouchPad'
+
 ## Scanear documento
     1 Scanear
         ## LibeOffice Writer > Inserir > Multimídia > Digitalizar > Selecionar origem...
@@ -3299,3 +3305,14 @@ kwrite $prog_name.info
             https://github.com/flightlessmango/MangoHud/archive/v0.7.1/MangoHud-0.7.1.tar.gz
 
         ## 3 Files outside source code (zip and tar.gz) looks like to don't have the option "archive/"
+
+## Shortcut to drag and move the window - Linux
+        Alt + Left click + move
+
+    ## Some has changed to Super / Meta / Windows key
+        Super + Left click + move
+
+    ## KDE to change Meta to Alt
+        System Settings > Window Behavior
+            Window Actions > Inner Window
+                Meta > Alt
