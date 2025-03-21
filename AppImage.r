@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 18/02/2025
+# Last update: 21/03/2025
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -57,6 +57,24 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     2 Rename the .exe to .rar or .zip and try extrart with ark or PeaZip*.AppImage
 
     3 Install the program in the Windows and copy the install folder
+
+## Update AppImage - Check for update
+    https://docs.appimage.org/packaging-guide/optional/updates.html
+
+    https://github.com/AppImageCommunity/AppImageUpdate/releases
+
+    ## Download
+        https://github.com/AppImageCommunity/AppImageUpdate/releases/download/continuous/appimageupdatetool-x86_64.AppImage
+        appimageupdatetool-x86_64.AppImage
+
+    ## Test
+        ./appimageupdatetool-x86_64.AppImage prog.AppImage
+
+    ## Information about update of some program - repository information
+        ./prog.AppImage --appimage-updateinfo
+
+        ./appimageupdatetool-x86_64.AppImage --appimage-updateinfo
+            gh-releases-zsync|AppImage|AppImageUpdate|continuous|appimageupdatetool-*x86_64.AppImage.zsync
 
 ## WinRAR
     ## Download the last version
