@@ -1,6 +1,6 @@
 
 # slackpkgplus.conf_15.0_JBc
-# Last update: 28/10/2023
+# Last update: 23/02/2025
 
 # Configuration for slackpkg+.
 # Please read manpage: "man slackpkgplus.conf" and documentation /usr/doc/slackpkg+-*/README
@@ -91,6 +91,10 @@ SHOWORDER=package
 # Allow to show more details of the package in 'slackpkg info <package>'. Accepts "none", "basic", "filelist"
 DETAILED_INFO=basic
 
+# Define the GPG variable if not already defined by slackpkg: prefer gpg (1.x) on 15.0 like in the newer slackpkg,
+# on newer Slackware is already defined by /usr/libexec/slackpkg/core-functions.sh
+GPG=${GPG:-gpg}
+
 # Enable (on) / Disable (off) a Strict GPG Check. A repository should contains packages signed
 # with the only original GPG-KEY. In some custom repository may be wanted to mix heterogeneous
 # packages; to use that repository set Strict GPG Check to off. P.S: a repository can
@@ -149,15 +153,14 @@ MIRRORPLUS['alienbob']=https://slackware.uk/people/alien/sbrepos/15.0/x86_64
 MIRRORPLUS['restricted']=https://slackware.uk/people/alien/restricted_sbrepos/15.0/x86_64
 
 # use this to keep the slackpkg+ package updated to the latest stable release
-#MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+15/
 MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplus/
 
 # use the development branch to use the mainline version and help develop by reporting bugs.
-#MIRRORPLUS['slackpkgplus']=https://slakfinder.org/slackpkg+dev/
+#MIRRORPLUS['slackpkgplus']=https://slackware.nl/slackpkgplusdev/
 
 
 # Local repository:
-#MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86/
+#MIRRORPLUS['alienbob']=file://repositories/alien/sbrepos/15.0/x86_64/
 #
 # Local Mirror - Slackware 15.0 - x86_64
 #MIRRORPLUS['multilib']=file://run/media/j/mirror/git_clone/slackware15.0/13_clone_multilib_Slackware_repo_rsync/15.0/
@@ -176,7 +179,7 @@ MIRRORPLUS['JB']=dir://media/sda2/os/gnu_linux/slackware15.0/
 # This does not replace sbopkg; slackpkg just report the package, version and url; you may
 # download it via 'slackpkg download <packagename>' and build it yourself or via sbopkg.
 #SBO['15.0']=https://www.slackbuilds.org/slackbuilds/15.0/
-#SBO['current']=https://cgit.ponce.cc/slackbuilds/
+#SBO['current']=https://github.com/Ponce/slackbuilds
 
 
 # Plugin section:
@@ -209,15 +212,15 @@ PLUGIN_ZCHANGELOG_SHOW=on
 #
 # Supported Repositories (see /usr/doc/slackpkg+-* for details and notes):
 #
-#slackpkgplus:  https://slakfinder.org/slackpkg+{dev,1.7,1.8,15}/
+#slackpkgplus:  https://slackware.nl/slackpkgplus{dev,}/
 #multilib:      https://slackware.nl/people/alien/multilib/{15.0,current}/
 #alienbob:      https://slackware.nl/people/alien/sbrepos/{15.0,current}/{x86,x86_64}/
 #restricted:    https://slackware.nl/people/alien/restricted_sbrepos/{15.0,current}/{x86,x86_64}/
 #msb:           https://slackware.uk/msb/{15.0,current}/latest/{x86,x86_64}/
 #csb:           https://slackware.uk/csb/{15.0,current}/{x86,x86_64}/
-#slackers:      https://slack.conraid.net/repository/slackware64-current/
-#slackonly:     https://packages.slackonly.com/pub/packages/15.0-x86_64/
-#slackel:       http://www.slackel.gr/repo/{i486,x86_64}/current/
+#slackers:      https://slackers.it/repository/slackware64-current/
+#slackonly:     https://packages.slackonly.com/pub/packages/{15.0,current}-x86_64/
+#slackel:       http://www.slackel.gr/repo/{i486,x86_64}/{slackware-,}current/
 #slint:         https://slackware.uk/slint/x86_64/slint-15.0/
 #salixos:       https://download.salixos.org/{i486,x86_64}/15.0/
 #salixextra:    https://download.salixos.org/{i486,x86_64}/extra-15.0/
