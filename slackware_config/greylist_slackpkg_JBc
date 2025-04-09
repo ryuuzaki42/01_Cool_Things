@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 04/08/2024
+# Last update: 09/04/2025
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -97,7 +97,8 @@ smartsynchronize
 smplayer
 # teams - AppImage
 tomighty
-unrar
+# unrar
+rar
 veracrypt
 webcore-fonts
 wxGTK3
@@ -230,8 +231,8 @@ acpi_call
 # -------------------------------------------------------------------------------------------------------
 # Others / New / Test
 Gittyup
-droidcam # Need v4l2loopback
-v4l2loopback
+# droidcam # Need v4l2loopback
+# v4l2loopback
 # exiftool
 # plasma-wallpaper-asciiquarium
 # -------------------------------------------------------------------------------------------------------
