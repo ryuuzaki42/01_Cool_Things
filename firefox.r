@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 25/07/2024
+# Last update: 09/04/2025
 #
 
 about:config
@@ -15,6 +15,13 @@ about:config
 ## Disable quit shortcut (Ctrl + Q)
 browser.quitShortcut.disabled
     false > true
+
+## Remove All AI Features
+browser.ml.chat.enabled
+    true > false
+
+browser.ml.enabled
+    true > false
 
 ## Use tmp folder to download the files open by the browser
 browser.download.start_downloads_in_tmp_dir
