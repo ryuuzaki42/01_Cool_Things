@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/07/2024
+# Last update: 16/04/2025
 #
 
 ## Make home folder - mount /media/sda2
@@ -87,6 +87,16 @@ https://slakfinder.org/slackpkg+.html
 
         slackpkg upgrade restricted
         slackpkg upgrade restricted:vlc
+
+## slackpkg list off packages to clean copy
+    ## upgrade-all
+        slackpkg -batch=on -default_answer=n -dialog=off upgrade-all
+
+    ## install-new
+        slackpkg -batch=on -default_answer=n -dialog=off install-new
+
+    ## clean-system
+        slackpkg -batch=on -default_answer=n -dialog=off clean-system
 
 ## Instal multilib - need slackpkgplus
     ## Reinstall multilib or check if new packages was added
@@ -182,7 +192,7 @@ EndSection
 
 ## KDE autostart and lock
     ## Copy the script to ~/.config/
-    cp config_JB/kde_start_JBs.sh ~/.config/
+    cp kde_start_JBs.sh ~/.config/
 
     ## Added to Autostart script on KDE
         System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
