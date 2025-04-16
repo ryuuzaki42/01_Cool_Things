@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/04/2025
+# Last update: 16/04/2025
 #
 
 about:config
@@ -74,8 +74,8 @@ mousewheel.system_scroll_override_on_root_content.enabled
 
 ## Disable autoplay video
     about:preferences#privacy
-    > Autoplay > Settings
-        > Block Audio and Video
+        > Autoplay > Settings
+            > Block Audio and Video
 
 ## Program to open magnet links (torrent)
     about:config > new > boolean > name
@@ -287,6 +287,8 @@ https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
         ## playlist:
             link + &disable_polymer=true
 
+https://addons.mozilla.org/firefox/addon/save-all-images-webextension/
+https://addons.mozilla.org/firefox/addon/single-file/
 https://addons.mozilla.org/firefox/addon/export-tabs-urls-and-titles/
 https://addons.mozilla.org/firefox/addon/hls-downloader-extension/
 https://addons.mozilla.org/firefox/addon/print-friendly-pdf/
