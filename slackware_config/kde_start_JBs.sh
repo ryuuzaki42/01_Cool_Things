@@ -22,14 +22,15 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 21/06/2023
+# Last update: 16/04/2025
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
 #
-lock_screen=1
-change_resolution=1
-thinkpad_notebook=0
+lock_screen=1 #1
+change_resolution=1 #1
+max_resolution=0 #0 to mirror 1024x768, 1 to maximum resolution, like 1920x1080
+thinkpad_notebook=0 #0
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -41,8 +42,13 @@ if [ "$change_resolution" == 1 ]; then
 
     countOutput=$(xrandr | grep " connected" | wc -l)
     if [ "$countOutput" -gt 1 ]; then
-        echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
-        /usr/bin/monitor_change_resolution_JBs.sh 4 0 y 1
+        if [ "$max_resolution" == 0 ]; then
+            echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y 1
+        else
+            echo -e "\n # Set the output two as maximum resolution #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 2 0 y 1
+        fi
 
         audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
         if echo "$audio_config" | grep -qv "hdmi"; then
