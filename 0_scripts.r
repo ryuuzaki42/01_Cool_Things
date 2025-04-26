@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/03/2025
+# Last update: 16/04/2025
 #
 
 ## Process with more CPU use
@@ -1454,7 +1454,7 @@ $ paste arq1.txt arq2.txt
     iconv -f utf-8 -t iso-8859-1 arquivo > novo_arquivo
 
 ## Combine PDF / Merge PDF
-    https://gitlab.com/pdftk-java/pdftk
+    https://gitlab.com/pdftk-java/pdftk/-/releases
 
     pdftk arq1.pdf arq2.pdf cat output arq1_2.pdf
 
@@ -1467,6 +1467,22 @@ $ paste arq1.txt arq2.txt
 
     ## To remove page 13
         pdftk in.pdf cat 1-12 14-end output out.pdf
+
+## PDF Remove watermark
+    #https://superuser.com/questions/448519/how-to-remove-watermark-from-pdf-using-pdftk
+    ## uncompress the PDF document in order to be able to find the watermark and replace it with sed
+        pdftk original.pdf output uncompressed.pdf uncompress
+
+    ## Remove the "watermarktextstring", can used a text editor
+        sed -e "s/watermarktextstring/ /g" uncompressed.pdf > unwatermarked.pdf
+
+        ## uncompressed.pdf can be edited with a text editor to better remove the watermark
+
+    ## Repair the resulting output
+        pdftk unwatermarked.pdf output fixed.pdf compress
+
+    ## Or use Android application
+        https://play.google.com/store/apps/details?id=com.risingapps.removewatermarkpdf
 
 ## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha
     # Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
