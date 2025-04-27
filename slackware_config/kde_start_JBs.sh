@@ -22,10 +22,12 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 26/04/2025
+# Last update: 27/04/2025
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
+#
+# Use scripts from https://github.com/ryuuzaki42/02_Scripts_Linux installed in /usr/bin/
 #
 lock_screen=1 #1 Lock screen after login, used with auto-login
 change_resolution=1 #1 Change the resolution
