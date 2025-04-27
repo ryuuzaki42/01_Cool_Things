@@ -32,8 +32,8 @@
 lock_screen=1 #1 Lock screen after login, used with auto-login
 change_resolution=1 #1 Change the resolution
 max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
+audio_profile_change=0 #0 Change audio profile - good to use with $change_resolution to set audio to output 2 HDMI
 thinkpad_notebook=0 #0 Scrolling to Thinkpad notebook
-audio_profile_change=0 #0 Change audio profile
 volume_max=0 #0 # Set volume to maximum
 
 if [ "$lock_screen" == 1 ]; then
@@ -53,15 +53,9 @@ if [ "$change_resolution" == 1 ]; then
             echo -e "\n # Set the output two as maximum resolution #\n"
             /usr/bin/monitor_change_resolution_JBs.sh 2 0 y 1
         fi
-
-        audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
-        if echo "$audio_config" | grep -qv "hdmi"; then
-            echo -e "\n # Set audio output to HDMI output #\n"
-            /usr/bin/audio_profile_change_JBs.sh 1
-        fi
     else
         echo -e "\n # Set the video output 1 to maximum resolution #\n"
-        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y
+        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y 1
     fi
 fi
 
@@ -76,8 +70,11 @@ if [ "$thinkpad_notebook" == 1 ]; then
 fi
 
 if [ "$audio_profile_change" == 1 ]; then
-    echo -e "\n# audio profile change #"
-    /usr/bin/audio_profile_change_JBs.sh
+    audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
+    if echo "$audio_config" | grep -qv "hdmi"; then
+        echo -e "\n# Set audio output to HDMI output #\n"
+        /usr/bin/audio_profile_change_JBs.sh 1
+    fi
 fi
 
 if [ "$volume_max" == 1 ]; then
