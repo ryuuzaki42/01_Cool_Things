@@ -27,12 +27,12 @@
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
 #
-lock_screen=1 #1
-change_resolution=1 #1
-max_resolution=0 #0 to mirror 1024x768, 1 to maximum resolution, like 1920x1080
-thinkpad_notebook=0 #0
-audio_profile_change=1 #0 Change audio profile
-volume_max=1 #0 # Set volume to maximum
+lock_screen=1 #1 Lock screen after login, used with auto-login
+change_resolution=1 #1 Change the resolution
+max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
+thinkpad_notebook=0 #0 Scrolling to Thinkpad notebook
+audio_profile_change=0 #0 Change audio profile
+volume_max=0 #0 # Set volume to maximum
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
