@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 16/04/2025
+# Last update: 26/04/2025
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -31,6 +31,7 @@ lock_screen=1 #1
 change_resolution=1 #1
 max_resolution=0 #0 to mirror 1024x768, 1 to maximum resolution, like 1920x1080
 thinkpad_notebook=0 #0
+audio_profile_change=1 #0 Change audio profile
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -69,4 +70,8 @@ if [ "$thinkpad_notebook" == 1 ]; then
 
     # To enable horizontal scrolling in addition to vertical scrolling:
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
+fi
+if [ "$audio_profile_change" == 1 ]; then
+    echo -e "\n# audio profile change #"
+    /usr/bin/audio_profile_change_JBs.sh
 fi
