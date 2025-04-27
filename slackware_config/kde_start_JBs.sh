@@ -48,14 +48,14 @@ if [ "$change_resolution" == 1 ]; then
     if [ "$countOutput" -gt 1 ]; then
         if [ "$max_resolution" == 0 ]; then
             echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y 1
+            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # to show notification, uncomment to disable notification
         else
             echo -e "\n # Set the output two as maximum resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 2 0 y 1
+            /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
         fi
     else
         echo -e "\n # Set the video output 1 to maximum resolution #\n"
-        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y 1
+        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y #1
     fi
 fi
 
@@ -73,7 +73,7 @@ if [ "$audio_profile_change" == 1 ]; then
     audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
     if echo "$audio_config" | grep -qv "hdmi"; then
         echo -e "\n# Set audio output to HDMI output #\n"
-        /usr/bin/audio_profile_change_JBs.sh 1
+        /usr/bin/audio_profile_change_JBs.sh #1
     fi
 fi
 
