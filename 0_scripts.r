@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/04/2025
+# Last update: 26/05/2025
 #
 
 ## Process with more CPU use
@@ -1491,6 +1491,85 @@ $ paste arq1.txt arq2.txt
 
 ## Contar caracteres
     wc -m
+
+## Gtk Gtk-3 configuration
+    ~/.config/gtk-3.0/settings.ini
+
+    ## Comment
+        ; gtk-icon-theme-name=breeze-dark
+
+    ## Change menu font size
+        ## Comment
+            ; gtk-font-name=Noto Sans,  10
+        ## Add
+            gtk-font-name=Noto Sans,  20
+
+    ## LibreOffice Writer - Typing cursor (caret, not the mouse pointer) appearance
+    ## - Make typing cursor more visible in Writer
+        ~/.config/gtk-3.0/gtk.css
+
+        ## Add
+            * { -GtkWidget-cursor-aspect-ratio: 0.2; }
+
+
+    ## Xfce, GTK and Qt: remove rounded corners using css
+        # https://forum.manjaro.org/t/xfce-gtk-and-qt-remove-rounded-corners-using-css/66879
+
+headerbar {
+  border-radius: 0 0 0 0;
+}
+
+headerbar .title {
+  border-radius: 0 0 0 0;
+}
+
+.csd .titlebar {
+  border-radius: 0;
+}
+
+.window-frame {
+  border-radius: 0;
+}
+
+decoration, window, window.background, window.titlebar, * {
+  border-radius: 0px;
+}
+
+.titlebar,
+.titlebar .background, * {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+
+.window-frame {
+  border-radius: 0 0 0 0;
+}
+
+.background.csd {
+  border-radius: 0 0 0px 0px;
+}
+.background.maximized, .background.solid-csd {
+  border-radius: 0;
+}
+
+.window-frame, .window-frame:backdrop {
+  box-shadow: 0 0 0 black;
+  border-style: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+.titlebar {
+  border-radius: 0;
+}
+
+    ## gtk3-nocsd is a small module used to disable the client side decoration of Gtk+ 3
+        # https://github.com/PCMan/gtk3-nocsd
+
+        gtk3-nocsd prog
 
 ## Evince with not icons
     Criar o arquivo em ~/.config/gtk-3.0/settings.ini
