@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/04/2025
+# Last update: 10/06/2025
 #
 
 about:config
@@ -382,3 +382,9 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
     Bookmarks  *
     Tabs       %
     History    ^
+
+## PDF reference Preview
+    https://github.com/belinghy/PDFRefPreview
+
+    1 Copy code
+    2 Add code in a bookmark in the URL
