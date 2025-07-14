@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/05/2025
+# Last update: 14/07/2025
 #
 
 ## Process with more CPU use
@@ -3411,3 +3411,18 @@ kwrite $prog_name.info
         System Settings > Window Behavior
             Window Actions > Inner Window
                 Meta > Alt
+
+## Weather bash - Show the weather forecast
+    # https://github.com/chubin/wttr.in
+    curl wttr.in
+
+    wget -qO - wttr.in
+
+    curl v2.wttr.in
+
+    wget -qO - v2.wttr.in
+
+    cityName="Rio Paranaíba"
+    cityName=${cityName/ /+} # Added + if city name has space
+    wget -qO - "wttr.in/$cityName" # Get the weather information
+    curl "v2.wttr.in/$cityName"
