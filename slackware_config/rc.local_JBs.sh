@@ -15,7 +15,7 @@ start_tlp=1 #1
 disable_bluetooth=1 #1
 start_thinkfan=1 #1
 set_keyboard=1 #1
-start_teamviewer=0 #0
+#start_teamviewer=0 #0
 update_date=0 #0
 tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
@@ -52,12 +52,12 @@ if [ "$set_keyboard" == 1 ]; then
     loadkeys br-abnt2
 fi
 
-if [ "$start_teamviewer" == 1 ]; then
-    echo -e "\n # Starting Teamviewer #"
-    if [ -x /etc/rc.d/rc.teamviewerd ]; then
-        /etc/rc.d/rc.teamviewerd start
-    fi
-fi
+#if [ "$start_teamviewer" == 1 ]; then
+#    echo -e "\n # Starting Teamviewer #"
+#    if [ -x /etc/rc.d/rc.teamviewerd ]; then
+#        /etc/rc.d/rc.teamviewerd start
+#    fi
+#fi
 
 if [ "$update_date" == 1 ]; then
     echo -e "\n # Update time - Notebook without battery #"
@@ -112,8 +112,8 @@ if [ "$tmp_folder_RAM" == 1 ]; then
 fi
 
 if [ "$disable_touchpad" == 1 ]; then
-	echo -e "\n # Disabling touchpad (module psmouse) #" # Touchpad with hardware defect
-	modprobe -r psmouse
+    echo -e "\n # Disabling touchpad (module psmouse) #" # Touchpad with hardware defect
+    modprobe -r psmouse
 fi
 
 # - JB ce -
