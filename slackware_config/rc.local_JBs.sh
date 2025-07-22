@@ -7,9 +7,10 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 13/08/2024
+# Last update: 22/07/2025
 #
 # 1 is true or will run and 0 to false
+keyboard_ScrLk_lights=1
 start_tlp=1 #1
 disable_bluetooth=1 #1
 start_thinkfan=1 #1
@@ -19,10 +20,15 @@ update_date=0 #0
 tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
 
+
+if [ "$keyboard_ScrLk_lights" == 1 ]; then
+    echo -e "\n # Enable Scroll Lock to toggle lights on keyboard #"
+    xmodmap -e 'add mod3 = Scroll_Lock'
+fi
+
 if [ "$start_tlp" == 1 ]; then
     if [ -x /etc/rc.d/rc.tlp ]; then
-        echo -e "\n # Starting tlp #"
-        # https://github.com/linrunner/TLP
+        echo -e "\n # Starting tlp #" # https://github.com/linrunner/TLP
         /etc/rc.d/rc.tlp start
     fi
 fi
@@ -34,8 +40,7 @@ fi
 
 if [ "$start_thinkfan" == 1 ]; then
     if [ -x /etc/rc.d/rc.thinkfan ]; then
-        echo -e "\n # Starting thinkfan #"
-        # https://github.com/vmatare/thinkfan
+        echo -e "\n # Starting thinkfan #" # https://github.com/vmatare/thinkfan
         /etc/rc.d/rc.thinkfan start
     fi
 fi
