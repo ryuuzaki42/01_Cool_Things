@@ -3426,3 +3426,13 @@ kwrite $prog_name.info
     cityName=${cityName/ /+} # Added + if city name has space
     wget -qO - "wttr.in/$cityName" # Get the weather information
     curl "v2.wttr.in/$cityName"
+
+## Enable Scroll Lock to toggle lights on keyboard - ScrLk
+    xmodmap -e 'add mod3 = Scroll_Lock'
+
+    ## Or can use, until run with -led
+    ## On
+        xset led named "Scroll Lock"
+
+    ## Off
+        xset -led named "Scroll Lock"
