@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 27/04/2025
+# Last update: 25/07/2025
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -34,7 +34,8 @@ change_resolution=1 #1 Change the resolution
 max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
 audio_profile_change=0 #0 Change audio profile - good to use with $change_resolution to set audio to output 2 HDMI
 thinkpad_notebook=0 #0 Scrolling to Thinkpad notebook
-volume_max=0 #0 # Set volume to maximum
+volume_max=0 #0 Set volume to maximum
+keyboard_ScrLk_lights=1 #1 Enable Scroll Lock to toggle lights on keyboard
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -80,4 +81,9 @@ fi
 if [ "$volume_max" == 1 ]; then
     echo -e "\n# volume maximum #"
     /usr/bin/volume_pulse_JBs.sh max
+fi
+
+if [ "$keyboard_ScrLk_lights" == 1 ]; then
+    echo -e "\n # Enable Scroll Lock to toggle lights on keyboard #"
+    xmodmap -e 'add mod3 = Scroll_Lock'
 fi
