@@ -31,8 +31,9 @@
 #
 lock_screen=1 #1 Lock screen after login, used with auto-login
 thinkpad_notebook=0 #0 Scrolling to Thinkpad notebook
+
+audio_notebook=1 #1 Set to use audio/speakers from the notebook, instead HDMI
 audio_profile_change=0 #0 Change audio profile - good to use with $change_resolution to set audio to output 2 HDMI
-audio_notebook=1 #1 Set to use audio/speakers from notebook
 volume_max=0 #0 Set volume to maximum
 
 change_resolution=1 #1 Change the resolution
@@ -53,24 +54,23 @@ if [ "$thinkpad_notebook" == 1 ]; then
     xinput set-prop "TPPS/2 IBM TrackPoint" "Evdev Wheel Emulation Axes" 6 7 4 5
 fi
 
-if [ "$audio_profile_change" == 1 ]; then
-    audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
-    if echo "$audio_config" | grep -qv "hdmi"; then
-        echo -e "\n# Set audio output to HDMI output #\n"
-        /usr/bin/audio_profile_change_JBs.sh #1
-    fi
-fi
-
 if [ "$audio_notebook" == 1 ]; then
     speakersAudio="output:analog-stereo+input:analog-stereo" # Notebook audio
-
     pactl set-card-profile 0 "$speakersAudio"
     echo -e "$speakersAudio\n"
 fi
 
+if [ "$audio_profile_change" == 1 ]; then
+    audio_config=$(pacmd list-cards | grep "active profile" | sed 's/.*<//; s/>//')
+    if echo "$audio_config" | grep -qv "hdmi"; then
+        echo -e "\n# Set audio output to HDMI output #\n"
+        /usr/bin/audio_profile_change_JBs.sh #1 # Pass 1 to disable the notification
+    fi
+fi
+
 if [ "$volume_max" == 1 ]; then
     echo -e "\n# volume maximum #"
-    /usr/bin/volume_pulse_JBs.sh max
+    /usr/bin/volume_pulse_JBs.sh max #0 # Pass 0 to disable the notification
 fi
 
 if [ "$change_resolution" == 1 ]; then
@@ -80,7 +80,7 @@ if [ "$change_resolution" == 1 ]; then
     if [ "$countOutput" -gt 1 ]; then
         if [ "$max_resolution" == 0 ]; then
             echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # to show notification, uncomment to disable notification
+            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # Pass 1 to disable the notification
         else
             echo -e "\n # Set the output two as maximum resolution #\n"
             /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
