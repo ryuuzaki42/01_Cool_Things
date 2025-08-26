@@ -30,34 +30,17 @@
 # Use scripts from https://github.com/ryuuzaki42/02_Scripts_Linux installed in /usr/bin/
 #
 lock_screen=1 #1 Lock screen after login, used with auto-login
-change_resolution=1 #1 Change the resolution
-max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
 thinkpad_notebook=0 #0 Scrolling to Thinkpad notebook
 audio_profile_change=0 #0 Change audio profile - good to use with $change_resolution to set audio to output 2 HDMI
-audio_notebook=1 # Set to use audio/speakers from notebook
+audio_notebook=1 #1 Set to use audio/speakers from notebook
 volume_max=0 #0 Set volume to maximum
+
+change_resolution=1 #1 Change the resolution
+max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
     qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
-fi
-
-if [ "$change_resolution" == 1 ]; then
-    sleep 1s # A little time to startup
-
-    countOutput=$(xrandr | grep " connected" | wc -l)
-    if [ "$countOutput" -gt 1 ]; then
-        if [ "$max_resolution" == 0 ]; then
-            echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # to show notification, uncomment to disable notification
-        else
-            echo -e "\n # Set the output two as maximum resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
-        fi
-    else
-        echo -e "\n # Set the video output 1 to maximum resolution #\n"
-        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y #1
-    fi
 fi
 
 if [ "$thinkpad_notebook" == 1 ]; then
@@ -88,4 +71,22 @@ fi
 if [ "$volume_max" == 1 ]; then
     echo -e "\n# volume maximum #"
     /usr/bin/volume_pulse_JBs.sh max
+fi
+
+if [ "$change_resolution" == 1 ]; then
+    sleep 1s # A little time to startup
+
+    countOutput=$(xrandr | grep " connected" | wc -l)
+    if [ "$countOutput" -gt 1 ]; then
+        if [ "$max_resolution" == 0 ]; then
+            echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # to show notification, uncomment to disable notification
+        else
+            echo -e "\n # Set the output two as maximum resolution #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
+        fi
+    else
+        echo -e "\n # Set the video output 1 to maximum resolution #\n"
+        /usr/bin/monitor_change_resolution_JBs.sh 1 0 y #1
+    fi
 fi
