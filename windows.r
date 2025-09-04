@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/11/2024
+# Last update: 04/09/2025
 #
 
 ## Check Windows license and activation status
@@ -204,6 +204,12 @@
     At the error screen, press Shift + F10 to open a command prompt-tweaker
     cd c:\windows\system32\oobe and press Enter
     msoobe and press Enter
+
+## Windows 10 - Windows 11 - bypass online account - "enable" local account
+    1. Disconnect your net connection
+    2. Shift + F10
+    3. oobe\bypassnro
+    4. Will reboot and now can create local account
 
 ## Proper way to delete the Windows.old folder
     1 Windows search field, type Cleanup, then click "Disk Cleanup"
