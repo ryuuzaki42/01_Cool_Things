@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/07/2025
+# Last update: 05/09/2025
 #
 
 ## Process with more CPU use
@@ -132,6 +132,11 @@ kdewallet=Chromium,Opera,Chrome
 
     ## NetworkManager - files with config and passwords
         /etc/NetworkManager/system-connections/
+
+## Wi-Fi connect on terminal with NetworkManager
+    nmcli d disconnect "wifi_card_name"
+
+    nmcli d disconnect wlan0
 
 ## man
     man man - format and display the on-line manual pages
