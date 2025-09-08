@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/09/2025
+# Last update: 08/09/2025
 #
 
 ## Process with more CPU use
@@ -3441,3 +3441,10 @@ kwrite $prog_name.info
 
     ## Off
         xset -led named "Scroll Lock"
+
+## Anydesk
+    ## Ubuntu - Error - remote server display not supported e.g Wayland
+        sudo nano /etc/gdm3/custom.conf
+
+        # Uncomment the line below to force the login screen to use Xorg
+        WaylandEnable=false
