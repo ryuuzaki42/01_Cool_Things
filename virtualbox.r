@@ -8,7 +8,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/06/2024
+# Last update: 11/09/2025
 #
 
 ## After install
@@ -28,15 +28,16 @@
         # chmod -x /etc/init.d/vbox*
         chmod -x /etc/rc.d/init.d/vbox*
 
-## Edit the menu-start-shortcut
-    # Slackware KDE
-        kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
+## VirtualBox start kernel service
+    ## Edit the menu-start-shortcut
+        ## Slackware KDE
+            kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
 
-    # Slackware XFCE
-        gksu bash /etc/init.d/vboxdrv start; VirtualBox %U
+        ## Slackware XFCE
+            gksu bash /etc/init.d/vboxdrv start; VirtualBox %U
 
-    # Linux mint
-        kdesudo bash /etc/init.d/vboxdrv start; VirtualBox %U
+        ## Linux mint
+            kdesudo bash /etc/init.d/vboxdrv start; VirtualBox %U
 
 ## Forum
     https://forums.virtualbox.org/index.php
@@ -44,16 +45,17 @@
     ## Using VirtualBox - Releases
         https://forums.virtualbox.org/viewforum.php?f=1
 
-## Add to mound "data partition"
+## Add to mount a "data partition"
     udisksctl mount -b /dev/sdXY
 
     udisksctl mount -b /dev/sda4
 
+    ## Mount partition, start driver and run VirtualBox
     udisksctl mount -b /dev/sda4; kdesu bash /etc/init.d/vboxdrv start; VirtualBox %U
 
-## Kernel upgrade (kernel driver not installed)
+## After a Kernel upgrade - kernel driver not installed
     # The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv.
-    # Please reinstall the kernel module by executing
+    # Reinstall the kernel module by executing
         /sbin/vboxconfig
 
 ## VirtualBox - shrink VM size
@@ -68,17 +70,6 @@
 
         VBoxManage modifyhd Windows\ 7\ 64.vdi --compact
 
-## VirtualBox start kernel service
-    ## Edit the menu-start-shortcut
-        ## Slackware KDE
-            kdesu sh /etc/init.d/vboxdrv start; VirtualBox %U
-
-        ## Slackware XFCE
-            gksu sh /etc/init.d/vboxdrv start; VirtualBox %U
-
-        ## Linux mint
-            kdesudo sh /etc/init.d/vboxdrv start; VirtualBox %U
-
 ## VirtualBox define screen size
     vboxmanage setextradata 'VM Name' CustomVideoMode1 1366x768x32
 
@@ -91,12 +82,9 @@
 
         mount -t vboxsf sda2 /media/sf_sda2/
 
-## Error
-    (process:10352): GLib-GObject-WARNING **: 16:19:43.951: cannot register existing type 'NMAgentManagerError'
-    (process:10352): GLib-CRITICAL **: 16:19:43.951: g_once_init_leave: assertion 'result != 0' failed
-    (process:10352): GLib-GObject-WARNING **: 16:19:43.951: cannot retrieve class for invalid (unclassed) type '<invalid>'
-    Segmentation fault
-
+## Error: cannot register existing type 'NMAgentManagerError'
+    # At startup, VirtualBox checks for updates, disabling this check avoids the crash
     VBoxManage setextradata global GUI/UpdateDate never
 
-    At startup, VirtualBox checks for updates, disabling this check avoids the crash.
+## Error: another driver with the same name as the one being registered exists
+    Remove/Upgrade the older Extension Pack before start the VM
