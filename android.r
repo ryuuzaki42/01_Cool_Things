@@ -7,13 +7,10 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 26/07/2024
+# Last update: 12/09/2025
 #
 
 ## Android APK
-    ## Youtube ReVanced
-        https://t.me/revanced_extended_chat
-
         ## MicroG - GmsCore
             https://github.com/YT-Advanced/GmsCore/releases
 
@@ -26,8 +23,8 @@
             Maybe: Give The Three Permissions
                 1 Notifications, 2 Ignore Battery Optimisation, 3 Display Over Other Apps
 
-        3 Download the Official YouTube Apk Version 19.09.38 (From ApkMirror)
-        4 Open Revanced Manager Open Settings, select Apk Of YouTube To Patch Select Default Patches
+        3 Download the Official YouTube Apk Version Needed (From ApkMirror) and install/update
+        4 Open Revanced Manager, in Settings, select Apk Of YouTube To Patch, Select Default Patches
         5 Hit Patch. Share APK with Patches. Install APK
         6 Remove Revanced Manager
 
@@ -35,6 +32,9 @@
             ## ReVanced Extended
                 https://revancedextended.com/
                 https://github.com/NoName-exe/revanced-extended/releases
+
+            ## Youtube ReVanced
+                https://t.me/revanced_extended_chat
 
         ## Error during install?
             Remove the older version and try again
@@ -46,13 +46,21 @@
             ## General
                 Photo > Settings > General
                     > Remind break > 1 h
-                    > Remind bedtime > 23:00 - 06:00
-                    > Apearence > dark theme
+                    > Remind bedtime > 22:00 - 06:00
+                    > Apearence > Dark theme
                     > Playback in feeds > Off
                     > Location > Brazil
 
+                Playback > Picture-in-picture > Enable
+
+                Background > Playback > Always on
+
             ## ReVanced
                 Photo > Settings > ReVanced
+
+                ## Seekbar color
+                    Seekbar > Enable Custom Seekbar color
+                        > Red
 
                 ## Shorts
                     Shorts > Disable resuming shorts player
@@ -61,29 +69,42 @@
                     Return YouTube Dislike button > Disable
 
                 ## Start page and Disable Notification button
-                    General layout >
-                        Set star page > Library
+                    General >
+                        Change star page > Library
 
                         Navigation button >
                             Switch Create with Notification > Disable
 
                 ## End cards and Download button
                     Player
-                        > Hide end screen cards > Disable
                         > Action buttons > Hide Download > Enable
+                        > Hide end screen cards > Disable
                         > Video description
                             > Hide chapters > Disable
                             > Hide Info card section > Disable
 
                 ## Video
-                    Video > Default playback speed > 1.25x
+                    Video >
+                        Remenber video quality changes > Enable
+                        Remenber Shorts quality changes > Enable
+                        Remenber playback quality changes > Enable
+                        Disable HDR video > Enable
+                        Custom playback speed menu > Disable
+                        Default playback speed > 1.25x
 
-                    # Disable playback speed in live stream > Disable
+                        # Disable playback speed in live stream > Disable
 
-                ## --- #
+                ## Videos play with auto-dubbed audio translations
+                    https://github.com/ReVanced/revanced-documentation/blob/main/docs/revanced-resources/troubleshooting.md
 
-                ## Bottom player
-                    Hide download button > Enable
+                    ## Change to iOS TV
+                        Settings > ReVanced > Miscellaneous > Spoof video streams
+                            Default client > iOS TV
+
+                    ## Enable spoofing to iOS TV
+                        Settings > ReVanced > Video > Force original audio language
+
+                ## ---
 
                 ## Flyout menu
                     Enable old style quality layout
