@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/09/2025
+# Last update: 14/09/2025
 #
 
 ## Process with more CPU use
@@ -124,19 +124,25 @@ kdewallet=Chromium,Opera,Chrome
     ## To turn off use + instead -
         set +x - set +v
 
-## Simples online multicore CPU benchmarking service
+## Simple online multicore CPU benchmarking service
     https://silver.urih.com/
 
 ## Wi-Fi connect on terminal with NetworkManager
     nmtui
 
-    ## NetworkManager - files with config and passwords
+    ## NetworkManager - files with configuration and passwords
         /etc/NetworkManager/system-connections/
 
-## Wi-Fi connect on terminal with NetworkManager
+## Wi-Fi disconnect/conect on terminal with NetworkManager after configuration
     nmcli d disconnect "wifi_card_name"
 
     nmcli d disconnect wlan0
+
+    ## To enable Wi-Fi on terminal
+        nmcli networking on
+
+    ## To disable Wi-Fi on terminal
+        nmcli networking off
 
 ## man
     man man - format and display the on-line manual pages
