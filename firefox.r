@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 10/06/2025
+# Last update: 15/09/2025
 #
 
 about:config
@@ -388,3 +388,20 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
     1 Copy code
     2 Add code in a bookmark in the URL
+
+-------------------------------------------------------------------------------
+
+## LibreWolf ##
+
+## Disable clear history
+    Settings
+        > General
+            Open previous windows and tabs
+                > Enable
+
+        > Privacy & Security >
+            Clear history when LibreWolf closes
+                > Disable
+
+            Enable DNS over HTTPS using
+                > Default Protection
