@@ -1,25 +1,25 @@
 
-    ## Kubuntu ##
+    ## Ubuntu ##
+
 #
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 01/08/2021
+# Last update: 24/09/2025
 #
 
-## Version Test
-    kubuntu-20.04.2.0-desktop-amd64
+## git
+    apt install git
+
+------------------------------------------ Old Ubuntu ------------------------------------------
 
 ## add user with home in another partition
     adduser j --home /media/sda2/home/j/
 
 ## kwrite
     apt install kwrite
-
-## git
-    apt install git
 
 ## nvida driver
     apt install nvidia-driver-470
@@ -53,7 +53,7 @@
         ## Get some erros
             apt --fix-broken install
 
-## Edite the grup
+## Edit the grub
     nano /etc/default/grub
         1 - GRUB_TIMEOUT=10 to 3
         2 - Comment the line: GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
@@ -75,7 +75,7 @@
         apt remove ksudoku
         apt remove kmahjongg
 
-    ## Remove not needed  
+    ## Remove not needed
         apt autoremove
 
 ## disable services
@@ -126,7 +126,7 @@
 ## smplayer
     https://www.smplayer.info/en/downloads
 
-    dpkg -i smplayer_21.1.0-1+2.4_amd64.deb 
+    dpkg -i smplayer_21.1.0-1+2.4_amd64.deb
 
 ## opera
     https://get.opera.com/pub/opera/desktop/
@@ -301,14 +301,6 @@
             rm /usr/share/applications/smplayer_enqueue.desktop
             ## smplayer configs
 
-## Edite the grup
-    nano /etc/default/grub
-        1 - GRUB_TIMEOUT=10 to 2
-        2 - Comment the line: GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
-        3 - Change GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX=”text”
-        4 - Uncomment this line #GRUB_TERMINAL=console
-        5 - update-grub
-
 ## Disable service
     # For Linux Mint 17 based on Ubuntu you have to use this because it uses upstart:
     echo manual | tee /etc/init/<service_name>.override
@@ -329,7 +321,7 @@
 ## Instal texstudio (deb file)
     Use "xUbuntu 14.04 amd64 2.10.8, QT 4" on texstudio.sourceforge.net
 
-## Remove ark and install a versin with works password
+## Remove ark and install a version with works password
     apt-get remove ark
     ## Add new source to install libarchive12
         echo "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
@@ -338,6 +330,3 @@
     ## Instal ark from deb file (older ark from Debian Wheezy)
     dpkg -i ark_4.8.4-2_amd64.deb
     ## Remove ark from update manager
-
-## Somes good infos
-    https://sites.google.com/site/easylinuxtipsproject/mint-mate-first
