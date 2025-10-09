@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 11/09/2025
+# Last update: 09/10/2025
 #
 
     ## Vivaldi ##
@@ -23,3 +23,18 @@
     mv Bookmarks2 Bookmarks
 
 -------------------------------------------------------------------------------
+
+    ## LibreWolf ##
+
+## Disable clear history
+    Settings
+        > General
+            Open previous windows and tabs
+                > Enable
+
+        > Privacy & Security >
+            Clear history when LibreWolf closes
+                > Disable
+
+            Enable DNS over HTTPS using
+                > Default Protection
