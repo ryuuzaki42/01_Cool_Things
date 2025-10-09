@@ -2,7 +2,6 @@
     ## VirtualBox ##
 
 #
-#
 # Autor= João Batista Ribeiro
 # Bugs, Agradecimentos, Críticas "construtivas"
 # me envie um e-mail. Ficarei Grato!
