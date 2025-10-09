@@ -134,9 +134,8 @@
 
 ## Install
     Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox, Revo Uninstaller,
-    CristalDiskInfo, Master PDF Editor, Notepad++, PathMyPc, Telegram, WinRAR, HWmonitor
-
--------------------------------------------------------------------------------
+    CristalDiskInfo, Master PDF Editor, Notepad++, Telegram, WinRAR, HWmonitor
+    UCheck, AnyDesk, Winaero Tweaker,
 
 ## Windows don't recognize partition (NTFS) connected
     cmd > Run as administrador
