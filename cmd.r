@@ -259,35 +259,3 @@
 
 ## pause
     pause
-
-## Run program as administrator
-    runas /savecred /user:Administrator "C:\Windows\system32\cmd.exe"
-
-    runas /savecred /user:administrador "c:\wamp64\wampmanager.exe"
-
-    runas /savecred /user:administrador "cmd"
-
-## System info
-    systeminfo
-
-## Windows version
-    winver
-
-## get MAC address
-    getmac
-
-## IP info
-    ipconfig
-
-    ipconfig /all
-
-## DNS / name server lookup
-    nslookup google.com
-
-    nslookup google.com 1.1.1.1
-
-## route show
-    route print
-
-## traceroute Windows version
-    tracert google.com
