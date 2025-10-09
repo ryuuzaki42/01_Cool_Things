@@ -1,5 +1,5 @@
 
-    ## Windows do ##
+    ## Windows ##
 
 #
 # Autor= João Batista Ribeiro
@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/09/2025
+# Last update: 09/10/2025
 #
 
 ## Check Windows license and activation status
@@ -540,6 +540,8 @@
     > Boot USB ISO
         Select language > next
         Repair your computer > Advanced options > Command Prompt
+
+    > Or restart Windows while holding the Shift key
 
     ## bootrec BCD (Boot Configuration Data) run all options
         bootrec /FixMbr
