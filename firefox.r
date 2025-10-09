@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/09/2025
+# Last update: 09/10/2025
 #
 
 about:config
@@ -30,6 +30,10 @@ browser.download.start_downloads_in_tmp_dir
 ## Disable cache of 5 tabs recently seen
 browser.sessionhistory.max_total_viewer
     -1 > 0
+
+## Disable translations
+browser.translations.enable
+    true > false
 
 ## Show all URL
 browser.urlbar.trimURLs
