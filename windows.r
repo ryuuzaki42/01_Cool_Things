@@ -238,8 +238,9 @@
 
 ## Restore the content of CHK files - CHK BAK
     FOUND/FILE.CHK
-        > Chk-Back
-            https://download.cnet.com/chk-back/3000-2094_4-75695425.html
+
+    > Chk-Back
+    https://download.cnet.com/chk-back/3000-2094_4-75695425.html
 
 ## Remove virus Recycle bin
     ## Inside the partition
@@ -252,6 +253,8 @@
      /s Processes matching files in the current folder and all subfolders
      /d Processes folders as well
 
+## Uninstall GRUB and use Windows bootloader
+    # or
 ## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
     > Boot USB ISO
         Select language > next
