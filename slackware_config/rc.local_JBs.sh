@@ -15,6 +15,7 @@ disable_bluetooth=1 #1
 start_thinkfan=1 #1
 set_keyboard=1 #1
 update_date=0 #0
+update_date=0 #0 # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
 use_tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
 
@@ -46,8 +47,6 @@ fi
 
 if [ "$update_date" == 1 ]; then
     echo -e "\n # Update time - Notebook without battery #"
-    # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
-
     count=0
     while [ "$count" -lt 10 ]; do
         result_date_up=$(usual_JBs.sh noColor notPrintHeader date-up)
