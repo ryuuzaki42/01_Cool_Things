@@ -78,19 +78,19 @@ if [ "$use_tmp_folder_RAM" == 1 ]; then
     # Grep count of RAM in MiB - some computers use part of RAM to GPU
     count_RAM_GiB=$(free --mega | grep 'Mem:' | awk '{print $2}')
     if [ "$count_RAM_GiB" -gt 23000 ]; then # RAM > 23 GiB
-        folder_Max_Size='12g' # Temporary folder of 12 GiB
+        folder_RAM_Max_Size='12g' # Temporary folder of 12 GiB
     elif [ "$count_RAM_GiB" -gt 15000 ]; then # RAM > 15 GiB
-        folder_Max_Size='6g'
+        folder_RAM_Max_Size='6g'
     elif [ "$count_RAM_GiB" -gt 7000 ]; then # RAM > 7 GiB
-        folder_Max_Size='3g'
+        folder_RAM_Max_Size='3g'
     elif [ "$count_RAM_GiB" -gt 5000 ]; then # RAM > 5 GiB
-        folder_Max_Size='2g'
+        folder_RAM_Max_Size='2g'
     else # $count_RAM_GiB < 6 GiB
-        folder_Max_Size=0
+        folder_RAM_Max_Size=0
         echo "Less then 6 GiB of RAM - Not mounting folder in RAM"
     fi
 
-    if [ "$folder_Max_Size" != 0 ]; then
+    if [ "$folder_RAM_Max_Size" != 0 ]; then
         # Mount temporary folder into RAM
         echo -e "Mounting temporary folder: \"$tmp_RAM_disk\" with max size of: \"$folder_Max_Size\""
         mount -t tmpfs -o size="$folder_Max_Size" tmpfs "$tmp_RAM_disk"
