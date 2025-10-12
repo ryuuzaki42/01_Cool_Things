@@ -72,7 +72,7 @@ fi
 
 if [ "$use_tmp_folder_RAM" == 1 ]; then
     echo -e "\n # Mount a temporary folder to RAM #"
-    tmp_folder_RAM="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
+    tmp_folder_RAM="/media/sda2/home/j/Downloads/0_tmp_folder_RAM" # Change to your folder
     mkdir "$tmp_folder_RAM" 2> /dev/null
 
     # Grep count of RAM in MiB - some computers use part of RAM to GPU
