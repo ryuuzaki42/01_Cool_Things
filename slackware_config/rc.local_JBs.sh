@@ -13,8 +13,10 @@
 start_tlp=1 #1
 disable_bluetooth=1 #1
 start_thinkfan=1 #1
-set_keyboard=1 #1
-update_date=0 #0
+
+set_keyboard=1 #1 # Load the keyboard map
+keyboard_map="br-abnt2" # Change to your desire map. More maps are in /usr/share/kbd/keymaps/
+
 update_date=0 #0 # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
 use_tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
@@ -39,10 +41,8 @@ if [ "$start_thinkfan" == 1 ]; then
 fi
 
 if [ "$set_keyboard" == 1 ]; then
-    # Load the keyboard map. More maps are in /usr/share/kbd/keymaps/
-    # /usr/share/kbd/keymaps/i386/qwerty/br-abnt2.map.gz
-    echo -e "\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #"
-    loadkeys br-abnt2
+    echo -e "\n # Set keyboard layout to $keyboard_map - loadkeys $keyboard_map #"
+    loadkeys "$keyboard_map"
 fi
 
 if [ "$update_date" == 1 ]; then
