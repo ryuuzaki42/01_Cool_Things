@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 25/07/2025
+# Last update: 12/10/2025
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
@@ -16,7 +16,7 @@ start_thinkfan=1 #1
 set_keyboard=1 #1
 #start_teamviewer=0 #0
 update_date=0 #0
-tmp_folder_RAM=1 #1
+use_tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
 
 if [ "$start_tlp" == 1 ]; then
@@ -70,7 +70,7 @@ if [ "$update_date" == 1 ]; then
     echo "$result_date_up"
 fi
 
-if [ "$tmp_folder_RAM" == 1 ]; then
+if [ "$use_tmp_folder_RAM" == 1 ]; then
     echo -e "\n # Mount a temporary folder to RAM #"
     tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
     mkdir "$tmp_RAM_disk" 2> /dev/null
