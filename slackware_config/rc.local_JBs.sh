@@ -73,6 +73,7 @@ fi
 if [ "$use_tmp_folder_RAM" == 1 ]; then
     echo -e "\n # Mount a temporary folder to RAM #"
     tmp_folder_RAM="/media/sda2/home/j/Downloads/0_tmp_folder_RAM" # Change to your folder
+    normal_user="j"
     mkdir "$tmp_folder_RAM" 2> /dev/null
 
     # Grep count of RAM in MiB - some computers use part of RAM to GPU
@@ -94,6 +95,9 @@ if [ "$use_tmp_folder_RAM" == 1 ]; then
         # Mount temporary folder into RAM
         echo -e "Mounting temporary folder: \"$tmp_folder_RAM\" with max size of: \"$folder_RAM_Max_Size\""
         mount -t tmpfs -o size="$folder_RAM_Max_Size" tmpfs "$tmp_folder_RAM"
+
+        chmod 777 "$tmp_folder_RAM/" # Change permissions to all user can write
+        su - "$normal_user" -c "mkdir $tmp_folder_RAM/0/" # Create a temporary folder "0/"
 
         # Remove last / to grep result
         tmp_folder_RAM=$(echo "$tmp_folder_RAM" | rev | cut -d '/' -f2- | rev)
