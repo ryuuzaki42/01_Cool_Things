@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/10/2025
+# Last update: 12/10/2025
 #
 
 ## Check Windows license and activation status
@@ -115,6 +115,22 @@
     If Nvidia card
         Instal Nvidia driver
             https://apps.microsoft.com/detail/9NF8H0H7WMLT
+
+## Upgrade Windows 11 on unsupported Hardware
+    ## Donwload ISO file at Microsoft
+        https://www.microsoft.com/pt-br/software-download
+
+    ## Mount the ISO file
+
+    ## In the mounted ISO folder
+        open CMD prompt as admin
+        F: # the driver letter
+        CD sources/
+
+        setupprep.exe /product server
+
+        Select type of install, I chose keep files, folder, programs,
+        Windows 11 will install, If your PC was activated, it remains activate
 
 ## Error checking
     C: (and others partitions)
