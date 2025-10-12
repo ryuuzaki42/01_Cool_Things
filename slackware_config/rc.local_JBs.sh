@@ -26,10 +26,8 @@ normal_user="j" # Change to our "normal" user ID/name
 disable_touchpad=0 #0
 
 if [ "$start_tlp" == 1 ]; then
-    if [ -x /etc/rc.d/rc.tlp ]; then
-        echo -e "\n # Starting tlp #" # https://github.com/linrunner/TLP
-        /etc/rc.d/rc.tlp start
-    fi
+    echo -e "\n # Starting tlp #" # https://github.com/linrunner/TLP
+    /etc/rc.d/rc.tlp start
 fi
 
 if [ "$disable_bluetooth" == 1 ]; then
@@ -38,10 +36,8 @@ if [ "$disable_bluetooth" == 1 ]; then
 fi
 
 if [ "$start_thinkfan" == 1 ]; then
-    if [ -x /etc/rc.d/rc.thinkfan ]; then
-        echo -e "\n # Starting thinkfan #" # https://github.com/vmatare/thinkfan
-        /etc/rc.d/rc.thinkfan start
-    fi
+    echo -e "\n # Starting thinkfan #" # https://github.com/vmatare/thinkfan
+    /etc/rc.d/rc.thinkfan start
 fi
 
 if [ "$set_keyboard" == 1 ]; then
