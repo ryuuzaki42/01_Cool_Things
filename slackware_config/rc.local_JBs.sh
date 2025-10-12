@@ -72,8 +72,8 @@ fi
 
 if [ "$use_tmp_folder_RAM" == 1 ]; then
     echo -e "\n # Mount a temporary folder to RAM #"
-    tmp_RAM_disk="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
-    mkdir "$tmp_RAM_disk" 2> /dev/null
+    tmp_folder_RAM="/media/sda2/home/j/Downloads/0_tmp_RAM_disk/" # Change to your folder
+    mkdir "$tmp_folder_RAM" 2> /dev/null
 
     # Grep count of RAM in MiB - some computers use part of RAM to GPU
     count_RAM_GiB=$(free --mega | grep 'Mem:' | awk '{print $2}')
@@ -92,14 +92,13 @@ if [ "$use_tmp_folder_RAM" == 1 ]; then
 
     if [ "$folder_RAM_Max_Size" != 0 ]; then
         # Mount temporary folder into RAM
-        echo -e "Mounting temporary folder: \"$tmp_RAM_disk\" with max size of: \"$folder_Max_Size\""
-        mount -t tmpfs -o size="$folder_Max_Size" tmpfs "$tmp_RAM_disk"
+        echo -e "Mounting temporary folder: \"$tmp_folder_RAM\" with max size of: \"$folder_RAM_Max_Size\""
+        mount -t tmpfs -o size="$folder_RAM_Max_Size" tmpfs "$tmp_folder_RAM"
 
         # Remove last / to grep result
-        tmp_RAM_disk=$(echo "$tmp_RAM_disk" | rev | cut -d '/' -f2- | rev)
 
         # Print information about the mount
-        df -h | grep "$tmp_RAM_disk"
+        df -h | grep "$tmp_folder_RAM"
     fi
     echo
 fi
