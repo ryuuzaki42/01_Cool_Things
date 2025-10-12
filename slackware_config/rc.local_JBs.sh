@@ -14,7 +14,6 @@ start_tlp=1 #1
 disable_bluetooth=1 #1
 start_thinkfan=1 #1
 set_keyboard=1 #1
-#start_teamviewer=0 #0
 update_date=0 #0
 use_tmp_folder_RAM=1 #1
 disable_touchpad=0 #0
@@ -44,13 +43,6 @@ if [ "$set_keyboard" == 1 ]; then
     echo -e "\n # Set keyboard layout to BR abnt2 - loadkeys br-abnt2 #"
     loadkeys br-abnt2
 fi
-
-#if [ "$start_teamviewer" == 1 ]; then
-#    echo -e "\n # Starting Teamviewer #"
-#    if [ -x /etc/rc.d/rc.teamviewerd ]; then
-#        /etc/rc.d/rc.teamviewerd start
-#    fi
-#fi
 
 if [ "$update_date" == 1 ]; then
     echo -e "\n # Update time - Notebook without battery #"
