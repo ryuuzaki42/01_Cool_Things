@@ -7,8 +7,11 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/10/2025
+# Last update: 28/10/2025
 #
+
+## Windows 11
+## -- Windows general
 
 ## Check Windows license and activation status
     # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
@@ -23,6 +26,7 @@
     ## Display the activation expiration date for the product
         slmgr /xpr
 
+## Windows Old
 ## Turn off Internet Explorer support to Windows 10
     %windir%\system32\control.exe
 
@@ -132,7 +136,7 @@
         Select type of install, I chose keep files, folder, programs,
         Windows 11 will install, If your PC was activated, it remains activate
 
-## Error checking
+## Error checking HD / SSD
     C: (and others partitions)
         Properties > Tools > Error checking
             > Check
@@ -144,9 +148,9 @@
                 > Optimize
 
 ## Disk cleanup
-    C: (and others partitions)
-        Properties > General > Disk Cleanup
-            > Clean up system files
+    Start menu > Search fir Cleanup
+        Clean C: partition
+            Clean up system files
 
 ## Install
     Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer, Firefox, Revo Uninstaller,
