@@ -10,33 +10,35 @@
 # Last update: 28/10/2025
 #
 
-## Windows 11
-## Restore the old Context Menu in Windows 11
-    # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
+## Windows 11 ##
 
-reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+    ## Restore the old Context Menu in Windows 11
+        # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
 
-    Restart File Explorer
+    reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 
-    ## Restore Modern Context menus in Windows 11 - undo change below
-    reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
+        Restart File Explorer
 
-## -- Windows general
+        ## Restore Modern Context menus in Windows 11 - undo change below
+        reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
-## Check Windows license and activation status
-    # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
-    # slmgr or slmgr.vbs
+## Windows general ##
 
-    ## Display license information - /dli
-        slmgr /dli
+    ## Check Windows license and activation status
+        # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
+        # slmgr or slmgr.vbs
 
-        ## Display detailed license information - /dlv
-            slmgr /dlv
+        ## Display license information - /dli
+            slmgr /dli
 
-    ## Display the activation expiration date for the product
-        slmgr /xpr
+            ## Display detailed license information - /dlv
+                slmgr /dlv
 
-## Windows Old
+        ## Display the activation expiration date for the product
+            slmgr /xpr
+
+## Windows Old ##
+
 ## Turn off Internet Explorer support to Windows 10
     %windir%\system32\control.exe
 
@@ -48,6 +50,7 @@ reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\
         Control Panel\All Control Panel Items\Power Options\System Settings
             > Change Settings That Are Currently Unavailable
                 > Uncheck "Turn On Fast Startup"
+##
 
 ## Disable Windows Update and others with winaero-tweaker
     # https://winaero.com/winaero-tweaker/#download
