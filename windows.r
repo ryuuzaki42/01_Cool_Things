@@ -15,12 +15,13 @@
     ## Restore the old Context Menu in Windows 11
         # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
 
-    reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+        ## Run in Powershell as Administrator
+        reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 
         Restart File Explorer
 
         ## Restore Modern Context menus in Windows 11 - undo change below
-        reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
+            reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
     ## Upgrade Windows 11 on unsupported Hardware
         ## Donwload ISO file at Microsoft
@@ -263,6 +264,22 @@
             bootrec /ScanOs
             bootrec /RebuildBcd
 
+    ## Windows setup could not configure to run on this computer hardware
+        ## Error during Windows installation
+        # Windows setup could not install on this computer hardware
+        Manually run msoobe.exe program to allow the install to complete
+
+        At the error screen, press Shift + F10 to open a command prompt-tweaker
+        cd c:\windows\system32\oobe and press Enter
+        msoobe and press Enter
+
+    ## Proper way to delete the Windows.old folder
+        1 Windows search field, type Cleanup, then click "Disk Cleanup"
+        2 Select the disk, common "(C:)"
+        3 Select "Clean System Files"
+        4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
+        5 Check the box next to the entry. Click OK to start the cleanup
+
     ## Windows Update error 0x80070001
         Clean disck C: up to 8 GiB or more of free space and try update
 
@@ -273,6 +290,23 @@
     ## Windows detects HDD as SSD - Re-enable defragmentation
         ## cmd as admin
             winsat formal
+
+    ## Check events - Reliability
+        Start > Search for Reliability > Open "Reliability Monitor"
+
+        ## Confiabilidade
+            Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
+
+    ## Delete old "name" / SSID Wi-Fi network
+        ## Open regedit
+            Win + R
+                regedit
+
+        ## Following registry key:
+            HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
+
+            Check under Profiles and find the key related to the Wi-Fi network profile that want to delete
+            Right-click it and select Delete to delete a whole registry key.
 
     ## Windows God Mode
         > New folder, set name as:
@@ -318,6 +352,15 @@
     ## traceroute Windows version
         tracert google.com
 
+    ## How to Switch Off the Thumbs.db Image Cache File in Windows
+        1 Ensure you’re logged in using an administrator account
+        2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
+        3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
+            then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
+        4 In the right-hand pane, double-click "Turn off the caching of thumbnails in hidden thumbs.db files"
+        5 Select Enabled (don’t make my mistake of choosing "Disabled"
+            — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
+
 ## Windows Old ##
 
     ## Turn off Internet Explorer support to Windows 10
@@ -341,51 +384,10 @@
         > Mew task
             > Explorer.exe
 
+    ## Enable F8 (boot legacy with good options) no Windows 10
+        bcdedit /set {default} bootmenupolicy legacy
+
+        ## Back to default - Disable F8
+            bcdedit /set {default} bootmenupolicy standard
+
 ##
-
-## Enable F8 (boot legacy with good options) no Windows 10
-    bcdedit /set {default} bootmenupolicy legacy
-
-    ## Back to default - Disable F8
-        bcdedit /set {default} bootmenupolicy standard
-
-## Windows setup could not configure to run on this computer hardware - error during Windows installation
-    # Windows setup could not install on this computer hardware
-    Manually run msoobe.exe program to allow the install to complete
-
-    At the error screen, press Shift + F10 to open a command prompt-tweaker
-    cd c:\windows\system32\oobe and press Enter
-    msoobe and press Enter
-
-## Proper way to delete the Windows.old folder
-    1 Windows search field, type Cleanup, then click "Disk Cleanup"
-    2 Select the disk, common "(C:)"
-    3 Select "Clean System Files"
-    4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
-    5 Check the box next to the entry. Click OK to start the cleanup
-
-## How to Switch Off the Thumbs.db Image Cache File in Windows
-    1 Ensure you’re logged in using an administrator account
-    2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
-    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
-        then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
-    4 In the right-hand pane, double-click "Turn off the caching of thumbnails in hidden thumbs.db files"
-    5 Select Enabled (don’t make my mistake of choosing "Disabled"
-        — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
-
-## Check events - Reliability
-    Start > Search for Reliability > Open "Reliability Monitor"
-
-    ## Confiabilidade
-        Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
-
-## Delete old "name" / SSID Wi-Fi network
-    ## Open regedit
-        Win + R
-        regedit
-
-    ## Following registry key:
-        HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
-
-        Check under Profiles and find the key related to the Wi-Fi network profile that want to delete
-        Right-click it and select Delete to delete a whole registry key.
