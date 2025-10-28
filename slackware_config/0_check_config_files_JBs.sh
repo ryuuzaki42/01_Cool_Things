@@ -22,8 +22,26 @@
 #
 # Script: Check Slackware configurations files are equal with the system
 #
-# Last update: 15/12/2025
+# Last update: 28/10/2025
 #
+echo -e "\nUse with program to compare the files?"
+echo -n "1 diff, 2 sdiff, 3 kdiff3, 4 smartsynchronize, 5 other (default is 4): "
+read -r number_prog
+
+if [ "$number_prog" == 1 ]; then
+    program="diff"
+elif [ "$number_prog" == 2 ]; then
+    program="sdiff"
+elif [ "$number_prog" == 3 ]; then
+    program="kdiff3"
+elif [ "$number_prog" == 4 ] || [ "$number_prog" == '' ]; then
+    program="smartsynchronize"
+else #"$number_prog" == 5
+    echo -n "Use with program: "
+    read -r program
+fi
+echo -e "\nUsing as diff tool: $program\n"
+
 check_file() {
     command_run="$program $1 $2"
     echo -e "\n # $command_run #"
