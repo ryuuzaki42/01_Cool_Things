@@ -11,6 +11,16 @@
 #
 
 ## Windows 11
+## Restore the old Context Menu in Windows 11
+    # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
+
+reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
+    Restart File Explorer
+
+    ## Restore Modern Context menus in Windows 11 - undo change below
+    reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
+
 ## -- Windows general
 
 ## Check Windows license and activation status
