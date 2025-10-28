@@ -22,6 +22,42 @@
         ## Restore Modern Context menus in Windows 11 - undo change below
         reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
+    ## Upgrade Windows 11 on unsupported Hardware
+        ## Donwload ISO file at Microsoft
+            https://www.microsoft.com/pt-br/software-download
+
+        ## Mount the ISO file
+
+        ## In the mounted ISO folder
+            open CMD prompt as admin
+            F: # the driver letter
+            CD sources/
+
+            setupprep.exe /product server
+
+            Select type of install, I chose keep files, folder, programs,
+            Windows 11 will install, If your PC was activated, it remains activate
+
+    ## Install Windows 11 without TPM, Secure Boot etc
+        ## Install until "Select OS version"
+            Shift + F10 # cmd shortcut
+
+            regedit
+
+            [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+
+                “BypassTPMCheck”        =dword :1
+                “BypassSecureBootCheck” =dword :1
+
+                “BypassRAMCheck”     = dword :1
+                “BypassStorageCheck” = dword :1
+                “BypassCPUCheck”     = dword :1
+
+        ## Bypass Internet connection to continue
+            Shift + F10
+
+            oobe\bypassnro
+
 ## Windows general ##
 
     ## Check Windows license and activation status
@@ -45,6 +81,19 @@
             Windows Update
             Edge Updates
             Store Apps Auto-update
+
+    ## Update Windows apps > Windows store
+        If Intel
+            Install Intel® Graphics Command Center
+                https://apps.microsoft.com/detail/9PLFNLNT3G5G
+
+        If Thinkpad
+            Install Lenovo Vantage
+                https://apps.microsoft.com/detail/9WZDNCRFJ4MV
+
+        If Nvidia card
+            Instal Nvidia driver
+                https://apps.microsoft.com/detail/9NF8H0H7WMLT
 
     ## Disable hibernate - powercfg or powercfg.exe
         cmd > Run as administrador
@@ -118,36 +167,20 @@
         Control Panel\All Control Panel Items\Power Options\System Settings
             > Change Settings That Are Currently Unavailable
                 > Uncheck "Turn On Fast Startup"
+
+    ## Windows 7 WiFi / Network icon not working
+        > Task manager > Close the "Explorer.exe"
+
+        > New task
+            > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
+
+        > Mew task
+            > Explorer.exe
+
 ##
 
-## Update Windows apps > Windows store
-    If Intel
-        Install Intel® Graphics Command Center
-            https://apps.microsoft.com/detail/9PLFNLNT3G5G
 
-    If Thinkpad
-        Install Lenovo Vantage
-            https://apps.microsoft.com/detail/9WZDNCRFJ4MV
 
-    If Nvidia card
-        Instal Nvidia driver
-            https://apps.microsoft.com/detail/9NF8H0H7WMLT
-
-## Upgrade Windows 11 on unsupported Hardware
-    ## Donwload ISO file at Microsoft
-        https://www.microsoft.com/pt-br/software-download
-
-    ## Mount the ISO file
-
-    ## In the mounted ISO folder
-        open CMD prompt as admin
-        F: # the driver letter
-        CD sources/
-
-        setupprep.exe /product server
-
-        Select type of install, I chose keep files, folder, programs,
-        Windows 11 will install, If your PC was activated, it remains activate
 
 ## Error checking HD / SSD
     C: (and others partitions)
@@ -353,35 +386,6 @@
 
     ## Confiabilidade
         Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
-
-## Install Windows 11 without TPM, Secure Boot etc
-    ## Install until "Select OS version"
-        Shift + F10 # cmd shortcut
-
-        regedit
-
-        [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
-
-            “BypassTPMCheck”        =dword :1
-            “BypassSecureBootCheck” =dword :1
-
-            “BypassRAMCheck”     = dword :1
-            “BypassStorageCheck” = dword :1
-            “BypassCPUCheck”     = dword :1
-
-    ## Bypass Internet connection to continue
-        Shift + F10
-
-        oobe\bypassnro
-
-## Windows 7 WiFi / Network icon not working
-    > Task manager > Close the "Explorer.exe"
-
-    > New task
-        > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
-
-    > Mew task
-        > Explorer.exe
 
 ## Delete old "name" / SSID Wi-Fi network
     ## Open regedit
