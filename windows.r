@@ -37,6 +37,74 @@
         ## Display the activation expiration date for the product
             slmgr /xpr
 
+    ## Disable Windows Update and others with winaero-tweaker
+        # https://winaero.com/winaero-tweaker/#download
+        > Use a old config "Winaero Tweaker_*.ini"
+
+        > Disable updates
+            Windows Update
+            Edge Updates
+            Store Apps Auto-update
+
+    ## Disable hibernate - powercfg or powercfg.exe
+        cmd > Run as administrador
+        powercfg /hibernate off
+
+        ## Back to default - Enable hibernate
+            powercfg /hibernate on
+
+        ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
+            powercfg /a
+
+    ## Changes in Advanced system settings
+        File Explorer > This PC > Properties > Advanced system settings
+
+        %windir%\system32\SystemPropertiesAdvanced.exe
+
+            ## Advanced
+                %windir%\system32\SystemPropertiesPerformance.exe
+
+                ## Disable some visual effects
+                    Performance > Settings... > Visual Effects
+                        > Adjust for best performanace
+                            > Enable
+
+                            > Show thumbnails instead of icons
+                            > Smooth edges of screen fonts
+
+                ## Reduce size of pagefile.sys - default size o RAM
+                    Performance > Settings... > Advanced
+                        Virtual Memory > Change...
+                            If RAM > 4 GiB
+                                x - Automatically manage
+                                > Custom size
+                                    Initial: 1024
+                                    Maximum: 2048
+                            D: None
+
+            ## Remote
+                %windir%\system32\SystemPropertiesRemote.exe
+
+                ## Disable Remote Assistance
+                    Remote Assistance
+                        Disable "Allow Remote Assistance..."
+
+            ## System Protection
+                %windir%\system32\SystemPropertiesProtection.exe
+
+                ## Create one System Protection - Restore point
+                    ## Enable in C:
+                        Configure > Max Usage > 5%
+
+                    ## Create one manual
+                        > Create... > Name "a1" > Create
+
+                    ## Off in the others partitions
+                        D: > Configure > Disable system protection
+
+                    ## Check if was created correctly
+                        System Restore... > Next
+
 ## Windows Old ##
 
 ## Turn off Internet Explorer support to Windows 10
@@ -51,74 +119,6 @@
             > Change Settings That Are Currently Unavailable
                 > Uncheck "Turn On Fast Startup"
 ##
-
-## Disable Windows Update and others with winaero-tweaker
-    # https://winaero.com/winaero-tweaker/#download
-    > Use a old config "Winaero Tweaker_*.ini"
-
-    > Disable updates
-        Windows Update
-        Edge Updates
-        Store Apps Auto-update
-
-## Disable hibernate - powercfg or powercfg.exe
-    cmd > Run as administrador
-    powercfg /hibernate off
-
-    ## Back to default - Enable hibernate
-        powercfg /hibernate on
-
-    ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
-        powercfg /a
-
-## Changes in Advanced system settings
-    File Explorer > This PC > Properties > Advanced system settings
-
-    %windir%\system32\SystemPropertiesAdvanced.exe
-
-        ## Advanced
-            %windir%\system32\SystemPropertiesPerformance.exe
-
-            ## Disable some visual effects
-                Performance > Settings... > Visual Effects
-                    > Adjust for best performanace
-                        > Enable
-
-                        > Show thumbnails instead of icons
-                        > Smooth edges of screen fonts
-
-            ## Reduce size of pagefile.sys - default size o RAM
-                Performance > Settings... > Advanced
-                    Virtual Memory > Change...
-                        If RAM > 4 GiB
-                            x - Automatically manage
-                            > Custom size
-                                Initial: 1024
-                                Maximum: 2048
-                        D: None
-
-        ## Remote
-            %windir%\system32\SystemPropertiesRemote.exe
-
-            ## Disable Remote Assistance
-                Remote Assistance
-                    Disable "Allow Remote Assistance..."
-
-        ## System Protection
-            %windir%\system32\SystemPropertiesProtection.exe
-
-            ## Create one System Protection - Restore point
-                ## Enable in C:
-                    Configure > Max Usage > 5%
-
-                ## Create one manual
-                    > Create... > Name "a1" > Create
-
-                ## Off in the others partitions
-                    D: > Configure > Disable system protection
-
-                ## Check if was created correctly
-                    System Restore... > Next
 
 ## Update Windows apps > Windows store
     If Intel
