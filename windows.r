@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/10/2025
+# Last update: 12/11/2025
 #
 
 ## Windows 11 ##
@@ -15,7 +15,7 @@
     ## Restore the old Context Menu in Windows 11
         # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
 
-        ## Run in Powershell as Administrator
+        ## Run in PowerShell as Administrator
         reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 
         Restart File Explorer
@@ -79,6 +79,31 @@
 
         ## Display the activation expiration date for the product
             slmgr /xpr
+
+    ## Check hash - Compute hash
+        ## CMD
+            ## SHA256
+                certutil -hashfile <file>
+
+            ## MD5
+                certutil -hashfile <file> MD5
+
+        ## PowerShell
+            ## SHA256
+                Get-FileHash <file>
+
+            ## MD5
+                Get-FileHash <file> -Algorithm md5
+
+    ## Release Windows networking
+        IPCONFIG /RELEASE
+        IPCONFIG /FLUSHDNS
+        NET STOP DNSCACHE
+        NET STOP DHCP
+        NET START DNSCACHE
+        NET START DHCP
+        IPCONFIG /REGISTERDNS
+        IPCONFIG /RENEW
 
     ## Disable Windows Update and others with winaero-tweaker
         # https://winaero.com/winaero-tweaker/#download
