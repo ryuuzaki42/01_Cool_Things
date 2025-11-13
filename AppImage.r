@@ -281,5 +281,19 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     ./run_AppImage_local_JBs.sh Prog*.AppImage -p --help
 
     ./run_AppImage_local_JBs.sh Prog*.AppImage -p Par1 Par2
+
 ## Ubuntu Error while loading shared libraries: libQt5PrintSupport.so.5: cannot open shared object file: No such file or directory
     sudo apt install libqt5printsupport5
+
+## Error loading libfuse.so.2 - AppImages require FUSE to run
+    ## Ubuntu - do not install fuse - break your system
+    # https://askubuntu.com/questions/1409496/how-to-safely-install-fuse-on-ubuntu-22-04
+    https://github.com/AppImage/AppImageKit/wiki/FUSE
+
+    ## Debian (>= 13) and Ubuntu (>= 24.04):
+        sudo add-apt-repository universe
+        sudo apt install libfuse2t64
+
+    ## Ubuntu (>= 22.04):
+        sudo add-apt-repository universe
+        sudo apt install libfuse2
