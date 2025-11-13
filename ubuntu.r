@@ -12,6 +12,12 @@
 
 ## git
     apt install git
+## Ubuntu set the desktop to $HOME/Desktop
+    ## Edit and added XDG_DESKTOP_DIR="$HOME/Desktop"
+        nano ~/.config/user-dirs.dirs
+## Ubuntu set a short password
+    # Change <user> to the username
+    sudo passwd <user>
 
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
