@@ -10,11 +10,21 @@
 # Last update: 13/11/2025
 #
 
-## git
-    apt install git
+## Install
+    sudo apt install git
+    sudo apt install gparted
+
+    ## Deb package
+        Anydesk
+
 ## Ubuntu set the desktop to $HOME/Desktop
     ## Edit and added XDG_DESKTOP_DIR="$HOME/Desktop"
         nano ~/.config/user-dirs.dirs
+
+## Gnome - sort applications menu into Alphabetical order
+    gsettings set org.gnome.shell app-picker-layout "[]"
+    ## Restart
+
 ## Ubuntu set a short password
     # Change <user> to the username
     sudo passwd <user>
