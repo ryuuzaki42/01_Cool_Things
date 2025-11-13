@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/03/2025
+# Last update: 13/11/2025
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -195,7 +195,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
 ## Create AppImage with squashfs
     ## Make squashfs
-        ## Normal mode -  AppImageTool
+        ## Normal mode - AppImageTool
             mksquashfs "/path/to/Prog" "/path/to/Prog.squashfs" -root-owned -noappend
 
         ## No compression
@@ -281,3 +281,5 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     ./run_AppImage_local_JBs.sh Prog*.AppImage -p --help
 
     ./run_AppImage_local_JBs.sh Prog*.AppImage -p Par1 Par2
+## Ubuntu Error while loading shared libraries: libQt5PrintSupport.so.5: cannot open shared object file: No such file or directory
+    sudo apt install libqt5printsupport5
