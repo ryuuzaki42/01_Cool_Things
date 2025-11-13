@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/09/2025
+# Last update: 13/11/2025
 #
 
 ## git
@@ -15,7 +15,7 @@
 
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
-## add user with home in another partition
+## Add user with home in another partition
     adduser j --home /media/sda2/home/j/
 
 ## kwrite
@@ -37,7 +37,7 @@
         glxinfo | grep "OpenGL render"
 
     ## KDE show FPS
-        KDE -> Settings -> Desktop Efects -> Show FPS
+        KDE > Settings > Desktop Efects > Show FPS
 
 ## steam
     ## download deb pkg
@@ -49,8 +49,8 @@
     ## run
         $ steam
 
-        ## will open a terminal - root password to install curl, xterm, zenity...
-        ## Get some erros
+        ## will open a terminal - root password to install curl, xterm, zenity
+        ## Get some errors
             apt --fix-broken install
 
 ## Edit the grub
@@ -86,7 +86,7 @@
 
         service --status-all | grep +
 
-        # see all
+        ## See all
             ls /etc/init.d
 
         ## disable a service
@@ -251,7 +251,7 @@
 ## Install pt-BR language
     apt-get install myspell-pt-br
     ## Install the extension cogroo
-    ## Change the configs of memory and language
+    ## Change the configuration of memory and language
 
 ## Install Windows fonts
     apt-get install msttcorefonts
@@ -284,7 +284,7 @@
         add-apt-repository ppa:mc3man/trusty-media
         apt-get update
         apt-get install vlc
-            ## vlc configs and plugin
+            ## vlc configuration and plugin
      ## Install vlc plugins
      apt-add-repository ppa:strukturag/libde265
      apt-get update
@@ -318,7 +318,7 @@
 
     ## Install texlive from Slackware latex folder
 
-## Instal texstudio (deb file)
+## Install texstudio (deb file)
     Use "xUbuntu 14.04 amd64 2.10.8, QT 4" on texstudio.sourceforge.net
 
 ## Remove ark and install a version with works password
@@ -327,6 +327,6 @@
         echo "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
         apt-get update
         apt-get install libarchive12
-    ## Instal ark from deb file (older ark from Debian Wheezy)
+    ## Install ark from deb file (older ark from Debian Wheezy)
     dpkg -i ark_4.8.4-2_amd64.deb
     ## Remove ark from update manager
