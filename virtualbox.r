@@ -21,7 +21,7 @@
         usermod -a -G vboxusers j
 
     ## Chance update settings for all releases
-        File > preference > update > set : All New Realease
+        File > preference > update > set : All New Release
 
     ## Remove disable the start script
         # chmod -x /etc/init.d/vbox*
