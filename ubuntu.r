@@ -34,6 +34,22 @@
     apt install konsole
     apt install kde-cli-tools
 
+## Install dash to panel
+    1. Install Extension Manager
+        Ubuntu Software or App Center
+        Install "Extension Manager", filter by Debian packages
+
+    2. Disable Ubuntu Dock
+        Open Extension Manager
+            On "Installed" tab, and disable the default "Ubuntu Dock"
+
+    3. Install
+        On "Browse" tab, search for "Dash to Panel," and install
+
+    4. Enable
+        After install, check it is enabled in the "Installed" tab
+        To change the configuration click on gear icon
+
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
 ## Add user with home in another partition
