@@ -39,10 +39,10 @@
 ## Add user with home in another partition
     adduser j --home /media/sda2/home/j/
 
-## kwrite
+## Kwrite
     apt install kwrite
 
-## nvida driver
+## Nvida driver
     apt install nvidia-driver-470
 
     ## change card
@@ -52,7 +52,7 @@
         ## Then you will have Nvidia X Server Settings in Dash.
         ## And there you can find PRIME profiles.
 
-    ## test
+    ## Test
         apt install mesa-utils
 
         glxinfo | grep "OpenGL render"
@@ -60,7 +60,7 @@
     ## KDE show FPS
         KDE > Settings > Desktop Efects > Show FPS
 
-## steam
+## Steam
     ## download deb pkg
         wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
 
@@ -99,10 +99,10 @@
     ## Remove not needed
         apt autoremove
 
-## disable services
+## Disable services
     # https://linuxhint.com/disable_unnecessary_services_debian_linux/
 
-    ## list services enable
+    ## List services enable
         service --status-all
 
         service --status-all | grep +
@@ -110,7 +110,7 @@
         ## See all
             ls /etc/init.d
 
-        ## disable a service
+        ## Disable a service
             systemctl disable <service>
 
         ## Also has status, stop, reload, restart
@@ -135,10 +135,10 @@
 
     apt --fix-broken install
 
-## remove not needed packages
+## Remove not needed packages
     apt autoremove
 
-## dolphin root
+## Dolphin root
     pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin
 
 ## mkvtoolnix
@@ -281,7 +281,7 @@
 
 ## Install kdm (*and select kdm*)
     apt-get install kdm
-    ## if not work
+    ## If not work
         dpkg-reconfigure kdm
 
 ## Remove Mono and Orca (*Windows applications a limited opportunity to run in Linux*)
@@ -301,7 +301,7 @@
 
 ## Remove older vlc and vlc-nox and install new version
     apt-get remove vlc vlc-nox
-    ## after
+    ## After
         add-apt-repository ppa:mc3man/trusty-media
         apt-get update
         apt-get install vlc
@@ -320,7 +320,7 @@
         apt-get install smplayer smplayer-themes smplayer-skins
         ## remove enqueue
             rm /usr/share/applications/smplayer_enqueue.desktop
-            ## smplayer configs
+            ## smplayer configuration
 
 ## Disable service
     # For Linux Mint 17 based on Ubuntu you have to use this because it uses upstart:
@@ -333,7 +333,8 @@
 ## Install texlive (latex)
     ## Remove same older
         ## 2 times
-            apt-get autoremove --purge tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-latex-base texlive-latex-base-doc texlive-full texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended
+            apt-get autoremove --purge tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-latex-base texlive-latex-base-doc
+            apt-get autoremove --purge texlive-full texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended
         apt-get autoclean
         apt-get autoremove
 
