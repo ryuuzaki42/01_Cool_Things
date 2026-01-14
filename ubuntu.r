@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 13/11/2025
+# Last update: 14/01/2026
 #
 
 ## Install
@@ -28,6 +28,11 @@
 ## Ubuntu set a short password
     # Change <user> to the username
     sudo passwd <user>
+
+## Install dolphin
+    apt install dolphin
+    apt install konsole
+    apt install kde-cli-tools
 
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
