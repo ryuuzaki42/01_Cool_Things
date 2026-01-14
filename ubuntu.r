@@ -258,8 +258,10 @@
         export SUMO_HOME=/media/sda4/prog/sumo-0.21.0
         #
 
-## /etc/fstab
+## Auto-mount folder with /etc/fstab
     /dev/sda4 /media/sda4 ext4 defaults 0 2
+
+    ## Or use "gnome-disks"
 
 ## Install Dropbox (zip file)
 ## Install Jdownload (.sh file)
