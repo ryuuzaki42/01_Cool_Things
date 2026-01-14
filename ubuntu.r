@@ -80,13 +80,13 @@
     ## download deb pkg
         wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
 
-    ## install
+    ## Install
         sudo dpkg -i steam.deb
 
-    ## run
+    ## Run
         $ steam
 
-        ## will open a terminal - root password to install curl, xterm, zenity
+        ## Will open a terminal - root password to install curl, xterm, zenity
         ## Get some errors
             apt --fix-broken install
 
@@ -144,7 +144,7 @@
         systemctl stop unattended-upgrades anacron
         systemctl disable unattended-upgrades anacron
 
-## veracrypt install deb
+## Veracrypt install deb
     https://www.veracrypt.fr/en/Downloads.html
 
     dpkg -i veracrypt-1.24-Update7-Ubuntu-21.04-amd64.deb
@@ -157,40 +157,40 @@
 ## Dolphin root
     pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin
 
-## mkvtoolnix
+## Mkvtoolnix
     apt install mkvtoolnix mkvtoolnix-gui
 
-## smplayer
+## Smplayer
     https://www.smplayer.info/en/downloads
 
     dpkg -i smplayer_21.1.0-1+2.4_amd64.deb
 
-## opera
+## Opera
     https://get.opera.com/pub/opera/desktop/
         > version /linux/ > .deb
 
     dpkg -i opera-stable_77.0.4054.90_amd64.deb
 
-## obs-studio
+## Obs-studio
     apt install obs-studio
 
     ## NVENC error
         Change in Scence > Settings > Output > Encoder
         Hardware (NVENC) to Software (x264)
 
-## qbittorrent
+## Qbittorrent
     apt install qbittorrent
 
-## qpdfview
+## Qpdfview
     apt install qpdfview
 
-## kolourpaint
+## Kolourpaint
     apt install kolourpaint
 
-## java
+## Java JDK
     apt install openjdk-8-jre
 
-## smartsynchronize
+## Smartsynchronize
     # Version 4.2.1
     https://www.syntevo.com/smartsynchronize/download/
 
@@ -198,25 +198,25 @@
     # Version 5.6.80
     MasterPDFEditor-5.6.80-x86_64-1_SBo.txz
 
-## gimp
+## Gimp
     apt install gimp
 
-## geeqie
+## Geeqie
     apt install geeqie
 
-## audacity
+## Audacity
     apt install audacity
 
-## kdiff3
+## Kdiff3
     apt install kdiff3
 
-## unrar
+## Unrar
     apt install unrar
 
-## diffpdf
+## Diffpdf
     apt install diffpdf
 
-## git-lfs
+## Git-lfs
     apt install git-lfs
 
 ------------------------------------------ OldLinuxMint_KDE ------------------------------------------
@@ -226,7 +226,8 @@
     # apt-get install intel-linux-graphics-installer
 
 ## SUMO + OMNeT + Veins
-    apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev autoconf automake libtool libproj0 libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev
+    apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0
+    apt-get install openmpi-bin libopenmpi-dev libpcap-dev autoconf automake libtool libproj0 libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev
 
     ## Install SUMO from zip file
         ./configure
@@ -238,7 +239,8 @@
         apt-get install binfmt-support fastjar jarwrapper libgl2ps0
 
     ## Install OMNet++
-        apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
+        apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz
+        apt-get install libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
 
     ## Install OMNet by the zip file
         TCL_LIBRARY=/usr/lib/tcl8.6
@@ -259,15 +261,15 @@
 ## /etc/fstab
     /dev/sda4 /media/sda4 ext4 defaults 0 2
 
-## Dropbox (zip file)
-## Jdownload (.sh file)
+## Install Dropbox (zip file)
+## Install Jdownload (.sh file)
 
 ## Install others programs
-    apt-get install p7zip comix rar convmv r-base pv pdftk git skype kwrite kolourpaint4 kamerka
+    apt-get install p7zip comix rar convmv r-base pv pdftk git kwrite kolourpaint4 kamerka
 
 ## Install master-pdf-editor, mendeleydesktop, RedshiftGUI, smartgit, telegram, texstudio, tomighty (deb file)
 
-## remove flash and java plugin
+## Remove flash and java plugin
     apt-get remove icedtea-7-plugin adobe-flashplugin
 
 ## Install Virtualbox (.sh file)
@@ -275,7 +277,7 @@
 ## Added klipper to Start with the system
     # start klipper
     klipper
-    ## Right click Klipper -> Quit and select start.
+    ## Right click Klipper -> Quit and select start
 
 ## Install artha
     apt-get install artha
