@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/09/2025
+# Last update: 15/01/2026
 #
 
 ## Process with more CPU use
@@ -3454,3 +3454,6 @@ kwrite $prog_name.info
 
         # Uncomment the line below to force the login screen to use Xorg
         WaylandEnable=false
+
+## KDE - Rebuilds the system configuration cache from the KService .desktop files
+kbuildsycoca5
