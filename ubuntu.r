@@ -25,6 +25,13 @@
     gsettings set org.gnome.shell app-picker-layout "[]"
     ## Restart
 
+## Gnome - Rebuilds the system configuration cache from the KService .desktop files
+    sudo gtk-update-icon-cache
+
+    sudo update-icon-caches /usr/share/icons/*
+
+    sudo update-icon-caches ~/.local/share/icons/*
+
 ## Ubuntu set a short password
     # Change <user> to the username
     sudo passwd <user>
