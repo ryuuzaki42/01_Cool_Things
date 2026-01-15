@@ -1829,7 +1829,7 @@ fi
     huge.s intel_pstate=disable
 
 ## Open terminal nautilus
-    apt-get install nautilus-open-terminal
+    apt install nautilus-open-terminal
     nautilus -q
 
 ## How to force Dolphin to not execute executable files
