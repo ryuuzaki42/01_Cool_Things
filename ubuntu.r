@@ -230,28 +230,28 @@
 
 # ## Driver Intel
     # echo "deb https://download.01.org/gfx/ubuntu/13.10/main saucy main #Intel Graphics drivers" | tee /etc/apt/sources.list.d/intellinuxgraphics.list
-    # apt-get install intel-linux-graphics-installer
+    # apt install intel-linux-graphics-installer
 
 ## SUMO + OMNeT + Veins
-    apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0
-    apt-get install openmpi-bin libopenmpi-dev libpcap-dev autoconf automake libtool libproj0 libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev
+    apt install build-essential gcc g++ bison flex perl tcl-dev tk-dev blt libxml2-dev zlib1g-dev default-jre doxygen graphviz libwebkitgtk-1.0-0
+    apt install openmpi-bin libopenmpi-dev libpcap-dev autoconf automake libtool libproj0 libgdal1-dev libfox-1.6-dev libgdal-dev libxerces-c-dev
 
     ## Install SUMO from zip file
         ./configure
         make
         make install
 
-    ## Look in : "apt-get install sumo sumo-doc sumo-tools" for the extra packet
+    ## Look in : "apt install sumo sumo-doc sumo-tools" for the extra packet
         In my case is:
-        apt-get install binfmt-support fastjar jarwrapper libgl2ps0
+        apt install binfmt-support fastjar jarwrapper libgl2ps0
 
     ## Install OMNet++
-        apt-get install build-essential gcc g++ bison flex perl tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz
-        apt-get install libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
+        apt install build-essential gcc g++ bison flex perl tcl-dev tk-dev libxml2-dev zlib1g-dev default-jre doxygen graphviz
+        apt install libwebkitgtk-1.0-0 openmpi-bin libopenmpi-dev libpcap-dev
 
     ## Install OMNet by the zip file
         TCL_LIBRARY=/usr/lib/tcl8.6
-        apt-get install swig
+        apt install swig
         . setenv
         ./configure
         make
@@ -274,12 +274,12 @@
 ## Install Jdownload (.sh file)
 
 ## Install others programs
-    apt-get install p7zip comix rar convmv r-base pv pdftk git kwrite kolourpaint4 kamerka
+    apt install p7zip comix rar convmv r-base pv pdftk git kwrite kolourpaint4 kamerka
 
 ## Install master-pdf-editor, mendeleydesktop, RedshiftGUI, smartgit, telegram, texstudio, tomighty (deb file)
 
 ## Remove flash and java plugin
-    apt-get remove icedtea-7-plugin adobe-flashplugin
+    apt remove icedtea-7-plugin adobe-flashplugin
 
 ## Install Virtualbox (.sh file)
 
@@ -289,30 +289,30 @@
     ## Right click Klipper -> Quit and select start
 
 ## Install artha
-    apt-get install artha
+    apt install artha
 
 ## Install qpdfview
     add-apt-repository ppa:b-eltzner/qpdfview
-    apt-get update
-    apt-get install qpdfview
+    apt update
+    apt install qpdfview
 
 ## Install pt-BR language
-    apt-get install myspell-pt-br
+    apt install myspell-pt-br
     ## Install the extension cogroo
     ## Change the configuration of memory and language
 
 ## Install Windows fonts
-    apt-get install msttcorefonts
+    apt install msttcorefonts
     ## or
-    apt-get install ttf-mscorefonts-installer
+    apt install ttf-mscorefonts-installer
 
 ## Install kdm (*and select kdm*)
-    apt-get install kdm
+    apt install kdm
     ## If not work
         dpkg-reconfigure kdm
 
 ## Remove Mono and Orca (*Windows applications a limited opportunity to run in Linux*)
-    apt-get remove mono-runtime-common gnome-orca
+    apt remove mono-runtime-common gnome-orca
 
 ## Disable hibernation (suspend-to-disk)
     mv -v /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla /
@@ -324,27 +324,27 @@
     dpkg -i program-version-arch
 
 ## Remove Amarok and dragon
-    apt-get remove amarok dragonplayer
+    apt remove amarok dragonplayer
 
 ## Remove older vlc and vlc-nox and install new version
-    apt-get remove vlc vlc-nox
+    apt remove vlc vlc-nox
     ## After
         add-apt-repository ppa:mc3man/trusty-media
-        apt-get update
-        apt-get install vlc
+        apt update
+        apt install vlc
             ## vlc configuration and plugin
      ## Install vlc plugins
      apt-add-repository ppa:strukturag/libde265
-     apt-get update
-     apt-get install vlc-plugin-libde265
-     apt-get install vlc-plugin*
+     apt update
+     apt install vlc-plugin-libde265
+     apt install vlc-plugin*
 
 ## Remove older smplayer and install new version
-    apt-get remove smplayer
+    apt remove smplayer
     ## after
         add-apt-repository ppa:rvm/smplayer
-        apt-get update
-        apt-get install smplayer smplayer-themes smplayer-skins
+        apt update
+        apt install smplayer smplayer-themes smplayer-skins
         ## remove enqueue
             rm /usr/share/applications/smplayer_enqueue.desktop
             ## smplayer configuration
@@ -360,10 +360,10 @@
 ## Install texlive (latex)
     ## Remove same older
         ## 2 times
-            apt-get autoremove --purge tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-latex-base texlive-latex-base-doc
-            apt-get autoremove --purge texlive-full texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended
-        apt-get autoclean
-        apt-get autoremove
+            apt autoremove --purge tex-common texlive-base texlive-binaries texlive-common texlive-doc-base texlive-latex-base texlive-latex-base-doc
+            apt autoremove --purge texlive-full texlive-publishers texlive-lang-portuguese texlive-latex-extra texlive-fonts-recommended
+        apt autoclean
+        apt autoremove
 
     ## Install texlive from Slackware latex folder
 
@@ -371,11 +371,11 @@
     Use "xUbuntu 14.04 amd64 2.10.8, QT 4" on texstudio.sourceforge.net
 
 ## Remove ark and install a version with works password
-    apt-get remove ark
+    apt remove ark
     ## Add new source to install libarchive12
         echo "deb http://archive.ubuntu.com/ubuntu precise-updates main restricted universe multiverse" >> /etc/apt/sources.list
-        apt-get update
-        apt-get install libarchive12
+        apt update
+        apt install libarchive12
     ## Install ark from deb file (older ark from Debian Wheezy)
     dpkg -i ark_4.8.4-2_amd64.deb
     ## Remove ark from update manager
