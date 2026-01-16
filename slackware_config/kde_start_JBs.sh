@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 26/08/2025
+# Last update: 16/01/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -37,7 +37,10 @@ audio_profile_change=0 #0 Change audio profile - good to use with $change_resolu
 volume_max=0 #0 Set volume to maximum
 
 change_resolution=1 #1 Change the resolution
-max_resolution=0 #0 to set both outputs to mirror 1024x768, 1 to set output 2 to maximum resolution, like 1920x1080
+max_resolution=0 #0
+# 0 - Set both video outputs to mirror, 1024x768
+# 1 - Set the video output 2 to maximum resolution. Obs.: Do not change the video output 1
+# 2 - Set both video output to maximum resolution
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -79,11 +82,14 @@ if [ "$change_resolution" == 1 ]; then
     countOutput=$(xrandr | grep " connected" | wc -l)
     if [ "$countOutput" -gt 1 ]; then
         if [ "$max_resolution" == 0 ]; then
-            echo -e "\n # Set the two video output to mirror 1024x768 resolution #\n"
-            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # With # Pass 1 to disable the notification
-        else
-            echo -e "\n # Set the output two as maximum resolution #\n"
+            echo -e "\n # Set both video outputs to mirror, resolution 1024x768 #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 4 0 y #1 # Pass 1 to disable the notification
+        elif [ "$max_resolution" == 1 ]; then
+            echo -e "\n # Set the video output 2 to maximum resolution #\n"
             /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
+        elif [ "$max_resolution" == 1 ]; then
+            echo -e "\n # Set both video outputs to maximum resolution #\n"
+            /usr/bin/monitor_change_resolution_JBs.sh 3 0 y #1
         fi
     else
         echo -e "\n # Set the video output 1 to maximum resolution #\n"
