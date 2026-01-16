@@ -61,7 +61,10 @@ vga=773
 # VESA framebuffer console @ 640x480x256
 #vga=769
 # End LILO global section
+#
 default = Slackware_KG
+#default = Windows
+#
 # Windows bootable partition config begins
 other = /dev/sda3
   label = Windows
