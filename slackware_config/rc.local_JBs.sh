@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 12/10/2025
+# Last update: 25/01/2026
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
@@ -70,11 +70,11 @@ if [ "$use_tmp_folder_RAM" == 1 ]; then
     if [ "$count_RAM_GiB" -gt 23000 ]; then # RAM > ~ 23 GiB
         folder_RAM_Max_Size='12g' # Temporary folder of 12 GiB
     elif [ "$count_RAM_GiB" -gt 15000 ]; then # RAM > ~ 15 GiB
-        folder_RAM_Max_Size='6g'
+        folder_RAM_Max_Size='8g'
     elif [ "$count_RAM_GiB" -gt 7000 ]; then # RAM > ~ 7 GiB
-        folder_RAM_Max_Size='3g'
+        folder_RAM_Max_Size='4g'
     elif [ "$count_RAM_GiB" -gt 5000 ]; then # RAM > ~ 5 GiB
-        folder_RAM_Max_Size='2g'
+        folder_RAM_Max_Size='3g'
     else # $count_RAM_GiB < ~ 5 GiB
         folder_RAM_Max_Size=0
         echo "Less then 5 GiB of RAM - Not mounting folder in RAM"
