@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 03/12/2025
+# Last update: 30/01/2026
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -100,7 +100,7 @@ smplayer
 tomighty
 # unrar
 rar
-veracrypt
+# veracrypt - AppImage
 webcore-fonts
 wxGTK3
 xlaserpointer
@@ -122,6 +122,9 @@ gromit-mpx
 nvidia-kernel
 nvidia-driver
 xf86-video-nouveau # Bumblebee and nvidia
+# Legacy driver -
+nvidia-legacy580-driver
+nvidia-legacy580-kernel
 # -------------------------------------------------------------------------------------------------------
 # xournalpp
 # -------------------------------------------------------------------------------------------------------
@@ -130,7 +133,7 @@ xf86-video-nouveau # Bumblebee and nvidia
 # -------------------------------------------------------------------------------------------------------
 # audacity
 # -------------------------------------------------------------------------------------------------------
-# audacity
+# audacity - AppImage
 # jack2 # audacity, obs-studio and mpv
 # ladspa_sdk
 # lilv
