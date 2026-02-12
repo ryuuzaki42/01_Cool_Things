@@ -7,11 +7,12 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/01/2026
+# Last update: 12/02/2026
 #
 
 ## Install
     sudo apt install git
+    sudo apt install vlc
     sudo apt install gparted
 
     ## Deb package
@@ -40,6 +41,13 @@
     apt install dolphin
     apt install konsole
     apt install kde-cli-tools
+
+## Ubuntu black screen after boot - no video signal
+    ## Added nomodeset no grub to not load drivers during the boot
+        nano /etc/default/grub
+
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
 
 ## Install dash to panel
     1. Install Extension Manager
