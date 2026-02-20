@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/02/2026
+# Last update: 20/02/2026
 #
 
 ## Install
@@ -42,12 +42,35 @@
     apt install konsole
     apt install kde-cli-tools
 
+## Edit grub
+    nano /etc/default/grub
+
+    ## Change timeout
+        GRUB_TIMEOUT=10
+        GRUB_TIMEOUT=3
+
+    ## Boot console/text mode
+        ## Comment the line
+            GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
+        ## Added the line
+            GRUB_CMDLINE_LINUX_DEFAULT="text"
+
+        ## Test - If not work
+            ## Uncomment the line
+                #GRUB_TERMINAL=console
+
+    ## After, need to update configuration
+        update-grub
+
 ## Ubuntu black screen after boot - no video signal
     ## Added nomodeset no grub to not load drivers during the boot
         nano /etc/default/grub
 
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
+        GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+        GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
+
+        update-grub
 
 ## Install dash to panel
     1. Install Extension Manager
@@ -105,14 +128,7 @@
         ## Get some errors
             apt --fix-broken install
 
-## Edit the grub
-    nano /etc/default/grub
-        1 - GRUB_TIMEOUT=10 to 3
-        2 - Comment the line: GRUB_CMDLINE_LINUX_DEFAULT=”quiet splash”
-        3 - Change GRUB_CMDLINE_LINUX="" to GRUB_CMDLINE_LINUX=”text”
-        4 - Uncomment this line #GRUB_TERMINAL=console
-        5 - update-grub
-
+## Edit grub
     ## Change Ubuntu to Kubuntu
         sed -i 's/Ubuntu/Kubuntu/g' /boot/grub/grub.cfg
 
@@ -234,7 +250,7 @@
 ## Git-lfs
     apt install git-lfs
 
------------------------------------------- OldLinuxMint_KDE ------------------------------------------
+------------------------------------------ Old Linux Mint KDE ------------------------------------------
 
 # ## Driver Intel
     # echo "deb https://download.01.org/gfx/ubuntu/13.10/main saucy main #Intel Graphics drivers" | tee /etc/apt/sources.list.d/intellinuxgraphics.list
