@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/11/2025
+# Last update: 20/02/2026
 #
 
 ## Windows 11 ##
@@ -66,6 +66,36 @@
         Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer,
         Firefox, Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++,
         Telegram, WinRAR, HWmonitor, UCheck, AnyDesk, Winaero Tweaker,
+
+    ## Winget - Windows Package Manager - CLI to install, update and upgrade programs
+        #https://www.webhi.com/how-to/winget-windows-tutorial-guide/
+
+        ## Install
+            winget install git
+
+        ## Search
+            winget search git
+
+        ## Remove
+            winget uninstall git
+
+        ## List updates available
+            winget update
+
+        ## Upgrade program
+            winget upgrade Notepad++.Notepad++
+
+        ## Upgrade all programs
+            winget upgrade --all
+
+        ## List all programs installed
+            winget list
+
+        ## Export a list of programs installed - Backup
+            winget export C:\progs.json
+
+        ## Import a list of programs - Restore backup
+            winget import C:\progs.json
 
     ## Check Windows license and activation status
         # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
