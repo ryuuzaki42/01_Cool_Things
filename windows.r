@@ -12,437 +12,437 @@
 
 ## Windows 11 ##
 
-    ## Restore the old Context Menu in Windows 11
-        # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
+## Restore the old Context Menu in Windows 11
+    # https://learn.microsoft.com/en-us/answers/questions/2287432/(article)-restore-old-right-click-context-menu-in
 
-        ## Run in PowerShell as Administrator
-        reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+    ## Run in PowerShell as Administrator
+    reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
 
-        Restart File Explorer
+    Restart File Explorer
 
-        ## Restore Modern Context menus in Windows 11 - undo change below
-            reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
+    ## Restore Modern Context menus in Windows 11 - undo change below
+        reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
-    ## Upgrade Windows 11 on unsupported Hardware
-        ## Donwload ISO file at Microsoft
-            https://www.microsoft.com/pt-br/software-download
+## Upgrade Windows 11 on unsupported Hardware
+    ## Donwload ISO file at Microsoft
+        https://www.microsoft.com/pt-br/software-download
 
-        ## Mount the ISO file
+    ## Mount the ISO file
 
-        ## In the mounted ISO folder
-            open CMD prompt as admin
-            F: # the driver letter
-            CD sources/
+    ## In the mounted ISO folder
+        open CMD prompt as admin
+        F: # the driver letter
+        CD sources/
 
-            setupprep.exe /product server
+        setupprep.exe /product server
 
-            Select type of install, I chose keep files, folder, programs,
-            Windows 11 will install, If your PC was activated, it remains activate
+        Select type of install, I chose keep files, folder, programs,
+        Windows 11 will install, If your PC was activated, it remains activate
 
-    ## Install Windows 11 without TPM, Secure Boot etc
-        ## Install until "Select OS version"
-            Shift + F10 # cmd shortcut
+## Install Windows 11 without TPM, Secure Boot etc
+    ## Install until "Select OS version"
+        Shift + F10 # cmd shortcut
 
-            regedit
+        regedit
 
-            [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
+        [HKEY_LOCAL_MACHINE\SYSTEM\Setup\LabConfig]
 
-                “BypassTPMCheck”        =dword :1
-                “BypassSecureBootCheck” =dword :1
+            “BypassTPMCheck”        =dword :1
+            “BypassSecureBootCheck” =dword :1
 
-                “BypassRAMCheck”     = dword :1
-                “BypassStorageCheck” = dword :1
-                “BypassCPUCheck”     = dword :1
+            “BypassRAMCheck”     = dword :1
+            “BypassStorageCheck” = dword :1
+            “BypassCPUCheck”     = dword :1
 
-        ## Bypass online account - "enable" local account
-            1. Disconnect your net connection
-            2. Shift + F10
-            3. oobe\bypassnro
-            4. Will reboot and now can create local account
+    ## Bypass online account - "enable" local account
+        1. Disconnect your net connection
+        2. Shift + F10
+        3. oobe\bypassnro
+        4. Will reboot and now can create local account
 
 ## Windows general ##
 
+## Install
+    Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer,
+    Firefox, Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++,
+    Telegram, WinRAR, HWmonitor, UCheck, AnyDesk, Winaero Tweaker,
+
+## Winget - Windows Package Manager - CLI to install, update and upgrade programs
+    #https://www.webhi.com/how-to/winget-windows-tutorial-guide/
+
     ## Install
-        Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer,
-        Firefox, Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++,
-        Telegram, WinRAR, HWmonitor, UCheck, AnyDesk, Winaero Tweaker,
+        winget install git
 
-    ## Winget - Windows Package Manager - CLI to install, update and upgrade programs
-        #https://www.webhi.com/how-to/winget-windows-tutorial-guide/
+    ## Search
+        winget search git
 
-        ## Install
-            winget install git
+    ## Remove
+        winget uninstall git
 
-        ## Search
-            winget search git
+    ## List updates available
+        winget update
 
-        ## Remove
-            winget uninstall git
+    ## Upgrade program
+        winget upgrade Notepad++.Notepad++
 
-        ## List updates available
-            winget update
+    ## Upgrade all programs
+        winget upgrade --all
 
-        ## Upgrade program
-            winget upgrade Notepad++.Notepad++
+    ## List all programs installed
+        winget list
 
-        ## Upgrade all programs
-            winget upgrade --all
+    ## Export a list of programs installed - Backup
+        winget export C:\progs.json
 
-        ## List all programs installed
-            winget list
+    ## Import a list of programs - Restore backup
+        winget import C:\progs.json
 
-        ## Export a list of programs installed - Backup
-            winget export C:\progs.json
+## Check Windows license and activation status
+    # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
+    # slmgr or slmgr.vbs
 
-        ## Import a list of programs - Restore backup
-            winget import C:\progs.json
+    ## Display license information - /dli
+        slmgr /dli
 
-    ## Check Windows license and activation status
-        # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
-        # slmgr or slmgr.vbs
+        ## Display detailed license information - /dlv
+            slmgr /dlv
 
-        ## Display license information - /dli
-            slmgr /dli
+    ## Display the activation expiration date for the product
+        slmgr /xpr
 
-            ## Display detailed license information - /dlv
-                slmgr /dlv
+## Check hash - Compute hash
+    ## CMD
+        ## SHA256
+            certutil -hashfile <file>
 
-        ## Display the activation expiration date for the product
-            slmgr /xpr
+        ## MD5
+            certutil -hashfile <file> MD5
 
-    ## Check hash - Compute hash
-        ## CMD
-            ## SHA256
-                certutil -hashfile <file>
+    ## PowerShell
+        ## SHA256
+            Get-FileHash <file>
 
-            ## MD5
-                certutil -hashfile <file> MD5
+        ## MD5
+            Get-FileHash <file> -Algorithm md5
 
-        ## PowerShell
-            ## SHA256
-                Get-FileHash <file>
+## Release Windows networking
+    IPCONFIG /RELEASE
+    IPCONFIG /FLUSHDNS
+    NET STOP DNSCACHE
+    NET STOP DHCP
+    NET START DNSCACHE
+    NET START DHCP
+    IPCONFIG /REGISTERDNS
+    IPCONFIG /RENEW
 
-            ## MD5
-                Get-FileHash <file> -Algorithm md5
+## Disable Windows Update and others with winaero-tweaker
+    # https://winaero.com/winaero-tweaker/#download
+    > Use a old config "Winaero Tweaker_*.ini"
 
-    ## Release Windows networking
-        IPCONFIG /RELEASE
-        IPCONFIG /FLUSHDNS
-        NET STOP DNSCACHE
-        NET STOP DHCP
-        NET START DNSCACHE
-        NET START DHCP
-        IPCONFIG /REGISTERDNS
-        IPCONFIG /RENEW
+    > Disable updates
+        Windows Update
+        Edge Updates
+        Store Apps Auto-update
 
-    ## Disable Windows Update and others with winaero-tweaker
-        # https://winaero.com/winaero-tweaker/#download
-        > Use a old config "Winaero Tweaker_*.ini"
+## Error checking HD / SSD
+    C: (and others partitions)
+        Properties > Tools > Error checking
+            > Check
 
-        > Disable updates
-            Windows Update
-            Edge Updates
-            Store Apps Auto-update
-
-    ## Error checking HD / SSD
+    Optimize or/and defragment driver
+        # SSD (optimize) - HD (defragment driver)
         C: (and others partitions)
-            Properties > Tools > Error checking
-                > Check
+            Properties > Tools >Optimize and defragment driver
+                > Optimize
 
-        Optimize or/and defragment driver
-            # SSD (optimize) - HD (defragment driver)
-            C: (and others partitions)
-                Properties > Tools >Optimize and defragment driver
-                    > Optimize
+## Disk cleanup
+    Start menu > Search for Cleanup
+        Clean C: partition
+            Clean up system files
 
-    ## Disk cleanup
-        Start menu > Search for Cleanup
-            Clean C: partition
-                Clean up system files
+## Update Windows apps > Windows store
+    If Intel
+        Install Intel® Graphics Command Center
+            https://apps.microsoft.com/detail/9PLFNLNT3G5G
 
-    ## Update Windows apps > Windows store
-        If Intel
-            Install Intel® Graphics Command Center
-                https://apps.microsoft.com/detail/9PLFNLNT3G5G
+    If Thinkpad
+        Install Lenovo Vantage
+            https://apps.microsoft.com/detail/9WZDNCRFJ4MV
 
-        If Thinkpad
-            Install Lenovo Vantage
-                https://apps.microsoft.com/detail/9WZDNCRFJ4MV
+    If Nvidia card
+        Instal Nvidia driver
+            https://apps.microsoft.com/detail/9NF8H0H7WMLT
 
-        If Nvidia card
-            Instal Nvidia driver
-                https://apps.microsoft.com/detail/9NF8H0H7WMLT
+## Disable hibernate - powercfg or powercfg.exe
+    cmd > Run as administrador
+    powercfg /hibernate off
 
-    ## Disable hibernate - powercfg or powercfg.exe
-        cmd > Run as administrador
-        powercfg /hibernate off
+    ## Back to default - Enable hibernate
+        powercfg /hibernate on
 
-        ## Back to default - Enable hibernate
-            powercfg /hibernate on
+    ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
+        powercfg /a
 
-        ## Check if hibernate status - If is on, will show in "sleep states available, below Standby (S3)"
-            powercfg /a
+## Changes in Advanced system settings
+    File Explorer > This PC > Properties > Advanced system settings
 
-    ## Changes in Advanced system settings
-        File Explorer > This PC > Properties > Advanced system settings
+    %windir%\system32\SystemPropertiesAdvanced.exe
 
-        %windir%\system32\SystemPropertiesAdvanced.exe
+        ## Advanced
+            %windir%\system32\SystemPropertiesPerformance.exe
 
-            ## Advanced
-                %windir%\system32\SystemPropertiesPerformance.exe
+            ## Disable some visual effects
+                Performance > Settings... > Visual Effects
+                    > Adjust for best performanace
+                        > Enable
 
-                ## Disable some visual effects
-                    Performance > Settings... > Visual Effects
-                        > Adjust for best performanace
-                            > Enable
+                        > Show thumbnails instead of icons
+                        > Smooth edges of screen fonts
 
-                            > Show thumbnails instead of icons
-                            > Smooth edges of screen fonts
+            ## Reduce size of pagefile.sys - default size o RAM
+                Performance > Settings... > Advanced
+                    Virtual Memory > Change...
+                        If RAM > 4 GiB
+                            x - Automatically manage
+                            > Custom size
+                                Initial: 1024
+                                Maximum: 2048
+                        D: None
 
-                ## Reduce size of pagefile.sys - default size o RAM
-                    Performance > Settings... > Advanced
-                        Virtual Memory > Change...
-                            If RAM > 4 GiB
-                                x - Automatically manage
-                                > Custom size
-                                    Initial: 1024
-                                    Maximum: 2048
-                            D: None
+        ## Remote
+            %windir%\system32\SystemPropertiesRemote.exe
 
-            ## Remote
-                %windir%\system32\SystemPropertiesRemote.exe
+            ## Disable Remote Assistance
+                Remote Assistance
+                    Disable "Allow Remote Assistance..."
 
-                ## Disable Remote Assistance
-                    Remote Assistance
-                        Disable "Allow Remote Assistance..."
+        ## System Protection
+            %windir%\system32\SystemPropertiesProtection.exe
 
-            ## System Protection
-                %windir%\system32\SystemPropertiesProtection.exe
+            ## Create one System Protection - Restore point
+                ## Enable in C:
+                    Configure > Max Usage > 5%
 
-                ## Create one System Protection - Restore point
-                    ## Enable in C:
-                        Configure > Max Usage > 5%
+                ## Create one manual
+                    > Create... > Name "a1" > Create
 
-                    ## Create one manual
-                        > Create... > Name "a1" > Create
+                ## Off in the others partitions
+                    D: > Configure > Disable system protection
 
-                    ## Off in the others partitions
-                        D: > Configure > Disable system protection
+                ## Check if was created correctly
+                    System Restore... > Next
 
-                    ## Check if was created correctly
-                        System Restore... > Next
+## Windows don't recognize partition (NTFS) connected
+    cmd > Run as administrador
 
-    ## Windows don't recognize partition (NTFS) connected
-        cmd > Run as administrador
+    diskpart
 
-        diskpart
+    ## With volume
+        list volume
 
-        ## With volume
-            list volume
+        # X is the number of the offline volume
+            select volume X
 
-            # X is the number of the offline volume
-                select volume X
+            online volume
 
-                online volume
+        # Assign a letter to make online
+            # change R for the one letter available
+            assign letter=R
 
-            # Assign a letter to make online
-                # change R for the one letter available
-                assign letter=R
+    ## With disk
+        list disk
 
-        ## With disk
-            list disk
+        # X is the desired disk number
+            select disk X
 
-            # X is the desired disk number
-                select disk X
+            list partition
 
-                list partition
+        # X is the desired partition number
+            select partition X
 
-            # X is the desired partition number
-                select partition X
+            active
 
-                active
+    ## Minitool Partition Wizard
+        > Set Active
 
-        ## Minitool Partition Wizard
-            > Set Active
+        > Change Letter
 
-            > Change Letter
+        > Check Partition Type ID
+            > 0x07 NTFS
 
-            > Check Partition Type ID
-                > 0x07 NTFS
+        > Explore
 
-            > Explore
+## Windows HDMI wrong size image
+    # Fix Desktop Overscaling if use a TV - Monitor
+    Open Intel Video Manager
+        > Go to size/scaling and change
 
-    ## Windows HDMI wrong size image
-        # Fix Desktop Overscaling if use a TV - Monitor
-        Open Intel Video Manager
-            > Go to size/scaling and change
+## Windows check files installation
+    > cmd as administrator
 
-    ## Windows check files installation
-        > cmd as administrator
+    ## Switch unit partition
+        X: (where X: is the drive your USB stick is connected to)
 
-        ## Switch unit partition
-            X: (where X: is the drive your USB stick is connected to)
+        sfc /scannow
 
-            sfc /scannow
+        DISM /Online /Cleanup-Image /RestoreHealth
 
-            DISM /Online /Cleanup-Image /RestoreHealth
+## Restore the content of CHK files - CHK BAK
+    FOUND/FILE.CHK
 
-    ## Restore the content of CHK files - CHK BAK
-        FOUND/FILE.CHK
+    > Chk-Back
+    https://download.cnet.com/chk-back/3000-2094_4-75695425.html
 
-        > Chk-Back
-        https://download.cnet.com/chk-back/3000-2094_4-75695425.html
+## Remove virus Recycle bin
+    ## Inside the partition
+        attrib -a -h -r -s /s /d *.*
 
-    ## Remove virus Recycle bin
-        ## Inside the partition
-            attrib -a -h -r -s /s /d *.*
+    -r Clears read-only file attribute
+    -a Clears the dead file attribute
+    -s Clears system file attribute
+    -h Clear hidden file attribute
+    /s Processes matching files in the current folder and all subfolders
+    /d Processes folders as well
 
-        -r Clears read-only file attribute
-        -a Clears the dead file attribute
-        -s Clears system file attribute
-        -h Clear hidden file attribute
-        /s Processes matching files in the current folder and all subfolders
-        /d Processes folders as well
+## Uninstall GRUB and use Windows bootloader
+    # or
+## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
+    > Boot USB ISO
+        Select language > next
+        Repair your computer > Advanced options > Command Prompt
 
-    ## Uninstall GRUB and use Windows bootloader
-        # or
-    ## Windows error 0xc00000e - Fix boot/mbr/BCD after clone
-        > Boot USB ISO
-            Select language > next
-            Repair your computer > Advanced options > Command Prompt
+    > Or restart Windows while holding the Shift key
 
-        > Or restart Windows while holding the Shift key
+    ## bootrec BCD (Boot Configuration Data) run all options
+        bootrec /FixMbr
+        bootrec /FixBoot
+        bootrec /ScanOs
+        bootrec /RebuildBcd
 
-        ## bootrec BCD (Boot Configuration Data) run all options
-            bootrec /FixMbr
-            bootrec /FixBoot
-            bootrec /ScanOs
-            bootrec /RebuildBcd
+## Windows setup could not configure to run on this computer hardware
+    ## Error during Windows installation
+    # Windows setup could not install on this computer hardware
+    Manually run msoobe.exe program to allow the install to complete
 
-    ## Windows setup could not configure to run on this computer hardware
-        ## Error during Windows installation
-        # Windows setup could not install on this computer hardware
-        Manually run msoobe.exe program to allow the install to complete
+    At the error screen, press Shift + F10 to open a command prompt-tweaker
+    cd c:\windows\system32\oobe and press Enter
+    msoobe and press Enter
 
-        At the error screen, press Shift + F10 to open a command prompt-tweaker
-        cd c:\windows\system32\oobe and press Enter
-        msoobe and press Enter
+## Proper way to delete the Windows.old folder
+    1 Windows search field, type Cleanup, then click "Disk Cleanup"
+    2 Select the disk, common "(C:)"
+    3 Select "Clean System Files"
+    4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
+    5 Check the box next to the entry. Click OK to start the cleanup
 
-    ## Proper way to delete the Windows.old folder
-        1 Windows search field, type Cleanup, then click "Disk Cleanup"
-        2 Select the disk, common "(C:)"
-        3 Select "Clean System Files"
-        4 Wait a bit while Windows scans for files, then scroll down the list until you see "Previous Windows installation(s)"
-        5 Check the box next to the entry. Click OK to start the cleanup
+## Windows Update error 0x80070001
+    Clean disck C: up to 8 GiB or more of free space and try update
 
-    ## Windows Update error 0x80070001
-        Clean disck C: up to 8 GiB or more of free space and try update
+## Windows - Partition not recognized as NTFS after clone
+    ## MiniTool Partition Wizard
+        Select the partition > Change Partition Type ID > Set 0x07 NTFS
 
-    ## Windows - Partition not recognized as NTFS after clone
-        ## MiniTool Partition Wizard
-            Select the partition > Change Partition Type ID > Set 0x07 NTFS
+## Windows detects HDD as SSD - Re-enable defragmentation
+    ## cmd as admin
+        winsat formal
 
-    ## Windows detects HDD as SSD - Re-enable defragmentation
-        ## cmd as admin
-            winsat formal
+## Check events - Reliability
+    Start > Search for Reliability > Open "Reliability Monitor"
 
-    ## Check events - Reliability
-        Start > Search for Reliability > Open "Reliability Monitor"
+    ## Confiabilidade
+        Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
 
-        ## Confiabilidade
-            Iniciar > Pesquise por Confiabilidade > Abrir "Monitor de Confiabilidade"
+## Delete old "name" / SSID Wi-Fi network
+    ## Open regedit
+        Win + R
+            regedit
 
-    ## Delete old "name" / SSID Wi-Fi network
-        ## Open regedit
-            Win + R
-                regedit
+    ## Following registry key:
+        HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
 
-        ## Following registry key:
-            HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles
+        Check under Profiles and find the key related to the Wi-Fi network profile that want to delete
+        Right-click it and select Delete to delete a whole registry key.
 
-            Check under Profiles and find the key related to the Wi-Fi network profile that want to delete
-            Right-click it and select Delete to delete a whole registry key.
+## Windows God Mode
+    > New folder, set name as:
+        GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
 
-    ## Windows God Mode
-        > New folder, set name as:
-            GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}
+## Deleting "Activate Windows" option from Right Click Menu
+    regedit >
+        Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
+            Delete "Activate Windows" folder
 
-    ## Deleting "Activate Windows" option from Right Click Menu
-        regedit >
-            Computer\HKEY_CLASSES_ROOT\DesktopBackground\Shell\Activate Windows - Office
-                Delete "Activate Windows" folder
+## Get the motherboard from cmd
+    wmic baseboard get product,manufacturer
 
-    ## Get the motherboard from cmd
-        wmic baseboard get product,manufacturer
+## Run program as administrator
+    runas /savecred /user:Administrator "C:\Windows\system32\cmd.exe"
 
-    ## Run program as administrator
-        runas /savecred /user:Administrator "C:\Windows\system32\cmd.exe"
+    runas /savecred /user:administrador "c:\wamp64\wampmanager.exe"
 
-        runas /savecred /user:administrador "c:\wamp64\wampmanager.exe"
+    runas /savecred /user:administrador "cmd"
 
-        runas /savecred /user:administrador "cmd"
+## System info
+    systeminfo
 
-    ## System info
-        systeminfo
+## Windows version
+    winver
 
-    ## Windows version
-        winver
+## get MAC address
+    getmac
 
-    ## get MAC address
-        getmac
+## IP info
+    ipconfig
 
-    ## IP info
-        ipconfig
+    ipconfig /all
 
-        ipconfig /all
+## DNS / name server lookup
+    nslookup google.com
 
-    ## DNS / name server lookup
-        nslookup google.com
+    nslookup google.com 1.1.1.1
 
-        nslookup google.com 1.1.1.1
+## route show
+    route print
 
-    ## route show
-        route print
+## traceroute Windows version
+    tracert google.com
 
-    ## traceroute Windows version
-        tracert google.com
-
-    ## How to Switch Off the Thumbs.db Image Cache File in Windows
-        1 Ensure you’re logged in using an administrator account
-        2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
-        3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
-            then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
-        4 In the right-hand pane, double-click "Turn off the caching of thumbnails in hidden thumbs.db files"
-        5 Select Enabled (don’t make my mistake of choosing "Disabled"
-            — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
+## How to Switch Off the Thumbs.db Image Cache File in Windows
+    1 Ensure you’re logged in using an administrator account
+    2 Hit Win+R, type gpedit.msc in the Run window and click OK. The Local Group Policy Editor will be launched
+    3 Navigate through the tree to User Configuration > Administrative Templates > Windows Components >
+        then either Windows Explorer (Windows Vista/7) or File Explorer (Windows 8).
+    4 In the right-hand pane, double-click "Turn off the caching of thumbnails in hidden thumbs.db files"
+    5 Select Enabled (don’t make my mistake of choosing "Disabled"
+        — you’re enabling the switching off of Thumbs.db. Not particularly intuitive, Microsoft!)
 
 ## Windows Old ##
 
-    ## Turn off Internet Explorer support to Windows 10
-        %windir%\system32\control.exe
+## Turn off Internet Explorer support to Windows 10
+    %windir%\system32\control.exe
 
-        Control Panel\All Control Panel Items\Programs and Features
-            > Turn Windows features on or off
-                > Uncheck "Internet Explorer 11"
+    Control Panel\All Control Panel Items\Programs and Features
+        > Turn Windows features on or off
+            > Uncheck "Internet Explorer 11"
 
-        ## Disable Fast Startup on Windows 10
-            Control Panel\All Control Panel Items\Power Options\System Settings
-                > Change Settings That Are Currently Unavailable
-                    > Uncheck "Turn On Fast Startup"
+    ## Disable Fast Startup on Windows 10
+        Control Panel\All Control Panel Items\Power Options\System Settings
+            > Change Settings That Are Currently Unavailable
+                > Uncheck "Turn On Fast Startup"
 
-    ## Windows 7 WiFi / Network icon not working
-        > Task manager > Close the "Explorer.exe"
+## Windows 7 WiFi / Network icon not working
+    > Task manager > Close the "Explorer.exe"
 
-        > New task
-            > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
+    > New task
+        > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
 
-        > Mew task
-            > Explorer.exe
+    > Mew task
+        > Explorer.exe
 
-    ## Enable F8 (boot legacy with good options) no Windows 10
-        bcdedit /set {default} bootmenupolicy legacy
+## Enable F8 (boot legacy with good options) no Windows 10
+    bcdedit /set {default} bootmenupolicy legacy
 
-        ## Back to default - Disable F8
-            bcdedit /set {default} bootmenupolicy standard
+    ## Back to default - Disable F8
+        bcdedit /set {default} bootmenupolicy standard
 
 ##
