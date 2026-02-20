@@ -97,6 +97,9 @@
     ## Import a list of programs - Restore backup
         winget import C:\progs.json
 
+    ## Winget temporary download folder
+        %TEMP%\WinGet\
+
 ## Check Windows license and activation status
     # https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options
     # slmgr or slmgr.vbs
