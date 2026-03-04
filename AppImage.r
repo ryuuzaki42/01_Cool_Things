@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 13/11/2025
+# Last update: 04/03/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -286,7 +286,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     sudo apt install libqt5printsupport5
 
 ## Error loading libfuse.so.2 - AppImages require FUSE to run
-    ## Ubuntu - do not install fuse - break your system
+    ## Ubuntu - Do not install fuse, will break the system!
     # https://askubuntu.com/questions/1409496/how-to-safely-install-fuse-on-ubuntu-22-04
     https://github.com/AppImage/AppImageKit/wiki/FUSE
 
@@ -297,3 +297,14 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     ## Ubuntu (>= 22.04):
         sudo add-apt-repository universe
         sudo apt install libfuse2
+
+    ## Or
+    ## Extract and rebuilt the AppImage using a recent version of appimagetool
+        ./app.AppImage --appimage-extract
+
+        wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod + appimagetool-x86_64.AppImage
+
+        https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+
+        ./appimagetool-x86_64.AppImage squashfs-root/
