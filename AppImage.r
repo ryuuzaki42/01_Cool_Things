@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/03/2026
+# Last update: 15/03/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -308,3 +308,18 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
 
         ./appimagetool-x86_64.AppImage squashfs-root/
+
+## Plugin "xcb" not found - Need libxcb-cursor0
+    ## Install libxcb-cursor0
+        sudo apt install libxcb-cursor0
+
+    ## Or added inside /usr/lib/ in AppImage
+        # https://ubuntu.pkgs.org/24.04/ubuntu-universe-amd64/libxcb-cursor0_0.1.4-1build1_amd64.deb.html
+        # http://archive.ubuntu.com/ubuntu/pool/universe/x/xcb-util-cursor/libxcb-cursor0_0.1.4-1build1_amd64.deb
+
+        https://github.com/ryuuzaki42/Calibre_AppImage/blob/main/.github/workflows/build.yml
+        # Add libxcb-cursor from Ubuntu
+        cd calibre/lib/
+        wget https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
+        ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
+        pwd; ls -lah
