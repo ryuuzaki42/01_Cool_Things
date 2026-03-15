@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 16/01/2026
+# Last update: 15/03/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -44,7 +44,8 @@ max_resolution=0 #0
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
-    qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
+    #qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock # KDE only
+    loginctl lock-session
 fi
 
 if [ "$thinkpad_notebook" == 1 ]; then
