@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/01/2026
+# Last update: 15/03/2026
 #
 
 ## Process with more CPU use
@@ -3318,7 +3318,7 @@ kwrite $prog_name.info
     ## Try enable configuration to disable internal mouse when a external mouse is connected
 
 ## Check inputs mouse or keyboard - See inputs Linux
-    ##  Normal user
+    ## Normal user
         # Inside the Event Tester windows
         xev
 
@@ -3358,7 +3358,7 @@ kwrite $prog_name.info
     ## Lock
         loginctl lock-session
 
-        ## Or
+        ## Or - KDE only
             qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock
 
     ## Unlock
