@@ -397,6 +397,29 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
     1 Copy code
     2 Add code in a bookmark in the URL
 
+## Remove applications from the "Open with" or "Applications" list
+    ## Edit handlers.json
+        > about:support
+            Profile Directory > Open Directory
+
+            handlers.json
+                remove the entry for the unwanted application
+
+        ## To reset All Actions
+            rename handlers.json
+
+    ## Edit mimeinfo
+        ~/.local/share/applications/mimeinfo.cache
+        ~/.config/mimeapps.list
+
+        /usr/share/applications/mimeinfo.cache
+        /etc/xdg/mimeapps.list
+
+            > Remove unwanted references
+
+        ## Note: some associations may be managed by the desktop environment rather than Firefox
+            Edit the *.desktop from the application not unwanted and remove entry
+
 ## Firefox Special Paste
     Use the shortcut Ctrl + Shift + V
 
