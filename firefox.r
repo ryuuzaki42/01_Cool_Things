@@ -23,9 +23,10 @@ browser.ml.chat.enabled
 browser.ml.enabled
     true > false
 
-## Use tmp folder to download the files open by the browser
-browser.download.start_downloads_in_tmp_dir
-    false > true
+## Not used
+    ## Use tmp folder to download the files open by the browser
+    browser.download.start_downloads_in_tmp_dir
+        false > true
 
 ## Disable cache of 5 tabs recently seen
 browser.sessionhistory.max_total_viewer
@@ -240,8 +241,8 @@ https://addons.mozilla.org/firefox/addon/british-english-dictionary-2/
 ## Good add-ons
     ## Enabled
 https://addons.mozilla.org/firefox/addon/ublock-origin/
-    ## Ads block to Youtube
 
+    ## Ads block to YouTube
 https://addons.mozilla.org/firefox/addon/sponsorblock/
     https://sponsor.ajay.app/
 
