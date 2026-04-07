@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/03/2026
+# Last update: 07/04/2026
 #
 
 ## Process with more CPU use
@@ -1099,14 +1099,6 @@ rm $tmpFile # Delete the tmpFile
     By default maximise is Alt + F11 and minimise is Alt + F10
 
     You could set the keyboard shortcuts to the "Quick title" to move left/right etc
-
-## Firefox Special Paste
-    Use the shortcut Ctrl + Shift + V
-
-    # If you happen to have the Adblock Plus add-on installed it might have overridden it with displaying
-    # the "Blockable Items on current page" sidebar.
-    # In this case enter "about:config" in your address bar, then search for the key
-    # "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
 
 ## How can I suspend/hibernate from command line?
     ## To get Hibernation
