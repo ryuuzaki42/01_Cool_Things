@@ -3449,3 +3449,15 @@ kwrite $prog_name.info
 
 ## KDE - Rebuilds the system configuration cache from the KService .desktop files
 kbuildsycoca5
+
+## Linux default shortcuts folders
+    ~/.local/share/applications/
+
+    /usr/share/applications/
+
+## Linux default application to handle files and links
+    ~/.local/share/applications/mimeinfo.cache
+    ~/.config/mimeapps.list
+
+    /usr/share/applications/mimeinfo.cache
+    /etc/xdg/mimeapps.list
