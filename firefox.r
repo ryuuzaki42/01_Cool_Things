@@ -39,9 +39,10 @@ browser.translations.enable
 browser.urlbar.trimURLs
     true > false
 
-## URL more easy to read - Removed in new versions
-browser.urlbar.formatting.enabled
-    true > false
+## Removed in new versions
+    ## URL more easy to read
+    browser.urlbar.formatting.enabled
+        true > false
 
 ## Disable all animate
     search for animate, and set all to false
@@ -64,17 +65,19 @@ browser.send_pings
 ## Website owners can track the battery status of your device
 dom.battery.enabled
 
-## Select all URL - Removed in new versions
-browser.urlbar.clickSelectsAll
-    false > true
+## Removed in new versions
+    ## Select all URL
+    browser.urlbar.clickSelectsAll
+        false > true
 
 ## Open a search from the search bar in a new tab if you use the return key to trigger the search
 browser.search.openintab
     false > true
 
-## Increase the speed of the scroll - Removed in new versions
-mousewheel.system_scroll_override_on_root_content.enabled
-    false > true
+## Removed in new versions
+    ## Increase the speed of the scroll -
+    mousewheel.system_scroll_override_on_root_content.enabled
+        false > true
 
 ## Disable autoplay video
     about:preferences#privacy
