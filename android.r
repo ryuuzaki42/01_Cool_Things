@@ -7,12 +7,12 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/09/2025
+# Last update: 04/04/2026
 #
 
 ## Android APK
         ## MicroG - GmsCore
-            https://github.com/YT-Advanced/GmsCore/releases
+            https://github.com/ReVanced/GmsCore/releases
 
         ## ReVanced Manager
             https://revanced.app/download
@@ -29,6 +29,9 @@
         6 Remove Revanced Manager
 
         ## Old
+            https://github.com/YT-Advanced/GmsCore/releases
+
+        ## Older
             ## ReVanced Extended
                 https://revancedextended.com/
                 https://github.com/NoName-exe/revanced-extended/releases
