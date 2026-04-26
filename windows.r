@@ -267,10 +267,10 @@
             active
 
     ## Minitool Partition Wizard
-        > Select the partition > C
+        > Select the partition
             Set Active
 
-        > Change Letter
+        > Change Letter if needed
 
         > Change Partition Type ID
             > Set 0x07 NTFS
