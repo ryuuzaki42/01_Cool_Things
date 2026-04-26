@@ -60,6 +60,34 @@
         3. oobe\bypassnro
         4. Will reboot and now can create local account
 
+## Change Windows language pt-BR to en-US
+    # https://superuser.com/questions/1323863/cannot-remove-language-pack-on-windows-10-pc/1662219#1662219
+    1. Install the language pack in settings
+        Need to restart - relogin
+
+    2. PowerShell as administrator
+        Set-WinUserLanguageList en-US
+
+        List language installed
+            Get-WinUserLanguageList
+
+    3. Set default language - change the code
+        Regedit
+            HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Language
+                > 0x0416 to 0x0409
+
+        Find the language code: https://msdn.microsoft.com/en-us/library/cc233982.aspx
+            en-US - 0x0409
+            pt-BR - 0x0416
+
+        Restart
+
+    4. Remove old language
+        lpksetup /u
+
+        Remove the pt-BR language
+        Restart
+
 ## Windows general ##
 
 ## Install
