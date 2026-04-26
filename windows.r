@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 20/02/2026
+# Last update: 24/04/2026
 #
 
 ## Windows 11 ##
@@ -178,6 +178,7 @@
 
 ## Disable hibernate - powercfg or powercfg.exe
     cmd > Run as administrador
+
     powercfg /hibernate off
 
     ## Back to default - Enable hibernate
@@ -235,7 +236,7 @@
                 ## Check if was created correctly
                     System Restore... > Next
 
-## Windows don't recognize partition (NTFS) connected
+## Windows don't recognize partition NTFS connected
     cmd > Run as administrador
 
     diskpart
@@ -266,12 +267,13 @@
             active
 
     ## Minitool Partition Wizard
-        > Set Active
+        > Select the partition > C
+            Set Active
 
         > Change Letter
 
-        > Check Partition Type ID
-            > 0x07 NTFS
+        > Change Partition Type ID
+            > Set 0x07 NTFS
 
         > Explore
 
@@ -340,10 +342,6 @@
 
 ## Windows Update error 0x80070001
     Clean disck C: up to 8 GiB or more of free space and try update
-
-## Windows - Partition not recognized as NTFS after clone
-    ## MiniTool Partition Wizard
-        Select the partition > Change Partition Type ID > Set 0x07 NTFS
 
 ## Windows detects HDD as SSD - Re-enable defragmentation
     ## cmd as admin
