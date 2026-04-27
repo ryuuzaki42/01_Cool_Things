@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/03/2026
+# Last update: 27/04/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -236,7 +236,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
             NVIDIA_HANDLER=0 ./conty.sh
 
         ## Can run AppImage with need new glibc
-        ## Extract Appimage and pass the path
+        ## Extract AppImage and pass the path
             ./conty.sh /tmp/.mount_*/AppRun
 
             NVIDIA_HANDLER=0 ./conty.sh /tmp/.mount_*/AppRun
