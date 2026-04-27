@@ -325,6 +325,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         pwd; ls -lah
 
 ## Using Wine in AppImage - Stable
+    https://github.com/mmtrt/WINE_AppImage
 
     ## Remove 32 bits
         cd opt/wine-stable/lib/wine/
@@ -346,3 +347,21 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
     ## Full command
         WINEDLLOVERRIDES="mscoree=d;mshtml=d" WINEPREFIX=/dev/shm/$folder_name_RAM "$HERE"/AppRun_2 "$HERE"/Deffy.exe
+
+## Check is using default mode or using portable mode
+    # https://github.com/ryuuzaki42/Gromit-MPX_AppImage/blob/main/.github/workflows/build.yml
+
+    HERE="$(dirname "$(readlink -f "${0}")")"
+    echo "XDG_CONFIG_HOME: $XDG_CONFIG_HOME"
+    if [ "$XDG_CONFIG_HOME" != "" ]; then # If use --appimage-portable-config
+        config_path="$XDG_CONFIG_HOME/"
+    else # Default mode, use ~/.config/
+        config_path="$HOME/.config/"
+    fi
+
+    ## Check some configuration file exists, if not copy
+        if [ ! -f "$config_path/gromit-mpx.cfg" ]; then # Check if configuration file exists
+            echo "Configuration not found! - Coping default one"
+            cp "$HERE"/etc/gromit-mpx/gromit-mpx.cfg "$config_path"
+        fi
+        echo "Gromit-MPX configuration file: $config_path/gromit-mpx.cfg"
