@@ -323,3 +323,26 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         wget https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
         ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
         pwd; ls -lah
+
+## Using Wine in AppImage - Stable
+
+    ## Remove 32 bits
+        cd opt/wine-stable/lib/wine/
+        rm -r i386-windows/
+
+    ## Remove 64 bits
+        cd opt/wine-stable/lib/wine/
+        rm -r x86_64-unix/
+        rm -r x86_64-windows/
+
+    ## Disable core fonts download/instal
+        ... WINEDLLOVERRIDES="mscoree=d;mshtml=d" ...
+
+    ## Prefix in RAM - zero disk footprint
+        folder_name_RAM="Deffy_AppImage_$(date +%d_%m_%Y)"
+        mkdir -p /dev/shm/$folder_name_RAM/
+        ... WINEPREFIX=/dev/shm/$folder_name_RAM ...
+        rm -r /dev/shm/$folder_name_RAM/
+
+    ## Full command
+        WINEDLLOVERRIDES="mscoree=d;mshtml=d" WINEPREFIX=/dev/shm/$folder_name_RAM "$HERE"/AppRun_2 "$HERE"/Deffy.exe
