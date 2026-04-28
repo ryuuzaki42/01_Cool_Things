@@ -365,3 +365,27 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
             cp "$HERE"/etc/gromit-mpx/gromit-mpx.cfg "$config_path"
         fi
         echo "Gromit-MPX configuration file: $config_path/gromit-mpx.cfg"
+
+## AppImage wiht JRE inside
+    ## Using CrossMobile
+        https://github.com/crossmob/CrossMobile
+
+    ## Used in sacd_extract_AppImage
+        https://github.com/ryuuzaki42/sacd_extract_AppImage/blob/main/.github/workflows/build.yml
+
+    ## Download AppImage with JRE and extract
+        wget -q https://github.com/ryuuzaki42/sacd_extract_AppImage/releases/download/main-0001/CrossMobile-3.4.0.x86_64.AppImage
+        fileName=$(ls CrossMobile*.AppImage)
+        chmod +x "$fileName"
+        ./"$fileName" --appimage-extract
+        rm -v "$fileName"
+
+    ## Download and install/extract the new application
+        wget -q https://github.com/ryuuzaki42/sacd_extract_AppImage/releases/download/main-0002/SACDExtractGUI.zipp
+        unzip SACDExtractGUI.zip -d sacd_extract/
+
+    ## Update AppRun and prog.desktop
+        cp AppRun squashfs-root/
+
+    ## Generate the new AppImage
+        ARCH=x86_64 VERSION="${version}-${tag}_JB" ./appimagetool-x86_64.AppImage squashfs-root/
