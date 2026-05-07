@@ -427,28 +427,3 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
     # the "Blockable Items on current page" sidebar.
     # In this case enter "about:config" in your address bar, then search for the key
     # "extensions.adblockplus.sidebar_key", remove the CTRL+SHIFT+V association and restart the browser.
-
-## ------------------------------------------------------------------------- ##
-
-## LibreWolf ##
-
-## LibreWolf - wrong time zone
-    # LibreWolf shows the wrong time zone because it forces privacy.resistFingerprinting (RFP) to true,
-    # which spoofs the time to UTC to prevent tracking
-    ## Disable Resist Fingerprinting - Not Recommended for Privacy
-        about:config
-
-        privacy.resistFingerprinting.
-            true > false
-
-## LibreWolf - add google as search engine in URL bar
-    about:preferences#search
-        Go to the bottom and add search engine
-
-    ## Fill with
-        google
-            # exactly or any other, the name Google is blocked
-
-        https://www.google.com/search?q=%s
-
-    It will now appear so you can change it to the default search engine
