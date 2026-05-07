@@ -67,7 +67,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
             > Tema
                 Breeze
 
-            > Tamanho dos icones
+            > Tamanho dos ícones
                 3 x Grande
 
             > Menu
@@ -99,7 +99,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 
     > Renicie o LibreOffice
 
-## Colocar ponto (.) no lugar de virgula (,) para separar casas decimais
+## Colocar ponto (.) no lugar de vírgula (,) para separar casas decimais
     Mude o Local setting: English (UK)
     ou altere as configurações da aba do documento
     ## Para aceitar um novo padrão de linguagem, terá que reiniciar
@@ -137,7 +137,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 
             ## Or with more difficulty
                 Format > Page Style > Sheet
-                    > Scalling mode > Reduce/enlarge printout
+                    > Scaling mode > Reduce/enlarge printout
                         > e.g., 105% or 85%
 
         ## Export
@@ -152,12 +152,12 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 
     ## Copying column width
         The column width will be copied, by Ctrl-C / Ctrl-V, when select and copy a whole column
-        Copy and plast the whole column and move the data
+        Copy and paste the whole column and move the data
         The individual cells have not "Column width" property
 
 ## Impress URL não aparecendo em azul e sublinhada
-    Crie um nova apresentação com as URL, tipo refs.odp, com as referências
-    Faça o upload dela no Google Drive e depois de "editar" elas e reconhecer as URLs
+    Crie um nova apresentação com as URLs, tipo refs.odp, com as referências
+    Faça o upload dela no Google Drive e depois edite para reconhecer as URLs
     Baixe em formato odp e copie elas para apresentação desejada
 
 ## Reduzir Tamanho de apresentação odp
@@ -170,7 +170,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 
             Na imagem, Botão direito do mouse > Comprimir > Qualidade JPEG > 80 %
 
-            Ou substituir a imagem, ou editar com ferramenta exterma
+            Ou substituir a imagem, ou editar com ferramenta externa
 
 -----------------------------------------------------------------------
 
@@ -218,7 +218,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
         export MESA_LOADER_DRIVER_OVERRIDE=
 
 ## cogroo - enable
-    ## Donwload and install .oxt
+    ## Download and install .oxt
         http://cogroo.org/download/current.html
 
             oxt/cogroo-4.0.0.oxt
@@ -233,7 +233,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
             oxt/LanguageTool-stable.oxt
 
     ## Ativar
-        > Ferramentas > Opções ... > Configurações de Idioma > Configurações do servidor LanguageTools
+        > Ferramentas > Opções... > Idiomas e localidades > Servidor LanguageTools
             > Ativar o LanguageTool
 
     ## Verificar
@@ -245,7 +245,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 ## LibreOffice light theme
     ls /usr/share/themes/
 
-    > Ferramentas > Opções ... > LibreOffice > Exibir
+    > Ferramentas > Opções... > LibreOffice > Exibir
         > Tema: Breeze
 
     GTK_THEME=Canta libreoffice
