@@ -441,3 +441,14 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
         privacy.resistFingerprinting.
             true > false
 
+## LibreWolf - add google as search engine in urlbar
+    about:preferences#search
+        Go to the bottom and add search engine
+
+    ## Fill with
+        google
+            # exactly or any other, the name Google is blocked
+
+        https://www.google.com/search?q=%s
+
+    It will now appear so you can change it to the default search engine
