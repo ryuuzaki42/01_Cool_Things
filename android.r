@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/04/2026
+# Last update: 07/05/2026
 #
 
 ## Android APK
@@ -50,7 +50,7 @@
                 Photo > Settings > General
                     > Remind break > 1 h
                     > Remind bedtime > 22:00 - 06:00
-                    > Apearence > Dark theme
+                    > Appearance > Dark theme
                     > Playback in feeds > Off
                     > Location > Brazil
 
@@ -88,9 +88,9 @@
 
                 ## Video
                     Video >
-                        Remenber video quality changes > Enable
-                        Remenber Shorts quality changes > Enable
-                        Remenber playback quality changes > Enable
+                        Remember video quality changes > Enable
+                        Remember Shorts quality changes > Enable
+                        Remember playback quality changes > Enable
                         Disable HDR video > Enable
                         Custom playback speed menu > Disable
                         Default playback speed > 1.25x
@@ -187,7 +187,7 @@
 ## Deleted files still show in Google Files, also in other apps
     Stop the app
     Clear cache
-    Play Store > Google Files > unistall updates
+    Play Store > Google Files > Uninstall updates
 
 ----------------------------------------------------------------------------------------------------
 ## Android code
