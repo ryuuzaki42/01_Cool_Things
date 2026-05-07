@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 30/01/2026
+# Last update: 04/05/2026
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -104,7 +104,7 @@ rar
 webcore-fonts
 wxGTK3
 xlaserpointer
-gromit-mpx
+# gromit-mpx - AppImage
 # zotero - AppImage
 # -------------------------------------------------------------------------------------------------------
 # Bumblebee
