@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/06/2024
+# Last update: 07/05/2026
 #
 
 ## Describe how you plan to use GitHub
@@ -42,7 +42,7 @@
     git config --global user.email "your_email@example.com"
     git config --global user.name "your_email_name"
 
-## Inicar git no diretório atual
+## Iniciar git no diretório atual
     git init
 
 ## Adicionar arquivo(s) ao gerenciamento do git
@@ -54,7 +54,7 @@
 
     ## Adiciona todos os arquivos com nome file ao gerenciamento do git
         git add file.*
-        # Váriadas combinações com com ? e * podem ser usadas
+        # Variadas combinações com com ? e * podem ser usadas
         # use rm em vez de add para remover arquivo(s)
 
     ## Adiciona todos os arquivos
@@ -81,7 +81,7 @@
 ## Status geral do repositório
     git status
 
-## Histórico de commints
+## Histórico de commits
     git log
 
 ## Diferença entre o repositório git e stage area
@@ -111,7 +111,7 @@
     git push origin master
 
 ## Verificar se o repositório remoto está mais atualizado que o local
-    ## Para atualiza a lista de commits do repositório remoto
+    ## Para atualizar a lista de commits do repositório remoto
     git remote update
 
     ## Para verficar os commits
@@ -140,7 +140,7 @@
 
 ## Adicione um repositório remoto
     # git remote add origin https://github.com/ryuuzaki42/0txt.git
-    # origin is just the commum name for the link config
+    # origin is just the commom name for the link configuration
     git remote add origin link
 
 ## Clone one repository
