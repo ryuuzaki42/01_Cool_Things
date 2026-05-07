@@ -283,7 +283,7 @@ https://www.zotero.org/download/
 ## VPN2
 https://addons.mozilla.org/firefox/addon/browsec/
 
-## Muilt select for Youtube
+## Multi select for Youtube
 https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
 
     ## For all link use one script
@@ -359,7 +359,7 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
 ## Error
     ## The site at <site> has experienced a network protocol violation that cannot be repaired
-        try reload the page (Crtl + F5) and/or delete the cache in: about:preferences#privacy -> Clear Data
+        try reload the page (Ctrl + F5) and/or delete the cache in: about:preferences#privacy -> Clear Data
 
 ## Delete bookmarks that are automatically backed up
     # The existing backups are in the bookmarkbackups/ subfolder of your Firefox profile
@@ -441,7 +441,7 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
         privacy.resistFingerprinting.
             true > false
 
-## LibreWolf - add google as search engine in urlbar
+## LibreWolf - add google as search engine in URL bar
     about:preferences#search
         Go to the bottom and add search engine
 
