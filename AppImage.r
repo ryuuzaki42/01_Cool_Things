@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/04/2026
+# Last update: 07/05/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -54,7 +54,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 ## Extract .exe program
     1 Check if has one portable version
 
-    2 Rename the .exe to .rar or .zip and try extrart with ark or PeaZip*.AppImage
+    2 Rename the .exe to .rar or .zip and try extract with ark or PeaZip*.AppImage
 
     3 Install the program in the Windows and copy the install folder
 
@@ -366,7 +366,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         fi
         echo "Gromit-MPX configuration file: $config_path/gromit-mpx.cfg"
 
-## AppImage wiht JRE inside
+## AppImage with JRE inside
     ## Using CrossMobile
         https://github.com/crossmob/CrossMobile
 
