@@ -7,20 +7,8 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/10/2025
+# Last update: 07/05/2026
 #
-
-    ## Vivaldi ##
-
-## Vivaldi freeze after update - AppImage
-    ## Remove Bookmarks and restart, after can restore the Bookmarks
-    cd ~/.config/vivaldi/Default/
-
-    mv Bookmarks Bookmarks2
-
-    ## Start Vivaldi and close
-
-    mv Bookmarks2 Bookmarks
 
 -------------------------------------------------------------------------------
 
@@ -38,3 +26,19 @@
 
             Enable DNS over HTTPS using
                 > Default Protection
+
+-------------------------------------------------------------------------------
+
+    ## Vivaldi ##
+
+## Vivaldi freeze after update - AppImage
+    ## Remove Bookmarks and restart, after can restore the Bookmarks
+    cd ~/.config/vivaldi/Default/
+
+    mv Bookmarks Bookmarks2
+
+    ## Start Vivaldi and close
+
+    mv Bookmarks2 Bookmarks
+
+-------------------------------------------------------------------------------
