@@ -6,7 +6,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/10/2025
+# Last update: 07/05/2026
 #
 
 ## Windows Commands
@@ -54,7 +54,7 @@
     E:
 
 ## Pint message
-    echo mesage
+    echo message
 
     ## Disable echo
         @echo off
