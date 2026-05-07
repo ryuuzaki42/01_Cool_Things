@@ -126,7 +126,7 @@ data:text/html,<a href="tg://resolve?domain=Bold">Link</a>
             tg >
                 Use telegram_run.sh
 
-            # Obs: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
+            # Obs.: My install telegram folder is: /media/sda2/home/j/.0installed/Telegram/
             > telegram_run.sh
 #!/bin/bash
 

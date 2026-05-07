@@ -24,7 +24,7 @@ Delete lines in range that contain pattern:
 or with marks a and b:
 :'a,'b/pattern/d
 
-Substitute all lines for first occurance of pattern:
+Substitute all lines for first occurrence of pattern:
 :%s/pattern/new/
 :1,$s/pattern/new/
 
