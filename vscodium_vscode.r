@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 27/11/2024
+# Last update: 07/05/2026
 #
 
 ## VSCode - with Microsoft telemetry/tracking
@@ -21,7 +21,7 @@
 
 ## Shortcuts
     Settings: Ctrl + ,
-    Command Palette: Ctrl + Shif + P
+    Command Palette: Ctrl + Shift + P
     Run code by default file: Ctrl + F5
 
     ## Indent code
@@ -31,12 +31,12 @@
 
     Alt + Arrow UP - Move line(s) up
     Alt + Arrow Down - Move line(s) down
-    Ctrl + D: Select the next ocurrenc of word selected. Then can edit all them that are selected
+    Ctrl + D: Select the next occurrence of the word selected. Then can edit all them that are selected
     Ctrl + X: Delete line
     Ctrl + Shift + O: Go to symbol
     Ctrl + g: Go to line
     Tab: Add space/indentation to line(s)
-    Shif + Tab: Remove space/indentation to line(s)
+    Shift + Tab: Remove space/indentation to line(s)
 
     ## Duplicate line
         Windows: Shift + Alt + Down and Shift + Alt + Up
@@ -160,7 +160,7 @@
 
 ## Default file to start run
     ## Create a launch.json
-        Run and Debug (Ctrl + Shif + D)
+        Run and Debug (Ctrl + Shift + D)
             > create a launch.json file.
 
     ## In launch.json file edit the "program" to the correct file
