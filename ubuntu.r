@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 20/02/2026
+# Last update: 07/05/2026
 #
 
 ## Install
@@ -206,8 +206,8 @@
     apt install obs-studio
 
     ## NVENC error
-        Change in Scence > Settings > Output > Encoder
-        Hardware (NVENC) to Software (x264)
+        Settings > Output > Recording > Encoder
+        Hardware (NVENC) > Software (x264)
 
 ## Qbittorrent
     apt install qbittorrent
