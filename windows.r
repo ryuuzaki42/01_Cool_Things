@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 24/04/2026
+# Last update: 07/05/2026
 #
 
 ## Windows 11 ##
@@ -24,7 +24,7 @@
         reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}"
 
 ## Upgrade Windows 11 on unsupported Hardware
-    ## Donwload ISO file at Microsoft
+    ## Download ISO file at Microsoft
         https://www.microsoft.com/pt-br/software-download
 
     ## Mount the ISO file
@@ -225,13 +225,13 @@
 
             ## Disable some visual effects
                 Performance > Settings... > Visual Effects
-                    > Adjust for best performanace
+                    > Adjust for best performance
                         > Enable
 
                         > Show thumbnails instead of icons
                         > Smooth edges of screen fonts
 
-            ## Reduce size of pagefile.sys - default size o RAM
+            ## Reduce size of pagefile.sys - default size of RAM
                 Performance > Settings... > Advanced
                     Virtual Memory > Change...
                         If RAM > 4 GiB
@@ -369,7 +369,7 @@
     5 Check the box next to the entry. Click OK to start the cleanup
 
 ## Windows Update error 0x80070001
-    Clean disck C: up to 8 GiB or more of free space and try update
+    Clean disk C: up to 8 GiB or more of free space and try update
 
 ## Windows detects HDD as SSD - Re-enable defragmentation
     ## cmd as admin
@@ -465,7 +465,7 @@
     > New task
         > cmd /c del %userprofile%\AppData\Local\IconCache.db /a
 
-    > Mew task
+    > New task
         > Explorer.exe
 
 ## Enable F8 (boot legacy with good options) no Windows 10
