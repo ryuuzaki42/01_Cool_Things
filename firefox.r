@@ -432,3 +432,12 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
 ## LibreWolf ##
 
+## LibreWolf - wrong time zone
+    # LibreWolf shows the wrong time zone because it forces privacy.resistFingerprinting (RFP) to true,
+    # which spoofs the time to UTC to prevent tracking
+    ## Disable Resist Fingerprinting - Not Recommended for Privacy
+        about:config
+
+        privacy.resistFingerprinting.
+            true > false
+
