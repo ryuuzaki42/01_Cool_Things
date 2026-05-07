@@ -88,6 +88,12 @@
         After install, check it is enabled in the "Installed" tab
         To change the configuration click on gear icon
 
+## Install program in deb package
+    sudo dpkg -i package_name.deb
+
+    ## If dependencies are missing
+        sudo apt-get install -f
+
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
 ## Add user with home in another partition
