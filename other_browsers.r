@@ -27,7 +27,7 @@
             Enable DNS over HTTPS using
                 > Default Protection
 
-## LibreWolf - wrong time zone
+## Wrong time zone
     # LibreWolf shows the wrong time zone because it forces privacy.resistFingerprinting (RFP) to true,
     # which spoofs the time to UTC to prevent tracking
     ## Disable Resist Fingerprinting - Not Recommended for Privacy
@@ -36,7 +36,7 @@
         privacy.resistFingerprinting.
             true > false
 
-## LibreWolf - add google as search engine in URL bar
+## Add google as search engine in URL bar
     about:preferences#search
         Go to the bottom and add search engine
 
