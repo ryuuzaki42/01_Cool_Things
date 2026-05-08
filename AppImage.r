@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -54,7 +54,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 ## Extract .exe program
     1 Check if has one portable version
 
-    2 Rename the .exe to .rar or .zip and try extract with ark or PeaZip*.AppImage
+    2 Rename the .exe to .rar or .zip and try extract with Ark, WinRAR*.AppImage or PeaZip*.AppImage
 
     3 Install the program in the Windows and copy the install folder
 

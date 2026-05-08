@@ -7,114 +7,114 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 ## Android APK
-        ## MicroG - GmsCore
-            https://github.com/ReVanced/GmsCore/releases
+    ## MicroG - GmsCore
+        https://github.com/ReVanced/GmsCore/releases
 
-        ## ReVanced Manager
-            https://revanced.app/download
-                https://github.com/ReVanced/revanced-manager/releases
+    ## ReVanced Manager
+        https://revanced.app/download
+            https://github.com/ReVanced/revanced-manager/releases
 
-        1 Download and install MicroG - GmsCore
-        2 Download and install Revanced Manager
-            Maybe: Give The Three Permissions
-                1 Notifications, 2 Ignore Battery Optimisation, 3 Display Over Other Apps
+    1 Download and install MicroG - GmsCore
+    2 Download and install Revanced Manager
+        Maybe: Give The Three Permissions
+            1 Notifications, 2 Ignore Battery Optimisation, 3 Display Over Other Apps
 
-        3 Download the Official YouTube Apk Version Needed (From ApkMirror) and install/update
-        4 Open Revanced Manager, in Settings, select Apk Of YouTube To Patch, Select Default Patches
-        5 Hit Patch. Share APK with Patches. Install APK
-        6 Remove Revanced Manager
+    3 Download the Official YouTube Apk Version Needed (From ApkMirror) and install/update
+    4 Open Revanced Manager, in Settings, select Apk Of YouTube To Patch, Select Default Patches
+    5 Hit Patch. Share APK with Patches. Install APK
+    6 Remove Revanced Manager
 
-        ## Old
-            https://github.com/YT-Advanced/GmsCore/releases
+    ## Old
+        https://github.com/YT-Advanced/GmsCore/releases
 
-        ## Older
-            ## ReVanced Extended
-                https://revancedextended.com/
-                https://github.com/NoName-exe/revanced-extended/releases
+    ## Older
+        ## ReVanced Extended
+            https://revancedextended.com/
+            https://github.com/NoName-exe/revanced-extended/releases
 
-            ## Youtube ReVanced
-                https://t.me/revanced_extended_chat
+        ## Youtube ReVanced
+            https://t.me/revanced_extended_chat
 
-        ## Error during install?
-            Remove the older version and try again
+    ## Error during install?
+        Remove the older version and try again
 
-        ## After install
-            Check if now do not have two apps. Remove the old one
+    ## After install
+        Check if now do not have two apps. Remove the old one
 
-        ## Configuration
-            ## General
-                Photo > Settings > General
-                    > Remind break > 1 h
-                    > Remind bedtime > 22:00 - 06:00
-                    > Appearance > Dark theme
-                    > Playback in feeds > Off
-                    > Location > Brazil
+    ## Configuration
+        ## General
+            Photo > Settings > General
+                > Remind break > 1 h
+                > Remind bedtime > 22:00 - 06:00
+                > Appearance > Dark theme
+                > Playback in feeds > Off
+                > Location > Brazil
 
-                Playback > Picture-in-picture > Enable
+            Playback > Picture-in-picture > Enable
 
-                Background > Playback > Always on
+            Background > Playback > Always on
 
-            ## ReVanced
-                Photo > Settings > ReVanced
+        ## ReVanced
+            Photo > Settings > ReVanced
 
-                ## Seekbar color
-                    Seekbar > Enable Custom Seekbar color
-                        > Red
+            ## Seekbar color
+                Seekbar > Enable Custom Seekbar color
+                    > Red
 
-                ## Shorts
-                    Shorts > Disable resuming shorts player
+            ## Shorts
+                Shorts > Disable resuming shorts player
 
-                ## Dislike button
-                    Return YouTube Dislike button > Disable
+            ## Dislike button
+                Return YouTube Dislike button > Disable
 
-                ## Start page and Disable Notification button
-                    General >
-                        Change star page > Library
+            ## Start page and Disable Notification button
+                General >
+                    Change star page > Library
 
-                        Navigation button >
-                            Switch Create with Notification > Disable
+                    Navigation button >
+                        Switch Create with Notification > Disable
 
-                ## End cards and Download button
-                    Player
-                        > Action buttons > Hide Download > Enable
-                        > Hide end screen cards > Disable
-                        > Video description
-                            > Hide chapters > Disable
-                            > Hide Info card section > Disable
+            ## End cards and Download button
+                Player
+                    > Action buttons > Hide Download > Enable
+                    > Hide end screen cards > Disable
+                    > Video description
+                        > Hide chapters > Disable
+                        > Hide Info card section > Disable
 
-                ## Video
-                    Video >
-                        Remember video quality changes > Enable
-                        Remember Shorts quality changes > Enable
-                        Remember playback quality changes > Enable
-                        Disable HDR video > Enable
-                        Custom playback speed menu > Disable
-                        Default playback speed > 1.25x
+            ## Video
+                Video >
+                    Remember video quality changes > Enable
+                    Remember Shorts quality changes > Enable
+                    Remember playback quality changes > Enable
+                    Disable HDR video > Enable
+                    Custom playback speed menu > Disable
+                    Default playback speed > 1.25x
 
-                        # Disable playback speed in live stream > Disable
+                    # Disable playback speed in live stream > Disable
 
-                ## Videos play with auto-dubbed audio translations
-                    https://github.com/ReVanced/revanced-documentation/blob/main/docs/revanced-resources/troubleshooting.md
+            ## Videos play with auto-dubbed audio translations
+                https://github.com/ReVanced/revanced-documentation/blob/main/docs/revanced-resources/troubleshooting.md
 
-                    ## Change to iOS TV
-                        Settings > ReVanced > Miscellaneous > Spoof video streams
-                            Default client > iOS TV
+                ## Change to iOS TV
+                    Settings > ReVanced > Miscellaneous > Spoof video streams
+                        Default client > iOS TV
 
-                    ## Enable spoofing to iOS TV
-                        Settings > ReVanced > Video > Force original audio language
+                ## Enable spoofing to iOS TV
+                    Settings > ReVanced > Video > Force original audio language
 
-                ## ---
+            ## ---
 
-                ## Flyout menu
-                    Enable old style quality layout
-                        > Disable
+            ## Flyout menu
+                Enable old style quality layout
+                    > Disable
 
-                ## How to hide notification button
-                    > Navigation > Switching the create and notification button > Disable
+            ## How to hide notification button
+                > Navigation > Switching the create and notification button > Disable
 
 ## Mirror Android screen on PC over USB or TCP/IP
     # Allows to control the device with the keyboard and the mouse of the computer
