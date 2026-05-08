@@ -1,5 +1,8 @@
-## Good one
-    http://www.computerhope.com/unix/uvi.htm
+
+    ## vi ##
+
+## Linux vi command
+https://www.computerhope.com/unix/uvi.htm
 
 Where grep came from (RE being Regular Expression):
 :g/RE/p

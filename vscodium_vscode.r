@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 ## VSCode - with Microsoft telemetry/tracking
@@ -16,7 +16,7 @@
 ## VSCodium - without Microsoft telemetry/tracking
     https://vscodium.com/
 
-    ## Also with AppImage
+    ## Also in AppImage
         https://github.com/VSCodium/vscodium/releases
 
 ## Shortcuts
@@ -31,7 +31,8 @@
 
     Alt + Arrow UP - Move line(s) up
     Alt + Arrow Down - Move line(s) down
-    Ctrl + D: Select the next occurrence of the word selected. Then can edit all them that are selected
+    Ctrl + D: Select the next occurrence of the word selected.
+                Then can edit all them that are selected
     Ctrl + X: Delete line
     Ctrl + Shift + O: Go to symbol
     Ctrl + g: Go to line
