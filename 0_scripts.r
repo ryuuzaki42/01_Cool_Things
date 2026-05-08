@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/04/2026
+# Last update: 08/05/2026
 #
 
 ## Process with more CPU use
@@ -552,7 +552,7 @@ rm $tmpFile # Delete the tmpFile
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
     dbus-launch ../dropboxd
 
-## Clean env | limpar variaveis setadas incialmente no ambiente
+## Clean env | limpar variáveis setadas inicialmente no ambiente
     unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
 
     ## or
@@ -658,7 +658,7 @@ rm $tmpFile # Delete the tmpFile
         xclock &
 
 ## Access ssh X11 on Windows
-    ## Add in the remote server in /etc/ssh/sshd_config # To anothers OS /etc/ssh/sshd_config
+    ## Add in the remote server in /etc/ssh/sshd_config # To another OS /etc/ssh/sshd_config
         X11Forwarding yes
 
     ## Download and Install full Xming-fonts and Xming
@@ -693,7 +693,7 @@ rm $tmpFile # Delete the tmpFile
     ## Remove the file after?
         rm $TMPFILE
 
-## Searh for a file /var/log/packages/*
+## Search for a file /var/log/packages/*
     grep "/vlc$" /var/log/packages/*
 
 ## Count files in the folder
@@ -1056,7 +1056,7 @@ rm $tmpFile # Delete the tmpFile
     or simply the word "BUSIER" read backwards
 
 ## Conversão de fim de linha entre sistemas operacionais (*nix e Windows)
-    # Nos sistemas *nix, o fim de linha é assinalado pelo caracter line feed,
+    # Nos sistemas *nix, o fim de linha é assinalado pelo carácter line feed,
     # logo não existe um posicionamento na primeira coluna da próxima linha.
     # Nos sistemas Windows temos um caractere adicional no fim da linha (carriage return),
     # que precisa ser removido
@@ -1100,7 +1100,7 @@ rm $tmpFile # Delete the tmpFile
 
     You could set the keyboard shortcuts to the "Quick title" to move left/right etc
 
-## How can I suspend/hibernate from command line?
+## How can I suspend/hibernate from the command line?
     ## To get Hibernation
         su - root -c 'pm-hibernate'
 
@@ -1115,7 +1115,7 @@ rm $tmpFile # Delete the tmpFile
 
     ## Reapply master slide theme to all slides
         Set layout to slides
-        If some not applay, select the text box in te slide and go to Format > Clear Formatting
+        If some not apply, select the text box in the slide and go to Format > Clear Formatting
 
 ## VLC continue playback?
     interface> Main interfaces> QT:"Continue playback?" ask -> never
@@ -1210,7 +1210,7 @@ $ paste arq1.txt arq2.txt
 ## Screenshot de 5 em 5 segundo no terminal
     count=0; while true; do ((count++)); import -window root -display :0 screen.$count.jpg; sleep 5; done
 
-## shellscript quantidade de parâmentros
+## Shell script quantidade de parâmetros
     Quantidade de parâmetros -> $# -> echo $#
     caminho com \ , add "" -> "var"
 
@@ -1291,11 +1291,11 @@ $ paste arq1.txt arq2.txt
     ## Limitar respostas
         sysctl -w net.ipv4.icmp_echoreply_rate=10
 
-## Teste MTU size and MTU Path. Executa ping com pacote de 1500 bytes e não aceita fragmentação (- M do)
-    # Apenas root consegue definar o tamanho do ping (-s)
+## Teste MTU size e MTU Path. Executar ping com pacote de 1500 bytes e não aceitar fragmentação (- M do)
+    # Apenas root consegue definir o tamanho do ping (-s)
     ping -c 3 -s 1500 -M do google.com
 
-    # Equivalante em Windows:
+    # Equivalante no Windows
     ping -l 1500 -f google.com
 
 ## Display route - root
@@ -1380,7 +1380,7 @@ $ paste arq1.txt arq2.txt
     nano /etc/fstab
     /home/j/swapfile.img swap swap default 0 0
 
-    # Se apresener "erro" de permissões de acesso
+    # Se apresentar "erro" de permissões de acesso
     chmod 600 swapfile.img
 
     # Ver valor de swappiness atual
@@ -1487,7 +1487,7 @@ $ paste arq1.txt arq2.txt
     ## Or use Android application
         https://play.google.com/store/apps/details?id=com.risingapps.removewatermarkpdf
 
-## OWNER PASSWORD REQUIRED - Aquivo criptografado/com senha
+## PDF OWNER PASSWORD REQUIRED - PDF criptografado com senha
     # Se conseguir ler ele no leitor de pdf ele tem como senha espaço branco setado
     # qpdf --password=YOURPASSWORD-HERE --decrypt input.pdf output.pdf
     qpdf --password= --decrypt pretextual.pdf pretextual2.pdf
@@ -1603,7 +1603,7 @@ gtk-fallback-icon-theme = gnome
     # -f : diz qual que é a codificação que o arquivo está no momento (from)
     # -t : diz qual é a codificação que o arquivo deverá ficar (to)
     # -r : usada para alterar a codificação dos arquivos de dentro da pasta, recursivamente.
-    # Se você for alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
+    # Se você alterar apenas o nome da pasta ou de um arquivo, retire essa opção.
     # nome_pasta : o nome da pasta ou arquivo cuja codificação será alterada.
     # O comando anterior apenas simulará o resultado da codificação e exibirá na tela.
     # Caso esteja tudo correto, então aplique os resultados rodando o comando novamente,
@@ -1619,7 +1619,7 @@ gtk-fallback-icon-theme = gnome
     # mkisofs : é o comando que chama o programa
     # -r : permite que qualquer cliente possa ler o conteúdo do arquivo
     #    Evita problemas ao tentar ler o arquivo no Windows
-    # -J : Mais uma opção para manter compatibilidade como Windows. Ativa as extensões Joilet
+    # -J : Mais uma opção para manter compatibilidade com o Windows. Ativa as extensões Joilet
     # -o : Especifica o nome do arquivo ISO que será criado
     # -R é o protocolo para o tipo de extensão Rock Ridge, comumente usado no Linux
     # -l permite mais de 31 caracteres para o nome do arquivo, pode ser que o MS-DOS
@@ -1727,7 +1727,7 @@ fi
     scale=> quantas casas decimais.
 
     ## No bash
-    # redirecionamento de entrada inline (<<) proxima palavra delimitador (comum EOF)
+    # redirecionamento de entrada inline (<<) próxima palavra delimitador (comum EOF)
     c=`bc << EOF
     scale=2
     d=2
@@ -1892,7 +1892,7 @@ fi
     ## Para definir a senha de root/administrador dos bancos de dados
         mysqladmin -u root password <escolha uma senha>
 
-    ## Logando no MySQL com senha
+    ## Logar no MySQL com senha
         mysql -u root -p
 
     ## Logando se não definir senha para root (por padrão é em branco)
@@ -2131,11 +2131,9 @@ echo "1.0.0
     file:///mnt/sdcard/
 
 ## How to copy YouTube playlist from one account to another
-    Copy the other person's playlist to the new playlist by taking
-    the url of the other person's playlist, swapping out the www for music
-        (www.youtube.com to music.youtube.com)
-    which will give you the youtube music version of the playlist.
-    from there you can click on the three dots and there will be an option to add all to playlist.
+    Copy the other person's playlist to the new playlist by taking the url of the other person's playlist,
+    swapping out the www for music (www.youtube.com to music.youtube.com) which will give you the youtube music version of the playlist
+    From there you can click on the three dots and there will be an option to add all to the playlist
 
 ## Bell / Beep - ASCII BEL (\007)
     ## Test if the module loaded
@@ -2151,7 +2149,7 @@ echo "1.0.0
         $ echo -e "\a" > /dev/tty2
         bash: /dev/tty2: Permission denied
 
-    ## Go to the tty2 (crtl + alt + f2) and login with the current user
+    ## Go to the tty2 (Ctrl + alt + f2) and login with the current user
     ## After that you can send the beep or run as root
         echo -en "\a" > /dev/tty1
         echo -en "\a" > /dev/tty5
@@ -2388,7 +2386,7 @@ deactivate
 ## TeamViewer easy remote access
     > Login
 
-    > Contatc > Add Remote Computer
+    > Contact > Add Remote Computer
         ID, Password, Alias
 
     > Extras > Options
@@ -2516,7 +2514,7 @@ kwrite $prog_name.info
 ## Extract .exe program
     1 Check if has one portable version
 
-    2 Rename the .exe to .rar or .zip and try extrart with ark or 7-Zip
+    2 Rename the .exe to .rar or .zip and try extract with ark or 7-Zip
 
     3 Install the program in the Windows and copy the install folder
 
@@ -2766,8 +2764,8 @@ kwrite $prog_name.info
             yes 'no' | ./script.sh
 
 ## Bash variable default value
-    ## If parameter is unset or null, the expansion of word is substituted.
-    ## Otherwise, the value of parameter is substituted.
+    ## If the parameter is unset or null, the expansion of the word is substituted
+    ## Otherwise, the value of the parameter is substituted
     # ${parameter:-word}
     BUILD=${BUILD:-1}
 
@@ -2812,7 +2810,7 @@ kwrite $prog_name.info
     echo "beginpatternend" | grep -o -P '(?<=begin).*(?=end)'
 
 ## KDE launch feedback
-    System Setting > appearance > Global Theme > Launcg Feedback
+    System Setting > Appearance > Global Theme > Launch Feedback
     ## Or just search for "launch feedback”
         > Bouncing
         > Enable animation
@@ -2905,13 +2903,13 @@ kwrite $prog_name.info
         > Normal
 
     Edit
-        > Block selection Mode (Crtl + Shift + B)
+        > Block selection Mode (Ctrl + Shift + B)
             Select the lines (block) to edit
 
 ## Upload file from bash / terminal to temp server
     curl bashupload.com -T file.txt
 
-    ## Text file or ouput to temp server
+    ## Text file or output to temp server
         echo "just testing!" | nc termbin.com 9999
 
         cat file.txt | nc termbin.com 9999
@@ -3092,14 +3090,14 @@ kwrite $prog_name.info
             Pixel value will show in the windows title
 
     ## Gimp
-        In the top right conner, in the arrow to left
+        In the top right corner, in the arrow to left
             Click and go to Add Tab > Pointer
 
     ## Geeqie
         View > Pixel Info
 
     ## XnView MP
-        View > Show Colur Information
+        View > Show Color Information
 
 ## ls useful command
     ## Sorts files by size, from largest to smallest
@@ -3285,7 +3283,7 @@ kwrite $prog_name.info
         Ctrl + Alt + F2
         Ctrl + Alt + F7
 
-    ## Left click usually dies after wake up from sleep.
+    ## Left click usually dies after waking up from sleep.
         udevadm trigger
 
     ## Reload modules
@@ -3326,7 +3324,7 @@ kwrite $prog_name.info
 
 ## Scanear documento
     1 Scanear
-        ## LibeOffice Writer > Inserir > Multimídia > Digitalizar > Selecionar origem...
+        ## LibreOffice Writer > Inserir > Multimídia > Digitalizar > Selecionar origem...
 
     ## Editar no KolourPaint
         2 Girar para posição correta e cortar alguma parte preta ou que não precisa
@@ -3368,7 +3366,7 @@ kwrite $prog_name.info
     ## Error: Authentication failed. Please check your username/password
         When the username and passwd are correct
 
-        Check if "Less secure app access" is enable in the account to be added
+        Check if "Less secure app access" is enabled in the account to be added
         Enable and try again
             https://myaccount.google.com/lesssecureapps
 
