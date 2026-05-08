@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 about:config
@@ -24,7 +24,7 @@ browser.ml.enabled
     true > false
 
 ## Not used
-    ## Use tmp folder to download the files open by the browser
+    ## Use temporary folder to download the files open by the browser
     browser.download.start_downloads_in_tmp_dir
         false > true
 
@@ -283,7 +283,7 @@ https://www.zotero.org/download/
 ## VPN2
 https://addons.mozilla.org/firefox/addon/browsec/
 
-## Multi select for Youtube
+## Multi select for YouTube
 https://addons.mozilla.org/firefox/addon/multiselect-for-youtube/
 
     ## For all link use one script

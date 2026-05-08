@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 ## Describe how you plan to use GitHub
@@ -140,7 +140,7 @@
 
 ## Adicione um repositório remoto
     # git remote add origin https://github.com/ryuuzaki42/0txt.git
-    # origin is just the commom name for the link configuration
+    # origin is just the common name for the link configuration
     git remote add origin link
 
 ## Clone one repository
@@ -384,7 +384,7 @@ git rev-list --objects --all \
            | awk '{print$1}')"
 
 ## Github HTTP buffer issue
-    ## github error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
+    ## Github error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
 
     ## Check
         git config --global http.postBuffer
