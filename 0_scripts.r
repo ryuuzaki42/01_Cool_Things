@@ -20,7 +20,7 @@
 
     watch -n1 -e 'ps aux --sort -rss | head -n 11'
 
-## Print a process tree
+## Print the process tree
     pstree
 
 ## Compile C with warning and extras
