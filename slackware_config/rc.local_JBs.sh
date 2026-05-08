@@ -15,7 +15,7 @@ disable_bluetooth=1 #1
 start_thinkfan=1 #1
 
 set_keyboard=1 #1 # Load the keyboard map
-keyboard_map="br-abnt2" # Change to the desire map. More maps in: /usr/share/kbd/keymaps/
+keyboard_map="br-abnt2" # Change to the desired map. More maps in: /usr/share/kbd/keymaps/
 
 update_date=0 #0 # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
 
