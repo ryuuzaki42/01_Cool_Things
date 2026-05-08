@@ -22,7 +22,7 @@
 #
 # Script: fstrim yours partitions in a SSD
 #
-# Last update: 08/03/2026
+# Last update: 08/05/2026
 #
 # Tip: Added the script in cron, to auto run, like
 #   cp fstrim_JBs.sh /etc/cron.weekly/ # To run weekly
@@ -34,10 +34,10 @@
 
 log_file="/var/log/ssd_fstrim.log"
 
-echo "------------------------------- " | tee -a "$log_file"
+echo -e "\n-----------------------------------" | tee -a "$log_file"
 echo "Date: $(date)" | tee -a "$log_file"
 
 # Trim all mounted file systems which support it
 fstrim -v --all | tee -a "$log_file"
 
-echo | tee -a "$log_file"
+echo -e "\nlog_file: $log_file\n"
