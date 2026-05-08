@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 ## Windows 11 ##
@@ -93,9 +93,16 @@
 ## Install
     Microsoft office (Word, Excel, PowerPoint), SumatraPDF, VLC, Smplayer,
     Firefox, Revo Uninstaller, CristalDiskInfo, Master PDF Editor, Notepad++,
-    Telegram, WinRAR, HWmonitor, UCheck, AnyDesk, Winaero Tweaker,
+    Telegram, WinRAR, HWmonitor, AnyDesk, Winaero Tweaker
+
+    ## others
+        NetTraffic, OpenVPN, Teams, MyDefrag, CrystalDiskMark, Defraggler
+
+    ## Portable
+        UCheck, CtfmonRemover, MD5_and_SHA_Checksum_Utility, Simple-HTTP-Server
 
 ## Winget - Windows Package Manager - CLI to install, update and upgrade programs
+    ## Open PowerShell or CMD as Administrator to not ask for permission in upgrades
     #https://www.webhi.com/how-to/winget-windows-tutorial-guide/
 
     ## Install
