@@ -6,14 +6,14 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 08/05/2026
 #
 
 ## Windows Commands
     https://learn.microsoft.com/pt-br/windows-server/administration/windows-commands/windows-commands
 
 ## delete
-    ## Delete a file
+    ## Delete one file
         del file.txt
 
     ## Delete hidden x file

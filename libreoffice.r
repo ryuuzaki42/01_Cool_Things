@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 0o/05/2026
 #
 
 ## Error message “Unspecified Application Error” after running it
@@ -84,7 +84,7 @@ export MESA_LOADER_DRIVER_OVERRIDE=i965
 ## LibreOffice without icons
     Switch to another icon style in the Tools > Option > Libreoffice > View > Icon Menu, for example 'tango'
 
-## LibreOffice sem icones?
+## LibreOffice sem ícones?
     # https://ask.libreoffice.org/t/why-did-the-icons-disappear-in-the-menus-of-version-6-4/50875/4
     # https://forums.linuxmint.com/viewtopic.php?t=337850
 
