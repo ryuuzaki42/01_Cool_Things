@@ -7,40 +7,55 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 09/05/2026
 #
 
-## 1 Generate new initrd
-    Rebuilt initial ramdisck - /boot/initrd.gz
+## 1 Rebuilt initial ramdisck
+    # Generate new initrd - /boot/initrd.gz
 
     pkgtool
         > Setup
             > 01.mkinitrd
 
     ## Or
-        /usr/share/mkinitrd/mkinitrd_command_generator.sh -k "kernel" | bash
+        /usr/share/mkinitrd/mkinitrd_command_generator.sh -k "Kernel_Version" | bash
 
 ## 2 Update lilo
     > lilo
 
-## 3 VirtualBox
+## 3 Reboot
+
+## 4 VirtualBox
     /sbin/vboxconfig
 
-    ls -l /etc/rc.d/init.d/vbox*
+    # ls -l /etc/rc.d/init.d/vbox*
 
     chmod -x /etc/rc.d/init.d/vbox*
 
     ls /lib/modules/
 
-    rm -r /lib/modules/OLD_Version
+    rm -r /lib/modules/"OLD_Version"
 
-## 4 Nvidia-kernel pkg
-    0imp/14_Nvidia_Driver_Slackware/final_packages/
+    rm /tmp/vboxdrv-Module.symvers
+
+## 5 Nvidia-kernel package upgrade
+    https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware
+
+    14_Nvidia_Driver_Slackware/final_packages/
         # nvidia-driver-*_multilib-x86_64-1_JB.txz - not need
 
         nvidia-kernel-*_"kernel"-x86_64-1_JB.txz
 
-## Clean system
+    ## Reboot
+
+    ## Test
+        xrandr --listproviders
+            Should display a provider named NVIDIA-G0 (for “NVIDIA GPU screen 0”)
+
+        __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor"
+            Should display: "OpenGL vendor string: NVIDIA Corporation"
+
+## 6 Clean system
     ## As root
         clean_tmp_folder_JBs.sh all
 
@@ -55,7 +70,7 @@
 
 ---------------------------------------------------------------------
 
-## 5 acpi_call pkg
+## 7 acpi_call package
     # https://github.com/teleshoes/acpi_call
     # https://github.com/nix-community/acpi_call/tags
 
@@ -65,7 +80,7 @@
 
     tlp-stat -b
 
-## 6 v4l2loopback
+## 8 v4l2loopback
     OBS - Create "virtual video devices", in OBS Virtual Camera for example
     droidcam - need to work
 
