@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 04/05/2026
+# Last update: 11/05/2026
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -125,6 +125,7 @@ xf86-video-nouveau # Bumblebee and nvidia
 # Legacy driver -
 nvidia-legacy580-driver
 nvidia-legacy580-kernel
+pahole
 # -------------------------------------------------------------------------------------------------------
 # xournalpp
 # -------------------------------------------------------------------------------------------------------
