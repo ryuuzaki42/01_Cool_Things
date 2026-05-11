@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 05/07/2026
+# Last update: 11/05/2026
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
