@@ -154,11 +154,11 @@
         systemctl stop cups cups-browsed
         systemctl disable cups cups-browsed
 
-    ## Stop and disable apport and whoopsie (bugs report)
+    ## Stop and disable apport (generate crash report) and whoopsie (send crash report)
         systemctl stop apport whoopsie
         systemctl disable apport whoopsie
 
-    ## Stop and disable unattended-upgrades and anacron
+    ## Stop and disable unattended-upgrades (auto install security updates) and anacron (similar to cron)
         systemctl stop unattended-upgrades anacron
         systemctl disable unattended-upgrades anacron
 
