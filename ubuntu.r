@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 12/05/2026
 #
 
 ## Install
@@ -102,7 +102,7 @@
 ## Kwrite
     apt install kwrite
 
-## Nvida driver
+## Nvidia driver
     apt install nvidia-driver-470
 
     ## change card
@@ -118,10 +118,10 @@
         glxinfo | grep "OpenGL render"
 
     ## KDE show FPS
-        KDE > Settings > Desktop Efects > Show FPS
+        KDE > Settings > Desktop Effects > Show FPS
 
 ## Steam
-    ## download deb pkg
+    ## Download deb package
         wget https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
 
     ## Install
