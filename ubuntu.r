@@ -94,6 +94,26 @@
     ## If dependencies are missing
         sudo apt-get install -f
 
+## Run script after boot
+    1. Create script with the commands
+    2. Added permission to run, also use #!/bin/bash
+    3. Added in crontab with tag @reboot
+
+        sudo crontab -e
+
+        ## Add script path
+        @reboot /path/to/script.sh
+
+        ## crontab accept commands
+            @reboot date >> /date.txt
+
+    ## Example: /etc/init.d/rc.local not exist by default in some Ubuntu versions
+        nano /etc/init.d/rc.local
+
+        sudo crontab -e
+
+        @reboot /etc/init.d/rc.local >> /date.txt
+
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
 ## Add user with home in another partition
