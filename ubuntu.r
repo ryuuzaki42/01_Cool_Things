@@ -92,7 +92,26 @@
     sudo dpkg -i progam.deb
 
     ## If dependencies are missing
-        sudo apt-get install -f
+        sudo apt install -f
+
+## Apt remove packages not need anymore
+    sudo apt autoremove
+
+## Apt clean cache
+    sudo apt clean
+
+## Apt search
+    apt search <package_name>
+
+    apt search kmines
+
+## Apt remove package
+    apt remove <package_name>
+
+    apt remove kmines
+
+    ## After remove, also run to remove not needed
+        apt autoremove
 
 ## Run script after boot
     1. Create script with the commands
