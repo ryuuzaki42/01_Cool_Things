@@ -133,6 +133,35 @@
 
         @reboot /etc/init.d/rc.local >> /date.txt
 
+## Disable services
+    # https://linuxhint.com/disable_unnecessary_services_debian_linux/
+
+    ## List services enable
+        service --status-all
+
+        service --status-all | grep +
+
+        ## See all
+            ls /etc/init.d
+
+        ## Disable a service
+            systemctl disable <service>
+
+        ## Also has status, stop, reload, restart
+            systemctl status cups cups-browsed
+
+    ## Stop and disable cups and cups-browsed
+        systemctl stop cups cups-browsed
+        systemctl disable cups cups-browsed
+
+    ## Stop and disable apport and whoopsie (bugs report)
+        systemctl stop apport whoopsie
+        systemctl disable apport whoopsie
+
+    ## Stop and disable unattended-upgrades and anacron
+        systemctl stop unattended-upgrades anacron
+        systemctl disable unattended-upgrades anacron
+
 ------------------------------------------ Old Ubuntu ------------------------------------------
 
 ## Add user with home in another partition
@@ -189,44 +218,12 @@
     ## Remove not needed
         apt autoremove
 
-## Disable services
-    # https://linuxhint.com/disable_unnecessary_services_debian_linux/
-
-    ## List services enable
-        service --status-all
-
-        service --status-all | grep +
-
-        ## See all
-            ls /etc/init.d
-
-        ## Disable a service
-            systemctl disable <service>
-
-        ## Also has status, stop, reload, restart
-            systemctl status cups cups-browsed
-
-    ## Stop and disable cups and cups-browsed
-        systemctl stop cups cups-browsed
-        systemctl disable cups cups-browsed
-
-    ## Stop and disable apport and whoopsie (bugs report)
-        systemctl stop apport whoopsie
-        systemctl disable apport whoopsie
-
-    ## Stop and disable unattended-upgrades and anacron
-        systemctl stop unattended-upgrades anacron
-        systemctl disable unattended-upgrades anacron
-
 ## Veracrypt install deb
     https://www.veracrypt.fr/en/Downloads.html
 
     dpkg -i veracrypt-1.24-Update7-Ubuntu-21.04-amd64.deb
 
     apt --fix-broken install
-
-## Remove not needed packages
-    apt autoremove
 
 ## Dolphin root
     pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY KDE_SESSION_VERSION=5 KDE_FULL_SESSION=true dolphin
