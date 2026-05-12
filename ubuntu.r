@@ -89,7 +89,7 @@
         To change the configuration click on gear icon
 
 ## Install program in deb package
-    sudo dpkg -i package_name.deb
+    sudo dpkg -i progam.deb
 
     ## If dependencies are missing
         sudo apt-get install -f
@@ -160,8 +160,6 @@
 
 ## Remove games
     ## Search
-        apt search <package_name>
-
         apt search kmines
 
     ## Remove
