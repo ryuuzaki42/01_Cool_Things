@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 14/05/2026
 #
 
 about:config
@@ -367,7 +367,10 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
     about:support
         > Profile Directory
 
+            # Windows
             C:\Users\*\AppData\Roaming\Mozilla\Firefox\Profiles\*.default-release\
+
+            # Linux
             ~/.mozilla/firefox/*.default-default/
 
         bookmarkbackups/
