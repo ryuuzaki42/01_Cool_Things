@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/05/2026
+# Last update: 15/05/2026
 #
 
 ## 1 Rebuilt initial ramdisck
@@ -46,16 +46,16 @@
 
         nvidia-kernel-*_"kernel"-x86_64-1_JB.txz
 
-    ## Reboot
+## 6 Reboot
 
-    ## Test
+## 7 Test Nvidia driver
         xrandr --listproviders
             Should display a provider named NVIDIA-G0 (for “NVIDIA GPU screen 0”)
 
         __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor"
             Should display: "OpenGL vendor string: NVIDIA Corporation"
 
-## 6 Clean system
+## 8 Clean system
     ## As root
         clean_tmp_folder_JBs.sh all
 
@@ -70,7 +70,7 @@
 
 ---------------------------------------------------------------------
 
-## 7 acpi_call package
+## 9 acpi_call package
     # https://github.com/teleshoes/acpi_call
     # https://github.com/nix-community/acpi_call/tags
 
@@ -80,7 +80,7 @@
 
     tlp-stat -b
 
-## 8 v4l2loopback
+## 10 v4l2loopback
     OBS - Create "virtual video devices", in OBS Virtual Camera for example
     droidcam - need to work
 
