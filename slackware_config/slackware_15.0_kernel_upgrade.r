@@ -10,9 +10,10 @@
 # Last update: 15/05/2026
 #
 
-## 1 Rebuilt initial ramdisck
-    # Generate new initrd - /boot/initrd.gz
+## 0 Upgrade the kernel
+    ## With slackpkg or local files with upgradepkg
 
+## 1 Generate new initial RAM disk - /boot/initrd.gz
     pkgtool
         > Setup
             > 01.mkinitrd
@@ -42,9 +43,9 @@
     https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware
 
     14_Nvidia_Driver_Slackware/final_packages/
-        # nvidia-driver-*_multilib-x86_64-1_JB.txz - not need
+        # nvidia-*driver-*_multilib-x86_64-1_JB.txz - Not need
 
-        nvidia-kernel-*_"kernel"-x86_64-1_JB.txz
+        upgradepkg nvidia-*kernel-*-x86_64-1_JB.txz
 
 ## 6 Reboot
 
