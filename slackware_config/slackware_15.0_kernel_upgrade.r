@@ -21,8 +21,12 @@
     ## Or
         /usr/share/mkinitrd/mkinitrd_command_generator.sh -k "Kernel_Version" | bash
 
-## 2 Update lilo
-    > lilo
+## 2 Update bootloader
+    ## Lilo
+        > lilo
+
+    ## Or Grub
+        > grub-mkconfig -o /boot/grub/grub.cfg
 
 ## 3 Reboot
 
@@ -50,11 +54,11 @@
 ## 6 Reboot
 
 ## 7 Test Nvidia driver
-        xrandr --listproviders
-            Should display a provider named NVIDIA-G0 (for “NVIDIA GPU screen 0”)
+    xrandr --listproviders
+        Should display a provider named NVIDIA-G0 (for “NVIDIA GPU screen 0”)
 
-        __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor"
-            Should display: "OpenGL vendor string: NVIDIA Corporation"
+    __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor"
+        Should display: "OpenGL vendor string: NVIDIA Corporation"
 
 ## 8 Clean system
     ## As root
@@ -63,10 +67,10 @@
     ## As normal user
         clean_tmp_folder_JBs.sh all
 
-    ## Remove old packages logs
+    ## As root - Remove old packages logs
         rm_old_logs_JBs.sh
 
-    ## Trim SSD
+    ## As root - Trim SSD
         /etc/cron.weekly/fstrim_JBs.sh
 
 ---------------------------------------------------------------------
