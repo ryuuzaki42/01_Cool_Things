@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 14/05/2026
+# Last update: 21/05/2026
 #
 
 about:config
@@ -380,6 +380,19 @@ https://addons.mozilla.org/firefox/addon/blank-your-monitor-easy-readin/
 
             browser.bookmarks.max_backups
                 15 > 5
+
+## Clean only search history
+    cd ~/.mozilla/firefox/*.default-default/
+
+    ## Delete formhistory.sqlite
+        rm formhistory.sqlite
+
+    ## Open sqlite file
+        sqlite3 formhistory.sqlite
+
+        .tables
+
+        select * from moz_formhistory;
 
 ## Search shortcut
     about:preferences#search
