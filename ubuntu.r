@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 12/05/2026
+# Last update: 22/05/2026
 #
 
 ## Install
@@ -22,8 +22,9 @@
     ## Edit and added XDG_DESKTOP_DIR="$HOME/Desktop"
         nano ~/.config/user-dirs.dirs
 
-## Gnome - sort applications menu into Alphabetical order
+## Gnome - sort applications menu into alphabetical order
     gsettings set org.gnome.shell app-picker-layout "[]"
+
     ## Restart
 
 ## Gnome - Rebuilds the system configuration cache from the KService .desktop files
