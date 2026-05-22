@@ -16,7 +16,10 @@
     sudo apt install gparted
 
     ## Deb package
-        Anydesk
+        Anydesk - https://anydesk.com/downloads/linux
+
+## Anydesk not currently works with Wayland - need X11
+    Before login, in the gear icon, change Session, from Ubuntu to Ubuntu on Xorg
 
 ## Ubuntu set the desktop to $HOME/Desktop
     ## Edit and added XDG_DESKTOP_DIR="$HOME/Desktop"
