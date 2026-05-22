@@ -173,6 +173,21 @@
     IPCONFIG /REGISTERDNS
     IPCONFIG /RENEW
 
+## Crack Windows password - Reset password
+    1. Restart the computer in safe mode, by holding shift key and reboot
+    2. Troubleshoot > Advanced options > Command Prompt
+    3. Open notepad, in Open file, navigate to system32/
+    4. Rename sethc to sethc_bc - a backup copy
+    5. Create a copy of cmd with name sethc
+    6. Restart
+    7. At login, press shift key five times (sticky kes) to opens cmd
+    8. Change user password with net user <User_name> <New_Password>
+    9. Make 1 to 5 again and restore sethc
+
+    - Other option is use Utilman.exe instead sethc, and at login click in accessibility menu
+    - To change password instead net user, can use: control userpasswords2
+        - or: netplwiz
+
 ## Disable Windows Update and others with winaero-tweaker
     # https://winaero.com/winaero-tweaker/#download
     > Use a old config "Winaero Tweaker_*.ini"
