@@ -41,6 +41,13 @@
     # Change <user> to the username
     sudo passwd <user>
 
+## Install printer
+    ## Like Ubuntu 22
+        apt install system-config-printer
+
+    ## With CUPS
+        http://localhost:631/
+
 ## Install dolphin
     apt install dolphin
     apt install konsole
