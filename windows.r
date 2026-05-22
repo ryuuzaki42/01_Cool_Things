@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 22/05/2026
 #
 
 ## Windows 11 ##
@@ -225,51 +225,55 @@
 ## Changes in Advanced system settings
     File Explorer > This PC > Properties > Advanced system settings
 
-    %windir%\system32\SystemPropertiesAdvanced.exe
+    # Or
+        Windows key + Pause Break
 
-        ## Advanced
-            %windir%\system32\SystemPropertiesPerformance.exe
+    # Or
+        %windir%\system32\SystemPropertiesAdvanced.exe
 
-            ## Disable some visual effects
-                Performance > Settings... > Visual Effects
-                    > Adjust for best performance
-                        > Enable
+    ## Advanced
+        %windir%\system32\SystemPropertiesPerformance.exe
 
-                        > Show thumbnails instead of icons
-                        > Smooth edges of screen fonts
+        ## Disable some visual effects
+            Performance > Settings... > Visual Effects
+                > Adjust for best performance
+                    > Enable
 
-            ## Reduce size of pagefile.sys - default size of RAM
-                Performance > Settings... > Advanced
-                    Virtual Memory > Change...
-                        If RAM > 4 GiB
-                            x - Automatically manage
-                            > Custom size
-                                Initial: 1024
-                                Maximum: 2048
-                        D: None
+                    > Show thumbnails instead of icons
+                    > Smooth edges of screen fonts
 
-        ## Remote
-            %windir%\system32\SystemPropertiesRemote.exe
+        ## Reduce size of pagefile.sys - default size of RAM
+            Performance > Settings... > Advanced
+                Virtual Memory > Change...
+                    If RAM > 4 GiB
+                        x - Automatically manage
+                        > Custom size
+                            Initial: 1024
+                            Maximum: 2048
+                    D: None
 
-            ## Disable Remote Assistance
-                Remote Assistance
-                    Disable "Allow Remote Assistance..."
+    ## Remote
+        %windir%\system32\SystemPropertiesRemote.exe
 
-        ## System Protection
-            %windir%\system32\SystemPropertiesProtection.exe
+        ## Disable Remote Assistance
+            Remote Assistance
+                Disable "Allow Remote Assistance..."
 
-            ## Create one System Protection - Restore point
-                ## Enable in C:
-                    Configure > Max Usage > 5%
+    ## System Protection
+        %windir%\system32\SystemPropertiesProtection.exe
 
-                ## Create one manual
-                    > Create... > Name "a1" > Create
+        ## Create one System Protection - Restore point
+            ## Enable in C:
+                Configure > Max Usage > 5%
 
-                ## Off in the others partitions
-                    D: > Configure > Disable system protection
+            ## Create one manual
+                > Create... > Name "a1" > Create
 
-                ## Check if was created correctly
-                    System Restore... > Next
+            ## Off in the others partitions
+                D: > Configure > Disable system protection
+
+            ## Check if was created correctly
+                System Restore... > Next
 
 ## Windows don't recognize partition NTFS connected
     cmd > Run as administrador
