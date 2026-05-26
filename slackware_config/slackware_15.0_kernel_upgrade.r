@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/05/2026
+# Last update: 28/05/2026
 #
 
 ## 0 Upgrade the kernel
@@ -37,7 +37,7 @@
 
     chmod -x /etc/rc.d/init.d/vbox*
 
-    ls /lib/modules/
+    # ls /lib/modules/
 
     rm -r /lib/modules/"OLD_Version"
 
