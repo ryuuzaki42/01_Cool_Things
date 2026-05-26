@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 15/03/2026
+# Last update: 28/05/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -38,9 +38,9 @@ volume_max=0 #0 Set volume to maximum
 
 change_resolution=1 #1 Change the resolution
 max_resolution=0 #0
-# 0 - Set both video outputs to mirror, 1024x768
-# 1 - Set the video output 2 to maximum resolution. Obs.: Do not change the video output 1
-# 2 - Set both video output to maximum resolution
+# 0 - Set both video outputs to mirror, with resolution 1024x768
+# 1 - Set the video output 2 to maximum resolution. Obs.: Turnoff the video output 1
+# 2 - Set both video outputs to mirror, with same maximum resolution
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -88,7 +88,7 @@ if [ "$change_resolution" == 1 ]; then
         elif [ "$max_resolution" == 1 ]; then
             echo -e "\n # Set the video output 2 to maximum resolution #\n"
             /usr/bin/monitor_change_resolution_JBs.sh 2 0 y #1
-        elif [ "$max_resolution" == 1 ]; then
+        elif [ "$max_resolution" == 2 ]; then
             echo -e "\n # Set both video outputs to maximum resolution #\n"
             /usr/bin/monitor_change_resolution_JBs.sh 3 0 y #1
         fi
