@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 28/05/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -266,7 +266,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
             ./prog-junest.sh
 
-##  Run AppImage locally
+## Run AppImage locally
     https://github.com/ryuuzaki42/02_Scripts_Linux/blob/main/run_AppImage_JBs.sh
 
     wget https://raw.githubusercontent.com/ryuuzaki42/02_Scripts_Linux/main/run_AppImage_JBs.sh
@@ -287,31 +287,31 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
 ## Error loading libfuse.so.2 - AppImages require FUSE to run
     ## Ubuntu - Do not install fuse, will break the system!
-    # https://askubuntu.com/questions/1409496/how-to-safely-install-fuse-on-ubuntu-22-04
-    https://github.com/AppImage/AppImageKit/wiki/FUSE
+        # https://askubuntu.com/questions/1409496/how-to-safely-install-fuse-on-ubuntu-22-04
+        https://github.com/AppImage/AppImageKit/wiki/FUSE
 
-    ## Debian (>= 13) and Ubuntu (>= 24.04):
-        sudo add-apt-repository universe
-        sudo apt install libfuse2t64
+        ## Debian (>= 13) and Ubuntu (>= 24.04):
+            sudo add-apt-repository universe
+            sudo apt install libfuse2t64
 
-    ## Ubuntu (>= 22.04):
-        sudo add-apt-repository universe
-        sudo apt install libfuse2
+        ## Ubuntu (>= 22.04):
+            sudo add-apt-repository universe
+            sudo apt install libfuse2
 
     ## Or
     ## Extract and rebuilt the AppImage using a recent version of appimagetool
         ./app.AppImage --appimage-extract
 
         wget https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
-        chmod + appimagetool-x86_64.AppImage
-
-        https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+        chmod +x appimagetool-x86_64.AppImage
 
         ./appimagetool-x86_64.AppImage squashfs-root/
 
+        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage squashfs-root/
+
 ## Plugin "xcb" not found - Need libxcb-cursor0
-    ## Install libxcb-cursor0
-        sudo apt install libxcb-cursor0
+    ## Install libxcb-cursor0 or libxcb-cursor-dev
+        sudo apt install libxcb-cursor-dev
 
     ## Or added inside /usr/lib/ in AppImage
         # https://ubuntu.pkgs.org/24.04/ubuntu-universe-amd64/libxcb-cursor0_0.1.4-1build1_amd64.deb.html
