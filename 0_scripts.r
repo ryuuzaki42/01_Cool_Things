@@ -3464,3 +3464,14 @@ kbuildsycoca5
     lspci | grep -i wireless
 
     lspci -q | grep -i wireless
+
+## Linux Wireless Network Realtek RTL8852BE kernel driver
+    https://github.com/HRex39/rtl8852be
+
+    # Turn off your Security Boot in BIOS
+
+    git clone https://github.com/HRex39/rtl8852be.git
+    cd rtl8852be
+    make -j8
+    make install
+    modprobe 8852be
