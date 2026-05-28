@@ -2518,26 +2518,6 @@ kwrite $prog_name.info
 
     3 Install the program in the Windows and copy the install folder
 
-## AppImage
-    ## Extract AppImage
-        ./Prog.AppImage --appimage-extract
-
-        ./WinRar_5.01.AppImage --appimage-extract
-
-    ## File name is defined in:
-        squashfs-root/Prog.desktop
-
-        squashfs-root/WinRAR.desktop
-            Name=winrar-6.11
-
-    ## Create AppImage with ARCH=x86_64
-        # https://github.com/AppImage/AppImageKit/releases/latest
-
-        ./appimagetool-x86_64.AppImage --version
-        appimagetool, continuous build (commit 8bbf694), build <local dev build> built on 2020-12-31 11:48:33 UTC
-
-        ARCH=x86_64 ./appimagetool-x86_64.AppImage squashfs-root/
-
 ## Send message to all terminals / tty
     wall "The system will be restarted in 10 minutes"
 
