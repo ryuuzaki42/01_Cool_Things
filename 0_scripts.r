@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 28/05/2026
 #
 
 ## Process with more CPU use
@@ -3459,3 +3459,8 @@ kbuildsycoca5
 
     /usr/share/applications/mimeinfo.cache
     /etc/xdg/mimeapps.list
+
+## Linux list Wi-Fi card
+    lspci | grep -i wireless
+
+    lspci -q | grep -i wireless
