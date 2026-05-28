@@ -2090,8 +2090,11 @@ echo "1.0.0
         ## Chrooting
             chroot /mnt /bin/bash
 
-        ## Now run liloconfig and follow the prompts
-            liloconfig
+        ## Now update bootloader
+            ## Lilo
+                lilo
+            ## Or rebuilt lilo configuration
+                liloconfig
 
 ## ssr - simplescreenrecorder not recording correctly
     ## The recording occasionally flickers, showing parts of the desktop background instead of windows
