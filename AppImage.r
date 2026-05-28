@@ -313,14 +313,15 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
     ## Install libxcb-cursor0 or libxcb-cursor-dev
         sudo apt install libxcb-cursor-dev
 
-    ## Or added inside /usr/lib/ in AppImage
+    ## Or added inside the AppImage
         # https://ubuntu.pkgs.org/24.04/ubuntu-universe-amd64/libxcb-cursor0_0.1.4-1build1_amd64.deb.html
         # http://archive.ubuntu.com/ubuntu/pool/universe/x/xcb-util-cursor/libxcb-cursor0_0.1.4-1build1_amd64.deb
 
         https://github.com/ryuuzaki42/Calibre_AppImage/blob/main/.github/workflows/build.yml
-        # Add libxcb-cursor from Ubuntu
+
+        ## Add libxcb-cursor from Ubuntu
         cd calibre/lib/
-        wget https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
+        wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
         ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
         pwd; ls -lah
 
