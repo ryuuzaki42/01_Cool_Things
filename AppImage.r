@@ -319,14 +319,6 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
         https://github.com/ryuuzaki42/Calibre_AppImage/blob/main/.github/workflows/build.yml
 
-        ## Add libxcb-cursor from Ubuntu
-        cd calibre/
-        mkdir libxcb-cursor/; cd libxcb-cursor/
-        wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
-        ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
-        pwd; ls -lah
-        cd ../../
-
         ## May need to export library path in AppRun
             https://github.com/ryuuzaki42/Maestral_AppImage/blob/main/.github/workflows/build.yml
             https://github.com/ryuuzaki42/Syncplay_AppImage/blob/main/.github/workflows/build.yml
