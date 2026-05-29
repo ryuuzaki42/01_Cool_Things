@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 22/05/2026
+# Last update: 29/05/2026
 #
 
 ## Windows 11 ##
@@ -499,5 +499,31 @@
 
     ## Back to default - Disable F8
         bcdedit /set {default} bootmenupolicy standard
+
+## Disable or lock all taskbar settings in Windows 10
+    regedit
+
+    [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+
+    ## Create the new key if not exist
+        Select New > DWORD (32-bit)
+        Value > 1 to enable, 0 to disable
+        Name > "key_name"
+
+        In especial the "TaskbarLockAll"
+
+        After some change restart the Explorer Process in Task Manager for the results to take effect
+
+        "NoThemesTab"=dword:00000001
+        "LockTaskbar"=dword:00000001
+        "TaskbarLockAll"=dword:00000001
+        "DisableContextMenusInStart"=dword:00000001
+        "EnableLegacyBalloonNotifications"=dword:00000000
+        "NoSetTaskbar"=dword:00000001
+        "TaskbarNoRedock"=dword:00000001
+        "NoChangeStartMenu"=dword:00000001
+        "TaskbarNoResize"=dword:00000001
+        "TaskbarNoDragToolbar"=dword:00000001
+        "NoPinningToTaskbar"=dword:00000001
 
 ##
