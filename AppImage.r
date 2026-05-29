@@ -320,21 +320,21 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         https://github.com/ryuuzaki42/Calibre_AppImage/blob/main/.github/workflows/build.yml
 
         ## May need to export library path in AppRun
-            https://github.com/ryuuzaki42/Maestral_AppImage/blob/main/.github/workflows/build.yml
-            https://github.com/ryuuzaki42/Syncplay_AppImage/blob/main/.github/workflows/build.yml
+        https://github.com/ryuuzaki42/Maestral_AppImage/blob/main/.github/workflows/build.yml
+        https://github.com/ryuuzaki42/Syncplay_AppImage/blob/main/.github/workflows/build.yml
 
-            ## Add libxcb-cursor from Ubuntu
-            cd usr/
-            mkdir libxcb-cursor/; cd libxcb-cursor/
-            wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
-            ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
-            pwd; ls -lah
-            cd ../../
+        ## Add libxcb-cursor from Ubuntu
+        cd usr/
+        mkdir libxcb-cursor/; cd libxcb-cursor/
+        wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
+        ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
+        pwd; ls -lah
+        cd ../../
 
-            ## AppRun
-            if [ ! -f /usr/lib/x86_64-linux-gnu/libxcb-cursor.so.0 ] && [ ! -f /usr/lib64/libxcb-cursor.so.0 ]; then # Check if has libxcb-cursor
-                export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HERE/usr/libxcb-cursor/
-            fi
+        ## AppRun
+        if [ ! -f /usr/lib/x86_64-linux-gnu/libxcb-cursor.so.0 ] && [ ! -f /usr/lib64/libxcb-cursor.so.0 ]; then # Check if has libxcb-cursor
+            export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HERE/usr/libxcb-cursor/
+        fi
 
 ## Using Wine in AppImage - Stable
     https://github.com/mmtrt/WINE_AppImage
