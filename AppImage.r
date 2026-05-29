@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/05/2026
+# Last update: 29/05/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -320,10 +320,12 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         https://github.com/ryuuzaki42/Calibre_AppImage/blob/main/.github/workflows/build.yml
 
         ## Add libxcb-cursor from Ubuntu
-        cd calibre/lib/
+        cd calibre/
+        mkdir libxcb-cursor/; cd libxcb-cursor/
         wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
         ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
         pwd; ls -lah
+        cd ../../
 
         ## May need to export library path in AppRun
             https://github.com/ryuuzaki42/Maestral_AppImage/blob/main/.github/workflows/build.yml
@@ -334,8 +336,8 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
             mkdir libxcb-cursor/; cd libxcb-cursor/
             wget -q https://github.com/ryuuzaki42/Calibre_AppImage/releases/download/main-00000000/libxcb-cursor.so.0.0.0
             ln -s libxcb-cursor.so.0.0.0 libxcb-cursor.so.0
-            cd ../../
             pwd; ls -lah
+            cd ../../
 
             ## AppRun
             if [ ! -f /usr/lib/x86_64-linux-gnu/libxcb-cursor.so.0 ] && [ ! -f /usr/lib64/libxcb-cursor.so.0 ]; then # Check if has libxcb-cursor
