@@ -75,6 +75,18 @@
 
 ---------------------------------------------------------------------
 
+## Upgrade Wi-Fi kernel driver
+    Linux Wireless Network Realtek RTL8852BE kernel driver
+    https://github.com/HRex39/rtl8852be
+
+    # Turn off your Security Boot in BIOS
+
+    git clone https://github.com/HRex39/rtl8852be.git
+    cd rtl8852be
+    make -j8
+    make install
+    modprobe 8852be
+
 ## acpi_call package
     # https://github.com/teleshoes/acpi_call
     # https://github.com/nix-community/acpi_call/tags
