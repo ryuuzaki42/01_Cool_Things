@@ -7,13 +7,13 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/05/2026
+# Last update: 08/06/2026
 #
 
-## 0 Upgrade the kernel
+## Upgrade the kernel
     ## With slackpkg or local files with upgradepkg
 
-## 1 Generate new initial RAM disk - /boot/initrd.gz
+## Generate new initial RAM disk - /boot/initrd.gz
     pkgtool
         > Setup
             > 01.mkinitrd
@@ -21,16 +21,16 @@
     ## Or
         /usr/share/mkinitrd/mkinitrd_command_generator.sh -k "Kernel_Version" | bash
 
-## 2 Update bootloader
+## Update bootloader
     ## Lilo
         > lilo
 
     ## Or Grub
         > grub-mkconfig -o /boot/grub/grub.cfg
 
-## 3 Reboot
+## Reboot
 
-## 4 VirtualBox
+## VirtualBox
     /sbin/vboxconfig
 
     # ls -l /etc/rc.d/init.d/vbox*
@@ -43,7 +43,7 @@
 
     rm /tmp/vboxdrv-Module.symvers
 
-## 5 Nvidia-kernel package upgrade
+## Nvidia-kernel package upgrade
     https://github.com/ryuuzaki42/14_Nvidia_Driver_Slackware
 
     14_Nvidia_Driver_Slackware/final_packages/
@@ -51,16 +51,16 @@
 
         upgradepkg nvidia-*kernel-*-x86_64-1_JB.txz
 
-## 6 Reboot
+## Reboot
 
-## 7 Test Nvidia driver
+## Test Nvidia driver
     xrandr --listproviders
         Should display a provider named NVIDIA-G0 (for “NVIDIA GPU screen 0”)
 
     __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor"
         Should display: "OpenGL vendor string: NVIDIA Corporation"
 
-## 8 Clean system
+## Clean system
     ## As root
         clean_tmp_folder_JBs.sh all
 
@@ -75,7 +75,7 @@
 
 ---------------------------------------------------------------------
 
-## 9 acpi_call package
+## acpi_call package
     # https://github.com/teleshoes/acpi_call
     # https://github.com/nix-community/acpi_call/tags
 
@@ -85,7 +85,7 @@
 
     tlp-stat -b
 
-## 10 v4l2loopback
+## v4l2loopback
     OBS - Create "virtual video devices", in OBS Virtual Camera for example
     droidcam - need to work
 
