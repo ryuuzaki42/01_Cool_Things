@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 29/05/2026
+# Last update: 09/06/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -319,7 +319,12 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
         ./appimagetool-x86_64.AppImage squashfs-root/
 
-        ARCH=x86_64 VERSION="${version}-1_JB" ./appimagetool-x86_64.AppImage squashfs-root/
+        ## Using appimagetool in GO - https://github.com/probonopd/go-appimage/releases
+        https://github.com/ryuuzaki42/Wireshark_AppImage/blob/main/.github/workflows/build.yml
+        https://github.com/ryuuzaki42/MasterPDFEditor_AppImage/blob/main/.github/workflows/build.yml
+
+        tag=1 #1
+        ARCH=x86_64 VERSION="${version}-${tag}_JB" ./appimagetool-x86_64.AppImage squashfs-root/
 
 ## Plugin "xcb" not found - Need libxcb-cursor0
     ## Install libxcb-cursor0 or libxcb-cursor-dev
