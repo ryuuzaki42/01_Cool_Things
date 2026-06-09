@@ -43,7 +43,8 @@ max_resolution=0 #0
 # 2 - Set both video outputs to mirror, with same maximum resolution
 
 anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it, check again in 5 minutes
-anydesk_path_program=/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh #anydesk
+# Default AnyDesk command: anydesk --tray # The --tray is to start minimized on system tray
+anydesk_path_program=/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh --tray
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
