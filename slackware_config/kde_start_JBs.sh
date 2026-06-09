@@ -42,9 +42,9 @@ max_resolution=0 #0
 # 1 - Set the video output 2 to maximum resolution. Obs.: Turnoff the video output 1
 # 2 - Set both video outputs to mirror, with same maximum resolution
 
-anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it, check again in 5 minutes
-# Default AnyDesk command: anydesk --tray # The --tray is to start minimized on system tray
-anydesk_path_program=/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh --tray
+anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it. Will check again in 5 minutes
+# Change to command that start AnyDesk # Default is: anydesk --tray # --tray to start minimized on system tray
+anydesk_path_program="/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh --tray"
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
