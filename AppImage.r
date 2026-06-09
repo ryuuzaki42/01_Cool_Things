@@ -241,6 +241,18 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
 
             NVIDIA_HANDLER=0 ./conty.sh /tmp/.mount_*/AppRun
 
+    ## 2.1 Create a AppImage with conty
+        https://github.com/ryuuzaki42/FFsubsync_AppImage/blob/main/.github/workflows/build.yml
+        https://github.com/ryuuzaki42/Syncplay_AppImage/blob/main/.github/workflows/build.yml
+
+        wget -q https://github.com/ryuuzaki42/Python_to_make_AppImage/releases/download/07/conty.sh
+        chmod +x conty.sh
+        pwd; ls -lah
+
+        ../../../../conty.sh ldd --version
+
+        ../../../../conty.sh ./pip3.* install ffsubsync
+
     ## 3. Create the AppImage using ArchImage
         Example: https://github.com/ryuuzaki42/AppImage_Full_ArchImage
 
