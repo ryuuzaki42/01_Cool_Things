@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 28/05/2026
+# Last update: 09/06/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -41,6 +41,9 @@ max_resolution=0 #0
 # 0 - Set both video outputs to mirror, with resolution 1024x768
 # 1 - Set the video output 2 to maximum resolution. Obs.: Turnoff the video output 1
 # 2 - Set both video outputs to mirror, with same maximum resolution
+
+anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it, check again in 5 minutes
+anydesk_path_program=/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh #anydesk
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -96,4 +99,15 @@ if [ "$change_resolution" == 1 ]; then
         echo -e "\n # Set the video output 1 to maximum resolution #\n"
         /usr/bin/monitor_change_resolution_JBs.sh 1 0 y #1
     fi
+fi
+
+if [ "$anydesk_check_running" == 1 ]; then
+    echo -e "\n # Check if AnyDesk is running #\n"
+    while true; do
+        anydesk_is_running=$(pgrep anydesk) # Test if is running
+        if [ "$anydesk_is_running" == '' ]; then
+            bash $anydesk_path_program
+        fi
+        sleep 5m
+    done
 fi
