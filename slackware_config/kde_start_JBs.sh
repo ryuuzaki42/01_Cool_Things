@@ -22,7 +22,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 09/06/2026
+# Last update: 12/06/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -42,9 +42,10 @@ max_resolution=0 #0
 # 1 - Set the video output 2 to maximum resolution. Obs.: Turnoff the video output 1
 # 2 - Set both video outputs to mirror, with same maximum resolution
 
-anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it. Will check again in 5 minutes
+anydesk_check_running=1 #0 Check if AnyDesk is running, if not, start it
 # Change to command that start AnyDesk # Default is: anydesk --tray # --tray to start minimized on system tray
 anydesk_path_program="/media/sda2/git_clone/04_AppImage_Shortcut_Desktop/AnyDesk/AnyDesk_run.sh --tray"
+anydesk_check_time="5m" #5m Time to check again if AnyDesk is running
 
 if [ "$lock_screen" == 1 ]; then
     echo -e "\n# Locking screen #"
@@ -109,6 +110,6 @@ if [ "$anydesk_check_running" == 1 ]; then
         if [ "$anydesk_is_running" == '' ]; then
             bash $anydesk_path_program
         fi
-        sleep 5m
+        sleep $anydesk_check_time
     done
 fi
