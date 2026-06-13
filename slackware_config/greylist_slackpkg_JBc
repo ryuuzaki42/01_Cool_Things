@@ -98,9 +98,9 @@ smplayer
 tomighty
 # unrar
 rar
-# veracrypt - AppImage
+# veracrypt - AppImage - Need wxGTK3
+#wxGTK3
 webcore-fonts
-wxGTK3
 xlaserpointer
 # gromit-mpx - AppImage
 # zotero - AppImage
