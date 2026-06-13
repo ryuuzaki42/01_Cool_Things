@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 11/05/2026
+# Last update: 13/06/2026
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -38,7 +38,6 @@ kdenetwork-strigi-analyzers
 kget
 kopete
 xfce4-pulseaudio-plugin
-# -------------------------------------------------------------------------------------------------------
 Greybird
 akonadi-calendar
 akonadi-calendar-tools
@@ -72,7 +71,6 @@ xsnow
 MasterPDFEditor
 # R
 # astyle
-# authy - AppImage
 # autosubsync - AppImage
 # FFsubsync - AppImage
 bfg
@@ -144,7 +142,7 @@ pahole
 # -------------------------------------------------------------------------------------------------------
 # audacity in AppImage
 # -------------------------------------------------------------------------------------------------------
-#libthai - Not need anymore
+#libthai - Not need anymore in version "20.04.AppImage"
 #libdatrie
 # -------------------------------------------------------------------------------------------------------
 # CodeBlocks in AppImage
@@ -188,7 +186,7 @@ spdlog
 # glfw3
 # nlohmann_json
 # -------------------------------------------------------------------------------------------------------
-# teamviewer # Changed to rustdesk
+# teamviewer # Changed to AnyDesk
 # -------------------------------------------------------------------------------------------------------
 # teamviewer
 # libminizip
