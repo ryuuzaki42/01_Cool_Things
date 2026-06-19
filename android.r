@@ -16,6 +16,16 @@
     > Settings > "Connection & Sharing"
         > Private DNS
             > dns.adguard-dns.com
+## Screenshot
+    ## Universal
+        Power button + Volume down
+
+    ## Xiaomi
+        Slide 3 fingers top to down
+
+    ## Screenshot in part of screen
+        Press and hold 3 fingers
+
 ## Anydesk
     ## Right click
         Press and hold 1 finger on the screen for about 2s
