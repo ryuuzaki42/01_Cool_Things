@@ -7,10 +7,15 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/05/2026
+# Last update: 19/06/2026
 #
 
-## Android APK
+## Android Private DNS to prevent adds
+    https://adguard-dns.io/pt_pt/public-dns.html
+
+    > Settings > "Connection & Sharing"
+        > Private DNS
+            > dns.adguard-dns.com
     ## MicroG - GmsCore
         https://github.com/ReVanced/GmsCore/releases
 
