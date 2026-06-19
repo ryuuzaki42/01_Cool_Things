@@ -16,6 +16,20 @@
     > Settings > "Connection & Sharing"
         > Private DNS
             > dns.adguard-dns.com
+## Anydesk
+    ## Right click
+        Press and hold 1 finger on the screen for about 2s
+
+    ## Session menu (Pie Menu) shortcuts
+        To move, double-tap and drag the floating logo
+
+    ## Scroll down
+        3 fingers gesture - small move to scroll
+
+        ## Xiaomi smartphone
+            Put one finger frist
+
+## Youtube ReVanced
     ## MicroG - GmsCore
         https://github.com/ReVanced/GmsCore/releases
 
