@@ -237,6 +237,15 @@ kdewallet=Chromium,Opera,Chrome
 ## Run chmod recursively only in files
     find /path/to/base/dir -type f -exec chmod 644 {} +
 
+## Show all files with size of 0 b in current directory - ignores subdirectories
+    find . -maxdepth 1 -type f -empty -print
+
+## Delete all file with size 0 b in current directory - ignores subdirectories
+    find . -maxdepth 1 -type f -empty -print -delete
+
+    ## Depend of block size - less safe
+        find . -maxdepth 1 -type f -size 0b -print -delete
+
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
     # All reduce types (1, 2 and 3) with links
     IFS=$(echo -en "\n\b"); for file in $(ls *.pdf); do echo $file; usual_JBs.sh pdf-r $file 4 y; done
