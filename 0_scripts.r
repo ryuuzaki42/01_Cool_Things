@@ -552,6 +552,13 @@ rm $tmpFile # Delete the tmpFile
 ## Iniciar o Dropbox no KDE com ícone de notificações (system tray icon)
     dbus-launch ../dropboxd
 
+## Dropbox / Maestral check conflicted files
+    cd dropbox/folder/
+
+    find . | grep -i conflicted
+
+    find . | grep -i "conflicted copy"
+
 ## Clean env | limpar variáveis setadas inicialmente no ambiente
     unset $(/usr/bin/env | egrep '^(\w+)=(.*)$' | egrep -vw 'PWD|USER|LANG' | /usr/bin/cut -d= -f1);
 
