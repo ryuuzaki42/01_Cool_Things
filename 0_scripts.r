@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 28/05/2026
+# Last update: 02/07/2026
 #
 
 ## Process with more CPU use
@@ -3449,12 +3449,11 @@ kbuildsycoca5
     lspci -q | grep -i wireless
 
 ## Linux Wireless Network Realtek RTL8852BE kernel driver
-    https://github.com/HRex39/rtl8852be
-
-    # Turn off your Security Boot in BIOS
+    # https://github.com/HRex39/rtl8852be
+    ## Turn off your Security Boot in BIOS
 
     git clone https://github.com/HRex39/rtl8852be.git
-    cd rtl8852be
+    cd rtl8852be/
     make -j8
     make install
     modprobe 8852be
