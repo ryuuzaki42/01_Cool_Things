@@ -8,11 +8,11 @@
 # Last update: 08/07/2026
 #
 # 1 is true or will run and 0 to false
-clean_system=1 #1 # Need cleanup_system_JBs - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
+clean_system=1 #1 # Need cleanup_system_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
 
 if [ "$clean_system" == 1 ]; then
-    echo -e "\n # Running cleanup_system_JBs all y n #"
-    /usr/bin/cleanup_system_JBs all y n
+    echo -e "\n # Running cleanup_system_JBs.sh all y n #"
+    /usr/bin/cleanup_system_JBs.sh all y n
 fi
 
 # - JB ce -
