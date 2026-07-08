@@ -17,7 +17,7 @@ start_thinkfan=1 #1
 set_keyboard=1 #1 # Load the keyboard map
 keyboard_map="br-abnt2" # Change to the desired map. More maps in: /usr/share/kbd/keymaps/
 
-update_date=0 #0 # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/
+update_date=0 #0 # Need usual_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
 
 use_tmp_folder_RAM=1 #1 # Mount a temporary folder to RAM
 tmp_folder_RAM="/media/sda2/home/j/Downloads/0_tmp_folder_RAM/" # Change to the desired folder
@@ -49,7 +49,7 @@ if [ "$update_date" == 1 ]; then
     echo -e "\n # Update time - Notebook without battery #"
     count=0
     while [ "$count" -lt 10 ]; do
-        result_date_up=$(usual_JBs.sh noColor notPrintHeader date-up)
+        result_date_up=$(/usr/bin/usual_JBs.sh noColor notPrintHeader date-up)
         if echo "$result_date_up" | grep -q "Time updated"; then
             count=10
         else
