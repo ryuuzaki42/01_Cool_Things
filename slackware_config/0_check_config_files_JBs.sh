@@ -22,7 +22,7 @@
 #
 # Script: Check Slackware configurations files are equal with the system
 #
-# Last update: 28/10/2025
+# Last update: 08/07/2026
 #
 echo -e "\nUse with program to compare the files?"
 echo -n "1 diff, 2 sdiff, 3 kdiff3, 4 smartsynchronize, 5 other (default is 4): "
@@ -54,6 +54,7 @@ files_check=("fstrim_JBs.sh" "/etc/cron.weekly/fstrim_JBs.sh"
 "lilo.conf_JBc" "/etc/lilo.conf"
 "mirrors_slackpkg_15.0_JBc" "/etc/slackpkg/mirrors"
 "rc.local_JBs.sh" "/etc/rc.d/rc.local"
+"rc.local_shutdown_JBs.sh" "/etc/rc.d/rc.local_shutdown"
 "slackpkgplus.conf_15.0_JBc" "/etc/slackpkg/slackpkgplus.conf")
 
 i=0
