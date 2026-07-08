@@ -11,8 +11,12 @@
 clean_system=1 #1 # Need cleanup_system_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
 
 if [ "$clean_system" == 1 ]; then
-    echo -e "\n # Running cleanup_system_JBs.sh all y n #"
-    /usr/bin/cleanup_system_JBs.sh all y n
+    echo -e "\n # Running cleanup_system_JBs.sh #"
+    /usr/bin/cleanup_system_JBs.sh j y n # As user j - normal clean
+
+    /usr/bin/cleanup_system_JBs.sh root y n # As root - normal clean
+
+    #/usr/bin/cleanup_system_JBs.sh root y all y # Clean all as root - Be careful
 fi
 
 # - JB ce -
