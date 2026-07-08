@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/07/2026
+# Last update: 08/07/2026
 #
 
 ## Process with more CPU use
@@ -240,8 +240,14 @@ kdewallet=Chromium,Opera,Chrome
 ## Show all files with size of 0 b in current directory - ignores subdirectories
     find . -maxdepth 1 -type f -empty -print
 
+    ## Files and folders
+        find . -maxdepth 1 -type f -empty -print
+
 ## Delete all file with size 0 b in current directory - ignores subdirectories
     find . -maxdepth 1 -type f -empty -print -delete
+
+    ## Files and folders
+        find . -maxdepth 1 -empty -print -delete
 
     ## Depend of block size - less safe
         find . -maxdepth 1 -type f -size 0b -print -delete
@@ -3473,3 +3479,6 @@ kbuildsycoca5
     make -j8
     make install
     modprobe 8852be
+
+## Remove dangling symbolic links and empty directories - Package imake
+    cleanlinks
