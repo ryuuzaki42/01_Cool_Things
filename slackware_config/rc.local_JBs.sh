@@ -1,13 +1,13 @@
 #!/bin/bash
 #
-# /etc/rc.d/rc.local:  Local system initialization script.
+# /etc/rc.d/rc.local: Local system initialization script.
 #
-# Put any local startup commands in here.  Also, if you have
+# Put any local startup commands in here. Also, if you have
 # anything that needs to be run at shutdown time you can
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 11/05/2026
+# Last update: 08/07/2026
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
