@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/07/2026
+# Last update: 09/07/2026
 #
 
 ## Process with more CPU use
@@ -3481,4 +3481,5 @@ kbuildsycoca5
     modprobe 8852be
 
 ## Remove dangling symbolic links and empty directories - Package imake
-    cleanlinks
+    ## Be careful - can remove useful links, e.g., Stem link
+        # cleanlinks
