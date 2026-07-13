@@ -8,7 +8,7 @@
 # Last update: 12/07/2026
 #
 # 1 is true or will run and 0 to false
-clean_system=1 #1 # Need cleanup_system_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
+clean_system=0 #0 # Need cleanup_system_JBs.sh - https://github.com/ryuuzaki42/02_Scripts_Linux/ installed in /usr/bin/
 user_clean="j"
 log_file="/var/log/cleanup_system.log"
 
