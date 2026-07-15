@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 29/05/2026
+# Last update: 15/07/2026
 #
 
 ## Windows 11 ##
@@ -58,6 +58,10 @@
         1. Disconnect your net connection
         2. Shift + F10
         3. oobe\bypassnro
+
+        3.1 ## New mode - Also can be used to create a local account
+            start ms-cxh:localonly
+
         4. Will reboot and now can create local account
 
 ## Change Windows language pt-BR to en-US
