@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 09/06/2026
+# Last update: 29/07/2026
 #
 
 https://github.com/AppImage/appimagetool/releases/tag/continuous
@@ -378,7 +378,7 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
         WINEDLLOVERRIDES="mscoree=d;mshtml=d" WINEPREFIX=/dev/shm/$folder_name_RAM "$HERE"/AppRun_2 "$HERE"/Deffy.exe
 
 ## Check is using default mode or using portable mode
-    # https://github.com/ryuuzaki42/Gromit-MPX_AppImage/blob/main/.github/workflows/build.yml
+    https://github.com/ryuuzaki42/Gromit-MPX_AppImage/blob/main/.github/workflows/build.yml
 
     HERE="$(dirname "$(readlink -f "${0}")")"
     echo "XDG_CONFIG_HOME: $XDG_CONFIG_HOME"
@@ -394,6 +394,26 @@ https://github.com/AppImage/AppImageKit/blob/master/README.md
             cp "$HERE"/etc/gromit-mpx/gromit-mpx.cfg "$config_path"
         fi
         echo "Gromit-MPX configuration file: $config_path/gromit-mpx.cfg"
+
+    ## Some program use internal variable to set path to save files
+        https://github.com/ryuuzaki42/PyCharm_AppImage/edit/main/.github/workflows/build.yml
+
+        ## Find the variables used in the program, like:
+            grep -rn ".local/share" AppDir/
+            grep -rn ".cache" AppDir/
+            grep -rn "XDG_CONFIG_HOME" AppDir/
+
+        #--- If use --appimage-portable-config
+        export CONFIG_HOME="${XDG_CONFIG_HOME:-${HOME}/.config}"
+        export XDG_DATA_HOME=$XDG_CONFIG_HOME
+        export XDG_CACHE_HOME="$HOME/.cache"
+
+        echo -e "\nHOME: $HOME"
+        echo "XDG_CONFIG_HOME: $XDG_CONFIG_HOME"
+        echo -e "\nXDG_DATA_HOME: $XDG_DATA_HOME"
+        echo "XDG_CACHE_HOME: $XDG_CACHE_HOME"
+        echo "CONFIG_HOME: $CONFIG_HOME"
+        #---
 
 ## AppImage with JRE inside
     ## Using CrossMobile
