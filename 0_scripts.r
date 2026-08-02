@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 17/07/2026
+# Last update: 02/08/2026
 #
 
 ## Process with more CPU use
@@ -1251,6 +1251,8 @@ $ paste arq1.txt arq2.txt
 
 ## Find only local folder
     find /dev -maxdepth 1 -name 'abc-*'
+
+    # Folders without the '/'. The '/' character is a directory separator, not part of the folder name
 
 ## xargs - create a line of arguments to another command
     ## If no command is passed, will use echo, the default command
