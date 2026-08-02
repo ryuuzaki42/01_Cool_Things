@@ -2487,6 +2487,16 @@ deactivate
 
             ## Rebooting loaded the new driver and associated files
 
+    ## Move your entire Steam installation folder (~/.local/share/Steam) to a place
+        ## Close Steam
+
+        ## Move / Copy the files to your new path
+
+        ## Create a symbolic link
+            ln -s /path/to/new-drive/Steam ~/.local/share/Steam
+
+            ln -s /media/sda2/0_installed/Steam/ ~/.local/share/
+
 ## Bash exist with command get an error and print line and command
     https://kvz.io/bash-best-practices.html
     http://redsymbol.net/articles/unofficial-bash-strict-mode/
