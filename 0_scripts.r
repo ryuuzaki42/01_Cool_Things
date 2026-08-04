@@ -3523,3 +3523,16 @@ kbuildsycoca5
         # history -c clears the history list of active memory
         # history -r reads the history file and loads it back into memory
         mv ~/.bash_history_clean ~/.bash_history && history -c && history -r
+
+## Date
+    ## Day/Month/Year Hour:Minutes:Seconds
+        date +"%d/%m/%Y %H:%M:%S"
+
+    ## Count - date math
+        ## Now + 37 minutes
+            date -d "today + 37 minutes" +'%H:%M'
+
+            date -d "+37 minutes"
+
+        ## Today at 13:44 + 3 hours and 38 minutes
+            date -d "13:44 today + 3 hours 38 minutes" +'%H:%M'
