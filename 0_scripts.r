@@ -840,6 +840,11 @@ rm $tmpFile # Delete the tmpFile
     ## Remove spaces in the end of line
         sed 's/\s*$//' file > file2.txt
 
+    ## Resplace all sequence white spaces in to one
+        # -s, --squeeze-repeats - replace each sequence of a repeated character that is listed
+                    # in the last specified ARRAY, with a single occurrence of that character
+        tr -s ' ' < a.txt > b.txt
+
 ## Remove '\r' (return)
     ## Useful in subtitles or text files to use with grep
     tr -d '\r' < a.txt > b.txt
