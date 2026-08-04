@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 02/08/2026
+# Last update: 04/08/2026
 #
 
 ## Process with more CPU use
@@ -3504,3 +3504,11 @@ kbuildsycoca5
         pkill -u username prog_name
 
         killall -u username prog_name
+
+## Clean duplicate entries on ~/.bash_history while preserving the original chronological order
+    tac ~/.bash_history | awk '!x[$0]++' | tac > ~/.bash_history_clean
+
+    ## Overwrite
+        # history -c clears the history list of active memory
+        # history -r reads the history file and loads it back into memory
+        mv ~/.bash_history_clean ~/.bash_history && history -c && history -r
