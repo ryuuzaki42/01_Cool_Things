@@ -3509,7 +3509,12 @@ kbuildsycoca5
 ## Clean duplicate entries on ~/.bash_history while preserving the original chronological order
     tac ~/.bash_history | awk '!x[$0]++' | tac > ~/.bash_history_clean
 
+    ## Remove white spaces
+        cat ~/.bash_history_clean | sed 's/^ *//' | sed 's/ *$//' | tr -s ' ' > ~/.bash_history_clean_2
+
     ## Overwrite
+        mv ~/.bash_history_clean2 ~/.bash_history_clean
+
         # history -c clears the history list of active memory
         # history -r reads the history file and loads it back into memory
         mv ~/.bash_history_clean ~/.bash_history && history -c && history -r
