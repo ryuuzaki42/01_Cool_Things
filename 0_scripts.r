@@ -801,8 +801,8 @@ rm $tmpFile # Delete the tmpFile
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
 
-        # Or
-        tr '\r\n' ' ' < a.txt > b.txt
+        ## Or
+            tr '\r\n' ' ' < a.txt > b.txt
 
     ## Remove new line (\n)
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
