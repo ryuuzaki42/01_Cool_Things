@@ -800,14 +800,15 @@ rm $tmpFile # Delete the tmpFile
 
     ## Remove new line (\n) for one space
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n/ /g'
-        # or
-        tr '\r\n' ' '
+
+        # Or
+        tr '\r\n' ' ' < a.txt > b.txt
 
     ## Remove new line (\n)
         echo -e "\n\n\noi\n\n\ncomo\n\n\nv\nai" | sed ':a;N;$!ba;s/\n//g'
 
         ## Or
-            tr -d '\n'
+            tr -d '\n' < a.txt > b.txt
 
     ## sed change value (TV) to (tv)
         echo "TV" | sed 's/TV/tv/g'
@@ -841,7 +842,7 @@ rm $tmpFile # Delete the tmpFile
 
 ## Remove '\r' (return)
     ## Useful in subtitles or text files to use with grep
-    tr -d '\r'
+    tr -d '\r' < a.txt > b.txt
 
     sed 's/\r$//' file
 
