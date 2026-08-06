@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/08/2026
+# Last update: 06/08/2026
 #
 
 ## Process with more CPU use
@@ -2461,7 +2461,6 @@ deactivate
 
             ## Better reset/rebuild install
                 steam --reset
-                steam
 
         ## sh: lspci: command not found
             ln -s /sbin/lspci /usr/bin/
@@ -3510,6 +3509,9 @@ kbuildsycoca5
         pkill -u username prog_name
 
         killall -u username prog_name
+
+## Print files in reverse - also concatenate
+    tac file.txt
 
 ## Clean duplicate entries on ~/.bash_history while preserving the original chronological order
     tac ~/.bash_history | awk '!x[$0]++' | tac > ~/.bash_history_clean
