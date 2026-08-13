@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 06/08/2026
+# Last update: 13/08/2026
 #
 
 ## Process with more CPU use
@@ -251,6 +251,12 @@ kdewallet=Chromium,Opera,Chrome
 
     ## Depend of block size - less safe
         find . -maxdepth 1 -type f -size 0b -print -delete
+
+    ## To ignore folder/files
+        # Like .mount_, use -name "folder" -prune -o. -o is the OR operator
+        find /tmp/ -name ".mount_*" -prune -o -empty -print -delete
+
+        find /tmp/ -name ".mount_*" -prune -o -size 0b -print
 
 ## Reduce all PDF files in the folder, using usual_JBs.sh script
     # All reduce types (1, 2 and 3) with links
