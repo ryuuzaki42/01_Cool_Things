@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 15/07/2026
+# Last update: 21/08/2026
 #
 
 ## Windows 11 ##
@@ -530,4 +530,19 @@
         "TaskbarNoDragToolbar"=dword:00000001
         "NoPinningToTaskbar"=dword:00000001
 
-##
+## Share printer
+    # https://www.youtube.com/watch?v=RFKRgg4aBXQ
+
+    0. Can work with the computer name (hostname in CMD) instead the computer IP
+
+    1. Computer 1 (PC1) - Fix the IP, set a static IP, to enable sharing with others computers
+
+    2. PC1 - To share the printer, go to Windows 11 settings, search for "Advanced Sharing Settings", and enable network discovery and file and printer sharing for both public and private networks; also, disable password-protected sharing
+
+    3. PC1 - In "Devices and Printers," select the printer, go to "Printer Properties", and under the "Sharing" tab, enable sharing and assign a printer name
+
+    4. PC2 - Install the printer on the other machine, use the "run command" (via the Start menu). Enter \\ + the PC1 IP address
+
+    5. PC2 - Provide the user credentials to log in and access the printer. To get the user name go to C:\Users\
+
+    Important: The PC1 must be turned on for printer sharing to work
