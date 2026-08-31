@@ -19,7 +19,7 @@
 #do not upgrade packages installed with sbopkg; use it instead
 #[0-9]+_SBo
 #
-# Last update: 13/06/2026
+# Last update: 31/09/2026
 #
 # -------------------------------------------------------------------------------------------------------
 # Removed packages
@@ -137,7 +137,7 @@ pahole
 # audacity
 # -------------------------------------------------------------------------------------------------------
 # audacity - AppImage
-# jack2 # audacity, obs-studio and mpv
+# jack2 # audacity, obs-studio
 # ladspa_sdk
 # lilv
 # soxr
@@ -156,7 +156,7 @@ pahole
 # obs-studio
 # -------------------------------------------------------------------------------------------------------
 obs-studio
-jack2 - audacity, obs-studio and mpv
+jack2 - audacity, obs-studio
 libfdk-aac # alien restricted_slackbuilds
 ffmpeg # alien restricted_slackbuilds
 mbedtls
@@ -175,13 +175,11 @@ yaml-cpp
 # -------------------------------------------------------------------------------------------------------
 # mpv
 # -------------------------------------------------------------------------------------------------------
-# mpv
-# jack2 - audacity, obs-studio and mpv
-# libass
-# libplacebo
-# python3-glad
-# lua
-# mujs
+mpv
+libass
+libplacebo
+luajit
+mujs
 # -------------------------------------------------------------------------------------------------------
 # mangohud
 # -------------------------------------------------------------------------------------------------------
