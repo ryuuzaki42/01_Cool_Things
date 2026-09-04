@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 19/06/2026
+# Last update: 04/09/2026
 #
 
 ## Android Private DNS to prevent adds
@@ -43,19 +43,23 @@
     ## MicroG - GmsCore
         https://github.com/ReVanced/GmsCore/releases
 
-    ## ReVanced Manager
-        https://revanced.app/download
-            https://github.com/ReVanced/revanced-manager/releases
+    ## Patch Manager
+        ## ReVanced Manager
+            https://revanced.app/download
+                https://github.com/ReVanced/revanced-manager/releases
+
+        ## Morphe Manager
+            https://github.com/MorpheApp/morphe-manager
 
     1 Download and install MicroG - GmsCore
-    2 Download and install Revanced Manager
+    2 Download and install Patch Manager
         Maybe: Give The Three Permissions
             1 Notifications, 2 Ignore Battery Optimisation, 3 Display Over Other Apps
 
-    3 Download the Official YouTube Apk Version Needed (From ApkMirror) and install/update
-    4 Open Revanced Manager, in Settings, select Apk Of YouTube To Patch, Select Default Patches
+    3 Download the Official YouTube Apk Version Needed (From ApkMirror) and Install / Update
+    4 Open Patch Manager, in Settings, select Apk Of YouTube To Patch, Select Default Patches
     5 Hit Patch. Share APK with Patches. Install APK
-    6 Remove Revanced Manager
+    6 Remove Patch Manager
 
     ## Old
         https://github.com/YT-Advanced/GmsCore/releases
@@ -75,20 +79,27 @@
         Check if now do not have two apps. Remove the old one
 
     ## Configuration
-        ## General
-            Photo > Settings > General
+        ## In new versions, break time was moved to from General to
+        ## Time management
+            Photo > Gear > Time management
                 > Remind break > 1 h
                 > Remind bedtime > 22:00 - 06:00
+
+            Photo > Gear > General
                 > Appearance > Dark theme
                 > Playback in feeds > Off
                 > Location > Brazil
 
-            Playback > Picture-in-picture > Enable
+        ## Playback
+            Photo > Gear > Playback
+                > Picture-in-picture > Enable
 
-            Background > Playback > Always on
+        ## Background
+            Photo > Gear > Background
+                > Playback > Always on
 
-        ## ReVanced
-            Photo > Settings > ReVanced
+        ## Patch Settings
+            Photo > Gear > Settings
 
             ## Seekbar color
                 Seekbar > Enable Custom Seekbar color
@@ -102,10 +113,15 @@
 
             ## Start page and Disable Notification button
                 General >
-                    Change star page > Library
+                    Star page > Subscriptions
 
-                    Navigation button >
+                    Navigation buttons >
                         Switch Create with Notification > Disable
+                        Hide Shorts button > Disable
+
+                    App name > Choose one
+
+                    App icon > Choose one
 
             ## End cards and Download button
                 Player
