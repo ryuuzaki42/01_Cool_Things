@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/08/2026
+# Last update: 16/09/2026
 #
 
 ## Windows 11 ##
@@ -546,3 +546,34 @@
     5. PC2 - Provide the user credentials to log in and access the printer. To get the user name go to C:\Users\
 
     Important: The PC1 must be turned on for printer sharing to work
+
+## Sysinternals
+    https://learn.microsoft.com/en-us/sysinternals/
+
+    ## Live run
+        Key Win + E > URL
+        # OR
+        Key Win + R > Execute >
+
+            \\live.sysinternals.com\tools\
+
+            \\live.sysinternals.com\tools\<toolname>
+
+            > Choose application
+
+    ## Some of the best
+        autoruns.exe - Autoruns - The most comprehensive tool available for seeing what programs, drivers, and scheduled tasks automatically start when Windows boots or a user logs in
+
+        procexp.exe - Process Explorer - Advanced replacement for Task Manager. Se command line, path, background services, threads
+
+        procmon.exe - Process Monitor - A deep-dive diagnostic utility that captures real-time file system, registry, and process/thread activity to hunt malware or debug failed installations
+
+        sysmon.exe - System Monitor - An advanced host security monitoring agent that logs detailed system activity (like network connections and process creation) to the Windows event log for threat hunting
+
+        tcpview.exe - TCPView - A graphical tool showing real-time local and remote network connection endpoints mapped directly to owning processes
+
+        procdump.exe - ProcDump - A command-line utility used to generate crash or performance-based memory dumps for looping or hanging applications
+
+        sdelete64.exe - SDelete - A free command-line utility from Microsoft Sysinternals designed to securely overwrite and permanently delete files, folders, or free disk space so they cannot be recovered
+
+        ZoomIt.exe - ZoomIt - A screen zoom, annotation, and recording tool for technical presentations and demos
