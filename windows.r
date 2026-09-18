@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/09/2026
+# Last update: 18/09/2026
 #
 
 ## Windows 11 ##
@@ -577,3 +577,31 @@
         sdelete64.exe - SDelete - A free command-line utility from Microsoft Sysinternals designed to securely overwrite and permanently delete files, folders, or free disk space so they cannot be recovered
 
         ZoomIt.exe - ZoomIt - A screen zoom, annotation, and recording tool for technical presentations and demos
+
+## Windows Sandbox (WSB) - Windows temporary VM
+    ## Requirements
+        Windows 10 or 11 Pro, Enterprise, or Education editions, not available on Home edition
+
+    ## Check Virtualization
+        Task Manager - Ctrl + Shift + Esc
+            Performance tab
+                > CPU
+                    Check if Virtualization is Enabled
+
+            If it is disabled, turn it on in computer BIOS/UEFI settings
+
+    ## Enable WSB in Windows Features
+        Windows Key + R - Execute
+            > optionalfeatures
+
+                > Windows Sandbox
+                    > Enable
+
+                > Apply
+
+        ## Restart
+
+    ## Start
+        ## No persistence data saved by default
+        > Start menu
+            > Windows Sandbox
