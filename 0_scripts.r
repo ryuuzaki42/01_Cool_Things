@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 13/08/2026
+# Last update: 20/09/2026
 #
 
 ## Process with more CPU use
@@ -754,6 +754,12 @@ rm $tmpFile # Delete the tmpFile
 
     ## Convert all file .mp4 to .mkv - with copy of codec
         for file in *.mp4; do ffmpeg -i "$file" -codec copy "${file::-2}kv"; done
+
+## Extract video frames as PNG images - extract all frames
+    ffmpeg -i input.mp4 frame_%04d.png
+
+    ## Extract video frames staring in 0s until 10 s as PNG
+        ffmpeg -ss 00:00 -i VID_20260310_114201.mp4 -t 00:10 frame_%04d.png
 
 ## Convert entire playlist from flac, oog, flac to mp3
     ## 320 k
