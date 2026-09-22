@@ -825,6 +825,15 @@ rm $tmpFile # Delete the tmpFile
     ## sed change value (TV) to (tv)
         echo "TV" | sed 's/TV/tv/g'
 
+    ## sed replace text to other text from a file
+        - -i to change in place
+        - line to delete, 2 until 22
+            - sed may fails if try to run it on the same line where you used the deletion 'd'
+        - new text to be add in new_text.txt
+        - 1r read the file and added after line 1
+
+        sed -i '2,22d; 1r new_text.txt' file.txt
+
     ## sed "grep" number
         echo "awsafd 1.2.4" | sed 's/[^0-9]*//g'
 
@@ -852,7 +861,7 @@ rm $tmpFile # Delete the tmpFile
     ## Remove spaces in the end of line
         sed 's/\s*$//' file > file2.txt
 
-    ## Resplace all sequence white spaces in to one
+    ## Replace all sequence white spaces in to one
         # -s, --squeeze-repeats - replace each sequence of a repeated character that is listed
                     # in the last specified ARRAY, with a single occurrence of that character
         tr -s ' ' < a.txt > b.txt
