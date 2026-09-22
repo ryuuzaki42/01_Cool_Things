@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 20/09/2026
+# Last update: 22/09/2026
 #
 
 ## Process with more CPU use
@@ -2512,7 +2512,7 @@ deactivate
         ## Create a symbolic link
             ln -s /path/to/new-drive/Steam ~/.local/share/Steam
 
-            ln -s /media/sda2/0_installed/Steam/ ~/.local/share/
+            ln -s /media/sda2/0_installed_2/Steam/ ~/.local/share/
 
 ## Bash exist with command get an error and print line and command
     https://kvz.io/bash-best-practices.html
