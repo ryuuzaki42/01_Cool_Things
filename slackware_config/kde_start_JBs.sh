@@ -103,7 +103,7 @@ if [ "$anydesk_check_running" == 1 ]; then
     while true; do
         anydesk_is_running=$(pgrep anydesk) # Test if is running
         if [ "$anydesk_is_running" == '' ]; then
-            bash $anydesk_path_program
+            "$anydesk_path_program"
         fi
         sleep $anydesk_check_time
     done
