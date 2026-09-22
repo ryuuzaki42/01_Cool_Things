@@ -44,6 +44,7 @@ check_file() {
 }
 
 files_check=("fstrim_JBs.sh" "/etc/cron.weekly/fstrim_JBs.sh"
+"kill_program_JBs.sh" "/etc/cron.daily/kill_program_JBs.sh"
 "greylist_slackpkg_JBc" "/etc/slackpkg/greylist"
 "kde_start_JBs.sh" "~/.config/kde_start_JBs.sh"
 "lilo.conf_JBc" "/etc/lilo.conf"
