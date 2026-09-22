@@ -17,7 +17,7 @@
 #
 # Script: To kill a program - late at night
 #
-# Last update: 21/09/2026
+# Last update: 22/09/2026
 #
 # Tip: Added the script in cron, to auto run, like
 #   cp kill_program.sh /etc/cron.daily/ # To run daily
