@@ -7,15 +7,15 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 04/09/2026
+# Last update: 08/10/2026
 #
 
 ## Android Private DNS to prevent adds
     https://adguard-dns.io/pt_pt/public-dns.html
 
-    > Settings > "Connection & Sharing"
-        > Private DNS
-            > dns.adguard-dns.com
+    > Settings > "Connection & Sharing" > Private DNS
+        > dns.adguard-dns.com
+
 ## Screenshot
     ## Universal
         Power button + Volume down
@@ -28,7 +28,7 @@
 
 ## Anydesk
     ## Right click
-        Press and hold 1 finger on the screen for about 2s
+        Press and hold 1 finger on the screen for about 2 second
 
     ## Session menu (Pie Menu) shortcuts
         To move, double-tap and drag the floating logo
@@ -37,7 +37,7 @@
         3 fingers gesture - small move to scroll
 
         ## Xiaomi smartphone
-            Put one finger frist
+            Put one finger first
 
 ## Youtube ReVanced
     ## MicroG - GmsCore
