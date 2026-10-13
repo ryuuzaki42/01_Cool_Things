@@ -167,6 +167,17 @@
         ## MD5
             Get-FileHash <file> -Algorithm md5
 
+## Show WI-FI password command line
+    # Not work with WPA PSK Enterprise - 802.1X - RADIUS Server
+
+    ## Show profiles - Network names
+        netsh wlan show profiles
+
+    ## Show password - Change "Network_Name"
+        netsh wlan show profile name="Network_Name" key=clear
+
+        netsh wlan show profile "Network_Name" key=clear
+
 ## Release Windows networking
     IPCONFIG /RELEASE
     IPCONFIG /FLUSHDNS
