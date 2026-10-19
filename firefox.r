@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 21/05/2026
+# Last update: 19/10/2026
 #
 
 about:config
@@ -323,6 +323,7 @@ https://addons.mozilla.org/firefox/addon/downthemall/
     folderName\*name*.*ext*
 
     ## Others 2
+https://addons.mozilla.org/firefox/addon/instagram-unfollow-tool/ # Instagram who doesn’t follow back
 https://addons.mozilla.org/firefox/addon/imdl/ # Instagram Media Downloader
 https://en.savefrom.net/9/user.php?vid=387#download
 https://addons.mozilla.org/firefox/addon/print-edit/
