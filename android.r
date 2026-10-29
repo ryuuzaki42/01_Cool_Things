@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 08/10/2026
+# Last update: 29/10/2026
 #
 
 ## Android Private DNS to prevent adds
@@ -116,12 +116,13 @@
                     Star page > Subscriptions
 
                     Navigation buttons >
+                        Hide Shorts button > Enable
+                        Hide Shorts button > Enable
                         Switch Create with Notification > Disable
-                        Hide Shorts button > Disable
 
-                    App name > Choose one
+                    App name > YT Morphe
 
-                    App icon > Choose one
+                    App icon > Morphe black
 
             ## End cards and Download button
                 Player
