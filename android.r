@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 29/10/2026
+# Last update: 01/11/2026
 #
 
 ## Android Private DNS to prevent adds
@@ -15,6 +15,10 @@
 
     > Settings > "Connection & Sharing" > Private DNS
         > dns.adguard-dns.com
+
+    IP DNS
+        IPv4 Primary: 94.140.14.14
+        IPv4 Secondary: 94.140.15.15
 
 ## Screenshot
     ## Universal
