@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 22/09/2026
+# Last update: 03/11/2026
 #
 
 ## Process with more CPU use
@@ -3559,3 +3559,6 @@ kbuildsycoca5
 
         ## Today at 13:44 + 3 hours and 38 minutes
             date -d "13:44 today + 3 hours 38 minutes" +'%H:%M'
+
+    ## Convert epoch timestamp to date, human readable format
+        date -d "@1793712387"
