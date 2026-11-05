@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 03/11/2026
+# Last update: 05/11/2026
 #
 
 ## Process with more CPU use
@@ -3551,6 +3551,8 @@ kbuildsycoca5
     ## Day/Month/Year Hour:Minutes:Seconds
         date +"%d/%m/%Y %H:%M:%S"
 
+        date +"%d/%m/%Y %T"
+
     ## Count - date math
         ## Now + 37 minutes
             date -d "today + 37 minutes" +'%H:%M'
@@ -3562,3 +3564,9 @@ kbuildsycoca5
 
     ## Convert epoch timestamp to date, human readable format
         date -d "@1793712387"
+
+    ## Calculate time elapsed between two date timestamps
+        date_1_seconds=$(date +%s)
+        date_2_seconds=$(date +%s)
+        duration=$(( $date_2_seconds - $date_1_seconds ))
+        echo "Time Elapsed: $(($duration/3600)) hours $(($duration %3600 / 60)) minutes and $(($duration % 60)) seconds"
