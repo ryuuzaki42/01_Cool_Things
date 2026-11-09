@@ -10,6 +10,13 @@
 # Last update: 09/11/2026
 #
 
+## Change playing speed of videos - JavaScript method
+    > F12 # JS console
+
+    document.querySelector('video').playbackRate = 1.25
+
+    document.querySelector('video').playbackRate = 2
+
 ## Cool sites for coding
     ## Hackerrank
         https://www.hackerrank.com/
