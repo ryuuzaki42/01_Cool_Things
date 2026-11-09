@@ -17,7 +17,7 @@
 #
 # Script: Run commands after start KDE
 #
-# Last update: 30/09/2026
+# Last update: 09/11/2026
 #
 # Tip: Copy the script to ~/.config/ and added to Autostart script on KDE
 # System Settings > Startup and Shutdown > Autostart > Add... > Add Login Script...
@@ -101,8 +101,11 @@ fi
 if [ "$anydesk_check_running" == 1 ]; then
     echo -e "\n # Check if AnyDesk is running #\n"
     while true; do
-        anydesk_is_running=$(pgrep anydesk) # Test if is running
-        if [ "$anydesk_is_running" == '' ]; then
+        anydesk_is_running=$(pgrep -i anydesk | wc -l) # Test if is running, with count lines of PID
+        if [ "$anydesk_is_running" == '' ]; then # AnyDesk is not running
+            $anydesk_path_program # Without quotes to correct run the command
+        elif [ "$anydesk_is_running" -lt 2 ]; then # AnyDesk is running with some error
+            killall anydesk # Kill all Anydesk running with error
             $anydesk_path_program # Without quotes to correct run the command
         fi
         sleep $anydesk_check_time
