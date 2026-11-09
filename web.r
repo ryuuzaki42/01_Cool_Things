@@ -1,4 +1,15 @@
 
+    ## Web - World Wide Web - WWW - Web.r ##
+
+#
+# Autor= João Batista Ribeiro
+# Bugs, Agradecimentos, Críticas "construtivas"
+# me envie um e-mail. Ficarei Grato!
+# e-mail: joao42lbatista@gmail.com
+#
+# Last update: 09/11/2026
+#
+
 ## Cool sites for coding
     ## Hackerrank
         https://www.hackerrank.com/
