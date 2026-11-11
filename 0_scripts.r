@@ -1,5 +1,5 @@
 
-    ## Script.r - Greats commands for day life ##
+    ## 0_scripts - Greats commands for day life ##
 
 #
 # Autor= João Batista Ribeiro
@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 05/11/2026
+# Last update: 11/11/2026
 #
 
 ## Process with more CPU use
@@ -3570,3 +3570,16 @@ kbuildsycoca5
         date_2_seconds=$(date +%s)
         duration=$(( $date_2_seconds - $date_1_seconds ))
         echo "Time Elapsed: $(($duration/3600)) hours $(($duration %3600 / 60)) minutes and $(($duration % 60)) seconds"
+
+## DHCP - obtain, renew, or release IP addresses
+    ## Linux
+        dhclient
+
+        dhclient -4 -v
+
+    ## Windows
+    # Release IP
+        ipconfig /release
+
+    # Request a new DHCP lease
+        ipconfig /renew
