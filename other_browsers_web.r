@@ -11,7 +11,6 @@
 #
 
 -------------------------------------------------------------------------------
-
     ## LibreWolf ##
 
 ## Disable clear history
@@ -49,7 +48,6 @@
     It will now appear so you can change it to the default search engine
 
 -------------------------------------------------------------------------------
-
     ## Chrome ##
 
 ## Chrome - Ubuntu Gnome - Asks for password to unlock keyring on startup
@@ -63,7 +61,6 @@
         Choose Continue and ignore any warnings
 
 -------------------------------------------------------------------------------
-
     ## Vivaldi ##
 
 ## Vivaldi freeze after update - AppImage
