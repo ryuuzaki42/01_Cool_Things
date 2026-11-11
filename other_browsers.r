@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 07/05/2026
+# Last update: 11/11/2026
 #
 
 -------------------------------------------------------------------------------
@@ -47,6 +47,20 @@
         https://www.google.com/search?q=%s
 
     It will now appear so you can change it to the default search engine
+
+-------------------------------------------------------------------------------
+
+    ## Chrome ##
+
+## Chrome - Ubuntu Gnome - Asks for password to unlock keyring on startup
+    ## Close Chrome
+
+    ## Remove keyrings
+        rm ~/.local/share/keyrings/*
+
+    ## Open Chrome
+        If asks for password, do not enter one
+        Choose Continue and ignore any warnings
 
 -------------------------------------------------------------------------------
 
