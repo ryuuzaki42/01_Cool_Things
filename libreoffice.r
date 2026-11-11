@@ -1,5 +1,5 @@
 
-    ## LibreOffice
+    ## LibreOffice ##
 
 #
 # Autor= João Batista Ribeiro
@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 0o/05/2026
+# Last update: 11/11/2026
 #
 
 ## Error message “Unspecified Application Error” after running it
