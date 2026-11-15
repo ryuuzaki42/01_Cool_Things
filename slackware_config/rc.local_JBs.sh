@@ -7,7 +7,7 @@
 # make an /etc/rc.d/rc.local_shutdown script and put those
 # commands in there.
 # - JB cs -
-# Last update: 08/07/2026
+# Last update: 15/11/2026
 #
 # 1 is true or will run and 0 to false
 start_tlp=1 #1
@@ -67,13 +67,18 @@ if [ "$use_tmp_folder_RAM" == 1 ]; then
 
     # Grep count of RAM in MiB - some computers use part of RAM to GPU
     count_RAM_GiB=$(free --mega | grep 'Mem:' | awk '{print $2}')
-    if [ "$count_RAM_GiB" -gt 23000 ]; then # RAM > ~ 23 GiB
+
+    if [ "$count_RAM_GiB" -gt 23000 ]; then # RAM ~ 24 GiB
         folder_RAM_Max_Size='12g' # Temporary folder of 12 GiB
-    elif [ "$count_RAM_GiB" -gt 15000 ]; then # RAM > ~ 15 GiB
+    elif [ "$count_RAM_GiB" -gt 19000 ]; then # RAM ~ 20 GiB
+        folder_RAM_Max_Size='10g'
+    elif [ "$count_RAM_GiB" -gt 15000 ]; then # RAM ~ 16 GiB
         folder_RAM_Max_Size='8g'
-    elif [ "$count_RAM_GiB" -gt 7000 ]; then # RAM > ~ 7 GiB
+    elif [ "$count_RAM_GiB" -gt 11000 ]; then # RAM ~ 12 GiB
+        folder_RAM_Max_Size='6g'
+    elif [ "$count_RAM_GiB" -gt 7000 ]; then # RAM ~ 8 GiB
         folder_RAM_Max_Size='4g'
-    elif [ "$count_RAM_GiB" -gt 5000 ]; then # RAM > ~ 5 GiB
+    elif [ "$count_RAM_GiB" -gt 5000 ]; then # RAM ~ 6 GiB
         folder_RAM_Max_Size='3g'
     else # $count_RAM_GiB < ~ 5 GiB
         folder_RAM_Max_Size=0
