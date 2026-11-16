@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 11/11/2026
+# Last update: 16/11/2026
 #
 
 ## Process with more CPU use
@@ -366,7 +366,7 @@ int main(){
             echo "$i : $(dmidecode -s $i)"
         done
 
-    ## memory info - RAM info
+    ## Memory info - RAM info
         # Speed
         dmidecode -t 17
 
@@ -375,6 +375,12 @@ int main(){
 
         # All
         dmidecode -t memory
+
+    ## Model and brand
+        dmidecode -t 1
+
+        # Or
+        dmidecode | grep -A3 '^System Information'
 
 ## Dolphin (re)enable warning message dialog before Empty Trash
     nano ~/.config/kiorc
@@ -627,15 +633,12 @@ rm $tmpFile # Delete the tmpFile
 ## wget show website in terminal
     wget -O - slackware.com
 
-## Descobrir a placa-mãe sem programa
+## Identify the motherboard without software
     ## Windows - CMD
         wmic baseboard get product,manufacturer
 
     ## Gnu/Linux - terminal as root
-        dmidecode | more
-
-        ## Procure por "Base Board Information"
-            digite /Base
+        dmidecode -t 0,1,2
 
 ## man search
     Use ctrl + f or /
