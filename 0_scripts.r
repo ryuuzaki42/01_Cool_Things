@@ -7,7 +7,7 @@
 # me envie um e-mail. Ficarei Grato!
 # e-mail: joao42lbatista@gmail.com
 #
-# Last update: 16/11/2026
+# Last update: 19/11/2026
 #
 
 ## Process with more CPU use
@@ -627,11 +627,19 @@ rm $tmpFile # Delete the tmpFile
     ## Format the new partition to FAT 32
         mkfs.fat -F 32 -I /dev/sdX1
 
-## Run wget with download limit rate
-    wget -c link -O filename_save.extension --limit-rate=200000 # (195KB/s)
+## wget
+    ## wget with download limit rate
+        wget -c link -O filename_save.extension --limit-rate=200000 # (195KB/s)
 
-## wget show website in terminal
-    wget -O - slackware.com
+    ## wget 403 Forbidden - need user-agent or cookies
+        wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0" "URL"
+
+        wget -U "Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0" "URL"
+
+        wget -U "Mozilla" "URL"
+
+    ## wget show website in terminal
+        wget -O - slackware.com
 
 ## Identify the motherboard without software
     ## Windows - CMD
