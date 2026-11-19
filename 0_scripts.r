@@ -631,12 +631,17 @@ rm $tmpFile # Delete the tmpFile
     ## wget with download limit rate
         wget -c link -O filename_save.extension --limit-rate=200000 # (195KB/s)
 
-    ## wget 403 Forbidden - need user-agent or cookies
+    ## wget error 403 Forbidden - need user-agent or cookies
         wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0" "URL"
 
         wget -U "Mozilla/5.0 (X11; Linux x86_64; rv:145.0) Gecko/20100101 Firefox/145.0" "URL"
 
         wget -U "Mozilla" "URL"
+
+        ## Sometimes need to set a header
+            wget -U "Mozilla" --header="Accept-Language: en" "URL"
+
+            wget -U "Mozilla" --header="Accept-Language: pt-BR" "URL"
 
     ## wget show website in terminal
         wget -O - slackware.com
